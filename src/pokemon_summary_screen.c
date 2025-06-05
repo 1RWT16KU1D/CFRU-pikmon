@@ -213,7 +213,8 @@ struct Struct203B144
 
     u16 unk26;
 };
-#ifdef SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN
+
+#if (defined SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN && !defined BW_SUMMARY_SCREEN)
 void PrintInfoPage(void)
 {
     AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47, 19, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.speciesNameStrBuf);
@@ -272,6 +273,8 @@ void PrintInfoPage(void)
     }
 }
 #endif
+
+#if (defined NATURE_COLORS_ON_SUMMARY_SCREEN && !defined BW_SUMMARY_SCREEN)
 static const u8 sNatureTextColors[][3] =
 {
     {0, 14, 10},
@@ -330,7 +333,6 @@ static const u8 * const sIVRankings_Images[] =
     [31] = sIVRankings_STiles,
 };
 
-#ifndef BW_SUMMARY_SCREEN_IMPLEMENTED
 #define HP_TEXT_X_POS 14
 #define STATS_TEXT_POS 50
 #define EXP_TEXT_X_POS1 15
@@ -350,27 +352,6 @@ static const u8 * const sIVRankings_Images[] =
 #define SPATK_IV_POS_Y 49
 #define SPDEF_IV_POS_Y 62
 #define SPD_IV_POS_Y 75
-#else
-#define HP_TEXT_X_POS 39
-#define STATS_TEXT_POS 50
-#define EXP_TEXT_X_POS1 0
-#define EXP_TEXT_X_POS2 36
-#define HP_TEXT_Y_POS 0
-#define ATK_TEXT_Y_POS 20
-#define DEF_TEXT_Y_POS 32
-#define SPATK_TEXT_Y_POS 44
-#define SPDEF_TEXT_Y_POS 56
-#define SPD_TEXT_Y_POS 68
-#define EXP1_TEXT_Y_POS 92
-#define EXP2_TEXT_Y_POS 92
-#define STATS_IV_POS_X 41
-#define HP_IV_POS_Y 2
-#define ATK_IV_POS_Y 22
-#define DEF_IV_POS_Y 34
-#define SPATK_IV_POS_Y 46
-#define SPDEF_IV_POS_Y 58
-#define SPD_IV_POS_Y 70
-#endif
 
 void PrintSkillsPage(void)
 {
@@ -400,3 +381,4 @@ void PrintSkillsPage(void)
     BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[spDefIv], 0, 0, 8, 8, STATS_IV_POS_X , SPDEF_IV_POS_Y , 16, 8);
     BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[spdIv], 0, 0, 8, 8, STATS_IV_POS_X , SPD_IV_POS_Y , 16, 8);
 }
+#endif

@@ -373,7 +373,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_TERA_BATTLE 0xA08 //Works like an half tera orb
 #define SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN //If you just want to show the tera type icon on the summary screen, uncomment this one
 #define FLAG_EXPLAINED_MINING_RULES 0xA09 //If set, the player will not be shown the mining rules second time when using the mining feature
-//#define BW_SUMMARY_SCREEN_IMPLEMENTED // Only if you have BW summary screen implemented, will implement nature coloured stats and IV ranking in summary
+//#define BW_SUMMARY_SCREEN // Implements the BW summary screen
+//#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 
