@@ -122,9 +122,21 @@ extern const u8 sText_NatureSassy[];
 extern const u8 sText_NatureCareful[];
 extern const u8 sText_NatureQuirky[];
 
+extern const u8 sText_HoldingFood[];
+extern const u8 sText_ChecksHeldItem[];
+extern const u8 sText_LuxuryBallPride[];
+extern const u8 sText_TryingToStandUpright[];
+extern const u8 sText_StompingAround[];
+extern const u8 sText_SkippingAlong[];
+extern const u8 sText_SeemsDistracted[];
+extern const u8 sText_FlexesMuscles[];
+
+
 
 extern void ShowMysteryGiftMon(void);
 extern struct Pokemon* GetFirstValidPartyMon(void);
+extern u32 GetPlayerTrainerId(void);
+
 void ShowFollowerMessage(const u8* message)
 {
     StringExpandPlaceholders(gStringVar4, message);
@@ -144,6 +156,8 @@ void ShowAnonymousFollowerMessage(void)
     u32 status = GetMonData(mon, MON_DATA_STATUS, NULL);
     u8 type1 = gBaseStats[species].type1;
     u8 metLocation = GetMonData(mon, MON_DATA_MET_LOCATION, NULL);
+    u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+    u8 ballType = GetMonData(mon, MON_DATA_POKEBALL, NULL);
 
     const u8 *text = NULL;
 
@@ -152,19 +166,19 @@ void ShowAnonymousFollowerMessage(void)
 			AddBagItem(ITEM_POKE_BALL, 1); //Add a Poké Ball to the bag as an example
 			text = sText_FoundItem;
 		}
-    else if (((Random() % 100) < 5) && (happiness >= HIGH_HAPPINESS))
+    else if (((Random() % 100) < 10) && (happiness >= HIGH_HAPPINESS))
         text = sText_HappyJumping;
-    else if (((Random() % 100) < 5) && (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT))
+    else if (((Random() % 100) < 10) && (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT))
         text = sText_TiredButReady;
-    else if (((Random() % 100) < 5) && (status & STATUS1_SLEEP))
+    else if (((Random() % 100) < 10) && (status & STATUS1_SLEEP))
         text = sText_StatusAsleep;
-    else if (((Random() % 100) < 5) && (status & STATUS1_PARALYSIS))
+    else if (((Random() % 100) < 10) && (status & STATUS1_PARALYSIS))
         text = sText_StatusParalyzed;
-    else if (((Random() % 100) < 5) && (status & STATUS1_POISON))
+    else if (((Random() % 100) < 10) && (status & STATUS1_POISON))
         text = sText_StatusPoisoned;
-    else if (((Random() % 100) < 5) && (status & STATUS1_BURN))
+    else if (((Random() % 100) < 10) && (status & STATUS1_BURN))
         text = sText_StatusBurned;
-    else if (((Random() % 100) < 5) && (status & STATUS1_FREEZE))
+    else if (((Random() % 100) < 10) && (status & STATUS1_FREEZE))
         text = sText_StatusFrozen;
     else if ((Random() % 100) < 10)
     {
@@ -192,7 +206,7 @@ void ShowAnonymousFollowerMessage(void)
         }
     }
 
-    else if (((Random() % 100) < 5) && (metLocation != 0 && (Random() % 100) < 20))
+    else if (((Random() % 100) < 10) && (metLocation != 0 && (Random() % 100) < 100))
     {
         GetMapName(gStringVar2, metLocation, 0);
         text = sText_RecallsMetLocation;
@@ -231,6 +245,54 @@ void ShowAnonymousFollowerMessage(void)
             case NATURE_SASSY:   text = sText_NatureSassy; break;
             case NATURE_CAREFUL: text = sText_NatureCareful; break;
             case NATURE_QUIRKY:  text = sText_NatureQuirky; break;
+        }
+    }
+    else if ((Random() % 100) < 10 && heldItem == ITEM_LEFTOVERS)
+        text = sText_HoldingFood;
+    else if ((Random() % 100) < 10 && heldItem != ITEM_NONE)
+        text = sText_ChecksHeldItem;
+    else if ((Random() % 100) < 10 && ballType == ITEM_LUXURY_BALL)
+        text = sText_LuxuryBallPride;
+    // Egg Group based behavior (2% chance)
+    else if ((Random() % 100) < 10)
+    {
+        u8 eggGroup = gBaseStats[species].eggGroup1 & 0xFF;
+
+        switch (eggGroup)
+        {
+            case EGG_GROUP_HUMAN_LIKE:
+                text = sText_TryingToStandUpright;
+                break;
+            case EGG_GROUP_MONSTER:
+                text = sText_StompingAround;
+                break;
+            case EGG_GROUP_FAIRY:
+                text = sText_SkippingAlong;
+                break;
+            default:
+                break; // nothing
+        }
+    }
+
+    // OT vs Player (1% chance)
+    else if ((Random() % 100) < 10)
+    {
+        u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+        if (otId != GetPlayerTrainerId())
+        {
+            text = sText_SeemsDistracted;
+        }
+    }
+
+    // High IV flex (2% chance)
+    else if ((Random() % 100) < 10)
+    {
+        u8 atkIV = GetMonData(mon, MON_DATA_ATK_IV, NULL);
+        u8 defIV = GetMonData(mon, MON_DATA_DEF_IV, NULL);
+
+        if (atkIV >= 25 || defIV >= 25)
+        {
+            text = sText_FlexesMuscles;
         }
     }
 

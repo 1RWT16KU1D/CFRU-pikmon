@@ -171,3 +171,27 @@ Nothing seems out of the ordinary.
 
 #org @sText_NatureQuirky
 [BUFFER1] is acting weird again.
+
+#org @sText_HoldingFood
+[BUFFER1] munches on something happily.
+
+#org @sText_ChecksHeldItem
+[BUFFER1] fiddles with its held item.
+
+#org @sText_LuxuryBallPride
+[BUFFER1] seems proud of its shiny ball.
+
+#org @sText_TryingToStandUpright
+[BUFFER1] tries walking like you.
+
+#org @sText_StompingAround
+[BUFFER1] stomps heavily as it walks.
+
+#org @sText_SkippingAlong
+[BUFFER1] is skipping cheerfully beside you.
+
+#org @sText_SeemsDistracted
+[BUFFER1] seems to be thinking of its old Trainer.
+
+#org @sText_FlexesMuscles
+[BUFFER1] flexes confidently, showing off its strength.
