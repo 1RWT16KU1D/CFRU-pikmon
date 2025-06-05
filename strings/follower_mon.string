@@ -188,10 +188,10 @@ Nothing seems out of the ordinary.
 [BUFFER1] stomps heavily as it walks.
 
 #org @sText_SkippingAlong
-[BUFFER1] is skipping cheerfully beside you.
+[BUFFER1] is skipping cheerfully\nbeside you.
 
 #org @sText_SeemsDistracted
-[BUFFER1] seems to be thinking of its old Trainer.
+[BUFFER1] seems to be thinking \nof its old Trainer.
 
 #org @sText_FlexesMuscles
-[BUFFER1] flexes confidently, showing off its strength.
+[BUFFER1] flexes confidently, \nshowing off its strength.
