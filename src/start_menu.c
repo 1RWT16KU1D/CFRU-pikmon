@@ -290,6 +290,9 @@ void SetUpStartMenu(void)
 }
 
 extern u8 sRTCFrameCount;
+extern void RemoveFollowerBeforeBattle(void);
+extern void RestoreFollowerAfterBattle(void);
+extern void ChangeFollowerPalette(void);
 
 bool8 StartCB_HandleInput(void)
 {
@@ -348,6 +351,7 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void; 
 		StartMenu_FadeScreenIfLeavingOverworld();
+		RemoveFollowerBeforeBattle(); //Remove follower before entering a menu
 		RemoveTimeBox();
 		return FALSE;
 	}
@@ -355,10 +359,12 @@ bool8 StartCB_HandleInput(void)
 	{
 		RemoveTimeBox();
 		DestroyHelpMessageWindow_();
+		RestoreFollowerAfterBattle(); //Restore follower after exiting a menu
+		ChangeFollowerPalette();
 		CloseStartMenu();
 		return TRUE;
 	}
-	else if (JOY_NEW(R_BUTTON) && StartMenuHasOption(STARTMENU_SAVE))
+	else if (JOY_NEW(R_BUTTON))
         return StartCB_SelectOption(STARTMENU_SAVE);
 	return FALSE;
 }
