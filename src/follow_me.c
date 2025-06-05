@@ -313,6 +313,7 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 			sp0D2_DestroyFollowerSprite();
 			VarSet(0x8001, 0xFD);
 			sp0D1_SetUpFollowerSprite();
+			FlagClear(FLAG_FOLLOWER_WAS_SURFING); //Make sure the flag is cleared
 			ShowFollower(); //Make sure the follower is visible
 		}
 
