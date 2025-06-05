@@ -1,0 +1,214 @@
+#include "defines.h"
+#include "../include/bike.h"
+#include "../include/field_player_avatar.h"
+#include "../include/fieldmap.h"
+#include "../include/field_message_box.h"
+#include "../include/field_weather.h"
+#include "../include/gpu_regs.h"
+#include "../include/item_icon.h"
+#include "../include/item_menu.h"
+#include "../include/list_menu.h"
+#include "../include/map_name_popup.h"
+#include "../include/menu.h"
+#include "../include/m4a.h"
+#include "../include/naming_screen.h"
+#include "../include/overworld.h"
+#include "../include/pokemon_summary_screen.h"
+#include "../include/pokemon_storage_system.h"
+#include "../include/region_map.h"
+#include "../include/script.h"
+#include "../include/script_menu.h"
+#include "../include/sound.h"
+#include "../include/sprite.h"
+#include "../include/string_util.h"
+#include "../include/text.h"
+#include "../include/wild_encounter.h"
+#include "../include/window.h"
+#include "../include/event_data.h"
+#include "../include/constants/abilities.h"
+#include "../include/constants/items.h"
+#include "../include/constants/moves.h"
+#include "../include/constants/pokedex.h"
+#include "../include/constants/pokemon.h"
+#include "../include/constants/songs.h"
+
+#include "../include/new/battle_strings.h"
+#include "../include/new/build_pokemon.h"
+#include "../include/new/catching.h"
+#include "../include/new/damage_calc.h"
+#include "../include/new/dns.h"
+#include "../include/new/util.h"
+#include "../include/new/item.h"
+#include "../include/new/learn_move.h"
+#include "../include/new_menu_helpers.h"
+#include "../include/new/multi.h"
+#include "../include/new/overworld.h"
+#include "../include/new/pokemon_storage_system.h"
+#include "../include/new/ram_locs_battle.h"
+#include "../include/new/read_keys.h"
+#include "../include/new/roamer.h"
+#include "../include/new/text.h"
+#include "../include/new/scrolling_multichoice.h"
+#include "../include/new/Vanilla_functions_battle.h"
+#include "../include/new/wild_encounter.h"
+#include "../include/random.h"
+
+#define LOW_HAPPINESS 70
+#define HIGH_HAPPINESS 200
+#define LOW_HP_PERCENT 20
+#define ITEM_FIND_CHANCE 3  // 3% chance
+
+extern const u8 sText_HappyJumping[];
+extern const u8 sText_LooksLonely[];
+extern const u8 sText_TiredButReady[];
+extern const u8 sText_StatusAsleep[];
+extern const u8 sText_StatusParalyzed[];
+extern const u8 sText_StatusPoisoned[];
+extern const u8 sText_StatusBurned[];
+extern const u8 sText_StatusFrozen[];
+extern const u8 sText_TypeFire[];
+extern const u8 sText_TypeWater[];
+extern const u8 sText_TypeElectric[];
+extern const u8 sText_FoundItem[];
+extern const u8 sText_IdleLookingAround[];
+extern const u8 sText_IdleBored[];
+extern const u8 sText_IdleStretching[];
+extern const u8 sText_IdleTailWag[];
+extern const u8 sText_RecallsMetLocation[];
+extern const u8 sText_NatureHardy[];
+extern const u8 sText_NatureLonely[];
+extern const u8 sText_NatureBrave[];
+extern const u8 sText_NatureAdamant[];
+extern const u8 sText_NatureNaughty[];
+
+extern const u8 sText_NatureBold[];
+extern const u8 sText_NatureDocile[];
+extern const u8 sText_NatureRelaxed[];
+extern const u8 sText_NatureImpish[];
+extern const u8 sText_NatureLax[];
+
+extern const u8 sText_NatureTimid[];
+extern const u8 sText_NatureHasty[];
+extern const u8 sText_NatureSerious[];
+extern const u8 sText_NatureJolly[];
+extern const u8 sText_NatureNaive[];
+
+extern const u8 sText_NatureModest[];
+extern const u8 sText_NatureMild[];
+extern const u8 sText_NatureQuiet[];
+extern const u8 sText_NatureBashful[];
+extern const u8 sText_NatureRash[];
+
+extern const u8 sText_NatureCalm[];
+extern const u8 sText_NatureGentle[];
+extern const u8 sText_NatureSassy[];
+extern const u8 sText_NatureCareful[];
+extern const u8 sText_NatureQuirky[];
+
+
+extern void ShowMysteryGiftMon(void);
+extern struct Pokemon* GetFirstValidPartyMon(void);
+void ShowFollowerMessage(const u8* message)
+{
+    StringExpandPlaceholders(gStringVar4, message);
+    ShowFieldMessage(gStringVar4);
+}
+
+void ShowAnonymousFollowerMessage(void)
+{
+    struct Pokemon *mon = GetFirstValidPartyMon();
+    if (mon == NULL)
+        return;
+
+    u8 happiness = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u32 hp = GetMonData(mon, MON_DATA_HP, NULL);
+    u32 maxHp = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+    u32 status = GetMonData(mon, MON_DATA_STATUS, NULL);
+    u8 type1 = gBaseStats[species].type1;
+    u8 type2 = gBaseStats[species].type2;
+    u8 metLocation = GetMonData(mon, MON_DATA_MET_LOCATION, NULL);
+
+    const u8 *text = NULL;
+
+    if (((Random() % 100) < ITEM_FIND_CHANCE))
+		{
+			AddBagItem(ITEM_POKE_BALL, 1); //Add a Poké Ball to the bag as an example
+			text = sText_FoundItem;
+		}
+    else if (((Random() % 100) < 5) && (happiness >= HIGH_HAPPINESS))
+        text = sText_HappyJumping;
+    else if (((Random() % 100) < 5) && (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT))
+        text = sText_TiredButReady;
+    else if (((Random() % 100) < 5) && (status & STATUS1_SLEEP))
+        text = sText_StatusAsleep;
+    else if (((Random() % 100) < 5) && (status & STATUS1_PARALYSIS))
+        text = sText_StatusParalyzed;
+    else if (((Random() % 100) < 5) && (status & STATUS1_POISON))
+        text = sText_StatusPoisoned;
+    else if (((Random() % 100) < 5) && (status & STATUS1_BURN))
+        text = sText_StatusBurned;
+    else if (((Random() % 100) < 5) && (status & STATUS1_FREEZE))
+        text = sText_StatusFrozen;
+    else if (((Random() % 100) < 5) && (type1 == TYPE_FIRE || type2 == TYPE_FIRE))
+        text = sText_TypeFire;
+    else if (((Random() % 100) < 5) && (type1 == TYPE_WATER || type2 == TYPE_WATER))
+        text = sText_TypeWater;
+    else if (((Random() % 100) < 5) && (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC))
+        text = sText_TypeElectric;
+    else if (((Random() % 100) < 5) && (metLocation != 0 && (Random() % 100) < 20))
+    {
+        GetMapName(gStringVar2, metLocation, 0);
+        text = sText_RecallsMetLocation;
+    }
+    else if (((Random() % 100) < 5)) // 1% chance nature-based
+    {
+        u8 nature = GetNature(mon);
+        switch (nature)
+        {
+            case NATURE_HARDY:   text = sText_NatureHardy; break;
+            case NATURE_LONELY:  text = sText_NatureLonely; break;
+            case NATURE_BRAVE:   text = sText_NatureBrave; break;
+            case NATURE_ADAMANT: text = sText_NatureAdamant; break;
+            case NATURE_NAUGHTY: text = sText_NatureNaughty; break;
+
+            case NATURE_BOLD:    text = sText_NatureBold; break;
+            case NATURE_DOCILE:  text = sText_NatureDocile; break;
+            case NATURE_RELAXED: text = sText_NatureRelaxed; break;
+            case NATURE_IMPISH:  text = sText_NatureImpish; break;
+            case NATURE_LAX:     text = sText_NatureLax; break;
+
+            case NATURE_TIMID:   text = sText_NatureTimid; break;
+            case NATURE_HASTY:   text = sText_NatureHasty; break;
+            case NATURE_SERIOUS: text = sText_NatureSerious; break;
+            case NATURE_JOLLY:   text = sText_NatureJolly; break;
+            case NATURE_NAIVE:   text = sText_NatureNaive; break;
+
+            case NATURE_MODEST:  text = sText_NatureModest; break;
+            case NATURE_MILD:    text = sText_NatureMild; break;
+            case NATURE_QUIET:   text = sText_NatureQuiet; break;
+            case NATURE_BASHFUL: text = sText_NatureBashful; break;
+            case NATURE_RASH:    text = sText_NatureRash; break;
+
+            case NATURE_CALM:    text = sText_NatureCalm; break;
+            case NATURE_GENTLE:  text = sText_NatureGentle; break;
+            case NATURE_SASSY:   text = sText_NatureSassy; break;
+            case NATURE_CAREFUL: text = sText_NatureCareful; break;
+            case NATURE_QUIRKY:  text = sText_NatureQuirky; break;
+        }
+    }
+
+    if (text == NULL)
+    {
+        u8 rand = Random() % 10;
+        if (rand < 5)
+            text = sText_IdleLookingAround;
+        else if (rand < 8)
+            text = sText_IdleBored;
+        else
+            text = sText_IdleTailWag;
+    }
+
+    ShowMysteryGiftMon();
+    ShowFieldMessage(text);
+}

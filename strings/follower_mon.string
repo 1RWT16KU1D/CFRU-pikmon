@@ -2,31 +2,31 @@
 [BUFFER1] eagerly looks around, \nready for adventure!
 
 #org @sText_HappyJumping
-It’s jumping with joy!
+[BUFFER1] is jumping with joy!
 
 #org @sText_LooksLonely
-It looks a little lonely…
+[BUFFER1] looks a little lonely…
 
 #org @sText_TiredButReady
-It looks tired but ready to keep going.
+[BUFFER1] looks tired but ready to keep going.
 
 #org @sText_StatusAsleep
-It’s dreaming deeply.
+[BUFFER1] dreaming deeply.
 
 #org @sText_StatusParalyzed
-It’s struggling to move.
+[BUFFER1] struggling to move.
 
 #org @sText_StatusPoisoned
-It seems to be in discomfort.
+[BUFFER1] seems to be in discomfort.
 
 #org @sText_StatusBurned
-It’s trembling slightly from the heat.
+[BUFFER1] is trembling slightly \nfrom the heat.
 
 #org @sText_StatusFrozen
-It looks stiff and chilly.
+[BUFFER1] looks stiff and chilly.
 
 #org @sText_TypeFire
-It warms up the area around you.
+[BUFFER1] warms up the area around you.
 
 #org @sText_TypeWater
 You feel a cool mist around.
@@ -35,19 +35,94 @@ You feel a cool mist around.
 The air feels slightly charged.
 
 #org @sText_FoundItem
-It found something!\pAdded to the bag!
+[BUFFER1] found something!\pAdded to the bag!
 
 #org @sText_IdleLookingAround
-It’s looking around curiously.
+[BUFFER1] eagerly looks around, \nready for adventure!
 
 #org @sText_IdleBored
-It seems a bit bored…
+[BUFFER1] seems a bit bored…
 
 #org @sText_IdleStretching
-It’s stretching and relaxing a bit.
+[BUFFER1] is stretching and \nrelaxing a bit.
 
 #org @sText_IdleTailWag
-It’s wagging its tail happily.
+[BUFFER1] wagging its tail happily.
 
 #org @sText_RecallsMetLocation
-It seems to miss [BUFFER2]\na little.
+[BUFFER1] seems to miss [BUFFER2]\na little.
+
+#org @sText_NatureHardy
+[BUFFER1] is standing firm.
+
+#org @sText_NatureLonely
+[BUFFER1] looks a little lonely...
+
+#org @sText_NatureBrave
+[BUFFER1] seems fearless.
+
+#org @sText_NatureAdamant
+[BUFFER1] is flexing its muscles!
+
+#org @sText_NatureNaughty
+[BUFFER1] is looking mischievous!
+
+#org @sText_NatureBold
+[BUFFER1] is puffing its chest.
+
+#org @sText_NatureDocile
+[BUFFER1] is calmly watching.
+
+#org @sText_NatureRelaxed
+[BUFFER1] looks chill.
+
+#org @sText_NatureImpish
+[BUFFER1] is grinning playfully.
+
+#org @sText_NatureLax
+[BUFFER1] is wagging lazily.
+
+#org @sText_NatureTimid
+[BUFFER1] is hiding behind you.
+
+#org @sText_NatureHasty
+[BUFFER1] is darting around.
+
+#org @sText_NatureSerious
+[BUFFER1] is staying focused.
+
+#org @sText_NatureJolly
+[BUFFER1] is bouncing happily!
+
+#org @sText_NatureNaive
+[BUFFER1] is staring in awe.
+
+#org @sText_NatureModest
+[BUFFER1] is quietly smiling.
+
+#org @sText_NatureMild
+[BUFFER1] is humming softly.
+
+#org @sText_NatureQuiet
+[BUFFER1] is lost in thought.
+
+#org @sText_NatureBashful
+[BUFFER1] blushes when noticed.
+
+#org @sText_NatureRash
+[BUFFER1] is eager to go!
+
+#org @sText_NatureCalm
+[BUFFER1] brings a peaceful vibe.
+
+#org @sText_NatureGentle
+[BUFFER1] brushes against you.
+
+#org @sText_NatureSassy
+[BUFFER1] smirks confidently.
+
+#org @sText_NatureCareful
+[BUFFER1] scans the area cautiously.
+
+#org @sText_NatureQuirky
+[BUFFER1] is acting weird again.
