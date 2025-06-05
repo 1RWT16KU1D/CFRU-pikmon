@@ -66,9 +66,26 @@ extern const u8 sText_StatusParalyzed[];
 extern const u8 sText_StatusPoisoned[];
 extern const u8 sText_StatusBurned[];
 extern const u8 sText_StatusFrozen[];
+
 extern const u8 sText_TypeFire[];
 extern const u8 sText_TypeWater[];
 extern const u8 sText_TypeElectric[];
+extern const u8 sText_TypeGrass[];
+extern const u8 sText_TypeIce[];
+extern const u8 sText_TypeFighting[];
+extern const u8 sText_TypeFlying[];
+extern const u8 sText_TypePoison[];
+extern const u8 sText_TypeGround[];
+extern const u8 sText_TypeRock[];
+extern const u8 sText_TypeBug[];
+extern const u8 sText_TypeGhost[];
+extern const u8 sText_TypeSteel[];
+extern const u8 sText_TypePsychic[];
+extern const u8 sText_TypeDragon[];
+extern const u8 sText_TypeDark[];
+extern const u8 sText_TypeFairy[];
+extern const u8 sText_TypeNormal[];
+
 extern const u8 sText_FoundItem[];
 extern const u8 sText_IdleLookingAround[];
 extern const u8 sText_IdleBored[];
@@ -126,7 +143,6 @@ void ShowAnonymousFollowerMessage(void)
     u32 maxHp = GetMonData(mon, MON_DATA_MAX_HP, NULL);
     u32 status = GetMonData(mon, MON_DATA_STATUS, NULL);
     u8 type1 = gBaseStats[species].type1;
-    u8 type2 = gBaseStats[species].type2;
     u8 metLocation = GetMonData(mon, MON_DATA_MET_LOCATION, NULL);
 
     const u8 *text = NULL;
@@ -150,18 +166,38 @@ void ShowAnonymousFollowerMessage(void)
         text = sText_StatusBurned;
     else if (((Random() % 100) < 5) && (status & STATUS1_FREEZE))
         text = sText_StatusFrozen;
-    else if (((Random() % 100) < 5) && (type1 == TYPE_FIRE || type2 == TYPE_FIRE))
-        text = sText_TypeFire;
-    else if (((Random() % 100) < 5) && (type1 == TYPE_WATER || type2 == TYPE_WATER))
-        text = sText_TypeWater;
-    else if (((Random() % 100) < 5) && (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC))
-        text = sText_TypeElectric;
+    else if ((Random() % 100) < 10)
+    {
+        switch (type1) // type 1 is used only
+        {
+            case TYPE_FIRE:     text = sText_TypeFire; break;
+            case TYPE_WATER:    text = sText_TypeWater; break;
+            case TYPE_ELECTRIC: text = sText_TypeElectric; break;
+            case TYPE_GRASS:    text = sText_TypeGrass; break;
+            case TYPE_ICE:      text = sText_TypeIce; break;
+            case TYPE_FIGHTING: text = sText_TypeFighting; break;
+            case TYPE_FLYING:   text = sText_TypeFlying; break;
+            case TYPE_POISON:   text = sText_TypePoison; break;
+            case TYPE_GROUND:   text = sText_TypeGround; break;
+            case TYPE_ROCK:     text = sText_TypeRock; break;
+            case TYPE_BUG:      text = sText_TypeBug; break;
+            case TYPE_GHOST:    text = sText_TypeGhost; break;
+            case TYPE_STEEL:    text = sText_TypeSteel; break;
+            case TYPE_PSYCHIC:  text = sText_TypePsychic; break;
+            case TYPE_DRAGON:   text = sText_TypeDragon; break;
+            case TYPE_DARK:     text = sText_TypeDark; break;
+            case TYPE_FAIRY:    text = sText_TypeFairy; break;
+            case TYPE_NORMAL:
+            default:            text = sText_TypeNormal; break;
+        }
+    }
+
     else if (((Random() % 100) < 5) && (metLocation != 0 && (Random() % 100) < 20))
     {
         GetMapName(gStringVar2, metLocation, 0);
         text = sText_RecallsMetLocation;
     }
-    else if (((Random() % 100) < 5)) // 1% chance nature-based
+    else if (((Random() % 100) < 10)) // 10% chance nature-based
     {
         u8 nature = GetNature(mon);
         switch (nature)
@@ -201,9 +237,9 @@ void ShowAnonymousFollowerMessage(void)
     if (text == NULL)
     {
         u8 rand = Random() % 10;
-        if (rand < 5)
+        if (rand < 3)
             text = sText_IdleLookingAround;
-        else if (rand < 8)
+        else if (rand < 7)
             text = sText_IdleBored;
         else
             text = sText_IdleTailWag;

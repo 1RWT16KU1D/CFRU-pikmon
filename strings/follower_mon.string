@@ -34,6 +34,51 @@ You feel a cool mist around.
 #org @sText_TypeElectric
 The air feels slightly charged.
 
+#org @sText_TypeGrass
+There's a fresh scent of grass nearby.
+
+#org @sText_TypeIce
+It's suddenly a bit colder near [BUFFER1].
+
+#org @sText_TypeFighting
+[BUFFER1] looks ready to spar.
+
+#org @sText_TypeFlying
+A breeze follows [BUFFER1] as it moves.
+
+#org @sText_TypePoison
+There's a strange, sharp smell in the air...
+
+#org @sText_TypeGround
+The ground seems to tremble slightly.
+
+#org @sText_TypeRock
+You hear the faint crunch of gravel underfoot.
+
+#org @sText_TypeBug
+You hear faint buzzing near [BUFFER1].
+
+#org @sText_TypeGhost
+A chill runs down your spine...
+
+#org @sText_TypeSteel
+You hear metallic clinking as [BUFFER1] moves.
+
+#org @sText_TypePsychic
+You feel like something is watching you.
+
+#org @sText_TypeDragon
+[BUFFER1]'s presence feels powerful.
+
+#org @sText_TypeDark
+You feel a shadow following you...
+
+#org @sText_TypeFairy
+There's a soft shimmer in the air around [BUFFER1].
+
+#org @sText_TypeNormal
+Nothing seems out of the ordinary.
+
 #org @sText_FoundItem
 [BUFFER1] found something!\pAdded to the bag!
 
