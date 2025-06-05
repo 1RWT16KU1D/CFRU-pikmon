@@ -35,7 +35,7 @@ You feel a cool mist around.
 The air feels slightly charged.
 
 #org @sText_FoundItem
-It found something!\pDo you want to take it?
+It found something!\pAdded to the bag!
 
 #org @sText_IdleLookingAround
 It’s looking around curiously.
@@ -48,3 +48,6 @@ It’s stretching and relaxing a bit.
 
 #org @sText_IdleTailWag
 It’s wagging its tail happily.
+
+#org @sText_RecallsMetLocation
+It seems to miss [BUFFER2]\na little.

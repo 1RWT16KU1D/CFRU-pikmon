@@ -3184,7 +3184,7 @@ void Nuzlock_PokemonEraser(void)
 #define LOW_HAPPINESS 70
 #define HIGH_HAPPINESS 200
 #define LOW_HP_PERCENT 20
-#define ITEM_FIND_CHANCE 1  // 1% chance
+#define ITEM_FIND_CHANCE 100  // 1% chance
 
 extern const u8 sText_HappyJumping[];
 extern const u8 sText_LooksLonely[];
@@ -3202,6 +3202,7 @@ extern const u8 sText_IdleLookingAround[];
 extern const u8 sText_IdleBored[];
 extern const u8 sText_IdleStretching[];
 extern const u8 sText_IdleTailWag[];
+extern const u8 sText_RecallsMetLocation[];
 
 extern struct Pokemon* GetFirstValidPartyMon(void);
 void ShowFollowerMessage(const u8* message)
@@ -3223,52 +3224,51 @@ void ShowAnonymousFollowerMessage(void)
     u32 status = GetMonData(mon, MON_DATA_STATUS, NULL);
     u8 type1 = gBaseStats[species].type1;
     u8 type2 = gBaseStats[species].type2;
+    u8 metLocation = GetMonData(mon, MON_DATA_MET_LOCATION, NULL);
 
     const u8 *text = NULL;
 
-    if ((Random() % 100) < ITEM_FIND_CHANCE)
-        text = sText_FoundItem;
-    else if (happiness >= HIGH_HAPPINESS)
-        text = sText_HappyJumping;
-    else if (happiness <= LOW_HAPPINESS)
-        text = sText_LooksLonely;
-    else if (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT)
-        text = sText_TiredButReady;
-    else if (status & STATUS1_SLEEP)
-        text = sText_StatusAsleep;
-    else if (status & STATUS1_PARALYSIS)
-        text = sText_StatusParalyzed;
-    else if (status & STATUS1_POISON)
-        text = sText_StatusPoisoned;
-    else if (status & STATUS1_BURN)
-        text = sText_StatusBurned;
-    else if (status & STATUS1_FREEZE)
-        text = sText_StatusFrozen;
-    else if (type1 == TYPE_FIRE || type2 == TYPE_FIRE)
-        text = sText_TypeFire;
-    else if (type1 == TYPE_WATER || type2 == TYPE_WATER)
-        text = sText_TypeWater;
-    else if (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC)
-        text = sText_TypeElectric;
-	else
-	{
-		switch (Random() % 4)
+    if (((Random() % 100) < 1) && ((Random() % 100) < ITEM_FIND_CHANCE))
 		{
-			case 0:
-				text = sText_IdleLookingAround;
-				break;
-			case 1:
-				text = sText_IdleBored;
-				break;
-			case 2:
-				text = sText_IdleStretching;
-				break;
-			case 3:
-			default:
-				text = sText_IdleTailWag;
-				break;
+			AddBagItem(ITEM_POKE_BALL, 1); //Add a Poké Ball to the bag as an example
+			text = sText_FoundItem;
 		}
-	}
+    else if (((Random() % 100) < 1) && (happiness >= HIGH_HAPPINESS))
+        text = sText_HappyJumping;
+    else if (((Random() % 100) < 1) && (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT))
+        text = sText_TiredButReady;
+    else if (((Random() % 100) < 1) && (status & STATUS1_SLEEP))
+        text = sText_StatusAsleep;
+    else if (((Random() % 100) < 1) && (status & STATUS1_PARALYSIS))
+        text = sText_StatusParalyzed;
+    else if (((Random() % 100) < 1) && (status & STATUS1_POISON))
+        text = sText_StatusPoisoned;
+    else if (((Random() % 100) < 1) && (status & STATUS1_BURN))
+        text = sText_StatusBurned;
+    else if (((Random() % 100) < 1) && (status & STATUS1_FREEZE))
+        text = sText_StatusFrozen;
+    else if (((Random() % 100) < 1) && (type1 == TYPE_FIRE || type2 == TYPE_FIRE))
+        text = sText_TypeFire;
+    else if (((Random() % 100) < 1) && (type1 == TYPE_WATER || type2 == TYPE_WATER))
+        text = sText_TypeWater;
+    else if (((Random() % 100) < 1) && (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC))
+        text = sText_TypeElectric;
+    else if (((Random() % 100) < 1) && (metLocation != 0 && (Random() % 100) < 20))
+    {
+        GetMapName(gStringVar2, metLocation, 0);
+        text = sText_RecallsMetLocation;
+    }
 
-    ShowFollowerMessage(text);
+    if (text == NULL)
+    {
+        u8 rand = Random() % 10;
+        if (rand < 5)
+            text = sText_IdleLookingAround;
+        else if (rand < 8)
+            text = sText_IdleBored;
+        else
+            text = sText_IdleTailWag;
+    }
+
+    ShowFieldMessage(text);
 }
