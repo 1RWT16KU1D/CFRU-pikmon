@@ -351,7 +351,12 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void; 
 		StartMenu_FadeScreenIfLeavingOverworld();
-		RemoveFollowerBeforeBattle(); //Remove follower before entering a menu
+		// Only remove follower for certain actions
+		if (sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_SAVE && sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT &&
+			sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT_LEFT && sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT_RIGHT)
+		{
+			RemoveFollowerBeforeBattle();
+		}
 		RemoveTimeBox();
 		return FALSE;
 	}
@@ -359,8 +364,13 @@ bool8 StartCB_HandleInput(void)
 	{
 		RemoveTimeBox();
 		DestroyHelpMessageWindow_();
-		RestoreFollowerAfterBattle(); //Restore follower after exiting a menu
-		ChangeFollowerPalette();
+		// Only remove follower for certain actions
+		if (sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_SAVE && sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT &&
+			sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT_LEFT && sStartMenuOrder[sStartMenuCursorPos] != STARTMENU_EXIT_RIGHT)
+		{
+			RestoreFollowerAfterBattle(); //Restore follower after exiting a menu
+			ChangeFollowerPalette();
+		}
 		CloseStartMenu();
 		return TRUE;
 	}
