@@ -309,8 +309,11 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 			SetSurfDismount();
 		}
 		else // Happens just after player runs 1 tile on land (after surf is over)
-		{    
-			FixFollowerMonLocalIdAfterWarp();
+		{
+			sp0D2_DestroyFollowerSprite();
+			VarSet(0x8001, 0xFD);
+			sp0D1_SetUpFollowerSprite();
+			ShowFollower(); //Make sure the follower is visible
 		}
 
 		goto RESET;
@@ -1048,6 +1051,7 @@ void PlayerGoThroughDoor(u8 taskId)
 			EventObjectClearHeldMovementIfActive(&gEventObjects[followerObjId]);
 			EventObjectSetHeldMovement(&gEventObjects[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
 			UpdateFollowerMonSprite();
+			ChangeFollowerPalette();
 			#ifdef SHRINK_PLAYER_THROUGH_DOOR
 			struct Sprite* sprite = &gSprites[gEventObjects[followerObjId].spriteId];
 			sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
@@ -1689,19 +1693,6 @@ void FixFollowerMonLocalIdAfterWarp(void)
 	   {
 	   gEventObjects[gFollowerState.objId].localId = 30;
 	   }
-	   	struct EventObject* player = &gEventObjects[gPlayerAvatar->eventObjectId];
-		struct EventObject* follower = &gEventObjects[GetFollowerMapObjId()];
-
-		// Move follower right behind player
-		MoveEventObjectToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
-		follower->facingDirection = player->facingDirection;
-		follower->movementDirection = player->movementDirection;
-		EventObjectTurn(follower, player->facingDirection);
-
-		// Reset the follower state's log so no false delta
-		gFollowerState.log.x = player->currentCoords.x;
-		gFollowerState.log.y = player->currentCoords.y;
-		ShowFollower();
 	}
 }
 void RemoveFollowerBeforeBattle(void)
