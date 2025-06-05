@@ -1,2 +1,50 @@
 #org @gText_FollowerMon_Test
 [BUFFER1] eagerly looks around, \nready for adventure!
+
+#org @sText_HappyJumping
+It’s jumping with joy!
+
+#org @sText_LooksLonely
+It looks a little lonely…
+
+#org @sText_TiredButReady
+It looks tired but ready to keep going.
+
+#org @sText_StatusAsleep
+It’s dreaming deeply.
+
+#org @sText_StatusParalyzed
+It’s struggling to move.
+
+#org @sText_StatusPoisoned
+It seems to be in discomfort.
+
+#org @sText_StatusBurned
+It’s trembling slightly from the heat.
+
+#org @sText_StatusFrozen
+It looks stiff and chilly.
+
+#org @sText_TypeFire
+It warms up the area around you.
+
+#org @sText_TypeWater
+You feel a cool mist around.
+
+#org @sText_TypeElectric
+The air feels slightly charged.
+
+#org @sText_FoundItem
+It found something!\pDo you want to take it?
+
+#org @sText_IdleLookingAround
+It’s looking around curiously.
+
+#org @sText_IdleBored
+It seems a bit bored…
+
+#org @sText_IdleStretching
+It’s stretching and relaxing a bit.
+
+#org @sText_IdleTailWag
+It’s wagging its tail happily.

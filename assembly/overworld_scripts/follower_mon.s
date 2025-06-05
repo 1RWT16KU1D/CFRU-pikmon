@@ -13,7 +13,8 @@ EventScript_FollowerMon:
     bufferpokemon 0x0 0x4004
     callasm ShowMysteryGiftMon
     cry 0x4004 0x0
-    msgbox gText_FollowerMon_Test MSG_NORMAL
+    callasm ShowAnonymousFollowerMessage
+    msgbox gStringVar4 MSG_NORMAL
     callasm Remove_PokemonPic
     release
     end

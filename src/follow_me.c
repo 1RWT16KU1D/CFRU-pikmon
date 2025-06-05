@@ -1047,7 +1047,7 @@ void PlayerGoThroughDoor(u8 taskId)
 		{
 			EventObjectClearHeldMovementIfActive(&gEventObjects[followerObjId]);
 			EventObjectSetHeldMovement(&gEventObjects[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
-
+			UpdateFollowerMonSprite();
 			#ifdef SHRINK_PLAYER_THROUGH_DOOR
 			struct Sprite* sprite = &gSprites[gEventObjects[followerObjId].spriteId];
 			sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
@@ -1728,7 +1728,6 @@ void RestoreFollowerAfterBattle(void)
 		FlagClear(FLAG_FOLLOWER_WAS_SURFING);
 		CreateFollowerMonObject();
 		ShowFollower();
-		FixFollowerMonLocalIdAfterWarp(); // just in case
 		gFollowerState.inProgress = TRUE;
 	}
 }

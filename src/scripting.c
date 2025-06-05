@@ -51,6 +51,7 @@
 #include "../include/new/scrolling_multichoice.h"
 #include "../include/new/Vanilla_functions_battle.h"
 #include "../include/new/wild_encounter.h"
+#include "../include/random.h"
 /*
 scripting.c
 	handles all scripting specials or other functions associated with scripts
@@ -3178,4 +3179,96 @@ void Nuzlock_PokemonEraser(void)
         CompactPartySlots();
         CalculatePlayerPartyCount();
     }
+}
+
+#define LOW_HAPPINESS 70
+#define HIGH_HAPPINESS 200
+#define LOW_HP_PERCENT 20
+#define ITEM_FIND_CHANCE 1  // 1% chance
+
+extern const u8 sText_HappyJumping[];
+extern const u8 sText_LooksLonely[];
+extern const u8 sText_TiredButReady[];
+extern const u8 sText_StatusAsleep[];
+extern const u8 sText_StatusParalyzed[];
+extern const u8 sText_StatusPoisoned[];
+extern const u8 sText_StatusBurned[];
+extern const u8 sText_StatusFrozen[];
+extern const u8 sText_TypeFire[];
+extern const u8 sText_TypeWater[];
+extern const u8 sText_TypeElectric[];
+extern const u8 sText_FoundItem[];
+extern const u8 sText_IdleLookingAround[];
+extern const u8 sText_IdleBored[];
+extern const u8 sText_IdleStretching[];
+extern const u8 sText_IdleTailWag[];
+
+extern struct Pokemon* GetFirstValidPartyMon(void);
+void ShowFollowerMessage(const u8* message)
+{
+    StringExpandPlaceholders(gStringVar4, message);
+    ShowFieldMessage(gStringVar4);
+}
+
+void ShowAnonymousFollowerMessage(void)
+{
+    struct Pokemon *mon = GetFirstValidPartyMon();
+    if (mon == NULL)
+        return;
+
+    u8 happiness = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u32 hp = GetMonData(mon, MON_DATA_HP, NULL);
+    u32 maxHp = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+    u32 status = GetMonData(mon, MON_DATA_STATUS, NULL);
+    u8 type1 = gBaseStats[species].type1;
+    u8 type2 = gBaseStats[species].type2;
+
+    const u8 *text = NULL;
+
+    if ((Random() % 100) < ITEM_FIND_CHANCE)
+        text = sText_FoundItem;
+    else if (happiness >= HIGH_HAPPINESS)
+        text = sText_HappyJumping;
+    else if (happiness <= LOW_HAPPINESS)
+        text = sText_LooksLonely;
+    else if (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT)
+        text = sText_TiredButReady;
+    else if (status & STATUS1_SLEEP)
+        text = sText_StatusAsleep;
+    else if (status & STATUS1_PARALYSIS)
+        text = sText_StatusParalyzed;
+    else if (status & STATUS1_POISON)
+        text = sText_StatusPoisoned;
+    else if (status & STATUS1_BURN)
+        text = sText_StatusBurned;
+    else if (status & STATUS1_FREEZE)
+        text = sText_StatusFrozen;
+    else if (type1 == TYPE_FIRE || type2 == TYPE_FIRE)
+        text = sText_TypeFire;
+    else if (type1 == TYPE_WATER || type2 == TYPE_WATER)
+        text = sText_TypeWater;
+    else if (type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC)
+        text = sText_TypeElectric;
+	else
+	{
+		switch (Random() % 4)
+		{
+			case 0:
+				text = sText_IdleLookingAround;
+				break;
+			case 1:
+				text = sText_IdleBored;
+				break;
+			case 2:
+				text = sText_IdleStretching;
+				break;
+			case 3:
+			default:
+				text = sText_IdleTailWag;
+				break;
+		}
+	}
+
+    ShowFollowerMessage(text);
 }
