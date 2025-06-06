@@ -1873,7 +1873,7 @@ u8 GetExceptionMoveType(u8 bankAtk, u16 move)
 				}
 			}
 			break;
-				// For Terastallization
+		// For Terastallization
 		case MOVE_TERABLAST:
 			moveType = TYPE_NORMAL;
 			if (IsTerastallized(bankAtk))
@@ -1994,7 +1994,7 @@ u8 GetMonExceptionMoveType(struct Pokemon* mon, u16 move)
 				}
 			}
 			break;
-				// For Terastallization
+		// For Terastallization
 		case MOVE_TERABLAST:
 			if (gMain.inBattle && IsTerastallized(gBankAttacker))
 				moveType = GetTeraType(gBankAttacker);

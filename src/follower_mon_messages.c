@@ -164,26 +164,30 @@ void ShowAnonymousFollowerMessage(void)
     const u8 *text = NULL;
 
     if (((Random() % 100) < ITEM_FIND_CHANCE))
-		{
-            u8 commonItems[] = {ITEM_POTION, ITEM_POKE_BALL, ITEM_ANTIDOTE, ITEM_PARALYZE_HEAL, ITEM_AWAKENING, ITEM_BURN_HEAL, ITEM_ICE_HEAL};
-            u8 item = commonItems[Random() % ARRAY_COUNT(commonItems)];
-            AddBagItem(item, 1); //Add a Poké Ball to the bag as an example
-			text = sText_FoundItem;
-		}
+    {
+        u8 commonItems[] = {ITEM_POTION, ITEM_POKE_BALL, ITEM_ANTIDOTE, ITEM_PARALYZE_HEAL, ITEM_AWAKENING, ITEM_BURN_HEAL, ITEM_ICE_HEAL};
+        u8 item = commonItems[Random() % ARRAY_COUNT(commonItems)];
+    
+        AddBagItem(item, 1);
+        text = sText_FoundItem; 
+    }
     else if (((Random() % 100) < 10) && (happiness >= HIGH_HAPPINESS))
         text = sText_HappyJumping;
     else if (((Random() % 100) < 10) && (hp != 0 && ((hp * 100) / maxHp) <= LOW_HP_PERCENT))
         text = sText_TiredButReady;
-    else if (((Random() % 100) < 10) && (status & STATUS1_SLEEP))
-        text = sText_StatusAsleep;
-    else if (((Random() % 100) < 10) && (status & STATUS1_PARALYSIS))
-        text = sText_StatusParalyzed;
-    else if (((Random() % 100) < 10) && (status & STATUS1_POISON))
-        text = sText_StatusPoisoned;
-    else if (((Random() % 100) < 10) && (status & STATUS1_BURN))
-        text = sText_StatusBurned;
-    else if (((Random() % 100) < 10) && (status & STATUS1_FREEZE))
-        text = sText_StatusFrozen;
+    else if (((Random() % 100) < 10))
+    {
+        if (status & STATUS1_SLEEP)
+            text = sText_StatusAsleep;
+        else if (status & STATUS_PSN_ANY)
+            text = sText_StatusPoisoned;
+        else if (status & STATUS1_PARALYSIS)
+            text = sText_StatusParalyzed;
+        else if (status & STATUS1_BURN)
+            text = sText_StatusBurned;
+        else if (status & STATUS1_FREEZE)
+            text = sText_StatusFrozen;
+    }
     else if ((Random() % 100) < 10)
     {
         switch (type1) // type 1 is used only
