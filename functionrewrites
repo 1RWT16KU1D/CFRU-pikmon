@@ -16,3 +16,6 @@ PrintSkillsPage 0x081370ec 0 1
 #ifdef BW_SUMMARY_SCREEN
 ShowPokemonSummaryScreen 0x081344F8 0 1
 #endif
+#ifdef MID_BATTLE_EVO
+EvolutionScene 0x080cddf4 0 1
+#endif

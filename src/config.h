@@ -375,6 +375,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_EXPLAINED_MINING_RULES 0xA09 //If set, the player will not be shown the mining rules second time when using the mining feature
 //#define BW_SUMMARY_SCREEN // Implements the BW summary screen
 //#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
+#define MID_BATTLE_EVO //Comment this line to remove Mid-Battle Evolution.
+
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 
