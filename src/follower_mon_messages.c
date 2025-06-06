@@ -131,7 +131,9 @@ extern const u8 sText_SkippingAlong[];
 extern const u8 sText_SeemsDistracted[];
 extern const u8 sText_FlexesMuscles[];
 
-
+extern const u8 sText_EnjoyingSunlight[];
+extern const u8 sText_NighttimeEnergy[];
+extern const u8 sText_MorningGreeting[];
 
 extern void ShowMysteryGiftMon(void);
 extern struct Pokemon* GetFirstValidPartyMon(void);
@@ -163,7 +165,9 @@ void ShowAnonymousFollowerMessage(void)
 
     if (((Random() % 100) < ITEM_FIND_CHANCE))
 		{
-			AddBagItem(ITEM_POKE_BALL, 1); //Add a Poké Ball to the bag as an example
+            u8 commonItems[] = {ITEM_POTION, ITEM_POKE_BALL, ITEM_ANTIDOTE, ITEM_PARALYZE_HEAL, ITEM_AWAKENING, ITEM_BURN_HEAL, ITEM_ICE_HEAL};
+            u8 item = commonItems[Random() % ARRAY_COUNT(commonItems)];
+            AddBagItem(item, 1); //Add a Poké Ball to the bag as an example
 			text = sText_FoundItem;
 		}
     else if (((Random() % 100) < 10) && (happiness >= HIGH_HAPPINESS))
@@ -301,6 +305,15 @@ void ShowAnonymousFollowerMessage(void)
         u8 rand = Random() % 10;
         if (rand < 3)
             text = sText_IdleLookingAround;
+        else if ((Random() % 100) < 10)
+        {
+            if (IsDayTime())
+                text = sText_EnjoyingSunlight;
+            else if (IsNightTime())
+                text = sText_NighttimeEnergy;
+            else if (IsMorning())
+                text = sText_MorningGreeting;
+        }
         else if (rand < 7)
             text = sText_IdleBored;
         else
