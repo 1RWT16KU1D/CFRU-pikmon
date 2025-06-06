@@ -1052,7 +1052,6 @@ void PlayerGoThroughDoor(u8 taskId)
 			EventObjectClearHeldMovementIfActive(&gEventObjects[followerObjId]);
 			EventObjectSetHeldMovement(&gEventObjects[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
 			UpdateFollowerMonSprite();
-			ChangeFollowerPalette();
 			#ifdef SHRINK_PLAYER_THROUGH_DOOR
 			struct Sprite* sprite = &gSprites[gEventObjects[followerObjId].spriteId];
 			sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
@@ -1198,6 +1197,7 @@ static void Task_FollowerOutOfDoor(u8 taskId)
 			{
 				follower->invisible = FALSE;
 				EventObjectTurn(follower, DIR_SOUTH); //The follower should be facing down when it comes out the door
+				ChangeFollowerPalette();
 				EventObjectSetHeldMovement(follower, MOVEMENT_ACTION_WALK_NORMAL_DOWN);
 				task->data[0] = 2;
 
