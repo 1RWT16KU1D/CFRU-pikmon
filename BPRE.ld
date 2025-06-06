@@ -2460,3 +2460,4 @@ BufferMoveToLearnIntoBattleTextBuff2 = 0x8026878 | 1;
 gSpeciesInfo = 0x8254784 | 1 ;
 GetAbilityBySpecies = 0x8040d38 | 1;
 GetPartyIdFromBattlePartyId = 0x8128030 | 1;
+DecompressPicFromTable = 0x800ec8c | 1;
