@@ -2397,3 +2397,5 @@ sStarObjTiles = 0x8463b64;
 sStarObjPal = 0x8463b44;
 sStarObjOamData = 0x8463b30;
 sStarObjAnimTable = 0x8463b40;
+CB2_ReturnToTradeMenuFromSummary = 0x804cf14 | 1;
+CreateMonPicSprite = 0x810c16c | 1;

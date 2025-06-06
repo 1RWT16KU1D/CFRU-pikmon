@@ -61,6 +61,7 @@ void __attribute__((long_call)) CreateExpBarObjs(u16 tileTag, u16 palTag);
 s16 __attribute__((long_call)) SeekToNextMonInBox(struct BoxPokemon * boxMons, u8 curIndex, u8 maxIndex, u8 flags);
 s8 __attribute__((long_call)) SeekToNextMonInMultiParty(s8 direction);
 s8 __attribute__((long_call)) SeekToNextMonInSingleParty(s8 direction);
+u16 __attribute__((long_call)) CreateMonPicSprite(u16 species, u32 otId, u32 personality, bool8 isFrontPic, s16 x, s16 y, u8 paletteSlot, u16 paletteTag, bool8 ignoreDeoxys);
 bool8 IsMultiBattle(void);
 void TransferPlttBuffer(void);
 
@@ -75,6 +76,17 @@ enum
 	RED,
 	ORANGE,
 	RED_2,
+};
+
+enum {
+    FONT_SMALL,
+    FONT_NORMAL_COPY_1,
+    FONT_NORMAL,
+    FONT_NORMAL_COPY_2,
+    FONT_MALE,
+    FONT_FEMALE,
+    FONT_BRAILLE,
+    FONT_BOLD,
 };
 
 struct ShinyStarObjData
