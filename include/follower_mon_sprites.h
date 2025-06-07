@@ -1455,6 +1455,22 @@ extern const u16 gFollowerMonPic0716_RotomFanPal[];
 extern const u16 gFollowerMonPic0717_RotomMowPal[];
 extern const u16 gFollowerMonPic0718_GiratinaOriginPal[];
 extern const u16 gFollowerMonPic0719_ShayminSkyPal[];
+extern const u16 gFollowerMonPic0720_ArceusFightPal[];
+extern const u16 gFollowerMonPic0721_ArceusFlyingPal[];
+extern const u16 gFollowerMonPic0722_ArceusPoisonPal[];
+extern const u16 gFollowerMonPic0723_ArceusGroundPal[];
+extern const u16 gFollowerMonPic0724_ArceusRockPal[];
+extern const u16 gFollowerMonPic0725_ArceusBugPal[];
+extern const u16 gFollowerMonPic0726_ArceusGhostPal[];
+extern const u16 gFollowerMonPic0727_ArceusSteelPal[];
+extern const u16 gFollowerMonPic0728_ArceusFirePal[];
+extern const u16 gFollowerMonPic0729_ArceusWaterPal[];
+extern const u16 gFollowerMonPic0730_ArceusGrassPal[];
+extern const u16 gFollowerMonPic0731_ArceusElectricPal[];
+extern const u16 gFollowerMonPic0732_ArceusPsychicPal[];
+extern const u16 gFollowerMonPic0733_ArceusIcePal[];
+extern const u16 gFollowerMonPic0734_ArceusDragonPal[];
+extern const u16 gFollowerMonPic0735_ArceusDarkPal[];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[];
@@ -2117,5 +2133,21 @@ extern const u16 gFollowerMonPic2716_RotomFanShinyPal[];
 extern const u16 gFollowerMonPic2717_RotomMowShinyPal[];
 extern const u16 gFollowerMonPic2718_GiratinaOriginShinyPal[];
 extern const u16 gFollowerMonPic2719_ShayminSkyShinyPal[];
+extern const u16 gFollowerMonPic2720_ArceusFightShinyPal[];
+extern const u16 gFollowerMonPic2721_ArceusFlyingShinyPal[];
+extern const u16 gFollowerMonPic2722_ArceusPoisonShinyPal[];
+extern const u16 gFollowerMonPic2723_ArceusGroundShinyPal[];
+extern const u16 gFollowerMonPic2724_ArceusRockShinyPal[];
+extern const u16 gFollowerMonPic2725_ArceusBugShinyPal[];
+extern const u16 gFollowerMonPic2726_ArceusGhostShinyPal[];
+extern const u16 gFollowerMonPic2727_ArceusSteelShinyPal[];
+extern const u16 gFollowerMonPic2728_ArceusFireShinyPal[];
+extern const u16 gFollowerMonPic2729_ArceusWaterShinyPal[];
+extern const u16 gFollowerMonPic2730_ArceusGrassShinyPal[];
+extern const u16 gFollowerMonPic2731_ArceusElectricShinyPal[];
+extern const u16 gFollowerMonPic2732_ArceusPsychicShinyPal[];
+extern const u16 gFollowerMonPic2733_ArceusIceShinyPal[];
+extern const u16 gFollowerMonPic2734_ArceusDragonShinyPal[];
+extern const u16 gFollowerMonPic2735_ArceusDarkShinyPal[];
 
 #endif

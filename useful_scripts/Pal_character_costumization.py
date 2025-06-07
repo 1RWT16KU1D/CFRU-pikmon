@@ -1,16 +1,27 @@
 import re
 
 # Starting hex ID (user-defined)
-start_hex_id = 0x179F
-start_hex_id_poke = 0x2C9
+start_hex_id = 0x16A7
+start_hex_id_poke = 0x2D0
 
 # Input species list
 input_species_block = """
-#define SPECIES_ROTOM_HEAT 0x2C9
-#define SPECIES_ROTOM_WASH 0x2CA
-#define SPECIES_ROTOM_FROST 0x2CB
-#define SPECIES_ROTOM_FAN 0x2CC
-#define SPECIES_ROTOM_MOW 0x2CD
+#define SPECIES_ARCEUS 0x2D0
+#define SPECIES_ARCEUS 0x2D1
+#define SPECIES_ARCEUS 0x2D2
+#define SPECIES_ARCEUS 0x2D3
+#define SPECIES_ARCEUS 0x2D4
+#define SPECIES_ARCEUS 0x2D5
+#define SPECIES_ARCEUS 0x2D6
+#define SPECIES_ARCEUS 0x2D7
+#define SPECIES_ARCEUS 0x2D8
+#define SPECIES_ARCEUS 0x2D9
+#define SPECIES_ARCEUS 0x2DA
+#define SPECIES_ARCEUS 0x2DB
+#define SPECIES_ARCEUS 0x2DC
+#define SPECIES_ARCEUS 0x2DD
+#define SPECIES_ARCEUS 0x2DE
+#define SPECIES_ARCEUS 0x2DF
 """
 
 # Regex to extract species names
@@ -27,4 +38,4 @@ for line in input_species_block.strip().splitlines():
 for i, species in enumerate(species_names):
     hex_id = start_hex_id + i
     hex_id_2 = start_hex_id_poke + i
-    print(f"        {{gFollowerMonPic2{hex_id_2}_{species.title()}ShinyPal, 0x{hex_id:04X}}},")
+    print(f"        {{gFollowerMonPic0{hex_id_2}_{species.title()}Pal, 0x{hex_id:04X}}},")
