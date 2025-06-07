@@ -39,6 +39,7 @@ u8 __attribute__((long_call)) GetAbilityBySpecies(u16 species, bool8 altAbility)
 u8 __attribute__((long_call)) GetPartyIdFromBattlePartyId(u8 battlePartyId);
 void VBlankCB_Battle(void);
 void ClearTemporarySpeciesSpriteData(u8 bank, bool8 dontClearSubstitute);
+void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffer, s32 species);
 
 struct SpeciesInfo
 {
