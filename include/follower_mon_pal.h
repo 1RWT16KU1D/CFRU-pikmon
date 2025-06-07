@@ -5,8 +5,10 @@
 
 extern const struct SpritePalette gObjectEventSpritePalettes13[];
 extern const struct SpritePalette gObjectEventSpritePalettes15[];
+extern const struct SpritePalette gObjectEventSpritePalettes17[];
 
 static const struct SpritePalette* const sObjectEventSpritePalettesTables[] = {
     gObjectEventSpritePalettes13,
     gObjectEventSpritePalettes15,
+    gObjectEventSpritePalettes17,
 };
