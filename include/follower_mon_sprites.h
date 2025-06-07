@@ -775,6 +775,11 @@ extern const u8 gFollowerMonPic0704_Frillish_FTiles[];
 extern const u8 gFollowerMonPic0705_Jellicent_FTiles[];
 extern const u8 gFollowerMonPic0711_ShellosEastTiles[];
 extern const u8 gFollowerMonPic0712_GastrodonEastTiles[];
+extern const u8 gFollowerMonPic0713_RotomHeatTiles[];
+extern const u8 gFollowerMonPic0714_RotomWashTiles[];
+extern const u8 gFollowerMonPic0715_RotomFrostTiles[];
+extern const u8 gFollowerMonPic0716_RotomFanTiles[];
+extern const u8 gFollowerMonPic0717_RotomMowTiles[];
 
 
 // Palettes declarations
@@ -1441,6 +1446,11 @@ extern const u16 gFollowerMonPic0466_WormadamSandyPal[];
 extern const u16 gFollowerMonPic0466_WormadamTrashPal[];
 extern const u16 gFollowerMonPic0711_ShellosEastPal[];
 extern const u16 gFollowerMonPic0712_GastrodonEastPal[];
+extern const u16 gFollowerMonPic0713_RotomHeatPal[];
+extern const u16 gFollowerMonPic0714_RotomWashPal[];
+extern const u16 gFollowerMonPic0715_RotomFrostPal[];
+extern const u16 gFollowerMonPic0716_RotomFanPal[];
+extern const u16 gFollowerMonPic0717_RotomMowPal[];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[];
@@ -2096,5 +2106,10 @@ extern const u16 gFollowerMonPic2699_KyuremShinyPal[];
 extern const u16 gFollowerMonPic2700_KeldeoShinyPal[];
 extern const u16 gFollowerMonPic2701_MeloettaShinyPal[];
 extern const u16 gFollowerMonPic2702_GenesectShinyPal[];
+extern const u16 gFollowerMonPic2713_RotomHeatShinyPal[];
+extern const u16 gFollowerMonPic2714_RotomWashShinyPal[];
+extern const u16 gFollowerMonPic2715_RotomFrostShinyPal[];
+extern const u16 gFollowerMonPic2716_RotomFanShinyPal[];
+extern const u16 gFollowerMonPic2717_RotomMowShinyPal[];
 
 #endif

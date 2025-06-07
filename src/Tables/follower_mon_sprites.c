@@ -661,6 +661,11 @@ MON_OW_TEMPLATE_32x32_FRAMES(0704,Frillish_F)
 MON_OW_TEMPLATE_32x32_FRAMES(0705,Jellicent_F)
 MON_OW_TEMPLATE_32x32_FRAMES(0711, ShellosEast)
 MON_OW_TEMPLATE_32x32_FRAMES(0712, GastrodonEast)
+MON_OW_TEMPLATE_32x32_FRAMES(0713,RotomHeat)
+MON_OW_TEMPLATE_32x32_FRAMES(0714,RotomWash)
+MON_OW_TEMPLATE_32x32_FRAMES(0715,RotomFrost)
+MON_OW_TEMPLATE_32x32_FRAMES(0716,RotomFan)
+MON_OW_TEMPLATE_32x32_FRAMES(0717,RotomMow)
 
 
 //Add Followers Graphics Info Here
@@ -1333,6 +1338,11 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
     MON_OW_OBJECT_GRAPHICS(169D, Jellicent_F)
     MON_OW_OBJECT_GRAPHICS(169E, ShellosEast)
     MON_OW_OBJECT_GRAPHICS(169F, GastrodonEast)
+    MON_OW_OBJECT_GRAPHICS(16A0, RotomHeat)
+    MON_OW_OBJECT_GRAPHICS(16A1, RotomWash)
+    MON_OW_OBJECT_GRAPHICS(16A2, RotomFrost)
+    MON_OW_OBJECT_GRAPHICS(16A3, RotomFan)
+    MON_OW_OBJECT_GRAPHICS(16A4, RotomMow)
 };
 
 // Link Species with Overworld Sprites
@@ -1997,6 +2007,11 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_JELLICENT_F] = 0x03AB,
     [SPECIES_SHELLOS_EAST] = 0x03AC,
     [SPECIES_GASTRODON_EAST] = 0x03AD,
+    [SPECIES_ROTOM_HEAT] = 0x03AE,
+    [SPECIES_ROTOM_WASH] = 0x03AF,
+    [SPECIES_ROTOM_FROST] = 0x03B0,
+    [SPECIES_ROTOM_FAN] = 0x03B1,
+    [SPECIES_ROTOM_MOW] = 0x03B2,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =

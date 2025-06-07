@@ -989,6 +989,11 @@ static const u16 sSpeciesToPaletteTag[] =
     [SPECIES_BURMY_TRASH] = 0x0179C,
     [SPECIES_WORMADAM_SANDY] = 0x179D,
     [SPECIES_WORMADAM_TRASH] = 0x179E,
+    [SPECIES_ROTOM_HEAT] = 0x179F,
+    [SPECIES_ROTOM_WASH] = 0x17A0,
+    [SPECIES_ROTOM_FROST] = 0x17A1,
+    [SPECIES_ROTOM_FAN] = 0x17A2,
+    [SPECIES_ROTOM_MOW] = 0x17A3,
 };
 void ChangeFollowerPalette(void)
 {
