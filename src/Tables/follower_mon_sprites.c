@@ -656,6 +656,9 @@ MON_OW_TEMPLATE_64x64_FRAMES(0699,Kyurem)
 MON_OW_TEMPLATE_32x32_FRAMES(0700,Keldeo)
 MON_OW_TEMPLATE_32x32_FRAMES(0701,Meloetta)
 MON_OW_TEMPLATE_32x32_FRAMES(0702,Genesect)
+MON_OW_TEMPLATE_32x32_FRAMES(0703,Unfezant_F)
+MON_OW_TEMPLATE_32x32_FRAMES(0704,Frillish_F)
+MON_OW_TEMPLATE_32x32_FRAMES(0705,Jellicent_F)
 
 
 //Add Followers Graphics Info Here
@@ -1323,6 +1326,9 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
     MON_OW_OBJECT_GRAPHICS(1698, Keldeo)
     MON_OW_OBJECT_GRAPHICS(1699, Meloetta)
     MON_OW_OBJECT_GRAPHICS(169A, Genesect)
+    MON_OW_OBJECT_GRAPHICS(169B, Unfezant_F)
+    MON_OW_OBJECT_GRAPHICS(169B, Frillish_F)
+    MON_OW_OBJECT_GRAPHICS(169D, Jellicent_F)
 };
 
 // Link Species with Overworld Sprites
@@ -1982,6 +1988,9 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_KELDEO] = 0x03A6,
     [SPECIES_MELOETTA] = 0x03A7,
     [SPECIES_GENESECT] = 0x03A8,
+    [SPECIES_UNFEZANT_F] = 0x03A9,
+    [SPECIES_FRILLISH_F] = 0x03AA,
+    [SPECIES_JELLICENT_F] = 0x03AB,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =

@@ -925,6 +925,9 @@ static NPCPtr sOverworldTable4[] =
 	&gFollowerMonGfxTable2[166], // Keldeo
 	&gFollowerMonGfxTable2[167], // Meloetta
 	&gFollowerMonGfxTable2[168], // Genesect
+	&gFollowerMonGfxTable2[169], // Unfezant_F
+	&gFollowerMonGfxTable2[170], // Frillish_F
+	&gFollowerMonGfxTable2[171], // Jellicent_F
 };
 
 	// create 255 OW tables
