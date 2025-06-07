@@ -396,4 +396,8 @@ return:
     .word 0x02024284
 .VAR:
     .word 0x020270B8 + (0x8004 * 2)
+
+.global New_CopyPlayerPartyMonToBattleData
+New_CopyPlayerPartyMonToBattleData:
+    bl CopyPlayerPartyMonToBattleData_Hook
 	
