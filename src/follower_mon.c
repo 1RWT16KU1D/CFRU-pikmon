@@ -985,6 +985,8 @@ static const u16 sSpeciesToPaletteTag[] =
     [SPECIES_KELDEO] = 0x1798,
     [SPECIES_MELOETTA] = 0x1799,
     [SPECIES_GENESECT] = 0x179A,
+    [SPECIES_BURMY_SANDY] = 0x179B,
+    [SPECIES_BURMY_TRASH] = 0x0179C,
 };
 void ChangeFollowerPalette(void)
 {

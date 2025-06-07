@@ -1433,6 +1433,8 @@ extern const u16 gFollowerMonPic0702_GenesectPal[];
 extern const u16 gFollowerMonPic0703_Unfezant_FPal[];
 extern const u16 gFollowerMonPic0704_Frillish_FPal[];
 extern const u16 gFollowerMonPic0705_Jellicent_FPal[];
+extern const u16 gFollowerMonPic0465_BurmyTrashPal[];
+extern const u16 gFollowerMonPic0465_BurmySandyPal[];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[];
