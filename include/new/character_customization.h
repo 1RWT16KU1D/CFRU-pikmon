@@ -769,6 +769,8 @@ extern const u16 gFollowerMonPic0704_Frillish_FPal[255];
 extern const u16 gFollowerMonPic0705_Jellicent_FPal[255];
 extern const u16 gFollowerMonPic0465_BurmyTrashPal[255];
 extern const u16 gFollowerMonPic0465_BurmySandyPal[255];
+extern const u16 gFollowerMonPic0466_WormadamSandyPal[255];
+extern const u16 gFollowerMonPic0466_WormadamTrashPal[255];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[255];
