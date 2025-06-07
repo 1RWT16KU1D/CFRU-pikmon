@@ -666,6 +666,8 @@ MON_OW_TEMPLATE_32x32_FRAMES(0714,RotomWash)
 MON_OW_TEMPLATE_32x32_FRAMES(0715,RotomFrost)
 MON_OW_TEMPLATE_32x32_FRAMES(0716,RotomFan)
 MON_OW_TEMPLATE_32x32_FRAMES(0717,RotomMow)
+MON_OW_TEMPLATE_64x64_FRAMES(0718, GiratinaOrigin)
+MON_OW_TEMPLATE_32x32_FRAMES(0719, ShayminSky)
 
 
 //Add Followers Graphics Info Here
@@ -1343,6 +1345,8 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
     MON_OW_OBJECT_GRAPHICS(16A2, RotomFrost)
     MON_OW_OBJECT_GRAPHICS(16A3, RotomFan)
     MON_OW_OBJECT_GRAPHICS(16A4, RotomMow)
+    MON_OW_OBJECT_GRAPHICS_64(16A5, GiratinaOrigin)
+    MON_OW_OBJECT_GRAPHICS(16A6, ShayminSky)
 };
 
 // Link Species with Overworld Sprites
@@ -2012,6 +2016,8 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_ROTOM_FROST] = 0x03B0,
     [SPECIES_ROTOM_FAN] = 0x03B1,
     [SPECIES_ROTOM_MOW] = 0x03B2,
+    [SPECIES_GIRATINA_ORIGIN] = 0x03B3,
+    [SPECIES_SHAYMIN_SKY] = 0x03B4,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =

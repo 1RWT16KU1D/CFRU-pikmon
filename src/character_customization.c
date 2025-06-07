@@ -935,6 +935,8 @@ static NPCPtr sOverworldTable4[] =
 	&gFollowerMonGfxTable2[176], // RotomFrost
 	&gFollowerMonGfxTable2[177], // RotomFan
 	&gFollowerMonGfxTable2[178], // RotomMow
+	&gFollowerMonGfxTable2[179], // Giratine_origin
+	&gFollowerMonGfxTable2[180], // Shaymin_sky
 };
 
 	// create 255 OW tables
@@ -2201,6 +2203,8 @@ static NPCPtr sOverworldTable4[] =
         {gFollowerMonPic0715_RotomFrostPal, 0x16A2},
         {gFollowerMonPic0716_RotomFanPal, 0x16A3},
         {gFollowerMonPic0717_RotomMowPal, 0x16A4},
+		{gFollowerMonPic0718_GiratinaOriginPal, 0x16A5},
+		{gFollowerMonPic0719_ShayminSkyPal, 0x16A6},
 	};
 
 	const struct SpritePalette gObjectEventSpritePalettes17[] = 	
@@ -2369,6 +2373,8 @@ static NPCPtr sOverworldTable4[] =
         {gFollowerMonPic2715_RotomFrostShinyPal, 0x17A1},
         {gFollowerMonPic2716_RotomFanShinyPal, 0x17A2},
         {gFollowerMonPic2717_RotomMowShinyPal, 0x17A3},
+		{gFollowerMonPic0718_GiratinaOriginPal, 0x17A4},
+		{gFollowerMonPic0719_ShayminSkyPal, 0x17A5},
 	};
 
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =

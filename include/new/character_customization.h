@@ -778,6 +778,8 @@ extern const u16 gFollowerMonPic0714_RotomWashPal[255];
 extern const u16 gFollowerMonPic0715_RotomFrostPal[255];
 extern const u16 gFollowerMonPic0716_RotomFanPal[255];
 extern const u16 gFollowerMonPic0717_RotomMowPal[255];
+extern const u16 gFollowerMonPic0718_GiratinaOriginPal[255];
+extern const u16 gFollowerMonPic0719_ShayminSkyPal[255];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[255];
@@ -1438,3 +1440,5 @@ extern const u16 gFollowerMonPic2714_RotomWashShinyPal[255];
 extern const u16 gFollowerMonPic2715_RotomFrostShinyPal[255];
 extern const u16 gFollowerMonPic2716_RotomFanShinyPal[255];
 extern const u16 gFollowerMonPic2717_RotomMowShinyPal[255];
+extern const u16 gFollowerMonPic2718_GiratinaOriginShinyPal[255];
+extern const u16 gFollowerMonPic2719_ShayminSkyShinyPal[255];

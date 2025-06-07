@@ -994,6 +994,8 @@ static const u16 sSpeciesToPaletteTag[] =
     [SPECIES_ROTOM_FROST] = 0x17A1,
     [SPECIES_ROTOM_FAN] = 0x17A2,
     [SPECIES_ROTOM_MOW] = 0x17A3,
+    [SPECIES_GIRATINA_ORIGIN] = 0x17A4,
+    [SPECIES_SHAYMIN_SKY] = 0x17A5,
 };
 void ChangeFollowerPalette(void)
 {
