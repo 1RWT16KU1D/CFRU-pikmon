@@ -928,6 +928,8 @@ static NPCPtr sOverworldTable4[] =
 	&gFollowerMonGfxTable2[169], // Unfezant_F
 	&gFollowerMonGfxTable2[170], // Frillish_F
 	&gFollowerMonGfxTable2[171], // Jellicent_F
+	&gFollowerMonGfxTable2[172], // Shellos_East
+	&gFollowerMonGfxTable2[173], // Gastrodon_East
 };
 
 	// create 255 OW tables
@@ -2184,6 +2186,11 @@ static NPCPtr sOverworldTable4[] =
         {gFollowerMonPic0700_KeldeoPal, 0x1698},
         {gFollowerMonPic0701_MeloettaPal, 0x1699},
         {gFollowerMonPic0702_GenesectPal, 0x169A},
+		{gFollowerMonPic0703_Unfezant_FPal, 0x169B},
+		{gFollowerMonPic0704_Frillish_FPal, 0x169C},
+		{gFollowerMonPic0705_Jellicent_FPal, 0x169D},
+		{gFollowerMonPic0711_ShellosEastPal, 0x169E},
+		{gFollowerMonPic0712_GastrodonEastPal, 0x169F},
 	};
 
 	const struct SpritePalette gObjectEventSpritePalettes17[] = 	

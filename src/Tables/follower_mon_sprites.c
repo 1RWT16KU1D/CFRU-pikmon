@@ -659,6 +659,8 @@ MON_OW_TEMPLATE_32x32_FRAMES(0702,Genesect)
 MON_OW_TEMPLATE_32x32_FRAMES(0703,Unfezant_F)
 MON_OW_TEMPLATE_32x32_FRAMES(0704,Frillish_F)
 MON_OW_TEMPLATE_32x32_FRAMES(0705,Jellicent_F)
+MON_OW_TEMPLATE_32x32_FRAMES(0711, ShellosEast)
+MON_OW_TEMPLATE_32x32_FRAMES(0712, GastrodonEast)
 
 
 //Add Followers Graphics Info Here
@@ -1329,6 +1331,8 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
     MON_OW_OBJECT_GRAPHICS(169B, Unfezant_F)
     MON_OW_OBJECT_GRAPHICS(169B, Frillish_F)
     MON_OW_OBJECT_GRAPHICS(169D, Jellicent_F)
+    MON_OW_OBJECT_GRAPHICS(169E, ShellosEast)
+    MON_OW_OBJECT_GRAPHICS(169F, GastrodonEast)
 };
 
 // Link Species with Overworld Sprites
@@ -1991,6 +1995,8 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_UNFEZANT_F] = 0x03A9,
     [SPECIES_FRILLISH_F] = 0x03AA,
     [SPECIES_JELLICENT_F] = 0x03AB,
+    [SPECIES_SHELLOS_EAST] = 0x03AC,
+    [SPECIES_GASTRODON_EAST] = 0x03AD,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =
