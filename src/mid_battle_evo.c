@@ -31,12 +31,10 @@
 
 #ifdef MID_BATTLE_EVO
 void PlayerTryEvolution(void);
-//static void BeginLeftEvoluionAfterFade(void);
-//static void BeginRightEvoluionAfterFade(void);
 static void WaitForEvolutionThenTryAnother(void);
 static void CB2_SetUpReshowBattleScreenAfterEvolution(void);
 static void Task_EvolutionScene(u8 taskId);
-static void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex, bool8 resetStats);
+void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex, bool8 resetStats);
 
 struct EvoInfo
 {
@@ -70,7 +68,7 @@ static void EvoDummyFunc(void)
 {
 }
 
-void Cb2_InitBattleInternal_Hook(void)
+void Cb2_InitBattleTurn_False(void)
 {
     gPlayerDoesNotWantToEvolveLeft = FALSE;
     gPlayerDoesNotWantToEvolveRight = FALSE;
@@ -719,7 +717,7 @@ static void Task_EvolutionScene(u8 taskId)
     }
 }
 
-static void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex, bool8 resetStats)
+void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex, bool8 resetStats)
 {
     u16 *hpSwitchout;
     s32 i;
@@ -776,11 +774,5 @@ static void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex, bool8 re
     gBattleMons[battlerId].status2 = 0;
     UpdateSentPokesToOpponentValue(battlerId);
     ClearTemporarySpeciesSpriteData(battlerId, FALSE);
-}
-
-void CopyPlayerPartyMonToBattleData_Hook(u8 battlerId)
-{
-    u8 partyId = GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[battlerId]);
-    CopyPlayerPartyMonToBattleData(battlerId, partyId, TRUE);
 }
 #endif

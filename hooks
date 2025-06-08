@@ -11,7 +11,11 @@ LoadBattleTerrainGfx 800F260 1
 DrawBattleEntryBackground 800FAE0 0
 
 ##Other Battle Stuff
+#ifdef MID_BATTLE_EVO
+BuildTrainerPartyHook2 800FF7E 0
+#else
 BuildTrainerPartyHook 800FF7E 0
+#endif
 SpriteCB_WildMon 8011D64 1
 SpriteCB_WildMonShowHealthbox 8011DC8 1
 LoadProperAbilityBattleDataHook 8013144 0
@@ -814,5 +818,5 @@ PrintInfoPage 08136fb0 1
 #endif
 
 #ifdef MID_BATTLE_EVO
-New_CopyPlayerPartyMonToBattleData 080415CC 1
+CopyPlayerPartyMonToBattleData_Hook 08041BD4 1
 #endif

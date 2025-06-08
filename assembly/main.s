@@ -397,7 +397,17 @@ return:
 .VAR:
     .word 0x020270B8 + (0x8004 * 2)
 
-.global New_CopyPlayerPartyMonToBattleData
-New_CopyPlayerPartyMonToBattleData:
-    bl CopyPlayerPartyMonToBattleData_Hook
-	
+CopyPlayerPartyMonToBattleData_Hook:
+	b CopyPlayerPartyMonToBattleData_NewFunc
+	nop
+
+.align 2
+CopyPlayerPartyMonToBattleData_NewFunc:
+    push {r0-r3, lr}
+
+    ldr r0, =gBattlerPartyIndexes    @ r0 = &gBattlerPartyIndexes[battlerId]
+    ldrb r0, [r0, r4]                @ r0 = gBattlerPartyIndexes[battlerId]
+    mov r1, r4                       @ r1 = battlerId
+    mov r2, #1                       @ r2 = TRUE
+    bl CopyPlayerPartyMonToBattleData
+    pop {r0-r3, pc}
