@@ -203,12 +203,12 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
     trainerId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     DecompressPicFromTable(&gMonFrontPicTable[currSpecies],
-                             gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_LEFT],
+                             gMonSpritesGfxPtr->sprites[B_POSITION_PLAYER_LEFT],
                              currSpecies);
     pokePal = GetMonSpritePalStructFromOtIdPersonality(currSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
 
-    SetMultiuseSpriteTemplateToPokemon(currSpecies, B_POSITION_OPPONENT_LEFT);
+    SetMultiuseSpriteTemplateToPokemon(currSpecies, B_POSITION_PLAYER_LEFT);
     gMultiuseSpriteTemplate->affineAnims = gDummySpriteAffineAnimTable;
     sEvoStructPtr->preEvoSpriteId = id = CreateSprite(gMultiuseSpriteTemplate, 120, 64, 30);
 
@@ -218,12 +218,12 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
 
     // postEvo sprite
     DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
-                             gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
+                             gMonSpritesGfxPtr->sprites[B_POSITION_PLAYER_RIGHT],
                              postEvoSpecies);
     pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
-    SetMultiuseSpriteTemplateToPokemon(postEvoSpecies, B_POSITION_OPPONENT_RIGHT);
+    SetMultiuseSpriteTemplateToPokemon(postEvoSpecies, B_POSITION_PLAYER_RIGHT);
     gMultiuseSpriteTemplate->affineAnims = gDummySpriteAffineAnimTable;
     sEvoStructPtr->postEvoSpriteId = id = CreateSprite(gMultiuseSpriteTemplate, 120, 64, 30);
     gSprites[id].callback = SpriteCallbackDummy_2;
