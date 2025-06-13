@@ -61,6 +61,7 @@ extern struct EncounterRate sWildEncounterData;
 
 extern u8 sUnownLetterSlots[NUM_TANOBY_CHAMBERS][12]; //[NUM_ROOMS][NUM_WILD_INDEXES]
 extern const struct WildPokemonHeader gWildMonMorningHeaders[];
+extern const struct WildPokemonHeader gWildMonDayHeaders[];
 extern const struct WildPokemonHeader gWildMonEveningHeaders[];
 extern const struct WildPokemonHeader gWildMonNightHeaders[];
 extern const u8 gSwarmOrders[31][24];
@@ -226,6 +227,8 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 			headerTable = gWildMonMorningHeaders;
 		else if (IsEvening())
 			headerTable = gWildMonEveningHeaders;
+		else if (IsDayTime())
+			headerTable = gWildMonDayHeaders; //Daytime
 
 		if (headerTable != NULL) //Not Daytime
 		{
