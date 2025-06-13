@@ -2417,8 +2417,8 @@ BufferSelectedMonData = 0x08138b8c|1;
 sLevelNickTextColors = 0x8463fa4;
 
 /*MidBattle Evo*/
-gPlayerDoesNotWantToEvolveLeft = 0x02022b54;
-gPlayerDoesNotWantToEvolveRight = 0x02022b58;
+gPlayerDoesNotWantToEvolveLeft = 0x0203C040;
+gPlayerDoesNotWantToEvolveRight = 0x0203C048;
 gBattleTerrainBackup = 0x02023ddc;
 sIntroScanlineParams16Bit = 0x824efe4;
 InitBattleBgsVideo = 0x800f34c | 1;

@@ -39,7 +39,8 @@ u8 __attribute__((long_call)) GetAbilityBySpecies(u16 species, bool8 altAbility)
 u8 __attribute__((long_call)) GetPartyIdFromBattlePartyId(u8 battlePartyId);
 void VBlankCB_Battle(void);
 void ClearTemporarySpeciesSpriteData(u8 bank, bool8 dontClearSubstitute);
-void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffer, s32 species);
+void __attribute__((long_call)) DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffer, s32 species);
+void BuildTrainerPartySetup(void);
 
 struct SpeciesInfo
 {
@@ -71,10 +72,10 @@ struct SpeciesInfo
             u8 noFlip : 1;
 };
 
-extern bool8 gPlayerDoesNotWantToEvolveLeft;
-extern bool8 gPlayerDoesNotWantToEvolveRight;
 extern u8 gBattleTerrainBackup;
 extern const struct SpeciesInfo gSpeciesInfo[];
+extern const union AffineAnimCmd * const sDummySpriteAffineAnimTable[];
+extern const u32 sBitTable[];
 
 #define sEvoCursorPos           gBattleCommunication[1] // when learning a new move
 #define sEvoGraphicsTaskId      gBattleCommunication[2]

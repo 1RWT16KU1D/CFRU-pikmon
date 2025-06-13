@@ -12,15 +12,6 @@ BuildTrainerPartyHook:
 	ldr r0, =0x800FF98 | 1
 	bx r0
 
-.global BuildTrainerPartyHook2
-
-.pool
-BuildTrainerPartyHook2:
-	bl BuildTrainerPartySetup
-	bl Cb2_InitBattleTurn_False
-	ldr r0, =0x800FF98 | 1
-	bx r0
-
 .pool
 @0x800D2CC with r0
 AIHandleItemUseHook:

@@ -1660,4 +1660,7 @@ extern u8 gAnimCustomPanning;
 
 extern u8 gBattleBuffersTransferData[0x100];
 
+extern bool8 gPlayerDoesNotWantToEvolveLeft;
+extern bool8 gPlayerDoesNotWantToEvolveRight;
+
 #define BATTLE_HISTORY ((struct BattleHistory*) (gBattleResources->battleHistory))
