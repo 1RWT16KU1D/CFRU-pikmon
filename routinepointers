@@ -295,3 +295,5 @@ CB2_ReturnToField 080567E8
 #ifdef MID_BATTLE_EVO
 PlayerTryEvolution 8013D44
 #endif
+
+##Berry Tree Function
