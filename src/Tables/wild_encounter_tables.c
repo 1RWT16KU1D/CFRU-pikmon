@@ -10,10 +10,11 @@ wild_encounter_tables.c
 	day/night and/or regular map wild encounter species
 
 tables to edit:
-	gWildMonMorningHeaders
-	gWildMonEveningHeaders
-	gWildMonNightHeaders
-	gSwarmTable
+	gWildMonMorningHeaders 4-8 AM
+	gWildMonDayHeaders 8-5 PM
+	gWildMonEveningHeaders 5-8 PM
+	gWildMonNightHeaders 8-4 AM
+	gSwarmTable (Added an example entry, you can add more!)
 
 */
 
@@ -173,10 +174,10 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 
 const struct SwarmData gSwarmTable[] =
 {
-	/*{
-		.mapName = 0xFF,
-		.species = 0xFFFF,
-	},*/
+	{
+		.mapName = MAPSEC_ROUTE_1,
+		.species = SPECIES_FRIGIBAX,
+	},
 };
 
 #ifdef SWARM_CHANGE_HOURLY
