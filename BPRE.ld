@@ -2432,7 +2432,6 @@ sEvoStructPtr = 0x02039a20;
 AllocateMonSpritesGfx = 0x80358d4 | 1;
 StringCopy_Nickname = 0x8008cf4 | 1;
 SpriteCallbackDummy_2 = 0x8011e24 | 1;
-Task_EvolutionScene = 0x80ce8dc | 1;
 LoadEvoSparkleSpriteAndPal = 0x80f5d84 | 1;
 VBlankCB_EvolutionScene = 0x80d0050 | 1;
 m4aMPlayAllStop = 0x81dd228 | 1;
