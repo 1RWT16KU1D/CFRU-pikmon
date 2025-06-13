@@ -1523,7 +1523,7 @@ static void SpriteCB_CamomonsTypeIcon(struct Sprite* sprite)
 	{
 		switch (position) {
 			case B_POSITION_PLAYER_LEFT:
-				if (sprite->pos1.x < sTypeIconPositions[position][TRUE].x + 11)
+				if (sprite->pos1.x < sTypeIconPositions[position][TRUE].x + 12)
 					sprite->pos1.x += 1;
 				break;
 			case B_POSITION_OPPONENT_LEFT:
@@ -1537,7 +1537,7 @@ static void SpriteCB_CamomonsTypeIcon(struct Sprite* sprite)
 		switch (position) {
 			case B_POSITION_PLAYER_LEFT:
 			case B_POSITION_PLAYER_RIGHT:
-				if (sprite->pos1.x > sTypeIconPositions[position][FALSE].x - 11)
+				if (sprite->pos1.x > sTypeIconPositions[position][FALSE].x - 12)
 					sprite->pos1.x -= 1;
 				break;
 			case B_POSITION_OPPONENT_LEFT:
