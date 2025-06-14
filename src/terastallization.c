@@ -345,32 +345,52 @@ bool8 ShouldAIDelayTerastallization(u8 bankAtk, u8 bankDef, u16 move, bool8 opti
 }
 
 // givepokemon set-up
-void SetGiftMonTeraType(void)
+void SetTeraType(struct Pokemon *mon)
 {
-    u8 partySlot = VarGet(Var8002); // Slot passed from script
-    if (partySlot >= PARTY_SIZE)
-        return;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 type1 = gBaseStats[species].type1;
+    u8 type2 = gBaseStats[species].type2;
+    u8 roll;
+    u8 teraType;
 
-    struct Pokemon* mon = &gPlayerParty[partySlot];
-    u16 species = mon->species;
+    if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
+    {
+        roll = Random() % 100;
 
-	u8 type1 = gBaseStats[species].type1;
-	u8 type2 = gBaseStats[species].type2;
+        if (roll < 98)
+        {
+            teraType = type1;
+        }
+        else
+        {
+            do {
+                teraType = Random() % NUMBER_OF_MON_TYPES;
+            } while (teraType == type1);
+        }
+    }
+    else
+    {
+        roll = Random() % 100;
 
-	if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
-		mon->teraType = type1;
-	else
-	{
-		u8 roll = Random() % 100;
+        if (roll < 49)
+        {
+            teraType = type1;
+        }
+        else if (roll < 98)
+        {
+            teraType = type2;
+        }
+        else
+        {
+            do {
+                teraType = Random() % NUMBER_OF_MON_TYPES;
+            } while (teraType == type1 || teraType == type2);
+        }
+    }
 
-		if (roll < 49)
-			mon->teraType = type1;
-		else if (roll < 98) // 49 + 49
-			mon->teraType = type2;
-		else
-			mon->teraType = Random() % NUMBER_OF_MON_TYPES; // 2% chance random type
-	}
+    mon->teraType = teraType;
 }
+
 
 #ifdef SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN
 enum {
