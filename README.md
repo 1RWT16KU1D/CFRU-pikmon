@@ -41,6 +41,8 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - Stellar type
 - Nature coloured stats
 - IV rankings in summary
+- BW SUMMARY SCREEN
+- Mid battle evolutions
 - And much more!
 
 ##### Current count:
@@ -77,3 +79,5 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - Please don't try to use leon rombase on it as it already contains items + more
 - Added convienience for compiling, now run a_makepy.bat to make the project (it executes "python scripts//make.py") and run b_cleanpy.bat to clean repo (it runs python scripts//clean.py)
 - Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code.
+- The Mid battle evolutions work almost fine but there is a slight error for bulbasaur evolving to ivysaur:
+Going to fight button messes the graphics (it only fixes when you switch pokemon in battle, happens only for bulbasaur)
