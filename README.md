@@ -1,6 +1,6 @@
 # Welcome to Complete Fire Red Upgrade Expansion Version!
 This fork is made by Tha Code Mining hub to add many corresponding decomps , other fork and our own additions to CFRU , everything here can be used with credits to respective code makers.
-##### This is CFRU expansion project and not affiliated to the og CFRU, it is going to be levels higher than CFRU. It is adviced to read the wiki [here](https://github.com/Shiny-Miner/CFRU-expansion/wiki) before touching anything.
+##### This is CFRU expansion project and not affiliated to the og CFRU, it is going to be levels higher than CFRU. It is adviced to read the wiki [here](https://github.com/Shiny-Miner/CFRU-expansion/wiki) before touching anything read this as well [Guidelines before using](https://github.com/Shiny-Miner/CFRU-expansion/wiki/Must-read-before-you-start-working!).
 #### The new features (after CFRU dev branch):
 - Fixed bugs with dev branch (shiny odds , daycare nidoran breeding)
 - All known bugs fixed (Update April 2025!)
