@@ -44,6 +44,7 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - IV rankings in summary
 - BW SUMMARY SCREEN
 - Mid battle evolutions
+- New difficulty mode support: Normal(Vanilla), Easy, Hard Expert
 - And much more!
 
 ##### Current count:
