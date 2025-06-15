@@ -165,6 +165,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define MB_ROCK_CLIMB_WALL 0xA5 //The tile behaviour byte that can be climbed up using Rock Climb
 #define MB_HEADBUTT_TREE 0xA6 //The tile behaviour byte for starting a wild encounter by headbutting a tree
 //#define MB_UNDERGROUND_MINING 0xA7 //the tile behaviour byte for underground mining (CAUTION: Needs you to define your maps in include/constants/maps.h)
+#define MB_LAVA 0xA8 //The Tile behaviour for Lava Surf. (Surfing on Lava using fire type mons)
 
 #define MAP_PLAYER_HOME ((4 << 8) | 0) //The map bank and map number of the player's home
 
@@ -377,7 +378,7 @@ enum //These vars need to be one after the other (hence the enum)
 //#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
 #define MID_BATTLE_EVO //Comment this line to remove Mid-Battle Evolution.
 //#define SKIP_INTRO_CONTROLS_GUIDE //Uncomment this line to remove the intro constrols guide.
-#define FLAG_SPAWN_INVISIBLE 0xA09 //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
+#define FLAG_SPAWN_INVISIBLE 0xA0A //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
