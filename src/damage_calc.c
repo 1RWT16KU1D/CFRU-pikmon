@@ -3326,7 +3326,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 
 		case ABILITY_IMMUNITY:
 		//0.5x Decrement
-			if (data->moveType == TYPE_GHOST && SpeciesHasPurifyingSalt(SPECIES(bankDef)))
+			if (data->moveType == TYPE_GHOST && SpeciesHasPurifyingSalt(GetProperAbilityPopUpSpecies(bankDef)))
 				damage /= 2;
 			break;
 
