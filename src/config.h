@@ -380,7 +380,7 @@ enum //These vars need to be one after the other (hence the enum)
 //#define SKIP_INTRO_CONTROLS_GUIDE //Uncomment this line to remove the intro constrols guide.
 #define FLAG_SPAWN_INVISIBLE 0xA0A //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
 #define FLAG_PORTABLE_PC 0xA0B //Flag to Enable/Disable Pocket PC.
-#define VAR_GAME_DIFFICULTY 0x5157 //Var to store the game difficulty level. If 0 difficulty is normal(vanilla), if 1 its easy, if 2 its Hard, if 3 its Expert. (Maybe add to Options menu?). ShouldGiveTrainerMonMaxFriendship and ShouldGiveTrainerMonMaxEVs need to be set at your choice in build_pokemon.c
+#define VAR_GAME_DIFFICULTY 0x5157 //Var to store the game difficulty level. If 0 difficulty is normal(vanilla), if 1 its easy, if 2 its Hard, if 3 its Expert. ShouldGiveTrainerMonMaxFriendship and ShouldGiveTrainerMonMaxEVs need to be set at your choice in build_pokemon.c
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
