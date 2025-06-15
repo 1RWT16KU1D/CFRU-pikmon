@@ -37,6 +37,7 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 -- EV-IV machine
 -- PokeVial
 -- Hisui Rock
+-- Portable PC
 - Terastallization
 - Stellar type
 - Nature coloured stats
@@ -49,7 +50,7 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - Moves : 991
 - Pokedex : 1025
 - Species : 1439
-- Items : 797
+- Items : 798
 - Abilities : 288 (254 abilties and 34 Duplicate abilities)
 
 ##### Introduction to the maintainers

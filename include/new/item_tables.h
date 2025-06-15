@@ -1364,6 +1364,8 @@ extern const u32 masterpiece_teacupTiles[];
 extern const u32 masterpiece_teacupPal[];
 extern const u32 unremarkable_teacupTiles[];
 extern const u32 unremarkable_teacupPal[];
+extern const u32 Portable_PCTiles[];
+extern const u32 Portable_PCPal[];
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -1408,6 +1410,7 @@ void FieldUseFunc_NatureMint(u8 taskId);
 void ItemUseOutOfBattle_PokeVial(u8 taskId);
 void ResetPokeVialUses(void);
 void FieldUseFunc_EVIV(u8 taskId);
+void FieldUseFunc_PortablePC(u8 taskId);
 
 
 //Descriptions
@@ -2170,4 +2173,5 @@ extern const u8 DESC_CATCHING_CHARM[];
 extern const u8 DESC_HISUI_ROCK[];
 extern const u8 DESC_MASTERPIECE_TEACUP[];
 extern const u8 DESC_UNREMARKABLE_TEACUP[];
+extern const u8 DESC_PORTABLE_PC[];
 #endif

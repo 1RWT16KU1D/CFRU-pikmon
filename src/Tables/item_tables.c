@@ -1779,6 +1779,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{masterpiece_teacupTiles, masterpiece_teacupPal},
 	{unremarkable_teacupTiles, unremarkable_teacupPal},
 	{tera_orbTiles, tera_orbPal},
+	{Portable_PCTiles, Portable_PCPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal}, //Free space 1
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14144,7 +14145,7 @@ const struct Item gItemData[] =
  		.importance = 1,
  		.unk19 = 0,
  		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
- 		.type = ITEM_USE_FIELD,  // Only usable in the overworld
+ 		.type = ITEM_USE_BAG_MENU,  // Only usable in the overworld
  		.fieldUseFunc = FieldUseFunc_EVIV,  // Define field behavior
  		.battleUsage = 0,  // Cannot be used in battle
  		.battleUseFunc = NULL,
@@ -14229,6 +14230,23 @@ const struct Item gItemData[] =
 		.pocket = POCKET_KEY_ITEMS,
 		.type = ITEM_USE_BAG_MENU,
 		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_PORTABLE_PC]
+	{
+		.name = {_P, _o, _r, _t, _a, _b, _l, _e, _SPACE, _P, _C, _END},
+		.itemId = ITEM_PORTABLE_PC,
+		.price = 0,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_PORTABLE_PC,
+		.importance = 1,
+		.unk19 = 0,
+		.pocket = POCKET_KEY_ITEMS,
+		.type = ITEM_USE_FIELD,
+		.fieldUseFunc = FieldUseFunc_PortablePC,
 		.battleUsage = 0,
 		.battleUseFunc = NULL,
 		.secondaryId = 0

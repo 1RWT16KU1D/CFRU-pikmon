@@ -820,9 +820,11 @@ enum
 #define ITEM_UNREMARKABLE_TEACUP 0x304
 #define ITEM_MASTERPIECE_TEACUP 0x305
 #define ITEM_TERA_ORB 0x306
+#define ITEM_PORTABLE_PC 0x307
+//Unused Items
 enum
 {
-	ITEM_FREE_SPACE1 = 0x307, //These are reserved for future use
+	ITEM_FREE_SPACE1 = 0x308, //These are reserved for future use
 	ITEM_FREE_SPACE2,
 	ITEM_FREE_SPACE3,
     ITEM_SHINY_SPACE1,

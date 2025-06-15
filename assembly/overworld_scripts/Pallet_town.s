@@ -37,6 +37,7 @@ EventScript_Pallet_Girl:
     setflag 0xa02
     setflag 0xa03
     hidefollowermon
+    setflag 0xA0B
     clearflag 0x4BD
     special 0xD2
     release

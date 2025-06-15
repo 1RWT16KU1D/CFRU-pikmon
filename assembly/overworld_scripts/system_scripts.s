@@ -1306,3 +1306,42 @@ SystemScript_Exp_Share_Off:
 	msgboxsign
 	msgbox gText_Exp_Share_Off MSG_SIGN
 	goto EndScript
+
+.global SystemScript_Portable_PC_On
+.global SystemScript_Portable_PC_Off
+
+SystemScript_Portable_PC_On:
+	lockall
+	msgbox gText_PortablePCPrompt MSG_KEEPOPEN
+
+	@ Define multichoice options inline
+	multichoiceoption gText_OpenPCBox 0
+	multichoiceoption gText_HealPokemon 1
+	multichoice 0x0, 0x0, TWO_MULTICHOICE_OPTIONS, 0x0
+
+	switch LASTRESULT
+	case 0, OpenPCBox
+	case 1, HealParty
+	releaseall
+	end
+
+OpenPCBox:
+	special 0x3C
+	waitstate
+	playse 0x3
+	releaseall
+	end
+
+HealParty:
+	special 0x0
+	playse 0x1
+	waitse
+	msgbox gText_HealedPCParty MSG_NORMAL
+	releaseall
+	end
+
+SystemScript_Portable_PC_Off:
+	lock
+	msgbox gText_PCUnavailable MSG_NORMAL
+	release
+	end
