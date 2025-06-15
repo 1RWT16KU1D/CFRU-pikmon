@@ -357,7 +357,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define SIDEWAY_STAIRS_IMPLEMENTED //Uncomment if you're using Sideway Stairs patch.
 #define FLAG_FOLLOWER_POKEMON 0x4BD //0x4BD is an unused flag.
 #define MAX_POKEVIAL_USES 3  // Maximum uses before recharge
-#define VAR_POKEVIAL_USES 0x501A // Use a free variable ID to track uses
+#define VAR_POKEVIAL_USES 0x5155 // Use a free variable ID to track uses
 //#define REMOVE_CRITICAL_HITS //Uncomment this to remove critical hits.
 #define MULTIPLE_PREMIER_BALLS_AT_ONCE //Comment out if you don't want the player received a Premier ball for every 10 Poke Balls purchased (only 1 no matter how many over 10 balls the player buys)
 #define ENABLE_MULTIPLE_PURCHASE_REWARDS // Premium Quantity based rewards with a custom item : reward : quantity system (check src/item.c for table). Remeber the above line will not be useful now!
@@ -367,7 +367,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_KEPT_LEVEL_CAP_ON 0xA04 // For level caps, to be used with FLAG_HARD_LEVEL_CAP
 #define FLAG_HARD_LEVEL_CAP 0xA05 // Enables level caps
 #define FLAG_NUZLOCKE 0xA06 //If set nuzlock mode will be turned on
-#define VAR_WILD_BATTLE_COUNT 0x5155 //Counts number of wild battles, if >1 then NO_CATCHING is enabled.
+#define VAR_WILD_BATTLE_COUNT 0x5156 //Counts number of wild battles, if >1 then NO_CATCHING is enabled.
 #define FLAG_VISITED_AREA_START 0x1300 //Flag that is set in a nuzlocke for every visited area (Helpful in tracking)
 #define FLAG_FOLLOWER_WAS_SURFING 0xA07 //Flag that sets when following pokemon starts surfing to restore it after a warp is used!
 #define TERASTAL_FEATURE //Comment this line to remove Terastallization
@@ -380,6 +380,7 @@ enum //These vars need to be one after the other (hence the enum)
 //#define SKIP_INTRO_CONTROLS_GUIDE //Uncomment this line to remove the intro constrols guide.
 #define FLAG_SPAWN_INVISIBLE 0xA0A //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
 #define FLAG_PORTABLE_PC 0xA0B //Flag to Enable/Disable Pocket PC.
+#define VAR_GAME_DIFFICULTY 0x5157 //Var to store the game difficulty level. If 0 difficulty is normal(vanilla), if 1 its easy, if 2 its Hard, if 3 its Expert. (Maybe add to Options menu?). ShouldGiveTrainerMonMaxFriendship and ShouldGiveTrainerMonMaxEVs need to be set at your choice in build_pokemon.c
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"

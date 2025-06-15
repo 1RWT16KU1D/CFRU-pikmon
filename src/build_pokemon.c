@@ -1226,6 +1226,64 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 	}
 }
 
+bool8 ShouldGiveTrainerMonBestStatsMaxEVs(u8 trainerClass)
+{
+#ifdef VAR_GAME_DIFFICULTY
+    u8 difficulty = VarGet(VAR_GAME_DIFFICULTY);
+
+    // Only apply on Hard and above
+    if (difficulty < OPTIONS_HARD_DIFFICULTY)
+        return FALSE;
+
+    switch (trainerClass)
+    {
+        case CLASS_LEADER:
+        case CLASS_ELITE_4:
+        case CLASS_CHAMPION:
+        case CLASS_RIVAL:
+        case CLASS_RIVAL_2:
+        case CLASS_BOSS:
+        #ifdef UNBOUND
+        case CLASS_SUCCESSOR:
+        case CLASS_LOR:
+        case CLASS_LOR_ADMIN:
+        case CLASS_LOR_LEADER:
+        #endif
+            return TRUE;
+        default:
+            return FALSE;
+    }
+#else
+    return FALSE; // No difficulty system = safe default
+#endif
+}
+
+bool8 ShouldGiveTrainerMonMaxFriendship(u8 trainerClass)
+{
+#ifdef VAR_GAME_DIFFICULTY
+    u8 difficulty = VarGet(VAR_GAME_DIFFICULTY);
+
+    // Only apply on Hard and above
+    if (difficulty < OPTIONS_HARD_DIFFICULTY)
+        return FALSE;
+
+    switch (trainerClass)
+    {
+        case CLASS_CHAMPION:
+        case CLASS_RIVAL:
+        case CLASS_RIVAL_2:
+        case CLASS_LEADER:
+        case CLASS_ELITE_4:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+#else
+    return FALSE; // No difficulty system = safe default
+#endif
+}
+
+
 static u8 GetTrainerMonMovePPBonus(void)
 {
 	#ifdef VAR_GAME_DIFFICULTY
