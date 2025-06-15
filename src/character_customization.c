@@ -2708,6 +2708,11 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
 	gPlayerAvatar->gender = gender;
 	SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_FIELD_MOVE | PLAYER_AVATAR_FLAG_ON_FOOT);
 	CreateFollowerAvatar();
+	if (FlagGet(FLAG_SPAWN_INVISIBLE))
+    {
+        FlagClear(FLAG_SPAWN_INVISIBLE);
+        eventObject->invisible = TRUE;
+    }
 }
 
 void PlayerHandleDrawTrainerPic(void)
