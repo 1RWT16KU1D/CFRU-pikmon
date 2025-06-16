@@ -1018,6 +1018,7 @@ static NPCPtr sOverworldTable5[] =
 	&gFollowerMonGfxTable3[74], // MeowsticFemale
 	&gFollowerMonGfxTable3[75], // Zygarde10
 	&gFollowerMonGfxTable3[76], // ZygardeComplete
+	&gFollowerMonGfxTable3[77], // FloetteEternal
 };
 
 	// create 255 OW tables
@@ -2569,6 +2570,7 @@ static NPCPtr sOverworldTable5[] =
         {gFollowerMonPic0832_Meowstic_FemalePal, 0x184A},
         {gFollowerMonPic0837_Zygarde_10Pal, 0x184B},
         {gFollowerMonPic0838_Zygarde_CompletePal, 0x184C},
+		{gFollowerMonPic0848_Floette_EternalPal, 0x184D},
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{

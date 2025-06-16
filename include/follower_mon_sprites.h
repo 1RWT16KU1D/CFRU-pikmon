@@ -1549,6 +1549,8 @@ extern const u8 gFollowerMonPic0831_Pyroar_FemaleTiles[];
 extern const u8 gFollowerMonPic0832_Meowstic_FemaleTiles[];
 extern const u8 gFollowerMonPic0837_Zygarde_10Tiles[];
 extern const u8 gFollowerMonPic0838_Zygarde_CompleteTiles[];
+extern const u8 gFollowerMonPic0848_Floette_EternalTiles[];
+
 extern const u16 gFollowerMonPic0758_ChespinPal[];
 extern const u16 gFollowerMonPic0759_QuilladinPal[];
 extern const u16 gFollowerMonPic0760_ChesnaughtPal[];
@@ -1626,6 +1628,7 @@ extern const u16 gFollowerMonPic0831_Pyroar_FemalePal[];
 extern const u16 gFollowerMonPic0832_Meowstic_FemalePal[];
 extern const u16 gFollowerMonPic0837_Zygarde_10Pal[];
 extern const u16 gFollowerMonPic0838_Zygarde_CompletePal[];
+extern const u16 gFollowerMonPic0848_Floette_EternalPal[];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[];

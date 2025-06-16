@@ -874,6 +874,7 @@ extern const u16 gFollowerMonPic0831_Pyroar_FemalePal[255];
 extern const u16 gFollowerMonPic0832_Meowstic_FemalePal[255];
 extern const u16 gFollowerMonPic0837_Zygarde_10Pal[255];
 extern const u16 gFollowerMonPic0838_Zygarde_CompletePal[255];
+extern const u16 gFollowerMonPic0848_Floette_EternalPal[255];
 
 //Shiny
 extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[255];

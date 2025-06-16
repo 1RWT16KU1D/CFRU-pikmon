@@ -746,6 +746,7 @@ MON_OW_TEMPLATE_32x32_FRAMES(0831,Pyroar_Female)
 MON_OW_TEMPLATE_32x32_FRAMES(0832,Meowstic_Female)
 MON_OW_TEMPLATE_32x32_FRAMES(0837,Zygarde_10)
 MON_OW_TEMPLATE_32x32_FRAMES(0838,Zygarde_Complete)
+MON_OW_TEMPLATE_32x32_FRAMES(0848, Floette_Eternal)
 
 
 //Add Followers Graphics Info Here
@@ -1505,6 +1506,7 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[] =
     MON_OW_OBJECT_GRAPHICS(184A, Meowstic_Female)
     MON_OW_OBJECT_GRAPHICS(184B, Zygarde_10)
     MON_OW_OBJECT_GRAPHICS(184C, Zygarde_Complete)
+    MON_OW_OBJECT_GRAPHICS(184D, Floette_Eternal)
 };
 
 // Link Species with Overworld Sprites
