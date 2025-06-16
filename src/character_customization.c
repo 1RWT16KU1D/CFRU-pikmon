@@ -263,6 +263,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[];
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[];
 
 static NPCPtr sOverworldTable2[] =
 {
@@ -938,6 +939,86 @@ static NPCPtr sOverworldTable4[] =
 	&gFollowerMonGfxTable2[179], // Giratine_origin
 	&gFollowerMonGfxTable2[180], // Shaymin_sky
 };
+static NPCPtr sOverworldTable5[] =
+{
+	&gFollowerMonGfxTable3[0], // Chespin
+	&gFollowerMonGfxTable3[1], // Quilladin 
+	&gFollowerMonGfxTable3[2], // Chesnaught
+	&gFollowerMonGfxTable3[3], // Fennekin  
+	&gFollowerMonGfxTable3[4], // Braixen   
+	&gFollowerMonGfxTable3[5], // Delphox   
+	&gFollowerMonGfxTable3[6], // Froakie   
+	&gFollowerMonGfxTable3[7], // Frogadier 
+	&gFollowerMonGfxTable3[8], // Greninja  
+	&gFollowerMonGfxTable3[9], // Bunnelby  
+	&gFollowerMonGfxTable3[10], // Diggersby
+	&gFollowerMonGfxTable3[11], // Fletchling
+	&gFollowerMonGfxTable3[12], // Fletchinder
+	&gFollowerMonGfxTable3[13], // Talonflame
+	&gFollowerMonGfxTable3[14], // Scatterbug
+	&gFollowerMonGfxTable3[15], // Spewpa
+	&gFollowerMonGfxTable3[16], // Vivillon
+	&gFollowerMonGfxTable3[17], // Litleo
+	&gFollowerMonGfxTable3[18], // Pyroar
+	&gFollowerMonGfxTable3[19], // Flabebe
+	&gFollowerMonGfxTable3[20], // Floette
+	&gFollowerMonGfxTable3[21], // Florges
+	&gFollowerMonGfxTable3[22], // Skiddo
+	&gFollowerMonGfxTable3[23], // Gogoat
+	&gFollowerMonGfxTable3[24], // Pancham
+	&gFollowerMonGfxTable3[25], // Pangoro
+	&gFollowerMonGfxTable3[26], // Furfrou
+	&gFollowerMonGfxTable3[27], // Espurr
+	&gFollowerMonGfxTable3[28], // Meowstic
+	&gFollowerMonGfxTable3[29], // Honedge
+	&gFollowerMonGfxTable3[30], // Doublade
+	&gFollowerMonGfxTable3[31], // Aegislash
+	&gFollowerMonGfxTable3[32], // Spritzee
+	&gFollowerMonGfxTable3[33], // Aromatisse
+	&gFollowerMonGfxTable3[34], // Swirlix
+	&gFollowerMonGfxTable3[35], // Slurpuff
+	&gFollowerMonGfxTable3[36], // Inkay
+	&gFollowerMonGfxTable3[37], // Malamar
+	&gFollowerMonGfxTable3[38], // Binacle
+	&gFollowerMonGfxTable3[39], // Barbaracle
+	&gFollowerMonGfxTable3[40], // Skrelp
+	&gFollowerMonGfxTable3[41], // Dragalge
+	&gFollowerMonGfxTable3[42], // Clauncher
+	&gFollowerMonGfxTable3[43], // Clawitzer
+	&gFollowerMonGfxTable3[44], // Helioptile
+	&gFollowerMonGfxTable3[45], // Heliolisk
+	&gFollowerMonGfxTable3[46], // Tyrunt
+	&gFollowerMonGfxTable3[47], // Tyrantrum
+	&gFollowerMonGfxTable3[48], // Amaura
+	&gFollowerMonGfxTable3[49], // Aurorus
+	&gFollowerMonGfxTable3[50], // Sylveon
+	&gFollowerMonGfxTable3[51], // Hawlucha
+	&gFollowerMonGfxTable3[52], // Dedenne
+	&gFollowerMonGfxTable3[53], // Carbink
+	&gFollowerMonGfxTable3[54], // Goomy
+	&gFollowerMonGfxTable3[55], // Sliggoo
+	&gFollowerMonGfxTable3[56], // Goodra
+	&gFollowerMonGfxTable3[57], // Klefki
+	&gFollowerMonGfxTable3[58], // Phantump
+	&gFollowerMonGfxTable3[59], // Trevenant
+	&gFollowerMonGfxTable3[60], // Pumpkaboo
+	&gFollowerMonGfxTable3[61], // Gourgeist
+	&gFollowerMonGfxTable3[62], // Bergmite
+	&gFollowerMonGfxTable3[63], // Avalugg
+	&gFollowerMonGfxTable3[64], // Noibat
+	&gFollowerMonGfxTable3[65], // Noivern
+	&gFollowerMonGfxTable3[66], // Xerneas
+	&gFollowerMonGfxTable3[67], // Yveltal
+	&gFollowerMonGfxTable3[68], // Zygarde
+	&gFollowerMonGfxTable3[69], // Diancie
+	&gFollowerMonGfxTable3[70], // Hoopa
+	&gFollowerMonGfxTable3[71], // HoopaUnbound
+	&gFollowerMonGfxTable3[72], // Volcanion
+	&gFollowerMonGfxTable3[73], // PyroarFemale
+	&gFollowerMonGfxTable3[74], // MeowsticFemale
+	&gFollowerMonGfxTable3[75], // Zygarde10
+	&gFollowerMonGfxTable3[76], // ZygardeComplete
+};
 
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
@@ -946,6 +1027,7 @@ static NPCPtr sOverworldTable4[] =
 		sOverworldTable2,
 		sOverworldTable3,
 		sOverworldTable4,
+		sOverworldTable5,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};
@@ -2408,6 +2490,86 @@ static NPCPtr sOverworldTable4[] =
         {gFollowerMonPic2735_ArceusDarkShinyPal, 0x17B4},
 	};
 
+	const struct SpritePalette gObjectEventSpritePalettes18[] =
+	{
+ {gFollowerMonPic0758_ChespinPal, 0x1800},
+        {gFollowerMonPic0759_QuilladinPal, 0x1801},
+        {gFollowerMonPic0760_ChesnaughtPal, 0x1802},
+        {gFollowerMonPic0761_FennekinPal, 0x1803},
+        {gFollowerMonPic0762_BraixenPal, 0x1804},
+        {gFollowerMonPic0763_DelphoxPal, 0x1805},
+        {gFollowerMonPic0764_FroakiePal, 0x1806},
+        {gFollowerMonPic0765_FrogadierPal, 0x1807},
+        {gFollowerMonPic0766_GreninjaPal, 0x1808},
+        {gFollowerMonPic0767_BunnelbyPal, 0x1809},
+        {gFollowerMonPic0768_DiggersbyPal, 0x180A},
+        {gFollowerMonPic0769_FletchlingPal, 0x180B},
+        {gFollowerMonPic0770_FletchinderPal, 0x180C},
+        {gFollowerMonPic0771_TalonflamePal, 0x180D},
+        {gFollowerMonPic0772_ScatterbugPal, 0x180E},
+        {gFollowerMonPic0773_SpewpaPal, 0x180F},
+        {gFollowerMonPic0774_VivillonPal, 0x1810},
+        {gFollowerMonPic0775_LitleoPal, 0x1811},
+        {gFollowerMonPic0776_PyroarPal, 0x1812},
+        {gFollowerMonPic0777_FlabebePal, 0x1813},
+        {gFollowerMonPic0778_FloettePal, 0x1814},
+        {gFollowerMonPic0779_FlorgesPal, 0x1815},
+        {gFollowerMonPic0780_SkiddoPal, 0x1816},
+        {gFollowerMonPic0781_GogoatPal, 0x1817},
+        {gFollowerMonPic0782_PanchamPal, 0x1818},
+        {gFollowerMonPic0783_PangoroPal, 0x1819},
+        {gFollowerMonPic0784_FurfrouPal, 0x181A},
+        {gFollowerMonPic0785_EspurrPal, 0x181B},
+        {gFollowerMonPic0786_MeowsticPal, 0x181C},
+        {gFollowerMonPic0787_HonedgePal, 0x181D},
+        {gFollowerMonPic0788_DoubladePal, 0x181E},
+        {gFollowerMonPic0789_AegislashPal, 0x181F},
+        {gFollowerMonPic0790_SpritzeePal, 0x1820},
+        {gFollowerMonPic0791_AromatissePal, 0x1821},
+        {gFollowerMonPic0792_SwirlixPal, 0x1822},
+        {gFollowerMonPic0793_SlurpuffPal, 0x1823},
+        {gFollowerMonPic0794_InkayPal, 0x1824},
+        {gFollowerMonPic0795_MalamarPal, 0x1825},
+        {gFollowerMonPic0796_BinaclePal, 0x1826},
+        {gFollowerMonPic0797_BarbaraclePal, 0x1827},
+        {gFollowerMonPic0798_SkrelpPal, 0x1828},
+        {gFollowerMonPic0799_DragalgePal, 0x1829},
+        {gFollowerMonPic0800_ClauncherPal, 0x182A},
+        {gFollowerMonPic0801_ClawitzerPal, 0x182B},
+        {gFollowerMonPic0802_HelioptilePal, 0x182C},
+        {gFollowerMonPic0803_HelioliskPal, 0x182D},
+        {gFollowerMonPic0804_TyruntPal, 0x182E},
+        {gFollowerMonPic0805_TyrantrumPal, 0x182F},
+        {gFollowerMonPic0806_AmauraPal, 0x1830},
+        {gFollowerMonPic0807_AurorusPal, 0x1831},
+        {gFollowerMonPic0808_SylveonPal, 0x1832},
+        {gFollowerMonPic0809_HawluchaPal, 0x1833},
+        {gFollowerMonPic0810_DedennePal, 0x1834},
+        {gFollowerMonPic0811_CarbinkPal, 0x1835},
+        {gFollowerMonPic0812_GoomyPal, 0x1836},
+        {gFollowerMonPic0813_SliggooPal, 0x1837},
+        {gFollowerMonPic0814_GoodraPal, 0x1838},
+        {gFollowerMonPic0815_KlefkiPal, 0x1839},
+        {gFollowerMonPic0816_PhantumpPal, 0x183A},
+        {gFollowerMonPic0817_TrevenantPal, 0x183B},
+        {gFollowerMonPic0818_PumpkabooPal, 0x183C},
+        {gFollowerMonPic0819_GourgeistPal, 0x183D},
+        {gFollowerMonPic0820_BergmitePal, 0x183E},
+        {gFollowerMonPic0821_AvaluggPal, 0x183F},
+        {gFollowerMonPic0822_NoibatPal, 0x1840},
+        {gFollowerMonPic0823_NoivernPal, 0x1841},
+        {gFollowerMonPic0824_XerneasPal, 0x1842},
+        {gFollowerMonPic0825_YveltalPal, 0x1843},
+        {gFollowerMonPic0826_ZygardePal, 0x1844},
+        {gFollowerMonPic0827_DianciePal, 0x1845},
+        {gFollowerMonPic0828_HoopaPal, 0x1846},
+        {gFollowerMonPic0829_Hoopa_UnboundPal, 0x1847},
+        {gFollowerMonPic0830_VolcanionPal, 0x1848},
+        {gFollowerMonPic0831_Pyroar_FemalePal, 0x1849},
+        {gFollowerMonPic0832_Meowstic_FemalePal, 0x184A},
+        {gFollowerMonPic0837_Zygarde_10Pal, 0x184B},
+        {gFollowerMonPic0838_Zygarde_CompletePal, 0x184C},
+	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{
 		[0x11] = gObjectEventSpritePalettes11,
@@ -2417,6 +2579,7 @@ static NPCPtr sOverworldTable4[] =
 		[0x15] = gObjectEventSpritePalettes15,
 		[0x16] = gObjectEventSpritePalettes16,
 		[0x17] = gObjectEventSpritePalettes17,
+		[0x18] = gObjectEventSpritePalettes18,
 	};
 #endif
 
