@@ -714,6 +714,8 @@ void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the give
 	SetMonData(mon, MON_DATA_LANGUAGE, &language);
 	SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
 	HealMon(mon);
+	// For Terastallization
+	SetTeraType(mon);
 }
 
 //Decide features to inherit
@@ -737,6 +739,8 @@ void GiveEggFromDaycare(struct DayCare* daycare)
 
 	isEgg = TRUE;
 	SetMonData(&egg, MON_DATA_IS_EGG, &isEgg);
+	// For Terastallization
+	SetTeraType(&egg);
 	CalculateMonStats(&egg);
 
 	#ifdef SEND_EGGS_TO_PC_IF_MAX_PARTY

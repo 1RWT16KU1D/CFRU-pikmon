@@ -21,7 +21,6 @@ Hatch_Yes:
     if 0x0 _goto NoMoney
     removemoney 0x1388
     msgbox TextProcessing MSG_NORMAL
-    giveegg 0x1
     waitmsg
     special 0x9F
     waitstate
