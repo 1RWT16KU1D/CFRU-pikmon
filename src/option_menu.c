@@ -205,8 +205,8 @@ static const u8 *const sBattleMusicOptions[] =
 };
 static const u8 *const sWildScalingOptions[] =
 {
-    gText_OnOption,
-	gText_OffOption
+	gText_OffOption,
+    gText_OnOption
 };
 
 static const u8 *const sAutoSortBagOptions[] =
