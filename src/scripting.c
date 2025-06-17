@@ -12,6 +12,7 @@
 #include "../include/menu.h"
 #include "../include/m4a.h"
 #include "../include/naming_screen.h"
+#include "../include/new_menu_helpers.h"
 #include "../include/overworld.h"
 #include "../include/pokemon_summary_screen.h"
 #include "../include/pokemon_storage_system.h"
@@ -34,6 +35,7 @@
 
 #include "../include/new/battle_strings.h"
 #include "../include/new/build_pokemon.h"
+#include "../include/new/bw_summary_screen.h"
 #include "../include/new/catching.h"
 #include "../include/new/damage_calc.h"
 #include "../include/new/dns.h"
@@ -3178,5 +3180,65 @@ void Nuzlock_PokemonEraser(void)
     {
         CompactPartySlots();
         CalculatePlayerPartyCount();
+    }
+}
+
+enum
+{
+    WIN_INTRO_TEXTBOX,
+    WIN_INTRO_BOYGIRL,
+    WIN_INTRO_YESNO,
+    WIN_INTRO_NAMES,
+    NUM_INTRO_WINDOWS,
+};
+
+struct OakSpeechResources
+{
+    void *oakSpeechBackgroundTiles;
+    void *trainerPicTilemap;
+    void *pikachuIntroTilemap;
+    void *unused1;
+    u16 hasPlayerBeenNamed;
+    u16 currentPage;
+    u16 windowIds[NUM_INTRO_WINDOWS];
+    u8 textColor[3];
+    u8 textSpeed;
+    u8 unused2[0x1800];
+    u8 bg2TilemapBuffer[0x400];
+    u8 bg1TilemapBuffer[0x800];
+};
+
+#define OakSpeechPrintMessage(str, speed) ({                                                                                                                 \
+    DrawDialogueFrame(WIN_INTRO_TEXTBOX, FALSE);                                                                                                             \
+    if (str != gStringVar4)                                                                                                                                  \
+    {                                                                                                                                                        \
+        StringExpandPlaceholders(gStringVar4, str);                                                                                                          \
+        AddTextPrinterParameterized2(WIN_INTRO_TEXTBOX, FONT_MALE, gStringVar4, speed, NULL, 2, TEXT_COLOR_WHITE, 3); \
+    }                                                                                                                                                        \
+    else                                                                                                                                                     \
+    {                                                                                                                                                        \
+        AddTextPrinterParameterized2(WIN_INTRO_TEXTBOX, FONT_MALE, str, speed, NULL, 2, TEXT_COLOR_WHITE, 3);         \
+    }                                                                                                                                                        \
+    CopyWindowToVram(WIN_INTRO_TEXTBOX, 3);                                                                                                       \
+})
+
+#define tTimer 	data[3]
+extern const u8 Task_OakSpeech_IsInhabitedFarAndWide[];
+extern const struct OakSpeechResources *sOakSpeechResources;
+void Task_OakSpeech_IsInhabitedFarAndWide(u8 taskId)
+{
+    if (IsCryFinished())
+    {
+        if (gTasks[taskId].tTimer >= 96)
+            gTasks[taskId].func = Task_OakSpeech_IStudyPokemon;
+    }
+    if (gTasks[taskId].tTimer < 0x4000)
+    {
+        gTasks[taskId].tTimer++;
+        if (gTasks[taskId].tTimer == 32)
+        {
+            OakSpeechPrintMessage(Task_OakSpeech_IsInhabitedFarAndWide, sOakSpeechResources->textSpeed);
+            PlayCry1(CRY_SPECIES, 0);
+        }
     }
 }

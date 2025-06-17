@@ -2460,3 +2460,8 @@ gSpeciesInfo = 0x8254784 | 1 ;
 GetAbilityBySpecies = 0x8040d38 | 1;
 GetPartyIdFromBattlePartyId = 0x8128030 | 1;
 DecompressPicFromTable = 0x800ec8c | 1;
+
+/*Cry intro species*/
+Task_OakSpeech_IStudyPokemon = 0x812fb4c | 1;
+Task_OakSpeech_IsInhabitedFarAndWide = 0x812fa78;
+sOakSpeechResources = 0x203b108;
