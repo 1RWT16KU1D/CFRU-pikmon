@@ -816,3 +816,4 @@ PrintInfoPage 08136fb0 1
 #ifdef MID_BATTLE_EVO
 CopyPlayerPartyMonToBattleData_Hook 08041BD4 1
 #endif
+TitlescreenCryExpansion 080791c0 1
