@@ -451,12 +451,32 @@ def main():
                         continue
                     try:
                         label, *hexbytes = line.strip().split()
+                        # --- Species Replacer Setup ---
+                        cry_define = "CRY_SPECIES"
+                        cry_value = None
+
+                        with open("F:\\Decomps\\CFRU-expansion\\src\\config.h", "r") as conf:
+                            for defline in conf:
+                                if cry_define in defline and defline.strip().startswith("#define"):
+                                    parts = defline.split()
+                                    if len(parts) >= 3 and parts[1] == cry_define:
+                                        cry_value = int(parts[2], 0)  # hex or decimal
+
+                        # --- Inside the loop ---
                         byte_data = bytes([int(x, 16) for x in hexbytes])
+
+                        # Apply CRY_SPECIES replacement ONLY if defined
+                        if cry_value is not None:
+                            target = (0x196).to_bytes(4, 'little')  # 96 01 00 00
+                            replacement = cry_value.to_bytes(4, 'little')
+                            byte_data = byte_data.replace(target, replacement)
+
                         insert_len = max(len(byte_data), MINIMUM_FREE_LENGTH)
                         insert_at = FindFreeSpace(rom, insert_len)
                         rom.seek(insert_at)
                         rom.write(byte_data)
                         table[label] = insert_at  # Add to symbol table
+
                     except Exception as e:
                         print(f"Error processing line: {line.strip()}")
                         print(e)
