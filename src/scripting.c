@@ -3223,7 +3223,7 @@ struct OakSpeechResources
 })
 
 #define tTimer 	data[3]
-extern const u8 Task_OakSpeech_IsInhabitedFarAndWide[];
+extern const u8 gOakSpeech_Text_IsInhabitedFarAndWide[];
 extern const struct OakSpeechResources *sOakSpeechResources;
 void Task_OakSpeech_IsInhabitedFarAndWide(u8 taskId)
 {
@@ -3237,7 +3237,7 @@ void Task_OakSpeech_IsInhabitedFarAndWide(u8 taskId)
         gTasks[taskId].tTimer++;
         if (gTasks[taskId].tTimer == 32)
         {
-            OakSpeechPrintMessage(Task_OakSpeech_IsInhabitedFarAndWide, sOakSpeechResources->textSpeed);
+            OakSpeechPrintMessage(gOakSpeech_Text_IsInhabitedFarAndWide, sOakSpeechResources->textSpeed);
             PlayCry1(CRY_SPECIES, 0);
         }
     }

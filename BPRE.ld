@@ -2463,5 +2463,5 @@ DecompressPicFromTable = 0x800ec8c | 1;
 
 /*Cry intro species*/
 Task_OakSpeech_IStudyPokemon = 0x812fb4c | 1;
-Task_OakSpeech_IsInhabitedFarAndWide = 0x812fa78;
+gOakSpeech_Text_IsInhabitedFarAndWide = 081c5d12;
 sOakSpeechResources = 0x203b108;
