@@ -4,19 +4,24 @@
 #include "../include/fieldmap.h"
 #include "../include/field_message_box.h"
 #include "../include/field_weather.h"
+#include "../include/decompress.h"
 #include "../include/gpu_regs.h"
 #include "../include/item_icon.h"
 #include "../include/item_menu.h"
 #include "../include/list_menu.h"
+#include "../include/malloc.h"
 #include "../include/map_name_popup.h"
 #include "../include/menu.h"
 #include "../include/m4a.h"
 #include "../include/naming_screen.h"
+#include "../include/new_game.h"
 #include "../include/new_menu_helpers.h"
 #include "../include/overworld.h"
+#include "../include/palette.h"
 #include "../include/pokemon_summary_screen.h"
 #include "../include/pokemon_storage_system.h"
 #include "../include/region_map.h"
+#include "../include/save.h"
 #include "../include/script.h"
 #include "../include/script_menu.h"
 #include "../include/sound.h"
@@ -33,6 +38,8 @@
 #include "../include/constants/pokemon.h"
 #include "../include/constants/songs.h"
 
+#include "../include/gba/m4a_internal.h"
+
 #include "../include/new/battle_strings.h"
 #include "../include/new/build_pokemon.h"
 #include "../include/new/bw_summary_screen.h"
@@ -43,6 +50,7 @@
 #include "../include/new/item.h"
 #include "../include/new/learn_move.h"
 #include "../include/new_menu_helpers.h"
+#include "../include/new/mid_battle_evo.h"
 #include "../include/new/multi.h"
 #include "../include/new/overworld.h"
 #include "../include/new/pokemon_storage_system.h"
@@ -3208,6 +3216,24 @@ struct OakSpeechResources
     u8 bg1TilemapBuffer[0x800];
 };
 
+#define gMonFrontPicTable ((const struct CompressedSpriteSheet*) *((u32*) 0x8000128))
+#define gMonPaletteTable (*((struct CompressedSpritePalette**) 0x8000130))
+#define tNidoranFSpriteId           data[4]
+
+void CreateOakIntroPokemonSprite(u8 taskId)
+{
+    u8 spriteId;
+
+    DecompressPicFromTable(&gMonFrontPicTable[OAK_INTRO_SPECIES], MonSpritesGfxManager_GetSpritePtr(0), OAK_INTRO_SPECIES);
+    LoadCompressedSpritePaletteUsingHeap(&gMonPaletteTable[OAK_INTRO_SPECIES]);
+    SetMultiuseSpriteTemplateToPokemon(OAK_INTRO_SPECIES, 0);
+    spriteId = CreateSprite(gMultiuseSpriteTemplate, 96, 96, 1);
+    gSprites[spriteId].callback = SpriteCallbackDummy;
+    gSprites[spriteId].oam.priority = 1;
+    gSprites[spriteId].invisible = TRUE;
+    gTasks[taskId].tNidoranFSpriteId = spriteId;
+}
+
 #define OakSpeechPrintMessage(str, speed) ({                                                                                                                 \
     DrawDialogueFrame(WIN_INTRO_TEXTBOX, FALSE);                                                                                                             \
     if (str != gStringVar4)                                                                                                                                  \
@@ -3238,7 +3264,58 @@ void Task_OakSpeech_IsInhabitedFarAndWide(u8 taskId)
         if (gTasks[taskId].tTimer == 32)
         {
             OakSpeechPrintMessage(gOakSpeech_Text_IsInhabitedFarAndWide, sOakSpeechResources->textSpeed);
-            PlayCry1(CRY_SPECIES, 0);
+            PlayCry1(OAK_INTRO_SPECIES, 0);
         }
+    }
+}
+
+#define tSceneNum              data[0]
+#define tState                 data[1]
+#define tHasCreatedBlankSprite data[5]
+#define tSlashSpriteId         data[6]
+#define SAVE_NORMAL 0
+#define SAVE_STATUS_EMPTY    0
+#define SAVE_STATUS_INVALID  2
+
+void SetTitleScreenScene_Cry(s16 *data)
+{
+    switch (tState)
+    {
+    case 0:
+        if (!gPaletteFade->active)
+        {
+            PlayCry1(CRY_SPECIES, 0);
+            DeactivateSlashSprite(tSlashSpriteId);
+            data[2] = 0;
+            tState++;
+        }
+        break;
+    case 1:
+        if (data[2] < 90)
+            data[2]++;
+        else if (!IsSlashSpriteDeactivated(tSlashSpriteId))
+        {
+            BeginNormalPaletteFade((PALETTES_ALL & ~(1 << 0x1C) & ~(1 << 0x1D) & ~(1 << 0x1E) & ~(1 << 0x1F)), 0, 0, 16, RGB_WHITE);
+            SignalEndTitleScreenPaletteSomethingTask();
+            FadeOutBGM(4);
+            tState++;
+        }
+        break;
+    case 2:
+        if (!gPaletteFade->active)
+        {
+            SeedRngAndSetTrainerId();
+            SetSaveBlocksPointers();
+            ResetMenuAndMonGlobals();
+            Save_ResetSaveCounters();
+            LoadGameSave(SAVE_NORMAL);
+            if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_INVALID)
+                Sav2_ClearSetDefault();
+            SetPokemonCryStereo(gSaveBlock2->optionsSound);
+            InitHeap(gHeap, HEAP_SIZE);
+            SetMainCallback2(CB2_InitMainMenu);
+            DestroyTask(FindTaskIdByFunc(Task_TitleScreenMain));
+        }
+        break;
     }
 }

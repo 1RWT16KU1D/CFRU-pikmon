@@ -382,6 +382,9 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_PORTABLE_PC 0xA0B //Flag to Enable/Disable Pocket PC.
 #define VAR_GAME_DIFFICULTY 0x5157 //Var to store the game difficulty level. If 0 difficulty is normal(vanilla), if 1 its easy, if 2 its Hard, if 3 its Expert. ShouldGiveTrainerMonMaxFriendship and ShouldGiveTrainerMonMaxEVs need to be set at your choice in build_pokemon.c
 #define CRY_SPECIES SPECIES_CHARIZARD //The species that will be used for the cry in the titlescreen. Currently its 0x6 (Charizard).
+#define OAK_INTRO_SPECIES SPECIES_NIDORAN_F //The species that appears in Oak's intro(New Game).
+
+
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 
