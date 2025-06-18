@@ -3217,7 +3217,6 @@ struct OakSpeechResources
 };
 
 #define gMonFrontPicTable ((const struct CompressedSpriteSheet*) *((u32*) 0x8000128))
-#define gMonPaletteTable (*((struct CompressedSpritePalette**) 0x8000130))
 #define tNidoranFSpriteId           data[4]
 
 void CreateOakIntroPokemonSprite(u8 taskId)
