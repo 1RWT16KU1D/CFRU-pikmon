@@ -290,10 +290,7 @@ void BattleBeginFirstTurn(void)
 
 						// Set ability
 						if (targetSpecies == species)
-						{
 							gBattleMons[i].ability = targetAbility;
-							continue;
-						}
 					}
 				}
 			#endif
