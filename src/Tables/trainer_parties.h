@@ -3754,13 +3754,13 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
     {
         .iv = 50,
         .lvl = 9,
-        .species = SPECIES_GOOMY,
+        .species = SPECIES_PIDGEY,
         .moves = {MOVE_TACKLE, MOVE_SANDATTACK, MOVE_NONE, MOVE_NONE},
     },
     {
         .iv = 50,
         .lvl = 9,
-        .species = SPECIES_GROWLITHE,
+        .species = SPECIES_SQUIRTLE,
         .moves = {MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE},
     },
 };

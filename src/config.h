@@ -400,4 +400,4 @@ enum //These vars need to be one after the other (hence the enum)
 #define PALETTE_SWAPPER
 
 /* Trainer Data */
-#define EXPAND_TRAINERS
+//#define EXPAND_TRAINERS
