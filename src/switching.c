@@ -529,9 +529,11 @@ void atk52_switchineffects(void)
 		return;
 
 	u32 i;
-	u8 tableSlot;
+	#ifdef EXPAND_TRAINERS
+	int tableSlot;
 	u16 trainerId = gTrainerBattleOpponent_A;
 	const struct TrainerCustomAbility *table = gCustomTrainerAbilityTable[trainerId];
+	#endif
 	u8 arg = T2_READ_8(gBattlescriptCurrInstr + 1);
 	if (arg == BS_GET_SCRIPTING_BANK)
 		gBattleScripting.bank = gNewBS->SentInBackup; //Restore scripting backup b/c can get changed

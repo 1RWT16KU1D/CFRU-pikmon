@@ -248,10 +248,14 @@ static void TryClearLevelCapKeptOn(void)
 
 void BattleBeginFirstTurn(void)
 {
-	int i, j, tableSlot;
-	u16 trainerId = gTrainerBattleOpponent_A;
+	int i, j;
 
+	#ifdef EXPAND_TRAINERS
+	int tableSlot;
+	u16 trainerId = gTrainerBattleOpponent_A;
 	const struct TrainerCustomAbility *table = gCustomTrainerAbilityTable[trainerId];
+	#endif
+
 	u8* state = &(gBattleStruct->switchInAbilitiesCounter);
 	u8* bank = &(gBattleStruct->switchInItemsCounter);
 
