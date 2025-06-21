@@ -37,6 +37,7 @@ switching.c
 
 enum SwitchInStates
 {
+	SwitchIn_TryChangeAbility,
 	SwitchIn_HandleAICooldown,
 	SwitchIn_CamomonsReveal,
 	SwitchIn_NeutralizingGasRemoveAbility,
@@ -528,6 +529,9 @@ void atk52_switchineffects(void)
 		return;
 
 	u32 i;
+	u8 tableSlot;
+	u16 trainerId = gTrainerBattleOpponent_A;
+	const struct TrainerCustomAbility *table = gCustomTrainerAbilityTable[trainerId];
 	u8 arg = T2_READ_8(gBattlescriptCurrInstr + 1);
 	if (arg == BS_GET_SCRIPTING_BANK)
 		gBattleScripting.bank = gNewBS->SentInBackup; //Restore scripting backup b/c can get changed
@@ -547,6 +551,32 @@ void atk52_switchineffects(void)
 		gNewBS->switchInEffectsState = SwitchIn_PrimalReversion;
 
 	switch (gNewBS->switchInEffectsState) {
+		case SwitchIn_TryChangeAbility:
+		#ifdef EXPAND_TRAINERS
+		{
+			u16 species = SPECIES(gActiveBattler);
+
+			for (tableSlot = 0; tableSlot < PARTY_SIZE; tableSlot++)
+			{
+				u16 targetSpecies = table[tableSlot].species;
+				u8 targetAbility = table[tableSlot].ability;
+
+				// Quit on encountering SPECIES_NONE
+				if (targetSpecies == SPECIES_NONE)
+					break;
+
+				// Set ability
+				if (targetSpecies == species)
+				{
+					gBattleMons[gActiveBattler].ability = targetAbility;
+					continue;
+				}
+			}
+		}
+		#endif
+			++gNewBS->switchInEffectsState;
+			break;
+
 		case SwitchIn_HandleAICooldown:
 			if (SIDE(gActiveBattler) == B_SIDE_PLAYER) //Player switched in a Pokemon
 			{

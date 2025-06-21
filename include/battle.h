@@ -310,6 +310,10 @@ struct Trainer
 /*
 extern const struct Trainer gTrainers[];
 */
+#ifdef EXPAND_TRAINERS
+extern const struct Trainer gTrainers[];
+#endif
+
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
 
 struct UnknownFlags
