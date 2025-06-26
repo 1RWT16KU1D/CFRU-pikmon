@@ -15,10 +15,13 @@ EventScriptP_ViridianCity_YoungMan:
 
 @   trainerbattle0 0 TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE 0 gText_ViridianCity_YoungManIntro gText_ViridianCity_YoungManLoss
 @   msgbox gText_ViridianCity_YoungManAfter MSG_FACE
-    
+
     setflag 0x918
     setflag 0x91E
     setflag 0xA00
+
+    setvar 0x8004 0
+    special 0x62
 
     givepokemon 0x154 100 0 0 0 0
     givepokemon 0x190 100 0 0 0 0

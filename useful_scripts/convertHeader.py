@@ -1,7 +1,10 @@
 import re
+import ast
+import argparse
+from pathlib import Path
 
-def ConvertHeaderToASM(inputFile, outputFile):
-    with open(inputFile, 'r') as file:
+def ConvertHeaderToASM(inputFile: Path, outputFile: Path):
+    with inputFile.open('r') as file:
         lines = file.readlines()
 
     definedMacros = {}
@@ -10,9 +13,22 @@ def ConvertHeaderToASM(inputFile, outputFile):
     insideEnum = False
     inBlockComment = False
 
-    # First Pass: Process #defines and collect enums
-    for line in lines:
-        line = line.strip()
+    # Process #defines, preserve pure comments, and collect enums
+    for raw in lines:
+        raw = raw.rstrip('\n')
+        stripped = raw.strip()
+
+        # Preserve whole-line comments as ASM comments
+        if stripped.startswith('//'):
+            comment = stripped[2:].strip()
+            orderedEqus.append(f"\n@ {comment}")
+            continue
+        if stripped.startswith('/*') and stripped.endswith('*/'):
+            comment = stripped[2:-2].strip()
+            orderedEqus.append(f"\n@ {comment}")
+            continue
+
+        line = stripped
 
         # Handle block comments
         if inBlockComment:
@@ -29,33 +45,33 @@ def ConvertHeaderToASM(inputFile, outputFile):
                 inBlockComment = True
                 line = line.split('/*', 1)[0].strip()
 
-        # Remove single-line comments
-        line = line.split('//')[0].strip()
+        # Strip trailing single-line comments
+        line = line.split('//', 1)[0].strip()
         if not line:
             continue
 
         # Simple #define (decimal or hex)
         defineMatch = re.match(r"#define\s+(\w+)\s+(0x[0-9A-Fa-f]+|\d+)", line)
         if defineMatch:
-            macroName, value = defineMatch.groups()
-            definedMacros[macroName] = int(value, 0)
-            orderedEqus.append(f".equ {macroName}, {definedMacros[macroName]}")
+            name, val = defineMatch.groups()
+            definedMacros[name] = int(val, 0)
+            orderedEqus.append(f".equ {name}, {definedMacros[name]}")
             continue
 
-        # Macro expression like BASE_MACRO + 1
+        # Macro expression like BASE + 1
         exprMatch = re.match(r"#define\s+(\w+)\s+(.+)", line)
         if exprMatch:
-            macroName, expr = exprMatch.groups()
+            name, expr = exprMatch.groups()
             try:
-                value = eval(expr, {"__builtins__": None}, definedMacros)
-                definedMacros[macroName] = value
-                orderedEqus.append(f".equ {macroName}, {value}")
+                value = ast.literal_eval(expr, {"__builtins__": None}, definedMacros)
+                definedMacros[name] = value
+                orderedEqus.append(f".equ {name}, {value}")
             except Exception:
-                pass  # Skip if not evaluable yet
+                pass
             continue
 
         # Enum detection
-        if re.match(r"enum", line):
+        if re.match(r"enum\b", line):
             insideEnum = True
             rawEnumLines.append(line)
             continue
@@ -68,25 +84,19 @@ def ConvertHeaderToASM(inputFile, outputFile):
     # Second Pass: Evaluate enums
     enumValue = None
     for line in rawEnumLines:
-        # End of enum block
         if "}" in line:
             enumValue = None
             continue
 
-        # Enum entry with explicit value or expression
         entryMatch = re.match(r"\s*(\w+)\s*=\s*(.+?)(?:,)?$", line)
         if entryMatch:
             name, expr = entryMatch.groups()
-            try:
-                value = eval(expr, {"__builtins__": None}, definedMacros)
-                definedMacros[name] = value
-                orderedEqus.append(f".equ {name}, {value}")
-                enumValue = value + 1
-            except Exception as e:
-                raise ValueError(f"Failed to evaluate expression '{expr}' for {name}: {e}")
+            value = ast.literal_eval(expr, {"__builtins__": None}, definedMacros)
+            definedMacros[name] = value
+            orderedEqus.append(f".equ {name}, {value}")
+            enumValue = value + 1
             continue
 
-        # Auto-incremented enum
         incrementMatch = re.match(r"\s*(\w+),", line)
         if incrementMatch:
             name = incrementMatch.group(1)
@@ -98,11 +108,19 @@ def ConvertHeaderToASM(inputFile, outputFile):
             continue
 
     # Write output
-    with open(outputFile, 'w') as file:
-        file.write('\n'.join(orderedEqus))
-        file.write('\n')
+    with outputFile.open('w') as file:
+        file.write("\n".join(orderedEqus))
+        file.write("\n")
 
-    print(f"Conversion complete! {inputFile} ➝ {outputFile}")
+    print(f"Conversion complete! {inputFile} ➝  {outputFile}")
 
-# Conversion of trainer_defines.h so as to include it in scripts
-ConvertHeaderToASM("src/Tables/trainer_defines.h", "trainers.s")
+# Example usage goes something like: python useful_scripts//convertHeader.py src/Tables/trainer_defines.h trainer_defines.s
+def main():
+    parser = argparse.ArgumentParser(description = "Convert C headers to ASM directives")
+    parser.add_argument("input",  type = Path, help = "Path to the C header")
+    parser.add_argument("output", type = Path, help = "Path for the ASM output")
+    args = parser.parse_args()
+
+    ConvertHeaderToASM(args.input, args.output)
+
+main()
