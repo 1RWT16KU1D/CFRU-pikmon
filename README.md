@@ -84,3 +84,4 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code.
 - The Mid battle evolutions work almost fine but there is a slight error for bulbasaur evolving to ivysaur:
 Going to fight button messes the graphics (it only fixes when you switch pokemon in battle, happens only for bulbasaur)
+ 
