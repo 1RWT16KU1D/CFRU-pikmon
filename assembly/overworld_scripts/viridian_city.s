@@ -4,6 +4,7 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
+.include "../trainer_defines.s"
 
 .global EventScriptP_ViridianCity_YoungMan
 
@@ -12,7 +13,7 @@ EventScriptP_ViridianCity_YoungMan:
 @   givepokemon SPECIES_GYARADOS 25 0x220 0 0 0
 @   additem ITEM_MEGA_RING 1 @ Gyaradosite
 
-@   trainerbattle0 0 329 0 gText_ViridianCity_YoungManIntro gText_ViridianCity_YoungManLoss
+@   trainerbattle0 0 TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE 0 gText_ViridianCity_YoungManIntro gText_ViridianCity_YoungManLoss
 @   msgbox gText_ViridianCity_YoungManAfter MSG_FACE
     
     setflag 0x918
@@ -45,7 +46,7 @@ EventScriptP_ViridianCity_YoungMan:
     removeitem 0x1A 0x31
 
     special 0
-    trainerbattle0 0 0x19D 0x0 gText_Initial gText_Lose
+    trainerbattle0 0 TRAINER_ELITE_FOUR_LANCE 0 gText_Initial gText_Lose
     msgbox gText_Later MSG_NORMAL
     special 0
     fadescreen 1
