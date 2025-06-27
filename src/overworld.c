@@ -3227,13 +3227,12 @@ void CB2_EndScriptedWildBattle_2(void)
 void CB2_WhiteOut(void)
 {
     u8 val;
-
-    if (++gMain.state >= 120)
-    {
-		if (FlagGet(FLAG_NUZLOCKE))
+	if (FlagGet(FLAG_NUZLOCKE))
 		{
 			CB2_NewGameOld();
 		}
+    if (++gMain.state >= 120)
+    {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();
         ResetSafariZoneFlag_();
