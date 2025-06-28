@@ -58,6 +58,7 @@
 #include "../include/new/party_menu.h"
 #include "../include/new/read_keys.h"
 #include "../include/new/wild_encounter.h"
+#include "../include/save.h"
 
 /*
 overworld.c
@@ -3229,6 +3230,7 @@ void CB2_WhiteOut(void)
     u8 val;
 	if (FlagGet(FLAG_NUZLOCKE))
 		{
+			ClearSaveData();
 			CB2_NewGameOld();
 		}
     if (++gMain.state >= 120)
