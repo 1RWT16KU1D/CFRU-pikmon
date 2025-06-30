@@ -506,7 +506,7 @@ FollowMe_WarpNormalEndHook 0807DF74 0
 FollowMe_WarpTeleportEndHook 807E364 0
 FollowMe_WarpStairsEndHook 0807EC5A 0
 FollowMe_WarpHoleEndHook 8084770 0
-FollowMe_LocalIdHook 0805DF60 3
+##FollowMe_LocalIdHook 0805DF60 3
 FollowMe_ScriptHook 0805FC20 3
 FollowMe_WhiteOutHook 8054E1A 2
 FollowMe_FishingHook 80A139C 1
@@ -813,5 +813,5 @@ PrintInfoPage 08136fb0 1
 #endif
 
 #ifdef MID_BATTLE_EVO
-CopyPlayerPartyMonToBattleData_Hook 08041BD4 1
+CopyPlayerPartyMonToBattleData_Hook 08041B90 1
 #endif
