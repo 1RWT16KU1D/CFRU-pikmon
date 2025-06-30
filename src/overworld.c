@@ -3138,6 +3138,8 @@ void CB2_EndTrainerBattle(void)
         if (IsPlayerDefeated(gBattleOutcome) == TRUE)
         {
             gSpecialVar_LastResult = TRUE;
+
+			#ifndef CONTINUE_LOST_BATTLES
             if (sRivalBattleFlags & RIVAL_BATTLE_HEAL_AFTER)
             {
                 HealPlayerParty();
@@ -3147,6 +3149,7 @@ void CB2_EndTrainerBattle(void)
                 SetMainCallback2(CB2_WhiteOut);
                 return;
             }
+			#endif
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
             SetBattledTrainerFlag();
             QuestLogEvents_HandleEndTrainerBattle();
