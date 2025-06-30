@@ -490,6 +490,7 @@ void HallOfFame_PrintWelcomeText(unusedArg u8 not, unusedArg u8 used)
 		}
 
 		u8 x2 = (0xd0 - GetStringWidth(2, difficultyText, 0)) / 2;
+		x2 += 4;
 		AddTextPrinterParameterized3(0, 2, x2, 16, sTextColors[0], 0, difficultyText);
 	#endif
     CopyWindowToVram(0, 3);
