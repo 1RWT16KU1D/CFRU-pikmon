@@ -14,12 +14,6 @@
 //#define DEBUG_AI_CHOICES //Removes the frame-based randomness of the AI's decisions
 //#define DEBUG_TERASTAL //Terastallization can be used in any battle without a Tera Orb
 
-/*===== EV-IV Screen =====*/
-#define FLAG_STAT_EDITOR_UNLOCKED 0x1203
-
-/*===== Custom code for Pokemon Amethyst =====*/
-#define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
-
 /*===== General Vars =====*/
 #define VAR_TERRAIN 0x5000 //Set to a terrain type for a battle to begin with the given terrain
 #define VAR_TOTEM 0x5001 //to var + 3 (0x5004)
@@ -385,6 +379,9 @@ enum //These vars need to be one after the other (hence the enum)
 #define OAK_INTRO_SPECIES SPECIES_NIDORAN_F //The species that appears in Oak's intro(New Game).
 #define OPEN_WORLD_TRAINERS // Custom Trainers and teams based on party levels (Not area based, making game open world). CAUTION: NOT TO USE WQITH EXPAND_TRAINERS
 //Also, using OPEN_WORLD_TRAINERS, you would need to edit gGeneralTrainerSpreads in build_pokemon.c
+#define SHOW_MEGAS_IN_HOF // Uncomment if you want mega and primal to be shown in hall of fame.
+#define FLAG_STAT_EDITOR_UNLOCKED 0xA0C
+#define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
