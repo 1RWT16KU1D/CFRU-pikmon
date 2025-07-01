@@ -1,2 +1,3 @@
 # Free Byte Replacements is a custom file
 # It adds specific bytes at free space in rom
+# Example: MyRoutline 00 00 will place 00 00 at free space and print offset in offsets ini as MyRoutline
