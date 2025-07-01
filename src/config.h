@@ -382,6 +382,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define SHOW_MEGAS_IN_HOF // Uncomment if you want mega and primal to be shown in hall of fame.
 #define FLAG_STAT_EDITOR_UNLOCKED 0xA0C
 #define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
+#define FLAG_SANDBOX_MODE 0xA0D // Use it only when you know what it does, lol.
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
