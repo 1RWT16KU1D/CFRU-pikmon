@@ -44,8 +44,11 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - IV rankings in summary
 - BW SUMMARY SCREEN
 - Mid battle evolutions
-- New difficulty mode support: Normal(Vanilla), Easy, Hard Expert
+- New difficulty mode support: Normal(Vanilla), Easy, Hard, Expert
 - Added an Egg Hatcher script. (Custom by Zake)
+- Sandbox mode
+- Open World Trainers!
+- Basic berry system
 - And much more!
 
 ##### Current count:
