@@ -2275,7 +2275,7 @@ extern const u8 gText_EnterNumber[];
 static const struct NamingScreenTemplate sChooseNumberNamingScreenTemplate =
 {
 	.copyExistingString = 0,
-	.maxChars = 4, //Max 9999 - should be preloaded
+	.maxChars = 5, //Max 9999 - should be preloaded
 	.iconFunction = 0,
 	.addGenderIcon = 0,
 	.initialPage = 1,

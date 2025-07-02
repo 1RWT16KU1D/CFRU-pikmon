@@ -1172,11 +1172,13 @@ SystemScript_DebugMenu_Custom:
 	multichoiceoption gText_DebugMenu_GivePokemonById 0
 	multichoiceoption gText_DebugMenu_GiveItemById 1
 	multichoiceoption gText_DebugMenu_CustomSetFlag 2
-	multichoice 0, 0, THREE_MULTICHOICE_OPTIONS, 0
+	multichoiceoption gText_DebugMenu_SetVar 3
+	multichoice 0, 0, FOUR_MULTICHOICE_OPTIONS, 0
 	switch LASTRESULT
 		case 0, SystemScript_DebugMenu_GivePokemonPrompt
 		case 1, SystemScript_DebugMenu_GiveItemPrompt
 		case 2, SystemScript_DebugMenu_CustomSetFlag
+		case 3, SystemScript_DebugMenu_SetVar
 	releaseall
 	end
 
@@ -1241,6 +1243,22 @@ SystemScript_DebugMenu_CustomSetFlag:
 	copyvar 0x8000, LASTRESULT
 	callasm DebugMenu_SetterFlag
 	msgbox Text_FlagSet MSG_NORMAL
+	releaseall
+	end
+
+.global SystemScript_DebugMenu_SetVar
+SystemScript_DebugMenu_SetVar:
+	lockall
+	msgbox Text_CustomSetVar MSG_NORMAL
+	special 0xB3
+	waitstate
+	copyvar 0x5158, LASTRESULT
+	msgbox gText_VarValue MSG_NORMAL
+	special 0xB3
+	waitstate
+	copyvar 0x5159, LASTRESULT
+	callasm DebugMenu_SetterVar
+	msgbox Text_VarSet MSG_NORMAL
 	releaseall
 	end
 

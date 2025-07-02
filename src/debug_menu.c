@@ -243,3 +243,9 @@ void DebugMenu_SetterFlag(void)
 	u16 flag = VarGet(VAR_8000);
 	FlagSet(flag);
 }
+void DebugMenu_SetterVar(void)
+{
+	u16 var = VarGet(VAR_DEBUG_MENU_SET_CUSTOM_VAR);
+	u16 value = VarGet(VAR_DEBUG_MENU_SET_CUSTOM_VAR_VALUE);
+	VarSet(var, value);
+}
