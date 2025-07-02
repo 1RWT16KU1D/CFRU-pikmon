@@ -238,3 +238,8 @@ void DebugMenu_Fly(void)
 
     FinalCall((void *)FINAL_ARG);
 }
+void DebugMenu_SetterFlag(void)
+{
+	u16 flag = VarGet(VAR_8000);
+	FlagSet(flag);
+}

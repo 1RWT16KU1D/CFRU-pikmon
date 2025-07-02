@@ -78,3 +78,15 @@ Debug Pokedex
 
 #org @gText_DebugMenu_StartWildBattle
 Custom Wild battle
+
+#org @gText_DebugMenu_CustomSetFlag
+Set Custom Flag
+
+#org @Text_CustomSetFlag
+Enter the Flag id (in Decimal).
+
+#org @Text_InvalidNumber
+Invalid Flag.
+
+#org @Text_FlagSet
+Flag Set.
