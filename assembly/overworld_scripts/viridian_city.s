@@ -4,57 +4,81 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
-.include "../trainer_defines.s"
 
 .global EventScriptP_ViridianCity_YoungMan
+.global EventScriptP_ViridianCity_Youngster
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 EventScriptP_ViridianCity_YoungMan:
+    lock
+    faceplayer
 
-@   givepokemon SPECIES_GYARADOS 25 0x220 0 0 0
-@   additem ITEM_MEGA_RING 1 @ Gyaradosite
+    giveegg SPECIES_IVYSAUR
+    setflag 0xA07 @ FLAG_TERA_BATTLE
+    trainerbattle0 0 329 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
+    msgbox gText_ViridianCity_BattleOver MSG_NORMAL
 
-@   trainerbattle0 0 TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE 0 gText_ViridianCity_YoungManIntro gText_ViridianCity_YoungManLoss
-@   msgbox gText_ViridianCity_YoungManAfter MSG_FACE
-
-    setflag 0x918
-    setflag 0x91E
-    setflag 0xA00
-
-    setvar 0x8004 0
-    special 0x62
-
-    givepokemon 0x154 100 0 0 0 0
-    givepokemon 0x190 100 0 0 0 0
-    givepokemon 0xFA 100 0 0 0 0
-    givepokemon 0x458 100 0 0 0 0
-    givepokemon 0x13A 100 0 0 0 0
-    givepokemon 0x58B 100 0 0 0 0
-
-    setflag 0x820
-    setflag 0x821
-    setflag 0x822
-    setflag 0x823
-    setflag 0x824
-    setflag 0x825
-    setflag 0x826
-    setflag 0x827
-    setflag 0x828
-    setflag 0x829
-    setflag 0x82F
-    
-    special 0x16F
-    setflag 0x906
-    giveegg 0x19
-    giveitem 0x1A 100 0
-    removeitem 0x1A 0x31
-
-    special 0
-    trainerbattle0 0 TRAINER_ELITE_FOUR_LANCE 0 gText_Initial gText_Lose
-    msgbox gText_Later MSG_NORMAL
-    special 0
-    fadescreen 1
-
-    warp 3 0 0xFF 5 8
-    waitstate
     release
     end
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+EventScriptP_ViridianCity_Youngster:
+    lock
+    faceplayer
+    additem ITEM_WATERIUM_Z 1
+    additem ITEM_MEGA_RING 1
+@   additem ITEM_TM19 1
+
+@   giveegg SPECIES_IVYSAUR
+
+    @ Relatable Mons
+    setvar 0x8000 MOVE_AURASPHERE
+    setvar 0x8001 MOVE_DAZZLINGGLEAM
+    setvar 0x8002 MOVE_THUNDERWAVE
+    setvar 0x8003 MOVE_MOONLIGHT
+    setvar 0x8004 NATURE_MODEST
+    setvar 0x8005 NOT_SHINY
+    setvar 0x8006 16
+    setvar 0x8007 16
+    setvar 0x8008 16
+    setvar 0x8009 16
+    setvar 0x800A 16
+    setvar 0x800B 16
+    givepokemon SPECIES_TOGETIC 26 ITEM_SHINY_STONE 0 1 10
+
+    @ Set-Up Gyarados
+    setvar 0x8000 MOVE_WATERFALL
+    setvar 0x8001 MOVE_ICEFANG
+    setvar 0x8002 MOVE_DRAGONDANCE
+    setvar 0x8003 MOVE_EARTHQUAKE
+    setvar 0x8004 NATURE_ADAMANT
+    setvar 0x8005 IS_SHINY
+    setvar 0x8006 16
+    setvar 0x8007 16
+    setvar 0x8008 16
+    setvar 0x8009 16
+    setvar 0x800A 16
+    setvar 0x800B 16
+    givepokemon SPECIES_GYARADOS 40 ITEM_WATERIUM_Z 0 1 5
+
+    setflag 0x82F
+    @ Mega Blaziken
+    setvar 0x8000 MOVE_BLAZEKICK
+    setvar 0x8001 MOVE_SKYUPPERCUT
+    setvar 0x8002 MOVE_THUNDERPUNCH
+    setvar 0x8003 MOVE_SWORDSDANCE
+    setvar 0x8004 NATURE_ADAMANT
+    setvar 0x8005 NOT_SHINY
+    setvar 0x8006 31
+    setvar 0x8007 31
+    setvar 0x8008 31
+    setvar 0x8009 31
+    setvar 0x800A 31
+    setvar 0x800B 31
+    givepokemon SPECIES_BLAZIKEN 40 ITEM_BLAZIKENITE 0 9
+
+    additem ITEM_MASTER_BALL 1
+    msgbox gText_ViridianCity_BattleOver MSG_NORMAL
+    release
+    end
+

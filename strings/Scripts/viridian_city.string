@@ -1,11 +1,11 @@
-#org @gText_ViridianCity_YoungManIntro
+#org @gText_ViridianCity_BattleStart
 Let's battle!
 
-#org @gText_ViridianCity_YoungManLoss
-Oh no[.] I lost!
+#org @gText_ViridianCity_BattleEnd
+Aw, shucks!
 
-#org @gText_ViridianCity_YoungManAfter
-Nice battle!
+#org @gText_ViridianCity_BattleOver
+You beat me!
 
 #org @gText_Initial
 Hi[.]

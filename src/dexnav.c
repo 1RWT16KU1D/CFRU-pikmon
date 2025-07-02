@@ -265,7 +265,6 @@ static void DexNavGetMon(u16 species, u8 potential, u8 level, u8 ability, u16* m
 
 	//Set item
 	SetMonData(mon, MON_DATA_HELD_ITEM, &sDexNavHudPtr->heldItem);
-	SetTeraType(mon);
 
 	CalculateMonStats(mon);
 	HealMon(mon); //Restore PP and fix HP if IV changed

@@ -3750,18 +3750,20 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabCharmander[] = {
     },
 };
 
-struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
+struct TrainerMonItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
     {
-        .iv = 50,
-        .lvl = 9,
-        .species = SPECIES_PIDGEY,
-        .moves = {MOVE_TACKLE, MOVE_SANDATTACK, MOVE_NONE, MOVE_NONE},
+        .iv = 122,
+        .lvl = 34,
+        .species = SPECIES_AGGRON,
+        .moves = {MOVE_IRONHEAD, MOVE_STONEEDGE, MOVE_CRUNCH, MOVE_PROTECT},
+        .heldItem = ITEM_FOCUS_SASH,
     },
     {
-        .iv = 50,
-        .lvl = 9,
-        .species = SPECIES_SQUIRTLE,
-        .moves = {MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE},
+        .iv = 121,
+        .lvl = 35,
+        .species = SPECIES_GIGALITH,
+        .moves = {MOVE_ROCKSLIDE, MOVE_BODYPRESS, MOVE_HEAVYSLAM, MOVE_EARTHQUAKE},
+        .heldItem = ITEM_SMOOTH_ROCK,
     },
 };
 

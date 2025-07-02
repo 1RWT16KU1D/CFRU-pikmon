@@ -196,7 +196,6 @@ void DebugMenu_GivePokemonFromVar(void)
 		return;
 
 	CreateMon(&mon, species, 50, 32, TRUE, 0, OT_ID_PLAYER_ID, 0);
-    SetTeraType(&mon);
 	gPlayerParty[slot] = mon;
 }
 void DebugMenu_GiveItemFromVar(void)

@@ -37,6 +37,7 @@
 #include "../include/new/multi.h"
 #include "../include/new/pokemon_storage_system.h"
 #include "../include/new/species_tables.h"
+#include "../include/new/terastallization.h"
 #include "../include/new/util.h"
 
 #include "Tables/battle_tower_spreads.h"
@@ -1013,11 +1014,26 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
-						if (trainer->partyFlags & PARTY_FLAG_CUSTOM_MOVES) 
-						{
-    						mon->teraType = trainer->party.ItemCustomMoves[i].teraType;
-						}
 						break;
+				}
+
+				// Assign random teraType based on original types
+				u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+				u8 type1 = gBaseStats[species].type1;
+				u8 type2 = gBaseStats[species].type2;
+				u8 randomValue = Random() % 100;
+
+				// 2% chance to get a random teraType
+				if (randomValue < 2)
+					mon->teraType = GetRandomTeraType();
+
+				// Otherwise, get a random one from the original typing
+				else
+				{
+					if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
+						mon->teraType = type1;
+					else
+						mon->teraType = (Random() & 1) ? type1 : type2;				
 				}
 			}
 
@@ -1134,6 +1150,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				#ifdef UNBOUND
 				TryGiveSpecialTrainerHiddenPower(trainerId, mon);
 				#endif
+
+				// Try assigning teraType
+				if (spread->teraType == TERA_TYPE_RANDOM_ALL)
+					mon->teraType = GetRandomTeraType();
+				else if (spread->teraType != TERA_TYPE_RANDOM) // We skip 0xFF because it has already been assigned prior
+					mon->teraType = spread->teraType; // Set teraType to designated value
 			}
 			#endif
 
@@ -4108,10 +4130,6 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, unusedArg u32 unused1, unusedA
 		FlagClear(FLAG_GIGANTAMAXABLE);
 	}
 	#endif
-
-	// // For Terastallization
-	u8 defaultTeraType = TYPE_BLANK;
-	mon.teraType = defaultTeraType;
 
 	#ifdef GIVEPOKEMON_CUSTOM_HACK
 	if (customGivePokemon != 0)

@@ -1,5 +1,4 @@
 import re
-import ast
 import argparse
 from pathlib import Path
 
@@ -63,7 +62,7 @@ def ConvertHeaderToASM(inputFile: Path, outputFile: Path):
         if exprMatch:
             name, expr = exprMatch.groups()
             try:
-                value = ast.literal_eval(expr, {"__builtins__": None}, definedMacros)
+                value = eval(expr, {"__builtins__": None}, definedMacros)
                 definedMacros[name] = value
                 orderedEqus.append(f".equ {name}, {value}")
             except Exception:
@@ -91,7 +90,7 @@ def ConvertHeaderToASM(inputFile: Path, outputFile: Path):
         entryMatch = re.match(r"\s*(\w+)\s*=\s*(.+?)(?:,)?$", line)
         if entryMatch:
             name, expr = entryMatch.groups()
-            value = ast.literal_eval(expr, {"__builtins__": None}, definedMacros)
+            value = eval(expr, {"__builtins__": None}, definedMacros)
             definedMacros[name] = value
             orderedEqus.append(f".equ {name}, {value}")
             enumValue = value + 1
