@@ -1173,12 +1173,14 @@ SystemScript_DebugMenu_Custom:
 	multichoiceoption gText_DebugMenu_GiveItemById 1
 	multichoiceoption gText_DebugMenu_CustomSetFlag 2
 	multichoiceoption gText_DebugMenu_SetVar 3
-	multichoice 0, 0, FOUR_MULTICHOICE_OPTIONS, 0
+	multichoiceoption gText_DebugMenu_Trainerbattle 4
+	multichoice 0, 0, FIVE_MULTICHOICE_OPTIONS, 0
 	switch LASTRESULT
 		case 0, SystemScript_DebugMenu_GivePokemonPrompt
 		case 1, SystemScript_DebugMenu_GiveItemPrompt
 		case 2, SystemScript_DebugMenu_CustomSetFlag
 		case 3, SystemScript_DebugMenu_SetVar
+		case 4, SystemScript_DebugMenu_Trainerbattle
 	releaseall
 	end
 
@@ -1259,6 +1261,19 @@ SystemScript_DebugMenu_SetVar:
 	copyvar 0x5159, LASTRESULT
 	callasm DebugMenu_SetterVar
 	msgbox Text_VarSet MSG_NORMAL
+	releaseall
+	end
+
+.global SystemScript_DebugMenu_Trainerbattle
+SystemScript_DebugMenu_Trainerbattle:
+	lockall
+	msgbox gText_TrainerCustomBattle MSG_NORMAL
+	special 0xB3
+	waitstate
+	setvar 0x8000 0xFEFE
+	setvar 0x503A 0x2
+	setvar 0x503B 0x0
+	trainerbattle3 0x3 LASTRESULT 0x100 DebugMenu_LossMessage
 	releaseall
 	end
 

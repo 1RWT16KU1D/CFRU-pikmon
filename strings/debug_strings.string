@@ -102,3 +102,12 @@ Enter value to set.
 
 #org @Text_VarSet
 Var set!
+
+#org @gText_DebugMenu_Trainerbattle
+Custom Trainer battle
+
+#org @gText_TrainerCustomBattle
+Enter trainer id (in Decimal).
+
+#org @DebugMenu_LossMessage
+Caterpie can't hack it.
