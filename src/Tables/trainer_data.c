@@ -17,6 +17,8 @@
 #define GENDER_MALE 0
 #define GENDER_FEMALE 1
 
+#define NO_ITEMS   ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE
+
 const struct Trainer gTrainers[] = {
         [TRAINER_NONE] = {
         #ifdef DECAP_TRAINER_NAMES
@@ -36,7 +38,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = 1,
@@ -53,7 +55,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -70,7 +72,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -87,7 +89,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -104,7 +106,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -121,7 +123,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -138,7 +140,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -155,7 +157,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -172,7 +174,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -189,7 +191,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -206,7 +208,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -223,7 +225,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -240,7 +242,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -257,7 +259,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -274,7 +276,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -291,7 +293,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -308,7 +310,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -325,7 +327,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -342,7 +344,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -359,7 +361,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -376,7 +378,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -393,7 +395,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -410,7 +412,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -427,7 +429,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -444,7 +446,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _I, _D, _N, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -461,7 +463,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _H, _O, _E, _B, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -478,7 +480,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _X, _A, _N, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -495,7 +497,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _A, _W, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -512,7 +514,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _T, _E, _AMPERSAND, _L, _I, _Z, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -529,7 +531,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -546,7 +548,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -563,7 +565,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -580,7 +582,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -597,7 +599,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -614,7 +616,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -631,7 +633,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -648,7 +650,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -665,7 +667,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -682,7 +684,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -699,7 +701,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -716,7 +718,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -733,7 +735,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -750,7 +752,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -767,7 +769,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -784,7 +786,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -801,7 +803,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -818,7 +820,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -835,7 +837,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -852,7 +854,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -869,7 +871,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -886,7 +888,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -903,7 +905,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -920,7 +922,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -937,7 +939,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -954,7 +956,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -971,7 +973,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -988,7 +990,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1005,7 +1007,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1022,7 +1024,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1039,7 +1041,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1056,7 +1058,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1073,7 +1075,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1090,7 +1092,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1107,7 +1109,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1124,7 +1126,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1141,7 +1143,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1158,7 +1160,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -1175,7 +1177,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -1192,7 +1194,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1209,7 +1211,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1226,7 +1228,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1243,7 +1245,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1260,7 +1262,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1277,7 +1279,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1294,7 +1296,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1311,7 +1313,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1328,7 +1330,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1345,7 +1347,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _T, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1362,7 +1364,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _L, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1379,7 +1381,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _B, _I, _T, _H, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1396,7 +1398,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _U, _R, _T, _N, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1413,7 +1415,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _T, _T, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1430,7 +1432,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _L, _A, _N, _N, _E, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1447,7 +1449,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _O, _R, _M, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1464,7 +1466,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _I, _N, _O, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1481,7 +1483,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _L, _L, _A, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1498,7 +1500,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _L, _A, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1515,7 +1517,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _R, _A, _K, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1532,7 +1534,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1549,7 +1551,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _L, _V, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1566,7 +1568,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _S, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1583,7 +1585,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1600,7 +1602,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1617,7 +1619,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1634,7 +1636,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1651,7 +1653,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _Y, _L, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1668,7 +1670,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _D, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1685,7 +1687,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _I, _L, _L, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1702,7 +1704,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Y, _A, _S, _U, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1719,7 +1721,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _V, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1736,7 +1738,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1753,7 +1755,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1770,7 +1772,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _O, _U, _G, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1787,7 +1789,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _A, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1804,7 +1806,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1821,7 +1823,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _E, _G, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1838,7 +1840,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _M, _E, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1855,7 +1857,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1872,7 +1874,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _B, _B, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1889,7 +1891,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1906,7 +1908,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _I, _G, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1923,7 +1925,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _L, _I, _J, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1940,7 +1942,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1957,7 +1959,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _E, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1974,7 +1976,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _N, _N, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -1991,7 +1993,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _N, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2008,7 +2010,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _A, _L, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2025,7 +2027,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _B, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2042,7 +2044,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _R, _I, _S, _S, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2059,7 +2061,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _R, _I, _A, _M, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2076,7 +2078,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _R, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2093,7 +2095,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _L, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2110,7 +2112,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2127,7 +2129,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2144,7 +2146,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _A, _L, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2161,7 +2163,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2178,7 +2180,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _W, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2195,7 +2197,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _A, _I, _G, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2212,7 +2214,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _D, _R, _E, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2229,7 +2231,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _E, _G, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2246,7 +2248,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _U, _L, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2263,7 +2265,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _A, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2280,7 +2282,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _S, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2297,7 +2299,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _M, _O, _N, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2314,7 +2316,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _R, _E, _V, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2331,7 +2333,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _O, _N, _A, _R, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2348,7 +2350,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _U, _N, _C, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2365,7 +2367,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _U, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2382,7 +2384,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _Y, _L, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2399,7 +2401,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _H, _I, _L, _L, _I, _P, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2416,7 +2418,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _W, _A, _Y, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2433,7 +2435,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _A, _M, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2450,7 +2452,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _A, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2467,7 +2469,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _T, _H, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2484,7 +2486,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2501,7 +2503,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _F, _F, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2518,7 +2520,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2535,7 +2537,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _R, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2552,7 +2554,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _R, _E, _W, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2569,7 +2571,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _I, _A, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2586,7 +2588,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _A, _N, _C, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2603,7 +2605,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2620,7 +2622,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2637,7 +2639,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2654,7 +2656,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _I, _T, _L, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2671,7 +2673,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _I, _D, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2688,7 +2690,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _R, _O, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2705,7 +2707,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _O, _F, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2722,7 +2724,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _T, _H, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2739,7 +2741,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2756,7 +2758,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _A, _N, _N, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2773,7 +2775,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2790,7 +2792,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _R, _M, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2807,7 +2809,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _O, _P, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2824,7 +2826,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _T, _E, _V, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2841,7 +2843,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _I, _N, _S, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2858,7 +2860,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _W, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2875,7 +2877,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _S, _H, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2892,7 +2894,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _V, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2909,7 +2911,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _G, _U, _E, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2926,7 +2928,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _I, _D, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2943,7 +2945,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _L, _E, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2960,7 +2962,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _S, _L, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2977,7 +2979,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -2994,7 +2996,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3011,7 +3013,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3028,7 +3030,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _R, _I, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3045,7 +3047,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _V, _E, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3062,7 +3064,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _E, _R, _E, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3079,7 +3081,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Z, _A, _C, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3096,7 +3098,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _C, _O, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3113,7 +3115,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _R, _A, _N, _K, _L, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3130,7 +3132,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _O, _B, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3147,7 +3149,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _Y, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3164,7 +3166,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3181,7 +3183,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3198,7 +3200,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _L, _A, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3215,7 +3217,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _R, _E, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3232,7 +3234,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _U, _D, _L, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3249,7 +3251,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _L, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3266,7 +3268,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _R, _I, _C, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3283,7 +3285,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _N, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3300,7 +3302,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _O, _L, _I, _V, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3317,7 +3319,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _C, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3334,7 +3336,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _R, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3351,7 +3353,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _L, _I, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3368,7 +3370,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _R, _N, _E, _S, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3385,7 +3387,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _E, _X, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3402,7 +3404,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3419,7 +3421,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3436,7 +3438,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _I, _D, _E, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3453,7 +3455,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _U, _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3470,7 +3472,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _I, _L, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3487,7 +3489,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _I, _K, _O, _L, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3504,7 +3506,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _X, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3521,7 +3523,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _I, _L, _L, _I, _A, _M, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3538,7 +3540,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _K, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3555,7 +3557,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _A, _C, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3572,7 +3574,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _E, _R, _A, _L, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3589,7 +3591,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3606,7 +3608,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3623,7 +3625,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3640,7 +3642,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Q, _U, _I, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3657,7 +3659,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _M, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3674,7 +3676,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _U, _S, _T, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3691,7 +3693,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _R, _N, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3708,7 +3710,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3725,7 +3727,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _I, _M, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3742,7 +3744,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _W, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3759,7 +3761,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _A, _I, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3776,7 +3778,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _A, _X, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3793,7 +3795,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _R, _N, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3810,7 +3812,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3827,7 +3829,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _A, _R, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3844,7 +3846,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3861,7 +3863,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _I, _P, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3878,7 +3880,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _A, _N, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3895,7 +3897,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _L, _L, _I, _O, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3912,7 +3914,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _N, _A, _L, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3929,7 +3931,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _L, _A, _U, _D, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3946,7 +3948,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _D, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3963,7 +3965,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _O, _L, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3980,7 +3982,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _D, _R, _E, _W, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -3997,7 +3999,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4014,7 +4016,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _H, _A, _R, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4031,7 +4033,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _E, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4048,7 +4050,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _T, _T, _H, _E, _W, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4065,7 +4067,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _O, _U, _G, _L, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4082,7 +4084,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _V, _I, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4099,7 +4101,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _O, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4116,7 +4118,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _X, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4133,7 +4135,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _A, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4150,7 +4152,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _E, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4167,7 +4169,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _R, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4184,7 +4186,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _P, _E, _N, _C, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4201,7 +4203,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4218,7 +4220,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _R, _O, _M, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4235,7 +4237,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _L, _A, _N, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4252,7 +4254,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _O, _J, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4269,7 +4271,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _K, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4286,7 +4288,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _M, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4303,7 +4305,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _U, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4320,7 +4322,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _I, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4337,7 +4339,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Z, _E, _E, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4354,7 +4356,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _M, _A, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4371,7 +4373,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _R, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4388,7 +4390,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _S, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4405,7 +4407,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _U, _G, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4422,7 +4424,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _S, _P, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4439,7 +4441,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _I, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4456,7 +4458,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4473,7 +4475,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _T, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4490,7 +4492,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4507,7 +4509,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4524,7 +4526,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _I, _D, _G, _E, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4541,7 +4543,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _M, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4558,7 +4560,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _O, _R, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4575,7 +4577,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _O, _L, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4592,7 +4594,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _I, _L, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4609,7 +4611,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _F, _F, _A, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4626,7 +4628,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _O, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4643,7 +4645,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _E, _L, _I, _S, _S, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4660,7 +4662,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _A, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4677,7 +4679,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _O, _L, _I, _V, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4694,7 +4696,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _U, _R, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4711,7 +4713,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4728,7 +4730,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4745,7 +4747,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _N, _N, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4762,7 +4764,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _I, _R, _L, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4779,7 +4781,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _H, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4796,7 +4798,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _Y, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4813,7 +4815,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _M, _E, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4830,7 +4832,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _R, _E, _S, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4847,7 +4849,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _N, _D, _A, _L, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4864,7 +4866,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _C, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4881,7 +4883,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4898,7 +4900,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _E, _L, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4915,7 +4917,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _I, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4932,7 +4934,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _A, _W, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4949,7 +4951,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _E, _G, _O, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4966,7 +4968,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _W, _A, _R, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -4983,7 +4985,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _A, _Y, _D, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5000,7 +5002,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _A, _T, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5017,7 +5019,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _H, _I, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5034,7 +5036,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _G, _A, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5051,7 +5053,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5068,7 +5070,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5085,7 +5087,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _V, _I, _N, _C, _E, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5102,7 +5104,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _H, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5119,7 +5121,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _E, _B, _A, _S, _T, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5136,7 +5138,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5153,7 +5155,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _B, _E, _R, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5170,7 +5172,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _O, _N, _A, _L, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5187,7 +5189,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5204,7 +5206,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _W, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5221,7 +5223,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5238,7 +5240,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _I, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5255,7 +5257,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _M, _I, _R, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5272,7 +5274,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _O, _B, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5289,7 +5291,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _G, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5306,7 +5308,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5323,7 +5325,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _I, _T, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5340,7 +5342,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _R, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5357,7 +5359,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _T, _C, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5374,7 +5376,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _C, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5391,7 +5393,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _L, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5408,7 +5410,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _O, _I, _C, _H, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5425,7 +5427,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _K, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5442,7 +5444,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _I, _D, _E, _K, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5459,7 +5461,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _A, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5476,7 +5478,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _I, _T, _O, _S, _H, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5493,7 +5495,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _T, _S, _U, _S, _H, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5510,7 +5512,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _I, _Y, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5527,7 +5529,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _K, _A, _S, _H, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5544,7 +5546,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _I, _S, _U, _K, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5561,7 +5563,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5578,7 +5580,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5595,14 +5597,14 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabCharmander },
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE] = {
-        .partyFlags = PARTY_FLAG_HAS_ITEM | PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
@@ -5615,8 +5617,8 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_MEGA_RING, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
-        .party = { .ItemCustomMoves = sParty_RivalRoute22EarlySquirtle },
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .party = { .NoItemCustomMoves = sParty_RivalRoute22EarlySquirtle },
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
@@ -5629,7 +5631,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5646,7 +5648,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5663,7 +5665,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5680,7 +5682,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5697,7 +5699,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -5714,7 +5716,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5731,7 +5733,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _N, _N, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5748,7 +5750,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5765,7 +5767,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _S, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5782,7 +5784,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _D, _N, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5799,7 +5801,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _A, _U, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5816,7 +5818,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _Y, _L, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5833,7 +5835,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _S, _H, _U, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5850,7 +5852,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _A, _R, _K, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5867,7 +5869,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5884,7 +5886,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _R, _A, _V, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5901,7 +5903,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _A, _Y, _D, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5918,7 +5920,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _V, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5935,7 +5937,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _O, _V, _A, _N, _N, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5952,7 +5954,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _O, _V, _A, _N, _N, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -5986,7 +5988,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6003,7 +6005,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6020,7 +6022,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6037,7 +6039,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6054,7 +6056,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6071,7 +6073,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6088,7 +6090,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6105,7 +6107,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6122,7 +6124,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6139,7 +6141,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6156,7 +6158,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6173,7 +6175,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6190,7 +6192,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6207,7 +6209,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6224,7 +6226,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6241,7 +6243,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6258,7 +6260,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6275,7 +6277,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6292,7 +6294,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6309,7 +6311,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6326,7 +6328,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6343,7 +6345,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6360,7 +6362,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6377,7 +6379,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6394,7 +6396,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6411,7 +6413,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6428,7 +6430,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6445,7 +6447,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6462,7 +6464,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6479,7 +6481,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6496,7 +6498,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6513,7 +6515,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6530,7 +6532,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6547,7 +6549,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6564,7 +6566,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6581,7 +6583,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6598,7 +6600,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6615,7 +6617,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6632,7 +6634,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6649,7 +6651,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -6666,7 +6668,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7057,7 +7059,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _O, _C, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7176,7 +7178,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _H, _O, _M, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7193,7 +7195,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _R, _T, _H, _U, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7210,7 +7212,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _U, _C, _K, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7227,7 +7229,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _O, _R, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7244,7 +7246,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _L, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7261,7 +7263,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7278,7 +7280,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7295,7 +7297,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7312,7 +7314,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7329,7 +7331,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7346,7 +7348,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7363,7 +7365,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7380,7 +7382,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7397,7 +7399,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7414,7 +7416,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7431,7 +7433,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7448,7 +7450,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -7516,7 +7518,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _A, _T, _R, _I, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7533,7 +7535,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _R, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7550,7 +7552,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _O, _P, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7567,7 +7569,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _A, _U, _L, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7584,7 +7586,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _U, _R, _E, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7601,7 +7603,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _D, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7618,7 +7620,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7635,7 +7637,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _U, _T, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7652,7 +7654,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _A, _R, _I, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7669,7 +7671,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _N, _A, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7686,7 +7688,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _G, _E, _L, _I, _C, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7703,7 +7705,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _M, _I, _L, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7720,7 +7722,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _N, _N, _I, _F, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7737,7 +7739,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7754,7 +7756,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7771,7 +7773,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7788,7 +7790,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7805,7 +7807,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7822,7 +7824,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7839,7 +7841,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7856,7 +7858,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7873,7 +7875,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _M, _A, _N, _D, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7890,7 +7892,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _T, _A, _C, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7907,7 +7909,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _S, _H, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7924,7 +7926,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _R, _E, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7941,7 +7943,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _M, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7958,7 +7960,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _U, _S, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7975,7 +7977,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _V, _A, _L, _E, _R, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -7992,7 +7994,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _W, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8009,7 +8011,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _V, _I, _R, _G, _I, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8026,7 +8028,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _L, _I, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8043,7 +8045,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _S, _S, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8060,7 +8062,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _R, _E, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8077,7 +8079,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8094,7 +8096,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _R, _I, _A, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8111,7 +8113,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8128,7 +8130,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _U, _S, _T, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8145,7 +8147,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Y, _A, _Z, _M, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8162,7 +8164,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _I, _N, _D, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8179,7 +8181,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8196,7 +8198,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _E, _L, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8213,7 +8215,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _O, _O, _K, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8230,7 +8232,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _M, _A, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8247,7 +8249,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _L, _I, _SPACE, _AMPERSAND, _SPACE, _A, _N, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8264,7 +8266,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _Y, _SPACE, _AMPERSAND, _SPACE, _T, _Y, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
@@ -8281,7 +8283,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8298,7 +8300,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _I, _R, _I, _SPACE, _AMPERSAND, _SPACE, _J, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8315,7 +8317,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8332,7 +8334,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8349,7 +8351,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _A, _SPACE, _AMPERSAND, _SPACE, _L, _U, _C, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8366,7 +8368,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8383,7 +8385,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8400,7 +8402,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8417,7 +8419,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8434,7 +8436,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8451,7 +8453,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8468,7 +8470,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8485,7 +8487,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8502,7 +8504,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8519,7 +8521,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8536,7 +8538,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _L, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8553,7 +8555,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _L, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8570,7 +8572,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8587,7 +8589,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8604,7 +8606,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8621,7 +8623,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8638,7 +8640,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _N, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8655,7 +8657,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _N, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8672,7 +8674,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8689,7 +8691,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _R, _A, _N, _K, _L, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8706,7 +8708,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _R, _O, _F, _PERIOD, _SPACE, _O, _A, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8723,7 +8725,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _E, _N, _D, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8740,7 +8742,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8757,7 +8759,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _E, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8774,7 +8776,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _E, _A, _F, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8791,7 +8793,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8808,7 +8810,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _L, _Y, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8825,7 +8827,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _A, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8842,7 +8844,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _M, _I, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8859,7 +8861,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _Z, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8910,7 +8912,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _I, _K, _K, _I, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8927,7 +8929,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _T, _A, _N, _L, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8961,7 +8963,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _I, _S, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8978,7 +8980,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _O, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -8995,7 +8997,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _O, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9012,7 +9014,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _O, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9029,7 +9031,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9046,7 +9048,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _N, _T, _H, _O, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9063,7 +9065,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _R, _L, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9080,7 +9082,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _L, _I, _SPACE, _AMPERSAND, _SPACE, _A, _N, _N, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9097,7 +9099,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _H, _N, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9114,7 +9116,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _A, _R, _D, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9131,7 +9133,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _R, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9148,7 +9150,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9165,7 +9167,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9182,7 +9184,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9199,7 +9201,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9216,7 +9218,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9233,7 +9235,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9284,7 +9286,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _D, _E, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9301,7 +9303,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _M, _A, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9318,7 +9320,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9335,7 +9337,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _B, _I, _G, _A, _I, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9352,7 +9354,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _I, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9369,7 +9371,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _A, _R, _R, _E, _T, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9386,7 +9388,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _O, _M, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9403,7 +9405,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _N, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9420,7 +9422,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9437,7 +9439,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _U, _G, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9454,7 +9456,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _Y, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9471,7 +9473,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _L, _A, _I, _R, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9488,7 +9490,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9505,7 +9507,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _V, _I, _O, _L, _E, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9522,7 +9524,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _E, _X, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9539,7 +9541,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _Y, _SPACE, _AMPERSAND, _SPACE, _M, _E, _G, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9556,7 +9558,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _I, _S, _H, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9573,7 +9575,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _E, _L, _I, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9590,7 +9592,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _Y, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9624,7 +9626,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _E, _S, _T, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9641,7 +9643,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _O, _B, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9658,7 +9660,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9675,7 +9677,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9692,7 +9694,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _U, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9709,7 +9711,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _L, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9726,7 +9728,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _Z, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9743,7 +9745,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _A, _R, _O, _L, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9760,7 +9762,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _Y, _L, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9777,7 +9779,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _Y, _M, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9794,7 +9796,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _I, _C, _O, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9811,7 +9813,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _V, _A, _SPACE, _AMPERSAND, _SPACE, _G, _E, _B, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9828,7 +9830,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _S, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9845,7 +9847,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _A, _M, _I, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9862,7 +9864,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _E, _N, _I, _S, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9879,7 +9881,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _U, _SPACE, _AMPERSAND, _SPACE, _M, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9896,7 +9898,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _A, _R, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9913,7 +9915,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _O, _S, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9930,7 +9932,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9947,7 +9949,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _Y, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9964,7 +9966,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _C, _T, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9981,7 +9983,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _I, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -9998,7 +10000,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _D, _E, _T, _T, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10015,7 +10017,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10032,7 +10034,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _V, _E, _SPACE, _AMPERSAND, _SPACE, _J, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10049,7 +10051,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10066,7 +10068,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _Y, _N, _D, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10083,7 +10085,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _C, _E, _L, _Y, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10100,7 +10102,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _V, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10117,7 +10119,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10253,7 +10255,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _R, _A, _N, _D, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10270,7 +10272,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _J, _A, _M, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10287,7 +10289,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _D, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10304,7 +10306,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _L, _I, _F, _F, _O, _R, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10338,7 +10340,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _W, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10355,7 +10357,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _U, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10372,7 +10374,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _T, _H, _A, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10389,7 +10391,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _L, _I, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10406,7 +10408,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _A, _R, _R, _E, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10423,7 +10425,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _N, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10440,7 +10442,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _V, _A, _N, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10457,7 +10459,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _A, _S, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10474,7 +10476,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _R, _D, _E, _L, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10491,7 +10493,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _L, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10508,7 +10510,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _A, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10525,7 +10527,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _L, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10542,7 +10544,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _C, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10559,7 +10561,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _Y, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10576,7 +10578,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10593,7 +10595,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10610,7 +10612,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10627,7 +10629,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10644,7 +10646,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10661,7 +10663,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10686,7 +10688,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _J, _E, _F, _F, _END },
         #endif
                 #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10703,7 +10705,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _F, _F, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10720,7 +10722,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _F, _F, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10737,7 +10739,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10754,7 +10756,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10771,7 +10773,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10788,7 +10790,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Y, _A, _S, _U, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10805,7 +10807,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _Y, _A, _S, _U, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10822,7 +10824,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _R, _N, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10839,7 +10841,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10856,7 +10858,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _R, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10873,7 +10875,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _R, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10890,7 +10892,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _R, _I, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10907,7 +10909,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10924,7 +10926,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10941,7 +10943,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10958,7 +10960,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _E, _R, _E, _M, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10975,7 +10977,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -10992,7 +10994,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _R, _M, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11009,7 +11011,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _R, _M, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11026,7 +11028,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _R, _E, _N, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11043,7 +11045,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _E, _G, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11060,7 +11062,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _E, _G, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11077,7 +11079,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _L, _E, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11094,7 +11096,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _I, _C, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11111,7 +11113,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _R, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11128,7 +11130,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _L, _L, _I, _O, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11145,7 +11147,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _C, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11162,7 +11164,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _I, _L, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11179,7 +11181,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _B, _E, _R, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11196,7 +11198,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _B, _E, _R, _T, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11213,7 +11215,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _U, _S, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11230,7 +11232,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _U, _S, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11247,7 +11249,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _U, _S, _I, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11264,7 +11266,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _U, _K, _A, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11281,7 +11283,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11298,7 +11300,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _N, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11315,7 +11317,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _L, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11332,7 +11334,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _R, _L, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11349,7 +11351,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _R, _A, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11366,7 +11368,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11383,7 +11385,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11400,7 +11402,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11417,7 +11419,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11434,7 +11436,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _B, _E, _C, _K, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11451,7 +11453,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11468,7 +11470,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11485,7 +11487,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11502,7 +11504,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _U, _B, _E, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11519,7 +11521,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _A, _M, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11536,7 +11538,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _X, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11553,7 +11555,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _I, _S, _A, _I, _A, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11570,7 +11572,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _R, _E, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11587,7 +11589,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _O, _B, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11604,7 +11606,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _O, _B, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11621,7 +11623,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _C, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11638,7 +11640,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _R, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11655,7 +11657,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _S, _S, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11672,7 +11674,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _S, _S, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11689,7 +11691,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _W, _A, _D, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11706,7 +11708,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _K, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11723,7 +11725,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11740,7 +11742,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11757,7 +11759,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _F, _I, _N, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11774,7 +11776,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _A, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11791,7 +11793,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _A, _R, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11808,7 +11810,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _N, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11825,7 +11827,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _A, _N, _Y, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11842,7 +11844,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11859,7 +11861,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _H, _E, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11876,7 +11878,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _U, _G, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11893,7 +11895,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _U, _G, _H, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11910,7 +11912,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11927,7 +11929,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11944,7 +11946,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _M, _I, _R, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11961,7 +11963,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _O, _Y, _SPACE, _AMPERSAND, _SPACE, _M, _E, _G, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11978,7 +11980,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _A, _Y, _N, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -11995,7 +11997,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _E, _S, _T, _I, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12012,7 +12014,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _A, _L, _I, _Z, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12029,7 +12031,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12046,7 +12048,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12063,7 +12065,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _I, _L, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12080,7 +12082,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _H, _A, _Z, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12097,7 +12099,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _A, _R, _O, _L, _D, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12114,7 +12116,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _N, _I, _C, _O, _L, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12131,7 +12133,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _J, _A, _C, _L, _Y, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12148,7 +12150,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _S, _A, _M, _I, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12165,7 +12167,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _A, _R, _L, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12182,7 +12184,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _L, _A, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12199,7 +12201,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _H, _E, _C, _T, _O, _R, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12216,7 +12218,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _D, _A, _R, _I, _O, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12233,7 +12235,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _R, _O, _D, _E, _T, _T, _E, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12250,7 +12252,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _S, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12301,7 +12303,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _Y, _N, _D, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12318,7 +12320,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _E, _V, _A, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12420,7 +12422,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12437,7 +12439,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12454,7 +12456,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _C, _O, _L, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12471,7 +12473,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _A, _T, _T, _H, _E, _W, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12488,7 +12490,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _O, _N, _Y, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12505,7 +12507,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _M, _E, _L, _I, _S, _S, _A, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -12641,7 +12643,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _P, _A, _X, _T, _O, _N, _END },
         #endif
-        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,

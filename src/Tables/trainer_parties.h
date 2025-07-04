@@ -3750,31 +3750,33 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabCharmander[] = {
     },
 };
 
-struct TrainerMonItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
+struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
     {
-        .lvl = 34,
-        .iv = 122,
-        .species = SPECIES_AGGRON,
-        .heldItem = ITEM_ROCKIUM_Z,
-        .moves = {MOVE_IRONHEAD, MOVE_PROTECT, MOVE_SUPERPOWER, MOVE_ROCKSLIDE},
+        .iv = 50,
+        .lvl = 9,
+        .species = SPECIES_PIDGEY,
+        .moves = {MOVE_TACKLE, MOVE_SANDATTACK, MOVE_NONE, MOVE_NONE},
     },
     {
-        .lvl = 35,
-        .iv = 121,
-        .species = SPECIES_GIGALITH,
-        .heldItem = ITEM_SMOOTH_ROCK,
-        .moves = {MOVE_STONEEDGE, MOVE_EARTHQUAKE, MOVE_BODYPRESS, MOVE_HEAVYSLAM},
+        .iv = 50,
+        .lvl = 9,
+        .species = SPECIES_SQUIRTLE,
+        .moves = {MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE},
     },
 };
 
 struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlyBulbasaur[] = {
     {
+        .iv = 50,
         .lvl = 9,
         .species = SPECIES_PIDGEY,
+        .moves = {MOVE_TACKLE, MOVE_SANDATTACK, MOVE_NONE, MOVE_NONE},
     },
     {
-        .lvl = 15,
-        .species = SPECIES_BULBASAUR,
+        .iv = 50,
+        .lvl = 9,
+        .species = SPECIES_CHARMANDER,
+        .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
     },
 };
 
