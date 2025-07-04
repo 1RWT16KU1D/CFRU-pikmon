@@ -185,7 +185,6 @@ u8 *DoTerastallize(u8 bank)
         // Because Stellar Tera Defensive Typing remains same
         if (teraType != TYPE_STELLAR)
             SET_BATTLER_TYPE(bank, teraType);
-        FlagClear(FLAG_TERA_BATTLE);
         GetSpeciesName(gStringVar1, species);
         StringCopy(gStringVar2, sTypeNames[teraType]);
 
@@ -338,8 +337,12 @@ bool8 TerastalEnabled(u8 bank)
     {
         // Wild Battle check
         if (!((gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_TOWER)) == BATTLE_TYPE_TRAINER)
-        ||   (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER))
+        ||   (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER))     
             return FALSE;
+
+        if (!FlagGet(FLAG_TERA_BATTLE))
+            return FALSE;
+
         return TRUE; // Allow tera
     }
 

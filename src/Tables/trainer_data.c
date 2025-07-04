@@ -5612,8 +5612,8 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_FULL_RESTORE, ITEM_MEGA_RING, ITEM_MAX_POTION, ITEM_Z_POWER_RING},
-        .doubleBattle = TRUE,
+        .items = {ITEM_FULL_RESTORE, ITEM_MEGA_RING, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_SEMI_SMART,
         .party = { .ItemCustomMoves = sParty_RivalRoute22EarlySquirtle },

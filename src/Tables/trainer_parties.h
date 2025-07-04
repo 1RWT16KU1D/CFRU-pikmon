@@ -3755,7 +3755,7 @@ struct TrainerMonItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
         .lvl = 34,
         .iv = 122,
         .species = SPECIES_AGGRON,
-        .heldItem = ITEM_LEFTOVERS,
+        .heldItem = ITEM_ROCKIUM_Z,
         .moves = {MOVE_IRONHEAD, MOVE_PROTECT, MOVE_SUPERPOWER, MOVE_ROCKSLIDE},
     },
     {
