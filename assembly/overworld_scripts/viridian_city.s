@@ -15,7 +15,7 @@ EventScriptP_ViridianCity_YoungMan:
 
     giveegg SPECIES_IVYSAUR
     setflag 0xA07 @ FLAG_TERA_BATTLE
-    setflag 0x918
+@   setflag 0x918
     additem ITEM_DYNAMAX_BAND 1
     trainerbattle0 0 329 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
     msgbox gText_ViridianCity_BattleOver MSG_NORMAL
@@ -27,7 +27,7 @@ EventScriptP_ViridianCity_YoungMan:
 EventScriptP_ViridianCity_Youngster:
     lock
     faceplayer
-    additem ITEM_WATERIUM_Z 1
+    additem ITEM_ICIUM_Z 1
     additem ITEM_MEGA_RING 1
 @   additem ITEM_TM19 1
 

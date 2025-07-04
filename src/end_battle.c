@@ -136,9 +136,6 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_RAID_BATTLE_NO_FORCE_END
 	FLAG_RAID_BATTLE_NO_FORCE_END,
 #endif
-#ifdef FLAG_TERA_BATTLE
-	FLAG_TERA_BATTLE,
-#endif
 #ifdef FLAG_START_WITH_RAID_SHIELDS
 	FLAG_START_WITH_RAID_SHIELDS,
 #endif
@@ -863,6 +860,13 @@ static void EndBattleFlagClear(void)
 
 	for (i = 0; i < ARRAY_COUNT(gEndBattleFlagClearTable); ++i)
 		FlagClear(gEndBattleFlagClearTable[i]);
+	
+	#ifdef FLAG_TERA_BATTLE
+    // Wild Battle check
+    if (((gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_TOWER)) == BATTLE_TYPE_TRAINER)
+    ||   (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER))  
+		FlagClear(FLAG_TERA_BATTLE);
+	#endif
 
 	#ifdef VAR_STATUS_INDUCER
 	u16 inducer = VarGet(VAR_STATUS_INDUCER);

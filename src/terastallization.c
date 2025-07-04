@@ -230,6 +230,10 @@ bool8 CanTerastallize(u8 bank)
 		return FALSE;
 	#else
 
+    // Terastallization disabled in Dynamax battles
+    if (gBattleTypeFlags & BATTLE_TYPE_DYNAMAX)
+        return FALSE; 
+
     if (GetBattlerSide(bank) == B_SIDE_OPPONENT)
         return TRUE;
     else
@@ -331,7 +335,10 @@ static item_t FindBankTeraOrb(u8 bank)
 // Check for both
 bool8 TerastalEnabled(u8 bank)
 {
-    
+    // Terastallization disabled in Dynamax battles
+    if (gBattleTypeFlags & BATTLE_TYPE_DYNAMAX)
+        return FALSE;
+
     // Opponents don't rely on held Tera Orbs
     if (GetBattlerSide(bank) == B_SIDE_OPPONENT)
     {
