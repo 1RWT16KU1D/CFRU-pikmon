@@ -5602,7 +5602,7 @@ const struct Trainer gTrainers[] = {
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabCharmander },
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .partyFlags = PARTY_FLAG_HAS_ITEM | PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
@@ -5612,7 +5612,7 @@ const struct Trainer gTrainers[] = {
         #else
         .trainerName = { _T, _E, _R, _R, _Y, _END },
         #endif
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .items = {ITEM_FULL_RESTORE, ITEM_MEGA_RING, ITEM_MAX_POTION, ITEM_Z_POWER_RING},
         .doubleBattle = TRUE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_SEMI_SMART,
@@ -12529,7 +12529,7 @@ const struct Trainer gTrainers[] = {
         .party = { .ItemCustomMoves = sParty_EliteFourLorelei2 },
     },
         [TRAINER_ELITE_FOUR_BRUNO_2] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .partyFlags = PARTY_FLAG_HAS_ITEM | PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_ELITE_FOUR,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
@@ -12580,7 +12580,7 @@ const struct Trainer gTrainers[] = {
         .party = { .ItemCustomMoves = sParty_EliteFourLance2 },
     },
         [TRAINER_CHAMPION_REMATCH_SQUIRTLE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .partyFlags = PARTY_FLAG_HAS_ITEM | PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_CHAMPION,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
@@ -12597,7 +12597,7 @@ const struct Trainer gTrainers[] = {
         .party = { .ItemCustomMoves = sParty_ChampionRematchSquirtle },
     },
         [TRAINER_CHAMPION_REMATCH_BULBASAUR] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .partyFlags = PARTY_FLAG_HAS_ITEM | PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_CHAMPION,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,

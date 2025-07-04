@@ -810,7 +810,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		//Get party size
 		if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && side == B_SIDE_OPPONENT)
 		{
-			u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+			u8 class __attribute__((unused)) = gTrainers[gTrainerBattleOpponent_A].trainerClass;
 			#ifdef OPEN_WORLD_TRAINERS
 			if ((firstTrainer && gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 			||  (!firstTrainer && VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT))

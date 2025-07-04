@@ -24,6 +24,7 @@
 #include "../include/new/ai_util.h"
 #include "../include/new/battle_indicators.h"
 #include "../include/new/battle_script_util.h"
+#include "../include/new/dynamax.h"
 #include "../include/new/frontier.h"
 #include "../include/new/mega.h"
 #include "../include/new/move_battle_scripts.h"
@@ -353,7 +354,10 @@ bool8 TerastalEnabled(u8 bank)
     if (IsZCrystal(ITEM(bank)))
         return FALSE;
 
-    if (gBattleTypeFlags & BATTLE_TYPE_DYNAMAX)
+    // Can't Terastallize if this mon is Dynamaxing
+    if (IsDynamaxed(bank)
+    || gNewBS->dynamaxData.used[bank]
+    || gNewBS->dynamaxData.toBeUsed[bank])
         return FALSE;
 
     if (FindBankTeraOrb(bank) != ITEM_NONE)
