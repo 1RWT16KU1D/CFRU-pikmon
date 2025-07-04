@@ -368,8 +368,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_TERA_BATTLE 0xA08 //Works like an half tera orb
 #define SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN //If you just want to show the tera type icon on the summary screen, uncomment this one
 #define FLAG_EXPLAINED_MINING_RULES 0xA09 //If set, the player will not be shown the mining rules second time when using the mining feature
-#define BW_SUMMARY_SCREEN // Implements the BW summary screen
-#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
+//#define BW_SUMMARY_SCREEN // Implements the BW summary screen
+//#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
 #define MID_BATTLE_EVO //Comment this line to remove Mid-Battle Evolution.
 //#define SKIP_INTRO_CONTROLS_GUIDE //Uncomment this line to remove the intro constrols guide.
 #define FLAG_SPAWN_INVISIBLE 0xA0A //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
@@ -385,7 +385,6 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_SANDBOX_MODE 0xA0D // Use it only when you know what it does, lol.
 #define VAR_DEBUG_MENU_SET_CUSTOM_VAR 0x5158 // The var that stores the value used for set custom var option in debug menu.
 #define VAR_DEBUG_MENU_SET_CUSTOM_VAR_VALUE 0x5159 // The var that stores the value used for set custom var option in debug menu.
-
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
