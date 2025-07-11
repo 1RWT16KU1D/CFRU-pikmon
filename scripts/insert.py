@@ -409,7 +409,7 @@ def main():
         if os.path.isfile(FREE_BYTE_REPLACEMENTS):
 
 
-            FREE_BYTE_SEARCH_START = 0x1200000  # Adjust to your preferred free space startMore actions
+            FREE_BYTE_SEARCH_START = 0x900000  # Adjust to your preferred free space startMore actions
             MINIMUM_FREE_LENGTH = 0x100        # Minimum space to be considered free
 
             def FindFreeSpace(rom: _io.BufferedReader, length: int, start: int = FREE_BYTE_SEARCH_START) -> int:
