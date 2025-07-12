@@ -55,6 +55,8 @@ gTypeNames 0811977C
 gTrainers 0800FC00
 gTrainerClassNames 0811B4B4
 gTrainerMoneyTable 080259CC
+## gTrainerFrontPicTable 0823957C
+## gTrainerFrontPicPaletteTable 08239A1C
 #endif
 
 ##Scripts
