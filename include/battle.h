@@ -311,9 +311,11 @@ extern const struct Trainer gTrainers[];
 */
 #ifdef EXPAND_TRAINERS
 extern const struct Trainer gTrainers[];
+extern const u8 gTrainerClassNames[][13];
+extern const struct TrainerMoney gTrainerMoneyTable[];
 #endif
 
-#define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+#define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic))
 
 struct UnknownFlags
 {

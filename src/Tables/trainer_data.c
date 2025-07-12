@@ -13,7 +13,6 @@
 
 #ifdef EXPAND_TRAINERS
 
-#define DECAP_TRAINER_NAMES // Comment this line out to use the original trainer names
 #define GENDER_MALE 0
 #define GENDER_FEMALE 1
 
@@ -21,11 +20,7 @@
 
 const struct Trainer gTrainers[] = {
         [TRAINER_NONE] = {
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
     },
         [TRAINER_AQUA_LEADER] = {
         .partyFlags = 0,
@@ -33,11 +28,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ARCHIE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -50,11 +41,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -67,11 +54,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -84,11 +67,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_AROMA_LADY_RS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -101,11 +80,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC_RS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -118,11 +93,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMERA_DUO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -135,11 +106,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_TUBER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -152,11 +119,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_TUBER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -169,11 +132,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -186,11 +145,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -203,11 +158,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -220,11 +171,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -237,11 +184,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -254,11 +197,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RICH_BOY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -271,11 +210,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -288,11 +223,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -305,11 +236,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -322,11 +249,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -339,11 +262,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_KINDLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -356,11 +275,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -373,11 +288,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -390,11 +301,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -407,11 +314,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -424,11 +327,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -441,12 +340,8 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIDNEY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _i, _d, _n, _e, _y, _END },
-        #else
-        .trainerName = { _S, _I, _D, _N, _E, _Y, _END },
-        #endif
-        .items = {NO_ITEMS},
+        .items = { NO_ITEMS },
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
@@ -458,11 +353,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PHOEBE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _h, _o, _e, _b, _e, _END },
-        #else
-        .trainerName = { _P, _H, _O, _E, _B, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -475,11 +366,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROXANNE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _x, _a, _n, _n, _e, _END },
-        #else
-        .trainerName = { _R, _O, _X, _A, _N, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -492,11 +379,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BRAWLY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _a, _w, _l, _y, _END },
-        #else
-        .trainerName = { _B, _R, _A, _W, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -509,11 +392,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_LIZA_AND_TATE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _t, _e, _AMPERSAND, _L, _i, _z, _a, _END },
-        #else
-        .trainerName = { _T, _A, _T, _E, _AMPERSAND, _L, _I, _Z, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -526,11 +405,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCHOOL_BOY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -543,11 +418,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCHOOL_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -560,11 +431,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SR_AND_JR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -577,11 +444,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -594,11 +457,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -611,11 +470,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_EXPERT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -628,11 +483,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_EXPERT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -645,11 +496,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -662,11 +509,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_STEVEN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -679,11 +522,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -696,11 +535,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -713,11 +548,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -730,11 +561,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -747,11 +574,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -764,11 +587,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -781,11 +600,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -798,11 +613,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -815,11 +626,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BIRDKEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -832,11 +639,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_NINJA_BOY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -849,11 +652,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -866,11 +665,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -883,11 +678,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -900,11 +691,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -917,11 +704,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -934,11 +717,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -951,11 +730,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -968,11 +743,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -985,11 +756,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COLLECTOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1002,11 +769,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_WALLY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1019,11 +782,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1036,11 +795,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1053,11 +808,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BRENDAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1070,11 +821,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_MAY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1087,11 +834,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_MAY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1104,11 +847,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_MAY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1121,11 +860,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BREEDER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1138,11 +873,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BREEDER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1155,11 +886,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1172,11 +899,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1189,11 +912,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_MAXIE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1206,11 +925,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1223,11 +938,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1240,11 +951,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1257,11 +964,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_BUGCATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1274,11 +977,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1291,11 +990,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -1308,11 +1003,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_EXPERT_DUO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -1325,11 +1016,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RS_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 1,
@@ -1342,11 +1029,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_MATT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _t, _t, _END },
-        #else
-        .trainerName = { _M, _A, _T, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1359,11 +1042,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SHELLY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _l, _l, _y, _END },
-        #else
-        .trainerName = { _S, _H, _E, _L, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1376,11 +1055,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TABITHA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _b, _i, _t, _h, _a, _END },
-        #else
-        .trainerName = { _T, _A, _B, _I, _T, _H, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1393,11 +1068,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COURTNEY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _u, _r, _t, _n, _e, _y, _END },
-        #else
-        .trainerName = { _C, _O, _U, _R, _T, _N, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1410,11 +1081,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WATTSON,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _t, _t, _s, _o, _n, _END },
-        #else
-        .trainerName = { _W, _A, _T, _T, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1427,11 +1094,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FLANNERY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _l, _a, _n, _n, _e, _r, _y, _END },
-        #else
-        .trainerName = { _F, _L, _A, _N, _N, _E, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1444,11 +1107,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_NORMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _o, _r, _m, _a, _n, _END },
-        #else
-        .trainerName = { _N, _O, _R, _M, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1461,11 +1120,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WINONA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _i, _n, _o, _n, _a, _END },
-        #else
-        .trainerName = { _W, _I, _N, _O, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1478,11 +1133,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WALLACE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _l, _l, _a, _c, _e, _END },
-        #else
-        .trainerName = { _W, _A, _L, _L, _A, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1495,11 +1146,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GLACIA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _l, _a, _c, _i, _a, _END },
-        #else
-        .trainerName = { _G, _L, _A, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1512,11 +1159,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_DRAKE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _r, _a, _k, _e, _END },
-        #else
-        .trainerName = { _D, _R, _A, _K, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1529,11 +1172,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _END },
-        #else
-        .trainerName = { _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1546,11 +1185,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _l, _v, _i, _n, _END },
-        #else
-        .trainerName = { _C, _A, _L, _V, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1563,11 +1198,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _s, _h, _END },
-        #else
-        .trainerName = { _J, _O, _S, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1580,11 +1211,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _I, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1597,11 +1224,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _e, _y, _END },
-        #else
-        .trainerName = { _J, _O, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1614,11 +1237,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _n, _END },
-        #else
-        .trainerName = { _D, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1631,11 +1250,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _d, _END },
-        #else
-        .trainerName = { _C, _H, _A, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1648,11 +1263,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _y, _l, _e, _r, _END },
-        #else
-        .trainerName = { _T, _Y, _L, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1665,11 +1276,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _d, _i, _e, _END },
-        #else
-        .trainerName = { _E, _D, _D, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1682,11 +1289,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _i, _l, _l, _o, _n, _END },
-        #else
-        .trainerName = { _D, _I, _L, _L, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1699,11 +1302,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Y, _a, _s, _u, _END },
-        #else
-        .trainerName = { _Y, _A, _S, _U, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1716,11 +1315,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _v, _e, _END },
-        #else
-        .trainerName = { _D, _A, _V, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1733,11 +1328,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _END },
-        #else
-        .trainerName = { _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1750,11 +1341,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _k, _END },
-        #else
-        .trainerName = { _R, _I, _C, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1767,11 +1354,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _o, _u, _g, _END },
-        #else
-        .trainerName = { _D, _O, _U, _G, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1784,11 +1367,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _m, _m, _y, _END },
-        #else
-        .trainerName = { _S, _A, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1801,11 +1380,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _C, _O, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1818,11 +1393,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _e, _g, _END },
-        #else
-        .trainerName = { _G, _R, _E, _G, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -1835,11 +1406,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _m, _e, _s, _END },
-        #else
-        .trainerName = { _J, _A, _M, _E, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1852,11 +1419,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _n, _t, _END },
-        #else
-        .trainerName = { _K, _E, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1869,11 +1432,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _b, _b, _y, _END },
-        #else
-        .trainerName = { _R, _O, _B, _B, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1886,11 +1445,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _l, _e, _END },
-        #else
-        .trainerName = { _C, _A, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -1903,11 +1458,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _i, _g, _o, _END },
-        #else
-        .trainerName = { _K, _E, _I, _G, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1920,11 +1471,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _l, _i, _j, _a, _h, _END },
-        #else
-        .trainerName = { _E, _L, _I, _J, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -1937,11 +1484,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1954,11 +1497,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _e, _n, _t, _END },
-        #else
-        .trainerName = { _B, _R, _E, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -1971,11 +1510,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _n, _n, _e, _r, _END },
-        #else
-        .trainerName = { _C, _O, _N, _N, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -1988,11 +1523,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _n, _i, _c, _e, _END },
-        #else
-        .trainerName = { _J, _A, _N, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2005,11 +1536,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _l, _l, _y, _END },
-        #else
-        .trainerName = { _S, _A, _L, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2022,11 +1549,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _b, _i, _n, _END },
-        #else
-        .trainerName = { _R, _O, _B, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2039,11 +1562,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _r, _i, _s, _s, _y, _END },
-        #else
-        .trainerName = { _C, _R, _I, _S, _S, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2056,11 +1575,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _r, _i, _a, _m, _END },
-        #else
-        .trainerName = { _M, _I, _R, _I, _A, _M, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2073,11 +1588,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _r, _i, _s, _END },
-        #else
-        .trainerName = { _I, _R, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2090,11 +1601,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _l, _i, _END },
-        #else
-        .trainerName = { _R, _E, _L, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2107,11 +1614,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _END },
-        #else
-        .trainerName = { _A, _L, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2124,11 +1627,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2141,11 +1640,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _a, _l, _e, _y, _END },
-        #else
-        .trainerName = { _H, _A, _L, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2158,11 +1653,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _n, _END },
-        #else
-        .trainerName = { _A, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2175,11 +1666,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _w, _n, _END },
-        #else
-        .trainerName = { _D, _A, _W, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2192,11 +1679,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _i, _g, _e, _END },
-        #else
-        .trainerName = { _P, _A, _I, _G, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2209,11 +1692,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _d, _r, _e, _a, _END },
-        #else
-        .trainerName = { _A, _N, _D, _R, _E, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2226,11 +1705,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _e, _g, _a, _n, _END },
-        #else
-        .trainerName = { _M, _E, _G, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -2243,11 +1718,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _u, _l, _i, _a, _END },
-        #else
-        .trainerName = { _J, _U, _L, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2260,11 +1731,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _a, _y, _END },
-        #else
-        .trainerName = { _K, _A, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2277,11 +1744,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _s, _a, _END },
-        #else
-        .trainerName = { _L, _I, _S, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2294,11 +1757,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _m, _o, _n, _d, _END },
-        #else
-        .trainerName = { _E, _D, _M, _O, _N, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2311,11 +1770,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _r, _e, _v, _o, _r, _END },
-        #else
-        .trainerName = { _T, _R, _E, _V, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2328,11 +1783,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _o, _n, _a, _r, _d, _END },
-        #else
-        .trainerName = { _L, _E, _O, _N, _A, _R, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2345,11 +1796,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _u, _n, _c, _a, _n, _END },
-        #else
-        .trainerName = { _D, _U, _N, _C, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2362,11 +1809,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _u, _e, _y, _END },
-        #else
-        .trainerName = { _H, _U, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2379,11 +1822,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _y, _l, _a, _n, _END },
-        #else
-        .trainerName = { _D, _Y, _L, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2396,11 +1835,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _h, _i, _l, _l, _i, _p, _END },
-        #else
-        .trainerName = { _P, _H, _I, _L, _L, _I, _P, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2413,11 +1848,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SAILOR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _w, _a, _y, _n, _e, _END },
-        #else
-        .trainerName = { _D, _W, _A, _Y, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2430,11 +1861,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _a, _m, _END },
-        #else
-        .trainerName = { _L, _I, _A, _M, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2447,11 +1874,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _n, _e, _END },
-        #else
-        .trainerName = { _S, _H, _A, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2464,11 +1887,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _t, _h, _a, _n, _END },
-        #else
-        .trainerName = { _E, _T, _H, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2481,11 +1900,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _k, _y, _END },
-        #else
-        .trainerName = { _R, _I, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2498,11 +1913,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-        #else
-        .trainerName = { _J, _E, _F, _F, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2515,11 +1926,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2532,11 +1939,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _r, _i, _s, _END },
-        #else
-        .trainerName = { _C, _H, _R, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2549,11 +1952,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _r, _e, _w, _END },
-        #else
-        .trainerName = { _D, _R, _E, _W, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -2566,11 +1965,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _i, _a, _n, _a, _END },
-        #else
-        .trainerName = { _D, _I, _A, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2583,11 +1978,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _a, _n, _c, _y, _END },
-        #else
-        .trainerName = { _N, _A, _N, _C, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2600,11 +1991,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _b, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2617,11 +2004,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _l, _s, _e, _y, _END },
-        #else
-        .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2634,11 +2017,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _i, _a, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -2651,11 +2030,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _i, _t, _l, _i, _n, _END },
-        #else
-        .trainerName = { _C, _A, _I, _T, _L, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2668,11 +2043,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _i, _d, _i, _END },
-        #else
-        .trainerName = { _H, _E, _I, _D, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2685,11 +2056,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _r, _o, _l, _END },
-        #else
-        .trainerName = { _C, _A, _R, _O, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2702,11 +2069,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _o, _f, _i, _a, _END },
-        #else
-        .trainerName = { _S, _O, _F, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2719,11 +2082,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _t, _h, _a, _END },
-        #else
-        .trainerName = { _M, _A, _R, _T, _H, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2736,11 +2095,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _n, _a, _END },
-        #else
-        .trainerName = { _T, _I, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2753,11 +2108,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _a, _n, _n, _a, _h, _END },
-        #else
-        .trainerName = { _H, _A, _N, _N, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -2770,11 +2121,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _k, _END },
-        #else
-        .trainerName = { _M, _A, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2787,11 +2134,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _r, _m, _a, _n, _END },
-        #else
-        .trainerName = { _H, _E, _R, _M, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2804,11 +2147,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _o, _p, _e, _r, _END },
-        #else
-        .trainerName = { _C, _O, _O, _P, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2821,11 +2160,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _t, _e, _v, _e, _END },
-        #else
-        .trainerName = { _S, _T, _E, _V, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2838,11 +2173,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _i, _n, _s, _t, _o, _n, _END },
-        #else
-        .trainerName = { _W, _I, _N, _S, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2855,11 +2186,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _w, _s, _o, _n, _END },
-        #else
-        .trainerName = { _D, _A, _W, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2872,11 +2199,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _s, _h, _t, _o, _n, _END },
-        #else
-        .trainerName = { _A, _S, _H, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2889,11 +2212,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _v, _a, _n, _END },
-        #else
-        .trainerName = { _J, _O, _V, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -2906,11 +2225,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _g, _u, _e, _l, _END },
-        #else
-        .trainerName = { _M, _I, _G, _U, _E, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2923,11 +2238,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _i, _d, _a, _n, _END },
-        #else
-        .trainerName = { _A, _I, _D, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -2940,11 +2251,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _l, _e, _n, _n, _END },
-        #else
-        .trainerName = { _G, _L, _E, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2957,11 +2264,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _s, _l, _i, _e, _END },
-        #else
-        .trainerName = { _L, _E, _S, _L, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -2974,11 +2277,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -2991,11 +2290,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3008,11 +2303,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3025,11 +2316,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _r, _i, _k, _END },
-        #else
-        .trainerName = { _E, _R, _I, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3042,11 +2329,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _v, _e, _r, _y, _END },
-        #else
-        .trainerName = { _A, _V, _E, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3059,11 +2342,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _e, _r, _e, _k, _END },
-        #else
-        .trainerName = { _D, _E, _R, _E, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3076,11 +2355,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Z, _a, _c, _END },
-        #else
-        .trainerName = { _Z, _A, _C, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3093,11 +2368,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _c, _o, _s, _END },
-        #else
-        .trainerName = { _M, _A, _R, _C, _O, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3110,11 +2381,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _r, _a, _n, _k, _l, _i, _n, _END },
-        #else
-        .trainerName = { _F, _R, _A, _N, _K, _L, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3127,11 +2394,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _o, _b, _END },
-        #else
-        .trainerName = { _N, _O, _B, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3144,11 +2407,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _y, _n, _e, _END },
-        #else
-        .trainerName = { _W, _A, _Y, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3161,11 +2420,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _a, _n, _END },
-        #else
-        .trainerName = { _A, _L, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3178,11 +2433,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _i, _c, _e, _END },
-        #else
-        .trainerName = { _B, _R, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3195,11 +2446,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _l, _a, _r, _k, _END },
-        #else
-        .trainerName = { _C, _L, _A, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3212,11 +2459,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _r, _e, _n, _t, _END },
-        #else
-        .trainerName = { _T, _R, _E, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3229,11 +2472,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _u, _d, _l, _e, _y, _END },
-        #else
-        .trainerName = { _D, _U, _D, _L, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3246,11 +2485,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _l, _e, _n, _END },
-        #else
-        .trainerName = { _A, _L, _L, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3263,11 +2498,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _r, _i, _c, _END },
-        #else
-        .trainerName = { _E, _R, _I, _C, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3280,11 +2511,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _n, _n, _y, _END },
-        #else
-        .trainerName = { _L, _E, _N, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3297,11 +2524,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _O, _l, _i, _v, _e, _r, _END },
-        #else
-        .trainerName = { _O, _L, _I, _V, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3314,11 +2537,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _c, _a, _s, _END },
-        #else
-        .trainerName = { _L, _U, _C, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3331,11 +2550,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _r, _e, _d, _END },
-        #else
-        .trainerName = { _J, _A, _R, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3348,11 +2563,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _l, _i, _k, _END },
-        #else
-        .trainerName = { _M, _A, _L, _I, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3365,11 +2576,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _r, _n, _e, _s, _t, _END },
-        #else
-        .trainerName = { _E, _R, _N, _E, _S, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -3382,11 +2589,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _e, _x, _END },
-        #else
-        .trainerName = { _A, _L, _E, _X, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3399,11 +2602,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _o, _END },
-        #else
-        .trainerName = { _L, _A, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3416,11 +2615,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3433,11 +2628,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _i, _d, _e, _o, _END },
-        #else
-        .trainerName = { _H, _I, _D, _E, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3450,11 +2641,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _u, _b, _e, _n, _END },
-        #else
-        .trainerName = { _R, _U, _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3467,11 +2654,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _i, _l, _l, _y, _END },
-        #else
-        .trainerName = { _B, _I, _L, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3484,11 +2667,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _k, _o, _l, _a, _s, _END },
-        #else
-        .trainerName = { _N, _I, _K, _O, _L, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3501,11 +2680,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _x, _o, _n, _END },
-        #else
-        .trainerName = { _J, _A, _X, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3518,11 +2693,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _i, _l, _l, _i, _a, _m, _END },
-        #else
-        .trainerName = { _W, _I, _L, _L, _I, _A, _M, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -3535,11 +2706,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _k, _a, _s, _END },
-        #else
-        .trainerName = { _L, _U, _K, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3552,11 +2719,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _a, _c, _END },
-        #else
-        .trainerName = { _I, _S, _A, _A, _C, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3569,11 +2732,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _e, _r, _a, _l, _d, _END },
-        #else
-        .trainerName = { _G, _E, _R, _A, _L, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3586,11 +2745,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3603,11 +2758,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3620,11 +2771,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3637,11 +2784,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Q, _u, _i, _n, _n, _END },
-        #else
-        .trainerName = { _Q, _U, _I, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3654,11 +2797,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _m, _o, _n, _END },
-        #else
-        .trainerName = { _R, _A, _M, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3671,11 +2810,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _u, _s, _t, _y, _END },
-        #else
-        .trainerName = { _D, _U, _S, _T, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3688,11 +2823,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _r, _n, _i, _e, _END },
-        #else
-        .trainerName = { _A, _R, _N, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3705,11 +2836,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3722,11 +2849,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _i, _m, _o, _n, _END },
-        #else
-        .trainerName = { _S, _I, _M, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3739,11 +2862,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BURGLAR,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _w, _i, _s, _END },
-        #else
-        .trainerName = { _L, _E, _W, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3756,11 +2875,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WORKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _a, _i, _l, _y, _END },
-        #else
-        .trainerName = { _B, _A, _I, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3773,11 +2888,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WORKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _a, _x, _t, _o, _n, _END },
-        #else
-        .trainerName = { _B, _R, _A, _X, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3790,11 +2901,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WORKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _r, _n, _i, _e, _END },
-        #else
-        .trainerName = { _B, _E, _R, _N, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3807,11 +2914,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _l, _e, _END },
-        #else
-        .trainerName = { _D, _A, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3824,11 +2927,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _a, _r, _n, _y, _END },
-        #else
-        .trainerName = { _B, _A, _R, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3841,11 +2940,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _e, _d, _END },
-        #else
-        .trainerName = { _N, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -3858,11 +2953,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _i, _p, _END },
-        #else
-        .trainerName = { _C, _H, _I, _P, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3875,11 +2966,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _a, _n, _k, _END },
-        #else
-        .trainerName = { _H, _A, _N, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -3892,11 +2979,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _l, _l, _i, _o, _t, _END },
-        #else
-        .trainerName = { _E, _L, _L, _I, _O, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3909,11 +2992,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _n, _a, _l, _d, _END },
-        #else
-        .trainerName = { _R, _O, _N, _A, _L, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -3926,11 +3005,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _l, _a, _u, _d, _e, _END },
-        #else
-        .trainerName = { _C, _L, _A, _U, _D, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3943,11 +3018,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _d, _e, _END },
-        #else
-        .trainerName = { _W, _A, _D, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -3960,11 +3031,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _o, _l, _a, _n, _END },
-        #else
-        .trainerName = { _N, _O, _L, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3977,11 +3044,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _d, _r, _e, _w, _END },
-        #else
-        .trainerName = { _A, _N, _D, _R, _E, _W, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -3994,11 +3057,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _i, _s, _END },
-        #else
-        .trainerName = { _L, _U, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4011,11 +3070,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _h, _a, _r, _d, _END },
-        #else
-        .trainerName = { _R, _I, _C, _H, _A, _R, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4028,11 +3083,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _e, _c, _e, _END },
-        #else
-        .trainerName = { _R, _E, _E, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4045,11 +3096,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _t, _t, _h, _e, _w, _END },
-        #else
-        .trainerName = { _M, _A, _T, _T, _H, _E, _W, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4062,11 +3109,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _o, _u, _g, _l, _a, _s, _END },
-        #else
-        .trainerName = { _D, _O, _U, _G, _L, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4079,11 +3122,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _v, _i, _d, _END },
-        #else
-        .trainerName = { _D, _A, _V, _I, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4096,11 +3135,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _o, _n, _y, _END },
-        #else
-        .trainerName = { _T, _O, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4113,11 +3148,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _x, _l, _e, _END },
-        #else
-        .trainerName = { _A, _X, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -4130,11 +3161,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _a, _r, _r, _y, _END },
-        #else
-        .trainerName = { _B, _A, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4147,11 +3174,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _e, _a, _n, _END },
-        #else
-        .trainerName = { _D, _E, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4164,11 +3187,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _r, _i, _n, _END },
-        #else
-        .trainerName = { _D, _A, _R, _R, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4181,11 +3200,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _p, _e, _n, _c, _e, _r, _END },
-        #else
-        .trainerName = { _S, _P, _E, _N, _C, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4198,11 +3213,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _k, _END },
-        #else
-        .trainerName = { _J, _A, _C, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4215,11 +3226,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _r, _o, _m, _e, _END },
-        #else
-        .trainerName = { _J, _E, _R, _O, _M, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4232,11 +3239,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _l, _a, _n, _d, _END },
-        #else
-        .trainerName = { _R, _O, _L, _A, _N, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4249,11 +3252,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _o, _j, _i, _END },
-        #else
-        .trainerName = { _K, _O, _J, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4266,11 +3265,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _k, _e, _END },
-        #else
-        .trainerName = { _L, _U, _K, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4283,11 +3278,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _m, _r, _o, _n, _END },
-        #else
-        .trainerName = { _C, _A, _M, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4300,11 +3291,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _u, _l, _END },
-        #else
-        .trainerName = { _R, _A, _U, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4317,11 +3304,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _i, _a, _h, _END },
-        #else
-        .trainerName = { _I, _S, _A, _I, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4334,11 +3317,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Z, _e, _e, _k, _END },
-        #else
-        .trainerName = { _Z, _E, _E, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4351,11 +3330,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _m, _a, _l, _END },
-        #else
-        .trainerName = { _J, _A, _M, _A, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4368,11 +3343,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _r, _e, _y, _END },
-        #else
-        .trainerName = { _C, _O, _R, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4385,11 +3356,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _s, _e, _END },
-        #else
-        .trainerName = { _C, _H, _A, _S, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4402,11 +3369,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _u, _g, _o, _END },
-        #else
-        .trainerName = { _H, _U, _G, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4419,11 +3382,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _s, _p, _e, _r, _END },
-        #else
-        .trainerName = { _J, _A, _S, _P, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4436,11 +3395,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _i, _r, _k, _END },
-        #else
-        .trainerName = { _D, _I, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4453,11 +3408,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _i, _a, _n, _END },
-        #else
-        .trainerName = { _D, _A, _R, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4470,11 +3421,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _t, _a, _n, _END },
-        #else
-        .trainerName = { _S, _T, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4487,11 +3434,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4504,11 +3447,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _h, _END },
-        #else
-        .trainerName = { _R, _I, _C, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4521,11 +3460,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _i, _d, _g, _e, _t, _END },
-        #else
-        .trainerName = { _B, _R, _I, _D, _G, _E, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4538,11 +3473,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _m, _i, _a, _END },
-        #else
-        .trainerName = { _T, _A, _M, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4555,11 +3486,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _o, _r, _i, _END },
-        #else
-        .trainerName = { _L, _O, _R, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4572,11 +3499,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _o, _l, _a, _END },
-        #else
-        .trainerName = { _L, _O, _L, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4589,11 +3512,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _i, _l, _a, _END },
-        #else
-        .trainerName = { _S, _H, _E, _I, _L, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4606,11 +3525,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _f, _f, _a, _n, _y, _END },
-        #else
-        .trainerName = { _T, _I, _F, _F, _A, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4623,11 +3538,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _o, _r, _a, _END },
-        #else
-        .trainerName = { _N, _O, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4640,11 +3551,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _e, _l, _i, _s, _s, _a, _END },
-        #else
-        .trainerName = { _M, _E, _L, _I, _S, _S, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4657,11 +3564,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _a, _c, _e, _END },
-        #else
-        .trainerName = { _G, _R, _A, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4674,11 +3577,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _O, _l, _i, _v, _i, _a, _END },
-        #else
-        .trainerName = { _O, _L, _I, _V, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4691,11 +3590,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _u, _r, _e, _n, _END },
-        #else
-        .trainerName = { _L, _A, _U, _R, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4708,11 +3603,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _y, _a, _END },
-        #else
-        .trainerName = { _A, _N, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -4725,11 +3616,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _e, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4742,11 +3629,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _n, _n, _i, _e, _END },
-        #else
-        .trainerName = { _C, _O, _N, _N, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4759,11 +3642,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _i, _r, _l, _e, _y, _END },
-        #else
-        .trainerName = { _S, _H, _I, _R, _L, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4776,11 +3655,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _h, _a, _n, _END },
-        #else
-        .trainerName = { _J, _O, _H, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4793,11 +3668,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _y, _r, _o, _n, _END },
-        #else
-        .trainerName = { _T, _Y, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4810,11 +3681,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _m, _e, _r, _o, _n, _END },
-        #else
-        .trainerName = { _C, _A, _M, _E, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4827,11 +3694,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _r, _e, _s, _t, _o, _n, _END },
-        #else
-        .trainerName = { _P, _R, _E, _S, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4844,11 +3707,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _n, _d, _a, _l, _l, _END },
-        #else
-        .trainerName = { _R, _A, _N, _D, _A, _L, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -4861,11 +3720,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _c, _a, _END },
-        #else
-        .trainerName = { _L, _U, _C, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4878,11 +3733,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _D, _A, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4895,11 +3746,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _e, _l, _s, _o, _n, _END },
-        #else
-        .trainerName = { _N, _E, _L, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4912,11 +3759,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _i, _r, _k, _END },
-        #else
-        .trainerName = { _K, _I, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4929,11 +3772,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _w, _n, _END },
-        #else
-        .trainerName = { _S, _H, _A, _W, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -4946,11 +3785,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _e, _g, _o, _r, _y, _END },
-        #else
-        .trainerName = { _G, _R, _E, _G, _O, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4963,11 +3798,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _w, _a, _r, _d, _END },
-        #else
-        .trainerName = { _E, _D, _W, _A, _R, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -4980,11 +3811,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _a, _y, _d, _e, _n, _END },
-        #else
-        .trainerName = { _K, _A, _Y, _D, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -4997,11 +3824,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _a, _t, _e, _END },
-        #else
-        .trainerName = { _N, _A, _T, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5014,11 +3837,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _h, _i, _l, _END },
-        #else
-        .trainerName = { _P, _H, _I, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5031,11 +3850,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _g, _a, _r, _END },
-        #else
-        .trainerName = { _E, _D, _G, _A, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5048,11 +3863,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _s, _o, _n, _END },
-        #else
-        .trainerName = { _J, _A, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5065,11 +3876,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _e, _END },
-        #else
-        .trainerName = { _C, _O, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5082,11 +3889,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _V, _i, _n, _c, _e, _n, _t, _END },
-        #else
-        .trainerName = { _V, _I, _N, _C, _E, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5099,11 +3902,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _h, _n, _END },
-        #else
-        .trainerName = { _J, _O, _H, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5116,11 +3915,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _e, _b, _a, _s, _t, _i, _a, _n, _END },
-        #else
-        .trainerName = { _S, _E, _B, _A, _S, _T, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5133,11 +3928,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _P, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -5150,11 +3941,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _b, _e, _r, _t, _END },
-        #else
-        .trainerName = { _R, _O, _B, _E, _R, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5167,11 +3954,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _o, _n, _a, _l, _d, _END },
-        #else
-        .trainerName = { _D, _O, _N, _A, _L, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5184,11 +3967,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _n, _y, _END },
-        #else
-        .trainerName = { _B, _E, _N, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5201,11 +3980,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _w, _i, _n, _END },
-        #else
-        .trainerName = { _E, _D, _W, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5218,11 +3993,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _e, _s, _t, _e, _r, _END },
-        #else
-        .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5235,11 +4006,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _i, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _W, _I, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5252,11 +4019,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _m, _i, _r, _o, _END },
-        #else
-        .trainerName = { _R, _A, _M, _I, _R, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5269,11 +4032,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _o, _b, _END },
-        #else
-        .trainerName = { _J, _A, _C, _O, _B, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5286,11 +4045,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _g, _e, _r, _END },
-        #else
-        .trainerName = { _R, _O, _G, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5303,11 +4058,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _e, _d, _END },
-        #else
-        .trainerName = { _R, _E, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5320,11 +4071,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _i, _t, _h, _END },
-        #else
-        .trainerName = { _K, _E, _I, _T, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5337,11 +4084,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _r, _t, _e, _r, _END },
-        #else
-        .trainerName = { _C, _A, _R, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5354,11 +4097,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _t, _c, _h, _END },
-        #else
-        .trainerName = { _M, _I, _T, _C, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5371,11 +4110,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _c, _k, _END },
-        #else
-        .trainerName = { _B, _E, _C, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5388,11 +4123,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _l, _o, _n, _END },
-        #else
-        .trainerName = { _M, _A, _R, _L, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5405,11 +4136,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _o, _i, _c, _h, _i, _END },
-        #else
-        .trainerName = { _K, _O, _I, _C, _H, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5422,11 +4149,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _k, _e, _END },
-        #else
-        .trainerName = { _M, _I, _K, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5439,11 +4162,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _i, _d, _e, _k, _i, _END },
-        #else
-        .trainerName = { _H, _I, _D, _E, _K, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5456,11 +4175,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _a, _r, _o, _n, _END },
-        #else
-        .trainerName = { _A, _A, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5473,11 +4188,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _i, _t, _o, _s, _h, _i, _END },
-        #else
-        .trainerName = { _H, _I, _T, _O, _S, _H, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5490,11 +4201,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _t, _s, _u, _s, _h, _i, _END },
-        #else
-        .trainerName = { _A, _T, _S, _U, _S, _H, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5507,11 +4214,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _i, _y, _o, _END },
-        #else
-        .trainerName = { _K, _I, _Y, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5524,11 +4227,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _k, _a, _s, _h, _i, _END },
-        #else
-        .trainerName = { _T, _A, _K, _A, _S, _H, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5541,11 +4240,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _i, _s, _u, _k, _e, _END },
-        #else
-        .trainerName = { _D, _A, _I, _S, _U, _K, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5558,11 +4253,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5575,33 +4266,12 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabBulbasaur },
-    },
-        [TRAINER_RIVAL_OAKS_LAB_CHARMANDER] = {
-        .partyFlags = 0,
-        .trainerClass = CLASS_RIVAL,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .gender = GENDER_MALE,
-        .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
-        .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
-        .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = 1,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabCharmander },
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
@@ -5609,11 +4279,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_MEGA_RING, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5626,11 +4292,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5643,11 +4305,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5660,11 +4318,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5677,11 +4331,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5694,11 +4344,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5711,11 +4357,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _d, _END },
-        #else
-        .trainerName = { _T, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5728,11 +4370,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _n, _n, _o, _r, _END },
-        #else
-        .trainerName = { _C, _O, _N, _N, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5745,11 +4383,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _J, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5762,11 +4396,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _s, _e, _END },
-        #else
-        .trainerName = { _J, _O, _S, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5779,11 +4409,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _d, _n, _e, _y, _END },
-        #else
-        .trainerName = { _R, _O, _D, _N, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -5796,11 +4422,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _a, _u, _END },
-        #else
-        .trainerName = { _B, _E, _A, _U, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5813,11 +4435,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _y, _l, _o, _r, _END },
-        #else
-        .trainerName = { _T, _A, _Y, _L, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -5830,11 +4448,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _s, _h, _u, _a, _END },
-        #else
-        .trainerName = { _J, _O, _S, _H, _U, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5847,11 +4461,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _r, _k, _e, _r, _END },
-        #else
-        .trainerName = { _P, _A, _R, _K, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5864,11 +4474,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _END },
-        #else
-        .trainerName = { _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5881,11 +4487,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _r, _a, _v, _i, _s, _END },
-        #else
-        .trainerName = { _T, _R, _A, _V, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5898,11 +4500,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _a, _y, _d, _o, _n, _END },
-        #else
-        .trainerName = { _B, _R, _A, _Y, _D, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5915,11 +4513,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _v, _a, _n, _END },
-        #else
-        .trainerName = { _I, _V, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -5932,11 +4526,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GIOVANNI,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _o, _v, _a, _n, _n, _i, _END },
-        #else
-        .trainerName = { _G, _I, _O, _V, _A, _N, _N, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -5949,11 +4539,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GIOVANNI,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _o, _v, _a, _n, _n, _i, _END },
-        #else
-        .trainerName = { _G, _I, _O, _V, _A, _N, _N, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -5966,11 +4552,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GIOVANNI,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _o, _v, _a, _n, _n, _i, _END },
-        #else
-        .trainerName = { _G, _I, _O, _V, _A, _N, _N, _I, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -5983,11 +4565,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6000,11 +4578,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6017,11 +4591,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6034,11 +4604,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6051,11 +4617,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6068,11 +4630,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6085,11 +4643,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6102,11 +4656,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6119,11 +4669,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6136,11 +4682,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6153,11 +4695,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -6170,11 +4708,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6187,11 +4721,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6204,11 +4734,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6221,11 +4747,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6238,11 +4760,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6255,11 +4773,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6272,11 +4786,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6289,11 +4799,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6306,11 +4812,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6323,11 +4825,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -6340,11 +4838,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6357,11 +4851,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6374,11 +4864,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6391,11 +4877,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6408,11 +4890,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6425,11 +4903,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6442,11 +4916,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -6459,11 +4929,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -6476,11 +4942,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6493,11 +4955,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6510,11 +4968,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -6527,11 +4981,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6544,11 +4994,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -6561,11 +5007,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -6578,11 +5020,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6595,11 +5033,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6612,11 +5046,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6629,11 +5059,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -6646,11 +5072,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6663,11 +5085,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -6680,11 +5098,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _m, _u, _e, _l, _END },
-        #else
-        .trainerName = { _S, _A, _M, _U, _E, _L, _END },
-        #endif
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6697,11 +5111,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _e, _o, _r, _g, _e, _END },
-        #else
-        .trainerName = { _G, _E, _O, _R, _G, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6714,11 +5124,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _b, _y, _END },
-        #else
-        .trainerName = { _C, _O, _L, _B, _Y, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6731,11 +5137,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _u, _l, _END },
-        #else
-        .trainerName = { _P, _A, _U, _L, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6748,11 +5150,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _l, _a, _n, _d, _o, _END },
-        #else
-        .trainerName = { _R, _O, _L, _A, _N, _D, _O, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6765,11 +5163,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _l, _b, _e, _r, _t, _END },
-        #else
-        .trainerName = { _G, _I, _L, _B, _E, _R, _T, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6782,11 +5176,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _O, _w, _e, _n, _END },
-        #else
-        .trainerName = { _O, _W, _E, _N, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6799,11 +5189,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _r, _k, _e, _END },
-        #else
-        .trainerName = { _B, _E, _R, _K, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6816,11 +5202,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Y, _u, _j, _i, _END },
-        #else
-        .trainerName = { _Y, _U, _J, _I, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6833,11 +5215,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _r, _r, _e, _n, _END },
-        #else
-        .trainerName = { _W, _A, _R, _R, _E, _N, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6850,11 +5228,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _y, _END },
-        #else
-        .trainerName = { _M, _A, _R, _Y, _END },
-        #endif
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6867,11 +5241,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _r, _o, _l, _i, _n, _e, _END },
-        #else
-        .trainerName = { _C, _A, _R, _O, _L, _I, _N, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6884,11 +5254,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _e, _x, _a, _END },
-        #else
-        .trainerName = { _A, _L, _E, _X, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6901,11 +5267,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _n, _n, _o, _n, _END },
-        #else
-        .trainerName = { _S, _H, _A, _N, _N, _O, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6918,11 +5280,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _a, _o, _m, _i, _END },
-        #else
-        .trainerName = { _N, _A, _O, _M, _I, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6935,11 +5293,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _o, _o, _k, _e, _END },
-        #else
-        .trainerName = { _B, _R, _O, _O, _K, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6952,11 +5306,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _u, _s, _t, _i, _n, _a, _END },
-        #else
-        .trainerName = { _A, _U, _S, _T, _I, _N, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6969,11 +5319,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _u, _l, _i, _e, _END },
-        #else
-        .trainerName = { _J, _U, _L, _I, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -6986,11 +5332,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LORLEI,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _o, _r, _e, _l, _e, _i, _END },
-        #else
-        .trainerName = { _L, _O, _R, _E, _L, _E, _I, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7003,11 +5345,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BRUNO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _u, _n, _o, _END },
-        #else
-        .trainerName = { _B, _R, _U, _N, _O, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7020,11 +5358,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_AGATHA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _g, _a, _t, _h, _a, _END },
-        #else
-        .trainerName = { _A, _G, _A, _T, _H, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7037,11 +5371,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_LANCE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _n, _c, _e, _END },
-        #else
-        .trainerName = { _L, _A, _N, _C, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7054,11 +5384,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BROCK,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _o, _c, _k, _END },
-        #else
-        .trainerName = { _B, _R, _O, _C, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7071,11 +5397,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_MISTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _s, _t, _y, _END },
-        #else
-        .trainerName = { _M, _I, _S, _T, _Y, _END },
-        #endif
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7088,11 +5410,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_LT_SURGE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _t, _PERIOD, _SPACE, _S, _u, _r, _g, _e, _END },
-        #else
-        .trainerName = { _L, _T, _PERIOD, _SPACE, _S, _U, _R, _G, _E, _END },
-        #endif
         .items = {ITEM_SUPER_POTION, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7105,11 +5423,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_ERIKA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _r, _i, _k, _a, _END },
-        #else
-        .trainerName = { _E, _R, _I, _K, _A, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7122,11 +5436,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_KOGA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _o, _g, _a, _END },
-        #else
-        .trainerName = { _K, _O, _G, _A, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7139,11 +5449,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLAINE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _l, _a, _i, _n, _e, _END },
-        #else
-        .trainerName = { _B, _L, _A, _I, _N, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7156,11 +5462,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SABRINA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _b, _r, _i, _n, _a, _END },
-        #else
-        .trainerName = { _S, _A, _B, _R, _I, _N, _A, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7173,11 +5475,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _h, _o, _m, _a, _s, _END },
-        #else
-        .trainerName = { _T, _H, _O, _M, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7190,11 +5488,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _r, _t, _h, _u, _r, _END },
-        #else
-        .trainerName = { _A, _R, _T, _H, _U, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7207,11 +5501,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _u, _c, _k, _e, _r, _END },
-        #else
-        .trainerName = { _T, _U, _C, _K, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7224,11 +5514,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _o, _r, _t, _o, _n, _END },
-        #else
-        .trainerName = { _N, _O, _R, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7241,11 +5527,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _l, _t, _e, _r, _END },
-        #else
-        .trainerName = { _W, _A, _L, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7258,11 +5540,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7275,11 +5553,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7292,11 +5566,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -7309,11 +5579,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7326,11 +5592,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7343,11 +5605,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7360,11 +5618,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7377,11 +5631,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7394,11 +5644,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7411,11 +5657,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7428,11 +5670,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7445,11 +5683,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_2,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7462,11 +5696,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7479,11 +5709,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7496,11 +5722,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -7513,11 +5735,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _t, _r, _i, _c, _i, _a, _END },
-        #else
-        .trainerName = { _P, _A, _T, _R, _I, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7530,11 +5748,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _r, _l, _y, _END },
-        #else
-        .trainerName = { _C, _A, _R, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7547,11 +5761,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _o, _p, _e, _END },
-        #else
-        .trainerName = { _H, _O, _P, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7564,11 +5774,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _u, _l, _a, _END },
-        #else
-        .trainerName = { _P, _A, _U, _L, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7581,11 +5787,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _u, _r, _e, _l, _END },
-        #else
-        .trainerName = { _L, _A, _U, _R, _E, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7598,11 +5800,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _d, _y, _END },
-        #else
-        .trainerName = { _J, _O, _D, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7615,11 +5813,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _A, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7632,11 +5826,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _u, _t, _h, _END },
-        #else
-        .trainerName = { _R, _U, _T, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7649,11 +5839,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _a, _r, _i, _n, _a, _END },
-        #else
-        .trainerName = { _K, _A, _R, _I, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7666,11 +5852,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _n, _a, _e, _END },
-        #else
-        .trainerName = { _J, _A, _N, _A, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7683,11 +5865,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _g, _e, _l, _i, _c, _a, _END },
-        #else
-        .trainerName = { _A, _N, _G, _E, _L, _I, _C, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7700,11 +5878,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _m, _i, _l, _i, _a, _END },
-        #else
-        .trainerName = { _E, _M, _I, _L, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7717,11 +5891,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _n, _n, _i, _f, _e, _r, _END },
-        #else
-        .trainerName = { _J, _E, _N, _N, _I, _F, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7734,11 +5904,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7751,11 +5917,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7768,11 +5930,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7785,11 +5943,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7802,11 +5956,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7819,11 +5969,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7836,11 +5982,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7853,11 +5995,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7870,11 +6008,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _m, _a, _n, _d, _a, _END },
-        #else
-        .trainerName = { _A, _M, _A, _N, _D, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7887,11 +6021,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _t, _a, _c, _y, _END },
-        #else
-        .trainerName = { _S, _T, _A, _C, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -7904,11 +6034,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_CHANNELER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _s, _h, _a, _END },
-        #else
-        .trainerName = { _T, _A, _S, _H, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7921,11 +6047,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _r, _e, _m, _y, _END },
-        #else
-        .trainerName = { _J, _E, _R, _E, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7938,11 +6060,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _m, _a, _END },
-        #else
-        .trainerName = { _A, _L, _M, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -7955,11 +6073,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _u, _s, _i, _e, _END },
-        #else
-        .trainerName = { _S, _U, _S, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -7972,11 +6086,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _V, _a, _l, _e, _r, _i, _e, _END },
-        #else
-        .trainerName = { _V, _A, _L, _E, _R, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -7989,11 +6099,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _w, _e, _n, _END },
-        #else
-        .trainerName = { _G, _W, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -8006,11 +6112,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _V, _i, _r, _g, _i, _l, _END },
-        #else
-        .trainerName = { _V, _I, _R, _G, _I, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8023,11 +6125,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _l, _i, _n, _t, _END },
-        #else
-        .trainerName = { _F, _L, _I, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8040,11 +6138,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _s, _s, _y, _END },
-        #else
-        .trainerName = { _M, _I, _S, _S, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8057,11 +6151,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _r, _e, _n, _e, _END },
-        #else
-        .trainerName = { _I, _R, _E, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8074,11 +6164,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _n, _a, _END },
-        #else
-        .trainerName = { _D, _A, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8091,11 +6177,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _r, _i, _a, _n, _a, _END },
-        #else
-        .trainerName = { _A, _R, _I, _A, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -8108,11 +6190,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _a, _h, _END },
-        #else
-        .trainerName = { _L, _E, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8125,11 +6203,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _u, _s, _t, _i, _n, _END },
-        #else
-        .trainerName = { _J, _U, _S, _T, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8142,11 +6216,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Y, _a, _z, _m, _i, _n, _END },
-        #else
-        .trainerName = { _Y, _A, _Z, _M, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8159,11 +6229,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _i, _n, _d, _r, _a, _END },
-        #else
-        .trainerName = { _K, _I, _N, _D, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8176,11 +6242,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _c, _k, _y, _END },
-        #else
-        .trainerName = { _B, _E, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8193,11 +6255,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _e, _l, _i, _a, _END },
-        #else
-        .trainerName = { _C, _E, _L, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8210,11 +6268,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _o, _o, _k, _s, _END },
-        #else
-        .trainerName = { _B, _R, _O, _O, _K, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8227,11 +6281,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _m, _a, _r, _END },
-        #else
-        .trainerName = { _L, _A, _M, _A, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8244,11 +6294,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _l, _i, _SPACE, _AMPERSAND, _SPACE, _A, _n, _n, _e, _END },
-        #else
-        .trainerName = { _E, _L, _I, _SPACE, _AMPERSAND, _SPACE, _A, _N, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8261,11 +6307,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOL_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _y, _SPACE, _AMPERSAND, _SPACE, _T, _y, _r, _a, _END },
-        #else
-        .trainerName = { _R, _A, _Y, _SPACE, _AMPERSAND, _SPACE, _T, _Y, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8278,11 +6320,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _a, _SPACE, _AMPERSAND, _SPACE, _J, _e, _s, _END },
-        #else
-        .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8295,11 +6333,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _i, _r, _i, _SPACE, _AMPERSAND, _SPACE, _J, _a, _n, _END },
-        #else
-        .trainerName = { _K, _I, _R, _I, _SPACE, _AMPERSAND, _SPACE, _J, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8312,11 +6346,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _n, _SPACE, _AMPERSAND, _SPACE, _M, _y, _a, _END },
-        #else
-        .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8329,11 +6359,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _a, _SPACE, _AMPERSAND, _SPACE, _J, _e, _d, _END },
-        #else
-        .trainerName = { _L, _E, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8346,11 +6372,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _a, _SPACE, _AMPERSAND, _SPACE, _L, _u, _c, _END },
-        #else
-        .trainerName = { _L, _I, _A, _SPACE, _AMPERSAND, _SPACE, _L, _U, _C, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8363,11 +6385,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _l, _SPACE, _AMPERSAND, _SPACE, _I, _a, _n, _END },
-        #else
-        .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -8380,11 +6398,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8397,11 +6411,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8414,11 +6424,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8431,11 +6437,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8448,11 +6450,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8465,11 +6463,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8482,11 +6476,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _END },
-        #else
-        .trainerName = { _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8499,11 +6489,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _END },
-        #else
-        .trainerName = { _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8516,11 +6502,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _d, _END },
-        #else
-        .trainerName = { _C, _H, _A, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8533,11 +6515,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _l, _i, _END },
-        #else
-        .trainerName = { _R, _E, _L, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8550,11 +6528,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _l, _i, _END },
-        #else
-        .trainerName = { _R, _E, _L, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8567,11 +6541,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _I, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8584,11 +6554,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _I, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8601,11 +6567,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _I, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8618,11 +6580,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _d, _END },
-        #else
-        .trainerName = { _C, _H, _A, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8635,11 +6593,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _n, _i, _c, _e, _END },
-        #else
-        .trainerName = { _J, _A, _N, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8652,11 +6606,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _n, _i, _c, _e, _END },
-        #else
-        .trainerName = { _J, _A, _N, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8669,11 +6619,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _d, _END },
-        #else
-        .trainerName = { _C, _H, _A, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8686,11 +6632,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _r, _a, _n, _k, _l, _i, _n, _END },
-        #else
-        .trainerName = { _F, _R, _A, _N, _K, _L, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8703,11 +6645,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PROF_OAK,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _r, _o, _f, _PERIOD, _SPACE, _O, _a, _k, _END },
-        #else
-        .trainerName = { _P, _R, _O, _F, _PERIOD, _SPACE, _O, _A, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8720,11 +6658,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BRENDAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _e, _n, _d, _a, _n, _END },
-        #else
-        .trainerName = { _B, _R, _E, _N, _D, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8737,11 +6671,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_MAY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _y, _END },
-        #else
-        .trainerName = { _M, _A, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8754,11 +6684,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PLAYER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _e, _d, _END },
-        #else
-        .trainerName = { _R, _E, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8771,11 +6697,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PLAYER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _a, _f, _END },
-        #else
-        .trainerName = { _L, _E, _A, _F, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8788,11 +6710,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8805,11 +6723,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _l, _y, _n, _END },
-        #else
-        .trainerName = { _J, _A, _C, _L, _Y, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8822,11 +6736,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _r, _o, _n, _END },
-        #else
-        .trainerName = { _S, _H, _A, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8839,11 +6749,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _m, _i, _r, _a, _END },
-        #else
-        .trainerName = { _A, _M, _I, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8856,11 +6762,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _z, _e, _END },
-        #else
-        .trainerName = { _A, _L, _I, _Z, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8873,11 +6775,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _c, _o, _l, _a, _s, _END },
-        #else
-        .trainerName = { _N, _I, _C, _O, _L, _A, _S, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8890,11 +6788,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _d, _e, _l, _i, _n, _e, _END },
-        #else
-        .trainerName = { _M, _A, _D, _E, _L, _I, _N, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8907,11 +6801,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _k, _k, _i, _END },
-        #else
-        .trainerName = { _N, _I, _K, _K, _I, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8924,11 +6814,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _t, _a, _n, _l, _y, _END },
-        #else
-        .trainerName = { _S, _T, _A, _N, _L, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -8941,11 +6827,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SELPHY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _k, _i, _END },
-        #else
-        .trainerName = { _J, _A, _C, _K, _I, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8958,11 +6840,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PAINTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _i, _s, _y, _END },
-        #else
-        .trainerName = { _D, _A, _I, _S, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -8975,11 +6853,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _o, _o, _n, _END },
-        #else
-        .trainerName = { _G, _O, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -8992,11 +6866,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _o, _o, _n, _END },
-        #else
-        .trainerName = { _G, _O, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9009,11 +6879,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _o, _o, _n, _END },
-        #else
-        .trainerName = { _G, _O, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9026,11 +6892,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _END },
-        #else
-        .trainerName = { _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9043,11 +6905,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _n, _t, _h, _o, _n, _y, _END },
-        #else
-        .trainerName = { _A, _N, _T, _H, _O, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9060,11 +6918,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _r, _l, _i, _e, _END },
-        #else
-        .trainerName = { _C, _H, _A, _R, _L, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9077,11 +6931,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _l, _i, _SPACE, _AMPERSAND, _SPACE, _A, _n, _n, _e, _END },
-        #else
-        .trainerName = { _E, _L, _I, _SPACE, _AMPERSAND, _SPACE, _A, _N, _N, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -9094,11 +6944,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _h, _n, _s, _o, _n, _END },
-        #else
-        .trainerName = { _J, _O, _H, _N, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9111,11 +6957,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _a, _r, _d, _o, _END },
-        #else
-        .trainerName = { _R, _I, _C, _A, _R, _D, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9128,11 +6970,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _r, _e, _n, _END },
-        #else
-        .trainerName = { _J, _A, _R, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9145,11 +6983,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9162,11 +6996,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -9179,11 +7009,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9196,11 +7022,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9213,11 +7035,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9230,11 +7048,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9247,11 +7061,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _d, _m, _i, _n, _END },
-        #else
-        .trainerName = { _A, _D, _M, _I, _N, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9264,11 +7074,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _d, _m, _i, _n, _END },
-        #else
-        .trainerName = { _A, _D, _M, _I, _N, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9281,11 +7087,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _d, _e, _o, _n, _END },
-        #else
-        .trainerName = { _G, _I, _D, _E, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -9298,11 +7100,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _m, _a, _r, _a, _END },
-        #else
-        .trainerName = { _A, _M, _A, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9315,11 +7113,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _i, _a, _END },
-        #else
-        .trainerName = { _M, _A, _R, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9332,11 +7126,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _b, _i, _g, _a, _i, _l, _END },
-        #else
-        .trainerName = { _A, _B, _I, _G, _A, _I, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9349,11 +7139,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _i, _n, _n, _END },
-        #else
-        .trainerName = { _F, _I, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9366,11 +7152,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _a, _r, _r, _e, _t, _t, _END },
-        #else
-        .trainerName = { _G, _A, _R, _R, _E, _T, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9383,11 +7165,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _o, _m, _m, _y, _END },
-        #else
-        .trainerName = { _T, _O, _M, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -9400,11 +7178,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _n, _y, _a, _END },
-        #else
-        .trainerName = { _T, _A, _N, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9417,11 +7191,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _a, _END },
-        #else
-        .trainerName = { _S, _H, _E, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9434,11 +7204,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _u, _g, _h, _END },
-        #else
-        .trainerName = { _H, _U, _G, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9451,11 +7217,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _y, _c, _e, _END },
-        #else
-        .trainerName = { _B, _R, _Y, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9468,11 +7230,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _l, _a, _i, _r, _e, _END },
-        #else
-        .trainerName = { _C, _L, _A, _I, _R, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -9485,11 +7243,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _k, _SPACE, _AMPERSAND, _SPACE, _K, _i, _a, _END },
-        #else
-        .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -9502,11 +7256,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _V, _i, _o, _l, _e, _t, _END },
-        #else
-        .trainerName = { _V, _I, _O, _L, _E, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9519,11 +7269,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _e, _x, _i, _s, _END },
-        #else
-        .trainerName = { _A, _L, _E, _X, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -9536,11 +7282,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _y, _SPACE, _AMPERSAND, _SPACE, _M, _e, _g, _END },
-        #else
-        .trainerName = { _J, _O, _Y, _SPACE, _AMPERSAND, _SPACE, _M, _E, _G, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -9553,11 +7295,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _i, _s, _h, _a, _END },
-        #else
-        .trainerName = { _T, _I, _S, _H, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9570,11 +7308,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PAINTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _e, _l, _i, _n, _a, _END },
-        #else
-        .trainerName = { _C, _E, _L, _I, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9587,11 +7321,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PAINTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _y, _n, _a, _END },
-        #else
-        .trainerName = { _R, _A, _Y, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9604,11 +7334,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SELPHY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _l, _l, _i, _a, _n, _END },
-        #else
-        .trainerName = { _G, _I, _L, _L, _I, _A, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9621,11 +7347,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _e, _s, _t, _i, _n, _END },
-        #else
-        .trainerName = { _D, _E, _S, _T, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9638,11 +7360,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _o, _b, _y, _END },
-        #else
-        .trainerName = { _T, _O, _B, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9655,11 +7373,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9672,11 +7386,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9689,11 +7399,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _u, _n, _t, _END },
-        #else
-        .trainerName = { _G, _R, _U, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -9706,11 +7412,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _l, _o, _END },
-        #else
-        .trainerName = { _M, _I, _L, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9723,11 +7425,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _z, _END },
-        #else
-        .trainerName = { _C, _H, _A, _Z, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9740,11 +7438,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _a, _r, _o, _l, _d, _END },
-        #else
-        .trainerName = { _H, _A, _R, _O, _L, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9757,11 +7451,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _y, _l, _o, _r, _END },
-        #else
-        .trainerName = { _T, _Y, _L, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9774,11 +7464,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _y, _m, _o, _END },
-        #else
-        .trainerName = { _M, _Y, _M, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9791,11 +7477,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _c, _o, _l, _e, _END },
-        #else
-        .trainerName = { _N, _I, _C, _O, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9808,11 +7490,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _v, _a, _SPACE, _AMPERSAND, _SPACE, _G, _e, _b, _END },
-        #else
-        .trainerName = { _A, _V, _A, _SPACE, _AMPERSAND, _SPACE, _G, _E, _B, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -9825,11 +7503,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _s, _e, _END },
-        #else
-        .trainerName = { _R, _O, _S, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9842,11 +7516,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _m, _i, _r, _END },
-        #else
-        .trainerName = { _S, _A, _M, _I, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9859,11 +7529,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _e, _n, _i, _s, _e, _END },
-        #else
-        .trainerName = { _D, _E, _N, _I, _S, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9876,11 +7542,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _u, _SPACE, _AMPERSAND, _SPACE, _M, _i, _a, _END },
-        #else
-        .trainerName = { _M, _I, _U, _SPACE, _AMPERSAND, _SPACE, _M, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -9893,11 +7555,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _a, _r, _l, _END },
-        #else
-        .trainerName = { _E, _A, _R, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9910,11 +7568,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _o, _s, _t, _e, _r, _END },
-        #else
-        .trainerName = { _F, _O, _S, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9927,11 +7581,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _r, _r, _y, _END },
-        #else
-        .trainerName = { _L, _A, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9944,11 +7594,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _y, _l, _END },
-        #else
-        .trainerName = { _D, _A, _R, _Y, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9961,11 +7607,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _c, _t, _o, _r, _END },
-        #else
-        .trainerName = { _H, _E, _C, _T, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -9978,11 +7620,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _i, _o, _END },
-        #else
-        .trainerName = { _D, _A, _R, _I, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -9995,11 +7633,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _d, _e, _t, _t, _e, _END },
-        #else
-        .trainerName = { _R, _O, _D, _E, _T, _T, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10012,11 +7646,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_AROMA_LADY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _a, _h, _END },
-        #else
-        .trainerName = { _M, _I, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10029,11 +7659,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _v, _e, _SPACE, _AMPERSAND, _SPACE, _J, _o, _n, _END },
-        #else
-        .trainerName = { _E, _V, _E, _SPACE, _AMPERSAND, _SPACE, _J, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -10046,11 +7672,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _s, _o, _n, _END },
-        #else
-        .trainerName = { _M, _A, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -10063,11 +7685,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _y, _n, _d, _y, _END },
-        #else
-        .trainerName = { _C, _Y, _N, _D, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10080,11 +7698,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _c, _e, _l, _y, _n, _END },
-        #else
-        .trainerName = { _J, _O, _C, _E, _L, _Y, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10097,11 +7711,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _v, _a, _n, _END },
-        #else
-        .trainerName = { _E, _V, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10114,11 +7724,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _k, _END },
-        #else
-        .trainerName = { _M, _A, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10131,11 +7737,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _o, _g, _a, _n, _END },
-        #else
-        .trainerName = { _L, _O, _G, _A, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10148,11 +7750,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _k, _s, _o, _n, _END },
-        #else
-        .trainerName = { _J, _A, _C, _K, _S, _O, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10165,11 +7763,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _t, _h, _END },
-        #else
-        .trainerName = { _B, _E, _T, _H, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10182,11 +7776,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _a, _t, _e, _l, _y, _n, _END },
-        #else
-        .trainerName = { _K, _A, _T, _E, _L, _Y, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10199,11 +7789,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _r, _o, _y, _END },
-        #else
-        .trainerName = { _L, _E, _R, _O, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -10216,11 +7802,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _c, _h, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _M, _I, _C, _H, _E, _L, _L, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -10233,11 +7815,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOL_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _x, _SPACE, _AMPERSAND, _SPACE, _N, _y, _a, _END },
-        #else
-        .trainerName = { _L, _E, _X, _SPACE, _AMPERSAND, _SPACE, _N, _Y, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -10250,11 +7828,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _a, _n, _d, _o, _n, _END },
-        #else
-        .trainerName = { _B, _R, _A, _N, _D, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10267,11 +7841,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _j, _a, _m, _i, _n, _END },
-        #else
-        .trainerName = { _B, _E, _N, _J, _A, _M, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10284,11 +7854,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PAINTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _d, _n, _a, _END },
-        #else
-        .trainerName = { _E, _D, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10301,11 +7867,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _l, _i, _f, _f, _o, _r, _d, _END },
-        #else
-        .trainerName = { _C, _L, _I, _F, _F, _O, _R, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10318,11 +7880,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SELPHY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _e, _l, _p, _h, _y, _END },
-        #else
-        .trainerName = { _S, _E, _L, _P, _H, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10335,11 +7893,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _w, _s, _o, _n, _END },
-        #else
-        .trainerName = { _L, _A, _W, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10352,11 +7906,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _u, _r, _a, _END },
-        #else
-        .trainerName = { _L, _A, _U, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10369,11 +7919,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _t, _h, _a, _n, _y, _END },
-        #else
-        .trainerName = { _B, _E, _T, _H, _A, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10386,11 +7932,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _l, _i, _s, _o, _n, _END },
-        #else
-        .trainerName = { _A, _L, _L, _I, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10403,11 +7945,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _a, _r, _r, _e, _t, _END },
-        #else
-        .trainerName = { _G, _A, _R, _R, _E, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10420,11 +7958,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _n, _a, _h, _END },
-        #else
-        .trainerName = { _J, _O, _N, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -10437,11 +7971,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _V, _a, _n, _c, _e, _END },
-        #else
-        .trainerName = { _V, _A, _N, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10454,11 +7984,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _a, _s, _h, _END },
-        #else
-        .trainerName = { _N, _A, _S, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10471,11 +7997,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _r, _d, _e, _l, _l, _END },
-        #else
-        .trainerName = { _C, _O, _R, _D, _E, _L, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10488,11 +8010,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _l, _i, _a, _END },
-        #else
-        .trainerName = { _D, _A, _L, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -10505,11 +8023,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _a, _n, _a, _END },
-        #else
-        .trainerName = { _J, _O, _A, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10522,11 +8036,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _l, _e, _y, _END },
-        #else
-        .trainerName = { _R, _I, _L, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10539,11 +8049,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _c, _y, _END },
-        #else
-        .trainerName = { _M, _A, _R, _C, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10556,11 +8062,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _y, _t, _o, _n, _END },
-        #else
-        .trainerName = { _L, _A, _Y, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10573,11 +8075,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _l, _s, _e, _y, _END },
-        #else
-        .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10590,11 +8088,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _l, _s, _e, _y, _END },
-        #else
-        .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10607,11 +8101,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _e, _l, _s, _e, _y, _END },
-        #else
-        .trainerName = { _K, _E, _L, _S, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10624,11 +8114,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _k, _y, _END },
-        #else
-        .trainerName = { _R, _I, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10641,11 +8127,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _k, _y, _END },
-        #else
-        .trainerName = { _R, _I, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10658,11 +8140,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _k, _y, _END },
-        #else
-        .trainerName = { _R, _I, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10676,17 +8154,9 @@ const struct Trainer gTrainers[] = {
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
         #ifdef DECAP_TRAINER_NAMES
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-        #else
-        .trainerName = { _J, _e, _f, _f, _END },
-        #endif
                 #else
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-        #else
-        .trainerName = { _J, _E, _F, _F, _END },
-        #endif
                 #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
@@ -10700,11 +8170,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-        #else
-        .trainerName = { _J, _E, _F, _F, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10717,11 +8183,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-        #else
-        .trainerName = { _J, _E, _F, _F, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10734,11 +8196,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _b, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10751,11 +8209,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _b, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10768,11 +8222,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _b, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _I, _S, _A, _B, _E, _L, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10785,11 +8235,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Y, _a, _s, _u, _END },
-        #else
-        .trainerName = { _Y, _A, _S, _U, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10802,11 +8248,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _Y, _a, _s, _u, _END },
-        #else
-        .trainerName = { _Y, _A, _S, _U, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10819,11 +8261,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_WORKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _r, _n, _i, _e, _END },
-        #else
-        .trainerName = { _B, _E, _R, _N, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -10836,11 +8274,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _i, _a, _n, _END },
-        #else
-        .trainerName = { _D, _A, _R, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10853,11 +8287,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _r, _i, _s, _END },
-        #else
-        .trainerName = { _C, _H, _R, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10870,11 +8300,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _r, _i, _s, _END },
-        #else
-        .trainerName = { _C, _H, _R, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10887,11 +8313,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _r, _i, _s, _END },
-        #else
-        .trainerName = { _C, _H, _R, _I, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10904,11 +8326,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _i, _a, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10921,11 +8339,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _i, _a, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10938,11 +8352,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _i, _a, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -10955,11 +8365,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _r, _e, _m, _y, _END },
-        #else
-        .trainerName = { _J, _E, _R, _E, _M, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10972,11 +8378,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _k, _END },
-        #else
-        .trainerName = { _M, _A, _R, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -10989,11 +8391,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _r, _m, _a, _n, _END },
-        #else
-        .trainerName = { _H, _E, _R, _M, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11006,11 +8404,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _r, _m, _a, _n, _END },
-        #else
-        .trainerName = { _H, _E, _R, _M, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11023,11 +8417,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _r, _e, _n, _t, _END },
-        #else
-        .trainerName = { _T, _R, _E, _N, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11040,11 +8430,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _e, _g, _a, _n, _END },
-        #else
-        .trainerName = { _M, _E, _G, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -11057,11 +8443,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _e, _g, _a, _n, _END },
-        #else
-        .trainerName = { _M, _E, _G, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -11074,11 +8456,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _l, _e, _n, _n, _END },
-        #else
-        .trainerName = { _G, _L, _E, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11091,11 +8469,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_GAMBLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _i, _c, _h, _END },
-        #else
-        .trainerName = { _R, _I, _C, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11108,11 +8482,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _r, _e, _n, _END },
-        #else
-        .trainerName = { _J, _A, _R, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11125,11 +8495,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _l, _l, _i, _o, _t, _END },
-        #else
-        .trainerName = { _E, _L, _L, _I, _O, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11142,11 +8508,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ROCKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _c, _a, _END },
-        #else
-        .trainerName = { _L, _U, _C, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11159,11 +8521,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _i, _l, _a, _END },
-        #else
-        .trainerName = { _S, _H, _E, _I, _L, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11176,11 +8534,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _b, _e, _r, _t, _END },
-        #else
-        .trainerName = { _R, _O, _B, _E, _R, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11193,11 +8547,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _b, _e, _r, _t, _END },
-        #else
-        .trainerName = { _R, _O, _B, _E, _R, _T, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11210,11 +8560,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _u, _s, _i, _e, _END },
-        #else
-        .trainerName = { _S, _U, _S, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -11227,11 +8573,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _u, _s, _i, _e, _END },
-        #else
-        .trainerName = { _S, _U, _S, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -11244,11 +8586,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _u, _s, _i, _e, _END },
-        #else
-        .trainerName = { _S, _U, _S, _I, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -11261,11 +8599,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _u, _k, _a, _s, _END },
-        #else
-        .trainerName = { _L, _U, _K, _A, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11278,11 +8612,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _n, _y, _END },
-        #else
-        .trainerName = { _B, _E, _N, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11295,11 +8625,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _n, _n, _y, _END },
-        #else
-        .trainerName = { _B, _E, _N, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11312,11 +8638,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _l, _o, _n, _END },
-        #else
-        .trainerName = { _M, _A, _R, _L, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11329,11 +8651,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _r, _l, _o, _n, _END },
-        #else
-        .trainerName = { _M, _A, _R, _L, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11346,11 +8664,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _r, _a, _c, _e, _END },
-        #else
-        .trainerName = { _G, _R, _A, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11363,11 +8677,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _e, _s, _t, _e, _r, _END },
-        #else
-        .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11380,11 +8690,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _e, _s, _t, _e, _r, _END },
-        #else
-        .trainerName = { _C, _H, _E, _S, _T, _E, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11397,11 +8703,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _c, _k, _y, _END },
-        #else
-        .trainerName = { _B, _E, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11414,11 +8716,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _c, _k, _y, _END },
-        #else
-        .trainerName = { _B, _E, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11431,11 +8729,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _e, _c, _k, _y, _END },
-        #else
-        .trainerName = { _B, _E, _C, _K, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11448,11 +8742,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _n, _SPACE, _AMPERSAND, _SPACE, _M, _y, _a, _END },
-        #else
-        .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11465,11 +8755,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _n, _SPACE, _AMPERSAND, _SPACE, _M, _y, _a, _END },
-        #else
-        .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11482,11 +8768,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _n, _SPACE, _AMPERSAND, _SPACE, _M, _y, _a, _END },
-        #else
-        .trainerName = { _R, _O, _N, _SPACE, _AMPERSAND, _SPACE, _M, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11499,11 +8781,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _u, _b, _e, _n, _END },
-        #else
-        .trainerName = { _R, _U, _B, _E, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11516,11 +8794,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _a, _m, _r, _o, _n, _END },
-        #else
-        .trainerName = { _C, _A, _M, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11533,11 +8807,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _x, _o, _n, _END },
-        #else
-        .trainerName = { _J, _A, _X, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11550,11 +8820,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _I, _s, _a, _i, _a, _h, _END },
-        #else
-        .trainerName = { _I, _S, _A, _I, _A, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11567,11 +8833,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _r, _e, _y, _END },
-        #else
-        .trainerName = { _C, _O, _R, _E, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11584,11 +8846,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _o, _b, _END },
-        #else
-        .trainerName = { _J, _A, _C, _O, _B, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11601,11 +8859,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _o, _b, _END },
-        #else
-        .trainerName = { _J, _A, _C, _O, _B, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11618,11 +8872,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _c, _e, _END },
-        #else
-        .trainerName = { _A, _L, _I, _C, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11635,11 +8885,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _r, _i, _n, _END },
-        #else
-        .trainerName = { _D, _A, _R, _R, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -11652,11 +8898,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _s, _s, _y, _END },
-        #else
-        .trainerName = { _M, _I, _S, _S, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11669,11 +8911,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _s, _s, _y, _END },
-        #else
-        .trainerName = { _M, _I, _S, _S, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11686,11 +8924,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_FISHERMAN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _W, _a, _d, _e, _END },
-        #else
-        .trainerName = { _W, _A, _D, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -11703,11 +8937,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _k, _END },
-        #else
-        .trainerName = { _J, _A, _C, _K, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -11720,11 +8950,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _l, _SPACE, _AMPERSAND, _SPACE, _I, _a, _n, _END },
-        #else
-        .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11737,11 +8963,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SIS_AND_BRO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _i, _l, _SPACE, _AMPERSAND, _SPACE, _I, _a, _n, _END },
-        #else
-        .trainerName = { _L, _I, _L, _SPACE, _AMPERSAND, _SPACE, _I, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11754,11 +8976,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _F, _i, _n, _n, _END },
-        #else
-        .trainerName = { _F, _I, _N, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -11771,11 +8989,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _r, _o, _n, _END },
-        #else
-        .trainerName = { _S, _H, _A, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11788,11 +9002,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _a, _r, _o, _n, _END },
-        #else
-        .trainerName = { _S, _H, _A, _R, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11805,11 +9015,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _n, _y, _a, _END },
-        #else
-        .trainerName = { _T, _A, _N, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11822,11 +9028,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _a, _n, _y, _a, _END },
-        #else
-        .trainerName = { _T, _A, _N, _Y, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11839,11 +9041,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _a, _END },
-        #else
-        .trainerName = { _S, _H, _E, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11856,11 +9054,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _h, _e, _a, _END },
-        #else
-        .trainerName = { _S, _H, _E, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11873,11 +9067,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _u, _g, _h, _END },
-        #else
-        .trainerName = { _H, _U, _G, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11890,11 +9080,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _u, _g, _h, _END },
-        #else
-        .trainerName = { _H, _U, _G, _H, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -11907,11 +9093,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _k, _SPACE, _AMPERSAND, _SPACE, _K, _i, _a, _END },
-        #else
-        .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11924,11 +9106,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_KIN,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _k, _SPACE, _AMPERSAND, _SPACE, _K, _i, _a, _END },
-        #else
-        .trainerName = { _M, _I, _K, _SPACE, _AMPERSAND, _SPACE, _K, _I, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11941,11 +9119,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TUBER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _m, _i, _r, _a, _END },
-        #else
-        .trainerName = { _A, _M, _I, _R, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -11958,11 +9132,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TWINS,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _o, _y, _SPACE, _AMPERSAND, _SPACE, _M, _e, _g, _END },
-        #else
-        .trainerName = { _J, _O, _Y, _SPACE, _AMPERSAND, _SPACE, _M, _E, _G, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -11975,11 +9145,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PAINTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _a, _y, _n, _a, _END },
-        #else
-        .trainerName = { _R, _A, _Y, _N, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -11992,11 +9158,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _e, _s, _t, _i, _n, _END },
-        #else
-        .trainerName = { _D, _E, _S, _T, _I, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12009,11 +9171,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _l, _i, _z, _e, _END },
-        #else
-        .trainerName = { _A, _L, _I, _Z, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12026,11 +9184,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _a, _SPACE, _AMPERSAND, _SPACE, _J, _e, _s, _END },
-        #else
-        .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -12043,11 +9197,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _G, _i, _a, _SPACE, _AMPERSAND, _SPACE, _J, _e, _s, _END },
-        #else
-        .trainerName = { _G, _I, _A, _SPACE, _AMPERSAND, _SPACE, _J, _E, _S, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -12060,11 +9210,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _l, _o, _END },
-        #else
-        .trainerName = { _M, _I, _L, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12077,11 +9223,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _h, _a, _z, _END },
-        #else
-        .trainerName = { _C, _H, _A, _Z, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12094,11 +9236,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _a, _r, _o, _l, _d, _END },
-        #else
-        .trainerName = { _H, _A, _R, _O, _L, _D, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12111,11 +9249,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _c, _o, _l, _e, _END },
-        #else
-        .trainerName = { _N, _I, _C, _O, _L, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -12128,11 +9262,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _l, _y, _n, _END },
-        #else
-        .trainerName = { _J, _A, _C, _L, _Y, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12145,11 +9275,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _S, _a, _m, _i, _r, _END },
-        #else
-        .trainerName = { _S, _A, _M, _I, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -12162,11 +9288,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _a, _r, _l, _END },
-        #else
-        .trainerName = { _E, _A, _R, _L, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12179,11 +9301,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _r, _r, _y, _END },
-        #else
-        .trainerName = { _L, _A, _R, _R, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12196,11 +9314,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _H, _e, _c, _t, _o, _r, _END },
-        #else
-        .trainerName = { _H, _E, _C, _T, _O, _R, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12213,11 +9327,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _D, _a, _r, _i, _o, _END },
-        #else
-        .trainerName = { _D, _A, _R, _I, _O, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -12230,11 +9340,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _R, _o, _d, _e, _t, _t, _e, _END },
-        #else
-        .trainerName = { _R, _O, _D, _E, _T, _T, _E, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12247,11 +9353,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_JUGGLER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _s, _o, _n, _END },
-        #else
-        .trainerName = { _M, _A, _S, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 4,
@@ -12264,11 +9366,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _N, _i, _c, _o, _l, _a, _s, _END },
-        #else
-        .trainerName = { _N, _I, _C, _O, _L, _A, _S, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12281,11 +9379,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _d, _e, _l, _i, _n, _e, _END },
-        #else
-        .trainerName = { _M, _A, _D, _E, _L, _I, _N, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12298,11 +9392,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _y, _n, _d, _y, _END },
-        #else
-        .trainerName = { _C, _Y, _N, _D, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12315,11 +9405,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_TAMER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _E, _v, _a, _n, _END },
-        #else
-        .trainerName = { _E, _V, _A, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12332,11 +9418,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _a, _c, _k, _s, _o, _n, _END },
-        #else
-        .trainerName = { _J, _A, _C, _K, _S, _O, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12349,11 +9431,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _K, _a, _t, _e, _l, _y, _n, _END },
-        #else
-        .trainerName = { _K, _A, _T, _E, _L, _Y, _N, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 1,
@@ -12366,11 +9444,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _r, _o, _y, _END },
-        #else
-        .trainerName = { _L, _E, _R, _O, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12383,11 +9457,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _i, _c, _h, _e, _l, _l, _e, _END },
-        #else
-        .trainerName = { _M, _I, _C, _H, _E, _L, _L, _E, _END },
-        #endif
         .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12400,11 +9470,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_COOL_COUPLE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _e, _x, _SPACE, _AMPERSAND, _SPACE, _N, _y, _a, _END },
-        #else
-        .trainerName = { _L, _E, _X, _SPACE, _AMPERSAND, _SPACE, _N, _Y, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = TRUE,
         .partySize = 2,
@@ -12417,11 +9483,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _C, _O, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12434,11 +9496,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _C, _O, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12451,11 +9509,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _C, _o, _l, _t, _o, _n, _END },
-        #else
-        .trainerName = { _C, _O, _L, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 3,
@@ -12468,11 +9522,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _a, _t, _t, _h, _e, _w, _END },
-        #else
-        .trainerName = { _M, _A, _T, _T, _H, _E, _W, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12485,11 +9535,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _o, _n, _y, _END },
-        #else
-        .trainerName = { _T, _O, _N, _Y, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12502,11 +9548,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_FEMALE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _M, _e, _l, _i, _s, _s, _a, _END },
-        #else
-        .trainerName = { _M, _E, _L, _I, _S, _S, _A, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
@@ -12519,11 +9561,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_LORLEI,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _o, _r, _e, _l, _e, _i, _END },
-        #else
-        .trainerName = { _L, _O, _R, _E, _L, _E, _I, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12536,11 +9574,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BRUNO,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _B, _r, _u, _n, _o, _END },
-        #else
-        .trainerName = { _B, _R, _U, _N, _O, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12553,11 +9587,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_AGATHA,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _A, _g, _a, _t, _h, _a, _END },
-        #else
-        .trainerName = { _A, _G, _A, _T, _H, _A, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12570,11 +9600,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_LANCE,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _L, _a, _n, _c, _e, _END },
-        #else
-        .trainerName = { _L, _A, _N, _C, _E, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .partySize = 5,
@@ -12587,11 +9613,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -12604,11 +9626,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -12621,11 +9639,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE_3,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _T, _e, _r, _r, _y, _END },
-        #else
-        .trainerName = { _T, _E, _R, _R, _Y, _END },
-        #endif
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .partySize = 6,
@@ -12638,16 +9652,232 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _P, _a, _x, _t, _o, _n, _END },
-        #else
-        .trainerName = { _P, _A, _X, _T, _O, _N, _END },
-        #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = 2,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .party =  { .NoItemDefaultMoves = sParty_CueBallPaxton },
     },
+};
+
+// Trainer Class Names
+const u8 gTrainerClassNames[][13] = {
+    [CLASS_PKMN_TRAINER_1] = { _P, _k, _m, _n, _SPACE, _T, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_PKMN_TRAINER_2] = { _P, _k, _m, _n, _SPACE, _T, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_AQUA_LEADER] = { _A, _q, _u, _a, _SPACE, _L, _e, _a, _d, _e, _r, _END },
+    [CLASS_TEAM_AQUA] = { _T, _e, _a, _m, _SPACE, _A, _q, _u, _a, _END },
+    [CLASS_AROMA_LADY_RS] = { _A, _r, _o, _m, _a, _SPACE, _L, _a, _d, _y, _END },
+    [CLASS_RUIN_MANIAC_RS] = { _R, _u, _i, _n, _SPACE, _M, _a, _n, _i, _a, _c, _END },
+    [CLASS_INTERVIEWER] = { _I, _n, _t, _e, _r, _v, _i, _e, _w, _e, _r, _END },
+    [CLASS_TUBER_RS_1] = { _T, _u, _b, _e, _r, _SPACE, _END },
+    [CLASS_TUBER_RS_2] = { _T, _u, _b, _e, _r, _SPACE, _END },
+    [CLASS_COOLTRAINER_RS] = { _C, _o, _o, _l, _t, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_HEX_MANIAC] = { _H, _e, _x, _SPACE, _M, _a, _n, _i, _a, _c, _END },
+    [CLASS_LADY_RS] = { _L, _a, _d, _y, _END },
+    [CLASS_BEAUTY_RS] = { _B, _e, _a, _u, _t, _y, _END },
+    [CLASS_RICH_BOY] = { _R, _i, _c, _h, _SPACE, _B, _o, _y, _END },
+    [CLASS_POKEMANIAC_RS] = { _P, _o, _k, _e, _m, _a, _n, _i, _a, _c, _END },
+    [CLASS_PKMN_TRAINER_RSE] = { _P, _k, _m, _n, _SPACE, _T, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_BLACK_BELT_RS] = { _B, _l, _a, _c, _k, _SPACE, _B, _e, _l, _t, _END },
+    [CLASS_GUITARIST_RS] = { _G, _u, _i, _t, _a, _r, _i, _s, _t, _END },
+    [CLASS_KINDLER] = { _K, _i, _n, _d, _l, _e, _r, _END },
+    [CLASS_CAMPER_RS] = { _C, _a, _m, _p, _e, _r, _END },
+    [CLASS_BUG_MANIAC] = { _B, _u, _g, _SPACE, _M, _a, _n, _i, _a, _c, _END },
+    [CLASS_PSYCHIC_RS] = { _P, _s, _y, _c, _h, _i, _c, _END },
+    [CLASS_GENTLEMAN_RS] = { _G, _e, _n, _t, _l, _e, _m, _a, _n, _END },
+    [CLASS_ELITE_FOUR_RS] = { _E, _l, _i, _t, _e, _SPACE, _F, _o, _u, _r, _END },
+    [CLASS_LEADER_RS] = { _L, _e, _a, _d, _e, _r, _END },
+    [CLASS_SCHOOL_KID] = { _S, _c, _h, _o, _o, _l, _SPACE, _K, _i, _d, _END },
+    [CLASS_SR_AND_JR] = { _S, _r, _SPACE, _A, _n, _d, _SPACE, _J, _r, _END },
+    [CLASS_POKEFAN] = { _P, _o, _k, _e, _f, _a, _n, _END },
+    [CLASS_EXPERT] = { _E, _x, _p, _e, _r, _t, _END },
+    [CLASS_YOUNGSTER_RS] = { _Y, _o, _u, _n, _g, _s, _t, _e, _r, _END },
+    [CLASS_CHAMPION_RS] = { _C, _h, _a, _m, _p, _i, _o, _n, _END },
+    [CLASS_FISHERMAN_RS] = { _F, _i, _s, _h, _e, _r, _m, _a, _n, _END },
+    [CLASS_TRIATHLETE] = { _T, _r, _i, _a, _t, _h, _l, _e, _t, _e, _END },
+    [CLASS_DRAGON_TAMER] = { _D, _r, _a, _g, _o, _n, _SPACE, _T, _a, _m, _e, _r, _END },
+    [CLASS_BIRD_KEEPER_RS] = { _B, _i, _r, _d, _SPACE, _K, _e, _e, _p, _e, _r, _END },
+    [CLASS_NINJA_BOY] = { _N, _i, _n, _j, _a, _SPACE, _B, _o, _y, _END },
+    [CLASS_BATTLE_GIRL] = { _B, _a, _t, _t, _l, _e, _SPACE, _G, _i, _r, _l, _END },
+    [CLASS_PARASOL_LADY] = { _P, _a, _r, _a, _s, _o, _l, _SPACE, _L, _a, _d, _y, _END },
+    [CLASS_SWIMMER_F_RS] = { _S, _w, _i, _m, _m, _e, _r, _END },
+    [CLASS_PICNICKER_RS] = { _P, _i, _c, _n, _i, _c, _k, _e, _r, _END },
+    [CLASS_TWINS_RS] = { _T, _w, _i, _n, _s, _END },
+    [CLASS_SAILOR_RS] = { _S, _a, _i, _l, _o, _r, _END },
+    [CLASS_BOARDER] = { _B, _o, _a, _r, _d, _e, _r, _END },
+    [CLASS_COLLECTOR] = { _C, _o, _l, _l, _e, _c, _t, _o, _r, _END },
+    [CLASS_PKMN_TRAINER_3] = { _P, _k, _m, _n, _SPACE, _T, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_PKMN_BREEDER_RS] = { _P, _k, _m, _n, _SPACE, _B, _r, _e, _e, _d, _e, _r, _END },
+    [CLASS_PKMN_RANGER_RS] = { _P, _k, _m, _n, _SPACE, _R, _a, _n, _g, _e, _r, _END },
+    [CLASS_MAGMA_LEADER] = { _M, _a, _g, _m, _a, _SPACE, _L, _e, _a, _d, _e, _r, _END },
+    [CLASS_TEAM_MAGMA] = { _T, _e, _a, _m, _SPACE, _M, _a, _g, _m, _a, _END },
+    [CLASS_LASS_RS] = { _L, _a, _s, _s, _END },
+    [CLASS_BUG_CATCHER_RS] = { _B, _u, _g, _SPACE, _C, _a, _t, _c, _h, _e, _r, _END },
+    [CLASS_HIKER_RS] = { _H, _i, _k, _e, _r, _END },
+    [CLASS_YOUNG_COUPLE_RS] = { _Y, _o, _u, _n, _g, _SPACE, _C, _o, _u, _p, _l, _e, _END },
+    [CLASS_OLD_COUPLE] = { _O, _l, _d, _SPACE, _C, _o, _u, _p, _l, _e, _END },
+    [CLASS_SIS_AND_BRO_RS] = { _S, _i, _s, _SPACE, _A, _n, _d, _SPACE, _B, _r, _o, _END },
+    [CLASS_AQUA_ADMIN] = { _A, _q, _u, _a, _SPACE, _A, _d, _m, _i, _n, _END },
+    [CLASS_MAGMA_ADMIN] = { _M, _a, _g, _m, _a, _SPACE, _A, _d, _m, _i, _n, _END },
+    [CLASS_YOUNGSTER] = { _Y, _o, _u, _n, _g, _s, _t, _e, _r, _END },
+    [CLASS_BUG_CATCHER] = { _B, _u, _g, _SPACE, _C, _a, _t, _c, _h, _e, _r, _END },
+    [CLASS_LASS] = { _L, _a, _s, _s, _END },
+    [CLASS_SAILOR] = { _S, _a, _i, _l, _o, _r, _END },
+    [CLASS_CAMPER] = { _C, _a, _m, _p, _e, _r, _END },
+    [CLASS_PICNICKER] = { _P, _i, _c, _n, _i, _c, _k, _e, _r, _END },
+    [CLASS_POKEMANIAC] = { _P, _o, _k, _e, _m, _a, _n, _i, _a, _c, _END },
+    [CLASS_SUPER_NERD] = { _S, _u, _p, _e, _r, _SPACE, _N, _e, _r, _d, _END },
+    [CLASS_HIKER] = { _H, _i, _k, _e, _r, _END },
+    [CLASS_BIKER] = { _B, _i, _k, _e, _r, _END },
+    [CLASS_BURGLAR] = { _B, _u, _r, _g, _l, _a, _r, _END },
+    [CLASS_ENGINEER] = { _E, _n, _g, _i, _n, _e, _e, _r, _END },
+    [CLASS_FISHERMAN] = { _F, _i, _s, _h, _e, _r, _m, _a, _n, _END },
+    [CLASS_SWIMMER_M] = { _S, _w, _i, _m, _m, _e, _r, _END },
+    [CLASS_CUE_BALL] = { _C, _u, _e, _SPACE, _B, _a, _l, _l, _END },
+    [CLASS_GAMER] = { _G, _a, _m, _e, _r, _END },
+    [CLASS_BEAUTY] = { _B, _e, _a, _u, _t, _y, _END },
+    [CLASS_SWIMMER_F] = { _S, _w, _i, _m, _m, _e, _r, _END },
+    [CLASS_PSYCHIC] = { _P, _s, _y, _c, _h, _i, _c, _END },
+    [CLASS_ROCKER] = { _R, _o, _c, _k, _e, _r, _END },
+    [CLASS_JUGGLER] = { _J, _u, _g, _g, _l, _e, _r, _END },
+    [CLASS_TAMER] = { _T, _a, _m, _e, _r, _END },
+    [CLASS_BIRD_KEEPER] = { _B, _i, _r, _d, _SPACE, _K, _e, _e, _p, _e, _r, _END },
+    [CLASS_BLACK_BELT] = { _B, _l, _a, _c, _k, _SPACE, _B, _e, _l, _t, _END },
+    [CLASS_RIVAL] = { _R, _i, _v, _a, _l, _END },
+    [CLASS_SCIENTIST] = { _S, _c, _i, _e, _n, _t, _i, _s, _t, _END },
+    [CLASS_BOSS] = { _B, _o, _s, _s, _END },
+    [CLASS_LEADER] = { _L, _e, _a, _d, _e, _r, _END },
+    [CLASS_TEAM_ROCKET] = { _T, _e, _a, _m, _SPACE, _R, _o, _c, _k, _e, _t, _END },
+    [CLASS_COOLTRAINER] = { _C, _o, _o, _l, _t, _r, _a, _i, _n, _e, _r, _END },
+    [CLASS_ELITE_FOUR] = { _E, _l, _i, _t, _e, _SPACE, _4, _END },
+    [CLASS_GENTLEMAN] = { _G, _e, _n, _t, _l, _e, _m, _a, _n, _END },
+    [CLASS_RIVAL_2] = { _R, _i, _v, _a, _l, _END },
+    [CLASS_CHAMPION] = { _C, _h, _a, _m, _p, _i, _o, _n, _END },
+    [CLASS_CHANNELER] = { _C, _h, _a, _n, _n, _e, _l, _e, _r, _END },
+    [CLASS_TWINS] = { _T, _w, _i, _n, _s, _END },
+    [CLASS_COOL_COUPLE] = { _C, _o, _o, _l, _SPACE, _C, _o, _u, _p, _l, _e, _END },
+    [CLASS_YOUNG_COUPLE] = { _Y, _o, _u, _n, _g, _SPACE, _C, _o, _u, _p, _l, _e, _END },
+    [CLASS_CRUSH_KIN] = { _C, _r, _u, _s, _h, _SPACE, _K, _i, _n, _END },
+    [CLASS_SIS_AND_BRO] = { _S, _i, _s, _SPACE, _A, _n, _d, _SPACE, _B, _r, _o, _END },
+    [CLASS_PKMN_PROF] = { _P, _k, _m, _n, _SPACE, _P, _r, _o, _f, _END },
+    [CLASS_PLAYER] = { _P, _l, _a, _y, _e, _r, _END },
+    [CLASS_CRUSH_GIRL] = { _C, _r, _u, _s, _h, _SPACE, _G, _i, _r, _l, _END },
+    [CLASS_TUBER] = { _T, _u, _b, _e, _r, _END },
+    [CLASS_PKMN_BREEDER] = { _P, _k, _m, _n, _SPACE, _B, _r, _e, _e, _d, _e, _r, _END },
+    [CLASS_PKMN_RANGER] = { _P, _k, _m, _n, _SPACE, _R, _a, _n, _g, _e, _r, _END },
+    [CLASS_AROMA_LADY] = { _A, _r, _o, _m, _a, _SPACE, _L, _a, _d, _y, _END },
+    [CLASS_RUIN_MANIAC] = { _R, _u, _i, _n, _SPACE, _M, _a, _n, _i, _a, _c, _END },
+    [CLASS_LADY] = { _L, _a, _d, _y, _END },
+    [CLASS_PAINTER] = { _P, _a, _i, _n, _t, _e, _r, _END },
+};
+
+const struct TrainerMoney gTrainerMoneyTable[] =
+{
+    {CLASS_LEADER, 25},
+    {CLASS_ELITE_FOUR, 25},
+    {CLASS_PKMN_PROF, 25},
+    {CLASS_RIVAL, 4},
+    {CLASS_RIVAL_2, 9},
+    {CLASS_CHAMPION, 25},
+    {CLASS_YOUNGSTER, 4},
+    {CLASS_BUG_CATCHER, 3},
+    {CLASS_HIKER, 9},
+    {CLASS_BIRD_KEEPER, 6},
+    {CLASS_PICNICKER, 5},
+    {CLASS_SUPER_NERD, 6},
+    {CLASS_FISHERMAN, 9},
+    {CLASS_TEAM_ROCKET, 8},
+    {CLASS_LASS, 4},
+    {CLASS_BEAUTY, 18},
+    {CLASS_BLACK_BELT, 6},
+    {CLASS_CUE_BALL, 6},
+    {CLASS_CHANNELER, 8},
+    {CLASS_ROCKER, 6},
+    {CLASS_GENTLEMAN, 18},
+    {CLASS_BURGLAR, 22},
+    {CLASS_SWIMMER_M, 1},
+    {CLASS_ENGINEER, 12},
+    {CLASS_JUGGLER, 10},
+    {CLASS_SAILOR, 8},
+    {CLASS_COOLTRAINER, 9},
+    {CLASS_POKEMANIAC, 12},
+    {CLASS_TAMER, 10},
+    {CLASS_CAMPER, 5},
+    {CLASS_PSYCHIC, 5},
+    {CLASS_BIKER, 5},
+    {CLASS_GAMER, 18},
+    {CLASS_SCIENTIST, 12},
+    {CLASS_CRUSH_GIRL, 6},
+    {CLASS_TUBER, 1},
+    {CLASS_PKMN_BREEDER, 7},
+    {CLASS_PKMN_RANGER, 9},
+    {CLASS_AROMA_LADY, 7},
+    {CLASS_RUIN_MANIAC, 12},
+    {CLASS_LADY, 50},
+    {CLASS_PAINTER, 4},
+    {CLASS_TWINS, 3},
+    {CLASS_YOUNG_COUPLE, 7},
+    {CLASS_SIS_AND_BRO, 1},
+    {CLASS_COOL_COUPLE, 6},
+    {CLASS_CRUSH_KIN, 6},
+    {CLASS_SWIMMER_F, 1},
+    {CLASS_PLAYER, 1},
+    {CLASS_LEADER_RS, 25},
+    {CLASS_ELITE_FOUR_RS, 25},
+    {CLASS_LASS_RS, 4},
+    {CLASS_YOUNGSTER_RS, 4},
+    {CLASS_PKMN_TRAINER_3, 15},
+    {CLASS_HIKER_RS, 10},
+    {CLASS_BEAUTY_RS, 20},
+    {CLASS_FISHERMAN_RS, 10},
+    {CLASS_LADY_RS, 50},
+    {CLASS_TRIATHLETE, 10},
+    {CLASS_TEAM_AQUA, 5},
+    {CLASS_TWINS_RS, 3},
+    {CLASS_SWIMMER_F_RS, 2},
+    {CLASS_BUG_CATCHER_RS, 4},
+    {CLASS_SCHOOL_KID, 5},
+    {CLASS_RICH_BOY, 50},
+    {CLASS_SR_AND_JR, 4},
+    {CLASS_BLACK_BELT_RS, 8},
+    {CLASS_TUBER_RS_1, 1},
+    {CLASS_HEX_MANIAC, 6},
+    {CLASS_PKMN_BREEDER_RS, 10},
+    {CLASS_TEAM_MAGMA, 5},
+    {CLASS_INTERVIEWER, 12},
+    {CLASS_TUBER_RS_2, 1},
+    {CLASS_YOUNG_COUPLE_RS, 8},
+    {CLASS_GUITARIST_RS, 8},
+    {CLASS_GENTLEMAN_RS, 20},
+    {CLASS_CHAMPION_RS, 50},
+    {CLASS_MAGMA_LEADER, 20},
+    {CLASS_BATTLE_GIRL, 6},
+    {CLASS_PKMN_TRAINER_RSE, 2},
+    {CLASS_POKEFAN, 20},
+    {CLASS_EXPERT, 10},
+    {CLASS_DRAGON_TAMER, 12},
+    {CLASS_BIRD_KEEPER, 8},
+    {CLASS_NINJA_BOY, 3},
+    {CLASS_PARASOL_LADY, 10},
+    {CLASS_BUG_MANIAC, 15},
+    {CLASS_SAILOR_RS, 8},
+    {CLASS_COLLECTOR, 15},
+    {CLASS_PKMN_RANGER_RS, 12},
+    {CLASS_MAGMA_ADMIN, 10},
+    {CLASS_AROMA_LADY_RS, 10},
+    {CLASS_RUIN_MANIAC_RS, 15},
+    {CLASS_COOLTRAINER_RS, 12},
+    {CLASS_POKEMANIAC_RS, 15},
+    {CLASS_KINDLER, 8},
+    {CLASS_CAMPER_RS, 4},
+    {CLASS_PICNICKER_RS, 4},
+    {CLASS_PSYCHIC_RS, 6},
+    {CLASS_SIS_AND_BRO_RS, 3},
+    {CLASS_OLD_COUPLE, 10},
+    {CLASS_AQUA_ADMIN, 10},
+    {CLASS_AQUA_LEADER, 20},
+    {CLASS_BOSS, 25},
+    { 0xFF, 5},
 };
 #endif

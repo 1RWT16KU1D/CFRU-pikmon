@@ -970,7 +970,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
-		.trainerClass = 	CLASS_GAMBLER,
+		.trainerClass = 	CLASS_GAMER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Gambler_PreBattle_1,
@@ -979,7 +979,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
-		.trainerClass = 	CLASS_GAMBLER,
+		.trainerClass = 	CLASS_GAMER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Gambler_PreBattle_2,
@@ -988,7 +988,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
-		.trainerClass = 	CLASS_GAMBLER,
+		.trainerClass = 	CLASS_GAMER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Gambler_PreBattle_3,

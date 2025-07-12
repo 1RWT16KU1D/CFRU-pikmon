@@ -2076,7 +2076,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_P, _a, _r, _a, _l, _y, _z, _SPACE, _H, _e, _a, _l, _END, _END},
+		.name = {_P, _a, _r, _a, _l, _y, _z, _SPACE, _H, _e, _a, _l, _END},
 		.itemId = ITEM_PARALYZE_HEAL,
 		.price = 200,
 		.holdEffect = 0,
@@ -6156,7 +6156,7 @@ const struct Item gItemData[] =
         .secondaryId = 1
 	},
 	{
-		.name = {_PO, _KE, _BL, _OC, _OK, _SPACE, _C, _A, _S, _E, _END},
+		.name = {_PO, _KE, _BL, _OC, _OK, _SPACE, _C, _a, _s, _e, _END},
 		.itemId = ITEM_POKEBLOCK_CASE,
 		.price = 0,
 		.holdEffect = 0,
@@ -7789,7 +7789,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_HYPHEN, _D, _O, _N, _T, _SPACE, _U, _S, _E, _HYPHEN, _END},
-		.itemId = ITEM_NONE,
+		.itemId = ITEM_X_SP_DEF,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -14248,7 +14248,7 @@ const struct Item gItemData[] =
     },
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _2, _END},
-        .itemId = ITEM_FREE_SPACE1,
+        .itemId = ITEM_FREE_SPACE2,
         .price = 0,
         .holdEffect = 0,
         .holdEffectParam = 0,
@@ -14264,7 +14264,7 @@ const struct Item gItemData[] =
     },
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _3, _END},
-        .itemId = ITEM_FREE_SPACE1,
+        .itemId = ITEM_FREE_SPACE3,
         .price = 0,
         .holdEffect = 0,
         .holdEffectParam = 0,

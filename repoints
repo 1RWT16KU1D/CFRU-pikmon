@@ -53,6 +53,8 @@ gTypeNames 0811977C
 ##Trainers
 #ifdef EXPAND_TRAINERS
 gTrainers 0800FC00
+gTrainerClassNames 0811B4B4
+gTrainerMoneyTable 080259CC
 #endif
 
 ##Scripts

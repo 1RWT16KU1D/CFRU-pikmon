@@ -488,7 +488,7 @@ u32 MultiMoneyCalc(void)
 	return money;
 }
 
-#define gTrainerMoneyTable ((struct TrainerMoney*) *((u32*) 0x80259CC))
+//#define gTrainerMoneyTable ((struct TrainerMoney*) *((u32*) 0x80259CC))
 static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 {
 	u8 i, firstMonId, lastMonId, level, rate;

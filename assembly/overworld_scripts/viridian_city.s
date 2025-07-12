@@ -13,11 +13,8 @@ EventScriptP_ViridianCity_YoungMan:
     lock
     faceplayer
 
-    giveegg SPECIES_IVYSAUR
-    setflag 0xA07 @ FLAG_TERA_BATTLE
-@   setflag 0x918
-    additem ITEM_DYNAMAX_BAND 1
-    trainerbattle0 0 329 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
+    setflag 0xA08
+    trainerbattle0 0 330 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
     msgbox gText_ViridianCity_BattleOver MSG_NORMAL
 
     release
