@@ -81,3 +81,41 @@ EventScriptP_ViridianCity_Youngster:
     release
     end
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+EventScript_ViridianCity_OldMan:
+    lock
+    faceplayer
+    msgbox gText_ViridianCity_OldMan_IVChangeAsk MSG_YESNO
+    compare LASTRESULT FALSE
+    if TRUE _goto EventScript_ViridianCity_OldMan_No
+
+    msgbox gText_ViridianCity_OldMan_OpenMenu MSG_NORMAL
+    special 0x9F  @ Opens Pokemon selection menu
+    waitstate
+
+    @ Uses var 0x8005 for party index
+    copyvar 0x8005 0x8004
+
+    compare 0x8005 0x7
+    if TRUE _goto EventScript_ViridianCity_OldMan_No
+    goto EventScript_ViridianCity_OldMan_SetIVs
+
+EventScript_ViridianCity_OldMan_No:
+    msgbox gText_ViridianCity_OldMan_No MSG_NORMAL
+    release
+    end
+
+EventScript_ViridianCity_OldMan_SetIVs:
+    setvar 0x8006 31 @ HP
+    setvar 0x8007 31 @ Attack
+    setvar 0x8008 31 @ Defense
+    setvar 0x8009 31 @ Speed
+    setvar 0x800A 31 @ Special Attack
+    setvar 0x800B 31 @ Special Defense
+
+    @ Calls the function to change IVs
+    callasm SetCustomMonIVs
+
+    msgbox gText_ViridianCity_OldMan_Done MSG_NORMAL
+    release
+    end

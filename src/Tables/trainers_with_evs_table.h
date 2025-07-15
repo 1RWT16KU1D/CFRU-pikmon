@@ -1333,9 +1333,7 @@ const struct TrainersWithEvs gTrainersWithEvsSpreads[] =
 	},
 	[121] =
 	{
-		.ball = BALL_TYPE_DUSK_BALL,
-		.ability = Ability_2,
-		.teraType = TYPE_GRASS,
+		.teraType = TYPE_DARK,
 	},
 	[122] =
 	{

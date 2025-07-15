@@ -15,3 +15,15 @@ I lost[.]
 
 #org @gText_Later
 Hello[.]
+
+#org @gText_ViridianCity_OldMan_IVChangeAsk
+Hi there! Would you like me\nto change your Pok\emon's IVs?
+
+#org @gText_ViridianCity_OldMan_No
+I see[.]\pPlease come again later!
+
+#org @gText_ViridianCity_OldMan_OpenMenu
+Which Pok\emon's IVs should I change?
+
+#org @gText_ViridianCity_OldMan_Done
+IVs have been set to max!

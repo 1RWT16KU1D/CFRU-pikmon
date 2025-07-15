@@ -3318,3 +3318,15 @@ void SetTitleScreenScene_Cry(s16 *data)
         break;
     }
 }
+
+// To change/set Pokemon's IVs manually
+void SetCustomMonIVs(void)
+{
+	u16 *ivs = &Var8006; // Till Var800B
+	u8 partyIndex = VarGet(Var8005);
+
+	struct Pokemon *mon = &gPlayerParty[partyIndex];
+
+	for (u8 i = 0; i < NUM_STATS; ++i)
+		SetMonData(mon, MON_DATA_HP_IV + i, &ivs[i]);
+}
