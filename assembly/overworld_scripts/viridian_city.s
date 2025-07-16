@@ -5,11 +5,12 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-.global EventScriptP_ViridianCity_YoungMan
-.global EventScriptP_ViridianCity_Youngster
+.global EventScript_ViridianCity_YoungMan
+.global EventScript_ViridianCity_Youngster
+.global EventScript_ViridianCity_OldMan
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-EventScriptP_ViridianCity_YoungMan:
+EventScript_ViridianCity_YoungMan:
     lock
     faceplayer
 
@@ -21,7 +22,7 @@ EventScriptP_ViridianCity_YoungMan:
     end
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-EventScriptP_ViridianCity_Youngster:
+EventScript_ViridianCity_Youngster:
     lock
     faceplayer
     additem ITEM_ICIUM_Z 1
@@ -86,8 +87,8 @@ EventScript_ViridianCity_OldMan:
     lock
     faceplayer
     msgbox gText_ViridianCity_OldMan_IVChangeAsk MSG_YESNO
-    compare LASTRESULT FALSE
-    if TRUE _goto EventScript_ViridianCity_OldMan_No
+    compare LASTRESULT NO
+    if TRUE _goto ViridianCity_OldMan_No
 
     msgbox gText_ViridianCity_OldMan_OpenMenu MSG_NORMAL
     special 0x9F  @ Opens Pokemon selection menu
@@ -97,21 +98,21 @@ EventScript_ViridianCity_OldMan:
     copyvar 0x8005 0x8004
 
     compare 0x8005 0x7
-    if TRUE _goto EventScript_ViridianCity_OldMan_No
-    goto EventScript_ViridianCity_OldMan_SetIVs
+    if TRUE _goto ViridianCity_OldMan_No
+    goto ViridianCity_OldMan_SetIVs
 
-EventScript_ViridianCity_OldMan_No:
+ViridianCity_OldMan_No:
     msgbox gText_ViridianCity_OldMan_No MSG_NORMAL
     release
     end
 
-EventScript_ViridianCity_OldMan_SetIVs:
-    setvar 0x8006 31 @ HP
-    setvar 0x8007 31 @ Attack
-    setvar 0x8008 31 @ Defense
-    setvar 0x8009 31 @ Speed
+ViridianCity_OldMan_SetIVs:
+    resetvar 0x8006
+    resetvar 0x8007
+    resetvar 0x8008
+    resetvar 0x8009
     setvar 0x800A 31 @ Special Attack
-    setvar 0x800B 31 @ Special Defense
+    resetvar 0x800B
 
     @ Calls the function to change IVs
     callasm SetCustomMonIVs
