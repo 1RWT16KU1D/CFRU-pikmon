@@ -3331,8 +3331,8 @@ void SetCustomMonIVs(void)
         u16 *currIv = &ivs[i];
         u16 monIv = GetMonData(mon, MON_DATA_HP_IV + i, NULL);
 
-        // Only change if var is non-zero
-		const u16 ivValue = *currIv ? *currIv : monIv;
+        // Only change if var is not 32
+		const u16 ivValue = (*currIv < 32) ? *currIv : monIv;
 		SetMonData(mon, MON_DATA_HP_IV + i, &ivValue);
     }
 }
