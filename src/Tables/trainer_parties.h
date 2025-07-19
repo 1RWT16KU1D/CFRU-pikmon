@@ -3775,7 +3775,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlyBulbasaur[] = {
     {
         .iv = 50,
         .lvl = 9,
-        .species = SPECIES_CHARMANDER,
+        .species = SPECIES_BULBASAUR,
         .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
     },
 };
