@@ -36,6 +36,7 @@
 #include "../include/new/stat_buffs.h"
 #include "../include/new/switching.h"
 #include "../include/new/set_z_effect.h"
+#include "../include/new/trainer_sliding.h"
 #include "../include/new/util.h"
 #include "../include/new/terastallization.h"
 
@@ -869,8 +870,22 @@ void atk0C_datahpupdate(void)
 			}
 
 			gHitMarker &= ~(HITMARKER_NON_ATTACK_DMG);
-			EmitSetMonData(0, REQUEST_HP_BATTLE, 0, 2, &gBattleMons[gActiveBattler].hp);
-			MarkBufferBankForExecution(gActiveBattler);
+            EmitSetMonData(0, REQUEST_HP_BATTLE, 0, 2, &gBattleMons[gActiveBattler].hp);
+            MarkBufferBankForExecution(gActiveBattler);
+
+            if (SIDE(gActiveBattler) == B_SIDE_OPPONENT && gBattleMoveDamage > 0)
+            {
+                u8 pos = GetBattlerPosition(gActiveBattler);
+                u16 trainerId = (IsTwoOpponentBattle() && pos == B_POSITION_OPPONENT_RIGHT)
+                                        ? gTrainerBattleOpponent_B : gTrainerBattleOpponent_A;
+
+                if (ShouldDoTrainerSlide(gActiveBattler, trainerId, TRAINER_SLIDE_FIRST_HURT))
+                {
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_TrainerSlideMsgRet;
+                        return;
+                }
+            }
 		}
 	}
 	else

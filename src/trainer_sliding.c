@@ -26,6 +26,12 @@ struct DynamaxTrainerSlide
 	const u8* dynamaxMsg;
 };
 
+struct TrainerFirstHurtSlide
+{
+    u16 trainerId;
+    const u8* msgFirstHurt;
+};
+
 static const struct TrainerSlide sTrainerSlides[] =
 {
 	{},
@@ -148,6 +154,11 @@ static const struct TrainerSlide sTrainerSlides[] =
 	#endif
 };
 
+static const struct TrainerFirstHurtSlide sTrainerFirstHurtSlides[] =
+{
+	{329, sText_RivalFirstMonHurt},
+};
+
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
 {
 	{0x17, gText_TestTrainerDynamaxMsg}, //Test data
@@ -251,10 +262,29 @@ static bool8 IsBankHpLow(u8 bank)
 
 bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 {
-	u32 i;
+    u32 i;
 
-	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT)
-		return FALSE;
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT)
+        return FALSE;
+
+    if (caseId == TRAINER_SLIDE_FIRST_HURT)
+    {
+        if (gNewBS->trainerSlideFirstHurtMsgDone)
+            return FALSE;
+
+        for (i = 0; i < ARRAY_COUNT(sTrainerFirstHurtSlides); ++i)
+        {
+            if (trainerId == sTrainerFirstHurtSlides[i].trainerId
+                && sTrainerFirstHurtSlides[i].msgFirstHurt != NULL)
+            {
+                gNewBS->trainerSlideFirstHurtMsgDone = TRUE;
+                gBattleStringLoader = sTrainerFirstHurtSlides[i].msgFirstHurt;
+                gBattleScripting.bank = bank;
+                return TRUE;
+            }
+        }
+            return FALSE;
+    }
 
 	for (i = 0; i < ARRAY_COUNT(sTrainerSlides); ++i)
 	{

@@ -7,15 +7,14 @@
 
 .global EventScript_ViridianCity_YoungMan
 .global EventScript_ViridianCity_Youngster
-.global EventScript_ViridianCity_OldMan
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 EventScript_ViridianCity_YoungMan:
     lock
     faceplayer
 
-    setflag 0xA08
-    trainerbattle0 0 330 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
+@    setflag 0xA08
+    trainerbattle0 0 329 0 gText_ViridianCity_BattleStart gText_ViridianCity_BattleEnd
     msgbox gText_ViridianCity_BattleOver MSG_NORMAL
 
     release
@@ -82,41 +81,3 @@ EventScript_ViridianCity_Youngster:
     release
     end
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-EventScript_ViridianCity_OldMan:
-    lock
-    faceplayer
-    msgbox gText_ViridianCity_OldMan_IVChangeAsk MSG_YESNO
-    compare LASTRESULT NO
-    if TRUE _goto ViridianCity_OldMan_No
-
-    msgbox gText_ViridianCity_OldMan_OpenMenu MSG_NORMAL
-    special 0x9F  @ Opens Pokemon selection menu
-    waitstate
-
-    @ Uses var 0x8005 for party index
-    copyvar 0x8005 0x8004
-
-    compare 0x8005 0x7
-    if TRUE _goto ViridianCity_OldMan_No
-    goto ViridianCity_OldMan_SetIVs
-
-ViridianCity_OldMan_No:
-    msgbox gText_ViridianCity_OldMan_No MSG_NORMAL
-    release
-    end
-
-ViridianCity_OldMan_SetIVs:
-    resetvar 0x8006
-    resetvar 0x8007
-    resetvar 0x8008
-    resetvar 0x8009
-    setvar 0x800A 31 @ Special Attack
-    resetvar 0x800B
-
-    @ Calls the function to change IVs
-    callasm SetCustomMonIVs
-
-    msgbox gText_ViridianCity_OldMan_Done MSG_NORMAL
-    release
-    end
