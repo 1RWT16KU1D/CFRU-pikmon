@@ -881,9 +881,9 @@ void atk0C_datahpupdate(void)
 
                 if (ShouldDoTrainerSlide(gActiveBattler, trainerId, TRAINER_SLIDE_FIRST_HURT))
                 {
-                        BattleScriptPushCursor();
-                        gBattlescriptCurrInstr = BattleScript_TrainerSlideMsgRet;
-                        return;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_TrainerSlideMsgRet;
+                    return;
                 }
             }
 		}

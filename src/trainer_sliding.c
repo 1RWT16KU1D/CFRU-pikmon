@@ -18,6 +18,7 @@ struct TrainerSlide
 	const u8* msgFirstDown;
 	const u8* msgLastSwitchIn;
 	const u8* msgLastLowHp;
+	const u8* msgFirstHurt;
 };
 
 struct DynamaxTrainerSlide
@@ -26,15 +27,9 @@ struct DynamaxTrainerSlide
 	const u8* dynamaxMsg;
 };
 
-struct TrainerFirstHurtSlide
-{
-    u16 trainerId;
-    const u8* msgFirstHurt;
-};
-
 static const struct TrainerSlide sTrainerSlides[] =
 {
-	{},
+	{329, NULL, NULL, NULL, sText_RivalFirstMonHurt},
 
 	#ifdef UNBOUND //For Pokemon Unbound - Feel free to remove
 	{0x6, sText_MirskleFirstMonDown, NULL, NULL},
@@ -154,11 +149,6 @@ static const struct TrainerSlide sTrainerSlides[] =
 	#endif
 };
 
-static const struct TrainerFirstHurtSlide sTrainerFirstHurtSlides[] =
-{
-	{329, sText_RivalFirstMonHurt},
-};
-
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
 {
 	{0x17, gText_TestTrainerDynamaxMsg}, //Test data
@@ -267,27 +257,8 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
     if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT)
         return FALSE;
 
-    if (caseId == TRAINER_SLIDE_FIRST_HURT)
+    for (i = 0; i < ARRAY_COUNT(sTrainerSlides); ++i)
     {
-        if (gNewBS->trainerSlideFirstHurtMsgDone)
-            return FALSE;
-
-        for (i = 0; i < ARRAY_COUNT(sTrainerFirstHurtSlides); ++i)
-        {
-            if (trainerId == sTrainerFirstHurtSlides[i].trainerId
-                && sTrainerFirstHurtSlides[i].msgFirstHurt != NULL)
-            {
-                gNewBS->trainerSlideFirstHurtMsgDone = TRUE;
-                gBattleStringLoader = sTrainerFirstHurtSlides[i].msgFirstHurt;
-                gBattleScripting.bank = bank;
-                return TRUE;
-            }
-        }
-            return FALSE;
-    }
-
-	for (i = 0; i < ARRAY_COUNT(sTrainerSlides); ++i)
-	{
 		if (trainerId == sTrainerSlides[i].trainerId)
 		{
 			gBattleScripting.bank = bank;
@@ -318,6 +289,16 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 					if (sTrainerSlides[i].msgFirstDown != NULL && GetEnemyMonCount(TRUE) == GetEnemyMonCount(FALSE) - 1)
 					{
 						gBattleStringLoader = sTrainerSlides[i].msgFirstDown;
+						return TRUE;
+					}
+					break;
+
+				case TRAINER_SLIDE_FIRST_HURT:
+					if (sTrainerSlides[i].msgFirstHurt != NULL && !gNewBS->trainerSlideFirstHurtMsgDone)
+					{
+						gNewBS->trainerSlideFirstHurtMsgDone = TRUE;
+						gBattleStringLoader = sTrainerSlides[i].msgFirstHurt;
+						gBattleScripting.bank = bank;
 						return TRUE;
 					}
 					break;
