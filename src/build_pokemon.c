@@ -205,6 +205,8 @@ extern void TryGiveSpecialTrainerHiddenPower(u16 trainerId, struct Pokemon* mon)
 extern void TryGiveSpecialTrainerStatusCondition(u16 trainerId, struct Pokemon* mon);
 extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 #endif
+static void SetEVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd);
+static void SetIVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd);
 
 #ifdef OPEN_WORLD_TRAINERS
 
@@ -1022,6 +1024,24 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
+						SetEVSpread(&party[i],
+							trainer->party.ItemCustomMoves[i].evSpread[0],
+							trainer->party.ItemCustomMoves[i].evSpread[1],
+							trainer->party.ItemCustomMoves[i].evSpread[2],
+							trainer->party.ItemCustomMoves[i].evSpread[3],
+							trainer->party.ItemCustomMoves[i].evSpread[4],
+							trainer->party.ItemCustomMoves[i].evSpread[5]
+						);
+						SetIVSpread(&party[i],
+							trainer->party.ItemCustomMoves[i].ivSpread[0],
+							trainer->party.ItemCustomMoves[i].ivSpread[1],
+							trainer->party.ItemCustomMoves[i].ivSpread[2],
+							trainer->party.ItemCustomMoves[i].ivSpread[3],
+							trainer->party.ItemCustomMoves[i].ivSpread[4],
+							trainer->party.ItemCustomMoves[i].ivSpread[5]
+						);
+						if (trainer->partyFlags & PARTY_FLAG_CUSTOM_MOVES) {
+    						mon->teraType = trainer->party.ItemCustomMoves[i].teraType;
 						break;
 				}
 
@@ -6086,3 +6106,22 @@ const species_t gGeneralTrainerSpreads[NUM_TRAINER_CLASSES][NUM_BADGE_OPTIONS][N
 };
 
 #endif
+static void SetEVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd){
+	struct Pokemon* party = mon;
+	party[0].hpEv = hp;	
+	party[0].atkEv = atk;	
+	party[0].defEv = def;
+	party[0].spAtkEv = spa;
+	party[0].spDefEv = spdef;
+	party[0].spdEv = spd;
+}
+
+static void SetIVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd){
+	struct Pokemon* party = mon;
+	party[0].hpIV = hp;	
+	party[0].attackIV = atk;	
+	party[0].defenseIV = def;
+	party[0].spAttackIV = spa;
+	party[0].spDefenseIV = spdef;
+	party[0].speedIV = spd;
+}

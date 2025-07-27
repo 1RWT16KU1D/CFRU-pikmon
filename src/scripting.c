@@ -3128,6 +3128,36 @@ struct WindowTemplate template =
     .baseBlock = 0x100
 };
 
+#ifdef NEW_MINI_NAME_BOX
+extern const u8 gMiniBoxTiles[];
+extern const u16 gMiniBoxPal[];
+
+static const u8 sMiniBoxTextColors[] = {
+    TEXT_COLOR_TRANSPARENT,  // Fundo
+    TEXT_COLOR_DARK_GREY,        // Texto
+    TEXT_COLOR_LIGHT_GREY     // Sombra
+};
+
+void MiniBoxOpen(void)
+{
+	ClearMiniBox();
+    sSafariZoneStatsWindowId = AddWindow(&template);
+
+    if (sSafariZoneStatsWindowId == 0xFF)
+        return;
+
+    LoadPalette(gMiniBoxPal, BG_PLTT_ID(15), 16 * sizeof(u16));
+    BlitBitmapToWindow(sSafariZoneStatsWindowId, gMiniBoxTiles, 0, 0, 72, 16);
+
+    if (gLoadPointer == NULL)
+        return;
+
+    StringExpandPlaceholders(gStringVar4, gLoadPointer);
+	AddTextPrinterParameterized3(sSafariZoneStatsWindowId, FONT_NORMAL, 4, 2, sMiniBoxTextColors, TEXT_SPEED_FF, gStringVar4);
+    PutWindowTilemap(sSafariZoneStatsWindowId);
+    CopyWindowToVram(sSafariZoneStatsWindowId, 2);
+}
+#else
 void MiniBoxOpen(void)
 {
     sSafariZoneStatsWindowId = AddWindow(&template);
@@ -3145,7 +3175,7 @@ void MiniBoxOpen(void)
     AddTextPrinterParameterized(sSafariZoneStatsWindowId, 2, gStringVar4, 4, 3, 255, NULL);
     CopyWindowToVram(sSafariZoneStatsWindowId, 2);
 }
-
+#endif
 void ClearMiniBox(void)
 {
 	sSafariZoneStatsWindowId = AddWindow(&template);

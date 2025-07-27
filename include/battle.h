@@ -276,8 +276,13 @@ struct TrainerMonItemCustomMoves
     u16 iv;
     u16 lvl;
     u16 species;
+		u8 	ability; //0 = Hidden, 1 = Ability_1, 2 = Ability_2, 3 = Random Ability 1 & 2, 4 = Random Any Ability
+		u8 	nature;
+		u8 	ivSpread[6];
+		u8 	evSpread[6];
     u16 heldItem;
     u16 moves[4];
+	u16 teraType;
 };
 
 union TrainerMonPtr

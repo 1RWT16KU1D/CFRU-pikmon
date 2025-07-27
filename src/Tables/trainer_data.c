@@ -9905,41 +9905,5 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NONE] = {
         .trainerName = NO_NAME,
     },
-    [TRAINER_RIVAL_OAKS_LAB_CHARMANDER] = {
-        .partyFlags = 0,
-        .trainerClass = CLASS_BEAUTY,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = RIVAL_NAME,
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
-        .partySize = NELEMS(sParty_RivalLabFire),
-        .party = {.NoItemDefaultMoves = sParty_RivalLabFire}
-    },
-    [TRAINER_RIVAL_OAKS_LAB_BULBASAUR] = {
-        .partyFlags = 0,
-        .trainerClass = CLASS_BEAUTY,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = RIVAL_NAME,
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
-        .partySize = NELEMS(sParty_RivalLabGrass),
-        .party = {.NoItemDefaultMoves = sParty_RivalLabGrass}
-    },
-    [TRAINER_RIVAL_OAKS_LAB_SQUIRTLE] = {
-        .partyFlags = 0,
-        .trainerClass = CLASS_BEAUTY,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = RIVAL_NAME,
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
-        .partySize = NELEMS(sParty_RivalLabWater),
-        .party = {.NoItemDefaultMoves = sParty_RivalLabWater}
-    }
 };
 #endif
