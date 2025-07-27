@@ -766,7 +766,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 	u32 i, j, nameHash;
 	unusedArg u8 monsCount, baseIV, setMonGender, trainerNameLengthOddness, minPartyLevel, maxPartyLevel,
 	   modifiedAveragePlayerLevel, highestPlayerLevel, canEvolveMon, canEvolveMonBackup, levelScaling, setCustomMoves;
+	#ifdef STEVEBELS_TRAINER_TABLE
+	const struct Trainer* trainer;
+	#else
 	struct Trainer* trainer;
+	#endif
 	u32 otid = 0;
 	u8 otIdType = OT_ID_RANDOM_NO_SHINY;
 
@@ -783,7 +787,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			ZeroEnemyPartyMons();
 
 		//Set up necessary data
+		#ifdef STEVEBELS_TRAINER_TABLE
+		trainer = GET_TRAINER_PTR(trainerId);
+		#else
 		trainer = &gTrainers[trainerId];
+		#endif
 
 		//Choose Trainer IVs
 		#ifdef VAR_GAME_DIFFICULTY
@@ -1039,7 +1047,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 			//Assign Trainer information to mon
 			u8 otGender = trainer->gender;
+			#ifdef STEVEBELS_TRAINER_TABLE
+			const u8* name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
+			#else
 			const u8* name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
+			#endif
 			if (name == NULL) //Not Rival or Rival name isn't tied to Trainer class
 				SetMonData(mon, MON_DATA_OT_NAME, &trainer->trainerName);
 			else
@@ -1067,7 +1079,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 			//Give EVs
 			#ifdef TRAINERS_WITH_EVS
+			#ifdef STEVEBELS_TRAINER_TABLE
+			u8 spreadNum = (GET_TRAINER(trainerId).partyFlags & PARTY_FLAG_CUSTOM_MOVES) ? trainer->party.NoItemCustomMoves[i].iv : trainer->party.NoItemDefaultMoves[i].iv;
+			#else
 			u8 spreadNum = (gTrainers[trainerId].partyFlags & PARTY_FLAG_CUSTOM_MOVES) ? trainer->party.NoItemCustomMoves[i].iv : trainer->party.NoItemDefaultMoves[i].iv;
+			#endif
 
 			#ifdef UNBOUND
 			if ((gTrainers[trainerId].trainerClass == CLASS_RIVAL && gameDifficulty >= OPTIONS_HARD_DIFFICULTY)
@@ -1078,7 +1094,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			if (spreadNum != 0
 			&& spreadNum < NELEMS(gTrainersWithEvsSpreads) //Valid id
 			#ifndef UNBOUND
+			#ifdef STEVEBELS_TRAINER_TABLE
+			&& GET_TRAINER(trainerId).partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
+			#else
 			&& gTrainers[trainerId].partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
+			#endif
 			&& trainer->aiFlags > 1
 			#endif
 			)
@@ -1408,7 +1428,11 @@ static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 		return FALSE; //No bosses in easy mode
 	#endif
 
+	#ifdef
+	switch (GET_TRAINER(trainerId).trainerClass) {
+	#else
 	switch (gTrainers[trainerId].trainerClass) {
+	#endif
 		case CLASS_LEADER:
 		case CLASS_ELITE_FOUR:
 		case CLASS_CHAMPION:

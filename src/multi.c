@@ -492,7 +492,11 @@ u32 MultiMoneyCalc(void)
 static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 {
 	u8 i, firstMonId, lastMonId, level, rate;
+	#ifdef STEVEBELS_TRAINER_TABLE
+	struct Trainer trainer = GET_TRAINER(trainerId);
+	#else
 	struct Trainer* trainer = &gTrainers[trainerId];
+	#endif
 
 	//Get the party range to search through for the given trainer
 	if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)

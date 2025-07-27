@@ -293,8 +293,13 @@ static item_t FindTrainerKeystone(u16 trainerId)
 
 	for (u8 i = 0; i < TRAINER_ITEM_COUNT; ++i)
 	{
+		#ifdef STEVEBELS_TRAINER_TABLE
+		if (IsItemKeystone(GET_TRAINER(trainerId).items[i]))
+			return GET_TRAINER(trainerId).items[i];
+		#else
 		if (IsItemKeystone(gTrainers[trainerId].items[i]))
 			return gTrainers[trainerId].items[i];
+		#endif
 	}
 
 	return ITEM_NONE;
@@ -579,7 +584,11 @@ const u8* GetTrainerName(u8 bank)
 	}
 	else
 	{
+		#ifdef STEVEBELS_TRAINER_TABLE
+		u8 class = GET_TRAINER(trainerId).trainerClass;
+		#else
 		u8 class = gTrainers[trainerId].trainerClass;
+		#endif
 		u8* name = NULL;
 
 		if (trainerId < RAID_BATTLE_MULTI_TRAINER_TID)
@@ -590,8 +599,12 @@ const u8* GetTrainerName(u8 bank)
 			if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER
 			|| IsFrontierTrainerId(trainerId))
 				return GetFrontierTrainerName(trainerId, battlerNum);
-
+			
+			#ifdef .
+			return GET_TRAINER(trainerId).trainerName;
+			#else
 			return gTrainers[trainerId].trainerName;
+			#endif
 		}
 
 		return name;

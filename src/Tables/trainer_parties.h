@@ -10819,3 +10819,29 @@ struct TrainerMonNoItemDefaultMoves sParty_CueBallPaxton[] = {
     },
 };
 #endif
+
+#ifdef STEVEBELS_TRAINER_TABLE
+const struct TrainerMonNoItemDefaultMoves sParty_RivalLabFire[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_TORCHIC,
+    },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RivalLabGrass[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_TREECKO,
+    },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RivalLabWater[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_MUDKIP,
+    },
+};
+#endif
