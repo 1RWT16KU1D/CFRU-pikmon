@@ -652,7 +652,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					toCpy = GetTrainerClassName(GetFrontierTrainerClassId(gTrainerBattleOpponent_A, 0), text);
 				else
 				#ifdef STEVEBELS_TRAINER_TABLE
-					toCpy = GetTrainerClassName[GET_TRAINER(gTrainerBattleOpponent_A).trainerClass, text];
+					toCpy = GetTrainerClassName(GET_TRAINER(gTrainerBattleOpponent_A).trainerClass, text);
 				#else
 					toCpy = GetTrainerClassName(gTrainers[gTrainerBattleOpponent_A].trainerClass, text);
 				#endif

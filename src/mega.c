@@ -600,7 +600,7 @@ const u8* GetTrainerName(u8 bank)
 			|| IsFrontierTrainerId(trainerId))
 				return GetFrontierTrainerName(trainerId, battlerNum);
 			
-			#ifdef .
+			#ifdef STEVEBELS_TRAINER_TABLE
 			return GET_TRAINER(trainerId).trainerName;
 			#else
 			return gTrainers[trainerId].trainerName;

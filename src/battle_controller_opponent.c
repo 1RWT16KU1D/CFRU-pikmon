@@ -375,60 +375,67 @@ void OpponentHandleChoosePokemon(void)
 
 static u8 LoadCorrectTrainerPicId(void)
 {
-	u8 trainerPicId;
-	u8 position = GetBattlerPosition(gActiveBattler);
+    u8 trainerPicId;
+    u8 position = GetBattlerPosition(gActiveBattler);
 
-	if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
-	{
-		trainerPicId = GetSecretBaseTrainerPicIndex();
-	}
-	else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER
-	|| (position == B_POSITION_OPPONENT_LEFT && IsFrontierTrainerId(gTrainerBattleOpponent_A))
-	|| (position == B_POSITION_OPPONENT_RIGHT && IsFrontierTrainerId(gTrainerBattleOpponent_B)))
-	{
-		if (IsTwoOpponentBattle()
-		|| (gBattleTypeFlags & BATTLE_TYPE_LINK && gBattleTypeFlags & BATTLE_TYPE_MULTI))
-		{
-			if (position == B_POSITION_OPPONENT_LEFT)
-				trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A, 0);
-			else
-				trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_B, 1);
-		}
-		else
-		{
-			trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A, 0);
-		}
-	}
-	else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
-	{
-		trainerPicId = GetTrainerTowerTrainerPicIndex(); //0x815DA3C
-	}
-	else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-	{
-		trainerPicId = GetEreaderTrainerFrontSpriteId(); //0x80E7420
-	}
-	else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-	{
-		if (position == 1)
-	#ifdef STEVEBELS_TRAINER_TABLE
-			trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
-		else
-			trainerPicId = GET_TRAINER(gTrainerBattleOpponent_B).trainerPic;
-	}
-	else
-		trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
-	#else
-			trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
-		else
-			trainerPicId = gTrainers[gTrainerBattleOpponent_B].trainerPic;
-	}
-	else
-	{
-		trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
-	#endif
-	}
+    if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
+    {
+        trainerPicId = GetSecretBaseTrainerPicIndex();
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER
+          || (position == B_POSITION_OPPONENT_LEFT && IsFrontierTrainerId(gTrainerBattleOpponent_A))
+          || (position == B_POSITION_OPPONENT_RIGHT && IsFrontierTrainerId(gTrainerBattleOpponent_B)))
+    {
+        if (IsTwoOpponentBattle()
+         || ((gBattleTypeFlags & BATTLE_TYPE_LINK) && (gBattleTypeFlags & BATTLE_TYPE_MULTI)))
+        {
+            if (position == B_POSITION_OPPONENT_LEFT)
+                trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A, 0);
+            else
+                trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_B, 1);
+        }
+        else
+        {
+            trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A, 0);
+        }
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
+    {
+        trainerPicId = GetTrainerTowerTrainerPicIndex(); // 0x815DA3C
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
+    {
+        trainerPicId = GetEreaderTrainerFrontSpriteId(); // 0x80E7420
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+    {
+        if (position == B_POSITION_OPPONENT_LEFT)
+        {
+        #ifdef STEVEBELS_TRAINER_TABLE
+            trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
+        #else
+            trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
+        #endif
+        }
+        else
+        {
+        #ifdef STEVEBELS_TRAINER_TABLE
+            trainerPicId = GET_TRAINER(gTrainerBattleOpponent_B).trainerPic;
+        #else
+            trainerPicId = gTrainers[gTrainerBattleOpponent_B].trainerPic;
+        #endif
+        }
+    }
+    else
+    {
+    #ifdef STEVEBELS_TRAINER_TABLE
+        trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
+    #else
+        trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
+    #endif
+    }
 
-	return trainerPicId;
+    return trainerPicId;
 }
 
 void SpriteCB_SlideInTrainer(struct Sprite* sprite)

@@ -367,7 +367,7 @@ const u8* GetFrontierTrainerName(u16 trainerId, u8 battlerNum)
 				name = gRaidPartners[partnerId].name;
 			break;
 		default:
-			#ifdef 
+			#ifdef STEVEBELS_TRAINER_TABLE
 			name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
 			if (name == NULL) //Rival name isn't tied to a trainer class
 				name = GET_TRAINER(trainerId).trainerName;

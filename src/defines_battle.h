@@ -126,7 +126,7 @@ typedef u8 TrainerClassNames_t[13];
 extern struct TrainerPicCoords gTrainerBackPicCoords[];
 
 #ifdef STEVEBELS_TRAINER_TABLE
-#define gOriginalTrainers ((struct Trainer*) 0x823EAC8)
+#define gOriginalTrainers ((const struct Trainer*) 0x823EAC8)
 extern const struct Trainer gTrainers[];
 #define TRAINER_IS_BLANK(trainerId) (gTrainers[trainerId].partyFlags == 0  && gTrainers[trainerId].party.NoItemDefaultMoves == 0)
 #define GET_TRAINER(trainerId) (TRAINER_IS_BLANK(trainerId) ?  gOriginalTrainers[trainerId] : gTrainers[trainerId])

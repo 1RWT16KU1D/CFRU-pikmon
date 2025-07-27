@@ -155,7 +155,11 @@ extern bool8 CanMonParticipateInASkyBattle(struct Pokemon* mon);
 //This file's functions:
 static void TryGiveMonOnlyMetronome(struct Pokemon* mon);
 static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerNum, const bool8 firstTrainer, const bool8 side);
+#ifdef STEVEBELS_TRAINER_TABLE
+static u8 GetTrainerMonGender(const struct Trainer* trainer);
+#else
 static u8 GetTrainerMonGender(struct Trainer* trainer);
+#endif
 static u8 GetTrainerMonMovePPBonus(void);
 static u8 GetTrainerMonMovePP(u16 move, u8 index);
 #if (defined SCALED_TRAINERS && !defined  DEBUG_NO_LEVEL_SCALING)
@@ -207,6 +211,7 @@ extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 #endif
 static void SetEVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd);
 static void SetIVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 spdef, u8 spd);
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum, u8 natureNum);
 
 #ifdef OPEN_WORLD_TRAINERS
 
@@ -819,8 +824,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 		//Get party size
 		if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && side == B_SIDE_OPPONENT)
-		{
+		{	
+			#ifdef STEVEBELS_TRAINER_TABLE
+			u8 class __attribute__((unused)) = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
+			#else
 			u8 class __attribute__((unused)) = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+			#endif
 			#ifdef OPEN_WORLD_TRAINERS
 			if ((firstTrainer && gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 			||  (!firstTrainer && VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT))
@@ -850,7 +859,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		else
 		{
 			#ifdef OPEN_WORLD_TRAINERS
+			#ifdef STEVEBELS_TRAINER_TABLE
+			u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
+			#else
 			u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+			#endif
 			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 			{
 				monsCount = GetOpenWorldTrainerMonAmount();
@@ -968,7 +981,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				nameHash += trainer->trainerName[j];
 
 			#ifdef OPEN_WORLD_TRAINERS
+			#ifdef STEVEBELS_TRAINER_TABLE
+			u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
+			#else
 			u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+			#endif
 			u8 openWorldSpeciesIndex = GetOpenWorldSpeciesIndex(nameHash, i);
 			u8 openWorldLevel = GetOpenWorldSpeciesLevel(nameHash, i);
 
@@ -1023,6 +1040,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
+						SetAbilityFromEnum(&party[i], trainer->party.ItemCustomMoves[i].ability, trainer->party.ItemCustomMoves[i].nature);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
 						SetEVSpread(&party[i],
 							trainer->party.ItemCustomMoves[i].evSpread[0],
@@ -1042,6 +1060,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						);
 						if (trainer->partyFlags & PARTY_FLAG_CUSTOM_MOVES) {
     						mon->teraType = trainer->party.ItemCustomMoves[i].teraType;
+						}
 						break;
 				}
 
@@ -1266,7 +1285,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 	return monsCount;
 }
 
+#ifdef STEVEBELS_TRAINER_TABLE
+static u8 GetTrainerMonGender(const struct Trainer* trainer)
+#else
 static u8 GetTrainerMonGender(struct Trainer* trainer)
+#endif
 {
 	switch (trainer->trainerClass)
 	{
@@ -1448,7 +1471,7 @@ static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 		return FALSE; //No bosses in easy mode
 	#endif
 
-	#ifdef
+	#ifdef STEVEBELS_TRAINER_TABLE
 	switch (GET_TRAINER(trainerId).trainerClass) {
 	#else
 	switch (gTrainers[trainerId].trainerClass) {
@@ -6124,4 +6147,29 @@ static void SetIVSpread(struct Pokemon* mon, u8 hp, u8 atk, u8 def, u8 spa, u8 s
 	party[0].spAttackIV = spa;
 	party[0].spDefenseIV = spdef;
 	party[0].speedIV = spd;
+}
+
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum, u8 natureNum) {
+	
+	switch(abilityNum) {
+		case Ability_Hidden:
+		GIVE_HIDDEN_ABILITY:
+			GiveMonNatureAndAbility(mon, natureNum, 0xFF, FALSE, TRUE, FALSE); //Give Hidden Ability
+			break;
+		case Ability_1:
+		case Ability_2:
+			GiveMonNatureAndAbility(mon, natureNum, MathMin(1, abilityNum - 1), FALSE, TRUE, FALSE);
+			break;
+		case Ability_Random_1_2:
+		GIVE_RANDOM_ABILITY:
+			GiveMonNatureAndAbility(mon, natureNum, Random() % 2, FALSE, TRUE, FALSE);
+			break;
+		case Ability_RandomAll: ;
+			u8 random = Random() % 3;
+
+			if (random == 2)
+				goto GIVE_HIDDEN_ABILITY;
+
+			goto GIVE_RANDOM_ABILITY;
+	}
 }
