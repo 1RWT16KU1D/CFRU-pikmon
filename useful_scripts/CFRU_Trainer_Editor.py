@@ -3,8 +3,8 @@ from pathlib import Path
 from difflib import get_close_matches
 
 # Path configuration
-BASE_DIR = Path(r"F:\CFRU-expansion-Experiments")
-TRAINER_DATA_PATH = BASE_DIR / "src" / "Tables" / "trainer_data.c"
+BASE_DIR = Path(r"F:\Dark Worship 2\CFRU Base 2")
+TRAINER_DATA_PATH = BASE_DIR / "src" / "Tables" / "trainer_tables.c"
 TRAINER_PARTIES_PATH = BASE_DIR / "src" / "Tables" / "trainer_parties.h"
 OPPONENTS_PATH = BASE_DIR / "include" / "constants" / "opponents.h"
 SPECIES_PATH = BASE_DIR / "include" / "constants" / "species.h"
@@ -166,6 +166,11 @@ def parse_opponents(lines):
     return opponents
 
 def add_trainer_definition(opponents_lines, trainer_name, trainer_id):
+    # First check if the definition already exists
+    for line in opponents_lines:
+        if f"#define {trainer_name} " in line:
+            return opponents_lines  # Already exists, don't add again
+            
     for i, line in enumerate(opponents_lines):
         if '#define TRAINERS_COUNT' in line:
             opponents_lines.insert(i, f"#define {trainer_name} {trainer_id}\n")
@@ -178,10 +183,10 @@ def create_party_name(trainer_name):
 
 def select_party_type():
     print("\nSelect party type:")
-    print("1. TrainerMonNoItemDefaultMoves (No item, default moves)")
-    print("2. TrainerMonItemDefaultMoves (With item, default moves)")
-    print("3. TrainerMonNoItemCustomMoves (No item, custom moves)")
-    print("4. TrainerMonItemCustomMoves (With item, custom moves, abilities, natures, IVs/EVs)")
+    print("1. NoItemDefaultMoves (No item, default moves)")
+    print("2. ItemDefaultMoves (With item, default moves)")
+    print("3. NoItemCustomMoves (No item, custom moves)")
+    print("4. ItemCustomMoves (With item, custom moves, abilities, natures, IVs/EVs)")
     
     while True:
         choice = input("Option (1-4): ").strip()
@@ -416,7 +421,7 @@ def add_new_trainer(trainers, opponents_lines, parties):
         3: "NoItemCustomMoves",
         4: "ItemCustomMoves"
     }
-    party_struct = f"TrainerMon{party_type_map[party_type]}"
+    party_struct = party_type_map[party_type]
     
     while True:
         print(f"\nCurrent party for {party_name} ({party_struct}):")
@@ -443,15 +448,15 @@ def add_new_trainer(trainers, opponents_lines, parties):
     trainers[trainer_define_name] = {
         'id': trainer_id,
         'data': [
-            f".partyFlags = {' | '.join(party_flags) if party_flags else '0'}",
-            f".trainerClass = CLASS_{trainer_class}",
-            f".encounterMusic = {music_choice}",
-            f".trainerPic = TRAINER_PIC_{trainer_class}",
-            f".trainerName = {trainer_display_name}",
-            f".items = {items}",
-            f".doubleBattle = {double_battle}",
-            f".aiFlags = {ai_flags}",
-            f".partySize = NELEMS({party_name})",
+            f".partyFlags = {' | '.join(party_flags) if party_flags else '0'},",
+            f".trainerClass = CLASS_{trainer_class},",
+            f".encounterMusic = {music_choice},",
+            f".trainerPic = TRAINER_PIC_{trainer_class},",
+            f".trainerName = {trainer_display_name},",
+            f".items = {items},",
+            f".doubleBattle = {double_battle},",
+            f".aiFlags = {ai_flags},",
+            f".partySize = NELEMS({party_name}),",
             f".party = {{.{party_struct} = {party_name}}}"
         ],
         'party_name': party_name,
