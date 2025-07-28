@@ -3,7 +3,7 @@ from pathlib import Path
 from difflib import get_close_matches
 
 # Path configuration
-BASE_DIR = Path(r"F:\CFRU-expansion-Experiments")
+BASE_DIR = Path(r"F:\Dark Worship 2\CFRU Base 2")
 TRAINER_DATA_PATH = BASE_DIR / "src" / "Tables" / "trainer_tables.c"
 TRAINER_PARTIES_PATH = BASE_DIR / "src" / "Tables" / "trainer_parties.h"
 OPPONENTS_PATH = BASE_DIR / "include" / "constants" / "opponents.h"
@@ -11,6 +11,21 @@ SPECIES_PATH = BASE_DIR / "include" / "constants" / "species.h"
 MOVES_PATH = BASE_DIR / "include" / "constants" / "moves.h"
 ITEMS_PATH = BASE_DIR / "include" / "constants" / "items.h"
 EASY_TEXT_PATH = BASE_DIR / "include" / "easy_text.h"
+
+# Party type mappings
+PARTY_TYPE_STRUCT_MAP = {
+    1: "TrainerMonNoItemDefaultMoves",
+    2: "TrainerMonItemDefaultMoves",
+    3: "TrainerMonNoItemCustomMoves",
+    4: "TrainerMonItemCustomMoves"
+}
+
+PARTY_TYPE_UNION_MAP = {
+    1: "NoItemDefaultMoves",
+    2: "ItemDefaultMoves", 
+    3: "NoItemCustomMoves",
+    4: "ItemCustomMoves"
+}
 
 def load_text_definitions():
     text_map = {}
@@ -166,10 +181,10 @@ def parse_opponents(lines):
     return opponents
 
 def add_trainer_definition(opponents_lines, trainer_name, trainer_id):
-    # First check if the definition already exists
+    # First check if definition already exists
     for line in opponents_lines:
         if f"#define {trainer_name} " in line:
-            return opponents_lines  # Already exists, don't add again
+            return opponents_lines
             
     for i, line in enumerate(opponents_lines):
         if '#define TRAINERS_COUNT' in line:
@@ -415,13 +430,8 @@ def add_new_trainer(trainers, opponents_lines, parties):
     party_type = select_party_type()
     party = []
     
-    party_type_map = {
-        1: "NoItemDefaultMoves",
-        2: "ItemDefaultMoves",
-        3: "NoItemCustomMoves",
-        4: "ItemCustomMoves"
-    }
-    party_struct = party_type_map[party_type]
+    party_struct = PARTY_TYPE_STRUCT_MAP[party_type]  # For trainer_parties.h
+    party_union = PARTY_TYPE_UNION_MAP[party_type]    # For trainer_tables.c
     
     while True:
         print(f"\nCurrent party for {party_name} ({party_struct}):")
@@ -457,7 +467,7 @@ def add_new_trainer(trainers, opponents_lines, parties):
             f".doubleBattle = {double_battle},",
             f".aiFlags = {ai_flags},",
             f".partySize = NELEMS({party_name}),",
-            f".party = {{.{party_struct} = {party_name}}}"
+            f".party = {{.{party_union} = {party_name}}}"
         ],
         'party_name': party_name,
         'party_data': party,
