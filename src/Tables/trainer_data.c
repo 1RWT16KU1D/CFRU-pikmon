@@ -9,6 +9,7 @@
 #include "../../include/constants/items.h"
 #include "../../include/constants/trainers.h"
 #include "../../include/constants/trainer_classes.h"
+#include "../../include/constants/opponents.h"
 
 #include "new_text.h"
 
