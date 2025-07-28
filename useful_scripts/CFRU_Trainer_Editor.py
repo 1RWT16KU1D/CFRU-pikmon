@@ -3,7 +3,7 @@ from pathlib import Path
 from difflib import get_close_matches
 
 # Path configuration
-BASE_DIR = Path(r"F:\Dark Worship 2\CFRU Base 2")
+BASE_DIR = Path(r"F:\CFRU-expansion-Experiments")
 TRAINER_DATA_PATH = BASE_DIR / "src" / "Tables" / "trainer_tables.c"
 TRAINER_PARTIES_PATH = BASE_DIR / "src" / "Tables" / "trainer_parties.h"
 OPPONENTS_PATH = BASE_DIR / "include" / "constants" / "opponents.h"
