@@ -90,6 +90,7 @@ tables to edit:
 
 extern u8 AddPalRef(u8 Type, u16 PalTag);
 extern u8 BuildFrontierParty(struct Pokemon* party, u16 trainerNum, bool8 firstTrainer, bool8 ForPlayer, u8 side);
+void ClearMiniBox(void);
 
 extern const struct SwarmData gSwarmTable[];
 extern const species_t gSkyBattleBannedSpeciesList[];
