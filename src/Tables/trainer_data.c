@@ -4,6 +4,7 @@
 #include "../../include/battle.h"
 #include "../../include/global.h"
 
+#include "../../include/constants/battle_ai.h"
 #include "../../include/constants/species.h"
 #include "../../include/constants/items.h"
 #include "../../include/constants/trainers.h"
