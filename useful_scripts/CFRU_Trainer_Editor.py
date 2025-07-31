@@ -6,6 +6,8 @@ import os
 from PIL import Image, ImageTk
 from difflib import get_close_matches
 from tkinter import filedialog
+import struct
+import numpy as np
 
 # Party type mappings
 PARTY_TYPES = [
@@ -238,6 +240,7 @@ class TrainerEditorUI:
     def __init__(self, root):
         self.root = root
         self.BASE_DIR = None
+        self.ROM_PATH = None
         self.root.title("CFRU Trainer Editor")
         self.root.geometry("500x300")
         
@@ -249,8 +252,11 @@ class TrainerEditorUI:
         self.ITEMS_PATH = None
         self.TRAINER_CLASSES_PATH = None
         self.EASY_TEXT_PATH = None
-        self.TRAINER_PIC_TABLES_PATH = None
-        self.SPRITES_DIR = None
+        
+        self.SPRITE_OFFSET = 0x023957C
+        self.PALETTE_OFFSET = 0x0239AC1
+        self.SPRITE_WIDTH = 64
+        self.SPRITE_HEIGHT = 64
         
         
         # Define party_type_var before setting up UI
@@ -293,7 +299,7 @@ class TrainerEditorUI:
     def verify_project_structure(self):
         """Verifica se a pasta selecionada tem a estrutura esperada do CFRU"""
         required_paths = [
-            "src/Tables/trainer_tables.c",
+            "src/Tables/trainer_table.c",
             "src/Tables/trainer_parties.h",
             "include/constants/opponents.h",
             "include/constants/species.h",
@@ -301,8 +307,6 @@ class TrainerEditorUI:
             "include/constants/items.h",
             "include/constants/trainer_classes.h",
             "include/easy_text.h",
-            "src/Tables/trainer_pic_tables.c",
-            "graphics/Other/PokeSprites"
         ]
         
         missing_paths = []
@@ -318,6 +322,21 @@ class TrainerEditorUI:
             )
             self.show_folder_selection()
         else:
+            # Pedimos ao usuário para selecionar a ROM BPRE0.gba
+            self.prompt_for_rom()
+            
+    def prompt_for_rom(self):
+        """Pede ao usuário para selecionar a ROM BPRE0.gba"""
+        rom_path = filedialog.askopenfilename(
+            title="Select BPRE0.gba ROM",
+            filetypes=[("GBA ROMs", "*.gba"), ("All files", "*.*")]
+        )
+        
+        if rom_path:
+            self.ROM_PATH = Path(rom_path)
+            if self.ROM_PATH.name.upper() != "BPRE0.GBA":
+                messagebox.showwarning("Warning", "The selected ROM doesn't appear to be BPRE0.gba")
+            
             self.initialize_editor()
             
     def clear_main_window(self):
@@ -331,7 +350,7 @@ class TrainerEditorUI:
         self.root.geometry("1200x800")
         
         # Define os paths agora que BASE_DIR está definido
-        self.TRAINER_DATA_PATH = self.BASE_DIR / "src" / "Tables" / "trainer_tables.c"
+        self.TRAINER_DATA_PATH = self.BASE_DIR / "src" / "Tables" / "trainer_table.c"
         self.TRAINER_PARTIES_PATH = self.BASE_DIR / "src" / "Tables" / "trainer_parties.h"
         self.OPPONENTS_PATH = self.BASE_DIR / "include" / "constants" / "opponents.h"
         self.SPECIES_PATH = self.BASE_DIR / "include" / "constants" / "species.h"
@@ -570,26 +589,36 @@ class TrainerEditorUI:
         return text_map, char_to_define
     
     def load_trainer_sprites(self):
-        """Carrega a tabela de sprites dos treinadores"""
+        """Carrega as sprites diretamente da ROM"""
         sprites = {}
+        
         try:
-            with open(self.TRAINER_PIC_TABLES_PATH, 'r', encoding='utf-8') as f:  # Note o self.
-                content = f.read()
-                matches = re.finditer(
-                    r'\[([^\]]+)\]\s*=\s*\{([^,]+),\s*([^,]+),\s*([^\}]+)\}',
-                    content
-                )
+            with open(self.ROM_PATH, 'rb') as rom_file:
+                # Lê a tabela de sprites
+                rom_file.seek(self.SPRITE_OFFSET)
                 
-                for match in matches:
-                    trainer_class = match.group(1).strip()
-                    sprite_name = match.group(2).strip()
-                    sprites[trainer_class] = sprite_name
+                # Cada entrada tem 4 bytes: [class_id, sprite_id, ?, ?]
+                # Vamos ler até encontrar um terminador (0xFF)
+                while True:
+                    entry = rom_file.read(4)
+                    if not entry or entry[0] == 0xFF:
+                        break
+                    
+                    class_id = entry[0]
+                    sprite_id = entry[1]
+                    
+                    # Mapeia o ID da classe para o nome (usando TRAINER_PICS)
+                    for class_name, cid in TRAINER_PICS.items():
+                        if cid == class_id:
+                            sprites[class_name] = sprite_id
+                            break
         
         except Exception as e:
-            print(f"Error loading trainer sprites: {e}")
+            print(f"Error loading trainer sprites from ROM: {e}")
             sprites = {
-                "YOUNGSTER": "trainers_sprites_front_0_SpriteTiles",
-                "LASS": "trainers_sprites_front_1_SpriteTiles"
+                "YOUNGSTER": 0,
+                "LASS": 1,
+                # ... (valores padrão de fallback)
             }
         
         return sprites
@@ -1310,20 +1339,65 @@ class TrainerEditorUI:
             self.tera_combo.grid(row=11, column=1, sticky="ew", padx=5, pady=2)
     
     def update_sprite_preview(self, event=None):
-        """Atualiza a visualização do sprite quando selecionado"""
-        selected_class = self.sprite_combo.get()
+        """Atualiza a visualização do sprite quando selecionado, lendo diretamente da ROM"""
+        selected_class = self.trainer_pic_combo.get()
         if selected_class in self.trainer_sprites:
-            sprite_name = self.trainer_sprites[selected_class]
-            sprite_path = SPRITES_DIR / f"{sprite_name}.png"
+            sprite_id = self.trainer_sprites[selected_class]
             
             try:
-                img = Image.open(sprite_path)
-                img = img.resize((64, 64), Image.Resampling.LANCZOS)
-                self.sprite_img = ImageTk.PhotoImage(img)
-                self.sprite_canvas.create_image(0, 0, anchor=tk.NW, image=self.sprite_img)
+                with open(self.ROM_PATH, 'rb') as rom_file:
+                    # Calcula o offset do sprite na ROM
+                    # (Esta é uma implementação simplificada - você precisará ajustar conforme a estrutura real)
+                    sprite_offset = self.SPRITE_OFFSET + (sprite_id * self.SPRITE_WIDTH * self.SPRITE_HEIGHT // 2)
+                    
+                    # Lê os dados do sprite
+                    rom_file.seek(sprite_offset)
+                    sprite_data = rom_file.read(self.SPRITE_WIDTH * self.SPRITE_HEIGHT // 2)
+                    
+                    # Lê a paleta
+                    rom_file.seek(self.PALETTE_OFFSET + (sprite_id * 32))  # 16 cores * 2 bytes cada
+                    palette_data = rom_file.read(32)
+                    
+                    # Converte os dados para uma imagem
+                    img = self.convert_sprite_data(sprite_data, palette_data)
+                    self.sprite_img = ImageTk.PhotoImage(img)
+                    self.sprite_canvas.create_image(0, 0, anchor=tk.NW, image=self.sprite_img)
+                    
             except Exception as e:
-                print(f"Error loading sprite image: {e}")
-                self.sprite_canvas.create_text(32, 32, text="Sprite\nNot Found", fill="white")
+                print(f"Error loading sprite from ROM: {e}")
+                self.sprite_canvas.create_text(32, 32, text="Sprite\nError", fill="white")
+    
+    def convert_sprite_data(self, sprite_data, palette_data):
+        """Converte os dados brutos do sprite em uma imagem PIL"""
+        # Converte a paleta (2 bytes por cor, formato GBA BGR555)
+        palette = []
+        for i in range(0, len(palette_data), 2):
+            color_word = struct.unpack('<H', palette_data[i:i+2])[0]
+            r = (color_word & 0x1F) << 3
+            g = ((color_word >> 5) & 0x1F) << 3
+            b = ((color_word >> 10) & 0x1F) << 3
+            palette.append((r, g, b))
+        
+        # Converte os dados do sprite (4 bits por pixel)
+        pixels = []
+        for byte in sprite_data:
+            pixels.append(byte & 0x0F)
+            pixels.append((byte >> 4) & 0x0F)
+        
+        # Cria uma imagem numpy array
+        img_array = np.zeros((self.SPRITE_HEIGHT, self.SPRITE_WIDTH, 3), dtype=np.uint8)
+        
+        # Preenche a imagem com as cores da paleta
+        for y in range(self.SPRITE_HEIGHT):
+            for x in range(self.SPRITE_WIDTH):
+                idx = y * self.SPRITE_WIDTH + x
+                if idx < len(pixels):
+                    color_idx = pixels[idx]
+                    if color_idx < len(palette):
+                        img_array[y, x] = palette[color_idx]
+        
+        # Converte para imagem PIL
+        return Image.fromarray(img_array)
     
     def on_class_selected(self, event):
         """Quando uma classe é selecionada, atualiza o sprite e o ID"""
