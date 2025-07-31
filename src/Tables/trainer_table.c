@@ -23,17 +23,5 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NONE] = {
         .trainerName = NO_NAME,
     },
-	[LASS_DIANA] = {
-	    .partyFlags = 0,
-	    .trainerClass = CLASS_BEAUTY,
-	    .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
-	    .trainerPic = TRAINER_PIC_AROMA_LADY_RS,
-	    .trainerName = {_d, _i, _a, _n, _a, _END},
-	    .items = {ITEM_ACRO_BIKE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-	    .doubleBattle = FALSE,
-	    .aiFlags = AI_SCRIPT_SEMI_SMART,  // Flags: 0x2
-	    .partySize = NELEMS(sParty_LassDiana),
-	    .party = {.NoItemDefaultMoves = sParty_LassDiana}
-	},
 };
 #endif
