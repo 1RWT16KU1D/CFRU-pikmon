@@ -12,6 +12,7 @@
 #include "battle_ai_switch_items.h"
 #include "battle_gfx_sfx_util.h"
 #include "link.h"
+#include "../src/config.h"
 
 /*
     Banks are a name given to what could be called a 'battlerId' or 'monControllerId'.
