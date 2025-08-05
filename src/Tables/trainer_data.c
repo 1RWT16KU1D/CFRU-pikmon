@@ -9896,16 +9896,3 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     { 0xFF, 5, 0},
 };
 #endif
-
-#ifdef STEVEBELS_TRAINER_TABLE
-
-#define NO_NAME {_END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE}
-#define RIVAL_NAME {_G, _a, _r, _y, _END}
-
-
-const struct Trainer gTrainers[] = {
-    [TRAINER_NONE] = {
-        .trainerName = NO_NAME,
-    },
-};
-#endif
