@@ -5,6 +5,8 @@
 #include "../../include/constants/moves.h"
 #include "../../include/constants/species.h"
 #include "../../include/constants/trainer_classes.h"
+#include "../../include/new/build_pokemon_2.h"
+#include "../../src/config.h"
 
 #include "trainer_defines.h"
 

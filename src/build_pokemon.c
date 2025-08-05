@@ -825,11 +825,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		//Get party size
 		if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && side == B_SIDE_OPPONENT)
 		{	
-			#ifdef STEVEBELS_TRAINER_TABLE
-			u8 class __attribute__((unused)) = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
-			#else
-			u8 class __attribute__((unused)) = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-			#endif
 			#ifdef OPEN_WORLD_TRAINERS
 			if ((firstTrainer && gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 			||  (!firstTrainer && VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT))
@@ -859,11 +854,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		else
 		{
 			#ifdef OPEN_WORLD_TRAINERS
-			#ifdef STEVEBELS_TRAINER_TABLE
-			u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
-			#else
-			u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-			#endif
+			u8 class = trainer->trainerClass;
 			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 			{
 				monsCount = GetOpenWorldTrainerMonAmount();
@@ -981,11 +972,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				nameHash += trainer->trainerName[j];
 
 			#ifdef OPEN_WORLD_TRAINERS
-			#ifdef STEVEBELS_TRAINER_TABLE
-			u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
-			#else
-			u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-			#endif
+			u8 class = trainer->trainerClass;
 			u8 openWorldSpeciesIndex = GetOpenWorldSpeciesIndex(nameHash, i);
 			u8 openWorldLevel = GetOpenWorldSpeciesLevel(nameHash, i);
 
