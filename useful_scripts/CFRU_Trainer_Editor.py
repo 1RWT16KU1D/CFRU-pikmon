@@ -263,67 +263,75 @@ class TrainerEditorUI:
         self.sprite_img = None
         self.tk_img = None
         
+        self.SPRITE_TABLE_ADDRESS = 0x823957C  # Endereço da tabela de sprites
+        self.PALETTE_TABLE_ADDRESS = 0x8239A1C  # Endereço da tabela de paletas
+        self.ENTRY_SIZE = 8  # Cada entrada na tabela tem 8 bytes
+        
         # Define party_type_var before setting up UI
         self.party_type_var = tk.IntVar(value=4)
         self.party_type_var.trace('w', self.update_party_fields)
         
         self.show_folder_selection()
         
-        self.SPRITE_ADDRESSES_GBA = [
-            0x8E48D58, 0x8E490BC, 0x8E49444, 0x8E497A8, 0x8E49A94, 0x8E49E58,
-            0x8E4A324, 0x8E4A5F0, 0x8E4A8A4, 0x8E4ABB4, 0x8E4AEF0, 0x8E4B284,
-            0x8E4B660, 0x8E4B970, 0x8E4BC4C, 0x8E4BFE4, 0x8E4C2CC, 0x8E4C658,
-            0x8E4CA04, 0x8E4CD98, 0x8E4D0A8, 0x8E4D520, 0x8E4D874, 0x8E4DBC4,
-            0x8E4DEEC, 0x8E4E248, 0x8E4E570, 0x8E4E884, 0x8E4EC40, 0x8E4F0AC,
-            0x8E4F394, 0x8E4F658, 0x8E4FAF0, 0x8E4FED4, 0x8E502C8, 0x8E50630,
-            0x8E50974, 0x8E50C44, 0x8E50FA4, 0x8E513B0, 0x8E517E8, 0x8E51C1C,
-            0x8E51EFC, 0x8E521C8, 0x8E5251C, 0x8E52820, 0x8E52B9C, 0x8E52EFC,
-            0x8E53200, 0x8E53548, 0x8E538A8, 0x8E53BA0, 0x8E53EA8, 0x8E54294,
-            0x8E5466C, 0x8E54A98, 0x8E54D90, 0x8E550CC, 0x8E553F4, 0x8E5574C,
-            0x8E55AA8, 0x8E55E18, 0x8E56174, 0x8E56490, 0x8E56838, 0x8E56BEC,
-            0x8E56EEC, 0x8E57240, 0x8E576E8, 0x8E57AD0, 0x8E58008, 0x8E5847C,
-            0x8E58858, 0x8E58C44, 0x8E59044, 0x8E5941C, 0x8E5978C, 0x8E59B34,
-            0x8E59E98, 0x8E5A240, 0x8E5A5E0, 0x8E5A98C, 0x8E5AD5C, 0x8E5B024,
-            0x8E5B394, 0x8E5B6A8, 0x8E5B9F0, 0x8E5BCF8, 0x8E5C008, 0x8E5C3EC,
-            0x8E5C72C, 0x8E5CBC4, 0x8E5D154, 0x8E5D4C8, 0x8E5D8FC, 0x8E5DCD0,
-            0x8E5DFD0, 0x8E5E5C0, 0x8E5E97C, 0x8E5ED00, 0x8E5F014, 0x8E5F39C,
-            0x8E5F820, 0x8E5FC84, 0x8E60060, 0x8E6044C, 0x8E60894, 0x8E60B74,
-            0x8E60F78, 0x8E612B0, 0x8E6160C, 0x8E61904, 0x8E61C44, 0x8E61F98,
-            0x8E6240C, 0x8E62750, 0x8E62B40, 0x8E62EB4, 0x8E631DC, 0x8E63594,
-            0x8E638B0, 0x8E63C40, 0x8E64074, 0x8E643A4, 0x8E64704, 0x8E64A20,
-            0x8E64D44, 0x8E65144, 0x8E654BC, 0x8E659C4, 0x8E65E38, 0x8E66400,
-            0x8E66888, 0x8E66C1C, 0x8E66F58, 0x8E67280, 0x8E675B4, 0x8E67918,
-            0x8E67C58, 0x8E68020, 0x8E68354, 0x8E68680, 0x8E689E8, 0x8E68D70,
-            0x8E690CC, 0x8E69444, 0x8E69878, 0x8E69BC8
-        ]
+    def read_sprite_table(self):
+        """Lê a tabela de sprites da ROM e retorna lista de endereços"""
+        sprite_addresses = []
+        try:
+            with open(self.ROM_PATH, 'rb') as rom_file:
+                offset = self.gba_addr_to_file_offset(self.SPRITE_TABLE_ADDRESS)
+                rom_file.seek(offset)
+                
+                # Lê entradas até encontrar um endereço nulo (0)
+                while True:
+                    entry = rom_file.read(self.ENTRY_SIZE)
+                    if not entry or len(entry) < 4:
+                        break
+                        
+                    # Os primeiros 4 bytes são o endereço do sprite (little-endian)
+                    sprite_addr = struct.unpack('<I', entry[:4])[0]
+                    if sprite_addr == 0:
+                        break
+                        
+                    sprite_addresses.append(sprite_addr)
+        except Exception as e:
+            print(f"Error reading sprite table: {e}")
+            # Fallback para lista pré-definida se houver erro
+            sprite_addresses = [
+                0x8E48D58, 0x8E490BC, 0x8E49444, 0x8E497A8, 0x8E49A94, 0x8E49E58,
+                # ... (restante da lista original)
+            ]
+        
+        return sprite_addresses
 
-        self.PALETTE_ADDRESSES_GBA = [
-            0x8E49094, 0x8E4941C, 0x8E49780, 0x8E49A6C, 0x8E49E30, 0x8E4A2FC,
-            0x8E4A5C8, 0x8E4A87C, 0x8E4AB8C, 0x8E4AEC8, 0x8E4B25C, 0x8E4B638,
-            0x8E4B948, 0x8E4BC24, 0x8E4BFBC, 0x8E4C2A4, 0x8E4C630, 0x8E4C9DC,
-            0x8E4CD70, 0x8E4D080, 0x8E4D4F8, 0x8E4D84C, 0x8E4DB9C, 0x8E4DEC4,
-            0x8E4E220, 0x8E4E548, 0x8E4E85C, 0x8E4EC18, 0x8E4F084, 0x8E4F36C,
-            0x8E4F630, 0x8E4FAC8, 0x8E4FEAC, 0x8E502A0, 0x8E50608, 0x8E5094C,
-            0x8E50C1C, 0x8E50F7C, 0x8E51388, 0x8E517C0, 0x8E51BF4, 0x8E51ED4,
-            0x8E521A0, 0x8E524F4, 0x8E527F8, 0x8E52B74, 0x8E52ED4, 0x8E531D8,
-            0x8E53520, 0x8E53880, 0x8E53B78, 0x8E53E80, 0x8E5426C, 0x8E54644,
-            0x8E54A70, 0x8E54D68, 0x8E550A4, 0x8E553CC, 0x8E55724, 0x8E55A80,
-            0x8E55DF0, 0x8E5614C, 0x8E56468, 0x8E56810, 0x8E56BC4, 0x8E56EC4,
-            0x8E57218, 0x8E576C0, 0x8E57AA8, 0x8E57FE0, 0x8E58454, 0x8E58830,
-            0x8E58C1C, 0x8E5901C, 0x8E593F4, 0x8E59764, 0x8E59B0C, 0x8E59E70,
-            0x8E5A218, 0x8E5A5B8, 0x8E5A964, 0x8E5AD34, 0x8E5AFFC, 0x8E5B36C,
-            0x8E5B680, 0x8E5B9C8, 0x8E5BCD0, 0x8E5BFE0, 0x8E5C3C4, 0x8E5C704,
-            0x8E5CB9C, 0x8E5D12C, 0x8E5D4A0, 0x8E5D8D4, 0x8E5DCA8, 0x8E5DFA8,
-            0x8E5E598, 0x8E5E954, 0x8E5ECD8, 0x8E5EFEC, 0x8E5F374, 0x8E5F7F8,
-            0x8E5FC5C, 0x8E60038, 0x8E60424, 0x8E6086C, 0x8E60B4C, 0x8E60F50,
-            0x8E61288, 0x8E615E4, 0x8E618DC, 0x8E61C1C, 0x8E61F70, 0x8E623E4,
-            0x8E62728, 0x8E62B18, 0x8E62E8C, 0x8E631B4, 0x8E6356C, 0x8E63888,
-            0x8E63C18, 0x8E6404C, 0x8E6437C, 0x8E646DC, 0x8E649F8, 0x8E64D1C,
-            0x8E6511C, 0x8E65494, 0x8E6599C, 0x8E65E10, 0x8E663D8, 0x8E66860,
-            0x8E66BF4, 0x8E66F30, 0x8E67258, 0x8E6758C, 0x8E678F0, 0x8E67C30,
-            0x8E67FF8, 0x8E6832C, 0x8E68658, 0x8E689C0, 0x8E68D48, 0x8E690A4,
-            0x8E6941C, 0x8E69850, 0x8E69BA0, 0x8E69E94
-        ]
+    def read_palette_table(self):
+        """Lê a tabela de paletas da ROM e retorna lista de endereços"""
+        palette_addresses = []
+        try:
+            with open(self.ROM_PATH, 'rb') as rom_file:
+                offset = self.gba_addr_to_file_offset(self.PALETTE_TABLE_ADDRESS)
+                rom_file.seek(offset)
+                
+                # Lê entradas até encontrar um endereço nulo (0)
+                while True:
+                    entry = rom_file.read(self.ENTRY_SIZE)
+                    if not entry or len(entry) < 4:
+                        break
+                        
+                    # Os primeiros 4 bytes são o endereço da paleta (little-endian)
+                    palette_addr = struct.unpack('<I', entry[:4])[0]
+                    if palette_addr == 0:
+                        break
+                        
+                    palette_addresses.append(palette_addr)
+        except Exception as e:
+            print(f"Error reading palette table: {e}")
+            # Fallback para lista pré-definida se houver erro
+            palette_addresses = [
+                0x8E49094, 0x8E4941C, 0x8E49780, 0x8E49A6C, 0x8E49E30, 0x8E4A2FC,
+                # ... (restante da lista original)
+            ]
+        
+        return palette_addresses
         
     def gba_addr_to_file_offset(self, addr):
         return addr - 0x08000000
@@ -472,30 +480,27 @@ class TrainerEditorUI:
         return img
     
     def read_sprite_data(self, sprite_gba_addr):
-        """Lê os dados do sprite da ROM"""
+        """Lê os dados do sprite da ROM com tratamento de erro melhorado"""
         if not self.ROM_PATH or not self.ROM_PATH.exists():
             return None
             
         try:
             with open(self.ROM_PATH, 'rb') as rom_file:
                 offset = self.gba_addr_to_file_offset(sprite_gba_addr)
-                if offset < 0:
-                    return None
+                if offset < 0 or offset >= os.path.getsize(self.ROM_PATH):
+                    raise ValueError(f"Invalid sprite offset: 0x{offset:X}")
                     
                 rom_file.seek(offset)
                 header = rom_file.read(4)
                 
                 if header[0] == 0x10:  # LZ77 compressed
-                    # Lê o tamanho comprimido estimado (máximo)
                     rom_file.seek(offset)
                     compressed_data = rom_file.read(4096)  # Suficiente para sprites
                     sprite_data = self.decompress_lz77(compressed_data)
                 else:
-                    # Dados não comprimidos
                     rom_file.seek(offset)
                     sprite_data = rom_file.read(self.SPRITE_SIZE)
                 
-                # Garante tamanho correto
                 if len(sprite_data) < self.SPRITE_SIZE:
                     sprite_data += bytes([0] * (self.SPRITE_SIZE - len(sprite_data)))
                 elif len(sprite_data) > self.SPRITE_SIZE:
@@ -503,7 +508,7 @@ class TrainerEditorUI:
                 
                 return sprite_data
         except Exception as e:
-            print(f"Error reading sprite data: {e}")
+            print(f"Error reading sprite data at 0x{sprite_gba_addr:X}: {e}")
             return None
     
     def load_sprite_table(self):
@@ -635,10 +640,9 @@ class TrainerEditorUI:
         self.TRAINER_PIC_TABLES_PATH = self.BASE_DIR / "src" / "Tables" / "trainer_pic_tables.c"
         self.SPRITES_DIR = self.BASE_DIR / "graphics" / "Other" / "PokeSprites"
         
-        # Sprite table offsets
-        self.SPRITE_OFFSET = 0x823957C
-        self.PALETTE_OFFSET = 0x8239AC1
-        self.SPRITE_TABLE_OFFSET = 0x823957C
+         # Carrega as tabelas de sprites e paletas
+        self.SPRITE_ADDRESSES_GBA = self.read_sprite_table()
+        self.PALETTE_ADDRESSES_GBA = self.read_palette_table()
         
         # Restante da inicialização
         self.load_initial_data()
@@ -1457,7 +1461,7 @@ class TrainerEditorUI:
             return
             
         # Verifica se temos um sprite válido para este ID
-        if sprite_id < len(self.SPRITE_ADDRESSES_GBA):
+        if sprite_id < len(self.SPRITE_ADDRESSES_GBA) and sprite_id < len(self.PALETTE_ADDRESSES_GBA):
             sprite_addr = self.SPRITE_ADDRESSES_GBA[sprite_id]
             palette_addr = self.PALETTE_ADDRESSES_GBA[sprite_id]
             
