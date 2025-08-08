@@ -126,12 +126,13 @@ typedef u8 TrainerClassNames_t[13];
 extern struct TrainerPicCoords gTrainerBackPicCoords[];
 
 #ifdef STEVEBELS_TRAINER_TABLE
+extern const struct Trainer gTrainersStevebel[];
 #define gOriginalTrainers ((const struct Trainer*) 0x823EAC8)
-extern const struct Trainer gTrainers[];
-#define TRAINER_IS_BLANK(trainerId) (gTrainers[trainerId].partyFlags == 0  && gTrainers[trainerId].party.NoItemDefaultMoves == 0)
-#define GET_TRAINER(trainerId) (TRAINER_IS_BLANK(trainerId) ?  gOriginalTrainers[trainerId] : gTrainers[trainerId])
-#define GET_TRAINER_PTR(trainerId) (TRAINER_IS_BLANK(trainerId) ?  &gOriginalTrainers[trainerId] : &gTrainers[trainerId])
+#define gTrainers gTrainersStevebel
+extern struct Trainer GetTrainer(u16 trainerId);
+extern const struct Trainer *GetTrainerPtr(u16 trainerId);
 #endif
+
 #define sATypeMove_Table ((u8**) 0x83FEA28) //Table of things like "A Normal Move!"
 #define gBattleStringsTable ((u8**) 0x83FDF3C)
 

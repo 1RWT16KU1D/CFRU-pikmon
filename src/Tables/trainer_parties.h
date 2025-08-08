@@ -10824,4 +10824,24 @@ struct TrainerMonNoItemDefaultMoves sParty_CueBallPaxton[] = {
 
 #ifdef STEVEBELS_TRAINER_TABLE
 
+static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab1[] = {
+    {
+        .lvl = 5,
+        .species = SPECIES_SQUIRTLE,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab2[] = {
+    {
+        .lvl = 5,
+        .species = SPECIES_BULBASAUR,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab3[] = {
+    {
+        .lvl = 5,
+        .species = SPECIES_CHARMANDER,
+    },
+};
 #endif

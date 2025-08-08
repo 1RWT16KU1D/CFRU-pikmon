@@ -652,7 +652,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					toCpy = GetTrainerClassName(GetFrontierTrainerClassId(gTrainerBattleOpponent_A, 0), text);
 				else
 				#ifdef STEVEBELS_TRAINER_TABLE
-					toCpy = GetTrainerClassName(GET_TRAINER(gTrainerBattleOpponent_A).trainerClass, text);
+					toCpy = GetTrainerClassName(GetTrainer(gTrainerBattleOpponent_A).trainerClass, text);
 				#else
 					toCpy = GetTrainerClassName(gTrainers[gTrainerBattleOpponent_A].trainerClass, text);
 				#endif
@@ -690,7 +690,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				else
 				{
 					#ifdef STEVEBELS_TRAINER_TABLE
-					u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
+					u8 class = GetTrainer(gTrainerBattleOpponent_A).trainerClass;
 					#else
 					u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
 					#endif
@@ -699,7 +699,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 						{
 							#ifdef STEVEBELS_TRAINER_TABLE
-							toCpy = GET_TRAINER(gTrainerBattleOpponent_A).trainerName;
+							toCpy = GetTrainer(gTrainerBattleOpponent_A).trainerName;
 							#else
 							toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
 							#endif
@@ -717,7 +717,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 						else
 					#endif
 				#ifdef STEVEBELS_TRAINER_TABLE
-					toCpy = GET_TRAINER(gTrainerBattleOpponent_A).trainerName;
+					toCpy = GetTrainer(gTrainerBattleOpponent_A).trainerName;
 				#else
 					toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
 				#endif
@@ -839,7 +839,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				}
 				else
 				#ifdef STEVEBELS_TRAINER_TABLE
-					toCpy = GetTrainerClassName(GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerClass, text);
+					toCpy = GetTrainerClassName(GetTrainer(VarGet(VAR_SECOND_OPPONENT)).trainerClass, text);
 				#else
 					toCpy = GetTrainerClassName(gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerClass, text);
 				#endif
@@ -864,7 +864,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				else
 				{
 					#ifdef STEVEBELS_TRAINER_TABLE
-					u8 class = GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerClass;
+					u8 class = GetTrainer(VarGet(VAR_SECOND_OPPONENT)).trainerClass;
 					#else
 					u8 class = gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerClass;
 					#endif
@@ -873,7 +873,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
 						{
 							#ifdef STEVEBELS_TRAINER_TABLE
-							toCpy = GetOpenWorldTrainerName(GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).gender);
+							toCpy = GetOpenWorldTrainerName(GetTrainer(VarGet(VAR_SECOND_OPPONENT)).gender);
 							#else
 							toCpy = GetOpenWorldTrainerName(gTrainers[VarGet(VAR_SECOND_OPPONENT)].gender);
 							#endif
@@ -892,7 +892,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					#endif
 				
 				#ifdef STEVEBELS_TRAINER_TABLE
-					toCpy = GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerName;
+					toCpy = GetTrainer(VarGet(VAR_SECOND_OPPONENT)).trainerName;
 				#else
 					toCpy = gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerName;
 				#endif

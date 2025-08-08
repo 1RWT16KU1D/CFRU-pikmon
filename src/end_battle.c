@@ -220,7 +220,7 @@ void HandleEndTurn_BattleWon(void)
 
 	VICTORY_MUSIC_SELECTION:
 		#ifdef STEVEBELS_TRAINER_TABLE
-		switch (GET_TRAINER(id).trainerClass) {
+		switch (GetTrainer(id).trainerClass) {
 		#else
 		switch (gTrainers[id].trainerClass) {
 		#endif

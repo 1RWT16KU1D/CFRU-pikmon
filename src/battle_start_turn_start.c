@@ -1936,7 +1936,7 @@ u16 GetMUS_ForBattle(void)
 		else
 		{
 			#ifdef STEVEBELS_TRAINER_TABLE
-			trainerClass = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
+			trainerClass = GetTrainer(gTrainerBattleOpponent_A).trainerClass;
 			#else
 			trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
 			#endif
@@ -1961,7 +1961,7 @@ u16 GetMUS_ForBattle(void)
 			if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
 			{
 				#ifdef STEVEBELS_TRAINER_TABLE
-				trainerClass = GET_TRAINER(SECOND_OPPONENT).trainerClass;
+				trainerClass = GetTrainer(SECOND_OPPONENT).trainerClass;
 				#else
 				trainerClass = gTrainers[SECOND_OPPONENT].trainerClass;
 				#endif
@@ -2042,14 +2042,14 @@ u8 GetTrainerBattleTransition(void)
 
 	#ifdef FR_PRE_BATTLE_MUGSHOT_STYLE
 	#ifdef STEVEBELS_TRAINER_TABLE
-	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION)
+	if (GetTrainer(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION)
 	#else
 	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == CLASS_CHAMPION)
 	#endif
 		return B_TRANSITION_CHAMPION;
 
 	#ifdef STEVEBELS_TRAINER_TABLE
-	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_ELITE_FOUR)
+	if (GetTrainer(gTrainerBattleOpponent_A).trainerClass == CLASS_ELITE_FOUR)
 	#else
 	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == CLASS_ELITE_FOUR)
 	#endif
@@ -2104,7 +2104,7 @@ u8 GetTrainerBattleTransition(void)
 	#endif
 
 	#ifdef STEVEBELS_TRAINER_TABLE
-	if ((GET_TRAINER(gTrainerBattleOpponent_A).doubleBattle == TRUE
+	if ((GetTrainer(gTrainerBattleOpponent_A).doubleBattle == TRUE
 	#else
 	if ((gTrainers[gTrainerBattleOpponent_A].doubleBattle == TRUE
 	#endif

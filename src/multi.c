@@ -495,7 +495,7 @@ static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 {
 	u8 i, firstMonId, lastMonId, level, rate;
 	#ifdef STEVEBELS_TRAINER_TABLE
-	struct Trainer trainer = GET_TRAINER(trainerId);
+	struct Trainer trainer = GetTrainer(trainerId);
 	#else
 	struct Trainer* trainer = &gTrainers[trainerId];
 	#endif

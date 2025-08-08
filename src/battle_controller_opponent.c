@@ -412,7 +412,7 @@ static u8 LoadCorrectTrainerPicId(void)
         if (position == B_POSITION_OPPONENT_LEFT)
         {
         #ifdef STEVEBELS_TRAINER_TABLE
-            trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
+            trainerPicId = GetTrainer(gTrainerBattleOpponent_A).trainerPic;
         #else
             trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
         #endif
@@ -420,7 +420,7 @@ static u8 LoadCorrectTrainerPicId(void)
         else
         {
         #ifdef STEVEBELS_TRAINER_TABLE
-            trainerPicId = GET_TRAINER(gTrainerBattleOpponent_B).trainerPic;
+            trainerPicId = GetTrainer(gTrainerBattleOpponent_B).trainerPic;
         #else
             trainerPicId = gTrainers[gTrainerBattleOpponent_B].trainerPic;
         #endif
@@ -429,7 +429,7 @@ static u8 LoadCorrectTrainerPicId(void)
     else
     {
     #ifdef STEVEBELS_TRAINER_TABLE
-        trainerPicId = GET_TRAINER(gTrainerBattleOpponent_A).trainerPic;
+        trainerPicId = GetTrainer(gTrainerBattleOpponent_A).trainerPic;
     #else
         trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
     #endif

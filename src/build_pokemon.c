@@ -795,7 +795,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 		//Set up necessary data
 		#ifdef STEVEBELS_TRAINER_TABLE
-		trainer = GET_TRAINER_PTR(trainerId);
+		trainer = GetTrainerPtr(trainerId);
 		#else
 		trainer = &gTrainers[trainerId];
 		#endif
@@ -1074,7 +1074,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			//Assign Trainer information to mon
 			u8 otGender = trainer->gender;
 			#ifdef STEVEBELS_TRAINER_TABLE
-			const u8* name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
+			const u8* name = TryGetRivalNameByTrainerClass(GetTrainer(trainerId).trainerClass);
 			#else
 			const u8* name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
 			#endif
@@ -1106,7 +1106,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			//Give EVs
 			#ifdef TRAINERS_WITH_EVS
 			#ifdef STEVEBELS_TRAINER_TABLE
-			u8 spreadNum = (GET_TRAINER(trainerId).partyFlags & PARTY_FLAG_CUSTOM_MOVES) ? trainer->party.NoItemCustomMoves[i].iv : trainer->party.NoItemDefaultMoves[i].iv;
+			u8 spreadNum = (GetTrainer(trainerId).partyFlags & PARTY_FLAG_CUSTOM_MOVES) ? trainer->party.NoItemCustomMoves[i].iv : trainer->party.NoItemDefaultMoves[i].iv;
 			#else
 			u8 spreadNum = (gTrainers[trainerId].partyFlags & PARTY_FLAG_CUSTOM_MOVES) ? trainer->party.NoItemCustomMoves[i].iv : trainer->party.NoItemDefaultMoves[i].iv;
 			#endif
@@ -1121,7 +1121,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			&& spreadNum < NELEMS(gTrainersWithEvsSpreads) //Valid id
 			#ifndef UNBOUND
 			#ifdef STEVEBELS_TRAINER_TABLE
-			&& GET_TRAINER(trainerId).partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
+			&& GetTrainer(trainerId).partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
 			#else
 			&& gTrainers[trainerId].partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
 			#endif
@@ -1459,7 +1459,7 @@ static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 	#endif
 
 	#ifdef STEVEBELS_TRAINER_TABLE
-	switch (GET_TRAINER(trainerId).trainerClass) {
+	switch (GetTrainer(trainerId).trainerClass) {
 	#else
 	switch (gTrainers[trainerId].trainerClass) {
 	#endif

@@ -285,7 +285,7 @@ u8 GetFrontierTrainerClassId(u16 trainerId, u8 battlerNum)
 			return gRaidPartners[VarGet(VAR_FACILITY_TRAINER_ID_PARTNER)].trainerClass;
 		default:
 		#ifdef STEVEBELS_TRAINER_TABLE
-			return GET_TRAINER(trainerId).trainerClass;
+			return GetTrainer(trainerId).trainerClass;
 		#else
 			return gTrainers[trainerId].trainerClass;
 		#endif
@@ -368,9 +368,9 @@ const u8* GetFrontierTrainerName(u16 trainerId, u8 battlerNum)
 			break;
 		default:
 			#ifdef STEVEBELS_TRAINER_TABLE
-			name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
+			name = TryGetRivalNameByTrainerClass(GetTrainer(trainerId).trainerClass);
 			if (name == NULL) //Rival name isn't tied to a trainer class
-				name = GET_TRAINER(trainerId).trainerName;
+				name = GetTrainer(trainerId).trainerName;
 			#else
 			name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
 			if (name == NULL) //Rival name isn't tied to a trainer class
@@ -449,7 +449,7 @@ u8 GetFrontierTrainerFrontSpriteId(u16 trainerId, u8 battlerNum)
 			return gFrontierBrains[VarGet(VAR_FACILITY_TRAINER_ID + battlerNum)].trainerSprite;
 		default:
 		#ifdef STEVEBELS_TRAINER_TABLE
-			return GET_TRAINER(trainerId).trainerPic;
+			return GetTrainer(trainerId).trainerPic;
 		#else
 			return gTrainers[trainerId].trainerPic;
 		#endif

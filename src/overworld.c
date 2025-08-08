@@ -1205,7 +1205,7 @@ void SetUpTrainerEncounterMusic(void)
 		}
 		#else //ENCOUNTER_MUSIC_BY_CLASS
 			#ifdef STEVEBELS_TRAINER_TABLE
-			music = gClassBasedTrainerEncounterBGM[GET_TRAINER(trainerId).trainerClass];
+			music = gClassBasedTrainerEncounterBGM[GetTrainer(trainerId).trainerClass];
 			#else
 			music = gClassBasedTrainerEncounterBGM[gTrainers[trainerId].trainerClass];
 			#endif

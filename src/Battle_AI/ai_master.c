@@ -99,9 +99,9 @@ void BattleAI_HandleItemUseBeforeAISetup(void)
 		for (i = 0; i < 4; i++)
 		{
 			#ifdef STEVEBELS_TRAINER_TABLE
-			if (GET_TRAINER(gTrainerBattleOpponent_A).items[i] != 0)
+			if (GetTrainer(gTrainerBattleOpponent_A).items[i] != 0)
 			{
-				BATTLE_HISTORY->trainerItems[BATTLE_HISTORY->itemsNo] = GET_TRAINER(gTrainerBattleOpponent_A).items[i];
+				BATTLE_HISTORY->trainerItems[BATTLE_HISTORY->itemsNo] = GetTrainer(gTrainerBattleOpponent_A).items[i];
 			#else
 			if (gTrainers[gTrainerBattleOpponent_A].items[i] != 0)
 			{
@@ -198,9 +198,9 @@ u32 GetAIFlags(void)
 	{
 		if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
 		#ifdef STEVEBELS_TRAINER_TABLE
-			flags = GET_TRAINER(gTrainerBattleOpponent_A).aiFlags | GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).aiFlags;
+			flags = GetTrainer(gTrainerBattleOpponent_A).aiFlags | GetTrainer(VarGet(VAR_SECOND_OPPONENT)).aiFlags;
 		else
-			flags = GET_TRAINER(gTrainerBattleOpponent_A).aiFlags;
+			flags = GetTrainer(gTrainerBattleOpponent_A).aiFlags;
 		#else
 			flags = gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[VarGet(VAR_SECOND_OPPONENT)].aiFlags;
 		else
