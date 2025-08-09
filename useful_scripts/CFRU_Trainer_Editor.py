@@ -968,11 +968,12 @@ class TrainerEditorUI:
         return defines
     
     def load_easy_text_definitions(self):
-        """Carrega definições de texto do arquivo easy_text.h"""
+        """Carrega definições de texto do arquivo easy_text.h, incluindo maiúsculas e minúsculas"""
         text_map = {}
-        char_to_define = {}
+        char_to_define = {' ': '_SPACE'}
+        
         try:
-            with open(self.EASY_TEXT_PATH, 'r', encoding='utf-8') as f:  # Note o self.
+            with open(self.EASY_TEXT_PATH, 'r', encoding='utf-8') as f:
                 for line in f:
                     if '#define _' in line and '0x' in line:
                         parts = line.split()
@@ -980,12 +981,15 @@ class TrainerEditorUI:
                             define = parts[1]
                             value = parts[2]
                             text_map[define] = value
-                            if len(define) == 2 and define[1].isalpha():
-                                char_to_define[define[1].upper()] = define
-                            elif define == '_SPACE':
-                                char_to_define[' '] = define
+                            
+                            # Mapeia caracteres para seus defines
+                            if define.startswith('_') and len(define) == 2:
+                                char = define[1]
+                                if char.isalpha():
+                                    char_to_define[char] = define
         except Exception as e:
             print(f"Error loading easy_text.h: {e}")
+        
         return text_map, char_to_define
     
     def load_trainer_sprites(self):
@@ -1123,15 +1127,20 @@ class TrainerEditorUI:
         return ''.join(normal_text)
 
     def convert_to_easy_text(self, text):
-        """Converte texto normal para o formato easy_text"""
+        """Converte texto normal para o formato easy_text, diferenciando maiúsculas de minúsculas"""
         text_array = []
-        for char in text.upper():
-            if char in self.CHAR_TO_DEFINE:
-                text_array.append(self.CHAR_TO_DEFINE[char])
-            elif char == ' ':
+        for char in text:
+            if char == ' ':
                 text_array.append("_SPACE")
+            elif char.isupper() and f'_{char}' in self.TEXT_DEFINITIONS:
+                text_array.append(f'_{char}')
+            elif char.islower() and f'_{char}' in self.TEXT_DEFINITIONS:
+                text_array.append(f'_{char}')
+            elif char in self.CHAR_TO_DEFINE:
+                text_array.append(self.CHAR_TO_DEFINE[char])
             else:
-                text_array.append("_SPACE")  # Substitui caracteres não mapeados por espaço
+                # Fallback para espaço se o caractere não for encontrado
+                text_array.append("_SPACE")
         
         text_array.append("_END")
         return "{" + ", ".join(text_array) + "}"
@@ -1235,22 +1244,27 @@ class TrainerEditorUI:
             raise
 
     def save_opponents_file(self):
-        """Salva as alterações no arquivo opponents.h"""
+        """Salva as alterações no arquivo opponents.h, inserindo novos defines acima do TRAINERS_COUNT"""
         try:
-            # Cria as novas linhas mantendo a ordem original
-            new_lines = []
+            # Encontra a posição da linha TRAINERS_COUNT
+            trainers_count_index = -1
+            for i, line in enumerate(self.opponents_lines):
+                if "TRAINERS_COUNT" in line:
+                    trainers_count_index = i
+                    break
             
-            for line in self.opponents_lines:
-                # Mantém todas as linhas originais, apenas adiciona novas definições se necessário
-                new_lines.append(line)
-                
-                # Insere as novas definições antes do #endif se existirem
-                if "#endif" in line and self.opponents_lines.index(line) == len(self.opponents_lines) - 1:
-                    # Adiciona todas as novas definições antes do #endif final
-                    for name, trainer_id in self.opponent_name_to_id.items():
-                        # Verifica se já não existe no arquivo
-                        if not any(f"#define {name} " in l for l in self.opponents_lines):
-                            new_lines.insert(len(new_lines) - 1, f"#define {name} {trainer_id}\n")
+            if trainers_count_index == -1:
+                raise ValueError("Could not find TRAINERS_COUNT in opponents.h")
+            
+            # Cria uma cópia das linhas originais
+            new_lines = self.opponents_lines.copy()
+            
+            # Adiciona todas as novas definições antes do TRAINERS_COUNT
+            for name, trainer_id in self.opponent_name_to_id.items():
+                # Verifica se já não existe no arquivo
+                if not any(f"#define {name} " in l for l in self.opponents_lines):
+                    new_line = f"#define {name} {trainer_id}\n"
+                    new_lines.insert(trainers_count_index, new_line)
             
             # Escreve o arquivo
             with open(self.OPPONENTS_PATH, 'w', encoding='utf-8') as f:
