@@ -758,50 +758,58 @@ class TrainerEditorUI:
                                     pokemon['tera_type'] = value
                         
                         # Campos com arrays (.campo = { ... })
-                        elif '.moves = {' in line:
-                            # Movimentos na mesma linha
+                        # Processa moves
+                        if '.moves = {' in line:
+                            moves = []
                             if '{' in line and '}' in line:
                                 moves_part = line.split('{')[1].split('}')[0]
                                 moves = [m.strip() for m in moves_part.split(',') if m.strip()]
-                                pokemon['moves'] = moves
                             else:
-                                # Movimentos em múltiplas linhas
-                                moves = []
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     move_line = self.party_lines[i].strip().strip(',')
                                     if move_line:
                                         moves.append(move_line)
                                     i += 1
-                                pokemon['moves'] = moves
+                            pokemon['moves'] = moves
                         
                         elif '.ivSpread = {' in line:
                             ivs = []
                             if '{' in line and '}' in line:
+                                # Formato em uma linha: .ivSpread = {31, 31, 31, 31, 31, 31},
                                 ivs_part = line.split('{')[1].split('}')[0]
                                 ivs = [iv.strip() for iv in ivs_part.split(',') if iv.strip()]
                             else:
+                                # Formato multi-linha:
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     iv_line = self.party_lines[i].strip().strip(',')
                                     if iv_line:
                                         ivs.append(iv_line)
                                     i += 1
-                            pokemon['ivs'] = ', '.join(ivs)
+                            # Garante que temos exatamente 6 valores
+                            if len(ivs) < 6:
+                                ivs += ['0'] * (6 - len(ivs))
+                            pokemon['ivs'] = ivs[:6]  # Pega apenas os 6 primeiros
                         
                         elif '.evSpread = {' in line:
                             evs = []
                             if '{' in line and '}' in line:
+                                # Formato em uma linha: .evSpread = {5, 5, 5, 5, 5, 5},
                                 evs_part = line.split('{')[1].split('}')[0]
                                 evs = [ev.strip() for ev in evs_part.split(',') if ev.strip()]
                             else:
+                                # Formato multi-linha:
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     ev_line = self.party_lines[i].strip().strip(',')
                                     if ev_line:
                                         evs.append(ev_line)
                                     i += 1
-                            pokemon['evs'] = ', '.join(evs)
+                            # Garante que temos exatamente 6 valores
+                            if len(evs) < 6:
+                                evs += ['0'] * (6 - len(evs))
+                            pokemon['evs'] = evs[:6]  # Pega apenas os 6 primeiros
                         
                         i += 1
                     
@@ -1925,8 +1933,18 @@ class TrainerEditorUI:
             level = pokemon.get('level', '0')
             item = pokemon.get('item', 'ITEM_NONE').replace('ITEM_', '')
             
-            # Adiciona ao treeview
-            self.party_tree.insert('', tk.END, values=(species, level, item))
+            # Prepara os movimentos para exibição
+            moves = []
+            if 'moves' in pokemon:
+                moves = [m.replace('MOVE_', '') for m in pokemon['moves']]
+            
+            # Adiciona ao treeview com os movimentos
+            self.party_tree.insert('', tk.END, values=(
+                species,
+                level,
+                item,
+                *moves[:4]  # Garante no máximo 4 movimentos
+            ))
         
         # Atualiza os campos visíveis
         self.update_party_fields()
@@ -1934,7 +1952,7 @@ class TrainerEditorUI:
         # Se houver Pokémon selecionado, carrega seus detalhes
         if self.party_tree.get_children():
             self.party_tree.selection_set(self.party_tree.get_children()[0])
-            self.edit_pokemon()
+            self.edit_pokemon(party_type)  # Passa o party_type como argumento
     
     def load_ai_flags(self, flags_str):
         """Carrega as flags AI nos checkboxes usando os nomes das flags"""
@@ -2048,11 +2066,19 @@ class TrainerEditorUI:
         party_type = self.party_type_var.get()
         if party_type in [2, 4] and not item:
             item = "NONE"
+
+        # Coleta os movimentos
+        moves = []
+        for combo in self.move_combos:
+            move = combo.get()
+            moves.append(move.upper() if move else "NONE")
         
+        # Adiciona ao treeview com os movimentos
         self.party_tree.insert('', tk.END, values=(
             species.upper(),
             level,
-            item.upper() if item else "NONE"
+            item.upper() if item else "NONE",
+            *moves  # Inclui os 4 movimentos nos valores
         ))
         
         # Limpa os campos após adicionar
@@ -2063,61 +2089,70 @@ class TrainerEditorUI:
         for combo in self.move_combos:
             combo.set('')
     
-    def edit_pokemon(self):
+    def edit_pokemon(self, party_type=None):
         """Edita o Pokémon selecionado"""
+        if party_type is None:
+            party_type = self.party_type_var.get()
+        
         selected = self.party_tree.selection()
         if not selected:
             return
         
         item = self.party_tree.item(selected[0])
         values = item['values']
-        party_type = self.party_type_var.get()
         
         # Carrega dados básicos
         self.poke_species_combo.set(values[0])
         self.poke_level_entry.delete(0, tk.END)
         self.poke_level_entry.insert(0, values[1])
-        self.poke_item_combo.set(values[2] if len(values) > 2 else "NONE")
         
-        # Se estiver editando um Pokémon existente, carrega os dados extras
-        party_name = None
-        if self.current_editing_id:
-            for name, data in self.trainers.items():
-                if data['id'] == self.current_editing_id and 'party_name' in data:
-                    party_name = data['party_name']
-                    break
+        # Carrega item se existir
+        if len(values) > 2:
+            self.poke_item_combo.set(values[2])
+        else:
+            self.poke_item_combo.set('NONE')
         
-        if party_name:
-            party_data = self.parties.get(party_name) or self.new_parties.get(party_name)
-            if party_data:
-                pokemon_index = self.party_tree.index(selected[0])
-                if pokemon_index < len(party_data['pokemons']):
-                    pokemon = party_data['pokemons'][pokemon_index]
-                    
-                    # Carrega movimentos
-                    if party_type in [3, 4] and 'moves' in pokemon:
-                        moves = pokemon['moves']
-                        for i in range(min(4, len(moves))):
-                            self.move_combos[i].set(moves[i].replace('MOVE_', ''))
-                    
-                    # Carrega dados avançados
-                    if party_type == 4:
+        # Carrega movimentos se for um tipo de party que os inclui
+        if party_type in [3, 4]:
+            # Os movimentos estão nas posições 3-6 dos valores
+            for i in range(4):
+                if len(values) > 3 + i and values[3 + i] != 'NONE':
+                    self.move_combos[i].set(values[3 + i])
+                else:
+                    self.move_combos[i].set('')
+        
+        # Carrega dados avançados se for tipo 4
+        if party_type == 4:
+            party_name = None
+            if self.current_editing_id:
+                for name, data in self.trainers.items():
+                    if data['id'] == self.current_editing_id and 'party_name' in data:
+                        party_name = data['party_name']
+                        break
+            
+            if party_name:
+                party_data = self.parties.get(party_name) or self.new_parties.get(party_name)
+                if party_data:
+                    pokemon_index = self.party_tree.index(selected[0])
+                    if pokemon_index < len(party_data['pokemons']):
+                        pokemon = party_data['pokemons'][pokemon_index]
+                        
                         if 'ability' in pokemon:
                             self.ability_combo.set(pokemon['ability'])
                         if 'nature' in pokemon:
                             self.nature_combo.set(pokemon['nature'].replace('NATURE_', ''))
                         if 'ivs' in pokemon:
-                            iv_values = [v.strip() for v in pokemon['ivs'].split(',')]
-                            for i in range(min(6, len(iv_values))):
-                                if i < len(self.iv_entries):
+                            ivs = pokemon['ivs'].split(',') if isinstance(pokemon['ivs'], str) else pokemon['ivs']
+                            for i in range(6):
+                                if i < len(ivs) and i < len(self.iv_entries):
                                     self.iv_entries[i].delete(0, tk.END)
-                                    self.iv_entries[i].insert(0, iv_values[i])
+                                    self.iv_entries[i].insert(0, ivs[i].strip())
                         if 'evs' in pokemon:
-                            ev_values = [v.strip() for v in pokemon['evs'].split(',')]
-                            for i in range(min(6, len(ev_values))):
-                                if i < len(self.ev_entries):
+                            evs = pokemon['evs'].split(',') if isinstance(pokemon['evs'], str) else pokemon['evs']
+                            for i in range(6):
+                                if i < len(evs) and i < len(self.ev_entries):
                                     self.ev_entries[i].delete(0, tk.END)
-                                    self.ev_entries[i].insert(0, ev_values[i])
+                                    self.ev_entries[i].insert(0, evs[i].strip())
                         if 'tera_type' in pokemon:
                             self.tera_combo.set(pokemon['tera_type'])
     
@@ -2133,7 +2168,11 @@ class TrainerEditorUI:
             return
         
         define_name = self.define_name_entry.get()
-        trainer_id = int(self.trainer_id_entry.get())
+        try:
+            trainer_id = int(self.trainer_id_entry.get())
+        except ValueError:
+            messagebox.showerror("Error", "Trainer ID must be a numeric value")
+            return
         
         # Verifica se é uma edição de treinador existente
         is_existing = self.current_editing_id is not None
@@ -2162,10 +2201,18 @@ class TrainerEditorUI:
             if party_type in [2, 4]:
                 pokemon['item'] = f"ITEM_{values[2].upper()}" if len(values) > 2 and values[2] else "ITEM_NONE"
             
-            # Adiciona moves se necessário
+            # Adiciona moves se necessário (valores 3-6 são os movimentos)
             if party_type in [3, 4]:
-                moves = [combo.get() for combo in self.move_combos]
-                pokemon['moves'] = [f"MOVE_{m.upper()}" if m else "MOVE_NONE" for m in moves]
+                moves = []
+                for i in range(3, min(7, len(values))):  # Pega os 4 movimentos (índices 3-6)
+                    move = values[i] if i < len(values) and values[i] != 'NONE' else 'NONE'
+                    moves.append(f"MOVE_{move}")
+                
+                # Garante 4 movimentos
+                while len(moves) < 4:
+                    moves.append("MOVE_NONE")
+                
+                pokemon['moves'] = moves
             
             # Adiciona dados avançados se necessário
             if party_type == 4:
