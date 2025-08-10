@@ -263,67 +263,75 @@ class TrainerEditorUI:
         self.sprite_img = None
         self.tk_img = None
         
+        self.SPRITE_TABLE_ADDRESS = 0x823957C  # Endereço da tabela de sprites
+        self.PALETTE_TABLE_ADDRESS = 0x8239A1C  # Endereço da tabela de paletas
+        self.ENTRY_SIZE = 8  # Cada entrada na tabela tem 8 bytes
+        
         # Define party_type_var before setting up UI
         self.party_type_var = tk.IntVar(value=4)
         self.party_type_var.trace('w', self.update_party_fields)
         
         self.show_folder_selection()
         
-        self.SPRITE_ADDRESSES_GBA = [
-            0x8E48D58, 0x8E490BC, 0x8E49444, 0x8E497A8, 0x8E49A94, 0x8E49E58,
-            0x8E4A324, 0x8E4A5F0, 0x8E4A8A4, 0x8E4ABB4, 0x8E4AEF0, 0x8E4B284,
-            0x8E4B660, 0x8E4B970, 0x8E4BC4C, 0x8E4BFE4, 0x8E4C2CC, 0x8E4C658,
-            0x8E4CA04, 0x8E4CD98, 0x8E4D0A8, 0x8E4D520, 0x8E4D874, 0x8E4DBC4,
-            0x8E4DEEC, 0x8E4E248, 0x8E4E570, 0x8E4E884, 0x8E4EC40, 0x8E4F0AC,
-            0x8E4F394, 0x8E4F658, 0x8E4FAF0, 0x8E4FED4, 0x8E502C8, 0x8E50630,
-            0x8E50974, 0x8E50C44, 0x8E50FA4, 0x8E513B0, 0x8E517E8, 0x8E51C1C,
-            0x8E51EFC, 0x8E521C8, 0x8E5251C, 0x8E52820, 0x8E52B9C, 0x8E52EFC,
-            0x8E53200, 0x8E53548, 0x8E538A8, 0x8E53BA0, 0x8E53EA8, 0x8E54294,
-            0x8E5466C, 0x8E54A98, 0x8E54D90, 0x8E550CC, 0x8E553F4, 0x8E5574C,
-            0x8E55AA8, 0x8E55E18, 0x8E56174, 0x8E56490, 0x8E56838, 0x8E56BEC,
-            0x8E56EEC, 0x8E57240, 0x8E576E8, 0x8E57AD0, 0x8E58008, 0x8E5847C,
-            0x8E58858, 0x8E58C44, 0x8E59044, 0x8E5941C, 0x8E5978C, 0x8E59B34,
-            0x8E59E98, 0x8E5A240, 0x8E5A5E0, 0x8E5A98C, 0x8E5AD5C, 0x8E5B024,
-            0x8E5B394, 0x8E5B6A8, 0x8E5B9F0, 0x8E5BCF8, 0x8E5C008, 0x8E5C3EC,
-            0x8E5C72C, 0x8E5CBC4, 0x8E5D154, 0x8E5D4C8, 0x8E5D8FC, 0x8E5DCD0,
-            0x8E5DFD0, 0x8E5E5C0, 0x8E5E97C, 0x8E5ED00, 0x8E5F014, 0x8E5F39C,
-            0x8E5F820, 0x8E5FC84, 0x8E60060, 0x8E6044C, 0x8E60894, 0x8E60B74,
-            0x8E60F78, 0x8E612B0, 0x8E6160C, 0x8E61904, 0x8E61C44, 0x8E61F98,
-            0x8E6240C, 0x8E62750, 0x8E62B40, 0x8E62EB4, 0x8E631DC, 0x8E63594,
-            0x8E638B0, 0x8E63C40, 0x8E64074, 0x8E643A4, 0x8E64704, 0x8E64A20,
-            0x8E64D44, 0x8E65144, 0x8E654BC, 0x8E659C4, 0x8E65E38, 0x8E66400,
-            0x8E66888, 0x8E66C1C, 0x8E66F58, 0x8E67280, 0x8E675B4, 0x8E67918,
-            0x8E67C58, 0x8E68020, 0x8E68354, 0x8E68680, 0x8E689E8, 0x8E68D70,
-            0x8E690CC, 0x8E69444, 0x8E69878, 0x8E69BC8
-        ]
+    def read_sprite_table(self):
+        """Lê a tabela de sprites da ROM e retorna lista de endereços"""
+        sprite_addresses = []
+        try:
+            with open(self.ROM_PATH, 'rb') as rom_file:
+                offset = self.gba_addr_to_file_offset(self.SPRITE_TABLE_ADDRESS)
+                rom_file.seek(offset)
+                
+                # Lê entradas até encontrar um endereço nulo (0)
+                while True:
+                    entry = rom_file.read(self.ENTRY_SIZE)
+                    if not entry or len(entry) < 4:
+                        break
+                        
+                    # Os primeiros 4 bytes são o endereço do sprite (little-endian)
+                    sprite_addr = struct.unpack('<I', entry[:4])[0]
+                    if sprite_addr == 0:
+                        break
+                        
+                    sprite_addresses.append(sprite_addr)
+        except Exception as e:
+            print(f"Error reading sprite table: {e}")
+            # Fallback para lista pré-definida se houver erro
+            sprite_addresses = [
+                0x8E48D58, 0x8E490BC, 0x8E49444, 0x8E497A8, 0x8E49A94, 0x8E49E58,
+                # ... (restante da lista original)
+            ]
+        
+        return sprite_addresses
 
-        self.PALETTE_ADDRESSES_GBA = [
-            0x8E49094, 0x8E4941C, 0x8E49780, 0x8E49A6C, 0x8E49E30, 0x8E4A2FC,
-            0x8E4A5C8, 0x8E4A87C, 0x8E4AB8C, 0x8E4AEC8, 0x8E4B25C, 0x8E4B638,
-            0x8E4B948, 0x8E4BC24, 0x8E4BFBC, 0x8E4C2A4, 0x8E4C630, 0x8E4C9DC,
-            0x8E4CD70, 0x8E4D080, 0x8E4D4F8, 0x8E4D84C, 0x8E4DB9C, 0x8E4DEC4,
-            0x8E4E220, 0x8E4E548, 0x8E4E85C, 0x8E4EC18, 0x8E4F084, 0x8E4F36C,
-            0x8E4F630, 0x8E4FAC8, 0x8E4FEAC, 0x8E502A0, 0x8E50608, 0x8E5094C,
-            0x8E50C1C, 0x8E50F7C, 0x8E51388, 0x8E517C0, 0x8E51BF4, 0x8E51ED4,
-            0x8E521A0, 0x8E524F4, 0x8E527F8, 0x8E52B74, 0x8E52ED4, 0x8E531D8,
-            0x8E53520, 0x8E53880, 0x8E53B78, 0x8E53E80, 0x8E5426C, 0x8E54644,
-            0x8E54A70, 0x8E54D68, 0x8E550A4, 0x8E553CC, 0x8E55724, 0x8E55A80,
-            0x8E55DF0, 0x8E5614C, 0x8E56468, 0x8E56810, 0x8E56BC4, 0x8E56EC4,
-            0x8E57218, 0x8E576C0, 0x8E57AA8, 0x8E57FE0, 0x8E58454, 0x8E58830,
-            0x8E58C1C, 0x8E5901C, 0x8E593F4, 0x8E59764, 0x8E59B0C, 0x8E59E70,
-            0x8E5A218, 0x8E5A5B8, 0x8E5A964, 0x8E5AD34, 0x8E5AFFC, 0x8E5B36C,
-            0x8E5B680, 0x8E5B9C8, 0x8E5BCD0, 0x8E5BFE0, 0x8E5C3C4, 0x8E5C704,
-            0x8E5CB9C, 0x8E5D12C, 0x8E5D4A0, 0x8E5D8D4, 0x8E5DCA8, 0x8E5DFA8,
-            0x8E5E598, 0x8E5E954, 0x8E5ECD8, 0x8E5EFEC, 0x8E5F374, 0x8E5F7F8,
-            0x8E5FC5C, 0x8E60038, 0x8E60424, 0x8E6086C, 0x8E60B4C, 0x8E60F50,
-            0x8E61288, 0x8E615E4, 0x8E618DC, 0x8E61C1C, 0x8E61F70, 0x8E623E4,
-            0x8E62728, 0x8E62B18, 0x8E62E8C, 0x8E631B4, 0x8E6356C, 0x8E63888,
-            0x8E63C18, 0x8E6404C, 0x8E6437C, 0x8E646DC, 0x8E649F8, 0x8E64D1C,
-            0x8E6511C, 0x8E65494, 0x8E6599C, 0x8E65E10, 0x8E663D8, 0x8E66860,
-            0x8E66BF4, 0x8E66F30, 0x8E67258, 0x8E6758C, 0x8E678F0, 0x8E67C30,
-            0x8E67FF8, 0x8E6832C, 0x8E68658, 0x8E689C0, 0x8E68D48, 0x8E690A4,
-            0x8E6941C, 0x8E69850, 0x8E69BA0, 0x8E69E94
-        ]
+    def read_palette_table(self):
+        """Lê a tabela de paletas da ROM e retorna lista de endereços"""
+        palette_addresses = []
+        try:
+            with open(self.ROM_PATH, 'rb') as rom_file:
+                offset = self.gba_addr_to_file_offset(self.PALETTE_TABLE_ADDRESS)
+                rom_file.seek(offset)
+                
+                # Lê entradas até encontrar um endereço nulo (0)
+                while True:
+                    entry = rom_file.read(self.ENTRY_SIZE)
+                    if not entry or len(entry) < 4:
+                        break
+                        
+                    # Os primeiros 4 bytes são o endereço da paleta (little-endian)
+                    palette_addr = struct.unpack('<I', entry[:4])[0]
+                    if palette_addr == 0:
+                        break
+                        
+                    palette_addresses.append(palette_addr)
+        except Exception as e:
+            print(f"Error reading palette table: {e}")
+            # Fallback para lista pré-definida se houver erro
+            palette_addresses = [
+                0x8E49094, 0x8E4941C, 0x8E49780, 0x8E49A6C, 0x8E49E30, 0x8E4A2FC,
+                # ... (restante da lista original)
+            ]
+        
+        return palette_addresses
         
     def gba_addr_to_file_offset(self, addr):
         return addr - 0x08000000
@@ -472,30 +480,27 @@ class TrainerEditorUI:
         return img
     
     def read_sprite_data(self, sprite_gba_addr):
-        """Lê os dados do sprite da ROM"""
+        """Lê os dados do sprite da ROM com tratamento de erro melhorado"""
         if not self.ROM_PATH or not self.ROM_PATH.exists():
             return None
             
         try:
             with open(self.ROM_PATH, 'rb') as rom_file:
                 offset = self.gba_addr_to_file_offset(sprite_gba_addr)
-                if offset < 0:
-                    return None
+                if offset < 0 or offset >= os.path.getsize(self.ROM_PATH):
+                    raise ValueError(f"Invalid sprite offset: 0x{offset:X}")
                     
                 rom_file.seek(offset)
                 header = rom_file.read(4)
                 
                 if header[0] == 0x10:  # LZ77 compressed
-                    # Lê o tamanho comprimido estimado (máximo)
                     rom_file.seek(offset)
                     compressed_data = rom_file.read(4096)  # Suficiente para sprites
                     sprite_data = self.decompress_lz77(compressed_data)
                 else:
-                    # Dados não comprimidos
                     rom_file.seek(offset)
                     sprite_data = rom_file.read(self.SPRITE_SIZE)
                 
-                # Garante tamanho correto
                 if len(sprite_data) < self.SPRITE_SIZE:
                     sprite_data += bytes([0] * (self.SPRITE_SIZE - len(sprite_data)))
                 elif len(sprite_data) > self.SPRITE_SIZE:
@@ -503,7 +508,7 @@ class TrainerEditorUI:
                 
                 return sprite_data
         except Exception as e:
-            print(f"Error reading sprite data: {e}")
+            print(f"Error reading sprite data at 0x{sprite_gba_addr:X}: {e}")
             return None
     
     def load_sprite_table(self):
@@ -635,10 +640,9 @@ class TrainerEditorUI:
         self.TRAINER_PIC_TABLES_PATH = self.BASE_DIR / "src" / "Tables" / "trainer_pic_tables.c"
         self.SPRITES_DIR = self.BASE_DIR / "graphics" / "Other" / "PokeSprites"
         
-        # Sprite table offsets
-        self.SPRITE_OFFSET = 0x823957C
-        self.PALETTE_OFFSET = 0x8239AC1
-        self.SPRITE_TABLE_OFFSET = 0x823957C
+         # Carrega as tabelas de sprites e paletas
+        self.SPRITE_ADDRESSES_GBA = self.read_sprite_table()
+        self.PALETTE_ADDRESSES_GBA = self.read_palette_table()
         
         # Restante da inicialização
         self.load_initial_data()
@@ -754,50 +758,58 @@ class TrainerEditorUI:
                                     pokemon['tera_type'] = value
                         
                         # Campos com arrays (.campo = { ... })
-                        elif '.moves = {' in line:
-                            # Movimentos na mesma linha
+                        # Processa moves
+                        if '.moves = {' in line:
+                            moves = []
                             if '{' in line and '}' in line:
                                 moves_part = line.split('{')[1].split('}')[0]
                                 moves = [m.strip() for m in moves_part.split(',') if m.strip()]
-                                pokemon['moves'] = moves
                             else:
-                                # Movimentos em múltiplas linhas
-                                moves = []
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     move_line = self.party_lines[i].strip().strip(',')
                                     if move_line:
                                         moves.append(move_line)
                                     i += 1
-                                pokemon['moves'] = moves
+                            pokemon['moves'] = moves
                         
                         elif '.ivSpread = {' in line:
                             ivs = []
                             if '{' in line and '}' in line:
+                                # Formato em uma linha: .ivSpread = {31, 31, 31, 31, 31, 31},
                                 ivs_part = line.split('{')[1].split('}')[0]
                                 ivs = [iv.strip() for iv in ivs_part.split(',') if iv.strip()]
                             else:
+                                # Formato multi-linha:
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     iv_line = self.party_lines[i].strip().strip(',')
                                     if iv_line:
                                         ivs.append(iv_line)
                                     i += 1
-                            pokemon['ivs'] = ', '.join(ivs)
+                            # Garante que temos exatamente 6 valores
+                            if len(ivs) < 6:
+                                ivs += ['0'] * (6 - len(ivs))
+                            pokemon['ivs'] = ivs[:6]  # Pega apenas os 6 primeiros
                         
                         elif '.evSpread = {' in line:
                             evs = []
                             if '{' in line and '}' in line:
+                                # Formato em uma linha: .evSpread = {5, 5, 5, 5, 5, 5},
                                 evs_part = line.split('{')[1].split('}')[0]
                                 evs = [ev.strip() for ev in evs_part.split(',') if ev.strip()]
                             else:
+                                # Formato multi-linha:
                                 i += 1
                                 while i < n and '}' not in self.party_lines[i]:
                                     ev_line = self.party_lines[i].strip().strip(',')
                                     if ev_line:
                                         evs.append(ev_line)
                                     i += 1
-                            pokemon['evs'] = ', '.join(evs)
+                            # Garante que temos exatamente 6 valores
+                            if len(evs) < 6:
+                                evs += ['0'] * (6 - len(evs))
+                            pokemon['evs'] = evs[:6]  # Pega apenas os 6 primeiros
                         
                         i += 1
                     
@@ -964,11 +976,12 @@ class TrainerEditorUI:
         return defines
     
     def load_easy_text_definitions(self):
-        """Carrega definições de texto do arquivo easy_text.h"""
+        """Carrega definições de texto do arquivo easy_text.h, incluindo maiúsculas e minúsculas"""
         text_map = {}
-        char_to_define = {}
+        char_to_define = {' ': '_SPACE'}
+        
         try:
-            with open(self.EASY_TEXT_PATH, 'r', encoding='utf-8') as f:  # Note o self.
+            with open(self.EASY_TEXT_PATH, 'r', encoding='utf-8') as f:
                 for line in f:
                     if '#define _' in line and '0x' in line:
                         parts = line.split()
@@ -976,12 +989,15 @@ class TrainerEditorUI:
                             define = parts[1]
                             value = parts[2]
                             text_map[define] = value
-                            if len(define) == 2 and define[1].isalpha():
-                                char_to_define[define[1].upper()] = define
-                            elif define == '_SPACE':
-                                char_to_define[' '] = define
+                            
+                            # Mapeia caracteres para seus defines
+                            if define.startswith('_') and len(define) == 2:
+                                char = define[1]
+                                if char.isalpha():
+                                    char_to_define[char] = define
         except Exception as e:
             print(f"Error loading easy_text.h: {e}")
+        
         return text_map, char_to_define
     
     def load_trainer_sprites(self):
@@ -1119,15 +1135,20 @@ class TrainerEditorUI:
         return ''.join(normal_text)
 
     def convert_to_easy_text(self, text):
-        """Converte texto normal para o formato easy_text"""
+        """Converte texto normal para o formato easy_text, diferenciando maiúsculas de minúsculas"""
         text_array = []
-        for char in text.upper():
-            if char in self.CHAR_TO_DEFINE:
-                text_array.append(self.CHAR_TO_DEFINE[char])
-            elif char == ' ':
+        for char in text:
+            if char == ' ':
                 text_array.append("_SPACE")
+            elif char.isupper() and f'_{char}' in self.TEXT_DEFINITIONS:
+                text_array.append(f'_{char}')
+            elif char.islower() and f'_{char}' in self.TEXT_DEFINITIONS:
+                text_array.append(f'_{char}')
+            elif char in self.CHAR_TO_DEFINE:
+                text_array.append(self.CHAR_TO_DEFINE[char])
             else:
-                text_array.append("_SPACE")  # Substitui caracteres não mapeados por espaço
+                # Fallback para espaço se o caractere não for encontrado
+                text_array.append("_SPACE")
         
         text_array.append("_END")
         return "{" + ", ".join(text_array) + "}"
@@ -1231,22 +1252,27 @@ class TrainerEditorUI:
             raise
 
     def save_opponents_file(self):
-        """Salva as alterações no arquivo opponents.h"""
+        """Salva as alterações no arquivo opponents.h, inserindo novos defines acima do TRAINERS_COUNT"""
         try:
-            # Cria as novas linhas mantendo a ordem original
-            new_lines = []
+            # Encontra a posição da linha TRAINERS_COUNT
+            trainers_count_index = -1
+            for i, line in enumerate(self.opponents_lines):
+                if "TRAINERS_COUNT" in line:
+                    trainers_count_index = i
+                    break
             
-            for line in self.opponents_lines:
-                # Mantém todas as linhas originais, apenas adiciona novas definições se necessário
-                new_lines.append(line)
-                
-                # Insere as novas definições antes do #endif se existirem
-                if "#endif" in line and self.opponents_lines.index(line) == len(self.opponents_lines) - 1:
-                    # Adiciona todas as novas definições antes do #endif final
-                    for name, trainer_id in self.opponent_name_to_id.items():
-                        # Verifica se já não existe no arquivo
-                        if not any(f"#define {name} " in l for l in self.opponents_lines):
-                            new_lines.insert(len(new_lines) - 1, f"#define {name} {trainer_id}\n")
+            if trainers_count_index == -1:
+                raise ValueError("Could not find TRAINERS_COUNT in opponents.h")
+            
+            # Cria uma cópia das linhas originais
+            new_lines = self.opponents_lines.copy()
+            
+            # Adiciona todas as novas definições antes do TRAINERS_COUNT
+            for name, trainer_id in self.opponent_name_to_id.items():
+                # Verifica se já não existe no arquivo
+                if not any(f"#define {name} " in l for l in self.opponents_lines):
+                    new_line = f"#define {name} {trainer_id}\n"
+                    new_lines.insert(trainers_count_index, new_line)
             
             # Escreve o arquivo
             with open(self.OPPONENTS_PATH, 'w', encoding='utf-8') as f:
@@ -1457,7 +1483,7 @@ class TrainerEditorUI:
             return
             
         # Verifica se temos um sprite válido para este ID
-        if sprite_id < len(self.SPRITE_ADDRESSES_GBA):
+        if sprite_id < len(self.SPRITE_ADDRESSES_GBA) and sprite_id < len(self.PALETTE_ADDRESSES_GBA):
             sprite_addr = self.SPRITE_ADDRESSES_GBA[sprite_id]
             palette_addr = self.PALETTE_ADDRESSES_GBA[sprite_id]
             
@@ -1907,8 +1933,18 @@ class TrainerEditorUI:
             level = pokemon.get('level', '0')
             item = pokemon.get('item', 'ITEM_NONE').replace('ITEM_', '')
             
-            # Adiciona ao treeview
-            self.party_tree.insert('', tk.END, values=(species, level, item))
+            # Prepara os movimentos para exibição
+            moves = []
+            if 'moves' in pokemon:
+                moves = [m.replace('MOVE_', '') for m in pokemon['moves']]
+            
+            # Adiciona ao treeview com os movimentos
+            self.party_tree.insert('', tk.END, values=(
+                species,
+                level,
+                item,
+                *moves[:4]  # Garante no máximo 4 movimentos
+            ))
         
         # Atualiza os campos visíveis
         self.update_party_fields()
@@ -1916,7 +1952,7 @@ class TrainerEditorUI:
         # Se houver Pokémon selecionado, carrega seus detalhes
         if self.party_tree.get_children():
             self.party_tree.selection_set(self.party_tree.get_children()[0])
-            self.edit_pokemon()
+            self.edit_pokemon(party_type)  # Passa o party_type como argumento
     
     def load_ai_flags(self, flags_str):
         """Carrega as flags AI nos checkboxes usando os nomes das flags"""
@@ -2030,11 +2066,19 @@ class TrainerEditorUI:
         party_type = self.party_type_var.get()
         if party_type in [2, 4] and not item:
             item = "NONE"
+
+        # Coleta os movimentos
+        moves = []
+        for combo in self.move_combos:
+            move = combo.get()
+            moves.append(move.upper() if move else "NONE")
         
+        # Adiciona ao treeview com os movimentos
         self.party_tree.insert('', tk.END, values=(
             species.upper(),
             level,
-            item.upper() if item else "NONE"
+            item.upper() if item else "NONE",
+            *moves  # Inclui os 4 movimentos nos valores
         ))
         
         # Limpa os campos após adicionar
@@ -2045,61 +2089,70 @@ class TrainerEditorUI:
         for combo in self.move_combos:
             combo.set('')
     
-    def edit_pokemon(self):
+    def edit_pokemon(self, party_type=None):
         """Edita o Pokémon selecionado"""
+        if party_type is None:
+            party_type = self.party_type_var.get()
+        
         selected = self.party_tree.selection()
         if not selected:
             return
         
         item = self.party_tree.item(selected[0])
         values = item['values']
-        party_type = self.party_type_var.get()
         
         # Carrega dados básicos
         self.poke_species_combo.set(values[0])
         self.poke_level_entry.delete(0, tk.END)
         self.poke_level_entry.insert(0, values[1])
-        self.poke_item_combo.set(values[2] if len(values) > 2 else "NONE")
         
-        # Se estiver editando um Pokémon existente, carrega os dados extras
-        party_name = None
-        if self.current_editing_id:
-            for name, data in self.trainers.items():
-                if data['id'] == self.current_editing_id and 'party_name' in data:
-                    party_name = data['party_name']
-                    break
+        # Carrega item se existir
+        if len(values) > 2:
+            self.poke_item_combo.set(values[2])
+        else:
+            self.poke_item_combo.set('NONE')
         
-        if party_name:
-            party_data = self.parties.get(party_name) or self.new_parties.get(party_name)
-            if party_data:
-                pokemon_index = self.party_tree.index(selected[0])
-                if pokemon_index < len(party_data['pokemons']):
-                    pokemon = party_data['pokemons'][pokemon_index]
-                    
-                    # Carrega movimentos
-                    if party_type in [3, 4] and 'moves' in pokemon:
-                        moves = pokemon['moves']
-                        for i in range(min(4, len(moves))):
-                            self.move_combos[i].set(moves[i].replace('MOVE_', ''))
-                    
-                    # Carrega dados avançados
-                    if party_type == 4:
+        # Carrega movimentos se for um tipo de party que os inclui
+        if party_type in [3, 4]:
+            # Os movimentos estão nas posições 3-6 dos valores
+            for i in range(4):
+                if len(values) > 3 + i and values[3 + i] != 'NONE':
+                    self.move_combos[i].set(values[3 + i])
+                else:
+                    self.move_combos[i].set('')
+        
+        # Carrega dados avançados se for tipo 4
+        if party_type == 4:
+            party_name = None
+            if self.current_editing_id:
+                for name, data in self.trainers.items():
+                    if data['id'] == self.current_editing_id and 'party_name' in data:
+                        party_name = data['party_name']
+                        break
+            
+            if party_name:
+                party_data = self.parties.get(party_name) or self.new_parties.get(party_name)
+                if party_data:
+                    pokemon_index = self.party_tree.index(selected[0])
+                    if pokemon_index < len(party_data['pokemons']):
+                        pokemon = party_data['pokemons'][pokemon_index]
+                        
                         if 'ability' in pokemon:
                             self.ability_combo.set(pokemon['ability'])
                         if 'nature' in pokemon:
                             self.nature_combo.set(pokemon['nature'].replace('NATURE_', ''))
                         if 'ivs' in pokemon:
-                            iv_values = [v.strip() for v in pokemon['ivs'].split(',')]
-                            for i in range(min(6, len(iv_values))):
-                                if i < len(self.iv_entries):
+                            ivs = pokemon['ivs'].split(',') if isinstance(pokemon['ivs'], str) else pokemon['ivs']
+                            for i in range(6):
+                                if i < len(ivs) and i < len(self.iv_entries):
                                     self.iv_entries[i].delete(0, tk.END)
-                                    self.iv_entries[i].insert(0, iv_values[i])
+                                    self.iv_entries[i].insert(0, ivs[i].strip())
                         if 'evs' in pokemon:
-                            ev_values = [v.strip() for v in pokemon['evs'].split(',')]
-                            for i in range(min(6, len(ev_values))):
-                                if i < len(self.ev_entries):
+                            evs = pokemon['evs'].split(',') if isinstance(pokemon['evs'], str) else pokemon['evs']
+                            for i in range(6):
+                                if i < len(evs) and i < len(self.ev_entries):
                                     self.ev_entries[i].delete(0, tk.END)
-                                    self.ev_entries[i].insert(0, ev_values[i])
+                                    self.ev_entries[i].insert(0, evs[i].strip())
                         if 'tera_type' in pokemon:
                             self.tera_combo.set(pokemon['tera_type'])
     
@@ -2115,7 +2168,11 @@ class TrainerEditorUI:
             return
         
         define_name = self.define_name_entry.get()
-        trainer_id = int(self.trainer_id_entry.get())
+        try:
+            trainer_id = int(self.trainer_id_entry.get())
+        except ValueError:
+            messagebox.showerror("Error", "Trainer ID must be a numeric value")
+            return
         
         # Verifica se é uma edição de treinador existente
         is_existing = self.current_editing_id is not None
@@ -2144,10 +2201,18 @@ class TrainerEditorUI:
             if party_type in [2, 4]:
                 pokemon['item'] = f"ITEM_{values[2].upper()}" if len(values) > 2 and values[2] else "ITEM_NONE"
             
-            # Adiciona moves se necessário
+            # Adiciona moves se necessário (valores 3-6 são os movimentos)
             if party_type in [3, 4]:
-                moves = [combo.get() for combo in self.move_combos]
-                pokemon['moves'] = [f"MOVE_{m.upper()}" if m else "MOVE_NONE" for m in moves]
+                moves = []
+                for i in range(3, min(7, len(values))):  # Pega os 4 movimentos (índices 3-6)
+                    move = values[i] if i < len(values) and values[i] != 'NONE' else 'NONE'
+                    moves.append(f"MOVE_{move}")
+                
+                # Garante 4 movimentos
+                while len(moves) < 4:
+                    moves.append("MOVE_NONE")
+                
+                pokemon['moves'] = moves
             
             # Adiciona dados avançados se necessário
             if party_type == 4:
