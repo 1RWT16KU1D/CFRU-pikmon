@@ -2764,7 +2764,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_C, _l, _e, _v, _e, _r, _SPACE, _W, _i, _n, _g, _SPACE, _END, 0xDC},
+		.name = {_C, _l, _e, _v, _e, _r, _SPACE, _W, _i, _n, _g, _END},
 		.itemId = ITEM_CLEVER_WING,
 		.price = 300,
 		.holdEffect = 0,
@@ -2780,7 +2780,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_S, _w, _i, _f, _t, _SPACE, _W, _i, _n, _g, _SPACE, _SPACE, _END, 0xD9},
+		.name = {_S, _w, _i, _f, _t, _SPACE, _W, _i, _n, _g, _END},
 		.itemId = ITEM_SWIFT_WING,
 		.price = 300,
 		.holdEffect = 0,
@@ -6156,7 +6156,7 @@ const struct Item gItemData[] =
         .secondaryId = 1
 	},
 	{
-		.name = {_PO, _KE, _BL, _OC, _OK, _SPACE, _C, _a, _s, _e, _END},
+		.name = {_P, _o, _k, _e, _b, _l, _o, _c, _k, _SPACE, _C, _a, _s, _END},
 		.itemId = ITEM_POKEBLOCK_CASE,
 		.price = 0,
 		.holdEffect = 0,
@@ -14124,7 +14124,7 @@ const struct Item gItemData[] =
  		.importance = 1,
  		.unk19 = 0,
  		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
- 		.type = ITEM_USE_BAG_MENU,  // Only usable in the overworld
+ 		.type = ITEM_USE_FIELD,  // Only usable in the overworld
  		.fieldUseFunc = FieldUseFunc_EVIV,  // Define field behavior
  		.battleUsage = 0,  // Cannot be used in battle
  		.battleUseFunc = NULL,
