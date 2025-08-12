@@ -2323,27 +2323,30 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				&& gBankAttacker != bank
 				&& !BATTLER_ALIVE(bank))
 				{
-					// Try Sweet Nectar first
-					if (SpeciesHasSweetNectar(SPECIES(bank))
+					const bool8 hasSweet = SpeciesHasSweetNectar(SPECIES(bank));
+					const bool8 canNectarHeal =
+						hasSweet
 					&& IS_DOUBLE_BATTLE
 					&& BATTLER_ALIVE(PARTNER(bank))
 					&& !BATTLER_MAX_HP(PARTNER(bank))
-				    && !IsHealBlocked(PARTNER(bank)))
+					&& !IsHealBlocked(PARTNER(bank));
+
+					// Prefer Sweet Nectar if it can actually heal
+					if (canNectarHeal)
 					{
 						gEffectBank = PARTNER(bank);
-						gBattleScripting.bank = bank;
-						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
-						gBattleMoveDamage *= -1;
+						gBattleScripting.bank = bank; // fainted mon for popup
+						gBattleMoveDamage = -MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
 						BattleScriptPushCursor();
 						gBattlescriptCurrInstr = BattleScript_SweetNectarActivates;
 						effect++;
 					}
-					// Otherwise fall back to Aftermath
+					// Aftermath
 					else if (BATTLER_ALIVE(gBankAttacker)
 						&& ABILITY(gBankAttacker) != ABILITY_MAGICGUARD
 						&& CheckContact(move, gBankAttacker, bank)
-						&& !ABILITY_ON_FIELD(ABILITY_DAMP)
-						&& !SpeciesHasSweetNectar(SPECIES(bank)))
+						&& !ABILITY_ON_FIELD(ABILITY_DAMP
+						&& !hasSweet))
 					{
 						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gBankAttacker) / 4);
 						BattleScriptPushCursor();
@@ -2352,6 +2355,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					}
 				}
 				break;
+
 
 			case ABILITY_BERSERK:
 				if (MOVE_HAD_EFFECT
