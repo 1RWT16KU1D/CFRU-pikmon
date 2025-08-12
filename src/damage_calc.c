@@ -4171,6 +4171,8 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 		//1.5x Boost
 			if (gSpecialMoveFlags[move].gSlicingMoves && SpeciesHasSharpness(SPECIES(bankAtk)))
 				power = (power * 15) / 10;
+			else if (gSpecialMoveFlags[move].gWindMoves && SpeciesHasWindForce(SPECIES(bankAtk)))
+				power = (power * 15) / 10;
 			else if (gSpecialMoveFlags[move].gBitingMoves)
 				power = (power * 15) / 10;
 			break;

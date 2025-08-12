@@ -694,3 +694,6 @@ Increases healing from draining moves.
 
 #org @gText_AbilityDescription_BigMoney
 Doubles the money earned after battle.
+
+#org @gText_AbilityDescription_WindForce
+Powers up wind moves.

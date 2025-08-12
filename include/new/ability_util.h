@@ -95,3 +95,4 @@ bool8 SpeciesHasZerotoHero(u16 species);
 bool8 SpeciesHasSweetNectar(u16 species); // Heal partner by 50% on fainting
 bool8 SpeciesHasSucker(u16 species); // Big Root but as an ability
 bool8 SpeciesHasBigMoney(u16 species); // Doubles the money earned from battles
+bool8 SpeciesHasWindForce(u16 species); // Boosts the power of Wind-type moves by 50%

@@ -135,6 +135,8 @@ extern const u8 gText_AbilityName_Sucker[];
 extern const u8 gText_AbilityDescription_Sucker[];
 extern const u8 gText_AbilityName_BigMoney[];
 extern const u8 gText_AbilityDescription_BigMoney[];
+extern const u8 gText_AbilityName_WindForce[];
+extern const u8 gText_AbilityDescription_WindForce[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -508,6 +510,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_STRONGJAW:
 			if (SpeciesHasSharpness(species))
 				return gText_AbilityName_Sharpness;
+			else if (SpeciesHasWindForce(species))
+				return gText_AbilityName_WindForce;
 			break;
 		case ABILITY_INTIMIDATE:
 			if (SpeciesHasSuperSweetSyrup(species))
@@ -680,6 +684,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_STRONGJAW:
 			if (SpeciesHasSharpness(species))
 				return gText_AbilityDescription_Sharpness;
+			else if (SpeciesHasWindForce(species))
+				return gText_AbilityDescription_WindForce;
 			break;
 		case ABILITY_HUGEPOWER:
 			if (SpeciesHasSupremeOverlord(species))
@@ -1595,6 +1601,15 @@ bool8 SpeciesHasBigMoney(unusedArg u16 species)
 {
 	#ifdef SPECIES_MEOWTH
 	return species == SPECIES_MEOWTH;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasWindForce(unusedArg u16 species)
+{
+	#ifdef SPECIES_TORNADUS
+	return species == SPECIES_TORNADUS;
 	#else
 	return FALSE;
 	#endif
