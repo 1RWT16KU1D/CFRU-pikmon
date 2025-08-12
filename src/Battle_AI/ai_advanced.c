@@ -943,6 +943,10 @@ u16 GetAmountToRecoverBy(u8 bankAtk, u8 bankDef, u16 move)
 
 				if (ITEM_EFFECT(bankAtk) == ITEM_EFFECT_BIG_ROOT)
 					amountToRecover = (13 * predictedDmg) / 10;
+				
+				if (ABILITY(bankAtk) == ABILITY_SUCKER
+				&& SpeciesHasSucker(SPECIES(bankAtk)))
+					amountToRecover = (13 * predictedDmg) / 10;
 			}
 			break;
 
@@ -964,12 +968,20 @@ u16 GetAmountToRecoverBy(u8 bankAtk, u8 bankDef, u16 move)
 				u16 hp = MathMax(1, maxHp / 16);
 				if (itemEffect == ITEM_EFFECT_BIG_ROOT)
 					amountToRecover += (130 * hp) / 100;
+				
+				if (ability == ABILITY_SUCKER
+				&& SpeciesHasSucker(SPECIES(bankAtk)))
+					amountToRecover += (130 * hp) / 100;
 			}
 
 			if (gStatuses3[bankAtk] & STATUS3_AQUA_RING)
 			{
 				u16 hp = MathMax(1, maxHp / 16);
 				if (itemEffect == ITEM_EFFECT_BIG_ROOT)
+					amountToRecover += (130 * hp) / 100;
+
+				if (ability == ABILITY_SUCKER
+				&& SpeciesHasSucker(SPECIES(bankAtk)))
 					amountToRecover += (130 * hp) / 100;
 			}
 

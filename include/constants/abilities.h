@@ -121,7 +121,7 @@
 #define ABILITY_BULLETPROOF 0x74
 #define ABILITY_GALEWINGS 0x75
 #define ABILITY_MOXIE 0x76 //Also Grim Neigh
-#define ABILITY_AFTERMATH 0x77
+#define ABILITY_AFTERMATH 0x77 // Also Sweet Nectar
 #define ABILITY_CURSEDBODY 0x78
 #define ABILITY_GOOEY 0x79 //Also Tangling Hair
 #define ABILITY_MUMMY 0x7A
@@ -299,3 +299,4 @@
 
 // New abilities for PikMon
 #define ABILITY_SWEETNECTAR ABILITY_AFTERMATH // Heal partner by 50% on fainting. Used Aftermath as an index because both requires the user to faint.
+#define ABILITY_SUCKER ABILITY_FRIENDGUARD // Big Root but as an ability

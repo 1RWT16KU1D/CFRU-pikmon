@@ -591,6 +591,11 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 					gBattleMoveDamage = GetBaseMaxHP(gActiveBattler) / 16;
 					if (ITEM_EFFECT(gActiveBattler) == ITEM_EFFECT_BIG_ROOT)
 						gBattleMoveDamage = (gBattleMoveDamage * 130) / 100;
+
+					if (ABILITY(gActiveBattler) == ABILITY_SUCKER
+					&& SpeciesHasSucker(SPECIES(gActiveBattler)))
+						gBattleMoveDamage = (gBattleMoveDamage * 130) / 100;
+
 					if (gBattleMoveDamage == 0)
 						gBattleMoveDamage = 1;
 
@@ -609,6 +614,11 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 					gBattleMoveDamage = GetBaseMaxHP(gActiveBattler) / 16;
 					if (ITEM_EFFECT(gActiveBattler) == ITEM_EFFECT_BIG_ROOT)
 						gBattleMoveDamage = (gBattleMoveDamage * 13) / 10;
+					
+					if (ABILITY(gActiveBattler) == ABILITY_SUCKER
+					&& SpeciesHasSucker(SPECIES(gActiveBattler)))
+						gBattleMoveDamage = (gBattleMoveDamage * 13) / 10;
+
 					if (gBattleMoveDamage == 0)
 						gBattleMoveDamage = 1;
 

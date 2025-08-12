@@ -2046,7 +2046,9 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			break;
 
 		case EFFECT_INGRAIN: //+ Aqua Ring
-			if (data->atkItemEffect == ITEM_EFFECT_BIG_ROOT)
+			if (data->atkItemEffect == ITEM_EFFECT_BIG_ROOT
+			   || (data->atkAbility == ABILITY_SUCKER
+				&& SpeciesHasSucker(SPECIES(bankAtk))))
 				INCREASE_STATUS_VIABILITY(2);
 			else
 				INCREASE_STATUS_VIABILITY(1);

@@ -2877,6 +2877,10 @@ void atk88_negativedamage(void) {
 
 	if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_BIG_ROOT)
 		gBattleMoveDamage = (13 * gBattleMoveDamage) / 10;
+	
+	if (ABILITY(gBankAttacker) == ABILITY_SUCKER
+	&& SpeciesHasSucker(SPECIES(gActiveBattler)))
+		gBattleMoveDamage = (13 * gBattleMoveDamage) / 10;
 
 	gBattleMoveDamage *= -1;
 

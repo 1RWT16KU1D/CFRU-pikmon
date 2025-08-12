@@ -131,6 +131,8 @@ extern const u8 gText_AbilityDescription_ZerotoHero[];
 // PikMon Custom Abilities
 extern const u8 gText_AbilityName_SweetNectar[];
 extern const u8 gText_AbilityDescription_SweetNectar[];
+extern const u8 gText_AbilityName_Sucker[];
+extern const u8 gText_AbilityDescription_Sucker[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -551,6 +553,10 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if (SpeciesHasSweetNectar(species))
 				return gText_AbilityName_SweetNectar;
 			break;
+		case ABILITY_FRIENDGUARD:
+			if (SpeciesHasSucker(species))
+				return gText_AbilityName_Sucker;
+			break;
 	}
 
 	return NULL;
@@ -717,6 +723,9 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasSweetNectar(species))
 				return gText_AbilityDescription_SweetNectar;
 			break;
+		case ABILITY_FRIENDGUARD:
+			if (SpeciesHasSucker(species))
+				return gText_AbilityDescription_Sucker;
 	}
 
 	return NULL;
@@ -1559,5 +1568,12 @@ bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 	return species == SPECIES_IVYSAUR || species == SPECIES_VENUSAUR;
 	#else
 	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasSucker(unusedArg u16 species)
+{
+	#ifdef SPECIES_BULBASAUR
+	return species == SPECIES_BULBASAUR;
 	#endif
 }

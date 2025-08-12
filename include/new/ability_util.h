@@ -90,4 +90,7 @@ bool8 SpeciesHasWindPower(u16 species);
 bool8 AngerShellStatsCheck(u8 bank);
 bool8 SpeciesHasWindRider(u16 species);
 bool8 SpeciesHasZerotoHero(u16 species);
-bool8 SpeciesHasSweetNectar(u16 species);
+
+// New PikMon Abilities
+bool8 SpeciesHasSweetNectar(u16 species); // Heal partner by 50% on fainting
+bool8 SpeciesHasSucker(u16 species); // Big Root but as an ability

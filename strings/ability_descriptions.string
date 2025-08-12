@@ -688,3 +688,6 @@ Change Hero form when switch out.
 
 #org @gText_AbilityDescription_SweetNectar
 Restores partner's HP on fainting.
+
+#org @gText_AbilityDescription_Sucker
+Increases healing from draining moves.

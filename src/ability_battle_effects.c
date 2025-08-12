@@ -2328,6 +2328,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
                     && !BATTLER_MAX_HP(PARTNER(bank)))
                     {
                             gEffectBank = PARTNER(bank);
+							gBattleScripting.bank = bank;
                             gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
                             gBattleMoveDamage *= -1; // Negative damage for healing
                             BattleScriptPushCursor();

@@ -3344,7 +3344,8 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 	}
 
 	//Second Target Partner Ability Checks
-	if (data->defPartnerAbility == ABILITY_FRIENDGUARD)
+	if (data->defPartnerAbility == ABILITY_FRIENDGUARD
+		&& !SpeciesHasSucker(PARTNER(data->bankDef)))
 		damage = (damage * 75) / 100;
 
 	//Second Target Item Checks
