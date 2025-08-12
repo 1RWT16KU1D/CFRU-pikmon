@@ -97,3 +97,4 @@ bool8 SpeciesHasSucker(u16 species); // Big Root but as an ability
 bool8 SpeciesHasBigMoney(u16 species); // Doubles the money earned from battles
 bool8 SpeciesHasWindForce(u16 species); // Boosts the power of Wind-type moves by 50%
 bool8 SpeciesHasFrostBody(u16 species); // May cause frostbite on contact
+bool8 SpeciesHasFoolsGold(u16 species); // Disguise clone with custom bust text

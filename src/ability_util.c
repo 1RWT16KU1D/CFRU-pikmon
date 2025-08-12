@@ -139,6 +139,8 @@ extern const u8 gText_AbilityName_WindForce[];
 extern const u8 gText_AbilityDescription_WindForce[];
 extern const u8 gText_AbilityName_FrostBody[];
 extern const u8 gText_AbilityDescription_FrostBody[];
+extern const u8 gText_AbilityName_FoolsGold[];
+extern const u8 gText_AbilityDescription_FoolsGold[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -575,6 +577,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if (SpeciesHasFrostBody(species))
 				return gText_AbilityName_FrostBody;
 			break;
+		case ABILITY_DISGUISE:
+			if (SpeciesHasFoolsGold(species))
+				return gText_AbilityName_FoolsGold;
 	}
 	return NULL;
 }
@@ -756,6 +761,9 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasFrostBody(species))
 				return gText_AbilityDescription_FrostBody;
 			break;
+		case ABILITY_DISGUISE:
+			if (SpeciesHasFoolsGold(species))
+				return gText_AbilityDescription_FoolsGold;
 	}
 
 	return NULL;
@@ -1087,6 +1095,9 @@ bool8 IsAffectedByDisguse(unusedArg u8 defAbility, unusedArg u16 defSpecies, unu
 	if (defAbility == ABILITY_ICEFACE && defSpecies == SPECIES_EISCUE && moveSplit == SPLIT_PHYSICAL)
 		return TRUE;
 	#endif
+
+	if (defAbility == ABILITY_FOOLSGOLD && SpeciesHasFoolsGold(defSpecies))
+		return TRUE;
 
 	return FALSE;
 }
@@ -1630,6 +1641,15 @@ bool8 SpeciesHasFrostBody(unusedArg u16 species)
 {
 	#ifdef SPECIES_CRYOGONAL
 	return species == SPECIES_CRYOGONAL;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasFoolsGold(unusedArg u16 species)
+{
+	#ifdef SPECIES_PERRSERKER
+	return species == SPECIES_PERRSERKER;
 	#else
 	return FALSE;
 	#endif

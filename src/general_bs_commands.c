@@ -681,6 +681,7 @@ void atk0C_datahpupdate(void)
 	if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_NON_ATTACK_DMG))
 	{
 		gActiveBattler = GetBankForBattleScript(gBattlescriptCurrInstr[1]);
+		bool8 hasFoolsGold = SpeciesHasFoolsGold(SPECIES(gActiveBattler));
 
 		//If Substitute Up
 		if (gBattleMons[gActiveBattler].status2 & STATUS2_SUBSTITUTE
@@ -715,7 +716,7 @@ void atk0C_datahpupdate(void)
 		}
 		#ifdef SPECIES_MIMIKYU
 		else if (ABILITY(gActiveBattler) == ABILITY_DISGUISE //Disguise Protected
-		&& SPECIES(gActiveBattler) == SPECIES_MIMIKYU
+		&& (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold) // Mimikyu or Fools Gold
 		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
 		&& !IS_TRANSFORMED(gActiveBattler))
 		{
@@ -743,10 +744,10 @@ void atk0C_datahpupdate(void)
 			}
 
 			gBattleScripting.bank = gActiveBattler;
-			DoFormChange(gActiveBattler, SPECIES_MIMIKYU_BUSTED, TRUE, FALSE, FALSE);
+			hasFoolsGold ? DoFormChange(gActiveBattler, SPECIES_PERSIAN, TRUE, FALSE, FALSE) :DoFormChange(gActiveBattler, SPECIES_MIMIKYU_BUSTED, TRUE, FALSE, FALSE);
 			gBattlescriptCurrInstr += 2;
 			BattleScriptPushCursor();
-			gBattlescriptCurrInstr = BattleScript_DisguiseTransform;
+			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldTransform : BattleScript_DisguiseTransform;
 			return;
 		}
 		#endif

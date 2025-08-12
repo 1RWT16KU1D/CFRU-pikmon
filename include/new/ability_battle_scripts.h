@@ -173,3 +173,4 @@ extern const u8 BattleScript_ToxicDebrisFailure[];
 
 // New PikMon Abilities
 extern const u8 BattleScript_SweetNectarActivates[];
+extern const u8 BattleScript_FoolsGoldTransform[];
