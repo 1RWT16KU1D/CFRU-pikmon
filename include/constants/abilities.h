@@ -296,3 +296,6 @@
 #define ABILITY_WINDPOWER ABILITY_BERSERK
 #define ABILITY_WINDRIDER ABILITY_ANGERPOINT
 #define ABILITY_ZEROTOHERO ABILITY_TORRENT
+
+// New abilities for PikMon
+#define ABILITY_SWEETNECTAR ABILITY_AFTERMATH // Heal partner by 50% on fainting. Used Aftermath as an index because both requires the user to faint.

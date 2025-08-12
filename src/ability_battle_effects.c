@@ -2315,20 +2315,33 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				}
 				break;
 
+			// Will apply for Sweet Nectar as well
 			case ABILITY_AFTERMATH:
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)
-				&& BATTLER_ALIVE(gBankAttacker)
 				&& gBankAttacker != bank
-				&& ABILITY(gBankAttacker) != ABILITY_MAGICGUARD
-				&& CheckContact(move, gBankAttacker, bank)
-				&& !BATTLER_ALIVE(bank)
-				&& !ABILITY_ON_FIELD(ABILITY_DAMP))
+				&& !BATTLER_ALIVE(bank))
 				{
-					gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gBankAttacker) / 4);
-					BattleScriptPushCursor();
-					gBattlescriptCurrInstr = BattleScript_RoughSkinActivates;
-					effect++;
+					if (SpeciesHasSweetNectar(SPECIES(bank))
+					&& BATTLER_MAX_HP(PARTNER(bank)))
+					{
+						gEffectBank = PARTNER(bank);
+						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
+						gBattleMoveDamage *= -1; // Negative damage for healing
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_SweetNectarActivates;
+						effect++;
+					}
+					else if (BATTLER_ALIVE(gBankAttacker)
+					&& ABILITY(gBankAttacker) != ABILITY_MAGICGUARD
+					&& CheckContact(move, gBankAttacker, bank)
+					&& !ABILITY_ON_FIELD(ABILITY_DAMP))
+					{
+						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gBankAttacker) / 4);
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_RoughSkinActivates;
+						effect++;
+					}
 				}
 				break;
 

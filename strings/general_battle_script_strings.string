@@ -531,3 +531,7 @@ Being hit by [CURRENT_MOVE]\ncharged [SCRIPTING_BANK] with power.
 
 #org @gText_ToxicDebrisFailed
 [SCRIPTING_BANK] tried to set\nToxic Spikes, but failed.
+
+// New PikMon Abilities
+#org @gText_SweetNectarHeal
+[SCRIPTING_BANK] healed\n[EFFECT_BANK]!

@@ -128,6 +128,10 @@ extern const u8 gText_AbilityDescription_WindRider[];
 extern const u8 gText_AbilityName_ZerotoHero[];
 extern const u8 gText_AbilityDescription_ZerotoHero[];
 
+// PikMon Custom Abilities
+extern const u8 gText_AbilityName_SweetNectar[];
+extern const u8 gText_AbilityDescription_SweetNectar[];
+
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
 	u16 dexNum = SpeciesToNationalPokedexNum(species);
@@ -542,6 +546,10 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_TORRENT:
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityName_ZerotoHero;
+			break;
+		case ABILITY_AFTERMATH:
+			if (SpeciesHasSweetNectar(species))
+				return gText_AbilityName_SweetNectar;
 			break;
 	}
 
@@ -1536,6 +1544,15 @@ bool8 SpeciesHasZerotoHero(unusedArg u16 species) //Custom Unbound Ability
 {
 	#if (defined SPECIES_PALAFIN && defined SPECIES_PALAFIN_HERO)
 	return species == SPECIES_PALAFIN || species == SPECIES_PALAFIN_HERO;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasSweetNectar(unusedArg u16 species)
+{
+	#if (defined SPECIES_IVYSAUR && defined SPECIES_VENUSAUR)
+	return species == SPECIES_IVYSAUR || species == SPECIES_VENUSAUR;
 	#else
 	return FALSE;
 	#endif

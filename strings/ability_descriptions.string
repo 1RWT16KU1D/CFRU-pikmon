@@ -685,3 +685,6 @@ Boost Atk if hits by Wind Moves.
 
 #org @gText_AbilityDescription_ZerotoHero
 Change Hero form when switch out.
+
+#org @gText_AbilityDescription_SweetNectar
+Restores partner's HP on fainting.

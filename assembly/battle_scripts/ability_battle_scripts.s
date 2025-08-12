@@ -121,6 +121,9 @@ ability_battle_scripts.s
 .global BattleScript_ToxicDebrisActivates
 .global BattleScript_ToxicDebrisFailure
 
+@ New PikMon Abilities
+.global BattleScript_SweetNectarActivates
+
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 BattleScript_OverworldWeatherStarts:
@@ -1620,6 +1623,19 @@ BattleScript_ToxicDebrisFailure:
 	printstring 0x184
 	call BattleScript_AbilityPopUpRevert
 	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+BattleScript_SweetNectarActivates:
+	call BattleScript_AbilityPopUp
+	playanimation BANK_EFFECT ANIM_HEALING_SPARKLES 0x0
+	orword HIT_MARKER HITMARKER_IGNORE_SUBSTITUTE
+	graphicalhpupdate BANK_EFFECT
+	datahpupdate BANK_EFFECT
+	setword BATTLE_STRING_LOADER gText_SweetNectarHeal
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	call BattleScript_AbilityPopUpRevert
+	end3
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

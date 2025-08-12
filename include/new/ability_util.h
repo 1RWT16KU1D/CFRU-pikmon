@@ -90,3 +90,4 @@ bool8 SpeciesHasWindPower(u16 species);
 bool8 AngerShellStatsCheck(u8 bank);
 bool8 SpeciesHasWindRider(u16 species);
 bool8 SpeciesHasZerotoHero(u16 species);
+bool8 SpeciesHasSweetNectar(u16 species);

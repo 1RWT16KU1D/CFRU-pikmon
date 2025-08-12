@@ -10834,8 +10834,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab1[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab2[] = {
     {
         .lvl = 5,
-        .species = SPECIES_BULBASAUR,
+        .species = SPECIES_IVYSAUR,
     },
+    {
+        .lvl = 5,
+        .species = SPECIES_VENUSAUR,
+    }
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab3[] = {

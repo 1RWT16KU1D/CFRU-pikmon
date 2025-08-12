@@ -170,3 +170,6 @@ extern const u8 BattleScript_MoveEffectConfusion[];
 extern const u8 BattleScript_SetPuppetConfusion[];
 extern const u8 BattleScript_ToxicDebrisActivates[];
 extern const u8 BattleScript_ToxicDebrisFailure[];
+
+// New PikMon Abilities
+extern const u8 BattleScript_SweetNectarActivates[];

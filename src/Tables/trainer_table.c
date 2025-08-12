@@ -75,8 +75,8 @@ const struct Trainer gTrainersStevebel[] = {
 	    .trainerPic = TRAINER_PIC_BLUE,
 	    .trainerName = { _T, _e, _r, _r, _y, _END },
 	    .items = {},
-	    .doubleBattle = FALSE,
-	    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,  // Flags: 0x3
+	    .doubleBattle = TRUE,
+	    .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,  // Flags: 0x3
 	    .partySize = NELEMS(sParty_RivalStarterLab2),
 	    .party = {.NoItemDefaultMoves = sParty_RivalStarterLab2}
 	},
