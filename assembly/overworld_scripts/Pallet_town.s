@@ -26,6 +26,7 @@ EventScript_Pallet_FatGuy:
     setvar 0x800A 31
     setvar 0x800B 31
     givepokemon SPECIES_PERRSERKER 10 0 0 4 0
+    givepokemon SPECIES_MIMIKYU 10 0 0 0 0
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL

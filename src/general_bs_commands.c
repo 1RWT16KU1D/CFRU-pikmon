@@ -597,21 +597,21 @@ static void DoublesHPBarReduction(void)
 void atk0B_healthbarupdate(void)
 {
 	u8 ability;
-	u8 hasFoolsGold = SpeciesHasFoolsGold(SPECIES(gActiveBattler));
 
 	if (gBattleExecBuffer) return;
 
 	if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_NON_ATTACK_DMG))
 	{
-		gActiveBattler = GetBankForBattleScript(gBattlescriptCurrInstr[1]);
-		ability = ABILITY(gActiveBattler);
+        gActiveBattler = GetBankForBattleScript(gBattlescriptCurrInstr[1]);
+        ability = ABILITY(gActiveBattler);
+        bool8 hasFoolsGold = SpeciesHasFoolsGold(SPECIES(gActiveBattler));
 
-		if (IS_BEHIND_SUBSTITUTE(gActiveBattler)
-		&& gDisableStructs[gActiveBattler].substituteHP != 0
-		&& !(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG))
-		&& !gNewBS->bypassSubstitute)
-		{
-			PrepareStringBattle(STRINGID_SUBSTITUTEDAMAGED, gActiveBattler);
+        if (IS_BEHIND_SUBSTITUTE(gActiveBattler)
+        && gDisableStructs[gActiveBattler].substituteHP != 0
+        && !(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG))
+        && !gNewBS->bypassSubstitute)
+        {
+            PrepareStringBattle(STRINGID_SUBSTITUTEDAMAGED, gActiveBattler);
 			if (IsDoubleSpreadMove())
 				DoublesHPBarReduction();
 		}
