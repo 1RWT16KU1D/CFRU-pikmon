@@ -5343,7 +5343,7 @@ void atkE5_pickupitemcalculation(void)
 		switch (GetMonAbility(mon))
 		{
 			case ABILITY_PICKUP:
-				chance = 10; // ~10% chance of pickup to activate
+				chance = SpeciesHasBigMoney(species) ? 0 : 10; // ~10% chance of pickup to activate
 				item = ChoosePickupItem(level);
 				break;
 			case ABILITY_HONEYGATHER:

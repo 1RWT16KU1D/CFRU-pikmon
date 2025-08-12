@@ -1665,7 +1665,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				case ABILITY_PICKUP: ;
 					u8 itemBank = GetTopOfPickupStackNotIncludingBank(bank);
 
-					if (itemBank != 0xFF && !SpeciesHasBigMoney(SPECIES(bank)))
+					if (itemBank != 0xFF)
 					{
 						RemoveBankFromPickupStack(itemBank);
 						if (CONSUMED_ITEMS(itemBank)) //This shouldn't be empty but just in case
