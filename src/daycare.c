@@ -12,6 +12,7 @@
 #include "../include/constants/pokemon.h"
 #include "../include/constants/pokedex.h"
 
+#include "../include/new/ability_util.h"
 #include "../include/new/build_pokemon.h"
 #include "../include/new/catching.h"
 #include "../include/new/daycare.h"
@@ -901,7 +902,7 @@ static u8 GetEggStepsToSubtract(void)
 		{
 			u8 ability = GetMonAbility(&gPlayerParty[i]);
 
-			if (ability == ABILITY_MAGMAARMOR || ability == ABILITY_FLAMEBODY || ability == ABILITY_STEAMENGINE)
+			if (ability == ABILITY_MAGMAARMOR || (ability == ABILITY_FLAMEBODY && !SpeciesHasFrostBody(species)) || ability == ABILITY_STEAMENGINE)
 			{
 				steps = 2;
 				break;

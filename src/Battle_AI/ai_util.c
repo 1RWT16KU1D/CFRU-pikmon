@@ -3048,7 +3048,7 @@ bool8 BadIdeaToMakeContactWith(u8 bankAtk, u8 bankDef)
 			badIdea = CanBeParalyzed(bankAtk, bankDef, TRUE);
 			break;
 		case ABILITY_FLAMEBODY:
-			badIdea = CanBeBurned(bankAtk, bankDef, TRUE);
+			badIdea = SpeciesHasFrostBody(SPECIES(bankDef)) ? CanBeFrozen(bankAtk, bankDef, TRUE) : CanBeBurned(bankAtk, bankDef, TRUE);
 			break;
 		case ABILITY_CUTECHARM:
 			badIdea = CanBeInfatuated(bankAtk, bankDef);

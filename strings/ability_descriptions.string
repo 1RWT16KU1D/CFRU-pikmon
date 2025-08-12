@@ -697,3 +697,6 @@ Doubles the money earned after battle.
 
 #org @gText_AbilityDescription_WindForce
 Powers up wind moves.
+
+#org @gText_AbilityDescription_FrostBody
+May cause frostbite on contact.

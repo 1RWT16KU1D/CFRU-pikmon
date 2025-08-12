@@ -137,6 +137,8 @@ extern const u8 gText_AbilityName_BigMoney[];
 extern const u8 gText_AbilityDescription_BigMoney[];
 extern const u8 gText_AbilityName_WindForce[];
 extern const u8 gText_AbilityDescription_WindForce[];
+extern const u8 gText_AbilityName_FrostBody[];
+extern const u8 gText_AbilityDescription_FrostBody[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -569,8 +571,11 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if (SpeciesHasBigMoney(species))
 				return gText_AbilityName_BigMoney;
 			break;
+		case ABILITY_FLAMEBODY:
+			if (SpeciesHasFrostBody(species))
+				return gText_AbilityName_FrostBody;
+			break;
 	}
-
 	return NULL;
 }
 
@@ -742,9 +747,15 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_FRIENDGUARD:
 			if (SpeciesHasSucker(species))
 				return gText_AbilityDescription_Sucker;
+			break;
 		case ABILITY_PICKUP:
 			if (SpeciesHasBigMoney(species))
 				return gText_AbilityDescription_BigMoney;
+			break;
+		case ABILITY_FLAMEBODY:
+			if (SpeciesHasFrostBody(species))
+				return gText_AbilityDescription_FrostBody;
+			break;
 	}
 
 	return NULL;
@@ -1610,6 +1621,15 @@ bool8 SpeciesHasWindForce(unusedArg u16 species)
 {
 	#ifdef SPECIES_TORNADUS
 	return species == SPECIES_TORNADUS;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasFrostBody(unusedArg u16 species)
+{
+	#ifdef SPECIES_CRYOGONAL
+	return species == SPECIES_CRYOGONAL;
 	#else
 	return FALSE;
 	#endif
