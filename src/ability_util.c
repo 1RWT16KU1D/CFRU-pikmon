@@ -1605,8 +1605,8 @@ bool8 SpeciesHasZerotoHero(unusedArg u16 species) //Custom Unbound Ability
 
 bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 {
-	#if (defined SPECIES_IVYSAUR && defined SPECIES_VENUSAUR)
-	return species == SPECIES_IVYSAUR || species == SPECIES_VENUSAUR;
+	#if (defined SPECIES_BULBORB && defined SPECIES_JUMBOBORB)
+	return species == SPECIES_BULBORB || species == SPECIES_JUMBOBORB;
 	#else
 	return FALSE;
 	#endif
@@ -1614,8 +1614,8 @@ bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 
 bool8 SpeciesHasSucker(unusedArg u16 species)
 {
-	#ifdef SPECIES_BULBASAUR
-	return species == SPECIES_BULBASAUR;
+	#ifdef SPECIES_BULBLARVA
+	return species == SPECIES_BULBLARVA;
 	#endif
 }
 

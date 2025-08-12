@@ -110,12 +110,12 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define gObjectEventPallete_74 ((void*)0x08F24A84)
 #define gObjectEventPallete_75 ((void*)0x08F24B28)
 
-#define OBJ_EVENT_PAL_TAG_BULBASAUR 0x1200
-#define OBJ_EVENT_PAL_TAG_IVYSAUR 0x1201
-#define OBJ_EVENT_PAL_TAG_VENUSAUR 0x1202
-#define OBJ_EVENT_PAL_TAG_CHARMANDER 0x1203
-#define OBJ_EVENT_PAL_TAG_CHARMELEON 0x1204
-#define OBJ_EVENT_PAL_TAG_CHARIZARD 0x1205
+#define OBJ_EVENT_PAL_TAG_BULBLARVA 0x1200
+#define OBJ_EVENT_PAL_TAG_BULBORB 0x1201
+#define OBJ_EVENT_PAL_TAG_JUMBOBORB 0x1202
+#define OBJ_EVENT_PAL_TAG_BLOWLET 0x1203
+#define OBJ_EVENT_PAL_TAG_BLOWHOG 0x1204
+#define OBJ_EVENT_PAL_TAG_TITANBHOG 0x1205
 #define OBJ_EVENT_PAL_TAG_SQUIRTLE 0x1206
 #define OBJ_EVENT_PAL_TAG_WARTORTLE 0x1207
 #define OBJ_EVENT_PAL_TAG_BLASTOISE 0x1208
@@ -1245,12 +1245,12 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define OBJ_EVENT_PAL_TAG_LILLIGANT 0x166C
 #define OBJ_EVENT_PAL_TAG_KOMMO_O 0x166D
 #define OBJ_EVENT_PAL_TAG_VELUZA 0x166E
-#define OBJ_EVENT_PAL_TAG_BULBASAUR_SHINY 0x166F
-#define OBJ_EVENT_PAL_TAG_IVYSAUR_SHINY 0x1670
-#define OBJ_EVENT_PAL_TAG_VENUSAUR_SHINY 0x1671
-#define OBJ_EVENT_PAL_TAG_CHARMANDER_SHINY 0x1672
-#define OBJ_EVENT_PAL_TAG_CHARMELEON_SHINY 0x1673
-#define OBJ_EVENT_PAL_TAG_CHARIZARD_SHINY 0x1674
+#define OBJ_EVENT_PAL_TAG_BULBLARVA_SHINY 0x166F
+#define OBJ_EVENT_PAL_TAG_BULBORB_SHINY 0x1670
+#define OBJ_EVENT_PAL_TAG_JUMBOBORB_SHINY 0x1671
+#define OBJ_EVENT_PAL_TAG_BLOWLET_SHINY 0x1672
+#define OBJ_EVENT_PAL_TAG_BLOWHOG_SHINY 0x1673
+#define OBJ_EVENT_PAL_TAG_TITANBHOG_SHINY 0x1674
 #define OBJ_EVENT_PAL_TAG_SQUIRTLE_SHINY 0x1675
 #define OBJ_EVENT_PAL_TAG_WARTORTLE_SHINY 0x1676
 #define OBJ_EVENT_PAL_TAG_BLASTOISE_SHINY 0x1677
@@ -2379,12 +2379,12 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define OBJ_EVENT_PAL_TAG_KOMMO_O_SHINY 0x1AD9
 #define OBJ_EVENT_PAL_TAG_VELUZA_SHINY 0x1ADA
 
-#define EVENT_OBJ_GFX_BULBASAUR 0
-#define EVENT_OBJ_GFX_IVYSAUR 1
-#define EVENT_OBJ_GFX_VENUSAUR 2
-#define EVENT_OBJ_GFX_CHARMANDER 3
-#define EVENT_OBJ_GFX_CHARMELEON 4
-#define EVENT_OBJ_GFX_CHARIZARD 5
+#define EVENT_OBJ_GFX_BULBLARVA 0
+#define EVENT_OBJ_GFX_BULBORB 1
+#define EVENT_OBJ_GFX_JUMBOBORB 2
+#define EVENT_OBJ_GFX_BLOWLET 3
+#define EVENT_OBJ_GFX_BLOWHOG 4
+#define EVENT_OBJ_GFX_TITANBHOG 5
 #define EVENT_OBJ_GFX_SQUIRTLE 6
 #define EVENT_OBJ_GFX_WARTORTLE 7
 #define EVENT_OBJ_GFX_BLASTOISE 8
@@ -3522,6 +3522,10 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 
 // Palette declarations
 //Normal Pal
+extern const u16 gFollowingMonPic_0001_BulbLarvaPal[255];
+extern const u16 gFollowingMonPic_0002_BulborbPal[255];
+extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
+
 extern const u16 gFollowingMonPic_AlcremieStrawberryNormalPal[255];
 extern const u16 gFollowingMonPic_ArcanineHisuianNormalPal[255];
 extern const u16 gFollowingMonPic_ArceusBugNormalPal[255];
@@ -3731,7 +3735,6 @@ extern const u16 gFollowingMonPic_Brute_bonnetNormalPal[255];
 extern const u16 gFollowingMonPic_BruxishNormalPal[255];
 extern const u16 gFollowingMonPic_BudewNormalPal[255];
 extern const u16 gFollowingMonPic_BuizelNormalPal[255];
-extern const u16 gFollowingMonPic_BulbasaurNormalPal[255];
 extern const u16 gFollowingMonPic_BunearyNormalPal[255];
 extern const u16 gFollowingMonPic_BunnelbyNormalPal[255];
 extern const u16 gFollowingMonPic_BurmyNormalPal[255];
@@ -3759,10 +3762,10 @@ extern const u16 gFollowingMonPic_CetoddleNormalPal[255];
 extern const u16 gFollowingMonPic_ChandelureNormalPal[255];
 extern const u16 gFollowingMonPic_ChanseyNormalPal[255];
 extern const u16 gFollowingMonPic_CharcadetNormalPal[255];
-extern const u16 gFollowingMonPic_CharizardNormalPal[255];
+extern const u16 gFollowingMonPic_TitanBHogNormalPal[255];
 extern const u16 gFollowingMonPic_CharjabugNormalPal[255];
-extern const u16 gFollowingMonPic_CharmanderNormalPal[255];
-extern const u16 gFollowingMonPic_CharmeleonNormalPal[255];
+extern const u16 gFollowingMonPic_BlowletNormalPal[255];
+extern const u16 gFollowingMonPic_BlowhogNormalPal[255];
 extern const u16 gFollowingMonPic_ChatotNormalPal[255];
 extern const u16 gFollowingMonPic_CherrimNormalPal[255];
 extern const u16 gFollowingMonPic_CherubiNormalPal[255];
@@ -4068,7 +4071,6 @@ extern const u16 gFollowingMonPic_Iron_mothNormalPal[255];
 extern const u16 gFollowingMonPic_Iron_thornsNormalPal[255];
 extern const u16 gFollowingMonPic_Iron_treadsNormalPal[255];
 extern const u16 gFollowingMonPic_Iron_valiantNormalPal[255];
-extern const u16 gFollowingMonPic_IvysaurNormalPal[255];
 extern const u16 gFollowingMonPic_Jangmo_oNormalPal[255];
 extern const u16 gFollowingMonPic_JellicentNormalPal[255];
 extern const u16 gFollowingMonPic_JigglypuffNormalPal[255];
@@ -4593,7 +4595,6 @@ extern const u16 gFollowingMonPic_VeluzaNormalPal[255];
 extern const u16 gFollowingMonPic_VenipedeNormalPal[255];
 extern const u16 gFollowingMonPic_VenomothNormalPal[255];
 extern const u16 gFollowingMonPic_VenonatNormalPal[255];
-extern const u16 gFollowingMonPic_VenusaurNormalPal[255];
 extern const u16 gFollowingMonPic_VespiquenNormalPal[255];
 extern const u16 gFollowingMonPic_VibravaNormalPal[255];
 extern const u16 gFollowingMonPic_VictiniNormalPal[255];
@@ -4738,6 +4739,10 @@ extern const u16 gFollowingMonPic_Zygarde10_percentNormalPal[255];
 extern const u16 gFollowingMonPic_ZygardeCompleteNormalPal[255];
 
 //Shiny Pals
+extern const u16 gShinyFollowingMonPic_0001_BulbLarvaPal[255];
+extern const u16 gShinyFollowingMonPic_0002_BulborbPal[255];
+extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
+
 extern const u16 gFollowingMonPic_AlcremieStrawberryShinyPal[255];
 extern const u16 gFollowingMonPic_ArcanineHisuianShinyPal[255];
 extern const u16 gFollowingMonPic_ArceusBugShinyPal[255];
@@ -4944,7 +4949,6 @@ extern const u16 gFollowingMonPic_Brute_bonnetShinyPal[255];
 extern const u16 gFollowingMonPic_BruxishShinyPal[255];
 extern const u16 gFollowingMonPic_BudewShinyPal[255];
 extern const u16 gFollowingMonPic_BuizelShinyPal[255];
-extern const u16 gFollowingMonPic_BulbasaurShinyPal[255];
 extern const u16 gFollowingMonPic_BunearyShinyPal[255];
 extern const u16 gFollowingMonPic_BunnelbyShinyPal[255];
 extern const u16 gFollowingMonPic_BurmyShinyPal[255];
@@ -4972,10 +4976,10 @@ extern const u16 gFollowingMonPic_CetoddleShinyPal[255];
 extern const u16 gFollowingMonPic_ChandelureShinyPal[255];
 extern const u16 gFollowingMonPic_ChanseyShinyPal[255];
 extern const u16 gFollowingMonPic_CharcadetShinyPal[255];
-extern const u16 gFollowingMonPic_CharizardShinyPal[255];
+extern const u16 gFollowingMonPic_TitanBHogShinyPal[255];
 extern const u16 gFollowingMonPic_CharjabugShinyPal[255];
-extern const u16 gFollowingMonPic_CharmanderShinyPal[255];
-extern const u16 gFollowingMonPic_CharmeleonShinyPal[255];
+extern const u16 gFollowingMonPic_BlowletShinyPal[255];
+extern const u16 gFollowingMonPic_BlowhogShinyPal[255];
 extern const u16 gFollowingMonPic_ChatotShinyPal[255];
 extern const u16 gFollowingMonPic_CherrimShinyPal[255];
 extern const u16 gFollowingMonPic_CherubiShinyPal[255];
@@ -5281,7 +5285,6 @@ extern const u16 gFollowingMonPic_Iron_mothShinyPal[255];
 extern const u16 gFollowingMonPic_Iron_thornsShinyPal[255];
 extern const u16 gFollowingMonPic_Iron_treadsShinyPal[255];
 extern const u16 gFollowingMonPic_Iron_valiantShinyPal[255];
-extern const u16 gFollowingMonPic_IvysaurShinyPal[255];
 extern const u16 gFollowingMonPic_Jangmo_oShinyPal[255];
 extern const u16 gFollowingMonPic_JellicentShinyPal[255];
 extern const u16 gFollowingMonPic_JigglypuffShinyPal[255];
@@ -5806,7 +5809,6 @@ extern const u16 gFollowingMonPic_VeluzaShinyPal[255];
 extern const u16 gFollowingMonPic_VenipedeShinyPal[255];
 extern const u16 gFollowingMonPic_VenomothShinyPal[255];
 extern const u16 gFollowingMonPic_VenonatShinyPal[255];
-extern const u16 gFollowingMonPic_VenusaurShinyPal[255];
 extern const u16 gFollowingMonPic_VespiquenShinyPal[255];
 extern const u16 gFollowingMonPic_VibravaShinyPal[255];
 extern const u16 gFollowingMonPic_VictiniShinyPal[255];

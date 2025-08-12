@@ -516,7 +516,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank2[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CHARMELEON,
+		.species = SPECIES_BLOWHOG,
 		.nature = NATURE_QUIET,
 		.hpIv = 20,
 		.atkIv = 0,
@@ -591,7 +591,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank3[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 20,
 		.atkIv = 0,
@@ -671,7 +671,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank4[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -683,7 +683,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank4[] =
 		.spAtkEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_Y,
+		.item = ITEM_TITANBHOGITE_Y,
 		.moves =
 		{
 			MOVE_FLAMETHROWER,
@@ -753,7 +753,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank56[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -765,7 +765,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank56[] =
 		.spAtkEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_Y,
+		.item = ITEM_TITANBHOGITE_Y,
 		.moves =
 		{
 			MOVE_FLAMETHROWER,
@@ -836,7 +836,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -848,7 +848,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 		.defEv = 252,
 		.spAtkEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_VENUSAURITE,
+		.item = ITEM_JUMBOBORBITE,
 		.moves =
 		{
 			MOVE_GRASSPLEDGE,
@@ -919,7 +919,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank56[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -931,7 +931,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank56[] =
 		.defEv = 252,
 		.spAtkEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_VENUSAURITE,
+		.item = ITEM_JUMBOBORBITE,
 		.moves =
 		{
 			MOVE_GRASSPLEDGE,

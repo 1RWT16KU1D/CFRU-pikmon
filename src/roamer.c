@@ -107,10 +107,10 @@ static void CreateInitialRoamerMon(u16 species, u8 level, bool8 allowedOnLand, b
 	if (species == 0xFFFF) //FRLGSytle
 	{
 		switch(GetStarterChoice()) { //0x80CBDB0
-			case SPECIES_BULBASAUR:
+			case SPECIES_BULBLARVA:
 				species = SPECIES_ENTEI;
 				break;
-			case SPECIES_CHARMANDER:
+			case SPECIES_BLOWLET:
 				species = SPECIES_SUICUNE;
 				break;
 			default:

@@ -29,7 +29,7 @@ function as inteneded.
 const struct BattleTowerSpread gFrontierSpreads[] =
 {
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -42,7 +42,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 112,
 		.spdEv = 12,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_VENUSAURITE,
+		.item = ITEM_JUMBOBORBITE,
 		.moves =
 		{
 			MOVE_GIGADRAIN,
@@ -56,7 +56,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -82,7 +82,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -108,7 +108,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -120,7 +120,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spDefEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_OVERGROW
-		.item = ITEM_VENUSAURITE,
+		.item = ITEM_JUMBOBORBITE,
 		.moves =
 		{
 			MOVE_GIGADRAIN,
@@ -135,7 +135,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_VENUSAUR,
+		.species = SPECIES_JUMBOBORB,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -147,7 +147,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_VENUSAURITE,
+		.item = ITEM_JUMBOBORBITE,
 		.moves =
 		{
 			MOVE_GIGADRAIN,
@@ -161,7 +161,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -188,7 +188,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -200,7 +200,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_X,
+		.item = ITEM_TITANBHOGITE_X,
 		.moves =
 		{
 			MOVE_FLAREBLITZ,
@@ -214,7 +214,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -226,7 +226,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spDefEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_X,
+		.item = ITEM_TITANBHOGITE_X,
 		.moves =
 		{
 			MOVE_FLAREBLITZ,
@@ -240,7 +240,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -252,7 +252,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_Y,
+		.item = ITEM_TITANBHOGITE_Y,
 		.moves =
 		{
 			MOVE_WEATHERBALL,
@@ -266,7 +266,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARIZARD,
+		.species = SPECIES_TITANBHOG,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -278,7 +278,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_CHARIZARDITE_Y,
+		.item = ITEM_TITANBHOGITE_Y,
 		.moves =
 		{
 			MOVE_HEATWAVE,
@@ -59444,7 +59444,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 const struct BattleTowerSpread gMiddleCupSpreads[] =
 {
 	{
-		.species = SPECIES_IVYSAUR,
+		.species = SPECIES_BULBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -59470,7 +59470,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_IVYSAUR,
+		.species = SPECIES_BULBORB,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -59497,7 +59497,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARMELEON,
+		.species = SPECIES_BLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -59523,7 +59523,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARMELEON,
+		.species = SPECIES_BLOWHOG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -66413,7 +66413,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.specificTeamType = DOUBLES_RAIN_TEAM,
 	},
 	{
-		.species = SPECIES_BULBASAUR,
+		.species = SPECIES_BULBLARVA,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -66440,7 +66440,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BULBASAUR,
+		.species = SPECIES_BULBLARVA,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -66466,7 +66466,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BULBASAUR,
+		.species = SPECIES_BULBLARVA,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -66781,7 +66781,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARMANDER,
+		.species = SPECIES_BLOWLET,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -66808,7 +66808,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARMANDER,
+		.species = SPECIES_BLOWLET,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -66836,7 +66836,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CHARMANDER,
+		.species = SPECIES_BLOWLET,
 		.nature = NATURE_TIMID,
 		.hpIv = 21,
 		.atkIv = 0,
