@@ -133,6 +133,8 @@ extern const u8 gText_AbilityName_SweetNectar[];
 extern const u8 gText_AbilityDescription_SweetNectar[];
 extern const u8 gText_AbilityName_Sucker[];
 extern const u8 gText_AbilityDescription_Sucker[];
+extern const u8 gText_AbilityName_BigMoney[];
+extern const u8 gText_AbilityDescription_BigMoney[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -549,6 +551,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityName_ZerotoHero;
 			break;
+
+		// New PikMin Abilities
 		case ABILITY_AFTERMATH:
 			if (SpeciesHasSweetNectar(species))
 				return gText_AbilityName_SweetNectar;
@@ -556,6 +560,10 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_FRIENDGUARD:
 			if (SpeciesHasSucker(species))
 				return gText_AbilityName_Sucker;
+			break;
+		case ABILITY_PICKUP:
+			if (SpeciesHasBigMoney(species))
+				return gText_AbilityName_BigMoney;
 			break;
 	}
 
@@ -719,6 +727,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityDescription_ZerotoHero;
 			break;
+	
+		// New PikMin Abilities
 		case ABILITY_AFTERMATH:
 			if (SpeciesHasSweetNectar(species))
 				return gText_AbilityDescription_SweetNectar;
@@ -726,6 +736,9 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_FRIENDGUARD:
 			if (SpeciesHasSucker(species))
 				return gText_AbilityDescription_Sucker;
+		case ABILITY_PICKUP:
+			if (SpeciesHasBigMoney(species))
+				return gText_AbilityDescription_BigMoney;
 	}
 
 	return NULL;
@@ -1575,5 +1588,14 @@ bool8 SpeciesHasSucker(unusedArg u16 species)
 {
 	#ifdef SPECIES_BULBASAUR
 	return species == SPECIES_BULBASAUR;
+	#endif
+}
+
+bool8 SpeciesHasBigMoney(unusedArg u16 species)
+{
+	#ifdef SPECIES_MEOWTH
+	return species == SPECIES_MEOWTH;
+	#else
+	return FALSE;
 	#endif
 }

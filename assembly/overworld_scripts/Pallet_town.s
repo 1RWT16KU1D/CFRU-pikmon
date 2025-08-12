@@ -14,6 +14,7 @@ EventScript_Pallet_FatGuy:
     setflag 0x828
     setflag 0x4BD
     givepokemon 0x1 0x7 0x0 0x0 0x0 0x0
+    givepokemon SPECIES_MEOWTH 50 0 0 0 0
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL

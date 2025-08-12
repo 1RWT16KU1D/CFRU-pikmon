@@ -300,3 +300,4 @@
 // New abilities for PikMon
 #define ABILITY_SWEETNECTAR ABILITY_AFTERMATH // Heal partner by 50% on fainting. Used Aftermath as an index because both requires the user to faint.
 #define ABILITY_SUCKER ABILITY_FRIENDGUARD // Big Root but as an ability
+#define ABILITY_BIGMONEY ABILITY_PICKUP // Doubles the money earned from battles

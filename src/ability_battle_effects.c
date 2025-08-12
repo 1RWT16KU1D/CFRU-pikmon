@@ -1665,7 +1665,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				case ABILITY_PICKUP: ;
 					u8 itemBank = GetTopOfPickupStackNotIncludingBank(bank);
 
-					if (itemBank != 0xFF)
+					if (itemBank != 0xFF && !SpeciesHasBigMoney(SPECIES(bank)))
 					{
 						RemoveBankFromPickupStack(itemBank);
 						if (CONSUMED_ITEMS(itemBank)) //This shouldn't be empty but just in case
@@ -2322,23 +2322,27 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				&& gBankAttacker != bank
 				&& !BATTLER_ALIVE(bank))
 				{
-                    if (SpeciesHasSweetNectar(SPECIES(bank))
-                    && IS_DOUBLE_BATTLE
-                    && BATTLER_ALIVE(PARTNER(bank))
-                    && !BATTLER_MAX_HP(PARTNER(bank)))
-                    {
-                            gEffectBank = PARTNER(bank);
-							gBattleScripting.bank = bank;
-                            gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
-                            gBattleMoveDamage *= -1; // Negative damage for healing
-                            BattleScriptPushCursor();
-                            gBattlescriptCurrInstr = BattleScript_SweetNectarActivates;
-                            effect++;
-                    }
+					// Try Sweet Nectar first
+					if (SpeciesHasSweetNectar(SPECIES(bank))
+					&& IS_DOUBLE_BATTLE
+					&& BATTLER_ALIVE(PARTNER(bank))
+					&& !BATTLER_MAX_HP(PARTNER(bank))
+				    && !IsHealBlocked(PARTNER(bank)))
+					{
+						gEffectBank = PARTNER(bank);
+						gBattleScripting.bank = bank;
+						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gEffectBank) / 2);
+						gBattleMoveDamage *= -1;
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_SweetNectarActivates;
+						effect++;
+					}
+					// Otherwise fall back to Aftermath
 					else if (BATTLER_ALIVE(gBankAttacker)
-					&& ABILITY(gBankAttacker) != ABILITY_MAGICGUARD
-					&& CheckContact(move, gBankAttacker, bank)
-					&& !ABILITY_ON_FIELD(ABILITY_DAMP))
+						&& ABILITY(gBankAttacker) != ABILITY_MAGICGUARD
+						&& CheckContact(move, gBankAttacker, bank)
+						&& !ABILITY_ON_FIELD(ABILITY_DAMP)
+						&& !SpeciesHasSweetNectar(SPECIES(bank)))
 					{
 						gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gBankAttacker) / 4);
 						BattleScriptPushCursor();
@@ -2660,6 +2664,13 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 						}
 					}
 					break;
+				case ABILITY_BIGMONEY:
+					if (SpeciesHasBigMoney(SPECIES(bank))
+					&& !gNewBS->bigMoneyActivated)
+					{
+						gNewBS->bigMoneyActivated = TRUE;
+						gBattleStruct->moneyMultiplier *= 2;
+					}
 				}
 
 				if (effect)

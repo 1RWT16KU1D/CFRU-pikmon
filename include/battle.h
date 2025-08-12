@@ -959,6 +959,7 @@ struct NewBattleStruct
 	bool8 cottonDownActive : 1;
 	bool8 cramorantTransformed : 1;
 	bool8 activateTemperFlare : 1;
+	bool8 bigMoneyActivated : 1; // So that the money is only doubled once per battle
 
 	//Other
 	u16 LastUsedMove;

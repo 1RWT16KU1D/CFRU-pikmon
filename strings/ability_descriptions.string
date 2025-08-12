@@ -691,3 +691,6 @@ Restores partner's HP on fainting.
 
 #org @gText_AbilityDescription_Sucker
 Increases healing from draining moves.
+
+#org @gText_AbilityDescription_BigMoney
+Doubles the money earned after battle.

@@ -1635,8 +1635,7 @@ BattleScript_SweetNectarActivates:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	call BattleScript_AbilityPopUpRevert
-	faintpokemon BANK_SCRIPTING 0x0 0x0
-	end3
+	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
