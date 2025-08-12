@@ -713,6 +713,10 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityDescription_ZerotoHero;
 			break;
+		case ABILITY_AFTERMATH:
+			if (SpeciesHasSweetNectar(species))
+				return gText_AbilityDescription_SweetNectar;
+			break;
 	}
 
 	return NULL;
