@@ -123,6 +123,7 @@ ability_battle_scripts.s
 
 @ New PikMon Abilities
 .global BattleScript_SweetNectarActivates
+.global BattleScript_FoolsGoldPlateShattered
 .global BattleScript_FoolsGoldTransform
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -1639,13 +1640,22 @@ BattleScript_SweetNectarActivates:
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+BattleScript_FoolsGoldPlateShattered:
+	call BattleScript_AbilityPopUp
+	setword BATTLE_STRING_LOADER gText_FoolsGoldDisguisedShattered
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	call BattleScript_AbilityPopUpRevert
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 BattleScript_FoolsGoldTransform:
 	playanimation BANK_TARGET ANIM_TRANSFORM 0x0
 	orword HIT_MARKER, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG
 	graphicalhpupdate BANK_SCRIPTING
 	datahpupdate BANK_SCRIPTING
 	bicword HIT_MARKER, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG
-	setword BATTLE_STRING_LOADER gText_FoolsGoldBusted
+	setword BATTLE_STRING_LOADER gText_FoolsGoldTransformed
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	return

@@ -167,5 +167,8 @@ Grass grew to cover the\nbattlefield!\p
 [SCRIPTING_BANK] underwent a heroic\ntranformation!
 
 // New Abilities
-#org @gText_FoolsGoldBusted
+#org @gText_FoolsGoldDisguisedShattered
 [SCRIPTING_BANK]'s gold plating was\ndestroyed!
+
+#org @gText_FoolsGoldTransformed
+[SCRIPTING_BANK] transformed!

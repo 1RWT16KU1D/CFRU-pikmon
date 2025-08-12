@@ -597,6 +597,7 @@ static void DoublesHPBarReduction(void)
 void atk0B_healthbarupdate(void)
 {
 	u8 ability;
+	u8 hasFoolsGold = SpeciesHasFoolsGold(SPECIES(gActiveBattler));
 
 	if (gBattleExecBuffer) return;
 
@@ -617,12 +618,12 @@ void atk0B_healthbarupdate(void)
 		#ifdef SPECIES_MIMIKYU
 		else if (ability == ABILITY_DISGUISE
 		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
-		&& SPECIES(gActiveBattler) == SPECIES_MIMIKYU
+		&& (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold)
 		&& !IS_TRANSFORMED(gActiveBattler))
 		{
 			gBattleScripting.bank = gBankTarget;
 			BattleScriptPush(gBattlescriptCurrInstr + 2);
-			gBattlescriptCurrInstr = BattleScript_DisguiseTookDamage;
+			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldPlateShattered : BattleScript_DisguiseTookDamage;
 			if (IsDoubleSpreadMove())
 				DoublesHPBarReduction();
 			return;
@@ -716,11 +717,11 @@ void atk0C_datahpupdate(void)
 		}
 		#ifdef SPECIES_MIMIKYU
 		else if (ABILITY(gActiveBattler) == ABILITY_DISGUISE //Disguise Protected
-		&& (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold) // Mimikyu or Fools Gold
-		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
-		&& !IS_TRANSFORMED(gActiveBattler))
-		{
-			gBattleMoveDamage = GetBaseCurrentHP(gActiveBattler) / 8;
+        && (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold) // Mimikyu or Fools Gold
+        && (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
+        && !IS_TRANSFORMED(gActiveBattler))
+        {
+            gBattleMoveDamage = GetBaseMaxHP(gActiveBattler) / 8;
 
 			if (gSpecialStatuses[gActiveBattler].moveturnLostHP == 0)
 				gSpecialStatuses[gActiveBattler].moveturnLostHP = 1;
