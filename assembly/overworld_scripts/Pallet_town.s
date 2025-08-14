@@ -13,11 +13,11 @@ EventScript_Pallet_FatGuy:
     setflag 0x926
     setflag 0x828
     setflag 0x4BD
-    setvar 0x8000 MOVE_IRONHEAD
-    setvar 0x8001 MOVE_HONECLAWS
-    setvar 0x8002 MOVE_IRONDEFENSE
-    setvar 0x8003 MOVE_NONE
-    setvar 0x8004 NATURE_ADAMANT
+    setvar 0x8000 0xFFFF
+    setvar 0x8001 0xFFFF
+    setvar 0x8002 0xFFFF
+    setvar 0x8003 0xFFFF
+    setvar 0x8004 NATURE_QUIRKY
     setvar 0x8005 TRUE
     setvar 0x8006 31
     setvar 0x8007 31
@@ -25,8 +25,12 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon SPECIES_PERRSERKER 10 0 0 4 0
-    givepokemon SPECIES_MIMIKYU 10 0 0 0 0
+    givepokemon SPECIES_GYARADOS 15 0 0 0 0
+    givepokemon SPECIES_BULBORB 31 0 0 0 0
+    givepokemon SPECIES_JUMBOBORB 50 0 0 0 0
+    givepokemon SPECIES_BULBLARVA 15 0 0 1 0
+    givepokemon SPECIES_BULBORB 31 0 0 1 0
+    givepokemon SPECIES_JUMBOBORB 50 0 0 1 0
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL

@@ -28,7 +28,7 @@ EventScript_ViridianCity_Youngster:
     additem ITEM_MEGA_RING 1
 @   additem ITEM_TM19 1
 
-@   giveegg SPECIES_IVYSAUR
+@   giveegg SPECIES_BULBORB
 
     @ Relatable Mons
     setvar 0x8000 MOVE_AURASPHERE
