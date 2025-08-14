@@ -16,7 +16,6 @@ accuracy_calc.c
 	-rewrites how accuracy is calculated, including all relevant abilities, effects, etc.
 	-includes protection logic
 */
-extern const struct Item gItems2Temp[];
 extern const struct StatFractions gAccuracyStageRatios[];
 
 //This file's functions:
