@@ -52,7 +52,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Catherine_Rank12[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_WARTORTLE,
+		.species = SPECIES_YWOLLYHOP,
 		.nature = NATURE_BRAVE,
 		.hpIv = 20,
 		.atkIv = 31,
@@ -130,7 +130,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Catherine_Rank3[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_BRAVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -209,7 +209,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Catherine_Rank456[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,

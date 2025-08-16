@@ -1540,7 +1540,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_JumboBorbiteTiles, gBag_JumboBorbitePal},
 	{gBag_TitanBHogiteXTiles, gBag_TitanBHogiteXPal},
 	{gBag_TitanBHogiteYTiles, gBag_TitanBHogiteYPal},
-	{gBag_BlastoiseniteTiles, gBag_BlastoisenitePal},
+	{gBag_MasterhopniteTiles, gBag_MasterhopnitePal},
 	{gBag_BeedrilliteTiles, gBag_BeedrillitePal},
 	{gBag_PidgeotiteTiles, gBag_PidgeotitePal},
 	{gBag_AlakaziteTiles, gBag_AlakazitePal},

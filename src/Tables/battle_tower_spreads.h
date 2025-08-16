@@ -292,7 +292,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -318,7 +318,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -344,7 +344,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -370,7 +370,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_IMPISH,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -397,7 +397,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_BLASTOISE,
+		.species = SPECIES_MASTERHOP,
 		.nature = NATURE_IMPISH,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -59549,7 +59549,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_WARTORTLE,
+		.species = SPECIES_YWOLLYHOP,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -59576,7 +59576,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_WARTORTLE,
+		.species = SPECIES_YWOLLYHOP,
 		.nature = NATURE_SASSY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -59602,7 +59602,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_WARTORTLE,
+		.species = SPECIES_YWOLLYHOP,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -78377,7 +78377,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_SQUIRTLE,
+		.species = SPECIES_WOLPOLE,
 		.nature = NATURE_IMPISH,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -78405,7 +78405,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_SQUIRTLE,
+		.species = SPECIES_WOLPOLE,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -78432,7 +78432,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_SQUIRTLE,
+		.species = SPECIES_WOLPOLE,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,

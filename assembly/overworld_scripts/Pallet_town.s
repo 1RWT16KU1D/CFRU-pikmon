@@ -25,12 +25,16 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon SPECIES_GYARADOS 15 0 0 0 0
-    givepokemon SPECIES_BULBORB 31 0 0 0 0
-    givepokemon SPECIES_JUMBOBORB 50 0 0 0 0
-    givepokemon SPECIES_BULBLARVA 15 0 0 1 0
-    givepokemon SPECIES_BULBORB 31 0 0 1 0
-    givepokemon SPECIES_JUMBOBORB 50 0 0 1 0
+    
+    setvar 0x8004 0xF @ Erase entire party
+	special 0x62
+
+    givepokemon 7 15 0 0 0 0
+    givepokemon 8 31 0 0 0 0
+    givepokemon 9 50 0 0 0 0
+    givepokemon 7 15 0 0 1 0
+    givepokemon 8 31 0 0 1 0
+    givepokemon 9 50 0 0 1 0
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL

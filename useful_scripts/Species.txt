@@ -5,9 +5,9 @@ JumboBorb
 Blowlet
 Blowhog
 TitanBHog
-Squirtle
-Wartortle
-Blastoise
+Wolpole
+YWollyhop
+Masterhop
 Caterpie
 Metapod
 Butterfree
@@ -846,7 +846,7 @@ VivillonFancy
 JumboBorbMega
 TitanBHogMegaX
 TitanBHogMegaY
-BlastoiseMega
+MasterhopMega
 BeedrillMega
 PidgeotMega
 AlakazamMega
@@ -1236,7 +1236,7 @@ Enamorus
 EnamorusTherian
 JumboBorbGiga
 TitanBHogGiga
-BlastoiseGiga
+MasterhopGiga
 ButterfreeGiga
 PikachuGiga
 MeowthGiga

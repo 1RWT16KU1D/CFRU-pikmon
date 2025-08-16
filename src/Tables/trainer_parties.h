@@ -906,7 +906,7 @@ struct TrainerMonNoItemDefaultMoves sParty_CamperRicky[] = {
     {
         .iv = 0,
         .lvl = 20,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
     },
 };
 
@@ -2501,7 +2501,7 @@ struct TrainerMonNoItemDefaultMoves sParty_SwimmerMaleJerome[] = {
     {
         .iv = 0,
         .lvl = 33,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -3728,11 +3728,11 @@ struct TrainerMonItemDefaultMoves sParty_BlackBeltDaisuke[] = {
     },
 };
 
-struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabSquirtle[] = {
+struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabWolpole[] = {
     {
         .iv = 0,
         .lvl = 5,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
     },
 };
 
@@ -3752,7 +3752,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabBlowlet[] = {
     },
 };
 
-struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
+struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlyWolpole[] = {
     {
         .iv = 50,
         .lvl = 9,
@@ -3762,7 +3762,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
     {
         .iv = 50,
         .lvl = 9,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
         .moves = {MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE},
     },
 };
@@ -3797,7 +3797,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlyBlowlet[] = {
     },
 };
 
-struct TrainerMonNoItemCustomMoves sParty_RivalCeruleanSquirtle[] = {
+struct TrainerMonNoItemCustomMoves sParty_RivalCeruleanWolpole[] = {
     {
         .iv = 50,
         .lvl = 17,
@@ -3819,7 +3819,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalCeruleanSquirtle[] = {
     {
         .iv = 100,
         .lvl = 18,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
         .moves = {MOVE_TACKLE, MOVE_TAILWHIP, MOVE_WITHDRAW, MOVE_WATERGUN},
     },
 };
@@ -4960,7 +4960,7 @@ struct TrainerMonNoItemCustomMoves sParty_CooltrainerColby[] = {
     {
         .iv = 100,
         .lvl = 43,
-        .species = SPECIES_BLASTOISE,
+        .species = SPECIES_MASTERHOP,
         .moves = {MOVE_WATERGUN, MOVE_BITE, MOVE_RAPIDSPIN, MOVE_RAINDANCE},
     },
 };
@@ -5014,7 +5014,7 @@ struct TrainerMonNoItemCustomMoves sParty_CooltrainerRolando[] = {
     {
         .iv = 100,
         .lvl = 42,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
         .moves = {MOVE_WATERGUN, MOVE_BITE, MOVE_RAPIDSPIN, MOVE_TAILWHIP},
     },
     {
@@ -5820,7 +5820,7 @@ struct TrainerMonNoItemDefaultMoves sParty_GentlemanWalter[] = {
     },
 };
 
-struct TrainerMonNoItemDefaultMoves sParty_RivalSsAnneSquirtle[] = {
+struct TrainerMonNoItemDefaultMoves sParty_RivalSsAnneWolpole[] = {
     {
         .iv = 50,
         .lvl = 19,
@@ -5839,7 +5839,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalSsAnneSquirtle[] = {
     {
         .iv = 100,
         .lvl = 20,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -5889,7 +5889,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalSsAnneBlowlet[] = {
     },
 };
 
-struct TrainerMonNoItemDefaultMoves sParty_RivalPokemonTowerSquirtle[] = {
+struct TrainerMonNoItemDefaultMoves sParty_RivalPokemonTowerWolpole[] = {
     {
         .iv = 100,
         .lvl = 25,
@@ -5913,7 +5913,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalPokemonTowerSquirtle[] = {
     {
         .iv = 100,
         .lvl = 25,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -5973,7 +5973,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalPokemonTowerBlowlet[] = {
     },
 };
 
-struct TrainerMonNoItemDefaultMoves sParty_RivalSilphSquirtle[] = {
+struct TrainerMonNoItemDefaultMoves sParty_RivalSilphWolpole[] = {
     {
         .iv = 100,
         .lvl = 37,
@@ -5997,7 +5997,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalSilphSquirtle[] = {
     {
         .iv = 150,
         .lvl = 40,
-        .species = SPECIES_BLASTOISE,
+        .species = SPECIES_MASTERHOP,
     },
 };
 
@@ -6057,7 +6057,7 @@ struct TrainerMonNoItemDefaultMoves sParty_RivalSilphBlowlet[] = {
     },
 };
 
-struct TrainerMonNoItemCustomMoves sParty_RivalRoute22LateSquirtle[] = {
+struct TrainerMonNoItemCustomMoves sParty_RivalRoute22LateWolpole[] = {
     {
         .iv = 150,
         .lvl = 47,
@@ -6091,7 +6091,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22LateSquirtle[] = {
     {
         .iv = 250,
         .lvl = 53,
-        .species = SPECIES_BLASTOISE,
+        .species = SPECIES_MASTERHOP,
         .moves = {MOVE_WATERGUN, MOVE_RAINDANCE, MOVE_BITE, MOVE_RAPIDSPIN},
     },
 };
@@ -6174,7 +6174,7 @@ struct TrainerMonNoItemCustomMoves sParty_RivalRoute22LateBlowlet[] = {
     },
 };
 
-struct TrainerMonItemCustomMoves sParty_ChampionFirstSquirtle[] = {
+struct TrainerMonItemCustomMoves sParty_ChampionFirstWolpole[] = {
     {
         .iv = 255,
         .lvl = 59,
@@ -6213,7 +6213,7 @@ struct TrainerMonItemCustomMoves sParty_ChampionFirstSquirtle[] = {
     {
         .iv = 255,
         .lvl = 63,
-        .species = SPECIES_BLASTOISE,
+        .species = SPECIES_MASTERHOP,
         .heldItem = ITEM_SITRUS_BERRY,
         .moves = {MOVE_HYDROPUMP, MOVE_RAINDANCE, MOVE_SKULLBASH, MOVE_BITE},
     },
@@ -6896,7 +6896,7 @@ struct TrainerMonNoItemDefaultMoves sParty_TwinsKiriJan[] = {
     {
         .iv = 0,
         .lvl = 29,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
     },
 };
 
@@ -7700,7 +7700,7 @@ struct TrainerMonNoItemDefaultMoves sParty_SwimmerMaleGarrett[] = {
     {
         .iv = 0,
         .lvl = 38,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -8077,7 +8077,7 @@ struct TrainerMonNoItemDefaultMoves sParty_SwimmerMaleMymo[] = {
     {
         .iv = 0,
         .lvl = 49,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -8826,7 +8826,7 @@ struct TrainerMonNoItemDefaultMoves sParty_CamperRicky2[] = {
     {
         .iv = 20,
         .lvl = 22,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
     },
 };
 
@@ -8834,7 +8834,7 @@ struct TrainerMonNoItemDefaultMoves sParty_CamperRicky3[] = {
     {
         .iv = 60,
         .lvl = 30,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -8842,7 +8842,7 @@ struct TrainerMonNoItemDefaultMoves sParty_CamperRicky4[] = {
     {
         .iv = 120,
         .lvl = 55,
-        .species = SPECIES_WARTORTLE,
+        .species = SPECIES_YWOLLYHOP,
     },
 };
 
@@ -10709,7 +10709,7 @@ struct TrainerMonItemCustomMoves sParty_EliteFourLance2[] = {
     },
 };
 
-struct TrainerMonItemCustomMoves sParty_ChampionRematchSquirtle[] = {
+struct TrainerMonItemCustomMoves sParty_ChampionRematchWolpole[] = {
     {
         .lvl = 72,
         .species = SPECIES_HERACROSS,
@@ -10732,7 +10732,7 @@ struct TrainerMonItemCustomMoves sParty_ChampionRematchSquirtle[] = {
     },
     {
         .lvl = 75,
-        .species = SPECIES_BLASTOISE_GIGA,
+        .species = SPECIES_MASTERHOP_GIGA,
     },
 };
 
@@ -10827,7 +10827,7 @@ struct TrainerMonNoItemDefaultMoves sParty_CueBallPaxton[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalStarterLab1[] = {
     {
         .lvl = 5,
-        .species = SPECIES_SQUIRTLE,
+        .species = SPECIES_WOLPOLE,
     },
 };
 

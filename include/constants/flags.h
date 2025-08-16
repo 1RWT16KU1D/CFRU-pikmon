@@ -44,7 +44,7 @@
 // Hide/show flags
 /*
 #define FLAG_HIDE_BULBLARVA_BALL                           0x028
-#define FLAG_HIDE_SQUIRTLE_BALL                            0x029
+#define FLAG_HIDE_WOLPOLE_BALL                            0x029
 #define FLAG_HIDE_BLOWLET_BALL                          0x02A
 #define FLAG_HIDE_OAK_IN_HIS_LAB                           0x02B
 #define FLAG_HIDE_OAK_IN_PALLET_TOWN                       0x02C

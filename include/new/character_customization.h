@@ -116,9 +116,9 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define OBJ_EVENT_PAL_TAG_BLOWLET 0x1203
 #define OBJ_EVENT_PAL_TAG_BLOWHOG 0x1204
 #define OBJ_EVENT_PAL_TAG_TITANBHOG 0x1205
-#define OBJ_EVENT_PAL_TAG_SQUIRTLE 0x1206
-#define OBJ_EVENT_PAL_TAG_WARTORTLE 0x1207
-#define OBJ_EVENT_PAL_TAG_BLASTOISE 0x1208
+#define OBJ_EVENT_PAL_TAG_WOLPOLE 0x1206
+#define OBJ_EVENT_PAL_TAG_YWOLLYHOP 0x1207
+#define OBJ_EVENT_PAL_TAG_MASTERHOP 0x1208
 #define OBJ_EVENT_PAL_TAG_CATERPIE 0x1209
 #define OBJ_EVENT_PAL_TAG_METAPOD 0x120A
 #define OBJ_EVENT_PAL_TAG_BUTTERFREE 0x120B
@@ -1251,9 +1251,9 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define OBJ_EVENT_PAL_TAG_BLOWLET_SHINY 0x1672
 #define OBJ_EVENT_PAL_TAG_BLOWHOG_SHINY 0x1673
 #define OBJ_EVENT_PAL_TAG_TITANBHOG_SHINY 0x1674
-#define OBJ_EVENT_PAL_TAG_SQUIRTLE_SHINY 0x1675
-#define OBJ_EVENT_PAL_TAG_WARTORTLE_SHINY 0x1676
-#define OBJ_EVENT_PAL_TAG_BLASTOISE_SHINY 0x1677
+#define OBJ_EVENT_PAL_TAG_WOLPOLE_SHINY 0x1675
+#define OBJ_EVENT_PAL_TAG_YWOLLYHOP_SHINY 0x1676
+#define OBJ_EVENT_PAL_TAG_MASTERHOP_SHINY 0x1677
 #define OBJ_EVENT_PAL_TAG_CATERPIE_SHINY 0x1678
 #define OBJ_EVENT_PAL_TAG_METAPOD_SHINY 0x1679
 #define OBJ_EVENT_PAL_TAG_BUTTERFREE_SHINY 0x167A
@@ -2385,9 +2385,9 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define EVENT_OBJ_GFX_BLOWLET 3
 #define EVENT_OBJ_GFX_BLOWHOG 4
 #define EVENT_OBJ_GFX_TITANBHOG 5
-#define EVENT_OBJ_GFX_SQUIRTLE 6
-#define EVENT_OBJ_GFX_WARTORTLE 7
-#define EVENT_OBJ_GFX_BLASTOISE 8
+#define EVENT_OBJ_GFX_WOLPOLE 6
+#define EVENT_OBJ_GFX_YWOLLYHOP 7
+#define EVENT_OBJ_GFX_MASTERHOP 8
 #define EVENT_OBJ_GFX_CATERPIE 9
 #define EVENT_OBJ_GFX_METAPOD 10
 #define EVENT_OBJ_GFX_BUTTERFREE 11
@@ -3525,6 +3525,9 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 extern const u16 gFollowingMonPic_0001_BulbLarvaPal[255];
 extern const u16 gFollowingMonPic_0002_BulborbPal[255];
 extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
+extern const u16 gFollowingMonPic_0007_WolpolePal[];
+extern const u16 gFollowingMonPic_0008_YWollyhopPal[];
+extern const u16 gFollowingMonPic_0009_MasterhopPal[];
 
 extern const u16 gFollowingMonPic_AlcremieStrawberryNormalPal[255];
 extern const u16 gFollowingMonPic_ArcanineHisuianNormalPal[255];
@@ -3712,7 +3715,7 @@ extern const u16 gFollowingMonPic_BidoofNormalPal[255];
 extern const u16 gFollowingMonPic_BinacleNormalPal[255];
 extern const u16 gFollowingMonPic_BisharpNormalPal[255];
 extern const u16 gFollowingMonPic_BlacephalonNormalPal[255];
-extern const u16 gFollowingMonPic_BlastoiseNormalPal[255];
+extern const u16 gFollowingMonPic_MasterhopNormalPal[255];
 extern const u16 gFollowingMonPic_BlazikenNormalPal[255];
 extern const u16 gFollowingMonPic_BlipbugNormalPal[255];
 extern const u16 gFollowingMonPic_BlisseyNormalPal[255];
@@ -4485,7 +4488,7 @@ extern const u16 gFollowingMonPic_SpoinkNormalPal[255];
 extern const u16 gFollowingMonPic_SprigatitoNormalPal[255];
 extern const u16 gFollowingMonPic_SpritzeeNormalPal[255];
 extern const u16 gFollowingMonPic_SquawkabillyNormalPal[255];
-extern const u16 gFollowingMonPic_SquirtleNormalPal[255];
+extern const u16 gFollowingMonPic_WolpoleNormalPal[255];
 extern const u16 gFollowingMonPic_StakatakaNormalPal[255];
 extern const u16 gFollowingMonPic_StantlerNormalPal[255];
 extern const u16 gFollowingMonPic_StaraptorNormalPal[255];
@@ -4614,7 +4617,7 @@ extern const u16 gFollowingMonPic_WailmerNormalPal[255];
 extern const u16 gFollowingMonPic_WailordNormalPal[255];
 extern const u16 gFollowingMonPic_Walking_wakeNormalPal[255];
 extern const u16 gFollowingMonPic_WalreinNormalPal[255];
-extern const u16 gFollowingMonPic_WartortleNormalPal[255];
+extern const u16 gFollowingMonPic_YWollyhopNormalPal[255];
 extern const u16 gFollowingMonPic_WatchogNormalPal[255];
 extern const u16 gFollowingMonPic_WattrelNormalPal[255];
 extern const u16 gFollowingMonPic_WeavileNormalPal[255];
@@ -4742,6 +4745,9 @@ extern const u16 gFollowingMonPic_ZygardeCompleteNormalPal[255];
 extern const u16 gShinyFollowingMonPic_0001_BulbLarvaPal[255];
 extern const u16 gShinyFollowingMonPic_0002_BulborbPal[255];
 extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
+extern const u16 gFollowingMonPic_0007_WolpolePal[];
+extern const u16 gFollowingMonPic_0008_YWollyhopPal[];
+extern const u16 gFollowingMonPic_0009_MasterhopPal[];
 
 extern const u16 gFollowingMonPic_AlcremieStrawberryShinyPal[255];
 extern const u16 gFollowingMonPic_ArcanineHisuianShinyPal[255];
@@ -4926,7 +4932,7 @@ extern const u16 gFollowingMonPic_BidoofShinyPal[255];
 extern const u16 gFollowingMonPic_BinacleShinyPal[255];
 extern const u16 gFollowingMonPic_BisharpShinyPal[255];
 extern const u16 gFollowingMonPic_BlacephalonShinyPal[255];
-extern const u16 gFollowingMonPic_BlastoiseShinyPal[255];
+extern const u16 gFollowingMonPic_MasterhopShinyPal[255];
 extern const u16 gFollowingMonPic_BlazikenShinyPal[255];
 extern const u16 gFollowingMonPic_BlipbugShinyPal[255];
 extern const u16 gFollowingMonPic_BlisseyShinyPal[255];
@@ -5699,7 +5705,7 @@ extern const u16 gFollowingMonPic_SpoinkShinyPal[255];
 extern const u16 gFollowingMonPic_SprigatitoShinyPal[255];
 extern const u16 gFollowingMonPic_SpritzeeShinyPal[255];
 extern const u16 gFollowingMonPic_SquawkabillyShinyPal[255];
-extern const u16 gFollowingMonPic_SquirtleShinyPal[255];
+extern const u16 gFollowingMonPic_WolpoleShinyPal[255];
 extern const u16 gFollowingMonPic_StakatakaShinyPal[255];
 extern const u16 gFollowingMonPic_StantlerShinyPal[255];
 extern const u16 gFollowingMonPic_StaraptorShinyPal[255];
@@ -5828,7 +5834,7 @@ extern const u16 gFollowingMonPic_WailmerShinyPal[255];
 extern const u16 gFollowingMonPic_WailordShinyPal[255];
 extern const u16 gFollowingMonPic_Walking_wakeShinyPal[255];
 extern const u16 gFollowingMonPic_WalreinShinyPal[255];
-extern const u16 gFollowingMonPic_WartortleShinyPal[255];
+extern const u16 gFollowingMonPic_YWollyhopShinyPal[255];
 extern const u16 gFollowingMonPic_WatchogShinyPal[255];
 extern const u16 gFollowingMonPic_WattrelShinyPal[255];
 extern const u16 gFollowingMonPic_WeavileShinyPal[255];

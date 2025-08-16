@@ -120,12 +120,13 @@ extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable4[];
 extern const u8 gFollowingMonPic_0001_BulbLarvaTiles[];
 extern const u8 gFollowingMonPic_0002_BulborbTiles[];
 extern const u8 gFollowingMonPic_0003_JumboBorbTiles[];
+extern const u8 gFollowingMonPic_0007_WolpoleTiles[];
+extern const u8 gFollowingMonPic_0008_YWollyhopTiles[];
+extern const u8 gFollowingMonPic_0009_MasterhopTiles[];
+
 #define gFollowingMonPic_0004_BlowletTiles ((u8*)0x08902400)
 #define gFollowingMonPic_0005_BlowhogTiles ((u8*)0x08903000)
 #define gFollowingMonPic_0006_TitanBHogTiles ((u8*)0x08903C00)
-#define gFollowingMonPic_0007_SquirtleTiles ((u8*)0x08904800)
-#define gFollowingMonPic_0008_WartortleTiles ((u8*)0x08905400)
-#define gFollowingMonPic_0009_BlastoiseTiles ((u8*)0x08906000)
 #define gFollowingMonPic_0010_CaterpieTiles ((u8*)0x08906C00)
 #define gFollowingMonPic_0011_MetapodTiles ((u8*)0x08907800)
 #define gFollowingMonPic_0012_ButterfreeTiles ((u8*)0x08908400)
@@ -1252,6 +1253,9 @@ extern const u8 gFollowingMonPic_0003_JumboBorbTiles[];
 extern const u16 gFollowingMonPic_0001_BulbLarvaPal[];
 extern const u16 gFollowingMonPic_0002_BulborbPal[];
 extern const u16 gFollowingMonPic_0003_JumboBorbPal[];
+extern const u16 gFollowingMonPic_0007_WolpolePal[];
+extern const u16 gFollowingMonPic_0008_YWollyhopPal[];
+extern const u16 gFollowingMonPic_0009_MasterhopPal[];
 
 extern const u16 gFollowingMonPic_AlcremieStrawberryNormalPal[];
 extern const u16 gFollowingMonPic_ArcanineHisuianNormalPal[];
@@ -1439,7 +1443,7 @@ extern const u16 gFollowingMonPic_BidoofNormalPal[];
 extern const u16 gFollowingMonPic_BinacleNormalPal[];
 extern const u16 gFollowingMonPic_BisharpNormalPal[];
 extern const u16 gFollowingMonPic_BlacephalonNormalPal[];
-extern const u16 gFollowingMonPic_BlastoiseNormalPal[];
+extern const u16 gFollowingMonPic_MasterhopNormalPal[];
 extern const u16 gFollowingMonPic_BlazikenNormalPal[];
 extern const u16 gFollowingMonPic_BlipbugNormalPal[];
 extern const u16 gFollowingMonPic_BlisseyNormalPal[];
@@ -2212,7 +2216,7 @@ extern const u16 gFollowingMonPic_SpoinkNormalPal[];
 extern const u16 gFollowingMonPic_SprigatitoNormalPal[];
 extern const u16 gFollowingMonPic_SpritzeeNormalPal[];
 extern const u16 gFollowingMonPic_SquawkabillyNormalPal[];
-extern const u16 gFollowingMonPic_SquirtleNormalPal[];
+extern const u16 gFollowingMonPic_WolpoleNormalPal[];
 extern const u16 gFollowingMonPic_StakatakaNormalPal[];
 extern const u16 gFollowingMonPic_StantlerNormalPal[];
 extern const u16 gFollowingMonPic_StaraptorNormalPal[];
@@ -2341,7 +2345,7 @@ extern const u16 gFollowingMonPic_WailmerNormalPal[];
 extern const u16 gFollowingMonPic_WailordNormalPal[];
 extern const u16 gFollowingMonPic_Walking_wakeNormalPal[];
 extern const u16 gFollowingMonPic_WalreinNormalPal[];
-extern const u16 gFollowingMonPic_WartortleNormalPal[];
+extern const u16 gFollowingMonPic_YWollyhopNormalPal[];
 extern const u16 gFollowingMonPic_WatchogNormalPal[];
 extern const u16 gFollowingMonPic_WattrelNormalPal[];
 extern const u16 gFollowingMonPic_WeavileNormalPal[];
@@ -2653,7 +2657,7 @@ extern const u16 gFollowingMonPic_BidoofShinyPal[];
 extern const u16 gFollowingMonPic_BinacleShinyPal[];
 extern const u16 gFollowingMonPic_BisharpShinyPal[];
 extern const u16 gFollowingMonPic_BlacephalonShinyPal[];
-extern const u16 gFollowingMonPic_BlastoiseShinyPal[];
+extern const u16 gFollowingMonPic_MasterhopShinyPal[];
 extern const u16 gFollowingMonPic_BlazikenShinyPal[];
 extern const u16 gFollowingMonPic_BlipbugShinyPal[];
 extern const u16 gFollowingMonPic_BlisseyShinyPal[];
@@ -3426,7 +3430,7 @@ extern const u16 gFollowingMonPic_SpoinkShinyPal[];
 extern const u16 gFollowingMonPic_SprigatitoShinyPal[];
 extern const u16 gFollowingMonPic_SpritzeeShinyPal[];
 extern const u16 gFollowingMonPic_SquawkabillyShinyPal[];
-extern const u16 gFollowingMonPic_SquirtleShinyPal[];
+extern const u16 gFollowingMonPic_WolpoleShinyPal[];
 extern const u16 gFollowingMonPic_StakatakaShinyPal[];
 extern const u16 gFollowingMonPic_StantlerShinyPal[];
 extern const u16 gFollowingMonPic_StaraptorShinyPal[];
@@ -3555,7 +3559,7 @@ extern const u16 gFollowingMonPic_WailmerShinyPal[];
 extern const u16 gFollowingMonPic_WailordShinyPal[];
 extern const u16 gFollowingMonPic_Walking_wakeShinyPal[];
 extern const u16 gFollowingMonPic_WalreinShinyPal[];
-extern const u16 gFollowingMonPic_WartortleShinyPal[];
+extern const u16 gFollowingMonPic_YWollyhopShinyPal[];
 extern const u16 gFollowingMonPic_WatchogShinyPal[];
 extern const u16 gFollowingMonPic_WattrelShinyPal[];
 extern const u16 gFollowingMonPic_WeavileShinyPal[];

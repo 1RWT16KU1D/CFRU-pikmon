@@ -28781,7 +28781,7 @@ ANIM_G_MAX_CANNONADE_MOVE:
 	waitanimation
 	endanimation
 
-@;The shots are positioned to come out of the DPE's G-Max Blastoise sprite's cannons
+@;The shots are positioned to come out of the DPE's G-Max Masterhop sprite's cannons
 MAX_CANNONADE_SHOT:
 	launchtask AnimTask_IsTargetPlayerSide 0x2 0x0
 	jumpifargmatches 0x7 bank_target MAX_CANNONADE_SHOT_OPPONENT_ATTACK
