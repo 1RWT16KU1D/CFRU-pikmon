@@ -1,9 +1,3 @@
-#org @gText_TestScript
-Creating following mon.
-
-#org @gText_PalletGirl_Text1
-Show or hide follower mon?\nSelect Yes to show or No to hide.
-
 #org @gText_ChangeTeraTypeNPCAsk
 Ah, hi there[.]\pI can change your Pok\emon's\nTera Type!\pWould you like me to change it?
 

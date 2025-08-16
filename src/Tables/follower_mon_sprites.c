@@ -1,6 +1,5 @@
 #include "../defines.h"
 #include "../../include/follower_mon_sprites.h"
-#include "../../include/new/character_customization.h"
 
 // Add Followers Frames Here
 MON_OW_TEMPLATE_32x32_FRAMES(0001, BulbLarva)
@@ -16,15 +15,15 @@ MON_OW_TEMPLATE_32x32_FRAMES(0009, Masterhop)
 // Add Followers Graphics Info Here
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
 {
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_BULBLARVA, BulbLarva) // 0
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_BULBORB, Bulborb)     // 1
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_JUMBOBORB, JumboBorb) // 2
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_BLOWLET, Blowlet)     // 3
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_BLOWHOG, Blowhog)     // 4
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_TITANBHOG, TitanBHog) // 5
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_WOLPOLE, Wolpole)     // 6
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_YWOLLYHOP, YWollyhop) // 7
-    MON_OW_OBJECT_GRAPHICS(OBJ_EVENT_PAL_TAG_MASTERHOP, Masterhop) // 8
+    MON_OW_OBJECT_GRAPHICS(0, BulbLarva) // 0
+    MON_OW_OBJECT_GRAPHICS(0, Bulborb)     // 1
+    MON_OW_OBJECT_GRAPHICS(0, JumboBorb) // 2
+    MON_OW_OBJECT_GRAPHICS(0, Blowlet)     // 3
+    MON_OW_OBJECT_GRAPHICS(0, Blowhog)     // 4
+    MON_OW_OBJECT_GRAPHICS(0, TitanBHog) // 5
+    MON_OW_OBJECT_GRAPHICS(0, Wolpole)     // 6
+    MON_OW_OBJECT_GRAPHICS(0, YWollyhop) // 7
+    MON_OW_OBJECT_GRAPHICS(0, Masterhop) // 8
 };
 
 // Link Species with Overworld Sprites

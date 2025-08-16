@@ -57,7 +57,6 @@ void FixFollowerMonLocalIdAfterWarp(void);
 void RestoreFollowerAfterBattle(void);
 extern void ChangeFollowerPalette(void);
 
-extern u8 EventScript_FollowerMon[];
 
 #define MOVEMENT_INVALID 0xFE
 
@@ -1548,10 +1547,7 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
 			gFollowerState.map.id = gEventObjects[eventObjId].localId;
 			gFollowerState.map.number = gSaveBlock1->location.mapNum;
 			gFollowerState.map.group = gSaveBlock1->location.mapGroup;
-			if (FlagGet(FLAG_FOLLOWER_POKEMON))
-			gFollowerState.script = EventScript_FollowerMon;
-			else
-			gFollowerState.script = script;
+                        gFollowerState.script = script;
 			gFollowerState.flag = flag;
 			gFollowerState.flags = followerFlags;
 			gFollowerState.createSurfBlob = SURF_BLOB_STATE_NONE;

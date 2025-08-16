@@ -37,7 +37,7 @@ EventScript_Pallet_FatGuy:
     givepokemon 9 50 0 0 1 0
     setvar 0x8001 0xFD
     special 0xD1
-    msgbox gText_TestScript MSG_NORMAL
+    // Removed follower mon debug message
     release
     end
 
@@ -47,23 +47,6 @@ EventScript_Pallet_FatGuy:
 EventScript_Pallet_Girl:
     faceplayer
     lock
-    msgbox gText_PalletGirl_Text1 MSG_YESNO
-    compare LASTRESULT 0x1
-    if YES _goto PalletGirl_ShowFollowerMon
-    setflag 0xa02
-    setflag 0xa03
-    hidefollowermon
-    setflag 0xA0B
-    clearflag 0x4BD
-    special 0xD2
-    release
-    end
-
-PalletGirl_ShowFollowerMon:
-    callasm ChangeFollowerPalette
-    showfollowermon
-    special 0xD1
-    setflag 0x4BD
     release
     end
 
