@@ -63,6 +63,7 @@ et_battle_scripts.s
 .global BattleScript_PrintCustomStringEnd3
 
 .global BattleScript_GloomyWeatherHealing
+.global BattleScript_GloomyWeatherEnds
 
 .global TrickRoomEndString
 .global WonderRoomEndString
@@ -677,10 +678,17 @@ BattleScript_PrintCustomStringEnd3:
 
 BattleScript_GloomyWeatherHealing:
 	weatherdamage
-	playanimation BANK_EFFECT ANIM_HEALING_SPARKLES 0x0
+	playanimation BANK_SCRIPTING ANIM_HEALING_SPARKLES 0x0
 	orword HIT_MARKER HITMARKER_IGNORE_SUBSTITUTE
-	graphicalhpupdate BANK_EFFECT
-	datahpupdate BANK_EFFECT
+	graphicalhpupdate BANK_SCRIPTING
+	datahpupdate BANK_SCRIPTING
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	end3
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_GloomyWeatherEnds:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	end3

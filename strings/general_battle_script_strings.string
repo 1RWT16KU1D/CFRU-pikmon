@@ -545,5 +545,5 @@ Deadly gases surround the\nbattlefield[.]
 #org @gText_GloomHealing
 [SCRIPTING_BANK] was healed by\nthe deadly gas!
 
-#org @gText_GloomDissipate
+#org @gText_GloomyWeatherEnd
 The deadly gases dissipated[.]

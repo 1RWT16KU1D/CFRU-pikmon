@@ -62,7 +62,7 @@ const struct WildPokemon gRoute1_LandMonsEvening[] =
     {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
     {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
     {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
-    {2, 3, SPECIES_FRIGIBAX},       // Cold-blooded Dragon/Ice baby
+    {2, 3, SPECIES_HOUNDOUR},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_YAMPER},        // Cheerful Electric-type for contrast
     {2, 3, SPECIES_DRIFLOON},      // Ghost-type, creepy dusk lore
     {2, 2, SPECIES_HOUNDOUR},      // Edgy Fire/Dark, good evening fit
@@ -80,7 +80,7 @@ const struct WildPokemon gRoute1_LandMonsNight[] =
     {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
     {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
     {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
-    {2, 3, SPECIES_FRIGIBAX},       // Cold-blooded Dragon/Ice baby
+    {2, 3, SPECIES_HOUNDOUR},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_LITLEO},         // Night hunting Fire-type
     {2, 3, SPECIES_GASTLY},         // Mandatory spooky ghost 👻
     {2, 2, SPECIES_MISDREAVUS},     // Pure ghost — mysterious and elegant
@@ -176,7 +176,7 @@ const struct SwarmData gSwarmTable[] =
 {
 	{
 		.mapName = MAPSEC_ROUTE_1,
-		.species = SPECIES_FRIGIBAX,
+		.species = SPECIES_HOUNDOUR,
 	},
 };
 

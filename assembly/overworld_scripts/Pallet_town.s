@@ -32,6 +32,9 @@ EventScript_Pallet_FatGuy:
     givepokemon SPECIES_VILEPLUME 15 0 0 1 0
     givepokemon SPECIES_TORKOAL 15 0 0 0 0
     givepokemon SPECIES_PELIPPER 15 0 0 0 0
+    givepokemon SPECIES_TYRANITAR 15 0 0 0 0
+    givepokemon SPECIES_HOUNDOOM 15 ITEM_HOUNDOOMINITE 0 0 0
+    additem ITEM_MEGA_RING 1
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL
