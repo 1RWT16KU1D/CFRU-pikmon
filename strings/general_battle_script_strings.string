@@ -537,7 +537,7 @@ Being hit by [CURRENT_MOVE]\ncharged [SCRIPTING_BANK] with power.
 [SCRIPTING_BANK] healed\n[EFFECT_BANK]!
 
 #org @gText_GloomBattleStart
-Poisonous gas surround the battlefield.
+Poisonous gases surround the\nbattlefield[.]
 
 #org @gText_GloomDamage
 [SCRIPTING_BANK] is hurt by\nthe toxic gases!
