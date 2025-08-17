@@ -64,6 +64,7 @@ et_battle_scripts.s
 
 .global BattleScript_GloomyWeatherHealing
 .global BattleScript_GloomyWeatherEnds
+.global BattleScript_GloomyWeatherHurt
 
 .global TrickRoomEndString
 .global WonderRoomEndString
@@ -694,6 +695,19 @@ BattleScript_GloomyWeatherEnds:
 	end3
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_GloomyWeatherHurt:
+	weatherdamage
+	jumpifword EQUALS DAMAGE_LOC 0x0 BattleScript_WeatherDamage_End
+	printfromtable gSandstormHailDmgStringIds
+	waitmessage DELAY_1SECOND
+	orword HIT_MARKER, HITMARKER_x20 | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG | HITMARKER_GRUDGE
+	playanimation BANK_ATTACKER ANIM_GLOOMY_WEATHER_HURT 0x0
+	graphicalhpupdate BANK_ATTACKER
+	datahpupdate BANK_ATTACKER
+	faintpokemon BANK_ATTACKER, FALSE, 0x0
+	bicword HIT_MARKER, HITMARKER_x20 | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG | HITMARKER_GRUDGE
+	end2
 
 .align 2
 FogEndedString: .byte 0xCE, 0xDC, 0xD9, 0x00, 0xDA, 0xE3, 0xDB, 0x00, 0xD8, 0xDD, 0xE7, 0xD5, 0xE4, 0xE4, 0xD9, 0xD5, 0xE6, 0xD9, 0xD8, 0xAD, 0xFF

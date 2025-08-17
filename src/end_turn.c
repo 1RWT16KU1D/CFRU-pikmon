@@ -471,7 +471,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
                                 gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
                                 gBattleStringLoader = gText_GloomDamage;
                                 gBattleCommunication[MULTISTRING_CHOOSER] = 2;
-								script = BattleScript_WeatherDamage;
+								script = BattleScript_GloomyWeatherHurt;
                                 effect++;
                             }
                         }

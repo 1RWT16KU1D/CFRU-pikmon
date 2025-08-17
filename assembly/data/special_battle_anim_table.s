@@ -103,6 +103,7 @@ gBattleAnims_General:
 .word ANIM_TOXICSPIKES2
 .word ANIM_TERASTAL
 .word ANIM_GLOOMY_WEATHER
+.word ANIM_GLOOMY_WEATHER_HURT
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
@@ -1277,6 +1278,16 @@ ANIM_GLOOMY_WEATHER:
 	pause 0x38
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x8 0x0 0x301F
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xB 0x0 0x301F
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+.align 2
+ANIM_GLOOMY_WEATHER_HURT:
+	loadparticle ANIM_TAG_POISON_BUBBLE
+	pause 0x5
+	call POISON_BUBBLES
 	waitanimation
 	endanimation
 

@@ -119,3 +119,4 @@ extern const u8 gText_PickUpItemToCube[];
 extern const u8 gText_GloomDamage[];
 extern const u8 gText_GloomHealing[];
 extern const u8 BattleScript_GloomyWeatherEnds[];
+extern const u8 BattleScript_GloomyWeatherHurt[];
