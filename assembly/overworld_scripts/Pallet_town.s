@@ -13,7 +13,7 @@ EventScript_Pallet_FatGuy:
     setflag 0x926
     setflag 0x828
     setflag 0x4BD
-    setvar 0x8000 0xFFFF
+    setvar 0x8000 MOVE_SLUDGE
     setvar 0x8001 0xFFFF
     setvar 0x8002 0xFFFF
     setvar 0x8003 0xFFFF
@@ -29,7 +29,9 @@ EventScript_Pallet_FatGuy:
     setvar 0x8004 0xF @ Erase entire party
 	special 0x62
 
-    givepokemon SPECIES_VILEPLUME 15 0 0 0 0
+    givepokemon SPECIES_VILEPLUME 15 0 0 1 0
+    givepokemon SPECIES_TORKOAL 15 0 0 0 0
+    givepokemon SPECIES_PELIPPER 15 0 0 0 0
     setvar 0x8001 0xFD
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL

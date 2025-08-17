@@ -7712,6 +7712,7 @@ BLUE_HEARTS: objtemplate ANIM_TAG_MAGENTA_HEART ANIM_TAG_BLUE_STAR OAM_OFF_16x16
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 @Credits to Lixdel
+.global ANIM_DEFOG
 ANIM_DEFOG:
 	loadparticle ANIM_TAG_WHITE_FEATHER
 	playsound2 0xEF 0x0

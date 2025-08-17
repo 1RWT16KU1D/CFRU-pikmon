@@ -679,7 +679,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			{
 				gBattleWeather = (WEATHER_GLOOM);
 				gWishFutureKnock.weatherDuration = 0;
-				gBattleScripting.animArg1 = B_ANIM_RAIN_CONTINUES;
+				gBattleScripting.animArg1 = B_ANIM_GLOOM_CONTINUES;
 				gBattleStringLoader = gText_GloomyWeatherContinues;
 				gBattleCommunication[MULTISTRING_CHOOSER] = 4;
 				BattleScriptPushCursorAndCallback(BattleScript_NewWeatherAbilityActivates);

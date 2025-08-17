@@ -3353,6 +3353,13 @@ void atk96_weatherdamage(void)
 		{
 			gBattleMoveDamage = GetHailDamage(bank);
 		}
+        else if (gBattleWeather & WEATHER_GLOOM_ANY)
+        {
+            if (IsOfType(bank, TYPE_POISON))
+            	gBattleMoveDamage = -MathMax(1, GetBaseMaxHP(bank) / 16);
+            else if (TakesGeneralWeatherDamage(bank))
+            	gBattleMoveDamage = MathMax(1, GetBaseMaxHP(bank) / 16);
+        }
 	}
 
 	gNewBS->turnDamageTaken[bank] = gBattleMoveDamage; //For Emergency Exit

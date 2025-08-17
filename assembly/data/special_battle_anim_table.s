@@ -102,6 +102,7 @@ gBattleAnims_General:
 .word ANIM_CHARGE2
 .word ANIM_TOXICSPIKES2
 .word ANIM_TERASTAL
+.word ANIM_GLOOMY_WEATHER
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
@@ -1264,6 +1265,23 @@ TERASYMBOL: objtemplate ANIM_TAG_TERA_SYMBOL ANIM_TAG_TERA_SYMBOL OAM_DOUBLE_BLE
 TERA_CRYSTAL: objtemplate ANIM_TAG_TERA_CRYSTAL ANIM_TAG_TERA_CRYSTAL OAM_DOUBLE_64x64 gDummySpriteAnimTable 0x0 0x83E7144 0x8075D9D
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+.align 2
+ANIM_GLOOMY_WEATHER:
+	goto ANIM_DEFOG
+
+	loadparticle ANIM_TAG_RED_ORB
+	playsound2 0xEF 0x0
+	launchtask 0x80AFD81 0x5 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x3 0x0 0x10 0x7fff
+	pause 0x8
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x4 0x0 0x46 0x0
+	pause 0x46
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x2 0x10 0x0 0x7fff
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 .pool
 .align 2
 .global gBattleAnims_Special

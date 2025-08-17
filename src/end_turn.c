@@ -4,6 +4,7 @@
 #include "../include/random.h"
 #include "../include/constants/items.h"
 
+#include "../include/new/ability_battle_scripts.h"
 #include "../include/new/ai_master.h"
 #include "../include/new/battle_start_turn_start.h"
 #include "../include/new/battle_script_util.h"
@@ -320,18 +321,18 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 
 					gBattleScripting.animArg1 = B_ANIM_SANDSTORM_CONTINUES;
 					
-					if (gBattleWeather & WEATHER_SANDSTORM_PRIMAL)
-					{
-						gBattleStringLoader = gText_ViciousSandstormContinues;
-						gBattleCommunication[MULTISTRING_CHOOSER] = 2;
-					}
-					else
-					{
-						gBattleCommunication[MULTISTRING_CHOOSER] = 0;
-					}
+				if (gBattleWeather & WEATHER_SANDSTORM_PRIMAL)
+				{
+					gBattleStringLoader = gText_ViciousSandstormContinues;
+					gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+				}
+				else
+				{
+					gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+				}
 
-					BattleScriptExecute(gBattlescriptCurrInstr);
-					effect++;
+				BattleScriptExecute(gBattlescriptCurrInstr);
+				effect++;
 				}
 				else if (gBattleWeather & WEATHER_HAIL_ANY)
 				{
@@ -346,11 +347,33 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 						if (gHitMarker & HITMARKER_NO_ANIMATIONS)
 							gBattlescriptCurrInstr = BattleScript_SandstormHailContinues;
 						else
-							gBattlescriptCurrInstr = BattleScript_SandstormHailContinuesNoString; //Don't need to print string every time - anim is enough
+							gBattlescriptCurrInstr = BattleScript_SandstormHailContinuesNoString; // Don't need to print string every time - anim is enough
 					}
 
 					gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
 					gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+					BattleScriptExecute(gBattlescriptCurrInstr);
+					effect++;
+				}
+				else if (gBattleWeather & WEATHER_GLOOM_ANY)
+				{
+					if (gWishFutureKnock.weatherDuration
+					&& --gWishFutureKnock.weatherDuration == 0)
+					{
+						gBattleWeather &= ~WEATHER_GLOOM_ANY;
+						gBattlescriptCurrInstr = BattleScript_SandStormHailEnds;
+					}
+					else
+					{
+						if (gHitMarker & HITMARKER_NO_ANIMATIONS)
+							gBattlescriptCurrInstr = BattleScript_SandstormHailContinues;
+						else
+							gBattlescriptCurrInstr = BattleScript_SandstormHailContinuesNoString; // Don't need to print string every time - anim is enough
+					}
+
+					gBattleScripting.animArg1 = B_ANIM_GLOOM_CONTINUES;
+					gBattleStringLoader = gText_GloomyWeatherContinues;
+					gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 					BattleScriptExecute(gBattlescriptCurrInstr);
 					effect++;
 				}
@@ -359,11 +382,12 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 					if (gHitMarker & HITMARKER_NO_ANIMATIONS)
 						gBattlescriptCurrInstr = BattleScript_MysteriousAirCurrentContinues;
 					else
-						gBattlescriptCurrInstr = BattleScript_MysteriousAirCurrentContinuesNoString; //Don't need to print string every time - anim is enough
+						gBattlescriptCurrInstr = BattleScript_MysteriousAirCurrentContinuesNoString; // Don't need to print string every time - anim is enough
 
 					BattleScriptExecute(gBattlescriptCurrInstr);
 					effect++;
 				}
+
 				else if (gBattleWeather & WEATHER_FOG_ANY)
 				{
 					if (!(gBattleWeather & WEATHER_FOG_PERMANENT)
@@ -421,11 +445,14 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
                         {
                             if (IsOfType(gActiveBattler, TYPE_POISON))
                             {
-                                gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
-                                gBattleMoveDamage *= -1;
-                                gBattleStringLoader = gText_GloomHealing;
-                                gBattleCommunication[MULTISTRING_CHOOSER] = 2;
-                                effect++;
+								if (!BATTLER_MAX_HP(gActiveBattler))
+								{
+									gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
+									gBattleMoveDamage *= -1;
+									gBattleStringLoader = gText_GloomHealing;
+									gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+									effect++;
+								}
                             }
                             else if (TakesGeneralWeatherDamage(gActiveBattler))
                             {
@@ -438,6 +465,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 
                         if (effect)
                         {
+							gBattleScripting.bank = gActiveBattler;
                         	gBattleScripting.animArg1 = 0;
                             BattleScriptExecute(BattleScript_WeatherDamage);
                         }

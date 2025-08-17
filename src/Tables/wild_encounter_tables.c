@@ -56,13 +56,13 @@ const struct WildPokemonInfo gRoute1_LandMonsInfoDay = {15, gRoute1_LandMonsDay}
 
 const struct WildPokemon gRoute1_LandMonsEvening[] =
 {
-    {2, 3, SPECIES_NIDORAN_M},     // Slightly edgy dusk encounter
-    {2, 3, SPECIES_NIDORAN_F},     // Pair with above, classic duo
-    {2, 3, SPECIES_MURKROW},       // Dusk-themed Flying/Dark
-    {2, 3, SPECIES_SNUBBULL},      // Fairy type, temperamental vibes
-    {2, 3, SPECIES_BUNEARY},       // Cute, dusk-active rabbit
-    {2, 3, SPECIES_NICKIT},        // Sly Gen 8 fox, fits dusk perfectly
-    {2, 3, SPECIES_GOSSIFLEUR},    // Soft Grass-type, calm evening wind
+    {2, 3, SPECIES_MAGNEMITE},       // Classic owl, perfect for night
+    {2, 3, SPECIES_MAGNEMITE},      // Night-prowling Dark-type
+    {2, 3, SPECIES_MAGNEMITE},       // Nocturnal Bug/Poison
+    {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
+    {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
+    {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
+    {2, 3, SPECIES_FRIGIBAX},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_YAMPER},        // Cheerful Electric-type for contrast
     {2, 3, SPECIES_DRIFLOON},      // Ghost-type, creepy dusk lore
     {2, 2, SPECIES_HOUNDOUR},      // Edgy Fire/Dark, good evening fit
@@ -74,12 +74,12 @@ const struct WildPokemonInfo gRoute1_LandMonsInfoEvening = {15, gRoute1_LandMons
 
 const struct WildPokemon gRoute1_LandMonsNight[] =
 {
-    {2, 3, SPECIES_HOOTHOOT},       // Classic owl, perfect for night
-    {2, 3, SPECIES_POOCHYENA},      // Night-prowling Dark-type
-    {2, 3, SPECIES_SPINARAK},       // Nocturnal Bug/Poison
-    {2, 3, SPECIES_CUTIEFLY},       // Gentle fluttery fairy at night
-    {2, 3, SPECIES_SANDSHREW},      // Ground type, fits cooler nights
-    {2, 3, SPECIES_CLEFFA},         // Dreamlike baby Fairy
+    {2, 3, SPECIES_MAGNEMITE},       // Classic owl, perfect for night
+    {2, 3, SPECIES_MAGNEMITE},      // Night-prowling Dark-type
+    {2, 3, SPECIES_MAGNEMITE},       // Nocturnal Bug/Poison
+    {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
+    {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
+    {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
     {2, 3, SPECIES_FRIGIBAX},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_LITLEO},         // Night hunting Fire-type
     {2, 3, SPECIES_GASTLY},         // Mandatory spooky ghost 👻
