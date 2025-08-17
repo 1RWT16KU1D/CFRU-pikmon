@@ -1287,6 +1287,9 @@ ANIM_GLOOMY_WEATHER:
 ANIM_GLOOMY_WEATHER_HURT:
 	loadparticle ANIM_TAG_POISON_BUBBLE
 	pause 0x5
+	pokespritetoBG side_attacker
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_ATK 0x0 0x4 0x0 0xc 0x681a
+	pokespritefromBG side_attacker
 	call POISON_BUBBLES
 	waitanimation
 	endanimation
