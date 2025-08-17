@@ -39,7 +39,7 @@ bool8 Is350CupBattle(void);
 bool8 IsScaleMonsBattle(void);
 bool8 IsOnlyScalemonsGame(void);
 bool8 IsCamomonsBattle(void);
-bool8 IsBenjaminButterfreeBattle(void);
+bool8 IsBenjaminGlntBeetleBattle(void);
 bool8 AreMegasZMovesBannedInTier(u8 tier);
 bool8 IsMegaZMoveBannedBattle(void);
 bool8 IsMoveBannedInRingChallenge(u16 move, u8 bank);
@@ -130,7 +130,7 @@ enum BattleTowerFormats
 	BATTLE_FACILITY_SCALEMONS,
 	BATTLE_FACILITY_350_CUP,
 	BATTLE_FACILITY_AVERAGE_MONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
+	BATTLE_FACILITY_BENJAMIN_GLNTBEETLE,
 	BATTLE_FACILITY_MEGA_BRAWL,
 	BATTLE_FACILITY_DYNAMAX_STANDARD,
 	BATTLE_FACILITY_NATIONAL_DEX_OU,
@@ -138,7 +138,7 @@ enum BattleTowerFormats
 	BATTLE_FACILITY_UU,
 	BATTLE_FACILITY_RU,
 	BATTLE_FACILITY_NU,
-	BATTLE_MINE_FORMAT_1, //OU, Camomons, Benjamin Butterfree
+	BATTLE_MINE_FORMAT_1, //OU, Camomons, Benjamin GlntBeetle
 	BATTLE_MINE_FORMAT_2, //Scalemons, 350 Cup, Averagemons
 	BATTLE_MINE_FORMAT_3, //Little Cup, Little Cup Camomons
 	BATTLE_MINE_FORMAT_4, //Ubers, Ubers Camomons

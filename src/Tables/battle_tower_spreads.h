@@ -423,7 +423,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -450,7 +450,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -476,7 +476,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -502,7 +502,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -59628,7 +59628,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_METAPOD,
+		.species = SPECIES_DOODLEBUG,
 		.nature = NATURE_NAIVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -59654,7 +59654,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_METAPOD,
+		.species = SPECIES_DOODLEBUG,
 		.nature = NATURE_HASTY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -66755,7 +66755,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CATERPIE,
+		.species = SPECIES_FLNTBEETLE,
 		.nature = NATURE_NAIVE,
 		.hpIv = 31,
 		.atkIv = 31,

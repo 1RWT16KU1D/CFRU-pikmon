@@ -290,7 +290,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherRick[] = {
     {
         .iv = 0,
         .lvl = 6,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
 };
 
@@ -324,7 +324,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
@@ -334,7 +334,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
 };
 
@@ -352,12 +352,12 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherGreg[] = {
     {
         .iv = 0,
         .lvl = 9,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
         .lvl = 9,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
 };
 
@@ -365,12 +365,12 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherJames[] = {
     {
         .iv = 0,
         .lvl = 11,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
         .lvl = 11,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
 };
 
@@ -391,17 +391,17 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherRobby[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
 };
 
@@ -409,7 +409,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherCale[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
@@ -419,7 +419,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherCale[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
     {
         .iv = 0,
@@ -437,7 +437,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherKeigo[] = {
     {
         .iv = 0,
         .lvl = 16,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
@@ -450,7 +450,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherElijah[] = {
     {
         .iv = 0,
         .lvl = 20,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
     },
 };
 
@@ -458,12 +458,12 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcher2[] = {
     {
         .iv = 0,
         .lvl = 18,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
     {
         .iv = 0,
         .lvl = 18,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
@@ -489,7 +489,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherConner[] = {
     {
         .iv = 0,
         .lvl = 20,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
@@ -5305,7 +5305,7 @@ struct TrainerMonNoItemCustomMoves sParty_CooltrainerShannon[] = {
     {
         .iv = 100,
         .lvl = 42,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
         .moves = {MOVE_SAFEGUARD, MOVE_PSYBEAM, MOVE_GUST, MOVE_SUPERSONIC},
     },
     {
@@ -7359,12 +7359,12 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherAnthony[] = {
     {
         .iv = 0,
         .lvl = 7,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
         .lvl = 8,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
 };
 
@@ -7372,17 +7372,17 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherCharlie[] = {
     {
         .iv = 0,
         .lvl = 7,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
     {
         .iv = 0,
         .lvl = 7,
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_FLNTBEETLE,
     },
     {
         .iv = 0,
         .lvl = 7,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
 };
 
@@ -10483,7 +10483,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton2[] = {
     {
         .iv = 20,
         .lvl = 19,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
     {
         .iv = 20,
@@ -10493,7 +10493,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton2[] = {
     {
         .iv = 20,
         .lvl = 19,
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_DOODLEBUG,
     },
 };
 
@@ -10501,7 +10501,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton3[] = {
     {
         .iv = 60,
         .lvl = 27,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
     },
     {
         .iv = 60,
@@ -10511,7 +10511,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton3[] = {
     {
         .iv = 60,
         .lvl = 27,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
     },
 };
 
@@ -10519,7 +10519,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton4[] = {
     {
         .iv = 120,
         .lvl = 51,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
     },
     {
         .iv = 120,
@@ -10529,7 +10529,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BugCatcherColton4[] = {
     {
         .iv = 120,
         .lvl = 51,
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_GLNTBEETLE,
     },
 };
 

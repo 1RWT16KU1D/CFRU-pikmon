@@ -62,7 +62,7 @@ extern const u8 gText_MiddleCupCamomons[];
 extern const u8 gText_SmogonScalemons[];
 extern const u8 gText_Smogon350Cup[];
 extern const u8 gText_SmogonAveragemons[];
-extern const u8 gText_SmogonBenjaminButterfree[];
+extern const u8 gText_SmogonBenjaminGlntBeetle[];
 extern const u8 gText_MegaBrawl[];
 extern const u8 gText_DynamaxStandard[];
 extern const u8 gText_NationalDexOU[];
@@ -135,7 +135,7 @@ const u8 gBattleMineFormat1Tiers[] =
 {
 	BATTLE_FACILITY_OU,
 	BATTLE_FACILITY_CAMOMONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
+	BATTLE_FACILITY_BENJAMIN_GLNTBEETLE,
 };
 
 const u8 gBattleMineFormat2Tiers[] =
@@ -179,7 +179,7 @@ const u8 gBattleCircusTiers[] =
 	BATTLE_FACILITY_SCALEMONS,
 	BATTLE_FACILITY_350_CUP,
 	BATTLE_FACILITY_AVERAGE_MONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
+	BATTLE_FACILITY_BENJAMIN_GLNTBEETLE,
 	BATTLE_FACILITY_MEGA_BRAWL,
 	BATTLE_FACILITY_DYNAMAX_STANDARD,
 	BATTLE_FACILITY_NATIONAL_DEX_OU,
@@ -203,7 +203,7 @@ const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 	[BATTLE_FACILITY_SCALEMONS] = gText_SmogonScalemons,
 	[BATTLE_FACILITY_350_CUP] = gText_Smogon350Cup,
 	[BATTLE_FACILITY_AVERAGE_MONS] = gText_SmogonAveragemons,
-	[BATTLE_FACILITY_BENJAMIN_BUTTERFREE] = gText_SmogonBenjaminButterfree,
+	[BATTLE_FACILITY_BENJAMIN_GLNTBEETLE] = gText_SmogonBenjaminGlntBeetle,
 	[BATTLE_FACILITY_MEGA_BRAWL] = gText_MegaBrawl,
 	[BATTLE_FACILITY_DYNAMAX_STANDARD] = gText_DynamaxStandard,
 	[BATTLE_FACILITY_NATIONAL_DEX_OU] = gText_NationalDexOU,
@@ -731,9 +731,9 @@ bool8 IsCamomonsBattle(void)
 	return FlagGet(FLAG_BATTLE_FACILITY) && IsCamomonsTier(VarGet(VAR_BATTLE_FACILITY_TIER));
 }
 
-bool8 IsBenjaminButterfreeBattle(void)
+bool8 IsBenjaminGlntBeetleBattle(void)
 {
-	return (gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_BUTTERFREE) != 0;
+	return (gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLNTBEETLE) != 0;
 }
 
 bool8 AreMegasZMovesBannedInTier(u8 tier)
@@ -1113,8 +1113,8 @@ bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTower
 				return TRUE;
 			break;
 
-		case BATTLE_FACILITY_BENJAMIN_BUTTERFREE:
-			if (gSpecialSpeciesFlags[species].smogonBenjaminButterfreeBan)
+		case BATTLE_FACILITY_BENJAMIN_GLNTBEETLE:
+			if (gSpecialSpeciesFlags[species].smogonBenjaminGlntBeetleBan)
 				return TRUE;
 
 			goto STANDARD_OU_CHECK;
@@ -1297,8 +1297,8 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 		case BATTLE_FACILITY_AVERAGE_MONS:
 			return gSpecialSpeciesFlags[species].smogonAverageMonsBan;
 		
-		case BATTLE_FACILITY_BENJAMIN_BUTTERFREE:
-			if (gSpecialSpeciesFlags[species].smogonBenjaminButterfreeBan)
+		case BATTLE_FACILITY_BENJAMIN_GLNTBEETLE:
+			if (gSpecialSpeciesFlags[species].smogonBenjaminGlntBeetleBan)
 				return TRUE;
 			goto STANDARD_OU_CHECK;
 
@@ -1306,7 +1306,7 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_SINGLE)
 				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_DOUBLE) //OU Doubles has its own ban list
 				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_CAMOMONS, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_BENJAMIN_BUTTERFREE, battleFormat);
+				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_BENJAMIN_GLNTBEETLE, battleFormat);
 
 		case BATTLE_MINE_FORMAT_2:
 			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_SCALEMONS, battleFormat)

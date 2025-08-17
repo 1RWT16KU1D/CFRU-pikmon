@@ -2083,7 +2083,7 @@ void BackupScriptingBank(void)
 	gNewBS->SentInBackup = gBattleScripting.bank;
 }
 
-//For Benjamin Butterfree
+//For Benjamin GlntBeetle
 void RestoreEffectBankHPStatsAndRemoveBackupSpecies(void)
 {
 	u32 i, j;
@@ -2155,7 +2155,7 @@ void RestoreEffectBankHPStatsAndRemoveBackupSpecies(void)
 	}
 
 	gActiveBattler = gEffectBank;
-	GetBankPartyData(gActiveBattler)->backupSpecies = SPECIES_NONE; //There's no going back from a Benjamin Butterfree
+	GetBankPartyData(gActiveBattler)->backupSpecies = SPECIES_NONE; //There's no going back from a Benjamin GlntBeetle
 
 	//Reset all stats
 	for (i = STAT_STAGE_ATK; i < BATTLE_STATS_NO; ++i)

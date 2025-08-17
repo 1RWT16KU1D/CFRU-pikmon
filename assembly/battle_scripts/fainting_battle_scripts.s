@@ -16,7 +16,7 @@ fainting_battle_scripts.s
 .global BattleScript_FaintScriptingBank
 .global BattleScript_FaintRaidScriptingBank
 .global BattleScript_SuccessBallThrow
-.global BattleScript_BenjaminButterfreeDevolution
+.global BattleScript_BenjaminGlntBeetleDevolution
 
 @Raid Explosion doesn't work on Trainer Dynamax mon because it's KOd
 
@@ -98,7 +98,7 @@ BattleScript_CaughtPokemonSkipNewDex:
 	callasm TrySkipBattleNicknameOffer
 	goto 0x81D9A63
 	
-BattleScript_BenjaminButterfreeDevolution:
+BattleScript_BenjaminGlntBeetleDevolution:
 	callasm RestoreEffectBankHPStatsAndRemoveBackupSpecies
 	reloadhealthbar BANK_EFFECT
 	playanimation BANK_EFFECT ANIM_TRANSFORM 0x0

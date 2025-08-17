@@ -1326,7 +1326,7 @@ void atk19_tryfaintmon(void)
 				BS_ptr = BattleScript_FaintTarget;
 		}
 
-		if (TryDoBenjaminButterfree(7))
+		if (TryDoBenjaminGlntBeetle(7))
 			return;
 
 		if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler])
@@ -1392,9 +1392,9 @@ void atk19_tryfaintmon(void)
 	}
 }
 
-bool8 TryDoBenjaminButterfree(u8 scriptOffset)
+bool8 TryDoBenjaminGlntBeetle(u8 scriptOffset)
 {
-	if (IsBenjaminButterfreeBattle() && !IS_TRANSFORMED(gActiveBattler) && !BATTLER_ALIVE(gActiveBattler))
+	if (IsBenjaminGlntBeetleBattle() && !IS_TRANSFORMED(gActiveBattler) && !BATTLER_ALIVE(gActiveBattler))
 	{
 		u16 devolutionSpecies = GetMonDevolution(GetBankPartyData(gActiveBattler));
 		if (devolutionSpecies != SPECIES_NONE)
@@ -1403,7 +1403,7 @@ bool8 TryDoBenjaminButterfree(u8 scriptOffset)
 			DoFormChange(gActiveBattler, devolutionSpecies, TRUE, TRUE, TRUE);
 			gEffectBank = gActiveBattler;
 			BattleScriptPush(gBattlescriptCurrInstr + scriptOffset);
-			gBattlescriptCurrInstr = BattleScript_BenjaminButterfreeDevolution;
+			gBattlescriptCurrInstr = BattleScript_BenjaminGlntBeetleDevolution;
 			return TRUE;
 		}
 	}

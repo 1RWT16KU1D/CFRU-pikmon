@@ -11893,7 +11893,7 @@ static struct Raid sIcicleCaveRaids5Star[] =
 static struct Raid sGrimWoodsRaids2Star[] =
 {
 	{
-		.species = SPECIES_METAPOD,
+		.species = SPECIES_DOODLEBUG,
 		.ability = RAID_ABILITY_RANDOM_1_2,
 		.drops =
 		{
@@ -12049,7 +12049,7 @@ static struct Raid sGrimWoodsRaids2Star[] =
 static struct Raid sGrimWoodsRaids3Star[] =
 {
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.ability = RAID_ABILITY_RANDOM_ALL,
 		.drops =
 		{
@@ -12205,7 +12205,7 @@ static struct Raid sGrimWoodsRaids3Star[] =
 static struct Raid sGrimWoodsRaids4Star[] =
 {
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.ability = RAID_ABILITY_RANDOM_ALL,
 		.drops =
 		{
@@ -12361,7 +12361,7 @@ static struct Raid sGrimWoodsRaids4Star[] =
 static struct Raid sGrimWoodsRaids5Star[] =
 {
 	{
-		.species = SPECIES_BUTTERFREE,
+		.species = SPECIES_GLNTBEETLE,
 		.ability = RAID_ABILITY_HIDDEN,
 		.drops =
 		{
