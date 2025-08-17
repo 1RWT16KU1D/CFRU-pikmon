@@ -62,6 +62,8 @@ et_battle_scripts.s
 .global BattleScript_PrintCustomStringEnd2
 .global BattleScript_PrintCustomStringEnd3
 
+.global BattleScript_GloomyWeatherHealing
+
 .global TrickRoomEndString
 .global WonderRoomEndString
 .global MagicRoomEndString
@@ -670,6 +672,20 @@ BattleScript_PrintCustomStringEnd2:
 BattleScript_PrintCustomStringEnd3:
 	call BattleScript_PrintCustomString
 	end3
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_GloomyWeatherHealing:
+	weatherdamage
+	playanimation BANK_EFFECT ANIM_HEALING_SPARKLES 0x0
+	orword HIT_MARKER HITMARKER_IGNORE_SUBSTITUTE
+	graphicalhpupdate BANK_EFFECT
+	datahpupdate BANK_EFFECT
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	end3
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .align 2
 FogEndedString: .byte 0xCE, 0xDC, 0xD9, 0x00, 0xDA, 0xE3, 0xDB, 0x00, 0xD8, 0xDD, 0xE7, 0xD5, 0xE4, 0xE4, 0xD9, 0xD5, 0xE6, 0xD9, 0xD8, 0xAD, 0xFF

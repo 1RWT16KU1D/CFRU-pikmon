@@ -410,7 +410,9 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 				gBattleStruct->turnEffectsBank = gBattlersCount;
 				break;
 
-			case ET_Weather_Damage_Health_Abilities:
+			case ET_Weather_Damage_Health_Abilities: ;
+				const u8 *script = NULL;
+
 				if (BATTLER_ALIVE(gActiveBattler))
 				{
 					gLastUsedAbility = ABILITY(gActiveBattler);
@@ -451,6 +453,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 									gBattleMoveDamage *= -1;
 									gBattleStringLoader = gText_GloomHealing;
 									gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+									script = BattleScript_GloomyWeatherHealing;
 									effect++;
 								}
                             }
@@ -459,6 +462,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
                                 gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
                                 gBattleStringLoader = gText_GloomDamage;
                                 gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+								script = BattleScript_WeatherDamage;
                                 effect++;
                             }
                         }
@@ -467,7 +471,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
                         {
 							gBattleScripting.bank = gActiveBattler;
                         	gBattleScripting.animArg1 = 0;
-                            BattleScriptExecute(BattleScript_WeatherDamage);
+                            BattleScriptExecute(script);
                         }
                 	}
         		}

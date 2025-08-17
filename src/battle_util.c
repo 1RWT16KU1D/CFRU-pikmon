@@ -2283,7 +2283,8 @@ bool8 CanBePoisoned(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil)
 
 	if (atkAbility != ABILITY_CORROSION)
 	{
-		if (IsOfType(bankDef, TYPE_POISON) || IsOfType(bankDef, TYPE_STEEL))
+		if (IsOfType(bankDef, TYPE_POISON) || (IsOfType(bankDef, TYPE_STEEL)
+		&& !(gBattleWeather & WEATHER_GLOOM_ANY)))
 			return FALSE;
 	}
 
