@@ -11,9 +11,9 @@ Masterhop
 FlntBeetle
 Doodlebug
 GlntBeetle
-Weedle
-Kakuna
-Beedrill
+Snitchbug
+BumbleBug
+Dirigibug
 Pidgey
 Pidgeotto
 Pidgeot
@@ -847,7 +847,7 @@ JumboBorbMega
 TitanBHogMegaX
 TitanBHogMegaY
 MasterhopMega
-BeedrillMega
+DirigibugMega
 PidgeotMega
 AlakazamMega
 SlowbroMega

@@ -3847,7 +3847,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Pablo2Format2[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -3859,7 +3859,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Pablo2Format2[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_SNIPER
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_XSCISSOR,
@@ -6768,7 +6768,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -6780,7 +6780,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SWARM
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_POISONJAB,
@@ -6794,7 +6794,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -6806,7 +6806,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.spDefEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SWARM
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_POISONJAB,
@@ -6820,7 +6820,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -6832,7 +6832,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Skeli[] =
 		.defEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SWARM
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_POISONJAB,
@@ -7513,7 +7513,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Skeli[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_KAKUNA,
+		.species = SPECIES_BUMBLEBUG,
 		.nature = NATURE_RELAXED,
 		.hpIv = 31,
 		.atkIv = 31,

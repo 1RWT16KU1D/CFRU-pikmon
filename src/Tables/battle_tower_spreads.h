@@ -529,7 +529,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -555,7 +555,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -567,7 +567,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_SNIPER
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_POISONJAB,
@@ -581,7 +581,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -593,7 +593,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SWARM
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_FELLSTINGER,
@@ -607,7 +607,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -619,7 +619,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_SNIPER
-		.item = ITEM_BEEDRILLITE,
+		.item = ITEM_DIRIGIBUGITE,
 		.moves =
 		{
 			MOVE_XSCISSOR,
@@ -59680,7 +59680,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_KAKUNA,
+		.species = SPECIES_BUMBLEBUG,
 		.nature = NATURE_NAIVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -59706,7 +59706,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_KAKUNA,
+		.species = SPECIES_BUMBLEBUG,
 		.nature = NATURE_HASTY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -80211,7 +80211,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_WEEDLE,
+		.species = SPECIES_SNITCHBUG,
 		.nature = NATURE_NAIVE,
 		.hpIv = 31,
 		.atkIv = 31,

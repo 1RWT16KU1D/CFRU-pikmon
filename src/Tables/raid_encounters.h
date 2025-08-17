@@ -11912,7 +11912,7 @@ static struct Raid sGrimWoodsRaids2Star[] =
 		},
 	},
 	{
-		.species = SPECIES_KAKUNA,
+		.species = SPECIES_BUMBLEBUG,
 		.ability = RAID_ABILITY_RANDOM_1_2,
 		.drops =
 		{
@@ -12068,7 +12068,7 @@ static struct Raid sGrimWoodsRaids3Star[] =
 		},
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.ability = RAID_ABILITY_RANDOM_ALL,
 		.drops =
 		{
@@ -12224,7 +12224,7 @@ static struct Raid sGrimWoodsRaids4Star[] =
 		},
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.ability = RAID_ABILITY_RANDOM_ALL,
 		.drops =
 		{
@@ -12380,7 +12380,7 @@ static struct Raid sGrimWoodsRaids5Star[] =
 		},
 	},
 	{
-		.species = SPECIES_BEEDRILL,
+		.species = SPECIES_DIRIGIBUG,
 		.ability = RAID_ABILITY_HIDDEN,
 		.drops =
 		{
