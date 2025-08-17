@@ -5012,19 +5012,19 @@ u8 GetAIMoveEffectForMaxMove(u16 move, u8 bankAtk, u8 bankDef)
 			break;
 
 		case MAX_EFFECT_SUN:
-			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)))
 				moveEffect = EFFECT_SUNNY_DAY;
 			break;
 		case MAX_EFFECT_RAIN:
-			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)))
 				moveEffect = EFFECT_RAIN_DANCE;
 			break;
 		case MAX_EFFECT_SANDSTORM:
-			if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)))
 				moveEffect = EFFECT_SANDSTORM;
 			break;
 		case MAX_EFFECT_HAIL:
-			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)))
 				moveEffect = EFFECT_HAIL;
 			break;
 

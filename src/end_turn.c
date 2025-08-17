@@ -24,6 +24,8 @@ end_turn.c
 	handles all effects that happen at the end of each turn
 */
 
+extern bool8 TakesGeneralWeatherDamage(u8 bank);
+
 enum EndTurnEffects
 {
 	ET_Order,
@@ -405,22 +407,43 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 
 					if (!effect)
 					{
-						if (gBattleWeather & WEATHER_HAIL_ANY)
-						{
-							if (TakesDamageFromHail(gActiveBattler))
-								effect++;
-						}
-						else if (gBattleWeather & WEATHER_SANDSTORM_ANY)
-						{
-							if (TakesDamageFromSandstorm(gActiveBattler))
-								effect++;
-						}
+                        if (gBattleWeather & WEATHER_HAIL_ANY)
+                        {
+                            if (TakesDamageFromHail(gActiveBattler))
+                                effect++;
+                        }
+                        else if (gBattleWeather & WEATHER_SANDSTORM_ANY)
+                        {
+                            if (TakesDamageFromSandstorm(gActiveBattler))
+                                effect++;
+                        }
+                        else if (gBattleWeather & WEATHER_GLOOM_ANY)
+                        {
+                            if (IsOfType(gActiveBattler, TYPE_POISON))
+                            {
+                                gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
+                                gBattleMoveDamage *= -1;
+                                gBattleStringLoader = gText_GloomHealing;
+                                gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+                                effect++;
+                            }
+                            else if (TakesGeneralWeatherDamage(gActiveBattler))
+                            {
+                                gBattleMoveDamage = MathMax(1, GetBaseMaxHP(gActiveBattler) / 16);
+                                gBattleStringLoader = gText_GloomDamage;
+                                gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+                                effect++;
+                            }
+                        }
 
-						if (effect)
-							BattleScriptExecute(BattleScript_WeatherDamage);
-					}
-				}
-				break;
+                        if (effect)
+                        {
+                        	gBattleScripting.animArg1 = 0;
+                            BattleScriptExecute(BattleScript_WeatherDamage);
+                        }
+                	}
+        		}
+        		break;
 
 			case ET_Future_Sight:
 				if (gWishFutureKnock.futureSightCounter[gActiveBattler]

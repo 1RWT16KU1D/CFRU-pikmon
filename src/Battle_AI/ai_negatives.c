@@ -2127,7 +2127,7 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_SANDSTORM:
-			if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)
+			if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)
 			|| PARTNER_MOVE_EFFECT_IS_WEATHER
 			|| IsCurrentWeatherPartnersWeather(data->bankAtkPartner, data->atkPartnerAbility)) //Don't override the partner's weather with your own
 				DECREASE_VIABILITY(10);
@@ -2244,7 +2244,7 @@ SKIP_CHECK_TARGET:
 			goto AI_STANDARD_DAMAGE; //Rapid Spin
 
 		case EFFECT_RAIN_DANCE:
-			if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)
+			if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)
 			|| BankOnFieldHasEvaporate()
 			|| PARTNER_MOVE_EFFECT_IS_WEATHER
 			|| IsCurrentWeatherPartnersWeather(data->bankAtkPartner, data->atkPartnerAbility)) //Don't override the partner's weather with your own
@@ -2252,7 +2252,7 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_SUNNY_DAY:
-			if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)
+			if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)
 			|| PARTNER_MOVE_EFFECT_IS_WEATHER
 			|| IsCurrentWeatherPartnersWeather(data->bankAtkPartner, data->atkPartnerAbility)) //Don't override the partner's weather with your own
 				DECREASE_VIABILITY(10);
@@ -2374,7 +2374,7 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_HAIL:
-			if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)
+			if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)
 			|| PARTNER_MOVE_EFFECT_IS_WEATHER
 			|| IsCurrentWeatherPartnersWeather(data->bankAtkPartner, data->atkPartnerAbility)) //Don't override the partner's weather with your own
 				DECREASE_VIABILITY(10);

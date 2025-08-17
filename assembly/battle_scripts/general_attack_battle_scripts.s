@@ -2934,7 +2934,7 @@ BattleScript_DefogAdditionalEffects_PlayAttackAnim:
 BattleScript_DefogAdditionalEffects:
 	attackanimation @;Should only play after the Second Defog Check
 	waitanimation
-	jumpifweather weather_circus SkipRemoveFogBS
+	jumpifweather weather_gloom SkipRemoveFogBS
 	jumpifweather weather_fog | weather_permament_fog RemoveFogBS
 SkipRemoveFogBS:
 	breakfree
@@ -3013,7 +3013,7 @@ BattleScript_TidyUpAdditionalEffects_PlayAttackAnim:
 BattleScript_TidyUpAdditionalEffects:
 	attackanimation @;Should only play after the Second TidyUp Check
 	waitanimation
-	jumpifweather weather_circus SkipRemoveFogBS
+	jumpifweather weather_gloom SkipRemoveFogBS
 	jumpifweather weather_fog | weather_permament_fog RemoveFogBS
 
 IS_Remove:

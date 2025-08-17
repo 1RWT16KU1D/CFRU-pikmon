@@ -175,3 +175,4 @@ extern const u8 BattleScript_ToxicDebrisFailure[];
 extern const u8 BattleScript_SweetNectarActivates[];
 extern const u8 BattleScript_FoolsGoldPlateShattered[];
 extern const u8 BattleScript_FoolsGoldTransform[];
+extern const u8 gText_GloomyWeatherContinues[];

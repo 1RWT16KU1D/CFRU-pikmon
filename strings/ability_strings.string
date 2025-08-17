@@ -172,3 +172,6 @@ Grass grew to cover the\nbattlefield!\p
 
 #org @gText_FoolsGoldTransformed
 [SCRIPTING_BANK] transformed!
+
+#org @gText_GloomyWeatherContinues
+The air is gloomy[.]

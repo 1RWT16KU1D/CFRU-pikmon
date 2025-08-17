@@ -290,4 +290,7 @@ extern const u8 BattleScript_ActionThrowPokeblock[];
 extern const u8 BattleScript_82DBEE3[];
 extern const u8 BattleScript_GuardDogActivates[];
 
+// New PikMon Abilities
+extern const u8 BattleScript_GloomyAuraActivates[];
+
 #endif // GUARD_BATTLE_SCRIPTS_H

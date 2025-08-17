@@ -535,3 +535,12 @@ Being hit by [CURRENT_MOVE]\ncharged [SCRIPTING_BANK] with power.
 // New PikMon Abilities
 #org @gText_SweetNectarHeal
 [SCRIPTING_BANK] healed\n[EFFECT_BANK]!
+
+#org @gText_GloomBattleStart
+Poisonous gas surround the battlefield.
+
+#org @gText_GloomDamage
+[SCRIPTING_BANK] is hurt by the toxic gases!
+
+#org @gText_GloomHealing
+[SCRIPTING_BANK] absorbed the poison gases\nand healed itself!

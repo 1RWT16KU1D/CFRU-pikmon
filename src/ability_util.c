@@ -141,6 +141,8 @@ extern const u8 gText_AbilityName_FrostBody[];
 extern const u8 gText_AbilityDescription_FrostBody[];
 extern const u8 gText_AbilityName_FoolsGold[];
 extern const u8 gText_AbilityDescription_FoolsGold[];
+extern const u8 gText_AbilityName_GloomyAura[];
+extern const u8 gText_AbilityDescription_GloomyAura[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -580,6 +582,11 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_DISGUISE:
 			if (SpeciesHasFoolsGold(species))
 				return gText_AbilityName_FoolsGold;
+			break;
+		case ABILITY_SANDSTREAM:
+			if (SpeciesHasGloomyAura(species))
+				return gText_AbilityName_GloomyAura;
+			break;
 	}
 	return NULL;
 }
@@ -764,6 +771,11 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_DISGUISE:
 			if (SpeciesHasFoolsGold(species))
 				return gText_AbilityDescription_FoolsGold;
+			break;
+		case ABILITY_SANDSTREAM:
+			if (SpeciesHasGloomyAura(species))
+				return gText_AbilityDescription_GloomyAura;
+			break;
 	}
 
 	return NULL;
@@ -1603,6 +1615,8 @@ bool8 SpeciesHasZerotoHero(unusedArg u16 species) //Custom Unbound Ability
 	#endif
 }
 
+// New PikMon Abilities
+
 bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 {
 	#if (defined SPECIES_BULBORB && defined SPECIES_JUMBOBORB)
@@ -1650,6 +1664,15 @@ bool8 SpeciesHasFoolsGold(unusedArg u16 species)
 {
 	#ifdef SPECIES_PERRSERKER
 	return species == SPECIES_PERRSERKER;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasGloomyAura(unusedArg u16 species)
+{
+	#ifdef SPECIES_VILEPLUME
+	return species == SPECIES_VILEPLUME;
 	#else
 	return FALSE;
 	#endif

@@ -614,7 +614,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			if (effect)
 			{
 				if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_WEATHER)
-					gBattleWeather |= WEATHER_CIRCUS; //Can't be removed
+					gBattleWeather |= WEATHER_GLOOM; //Can't be removed
 
 				if (gBattleWeather & WEATHER_SANDSTORM_PRIMAL)
 				{
@@ -639,7 +639,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_DRIZZLE:
-			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY)))
 			{
 				u8 evaporateBank;
 				effect = ActivateWeatherAbility(WEATHER_RAIN_PERMANENT | WEATHER_RAIN_TEMPORARY,
@@ -662,20 +662,33 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_SANDSTREAM:
-			if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!SpeciesHasGloomyAura(SPECIES(bank))) // Early conditional for Gloomy Aura
 			{
-				effect = ActivateWeatherAbility(WEATHER_SANDSTORM_PERMANENT | WEATHER_SANDSTORM_TEMPORARY,
-												ITEM_EFFECT_SMOOTH_ROCK, bank, B_ANIM_SANDSTORM_CONTINUES, 1, FALSE);
+				if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY)))
+				{
+					effect = ActivateWeatherAbility(WEATHER_SANDSTORM_PERMANENT | WEATHER_SANDSTORM_TEMPORARY,
+													ITEM_EFFECT_SMOOTH_ROCK, bank, B_ANIM_SANDSTORM_CONTINUES, 1, FALSE);
+				}
+				else if (gBattleWeather & WEATHER_PRIMAL_ANY && !(gBattleWeather & WEATHER_SANDSTORM_ANY))
+				{
+					BattleScriptPushCursorAndCallback(BattleScript_WeatherAbilityBlockedByPrimalWeather);
+					effect++;
+				}
 			}
-			else if (gBattleWeather & WEATHER_PRIMAL_ANY && !(gBattleWeather & WEATHER_SANDSTORM_ANY))
+			else
 			{
-				BattleScriptPushCursorAndCallback(BattleScript_WeatherAbilityBlockedByPrimalWeather);
+				gBattleWeather = (WEATHER_GLOOM);
+				gWishFutureKnock.weatherDuration = 0;
+				gBattleScripting.animArg1 = B_ANIM_RAIN_CONTINUES;
+				gBattleStringLoader = gText_GloomyWeatherContinues;
+				gBattleCommunication[MULTISTRING_CHOOSER] = 4;
+				BattleScriptPushCursorAndCallback(BattleScript_NewWeatherAbilityActivates);
 				effect++;
 			}
 			break;
 
 		case ABILITY_DROUGHT:
-			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY)))
 			{
 				effect = ActivateWeatherAbility(WEATHER_SUN_PERMANENT | WEATHER_SUN_TEMPORARY,
 												ITEM_EFFECT_HEAT_ROCK, bank, B_ANIM_SUN_CONTINUES, 2, FALSE);
@@ -688,7 +701,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_SNOWWARNING:
-			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY)))
 			{
 				gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
 				effect = ActivateWeatherAbility(WEATHER_HAIL_PERMANENT | WEATHER_HAIL_TEMPORARY,
@@ -702,7 +715,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_PRIMORDIALSEA:
-			if (!(gBattleWeather & (WEATHER_RAIN_PRIMAL | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_RAIN_PRIMAL | WEATHER_GLOOM)))
 			{
 				gBattleWeather = (WEATHER_RAIN_PERMANENT | WEATHER_RAIN_TEMPORARY |  WEATHER_RAIN_PRIMAL);
 				gWishFutureKnock.weatherDuration = 0;
@@ -716,7 +729,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_DESOLATELAND:
-			if (!(gBattleWeather & (WEATHER_SUN_PRIMAL | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SUN_PRIMAL | WEATHER_GLOOM)))
 			{
 				gBattleWeather = (WEATHER_SUN_PERMANENT | WEATHER_SUN_TEMPORARY |  WEATHER_SUN_PRIMAL);
 				gWishFutureKnock.weatherDuration = 0;
@@ -730,7 +743,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_DELTASTREAM:
-			if (!(gBattleWeather & (WEATHER_AIR_CURRENT_PRIMAL | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_AIR_CURRENT_PRIMAL | WEATHER_GLOOM)))
 			{
 				gBattleWeather = (WEATHER_AIR_CURRENT_PRIMAL);
 				gWishFutureKnock.weatherDuration = 0;
@@ -2525,7 +2538,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)
 				&& gBankAttacker != bank
-				&& !(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+				&& !(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM)))
 				{
 					effect = ActivateWeatherAbility(WEATHER_SANDSTORM_PERMANENT | WEATHER_SANDSTORM_TEMPORARY,
 													ITEM_EFFECT_SMOOTH_ROCK, bank, B_ANIM_SANDSTORM_CONTINUES, 1, TRUE);

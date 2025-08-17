@@ -703,3 +703,6 @@ May cause frostbite on contact.
 
 #org @gText_AbilityDescription_FoolsGold
 Gold plating protects it from one hit.
+
+#org @gText_AbilityDescription_GloomyAura
+Activates Gloom weather on switch-in.

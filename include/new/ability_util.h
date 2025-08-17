@@ -98,3 +98,6 @@ bool8 SpeciesHasBigMoney(u16 species); // Doubles the money earned from battles
 bool8 SpeciesHasWindForce(u16 species); // Boosts the power of Wind-type moves by 50%
 bool8 SpeciesHasFrostBody(u16 species); // May cause frostbite on contact
 bool8 SpeciesHasFoolsGold(u16 species); // Disguise clone with custom bust text
+bool8 SpeciesHasGloomyAura(u16 species); // Set Gloom weather - All non-poison mons are damaged by 1/16
+                                         // max HP at the end of turn but poison-types heal; steel-types
+                                         // are neutral to poison and can now be poisoned

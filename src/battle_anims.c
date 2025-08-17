@@ -6877,6 +6877,7 @@ static bool8 ShouldAnimBeDoneRegardlessOfSubsitute(u8 animId)
 		case B_ANIM_HAIL_CONTINUES:
 		case B_ANIM_STRONG_WINDS_CONTINUE:
 		case B_ANIM_FOG_CONTINUES:
+		case B_ANIM_GLOOM_CONTINUES:
 		case B_ANIM_ELECTRIC_SURGE:
 		case B_ANIM_GRASSY_SURGE:
 		case B_ANIM_MISTY_SURGE:

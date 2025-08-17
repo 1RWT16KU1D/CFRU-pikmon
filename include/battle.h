@@ -1321,6 +1321,8 @@ struct FlingStruct
 #define B_ANIM_HOOPA_RING_SPAWN 0x4F
 #define B_ANIM_SPLINTER_DAMAGE 0x50
 
+#define B_ANIM_GLOOM_CONTINUES 0x51
+
 #define B_ANIM_TRANSFORM_MOVE 0xFF
 
 // special animations table

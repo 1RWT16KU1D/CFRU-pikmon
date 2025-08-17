@@ -1874,7 +1874,8 @@ void atkFF2C_trysetpoison(void)
 		return;
 	}
 	else if (ABILITY(gBankAttacker) != ABILITY_CORROSION
-	&& (IsOfType(bank, TYPE_POISON) || IsOfType(bank, TYPE_STEEL)))
+	&& (IsOfType(bank, TYPE_POISON) || IsOfType(bank, TYPE_STEEL))
+	&& !(gBattleWeather & WEATHER_GLOOM_ANY && IsOfType(bank, TYPE_STEEL)))
 	{
 		gMoveResultFlags |= MOVE_RESULT_DOESNT_AFFECT_FOE;
 		gBattlescriptCurrInstr = BattleScript_PauseResultMessage;

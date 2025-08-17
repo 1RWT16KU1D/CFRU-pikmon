@@ -1330,7 +1330,8 @@ u8 VisualTypeCalc(u16 move, u8 bankAtk, u8 bankDef)
 	else if ((moveEffect == EFFECT_POISON || moveEffect == EFFECT_TOXIC)
 	&& atkAbility != ABILITY_CORROSION
 	&& (defType1 == TYPE_POISON || defType2 == TYPE_POISON || defType3 == TYPE_POISON
-	 || defType1 == TYPE_STEEL || defType2 == TYPE_STEEL || defType3 == TYPE_STEEL))
+	|| ((defType1 == TYPE_STEEL || defType2 == TYPE_STEEL || defType3 == TYPE_STEEL) && (!gBattleWeather
+	& WEATHER_GLOOM_ANY))))
 	{
 		flags |= MOVE_RESULT_DOESNT_AFFECT_FOE;
 	}
@@ -1424,6 +1425,15 @@ TYPE_LOOP:
 	multiplier1 = gTypeEffectiveness[moveType][defType1];
 	multiplier2 = gTypeEffectiveness[moveType][defType2];
 	multiplier3 = gTypeEffectiveness[moveType][defType3];
+
+	// Gloom Weather Check
+	if ((gBattleWeather & WEATHER_GLOOM_ANY) && moveType == TYPE_POISON)
+	{
+		if (defType1 == TYPE_STEEL)
+			multiplier1 = TYPE_MUL_NORMAL;
+		if (defType2 == TYPE_STEEL)
+			multiplier2 = TYPE_MUL_NORMAL;
+	}
 	
 	//If the multiplier is 0, that means normal damage. No effect is 1 (it is modified to 0 later).
 	ModulateDmgByType(multiplier1, move, moveType, defType1, bankDef, atkAbility, flags, monDef);

@@ -304,3 +304,4 @@
 #define ABILITY_WINDFORCE ABILITY_STRONGJAW // Boosts the power of Wind-type moves by 50%
 #define ABILITY_FROSTBODY ABILITY_FLAMEBODY // May cause frostbite on contact
 #define ABILITY_FOOLSGOLD ABILITY_DISGUISE // Disguise clone, with custom bust text
+#define ABILITY_GLOOMYAURA ABILITY_SANDSTREAM // Sets new Gloom Weather
