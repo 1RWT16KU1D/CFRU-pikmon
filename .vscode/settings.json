@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "defines.h": "c",
-        "global.h": "c"
+        "global.h": "c",
+        "character_customization.h": "c"
     }
 }
