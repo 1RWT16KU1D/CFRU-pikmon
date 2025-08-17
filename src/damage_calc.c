@@ -1330,7 +1330,7 @@ u8 VisualTypeCalc(u16 move, u8 bankAtk, u8 bankDef)
 	else if ((moveEffect == EFFECT_POISON || moveEffect == EFFECT_TOXIC)
 	&& atkAbility != ABILITY_CORROSION
 	&& (defType1 == TYPE_POISON || defType2 == TYPE_POISON || defType3 == TYPE_POISON
-	|| ((defType1 == TYPE_STEEL || defType2 == TYPE_STEEL || defType3 == TYPE_STEEL) && (!gBattleWeather
+	|| ((defType1 == TYPE_STEEL || defType2 == TYPE_STEEL || defType3 == TYPE_STEEL) && !(gBattleWeather
 	& WEATHER_GLOOM_ANY))))
 	{
 		flags |= MOVE_RESULT_DOESNT_AFFECT_FOE;
