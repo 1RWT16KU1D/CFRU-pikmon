@@ -445,7 +445,7 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
                         }
                         else if (gBattleWeather & WEATHER_GLOOM_ANY)
                         {
-                            if (IsOfType(gActiveBattler, TYPE_POISON))
+                            if (IsOfType(gActiveBattler, TYPE_POISON) || IsOfType(gActiveBattler, TYPE_DARK))
                             {
 								if (!BATTLER_MAX_HP(gActiveBattler))
 								{
