@@ -21,6 +21,9 @@ EventScript_Pallet_FatGuy:
     special 0x16F
     setflag 0x4BD
 
+    setvar 0x8004 0xF @ Erase entire party
+	special 0x62
+
     setvar 0x8000 MOVE_RAVEPARTY
     setvar 0x8001 MOVE_GLOOM
     setvar 0x8002 MOVE_GOLDENGUN
@@ -47,9 +50,6 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-
-    setvar 0x8004 0xF @ Erase entire party
-	special 0x62
 
     givepokemon 16 15 0 0 0 0
     givepokemon 17 15 0 0 0 0

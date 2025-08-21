@@ -6297,13 +6297,26 @@ BS_250_RaiseAllSpeed:
 	attackstring
 	ppreduce
 
-	jumpifstat BANK_ATTACKER EQUALS STAT_SPD STAT_MAX BattleScript_CantRaiseMultipleStats
-	setstatchanger STAT_SPD | INCREASE_1
-	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
-	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
-	printfromtable gStatUpStringIds
-	waitmessage DELAY_1SECOND
-	goto BS_MOVE_END
+    attackanimation
+    waitanimation
+    setbyte BATTLE_SCRIPTING_BANK 0x0
+
+BattleScript_RaiseAllSpeed_Loop:
+    copyarray TARGET_BANK BATTLE_SCRIPTING_BANK 0x1
+    jumpiffainted BANK_TARGET BattleScript_RaiseAllSpeed_LoopIncrement
+    setbyte STAT_ANIM_PLAYED 0x0
+    playstatchangeanimation BANK_TARGET, STAT_ANIM_SPD, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
+    setstatchanger STAT_SPD | INCREASE_1
+    statbuffchange STAT_TARGET | STAT_BS_PTR | STAT_CERTAIN BattleScript_RaiseAllSpeed_Print
+
+BattleScript_RaiseAllSpeed_Print:
+    printfromtable gStatUpStringIds
+    waitmessage DELAY_1SECOND
+
+BattleScript_RaiseAllSpeed_LoopIncrement:
+    addbyte BATTLE_SCRIPTING_BANK 0x1
+    jumpifarraynotequal BATTLE_SCRIPTING_BANK NUM_POKEMON 0x1 BattleScript_RaiseAllSpeed_Loop
+    goto BS_MOVE_END
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
