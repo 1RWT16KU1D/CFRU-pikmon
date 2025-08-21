@@ -4047,6 +4047,12 @@ static u16 GetBasePower(struct DamageCalc* data)
 			#endif
 			break;
 
+		// New PikMon Moves
+		case MOVE_STOMPOUT:
+			if (IsOfType(bankDef, TYPE_FIRE))
+				power *= 150/100;
+			break;
+
 		default:
 			if (gBattleMoves[move].effect == EFFECT_TRIPLE_KICK)
 			{

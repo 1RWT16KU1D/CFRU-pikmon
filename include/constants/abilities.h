@@ -301,7 +301,7 @@
 #define ABILITY_SWEETNECTAR ABILITY_AFTERMATH // Heal partner by 50% on fainting
 #define ABILITY_SUCKER ABILITY_FRIENDGUARD // Big Root but as an ability
 #define ABILITY_BIGMONEY ABILITY_PICKUP // Doubles the money earned from battles
-#define ABILITY_WINDFORCE ABILITY_STRONGJAW // Boosts the power of Wind-type moves by 50%
+#define ABILITY_WINDFORCE ABILITY_STRONGJAW // Boosts the power of Wind-based moves by 50%
 #define ABILITY_FROSTBODY ABILITY_FLAMEBODY // May cause frostbite on contact
 #define ABILITY_FOOLSGOLD ABILITY_DISGUISE // Disguise clone, with custom bust text
 #define ABILITY_GLOOMYAURA ABILITY_SANDSTREAM // Sets new Gloom Weather

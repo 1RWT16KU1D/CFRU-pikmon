@@ -6291,9 +6291,19 @@ BS_249_Gloom:
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.global BS_250_Blank
-BS_250_Blank:
-	goto BS_STANDARD_HIT
+.global BS_250_RaiseAllSpeed
+BS_250_RaiseAllSpeed:
+	attackcanceler
+	attackstring
+	ppreduce
+
+	jumpifstat BANK_ATTACKER EQUALS STAT_SPD STAT_MAX BattleScript_CantRaiseMultipleStats
+	setstatchanger STAT_SPD | INCREASE_1
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

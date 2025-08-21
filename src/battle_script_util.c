@@ -2794,3 +2794,9 @@ void TryUpperHand(void)
 
 	gBattlescriptCurrInstr = BattleScript_ButItFailed - 5 - 2;
 }
+
+// New PikMon Moves
+void SetRavePartyRaiseStatEffect(void)
+{
+	gBattleCommunication[MOVE_EFFECT_BYTE] = (MOVE_EFFECT_SPD_PLUS_1) | MOVE_EFFECT_AFFECTS_USER;
+}

@@ -15,6 +15,26 @@ EventScript_Pallet_FatGuy:
     setflag 0x829
     special 0x16F
     setflag 0x4BD
+    setflag 0x926
+    setflag 0x828
+    setflag 0x829
+    special 0x16F
+    setflag 0x4BD
+
+    setvar 0x8000 MOVE_RAVEPARTY
+    setvar 0x8001 MOVE_GLOOM
+    setvar 0x8002 MOVE_GOLDENGUN
+    setvar 0x8003 MOVE_MACHINEGUN
+    setvar 0x8004 NATURE_QUIRKY
+    setvar 0x8005 TRUE
+    setvar 0x8006 31
+    setvar 0x8007 31
+    setvar 0x8008 31
+    setvar 0x8009 31
+    setvar 0x800A 31
+    setvar 0x800B 31
+    givepokemon 18 15 0 0 1 0
+
     setvar 0x8000 MOVE_ARCTICBLAST
     setvar 0x8001 MOVE_ACIDREFLEX
     setvar 0x8002 MOVE_BOMBROCK
@@ -55,24 +75,6 @@ EventScript_Pallet_FatGuy:
     setvar 0x800B 31
     givepokemon 17 15 0 0 1 0
 
-    setflag 0x926
-    setflag 0x828
-    setflag 0x829
-    special 0x16F
-    setflag 0x4BD
-    setvar 0x8000 MOVE_RAVEPARTY
-    setvar 0x8001 MOVE_GLOOM
-    setvar 0x8002 MOVE_GOLDENGUN
-    setvar 0x8003 MOVE_MACHINEGUN
-    setvar 0x8004 NATURE_QUIRKY
-    setvar 0x8005 TRUE
-    setvar 0x8006 31
-    setvar 0x8007 31
-    setvar 0x8008 31
-    setvar 0x8009 31
-    setvar 0x800A 31
-    setvar 0x800B 31
-    givepokemon 18 15 0 0 1 0
     additem ITEM_MEGA_RING 1
     setvar 0x8001 0xFD
     special 0xD1
@@ -95,6 +97,8 @@ EventScript_Pallet_Girl:
     setflag 0xA0B
     clearflag 0x4BD
     special 0xD2
+    setwildbattle SPECIES_SKARMORY 10 ITEM_LEFTOVERS
+    dowildbattle
     release
     end
 

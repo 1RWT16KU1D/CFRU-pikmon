@@ -265,7 +265,7 @@ gBattleScriptsForMoveEffects:
 .word BS_247_Glaive_Rush
 .word BS_248_Blank
 .word BS_249_Gloom
-.word BS_250_Blank
+.word BS_250_RaiseAllSpeed
 .word BS_251_Blank
 .word BS_252_Blank
 .word BS_253_MaxMove

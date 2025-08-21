@@ -16176,7 +16176,7 @@ const struct BattleMove gBattleMoves[] =
 		.type = TYPE_FIGHTING,
 		.accuracy = 100,
 		.pp = 5,
-		.secondaryEffectChance = 30,
+		.secondaryEffectChance = 0,
 		.target = MOVE_TARGET_SELECTED,
 		.priority = 1,
 		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAKES_CONTACT,
@@ -16235,7 +16235,7 @@ const struct BattleMove gBattleMoves[] =
 
 	[MOVE_RAVEPARTY] =
 	{
-		.effect = EFFECT_SPEED_UP,
+		.effect = EFFECT_RAISE_ALL_SPEED,
 		.power = 0,
 		.type = TYPE_NORMAL,
 		.accuracy = 0,
