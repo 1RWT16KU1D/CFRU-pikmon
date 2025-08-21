@@ -2097,3 +2097,29 @@ void atkFF36_trygetcottondowntarget(void)
 	else
 		gBattlescriptCurrInstr += 5;
 }
+
+bool8 SetGloomyWeather(void)
+{
+	if (gBattleWeather & (WEATHER_GLOOM_ANY | WEATHER_PRIMAL_ANY))
+		return FALSE;
+
+	gBattleWeather = WEATHER_GLOOM;
+	gBattleStringLoader = gText_GloomyWeatherSet;
+
+	gWishFutureKnock.weatherDuration = 5;
+	gBattleScripting.animArg1 = B_ANIM_GLOOM_CONTINUES;
+	return TRUE;
+}
+
+//atkFF37_setgloomyweather setgloom
+void atkFF37_setgloomyweather(void)
+{
+	if (!SetGloomyWeather())
+	{
+		gMoveResultFlags |= MOVE_RESULT_FAILED;
+		gBattlescriptCurrInstr = BattleScript_ButItFailed;
+		return;
+	}
+
+	gBattlescriptCurrInstr++;
+}

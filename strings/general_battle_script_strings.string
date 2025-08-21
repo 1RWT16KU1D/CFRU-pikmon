@@ -547,3 +547,9 @@ Deadly gases surround the\nbattlefield[.]
 
 #org @gText_GloomyWeatherEnd
 The deadly gases dissipated[.]
+
+#org @gText_GloomyWeatherSet
+Deadly gases emerged in the\nbattlefield!
+
+#org @gText_ButItFailed
+But it failed!

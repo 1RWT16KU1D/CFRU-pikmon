@@ -2584,7 +2584,7 @@ void atk7C_trymirrormove(void)
 
 bool8 SetRainyWeather(void)
 {
-	if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM))
+	if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -3209,7 +3209,7 @@ void atk94_damagetohalftargethp(void) { //Super Fang
 
 bool8 SetSandstormWeather(void)
 {
-	if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM))
+	if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -4486,7 +4486,7 @@ void atkBA_jumpifnopursuitswitchdmg(void)
 
 bool8 SetSunnyWeather(void)
 {
-	if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM))
+	if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -4840,7 +4840,7 @@ void atkC6_clearsemiinvulnerablebit(void)
 
 bool8 SetHailWeather(void)
 {
-	if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_GLOOM))
+	if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;

@@ -811,6 +811,91 @@ gMoveAnimations:
 .word ANIM_LUNAR_BLESSING
 .word ANIM_TAKE_HEART
 
+@;Gen 9 Moves
+.word ANIM_AQUACUTTER
+.word ANIM_AQUASTEP
+.word ANIM_ARMORCANNON
+.word ANIM_AXEKICK
+.word ANIM_BITTERBLADE
+.word ANIM_BLAZINGTORQUE
+.word ANIM_CHILLINGWATER
+.word ANIM_CHILLYRECEPTION
+.word ANIM_COLLISIONCOURSE
+.word ANIM_COMBATTORQUE
+.word ANIM_COMEUPPANCE
+.word ANIM_DOODLE
+.word ANIM_DOUBLESHOCK
+.word ANIM_ELECTRODRIFT
+.word ANIM_FILLETAWAY
+.word ANIM_FLOWERTRICK
+.word ANIM_GIGATONHAMMER
+.word ANIM_GLAIVERUSH
+.word ANIM_HYDROSTEAM
+.word ANIM_HYPERDRILL
+.word ANIM_ICESPINNER
+.word ANIM_JETPUNCH
+.word ANIM_KOWTOWCLEAVE
+.word ANIM_LASTRESPECTS
+.word ANIM_LUMINACRASH
+.word ANIM_MAGICALTORQUE
+.word ANIM_MAKEITRAIN
+.word ANIM_MORTALSPIN
+.word ANIM_NOXIOUSTORQUE
+.word ANIM_ORDERUP
+.word ANIM_POPULATIONBOMB
+.word ANIM_POUNCE
+.word ANIM_PSYBLADE
+.word ANIM_RAGEFIST
+.word ANIM_RAGINGBULL
+.word ANIM_REVIVALBLESSING
+.word ANIM_RUINATION
+.word ANIM_SALTCURE
+.word ANIM_SHEDTAIL
+.word ANIM_SILKTRAP
+.word ANIM_SNOWSCAPE
+.word ANIM_SPICYEXTRACT
+.word ANIM_SPINOUT
+.word ANIM_TERABLAST
+.word ANIM_TIDYUP
+.word ANIM_TORCHSONG
+.word ANIM_TRAILBLAZE
+.word ANIM_TRIPLEDIVE
+.word ANIM_TWINBEAM
+.word ANIM_WICKEDTORQUE
+.word ANIM_BLOODMOON
+.word ANIM_UPPERHAND
+.word ANIM_MATCHAGOTCHA
+.word ANIM_SYRUPBOMB
+.word ANIM_IVYCUDGEL
+.word ANIM_ELECTROSHOT
+.word ANIM_TERASTARSTORM
+.word ANIM_FICKLEBEAM
+.word ANIM_BURNINGBULWARK
+.word ANIM_MIGHTYCLEAVE
+.word ANIM_TACHYONCUTTER
+.word ANIM_DRAGONCHEER
+.word ANIM_MALIGNANTCHAIN
+.word ANIM_THUNDERCLAP
+.word ANIM_HARDPRESS
+.word ANIM_ALLURINGVOICE
+.word ANIM_TEMPERFLARE
+.word ANIM_SUPERCELLSLAM
+.word ANIM_PSYCHICNOISE
+
+@ New PikMin Move Animations
+.word ANIM_ARCTIC_BLAST
+.word ANIM_ACID_REFLEX
+.word ANIM_BOMB_ROCK
+.word ANIM_CURSED_FLAMES
+.word ANIM_BORB_BASH
+.word ANIM_CRUSHING_BLOW
+.word ANIM_BIG_CHOMP
+.word ANIM_STOMP_OUT
+.word ANIM_RAVE_PARTY
+.word ANIM_GLOOM
+.word ANIM_GOLDEN_GUN
+.word ANIM_MACHINE_GUN
+
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
 .word ANIM_BREAKNECK_BLITZ
@@ -968,76 +1053,6 @@ gMoveAnimations:
 .word ANIM_G_MAX_ONE_BLOW
 .word ANIM_G_MAX_RAPID_FLOW
 .word ANIM_G_MAX_RAPID_FLOW
-@;Gen 9 Moves
-.word ANIM_AQUACUTTER
-.word ANIM_AQUASTEP
-.word ANIM_ARMORCANNON
-.word ANIM_AXEKICK
-.word ANIM_BITTERBLADE
-.word ANIM_BLAZINGTORQUE
-.word ANIM_CHILLINGWATER
-.word ANIM_CHILLYRECEPTION
-.word ANIM_COLLISIONCOURSE
-.word ANIM_COMBATTORQUE
-.word ANIM_COMEUPPANCE
-.word ANIM_DOODLE
-.word ANIM_DOUBLESHOCK
-.word ANIM_ELECTRODRIFT
-.word ANIM_FILLETAWAY
-.word ANIM_FLOWERTRICK
-.word ANIM_GIGATONHAMMER
-.word ANIM_GLAIVERUSH
-.word ANIM_HYDROSTEAM
-.word ANIM_HYPERDRILL
-.word ANIM_ICESPINNER
-.word ANIM_JETPUNCH
-.word ANIM_KOWTOWCLEAVE
-.word ANIM_LASTRESPECTS
-.word ANIM_LUMINACRASH
-.word ANIM_MAGICALTORQUE
-.word ANIM_MAKEITRAIN
-.word ANIM_MORTALSPIN
-.word ANIM_NOXIOUSTORQUE
-.word ANIM_ORDERUP
-.word ANIM_POPULATIONBOMB
-.word ANIM_POUNCE
-.word ANIM_PSYBLADE
-.word ANIM_RAGEFIST
-.word ANIM_RAGINGBULL
-.word ANIM_REVIVALBLESSING
-.word ANIM_RUINATION
-.word ANIM_SALTCURE
-.word ANIM_SHEDTAIL
-.word ANIM_SILKTRAP
-.word ANIM_SNOWSCAPE
-.word ANIM_SPICYEXTRACT
-.word ANIM_SPINOUT
-.word ANIM_TERABLAST
-.word ANIM_TIDYUP
-.word ANIM_TORCHSONG
-.word ANIM_TRAILBLAZE
-.word ANIM_TRIPLEDIVE
-.word ANIM_TWINBEAM
-.word ANIM_WICKEDTORQUE
-.word ANIM_BLOODMOON
-.word ANIM_UPPERHAND
-.word ANIM_MATCHAGOTCHA
-.word ANIM_SYRUPBOMB
-.word ANIM_IVYCUDGEL
-.word ANIM_ELECTROSHOT
-.word ANIM_TERASTARSTORM
-.word ANIM_FICKLEBEAM
-.word ANIM_BURNINGBULWARK
-.word ANIM_MIGHTYCLEAVE
-.word ANIM_TACHYONCUTTER
-.word ANIM_DRAGONCHEER
-.word ANIM_MALIGNANTCHAIN
-.word ANIM_THUNDERCLAP
-.word ANIM_HARDPRESS
-.word ANIM_ALLURINGVOICE
-.word ANIM_TEMPERFLARE
-.word ANIM_SUPERCELLSLAM
-.word ANIM_PSYCHICNOISE
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
@@ -31064,6 +31079,94 @@ PSYCHIC_NOISE_WAVE:
 	launchtemplate 0x83E3CD0 TEMPLATE_TARGET | 2, 0x6 0x10 0x0 0x0 0x0 0x1e 0x0
 	pause 0x2
 	return
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ARCTIC_BLAST:
+	goto ANIM_FREEZEDRY
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ACID_REFLEX:
+	goto ANIM_SUCKERPUNCH
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BOMB_ROCK:
+	goto ANIM_SEEDBOMB
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CURSED_FLAMES:
+	goto ANIM_INFERNAL_PARADE
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BORB_BASH:
+	goto ANIM_HEADSMASH
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CRUSHING_BLOW:
+	goto ANIM_RETALIATE
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BIG_CHOMP:
+	goto ANIM_SKYDROP
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STOMP_OUT:
+	goto ANIM_STOMPINGTANTRUM
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RAVE_PARTY:
+	goto ANIM_CELEBRATE
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GLOOM:
+	playsound2 0xEF 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x0 0x8 0x301F
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xB 0x301F
+	@launchtask AnimTask_LoadSandstormBackground 0x5 0x1 0x1
+	launchtask 0x80AFD81 0x3 0x0
+	pause 0x44
+	pause 0x38
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x8 0x0 0x301F
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xB 0x0 0x301F
+	waitanimation
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GOLDEN_GUN:
+	goto ANIM_AURASPHERE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MACHINE_GUN:
+	goto 0x81d2f3a
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool

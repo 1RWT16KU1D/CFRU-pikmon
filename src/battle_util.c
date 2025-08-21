@@ -1918,7 +1918,7 @@ bool8 WeatherHasEffect(void)
 bool8 RainCanBeEvaporated(void)
 {
 	return gBattleWeather & WEATHER_RAIN_ANY
-		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY | WEATHER_GLOOM));
+		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY));
 }
 
 bool8 ItemEffectIgnoresSunAndRain(u8 itemEffect)

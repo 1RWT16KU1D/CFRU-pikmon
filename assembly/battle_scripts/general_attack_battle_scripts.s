@@ -6276,10 +6276,19 @@ BS_248_Blank:
 	
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.global BS_249_Blank
-BS_249_Blank:
-	goto BS_STANDARD_HIT
-	
+.global BS_249_Gloom
+BS_249_Gloom:
+	attackcanceler
+	attackstring
+	ppreduce
+	setgloomyweather
+	attackanimation
+	waitanimation
+	printstring 0x184
+	waitmessage DELAY_HALFSECOND
+	call 0x81D92DC
+	goto BS_MOVE_END
+
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global BS_250_Blank

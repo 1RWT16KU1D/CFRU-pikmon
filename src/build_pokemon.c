@@ -3677,6 +3677,7 @@ static void PostProcessTeam(struct Pokemon* party, struct TeamBuilder* builder)
 				case EFFECT_SUNNY_DAY:
 				case EFFECT_SANDSTORM:
 				case EFFECT_HAIL:
+				case EFFECT_GLOOM:
 					weatherIndex = i;
 					break;
 				case EFFECT_SET_TERRAIN:
