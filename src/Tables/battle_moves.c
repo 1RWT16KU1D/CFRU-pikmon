@@ -16235,7 +16235,7 @@ const struct BattleMove gBattleMoves[] =
 
 	[MOVE_RAVEPARTY] =
 	{
-		.effect = EFFECT_RAISE_ALL_SPEED,
+		.effect = EFFECT_RAVE_PARTY,
 		.power = 0,
 		.type = TYPE_NORMAL,
 		.accuracy = 0,
