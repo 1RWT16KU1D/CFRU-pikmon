@@ -31125,7 +31125,7 @@ ANIM_CRUSHING_BLOW:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_BIG_CHOMP:
-	goto ANIM_SKYDROP
+	goto 0x81ce1ee
 	waitanimation
 	endanimation
 

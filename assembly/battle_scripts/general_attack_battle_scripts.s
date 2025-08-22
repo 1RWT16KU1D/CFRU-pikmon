@@ -3543,8 +3543,10 @@ BS_160_Stockpile:
 	waitanimation
 	printfromtable 0x83FE56A
 	waitmessage DELAY_1SECOND
+
+BigChompRaiseStockPileStats:
 	jumpifmovehadnoeffect BS_MOVE_END
-	
+
 StockpileRaiseDef:
 	setbyte STAT_ANIM_PLAYED 0x0
 	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_DEF | STAT_ANIM_SPDEF, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
@@ -6270,9 +6272,17 @@ BS_247_Glaive_Rush:
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.global BS_248_Blank
-BS_248_Blank:
-	goto BS_STANDARD_HIT
+.global BS_248_StockpileHit
+BS_248_StockpileHit:
+	attackcanceler
+	accuracycheck BS_MOVE_MISSED 0x0
+	call STANDARD_DAMAGE
+	jumpifmovehadnoeffect BS_MOVE_FAINT
+
+	stockpile
+	printfromtable 0x83FE56A
+	waitmessage DELAY_1SECOND
+	goto BigChompRaiseStockPileStats @ Falls through Sp. Def case too
 	
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

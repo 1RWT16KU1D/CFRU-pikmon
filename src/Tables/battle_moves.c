@@ -16203,7 +16203,7 @@ const struct BattleMove gBattleMoves[] =
 
 	[MOVE_BIGCHOMP] =
 	{
-		.effect = EFFECT_SKY_DROP,
+		.effect = EFFECT_STOCKPILE_HIT,
 		.power = 70,
 		.type = TYPE_DARK,
 		.accuracy = 100,

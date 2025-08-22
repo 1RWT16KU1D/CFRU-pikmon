@@ -97,7 +97,7 @@ EventScript_Pallet_Girl:
     setflag 0xA0B
     clearflag 0x4BD
     special 0xD2
-    setwildbattle SPECIES_SKARMORY 10 ITEM_LEFTOVERS
+    setwildbattle SPECIES_SKARMORY 15 ITEM_LEFTOVERS
     dowildbattle
     release
     end
@@ -111,7 +111,6 @@ PalletGirl_ShowFollowerMon:
     end
 
 .align 2
-
 .global EventScript_ChangeTeraTypeNPC
 .global EventScript_Pallet_AideGuy
 
