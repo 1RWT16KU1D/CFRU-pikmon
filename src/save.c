@@ -20,8 +20,8 @@ extern struct SaveSection gSaveDataBuffer;
 #define SECTOR_FOOTER_SIZE 128
 #define NUM_SECTORS_PER_SAVE_SLOT 14
 #define FILE_SIGNATURE 0x08012025
-#define SAVE_BLOCK_PARASITE 0x0203B174
-#define PARASITE_SIZE 0xEC4
+#define SAVE_BLOCK_ARMOREDCANNONBEETLEITE 0x0203B174
+#define ARMOREDCANNONBEETLEITE_SIZE 0xEC4
 
 // old 0x080DA23C table changes
 const struct SaveSectionOffsets gSaveSectionOffsets[] =
@@ -48,7 +48,7 @@ const struct SaveSectionOffsets gSaveSectionOffsets[] =
 };
 
 /* Any save sector that isn't full, we'll plop our data of these sizes in there */
-static const u16 sSaveBlockParasiteSizes[3] =
+static const u16 sSaveBlockArmoredCannonBeetleiteSizes[3] =
 {
 	SECTOR_DATA_SIZE - 0xF24, // 0xCC
 	SECTOR_DATA_SIZE - 0xD98, // 0x258
@@ -62,7 +62,7 @@ void __attribute__((long_call)) PrintSaveErrorStatus(u8 taskId, const u8 *str);
 static bool8 IsValidFileSignature(u32 signature);
 static void LoadSector30And31(void);
 static u8 SaveSector30And31(void);
-static void LoadParasite(void);
+static void LoadArmoredCannonBeetleite(void);
 extern bool8 TryPreventIncompleteSaves(u8 taskId);
 
 static bool8 IsValidFileSignature(u32 signature)
@@ -83,7 +83,7 @@ static void LoadSector30And31(void)
 	struct SaveSection* saveBuffer = &gSaveDataBuffer;
 
 	//Load sector 30
-	u32 startLoc = SAVE_BLOCK_PARASITE + PARASITE_SIZE;
+	u32 startLoc = SAVE_BLOCK_ARMOREDCANNONBEETLEITE + ARMOREDCANNONBEETLEITE_SIZE;
 	Memset(saveBuffer, 0, sizeof(struct SaveSection));
 	DoReadFlashWholeSection(30, saveBuffer);
 	Memcpy((void*)(startLoc), saveBuffer, SECTOR_DATA_SIZE);
@@ -102,7 +102,7 @@ static u8 SaveSector30And31(void)
 
 	//Write sector 30
 	Memset(saveBuffer, 0, sizeof(struct SaveSection));
-	u32 startLoc = SAVE_BLOCK_PARASITE + PARASITE_SIZE;
+	u32 startLoc = SAVE_BLOCK_ARMOREDCANNONBEETLEITE + ARMOREDCANNONBEETLEITE_SIZE;
 	Memcpy(saveBuffer->data, (void*)(startLoc), SECTOR_DATA_SIZE);
 	retVal = TryWriteSector(30, saveBuffer->data);
 	if (retVal != SAVE_STATUS_OK)
@@ -116,27 +116,27 @@ static u8 SaveSector30And31(void)
 }
 
 //This parasitic saveblock idea originated from JPAN's work. Frees up 0xEC4 bytes - almost a sector
-void SaveParasite(void)
+void SaveArmoredCannonBeetleite(void)
 {
 	struct SaveSection* sector = gFastSaveSection;
 	u32 size = 0;
 	u32* data = NULL;
-	u32* parasiteP1 = (u32*) SAVE_BLOCK_PARASITE;
-	u32* parasiteP2 = (u32*) (SAVE_BLOCK_PARASITE + sSaveBlockParasiteSizes[0]);
-	u32* parasiteP3 = (u32*) (SAVE_BLOCK_PARASITE + sSaveBlockParasiteSizes[0] + sSaveBlockParasiteSizes[1]);
+	u32* parasiteP1 = (u32*) SAVE_BLOCK_ARMOREDCANNONBEETLEITE;
+	u32* parasiteP2 = (u32*) (SAVE_BLOCK_ARMOREDCANNONBEETLEITE + sSaveBlockArmoredCannonBeetleiteSizes[0]);
+	u32* parasiteP3 = (u32*) (SAVE_BLOCK_ARMOREDCANNONBEETLEITE + sSaveBlockArmoredCannonBeetleiteSizes[0] + sSaveBlockArmoredCannonBeetleiteSizes[1]);
 
 	switch (sector->id) {
 		case 0:
 			data = parasiteP1;
-			size = sSaveBlockParasiteSizes[0];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[0];
 			break;
 		case 4:
 			data = parasiteP2;
-			size = sSaveBlockParasiteSizes[1];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[1];
 			break;
 		case 13:
 			data = parasiteP3;
-			size = sSaveBlockParasiteSizes[2];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[2];
 			break;
 		default:
 			return;
@@ -146,27 +146,27 @@ void SaveParasite(void)
 	Memcpy(&sector->data[index], (u32*) data, size);
 }
 
-static void LoadParasite(void)
+static void LoadArmoredCannonBeetleite(void)
 {
 	struct SaveSection* sector = gFastSaveSection;
 	u32 size = 0;
 	u32* data = NULL;
-	u32* parasiteP1 = (u32*) SAVE_BLOCK_PARASITE;
-	u32* parasiteP2 = (u32*) (SAVE_BLOCK_PARASITE + sSaveBlockParasiteSizes[0]); //b240
-	u32* parasiteP3 = (u32*) (SAVE_BLOCK_PARASITE + sSaveBlockParasiteSizes[0] + sSaveBlockParasiteSizes[1]); //b496
+	u32* parasiteP1 = (u32*) SAVE_BLOCK_ARMOREDCANNONBEETLEITE;
+	u32* parasiteP2 = (u32*) (SAVE_BLOCK_ARMOREDCANNONBEETLEITE + sSaveBlockArmoredCannonBeetleiteSizes[0]); //b240
+	u32* parasiteP3 = (u32*) (SAVE_BLOCK_ARMOREDCANNONBEETLEITE + sSaveBlockArmoredCannonBeetleiteSizes[0] + sSaveBlockArmoredCannonBeetleiteSizes[1]); //b496
 
 	switch (sector->id) {
 		case 0:
 			data = parasiteP1;
-			size = sSaveBlockParasiteSizes[0];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[0];
 			break;
 		case 4:
 			data = parasiteP2;
-			size = sSaveBlockParasiteSizes[1];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[1];
 			break;
 		case 13:
 			data = parasiteP3;
-			size = sSaveBlockParasiteSizes[2];
+			size = sSaveBlockArmoredCannonBeetleiteSizes[2];
 			break;
 		default:
 			return;
@@ -196,7 +196,7 @@ u8 HandleLoadSector(unusedArg u16 a1, const struct SaveBlockChunk* location)
 		&&  gFastSaveSection->checksum == checksum)
 		{
 			Memcpy(location[id].data, gFastSaveSection->data, location[id].size);
-			LoadParasite();
+			LoadArmoredCannonBeetleite();
 			checksumStatus = TRUE;
 		}
 	}
@@ -389,7 +389,7 @@ u8 HandleWriteSector(u16 chunkId, const struct SaveBlockChunk* location)
 	gFastSaveSection->checksum = CalculateSaveChecksum(chunkData, chunkSize);
 
 	//Write data to leftover save section
-	SaveParasite();
+	SaveArmoredCannonBeetleite();
 	u8 retVal = TryWriteSector(sectorNum, gFastSaveSection->data);
 	return retVal;
 }
@@ -508,7 +508,7 @@ void NewGameWipeNewSaveData(void)
 	extern void WipeUnboundNewSaveRAM(void);
 	WipeUnboundNewSaveRAM();
 	#else
-	Memset((void*) SAVE_BLOCK_PARASITE, 0, 0x2EA4);
+	Memset((void*) SAVE_BLOCK_ARMOREDCANNONBEETLEITE, 0, 0x2EA4);
 	#endif
 }
 

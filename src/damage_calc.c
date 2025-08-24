@@ -2921,11 +2921,11 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		case ITEM_EFFECT_THICK_CLUB:
 		//2x Boost
 			if (data->atkSpecies == SPECIES_CUBONE
-			#ifdef SPECIES_MAROWAK
-			||  data->atkSpecies == SPECIES_MAROWAK
+			#ifdef SPECIES_SCORCHCAKE
+			||  data->atkSpecies == SPECIES_SCORCHCAKE
 			#endif
-			#ifdef SPECIES_MAROWAK_A
-			||  data->atkSpecies == SPECIES_MAROWAK_A
+			#ifdef SPECIES_SCORCHCAKE_A
+			||  data->atkSpecies == SPECIES_SCORCHCAKE_A
 			#endif
 			)
 			{
@@ -2936,10 +2936,10 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_PIKACHU
+		#ifdef NATIONAL_DEX_SPOTTYBULBEAR
 		case ITEM_EFFECT_LIGHT_BALL:
 		//2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_PIKACHU)
+			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_SPOTTYBULBEAR)
 			{
 				attack *= 2;
 				spAttack *= 2;
@@ -2974,9 +2974,9 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			break;
 		#endif
 
-		#ifdef SPECIES_DITTO
+		#ifdef SPECIES_QUAGGLEDMIRECLOPS
 		case ITEM_EFFECT_METAL_POWDER:
-			if (data->defSpecies == SPECIES_DITTO && (useMonDef || !IS_TRANSFORMED(bankDef)))
+			if (data->defSpecies == SPECIES_QUAGGLEDMIRECLOPS && (useMonDef || !IS_TRANSFORMED(bankDef)))
 				defense *= 2;
 			break;
 		#endif

@@ -9,7 +9,7 @@
 
 //Exported Functions
 void TrySetMissStringForSafetyGoggles(u8 bankDef);
-bool8 TryDoBenjaminGlntBeetle(u8 scriptOffset);
+bool8 TryDoBenjaminGlintBeetle(u8 scriptOffset);
 s32 GetPsywaveDamage(u8 level, u8 randDamage);
 bool8 TrySpitePPReduce(u8 bank, u8 lostPP);
 bool8 CanLastMoveNotBeEncored(u8 bank);

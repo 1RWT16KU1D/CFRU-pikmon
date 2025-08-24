@@ -2852,9 +2852,11 @@ bool8 ShouldPredictBankToMegaEvolve(u8 bank)
 	if (!IsPlayerInControl(bank))
 		return TRUE; //Always predict the AI to Mega Evolve
 
+	#if defined SPECIES_NECROZMA_DUSK_MANE && defined SPECIES_NECROZMA_DAWN_WINGS
 	if (SPECIES(bank) == SPECIES_NECROZMA_DUSK_MANE
 	||  SPECIES(bank) == SPECIES_NECROZMA_DAWN_WINGS)
 		return FALSE; //Don't predict player to Ultra Burst
+	#endif
 
 	if (!(AI_THINKING_STRUCT->aiFlags & AI_SCRIPT_CHECK_GOOD_MOVE))
 		return FALSE; //Dumb and Semi-Smart AI should never predict a Mega Evo

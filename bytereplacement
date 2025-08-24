@@ -74,7 +74,7 @@
 081D9517 49 00 00
 ##Fix ThrashConfuses End2 -> Return
 081D90D2 3C
-##Remove Ditto Palette Fading
+##Remove QuaggledMireclops Palette Fading
 08034454 C0 46 C0 46
 08034612 C0 46 C0 46
 08035004 C0 46 C0 46

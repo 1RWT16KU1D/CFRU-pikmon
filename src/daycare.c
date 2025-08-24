@@ -208,8 +208,8 @@ static void DetermineEggParentSlots(struct DayCare* daycare, u8* parentSlots)
 	for (i = 0; i < DAYCARE_MON_COUNT; ++i)
 	{
 		species[i] = GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SPECIES, NULL);
-		#ifdef SPECIES_DITTO
-		if (species[i] == SPECIES_DITTO)
+		#ifdef SPECIES_QUAGGLEDMIRECLOPS
+		if (species[i] == SPECIES_QUAGGLEDMIRECLOPS)
 		{
 			parentSlots[0] = i ^ 1;
 			parentSlots[1] = i;
@@ -223,8 +223,8 @@ static void DetermineEggParentSlots(struct DayCare* daycare, u8* parentSlots)
 		}
 	}
 
-	#ifdef SPECIES_DITTO
-	if (species[parentSlots[1]] == SPECIES_DITTO && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
+	#ifdef SPECIES_QUAGGLEDMIRECLOPS
+	if (species[parentSlots[1]] == SPECIES_QUAGGLEDMIRECLOPS && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
 	{
 		u8 temp = parentSlots[1];
 		parentSlots[1] = parentSlots[0];
@@ -247,8 +247,8 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare* daycare, u8* parent
 	// 1st index is the father slot.
 	for (i = 0, motherSpecies = SPECIES_NONE; i < DAYCARE_MON_COUNT; ++i)
 	{
-		#ifdef SPECIES_DITTO
-		if (species[i] == SPECIES_DITTO)
+		#ifdef SPECIES_QUAGGLEDMIRECLOPS
+		if (species[i] == SPECIES_QUAGGLEDMIRECLOPS)
 		{
 			motherSpecies = species[i ^ 1]; //Other species
 			parentSlots[0] = i ^ 1;
@@ -286,24 +286,24 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare* daycare, u8* parent
 
 	switch(SpeciesToNationalPokedexNum(eggSpecies))
 	{
-		#if (defined NATIONAL_DEX_NIDORAN_F && defined SPECIES_NIDORAN_M && defined SPECIES_NIDORINO && defined SPECIES_NIDOKING)
-		case NATIONAL_DEX_NIDORAN_F:
+		#if (defined NATIONAL_DEX_BURROWINGSNAGRET && defined SPECIES_SWARMINGSHEARGRUB && defined SPECIES_MAMASHEARGRUB && defined SPECIES_MALESHEARGRUB)
+		case NATIONAL_DEX_BURROWINGSNAGRET:
 			if (personality & 0x8000)
-				eggSpecies = SPECIES_NIDORAN_M;
+				eggSpecies = SPECIES_SWARMINGSHEARGRUB;
 			break;
-		                case NATIONAL_DEX_NIDORAN_M:
+		                case NATIONAL_DEX_SWARMINGSHEARGRUB:
                         if (!(personality & 0x8000))
-                                 eggSpecies = SPECIES_NIDORAN_F;
+                                 eggSpecies = SPECIES_BURROWINGSNAGRET;
                         break;
  
-                 case NATIONAL_DEX_NIDORINO:
+                 case NATIONAL_DEX_MAMASHEARGRUB:
                         if (!(personality & 0x8000))
-                                 eggSpecies = SPECIES_NIDORAN_F;
+                                 eggSpecies = SPECIES_BURROWINGSNAGRET;
                         break;
  
-                  case NATIONAL_DEX_NIDOKING:
+                  case NATIONAL_DEX_MALESHEARGRUB:
                         if (!(personality & 0x8000))
-                                 eggSpecies = SPECIES_NIDORAN_F;
+                                 eggSpecies = SPECIES_BURROWINGSNAGRET;
                         break;
 		#endif
 
@@ -338,9 +338,9 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare* daycare, u8* parent
 		#endif
 	}
 
-	// Make Ditto the "mother" slot if the other daycare mon is male/genderless).
-	#ifdef SPECIES_DITTO
-	if (species[parentSlots[1]] == SPECIES_DITTO && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
+	// Make QuaggledMireclops the "mother" slot if the other daycare mon is male/genderless).
+	#ifdef SPECIES_QUAGGLEDMIRECLOPS
+	if (species[parentSlots[1]] == SPECIES_QUAGGLEDMIRECLOPS && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
 	{
 		u8 temp = parentSlots[1];
 		parentSlots[1] = parentSlots[0];
@@ -357,8 +357,8 @@ static u16 GetOverrideEggSpecies(u16 eggSpecies)
 
 	switch(SpeciesToNationalPokedexNum(eggSpecies))
 	{
-		#if (defined NATIONAL_DEX_PIKACHU && defined SPECIES_PICHU)
-		case NATIONAL_DEX_PIKACHU: //Get's all the special forms
+		#if (defined NATIONAL_DEX_SPOTTYBULBEAR && defined SPECIES_PICHU)
+		case NATIONAL_DEX_SPOTTYBULBEAR: //Get's all the special forms
 			eggSpecies = SPECIES_PICHU;
 			break;
 		#endif
@@ -583,8 +583,8 @@ static void InheritPokeBall(struct Pokemon* egg, struct BoxPokemon* father, stru
 	u16 fatherSpecies = GetBoxMonData(father, MON_DATA_SPECIES, NULL);
 
 	// gen 7 same species checks
-	#ifdef SPECIES_DITTO
-	if (motherSpecies == SPECIES_DITTO)
+	#ifdef SPECIES_QUAGGLEDMIRECLOPS
+	if (motherSpecies == SPECIES_QUAGGLEDMIRECLOPS)
 		parent = father;	// gen 7 ditto check -> male or non-gendered mon with ditto (mother) makes pokemon inherit from father
 	else
 	#endif
@@ -610,8 +610,8 @@ static u32 DetermineEggPersonality(struct DayCare* daycare, struct BoxPokemon* m
 	u8 abilityBit = Random() & 1;
 
 	if (!((struct Pokemon*) mother)->hiddenAbility
-	#ifdef SPECIES_DITTO
-	&& GetBoxMonData(mother, MON_DATA_SPECIES, NULL) != SPECIES_DITTO
+	#ifdef SPECIES_QUAGGLEDMIRECLOPS
+	&& GetBoxMonData(mother, MON_DATA_SPECIES, NULL) != SPECIES_QUAGGLEDMIRECLOPS
 	#endif
 	&& Random() % 100 < 80) //80 % chance to pass down slotted ability
 		abilityBit = GetBoxMonData(mother, MON_DATA_PERSONALITY, NULL) & 1;
@@ -639,8 +639,8 @@ static u32 DetermineEggPersonality(struct DayCare* daycare, struct BoxPokemon* m
 
 static bool8 DetermineEggHiddenAbility(unusedArg struct BoxPokemon* father, struct BoxPokemon* mother)
 {
-	#ifdef SPECIES_DITTO
-	if (GetBoxMonData(mother, MON_DATA_SPECIES, NULL) == SPECIES_DITTO)
+	#ifdef SPECIES_QUAGGLEDMIRECLOPS
+	if (GetBoxMonData(mother, MON_DATA_SPECIES, NULL) == SPECIES_QUAGGLEDMIRECLOPS)
 		mother = father; //Get Hidden Ability from father instead
 	#endif
 
@@ -980,19 +980,19 @@ u8 GetDaycareCompatibilityScore(struct DayCare *daycare)
 	if (eggGroups[0][0] == EGG_GROUP_UNDISCOVERED || eggGroups[1][0] == EGG_GROUP_UNDISCOVERED)
 		return PARENTS_INCOMPATIBLE;
 
-	//Two Ditto can't breed
-	if (eggGroups[0][0] == EGG_GROUP_DITTO && eggGroups[1][0] == EGG_GROUP_DITTO)
+	//Two QuaggledMireclops can't breed
+	if (eggGroups[0][0] == EGG_GROUP_QUAGGLEDMIRECLOPS && eggGroups[1][0] == EGG_GROUP_QUAGGLEDMIRECLOPS)
 		return PARENTS_INCOMPATIBLE;
 
-	//One parent is Ditto
-	if (eggGroups[0][0] == EGG_GROUP_DITTO || eggGroups[1][0] == EGG_GROUP_DITTO)
+	//One parent is QuaggledMireclops
+	if (eggGroups[0][0] == EGG_GROUP_QUAGGLEDMIRECLOPS || eggGroups[1][0] == EGG_GROUP_QUAGGLEDMIRECLOPS)
 	{
 		if (trainerIds[0] == trainerIds[1])
 			return PARENTS_LOW_COMPATIBILITY;
 
 		return PARENTS_MED_COMPATIBILITY;
 	}
-	//Neither parent is Ditto
+	//Neither parent is QuaggledMireclops
 	else
 	{
 		if (genders[0] == genders[1])

@@ -178,8 +178,8 @@ static bool8 PredictedMoveWontDoTooMuchToMon(u8 activeBattler, struct Pokemon* m
 	|| defMove == MOVE_PURSUIT) //Predicted move won't hit the incoming Pokemon
 		return TRUE;
 
-	//Check if a switch is worth it at all in Benjamin GlntBeetle
-	if (gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLNTBEETLE
+	//Check if a switch is worth it at all in Benjamin GlintBeetle
+	if (gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLINTBEETLE
 	&&  gBattleMons[activeBattler].moves[0] == MOVE_NONE) //Mon to be switched out has no moves left
 		return FALSE; //Don't switch out and just struggle until you die
 
@@ -1243,7 +1243,7 @@ static bool8 ShouldSwitchToAvoidDeathHelper(struct Pokemon* party, u8 bankDef, u
 		&& (AI_TypeCalc(defMove, bankDef, gActiveBattler, mon) & MOVE_RESULT_NO_EFFECT)) //Move will have no effect on switched in mon
 
 	//OPTION B
-	||  (!(gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLNTBEETLE) //Death is only a figment of the imagination in this format
+	||  (!(gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLINTBEETLE) //Death is only a figment of the imagination in this format
 		&& ((switchFlags & (SWITCHING_FLAG_WALLS_FOE | SWITCHING_FLAG_RESIST_ALL_MOVES)) //Walls foe
 		 || (switchFlags & SWITCHING_FLAG_KO_FOE && switchFlags & SWITCHING_FLAG_OUTSPEEDS)) //Or can go first and KO
 		&& PredictedMoveWontDoTooMuchToMon(gActiveBattler, mon, bankDef, switchFlags)) //Move will affect but not do too much damage
@@ -1283,6 +1283,7 @@ static bool8 ShouldSwitchToAvoidDeath(struct Pokemon* party)
 				return FALSE; //Don't switch out a paralyzed Pokemon that'll probably be KO'd when it switches back in
 		}
 
+		#if defined SPECIES_AEGISLASH && defined SPECIES_AEGISLASH_BLADE
 		if ((SPECIES(gActiveBattler) == SPECIES_AEGISLASH || SPECIES(gActiveBattler) == SPECIES_AEGISLASH_BLADE) //Mon to be switched is Aegislash
 		&& gDisableStructs[gActiveBattler].protectUses == 0 //And it didn't use King's Shield last
 		&& defMove != MOVE_NONE //Aegislash would be hit
@@ -1291,6 +1292,7 @@ static bool8 ShouldSwitchToAvoidDeath(struct Pokemon* party)
 		&& ABILITY(gActiveBattler) == ABILITY_STANCECHANGE
 		&& MoveInMoveset(MOVE_KINGSSHIELD, gActiveBattler))
 			return FALSE; //Don't switch and use King's Shield instead
+		#endif
 
 		if (defMove != MOVE_NONE //Foe going to attack
 		&& (atkMove == MOVE_NONE || !MoveWouldHitFirst(atkMove, gActiveBattler, bankDef)) //Attacker wouldn't go first

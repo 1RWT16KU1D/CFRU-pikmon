@@ -266,10 +266,10 @@ A piece of MAIL featuring a cute\nZIGZAGOON print.\nIt is to be held by a POK\eM
 A piece of MAIL featuring a cute\nWINGULL print.\nIt is to be held by a POK\eMON.
 
 #org @DESC_GLITTER_MAIL
-A piece of MAIL featuring a cute\nPIKACHU print.\nIt is to be held by a POK\eMON.
+A piece of MAIL featuring a cute\nSPOTTYBULBEAR print.\nIt is to be held by a POK\eMON.
 
 #org @DESC_MECH_MAIL
-A piece of MAIL featuring a cute\nMAGNEMITE print.\nIt is to be held by a POK\eMON.
+A piece of MAIL featuring a cute\nPUFFYFIERYBLOWHOG print.\nIt is to be held by a POK\eMON.
 
 #org @DESC_WOOD_MAIL
 A piece of MAIL featuring a cute\nSLAKOTH print.\nIt is to be held by a POK\eMON.
@@ -431,7 +431,7 @@ An item to be held by a POK\eMON.\nThe holding POK\eMON gradually\nregains HP du
 A thick and tough scale.\nA DRAGON-type POK\eMON may be\nholding it.
 
 #org @DESC_LIGHT_BALL
-An orb to be held by a PIKACHU\nthat raises the SP. ATK stat.\nTouching it may cause a shock.
+An orb to be held by a SPOTTYBULBEAR\nthat raises the SP. ATK stat.\nTouching it may cause a shock.
 
 #org @DESC_SOFT_SAND
 An item to be held by a POK\eMON.\nA loose, silky sand that boosts the\npower of GROUND-type moves.
@@ -494,10 +494,10 @@ An item to be held by a POK\eMON.\nIts tricky aroma slightly reduces\nthe foe's 
 A glove to be held by a CHANSEY.\nIt raises CHANSEY's critical-hit\nratio.
 
 #org @DESC_METAL_POWDER
-A fine, hard powder to be held by\na DITTO.\nIt raises DITTO's DEFENSE stat.
+A fine, hard powder to be held by\na QUAGGLEDMIRECLOPS.\nIt raises QUAGGLEDMIRECLOPS's DEFENSE stat.
 
 #org @DESC_THICK_CLUB
-A hard bone of some sort to be\nheld by a CUBONE or MAROWAK.\nIt raises the ATTACK stat.
+A hard bone of some sort to be\nheld by a CUBONE or SCORCHCAKE.\nIt raises the ATTACK stat.
 
 #org @DESC_LEEK
 A stick of leek to be held by a\nFARFETCH'D. It raises FARFETCH'D's\ncritical-hit ratio.
@@ -1554,11 +1554,11 @@ A flower nectar obtained at Poni\nMeadow. It changes the form of\ncertain specie
 #org @DESC_ULTRANECROZIUM_Z
 Have Necrozma hold this, and this\nstone will enable it to Ultra\nBurst during battle.
 
-#org @DESC_JUMBOBORBITE
-Have JumboBorb hold this, and this\nstone will enable it to Mega\nEvolve during battle.
+#org @DESC_JUMBOBULBORBITE
+Have JumboBulborb hold this, and this\nstone will enable it to Mega\nEvolve during battle.
 
-#org @DESC_TITANBHOGITE
-Have TitanBHog hold this, and this\nstone will enable it to Mega\nEvolve during battle.
+#org @DESC_TITANBLOWHOGITE
+Have TitanBlowhog hold this, and this\nstone will enable it to Mega\nEvolve during battle.
 
 #org @DESC_BLASTOISINITE
 Have Masterhop hold this, and this\nstone will enable it to Mega\nEvolve during battle.
@@ -1566,11 +1566,11 @@ Have Masterhop hold this, and this\nstone will enable it to Mega\nEvolve during 
 #org @DESC_DIRIGIBUGITE
 Have Dirigibug hold this, and this\nstone will enable it to Mega\nEvolve during battle.
 
-#org @DESC_PIDGEOTITE
-Have Pidgeot hold this, and this\nstone will enable it to Mega Evolve\nduring battle.
+#org @DESC_FROSTYBULBORBITE
+Have FrostyBulborb hold this, and this\nstone will enable it to Mega Evolve\nduring battle.
 
 #org @DESC_ALAKAZITE
-Have Alakazam hold this, and this\nstone will enable it to Mega\nEvolve during battle.
+Have VolatileDweevil hold this, and this\nstone will enable it to Mega\nEvolve during battle.
 
 #org @DESC_SLOWBRONITE
 Have Slowbro hold this, and this\nstone will enable it to Mega Evolve\nduring battle.
@@ -1584,8 +1584,8 @@ Have Kangaskhan hold this, and\nthis stone will enable it to Mega\nEvolve during
 #org @DESC_PINSIRITE
 Have Pinsir hold this, and this\nstone will enable it to Mega Evolve\nduring battle.
 
-#org @DESC_GYARADOSITE
-Have Gyarados hold this, and this\nstone will enable it to Mega\nEvolve during battle.
+#org @DESC_MASTERONIONITE
+Have MasterOnion hold this, and this\nstone will enable it to Mega\nEvolve during battle.
 
 #org @DESC_AERODACTYLITE
 Have Aerodactyl hold this, and\nthis stone will enable it to Mega\nEvolve during battle.
@@ -1744,7 +1744,7 @@ This is a crystallized form of\nZ-Power. It upgrades Dark-type\nmoves to Z-Moves
 This is a crystallized form of\nZ-Power. It upgrades Fairy-type\nmoves to Z-Moves.
 
 #org @DESC_ALORAICHIUM_Z
-This is a crystallized form of\nZ-Power. It upgrades Alolan\nRaichu's Thunderbolt to a Z-Move.
+This is a crystallized form of\nZ-Power. It upgrades Alolan\nHoneywisp's Thunderbolt to a Z-Move.
 
 #org @DESC_DECIDIUM_Z
 This is a crystallized form of\nZ-Power. It upgrades Decidueye's\nSpirit Lock to a Z-Move.
@@ -1774,10 +1774,10 @@ This is a crystallized form of\nZ-Power. It upgrades Mew's\nPsychic to a Z-Move.
 This is a crystallized form of\nZ-Power. It upgrades Mimikyu's\nPlay Rough to a Z-Move.
 
 #org @DESC_PIKANIUM_Z
-This is a crystallized form of\nZ-Power. It upgrades Pikachu's\nVolt Tackle to a Z-Move.
+This is a crystallized form of\nZ-Power. It upgrades SpottyBulbear's\nVolt Tackle to a Z-Move.
 
 #org @DESC_PIKASHUNIUM_Z
-This is a crystallized form of\nZ-Power. It upgrades a Thunderbolt\nby Pikachu in a cap to a Z-Move.
+This is a crystallized form of\nZ-Power. It upgrades a Thunderbolt\nby SpottyBulbear in a cap to a Z-Move.
 
 #org @DESC_PRIMARIUM_Z
 This is a crystallized form of\nZ-Power. It upgrades Primarina's\nSparkle Aria to a Z-Move.
@@ -1996,7 +1996,7 @@ An orb that badly poisons the\nholder when it is held.
 An orb that burns the holder\nwhen it is held.
 
 #org @DESC_QUICK_POWDER
-A powder that boosts the\nspeed of a Ditto\nthat is holding it.
+A powder that boosts the\nspeed of a QuaggledMireclops\nthat is holding it.
 
 #org @DESC_FOCUS_SASH
 A sash that prevents the holder\nfrom being knocked out in one\nhit if it has full HP.

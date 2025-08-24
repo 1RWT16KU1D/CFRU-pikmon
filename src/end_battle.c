@@ -179,7 +179,7 @@ static void RecalcAllStats(void);
 static void BringBackTheDead(void);
 static void EndPartnerBattlePartyRestore(void);
 static void EndSkyBattlePartyRestore(void);
-static void EndBenjaminGlntBeetleBattleRestore(void);
+static void EndBenjaminGlintBeetleBattleRestore(void);
 static void EndBattleFlagClear(void);
 static void HealPokemonInFrontier(void);
 
@@ -648,7 +648,7 @@ void EndOfBattleThings(void)
 		UpdateBurmy();
 		EndPartnerBattlePartyRestore();
 		EndSkyBattlePartyRestore();
-		EndBenjaminGlntBeetleBattleRestore();
+		EndBenjaminGlintBeetleBattleRestore();
 		RecalcAllStats();
 		BringBackTheDead();
 		EndBattleFlagClear();
@@ -850,10 +850,10 @@ static void EndSkyBattlePartyRestore(void)
 	}
 }
 
-static void EndBenjaminGlntBeetleBattleRestore(void)
+static void EndBenjaminGlintBeetleBattleRestore(void)
 {
-	#ifdef FLAG_BENJAMIN_GLNTBEETLE_BATTLE
-	if (FlagGet(FLAG_BENJAMIN_GLNTBEETLE_BATTLE))
+	#ifdef FLAG_BENJAMIN_GLINTBEETLE_BATTLE
+	if (FlagGet(FLAG_BENJAMIN_GLINTBEETLE_BATTLE))
 		LoadPlayerParty(); //Backed up before the battle
 	#endif
 }

@@ -35,7 +35,7 @@ extern const u8 sTrainerName_Alford[];
 const struct BattleTowerSpread gMultiTowerSpread_Milo[] =
 {
 	{
-		.species = SPECIES_RAICHU_A,
+		.species = SPECIES_HONEYWISP_A,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -61,7 +61,7 @@ const struct BattleTowerSpread gMultiTowerSpread_Milo[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_RAICHU,
+		.species = SPECIES_HONEYWISP,
 		.nature = NATURE_HASTY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -139,7 +139,7 @@ const struct BattleTowerSpread gMultiTowerSpread_Milo[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFABLE,
+		.species = SPECIES_QUEENSHEARWIG,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -489,7 +489,7 @@ const struct BattleTowerSpread gMultiLittleCupTowerSpread_Milo[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_EXEGGCUTE,
+		.species = SPECIES_WOLLYHOP,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -947,7 +947,7 @@ const struct BattleTowerSpread gMultiLittleCupTowerSpread_Marlon[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MACHOP,
+		.species = SPECIES_MANATLEGS,
 		.nature = NATURE_BRAVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -1958,7 +1958,7 @@ const struct BattleTowerSpread gMultiLittleCupTowerSpread_Jax[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MAGNEMITE,
+		.species = SPECIES_PUFFYFIERYBLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,

@@ -190,9 +190,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_STURDY:
 			switch (dexNum)
 			{
-				#if (defined NATIONAL_DEX_MEOWTH && defined NATIONAL_DEX_PERSIAN)
-				case NATIONAL_DEX_MEOWTH:
-				case NATIONAL_DEX_PERSIAN:
+				#if (defined NATIONAL_DEX_DWARFBULBORB && defined NATIONAL_DEX_DWARFORANGEBULBORB)
+				case NATIONAL_DEX_DWARFBULBORB:
+				case NATIONAL_DEX_DWARFORANGEBULBORB:
 					return gText_AbilityName_NineLives;
 				#endif
 				#if (defined NATIONAL_DEX_MACHOKE && defined NATIONAL_DEX_MACHAMP)
@@ -236,8 +236,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				case NATIONAL_DEX_GLASTRIER:
 					return gText_AbilityName_ChillingNeigh;
 				#endif
-				#if (defined NATIONAL_DEX_PONYTA && defined NATIONAL_DEX_RAPIDASH)
-				case NATIONAL_DEX_PONYTA:
+				#if (defined NATIONAL_DEX_PRICKLEPUFF && defined NATIONAL_DEX_RAPIDASH)
+				case NATIONAL_DEX_PRICKLEPUFF:
 				case NATIONAL_DEX_RAPIDASH:
 					return gText_AbilityName_FieryNeigh;
 				#endif
@@ -282,9 +282,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_GOOEY:
 			switch (dexNum)
 			{
-				#if (defined NATIONAL_DEX_DIGLETT && defined NATIONAL_DEX_DUGTRIO)
-				case NATIONAL_DEX_DIGLETT:
-				case NATIONAL_DEX_DUGTRIO:
+				#if (defined NATIONAL_DEX_HERMITCRAWMAD && defined NATIONAL_DEX_BUGEYEDCRAWMAD)
+				case NATIONAL_DEX_HERMITCRAWMAD:
+				case NATIONAL_DEX_BUGEYEDCRAWMAD:
 					return gText_AbilityName_TanglingHair;
 				#endif
 				#if (defined NATIONAL_DEX_MAREEP && defined NATIONAL_DEX_FLAAFFY && defined NATIONAL_DEX_AMPHAROS)
@@ -329,8 +329,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				#ifdef NATIONAL_DEX_TSAREENA
 				case NATIONAL_DEX_TSAREENA:
 				#endif
-				#ifdef NATIONAL_DEX_NIDOQUEEN
-				case NATIONAL_DEX_NIDOQUEEN:
+				#ifdef NATIONAL_DEX_FEMALESHEARGRUB
+				case NATIONAL_DEX_FEMALESHEARGRUB:
 				#endif
 				#ifdef NATIONAL_DEX_VESPIQUEN
 				case NATIONAL_DEX_VESPIQUEN:
@@ -343,9 +343,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_RECEIVER:
 			switch (dexNum)
 			{
-				#if (defined NATIONAL_DEX_GRIMER && defined NATIONAL_DEX_MUK)
+				#if (defined NATIONAL_DEX_GRIMER && defined NATIONAL_DEX_SNOWYBLOWHOG)
 				case NATIONAL_DEX_GRIMER:
-				case NATIONAL_DEX_MUK:
+				case NATIONAL_DEX_SNOWYBLOWHOG:
 					return gText_AbilityName_PowerOfAlchemy;
 				#endif
 			}
@@ -403,9 +403,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				#ifdef NATIONAL_DEX_GLACEON
 				case NATIONAL_DEX_GLACEON:
 				#endif
-				#if (defined NATIONAL_DEX_SMOOCHUM && defined NATIONAL_DEX_JYNX)
+				#if (defined NATIONAL_DEX_SMOOCHUM && defined NATIONAL_DEX_ARMOREDMAWDAD)
 				case NATIONAL_DEX_SMOOCHUM:
-				case NATIONAL_DEX_JYNX:
+				case NATIONAL_DEX_ARMOREDMAWDAD:
 					return gText_AbilityName_IcySkin;
 				#endif
 				#ifdef NATIONAL_DEX_DUSTOX
@@ -871,8 +871,8 @@ bool8 SpeciesHasTeravolt(unusedArg u16 species)
 
 bool8 SpeciesHasDrillBeak(unusedArg u16 species) //Custom Unbound Ability
 {
-	#if (defined SPECIES_SPEAROW && defined SPECIES_FEAROW)
-	return species == SPECIES_SPEAROW || species == SPECIES_FEAROW;
+	#if (defined SPECIES_GIANTBREADBUG && defined SPECIES_FEAROW)
+	return species == SPECIES_GIANTBREADBUG || species == SPECIES_FEAROW;
 	#else
 	return FALSE;
 	#endif
@@ -1187,11 +1187,11 @@ bool8 IsVitalSpiritAbility(u8 ability, u16 species)
 
 	switch (SpeciesToNationalPokedexNum(species))
 	{
-		#ifdef NATIONAL_DEX_MANKEY
-		case NATIONAL_DEX_MANKEY:
+		#ifdef NATIONAL_DEX_BALDYLONGLEGS
+		case NATIONAL_DEX_BALDYLONGLEGS:
 		#endif
-		#ifdef NATIONAL_DEX_PRIMEAPE
-		case NATIONAL_DEX_PRIMEAPE:
+		#ifdef NATIONAL_DEX_SHAGGYLONGLEGS
+		case NATIONAL_DEX_SHAGGYLONGLEGS:
 		#endif
 		#ifdef NATIONAL_DEX_MR_MIME
 		case NATIONAL_DEX_MR_MIME:
@@ -1619,8 +1619,8 @@ bool8 SpeciesHasZerotoHero(unusedArg u16 species) //Custom Unbound Ability
 
 bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 {
-	#if (defined SPECIES_BULBORB && defined SPECIES_JUMBOBORB)
-	return species == SPECIES_BULBORB || species == SPECIES_JUMBOBORB;
+	#if (defined SPECIES_BULBORB && defined SPECIES_JUMBOBULBORB)
+	return species == SPECIES_BULBORB || species == SPECIES_JUMBOBULBORB;
 	#else
 	return FALSE;
 	#endif
@@ -1628,15 +1628,15 @@ bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 
 bool8 SpeciesHasSucker(unusedArg u16 species)
 {
-	#ifdef SPECIES_BULBLARVA
-	return species == SPECIES_BULBLARVA;
+	#ifdef SPECIES_BULBORBLARVA
+	return species == SPECIES_BULBORBLARVA;
 	#endif
 }
 
 bool8 SpeciesHasBigMoney(unusedArg u16 species)
 {
-	#ifdef SPECIES_MEOWTH
-	return species == SPECIES_MEOWTH;
+	#ifdef SPECIES_DWARFBULBORB
+	return species == SPECIES_DWARFBULBORB;
 	#else
 	return FALSE;
 	#endif
@@ -1671,8 +1671,8 @@ bool8 SpeciesHasFoolsGold(unusedArg u16 species)
 
 bool8 SpeciesHasGloomyAura(unusedArg u16 species)
 {
-	#ifdef SPECIES_VILEPLUME
-	return species == SPECIES_VILEPLUME;
+	#ifdef SPECIES_ARMOREDCANNONLARVA
+	return species == SPECIES_ARMOREDCANNONLARVA;
 	#else
 	return FALSE;
 	#endif

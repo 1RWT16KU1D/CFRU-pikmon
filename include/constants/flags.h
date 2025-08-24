@@ -43,9 +43,9 @@
 
 // Hide/show flags
 /*
-#define FLAG_HIDE_BULBLARVA_BALL                           0x028
+#define FLAG_HIDE_BULBORBLARVA_BALL                           0x028
 #define FLAG_HIDE_WOLPOLE_BALL                            0x029
-#define FLAG_HIDE_BLOWLET_BALL                          0x02A
+#define FLAG_HIDE_FIERYBLOWLET_BALL                          0x02A
 #define FLAG_HIDE_OAK_IN_HIS_LAB                           0x02B
 #define FLAG_HIDE_OAK_IN_PALLET_TOWN                       0x02C
 #define FLAG_HIDE_RIVAL_IN_LAB                             0x02D
@@ -53,7 +53,7 @@
 #define FLAG_HIDE_DOME_FOSSIL                              0x02F
 #define FLAG_HIDE_HELIX_FOSSIL                             0x030
 #define FLAG_HIDE_NUGGET_BRIDGE_ROCKET                     0x031
-#define FLAG_HIDE_BILL_CLEFAIRY                            0x032
+#define FLAG_HIDE_BILL_SHEARWIG                            0x032
 #define FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE                   0x033
 #define FLAG_HIDE_TOWER_FUJI                               0x034
 #define FLAG_HIDE_POKEHOUSE_FUJI                           0x035
@@ -99,8 +99,8 @@
 #define FLAG_HIDE_ZAPDOS                                   0x05D
 #define FLAG_HIDE_TOWER_ROCKET_1                           0x05E
 #define FLAG_HIDE_CELADON_ROCKETS                          0x05F
-#define FLAG_HIDE_DOJO_HITMONLEE_BALL                      0x060
-#define FLAG_HIDE_DOJO_HITMONCHAN_BALL                     0x061
+#define FLAG_HIDE_DOJO_WATERDUMPLE_BALL                      0x060
+#define FLAG_HIDE_DOJO_LONGWATERDUMPLE_BALL                     0x061
 #define FLAG_HIDE_CINNABAR_BILL                            0x062
 #define FLAG_HIDE_UNION_ROOM_PLAYER_1                      0x063
 #define FLAG_HIDE_UNION_ROOM_PLAYER_2                      0x064
@@ -136,8 +136,8 @@
 #define FLAG_HIDE_ARTICUNO                                 0x082
 #define FLAG_HIDE_TOWER_ROCKET_2                           0x083
 #define FLAG_HIDE_TOWER_ROCKET_3                           0x084
-#define FLAG_HIDE_POWER_PLANT_ELECTRODE_1                  0x085
-#define FLAG_HIDE_POWER_PLANT_ELECTRODE_2                  0x086
+#define FLAG_HIDE_POWER_PLANT_PUFFMIN_1                  0x085
+#define FLAG_HIDE_POWER_PLANT_PUFFMIN_2                  0x086
 #define FLAG_HIDE_SS_ANNE                                  0x087
 #define FLAG_HIDE_FIVE_ISLAND_ROCKETS                      0x088
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_ROCKETS                0x089
@@ -168,14 +168,14 @@
 #define FLAG_HIDE_CINNABAR_POKECENTER_BILL                 0x0A2
 #define FLAG_HIDE_CREDITS_RIVAL                            0x0A3
 #define FLAG_HIDE_CREDITS_OAK                              0x0A4
-#define FLAG_HIDE_LORELEI_HOUSE_MEOWTH_DOLL                0x0A5
+#define FLAG_HIDE_LORELEI_HOUSE_DWARFBULBORB_DOLL                0x0A5
 #define FLAG_HIDE_LORELEI_HOUSE_CHANSEY_DOLL               0x0A6
-#define FLAG_HIDE_LORELEIS_HOUSE_NIDORAN_F_DOLL            0x0A7
-#define FLAG_HIDE_LORELEI_HOUSE_JIGGLYPUFF_DOLL            0x0A8
-#define FLAG_HIDE_LORELEIS_HOUSE_NIDORAN_M_DOLL            0x0A9
+#define FLAG_HIDE_LORELEIS_HOUSE_BURROWINGSNAGRET_DOLL            0x0A7
+#define FLAG_HIDE_LORELEI_HOUSE_GOOLIX_DOLL            0x0A8
+#define FLAG_HIDE_LORELEIS_HOUSE_SWARMINGSHEARGRUB_DOLL            0x0A9
 #define FLAG_HIDE_LORELEIS_HOUSE_FEAROW_DOLL               0x0AA
-#define FLAG_HIDE_LORELEIS_HOUSE_PIDGEOT_DOLL              0x0AB
-#define FLAG_HIDE_LORELEIS_HOUSE_LAPRAS_DOLL               0x0AC
+#define FLAG_HIDE_LORELEIS_HOUSE_FROSTYBULBORB_DOLL              0x0AB
+#define FLAG_HIDE_LORELEIS_HOUSE_OATCHI_DOLL               0x0AC
 #define FLAG_HIDE_MISC_KANTO_ROCKETS                       0x0AD
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
@@ -596,10 +596,10 @@
 #define FLAG_GOT_COIN_CASE                               0x243
 #define FLAG_GOT_GOOD_ROD                                0x244
 #define FLAG_GOT_TM29_FROM_MR_PSYCHIC                    0x245
-#define FLAG_GOT_LAPRAS_FROM_SILPH                       0x246
+#define FLAG_GOT_OATCHI_FROM_SILPH                       0x246
 #define FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL       0x247
 #define FLAG_DID_MIMIEN_TRADE                            0x248
-#define FLAG_BOUGHT_MAGIKARP                             0x249
+#define FLAG_BOUGHT_PELLETPOSY                             0x249
 #define FLAG_DID_ZYNX_TRADE                              0x24A
 #define FLAG_DID_MS_NIDO_TRADE                           0x24B
 #define FLAG_0x24C                                       0x24C
@@ -646,7 +646,7 @@
 #define FLAG_GOT_HELIX_FOSSIL                            0x273
 #define FLAG_DID_ESPHERE_TRADE                           0x274
 #define FLAG_DID_TANGENY_TRADE                           0x275
-#define FLAG_DID_SEELOR_TRADE                            0x276
+#define FLAG_DID_GREATERSPOTTEDJELLYFLOATOR_TRADE                            0x276
 #define FLAG_0x277                                       0x277
 #define FLAG_GOT_HITMON_FROM_DOJO                        0x278
 #define FLAG_0x279                                       0x279
@@ -684,7 +684,7 @@
 #define FLAG_0x299                                       0x299
 #define FLAG_GOT_TM04_FROM_SABRINA                       0x29A
 #define FLAG_GOT_FAME_CHECKER                            0x29B
-#define FLAG_GOT_RECORD_SETTING_MAGIKARP                 0x29C
+#define FLAG_GOT_RECORD_SETTING_PELLETPOSY                 0x29C
 #define FLAG_TWO_ISLAND_SHOP_INTRODUCED                  0x29D
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_1                  0x29E
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_2                  0x29F
@@ -736,8 +736,8 @@
 #define FLAG_TUTOR_MIMIC                                 0x2CD
 #define FLAG_TUTOR_BODY_SLAM                             0x2CE
 #define FLAG_VISITED_OAKS_LAB                            0x2CF
-#define FLAG_FOUGHT_POWER_PLANT_ELECTRODE_1              0x2D0
-#define FLAG_FOUGHT_POWER_PLANT_ELECTRODE_2              0x2D1
+#define FLAG_FOUGHT_POWER_PLANT_PUFFMIN_1              0x2D0
+#define FLAG_FOUGHT_POWER_PLANT_PUFFMIN_2              0x2D1
 #define FLAG_STOPPED_SEAFOAM_B3F_CURRENT                 0x2D2
 #define FLAG_STOPPED_SEAFOAM_B4F_CURRENT                 0x2D3
 #define FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE           0x2D4
@@ -1406,7 +1406,7 @@
 #define FLAG_WORLD_MAP_SSANNE_EXTERIOR                              (SYS_FLAGS + 0xA6)
 #define FLAG_WORLD_MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL          (SYS_FLAGS + 0xA7)
 #define FLAG_WORLD_MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL            (SYS_FLAGS + 0xA8)
-#define FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F                            (SYS_FLAGS + 0xA9)
+#define FLAG_WORLD_MAP_HERMITCRAWMADS_CAVE_B1F                            (SYS_FLAGS + 0xA9)
 #define FLAG_WORLD_MAP_VICTORY_ROAD_1F                              (SYS_FLAGS + 0xAA)
 #define FLAG_WORLD_MAP_ROCKET_HIDEOUT_B1F                           (SYS_FLAGS + 0xAB)
 #define FLAG_WORLD_MAP_SILPH_CO_1F                                  (SYS_FLAGS + 0xAC)

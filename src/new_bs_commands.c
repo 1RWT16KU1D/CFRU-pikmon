@@ -1209,7 +1209,7 @@ void atkFF23_faintpokemonaftermove(void)
 	if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler])
 	&& gBattleMons[gActiveBattler].hp == 0)
 	{
-		if (TryDoBenjaminGlntBeetle(3))
+		if (TryDoBenjaminGlintBeetle(3))
 			return;
 
 		gNewBS->lastFainted = gActiveBattler;

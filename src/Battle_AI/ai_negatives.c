@@ -485,6 +485,7 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				break;
 
 			case ABILITY_SHIELDSDOWN:
+				#ifdef SPECIES_MINIOR_SHIELD
 				if (GetBankPartyData(bankDef)->species == SPECIES_MINIOR_SHIELD
 				&&  CheckTableForMovesEffect(move, gSetStatusMoveEffects))
 				{
@@ -492,6 +493,7 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 					return viability;
 				}
 				break;
+				#endif
 
 			case ABILITY_WONDERSKIN:
 				if (moveSplit == SPLIT_STATUS)
@@ -2551,11 +2553,13 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_SUPERPOWER:
+			#ifdef SPECIES_HOOPA_UNBOUND
 			if (move == MOVE_HYPERSPACEFURY && data->atkSpecies != SPECIES_HOOPA_UNBOUND)
 				DECREASE_VIABILITY(10);
 			else
 				goto AI_STANDARD_DAMAGE;
 			break;
+			#endif
 
 		case EFFECT_MAGIC_COAT:
 			if (!MagicCoatableMovesInMoveset(bankDef))

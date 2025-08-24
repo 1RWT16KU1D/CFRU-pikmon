@@ -1608,22 +1608,22 @@ Grass-Type Dynamax\nmove. It activates\nGrassy Terrain for\nfive turns.
 Steel-Type Dynamax\nmove. It raises\nally Pok\emon's\nDefense stats.
 
 #org @DESC_G_MAX_VINE_LASH
-G-Max JumboBorb's\nsignature move. It\ndeals damage for\nfour turns.
+G-Max JumboBulborb's\nsignature move. It\ndeals damage for\nfour turns.
 
 #org @DESC_G_MAX_WILDFIRE
-G-Max TitanBHog's\nsignature move. It\ndeals damage for\nfour turns.
+G-Max TitanBlowhog's\nsignature move. It\ndeals damage for\nfour turns.
 
 #org @DESC_G_MAX_CANNONADE
 G-Max Masterhop's\nsignature move. It\ndeals damage for\nfour turns.
 
 #org @DESC_G_MAX_BEFUDDLE
-G-Max GlntBeetle's\nsignature move. It\ncauses paralysis,\nsleep, or poison.
+G-Max GlintBeetle's\nsignature move. It\ncauses paralysis,\nsleep, or poison.
 
 #org @DESC_G_MAX_VOLTCRASH
-G-Max Pikachu's\nsignature move.\nIt paralyzes the\ntarget.
+G-Max SpottyBulbear's\nsignature move.\nIt paralyzes the\ntarget.
 
 #org @DESC_G_MAX_GOLDRUSH
-G-Max Meowth's\nsignature move. It\nconfuses the foe\nand creates money.
+G-Max DwarfBulborb's\nsignature move. It\nconfuses the foe\nand creates money.
 
 #org @DESC_G_MAX_CHISTRIKE
 G-Max Machamp's\nsignature move. It\nraises the chance\nof critical hits.
@@ -1632,10 +1632,10 @@ G-Max Machamp's\nsignature move. It\nraises the chance\nof critical hits.
 G-Max Gengar's\nsignature move. It\nprevents the foe\nfrom escaping.
 
 #org @DESC_G_MAX_FOAMBURST
-G-Max Kingler's\nsignature move. It\nharshly lowers the\ntarget's Speed.
+G-Max SnowflakeFluttertail's\nsignature move. It\nharshly lowers the\ntarget's Speed.
 
 #org @DESC_G_MAX_RESONANCE
-G-Max Lapras's\nsignature move. It\nreduces damage\nfor five turns.
+G-Max Oatchi's\nsignature move. It\nreduces damage\nfor five turns.
 
 #org @DESC_G_MAX_CUDDLE
 G-Max Eevee's\nsignature move.\nIt infatuates\nthe target.

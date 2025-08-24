@@ -406,8 +406,8 @@ void HallOfFame_PrintMonInfo(struct HallofFameMon *currMon, unusedArg u8 a1, unu
 		text[0] = CHAR_SLASH;
 		stringPtr = StringCopy(text + 1, gSpeciesNames[species]);
 
-		#if (defined NATIONAL_DEX_NIDORAN_M && defined NATIONAL_DEX_NIDORAN_F)
-		if (species != NATIONAL_DEX_NIDORAN_M && species != NATIONAL_DEX_NIDORAN_F)
+		#if (defined NATIONAL_DEX_SWARMINGSHEARGRUB && defined NATIONAL_DEX_BURROWINGSNAGRET)
+		if (species != NATIONAL_DEX_SWARMINGSHEARGRUB && species != NATIONAL_DEX_BURROWINGSNAGRET)
 		#endif
 		{
 			switch (GetGenderFromSpeciesAndPersonality(species, currMon->personality))

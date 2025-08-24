@@ -55,7 +55,7 @@ extern const u8 BattleScript_FaintTarget[];
 extern const u8 BattleScript_FaintRaidTarget[];
 extern const u8 BattleScript_FaintScriptingBank[];
 extern const u8 BattleScript_FaintRaidScriptingBank[];
-extern const u8 BattleScript_BenjaminGlntBeetleDevolution[];
+extern const u8 BattleScript_BenjaminGlintBeetleDevolution[];
 extern const u8 BattleScript_ButItFailedAttackstring[];
 extern const u8 BattleScript_EnduredMsg[];
 extern const u8 BattleScript_SideStatusWoreOffRet[];

@@ -29,7 +29,7 @@ const struct WildPokemon gRoute1_LandMonsMorning[] =
 	{2, 3, SPECIES_MAKUHITA},
 	{2, 3, SPECIES_FLABEBE},
 	{2, 3, SPECIES_WINGULL},
-	{2, 2, SPECIES_VULPIX},
+	{2, 2, SPECIES_ARISTOCRABOFFSPRING},
 	{2, 3, SPECIES_ELECTRIKE},
 	{2, 3, SPECIES_RIOLU},
 };
@@ -56,12 +56,12 @@ const struct WildPokemonInfo gRoute1_LandMonsInfoDay = {15, gRoute1_LandMonsDay}
 
 const struct WildPokemon gRoute1_LandMonsEvening[] =
 {
-    {2, 3, SPECIES_MAGNEMITE},       // Classic owl, perfect for night
-    {2, 3, SPECIES_MAGNEMITE},      // Night-prowling Dark-type
-    {2, 3, SPECIES_MAGNEMITE},       // Nocturnal Bug/Poison
-    {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
-    {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
-    {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Classic owl, perfect for night
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},      // Night-prowling Dark-type
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Nocturnal Bug/Poison
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Gentle fluttery fairy at night
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},      // Ground type, fits cooler nights
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},         // Dreamlike baby Fairy
     {2, 3, SPECIES_HOUNDOUR},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_YAMPER},        // Cheerful Electric-type for contrast
     {2, 3, SPECIES_DRIFLOON},      // Ghost-type, creepy dusk lore
@@ -74,18 +74,18 @@ const struct WildPokemonInfo gRoute1_LandMonsInfoEvening = {15, gRoute1_LandMons
 
 const struct WildPokemon gRoute1_LandMonsNight[] =
 {
-    {2, 3, SPECIES_MAGNEMITE},       // Classic owl, perfect for night
-    {2, 3, SPECIES_MAGNEMITE},      // Night-prowling Dark-type
-    {2, 3, SPECIES_MAGNEMITE},       // Nocturnal Bug/Poison
-    {2, 3, SPECIES_MAGNEMITE},       // Gentle fluttery fairy at night
-    {2, 3, SPECIES_MAGNEMITE},      // Ground type, fits cooler nights
-    {2, 3, SPECIES_MAGNEMITE},         // Dreamlike baby Fairy
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Classic owl, perfect for night
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},      // Night-prowling Dark-type
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Nocturnal Bug/Poison
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},       // Gentle fluttery fairy at night
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},      // Ground type, fits cooler nights
+    {2, 3, SPECIES_PUFFYFIERYBLOWHOG},         // Dreamlike baby Fairy
     {2, 3, SPECIES_HOUNDOUR},       // Cold-blooded Dragon/Ice baby
     {2, 3, SPECIES_LITLEO},         // Night hunting Fire-type
     {2, 3, SPECIES_GASTLY},         // Mandatory spooky ghost 👻
     {2, 2, SPECIES_MISDREAVUS},     // Pure ghost — mysterious and elegant
     {2, 3, SPECIES_ZORUA},          // Trickster at night
-    {2, 3, SPECIES_MEOWTH_A},  // Dark-type variant, night stalker
+    {2, 3, SPECIES_DWARFBULBORB_A},  // Dark-type variant, night stalker
 };
 
 const struct WildPokemonInfo gRoute1_LandMonsInfoNight = {15, gRoute1_LandMonsNight};

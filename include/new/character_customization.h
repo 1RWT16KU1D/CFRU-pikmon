@@ -110,57 +110,57 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define gObjectEventPallete_74 ((void*)0x08F24A84)
 #define gObjectEventPallete_75 ((void*)0x08F24B28)
 
-#define OBJ_EVENT_PAL_TAG_BULBLARVA 0x1200
+#define OBJ_EVENT_PAL_TAG_BULBORBLARVA 0x1200
 #define OBJ_EVENT_PAL_TAG_BULBORB 0x1201
-#define OBJ_EVENT_PAL_TAG_JUMBOBORB 0x1202
-#define OBJ_EVENT_PAL_TAG_BLOWLET 0x1203
-#define OBJ_EVENT_PAL_TAG_BLOWHOG 0x1204
-#define OBJ_EVENT_PAL_TAG_TITANBHOG 0x1205
+#define OBJ_EVENT_PAL_TAG_JUMBOBULBORB 0x1202
+#define OBJ_EVENT_PAL_TAG_FIERYBLOWLET 0x1203
+#define OBJ_EVENT_PAL_TAG_FIERYBLOWHOG 0x1204
+#define OBJ_EVENT_PAL_TAG_TITANBLOWHOG 0x1205
 #define OBJ_EVENT_PAL_TAG_WOLPOLE 0x1206
-#define OBJ_EVENT_PAL_TAG_YWOLLYHOP 0x1207
+#define OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP 0x1207
 #define OBJ_EVENT_PAL_TAG_MASTERHOP 0x1208
 
-#define OBJ_EVENT_PAL_TAG_BULBLARVA_SHINY 0x166F
+#define OBJ_EVENT_PAL_TAG_BULBORBLARVA_SHINY 0x166F
 #define OBJ_EVENT_PAL_TAG_BULBORB_SHINY 0x1670
-#define OBJ_EVENT_PAL_TAG_JUMBOBORB_SHINY 0x1671
-#define OBJ_EVENT_PAL_TAG_BLOWLET_SHINY 0x1672
-#define OBJ_EVENT_PAL_TAG_BLOWHOG_SHINY 0x1673
-#define OBJ_EVENT_PAL_TAG_TITANBHOG_SHINY 0x1674
+#define OBJ_EVENT_PAL_TAG_JUMBOBULBORB_SHINY 0x1671
+#define OBJ_EVENT_PAL_TAG_FIERYBLOWLET_SHINY 0x1672
+#define OBJ_EVENT_PAL_TAG_FIERYBLOWHOG_SHINY 0x1673
+#define OBJ_EVENT_PAL_TAG_TITANBLOWHOG_SHINY 0x1674
 #define OBJ_EVENT_PAL_TAG_WOLPOLE_SHINY 0x1675
-#define OBJ_EVENT_PAL_TAG_YWOLLYHOP_SHINY 0x1676
+#define OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP_SHINY 0x1676
 #define OBJ_EVENT_PAL_TAG_MASTERHOP_SHINY 0x1677
 
 
-#define EVENT_OBJ_GFX_BULBLARVA 0
+#define EVENT_OBJ_GFX_BULBORBLARVA 0
 #define EVENT_OBJ_GFX_BULBORB 1
-#define EVENT_OBJ_GFX_JUMBOBORB 2
-#define EVENT_OBJ_GFX_BLOWLET 3
-#define EVENT_OBJ_GFX_BLOWHOG 4
-#define EVENT_OBJ_GFX_TITANBHOG 5
+#define EVENT_OBJ_GFX_JUMBOBULBORB 2
+#define EVENT_OBJ_GFX_FIERYBLOWLET 3
+#define EVENT_OBJ_GFX_FIERYBLOWHOG 4
+#define EVENT_OBJ_GFX_TITANBLOWHOG 5
 #define EVENT_OBJ_GFX_WOLPOLE 6
-#define EVENT_OBJ_GFX_YWOLLYHOP 7
+#define EVENT_OBJ_GFX_YELLOWWOLLYHOP 7
 #define EVENT_OBJ_GFX_MASTERHOP 8
 
 
 // Palette declarations
 //Normal Pal
-extern const u16 gFollowingMonPic_0001_BulbLarvaPal[255];
+extern const u16 gFollowingMonPic_0001_BulborbLarvaPal[255];
 extern const u16 gFollowingMonPic_0002_BulborbPal[255];
-extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
-extern const u16 gFollowingMonPic_0004_BlowletPal[255];
-extern const u16 gFollowingMonPic_0005_BlowhogPal[255];
-extern const u16 gFollowingMonPic_0006_TitanBHogPal[255];
+extern const u16 gFollowingMonPic_0003_JumboBulborbPal[255];
+extern const u16 gFollowingMonPic_0004_FieryBlowletPal[255];
+extern const u16 gFollowingMonPic_0005_FieryBlowhogPal[255];
+extern const u16 gFollowingMonPic_0006_TitanBlowhogPal[255];
 extern const u16 gFollowingMonPic_0007_WolpolePal[255];
-extern const u16 gFollowingMonPic_0008_YWollyhopPal[255];
+extern const u16 gFollowingMonPic_0008_YellowWollyhopPal[255];
 extern const u16 gFollowingMonPic_0009_MasterhopPal[255];
 
 //Shiny Pals
-extern const u16 gShinyFollowingMonPic_0001_BulbLarvaPal[255];
+extern const u16 gShinyFollowingMonPic_0001_BulborbLarvaPal[255];
 extern const u16 gShinyFollowingMonPic_0002_BulborbPal[255];
-extern const u16 gFollowingMonPic_0003_JumboBorbPal[255];
-extern const u16 gFollowingMonPic_0004_BlowletPal[255];
-extern const u16 gFollowingMonPic_0005_BlowhogPal[255];
-extern const u16 gFollowingMonPic_0006_TitanBHogPal[255];
+extern const u16 gFollowingMonPic_0003_JumboBulborbPal[255];
+extern const u16 gFollowingMonPic_0004_FieryBlowletPal[255];
+extern const u16 gFollowingMonPic_0005_FieryBlowhogPal[255];
+extern const u16 gFollowingMonPic_0006_TitanBlowhogPal[255];
 extern const u16 gFollowingMonPic_0007_WolpolePal[255];
-extern const u16 gFollowingMonPic_0008_YWollyhopPal[255];
+extern const u16 gFollowingMonPic_0008_YellowWollyhopPal[255];
 extern const u16 gFollowingMonPic_0009_MasterhopPal[255];

@@ -3248,7 +3248,7 @@ struct OakSpeechResources
 };
 
 #define gMonFrontPicTable ((const struct CompressedSpriteSheet*) *((u32*) 0x8000128))
-#define tNidoranFSpriteId           data[4]
+#define tBurrowingSnagretSpriteId           data[4]
 
 void CreateOakIntroPokemonSprite(u8 taskId)
 {
@@ -3261,7 +3261,7 @@ void CreateOakIntroPokemonSprite(u8 taskId)
     gSprites[spriteId].callback = SpriteCallbackDummy;
     gSprites[spriteId].oam.priority = 1;
     gSprites[spriteId].invisible = TRUE;
-    gTasks[taskId].tNidoranFSpriteId = spriteId;
+    gTasks[taskId].tBurrowingSnagretSpriteId = spriteId;
 }
 
 #define OakSpeechPrintMessage(str, speed) ({                                                                                                                 \

@@ -544,8 +544,8 @@ static u16 GetDevolution(u16 originalSpecies, u16 backupSpecies)
 	u16 dexNum = SpeciesToNationalPokedexNum(originalSpecies);
 
 	switch(dexNum) {
-		#if (defined NATIONAL_DEX_PIKACHU && defined SPECIES_PICHU)
-		case NATIONAL_DEX_PIKACHU: //Get's all the special forms
+		#if (defined NATIONAL_DEX_SPOTTYBULBEAR && defined SPECIES_PICHU)
+		case NATIONAL_DEX_SPOTTYBULBEAR: //Get's all the special forms
 			return SPECIES_PICHU;
 		#endif
 		#if (defined NATIONAL_DEX_VIVILLON && defined SPECIES_SPEWPA)

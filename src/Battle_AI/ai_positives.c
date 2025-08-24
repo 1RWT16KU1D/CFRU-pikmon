@@ -2792,7 +2792,7 @@ static s16 DamageMoveViabilityIncrease(u8 bankAtk, u8 bankDef, u16 move, s16 via
 		{
 			IncreaseViabilityForSlowKOMove(&viability, class, bankAtk, bankDef); //Use the killing move with the best accuracy
 		}
-		else if (!(gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLNTBEETLE) //This rule doesn't apply in these battles
+		else if (!(gBattleTypeFlags & BATTLE_TYPE_BENJAMIN_GLINTBEETLE) //This rule doesn't apply in these battles
 		&& (!gNewBS->ai.usingDesperateMove[bankAtk]  //Didn't use a desperate move last turn
 		 || AI_THINKING_STRUCT->simulatedRNG[3] < ((gLastPrintedMoves[bankDef] != MOVE_NONE && SPLIT(gLastPrintedMoves[bankDef]) == SPLIT_STATUS) ? 25 : 75)) //Or allowed consecutive desperate moves (higher chance if opponent last used an attacking move)
 		&& !MoveEffectInMoveset(EFFECT_PROTECT, bankAtk) //Attacker doesn't know Protect

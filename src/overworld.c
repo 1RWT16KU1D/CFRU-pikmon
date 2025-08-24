@@ -1040,8 +1040,8 @@ void BattleSetup_StartTrainerBattle(void)
 		u16 tier = VarGet(VAR_BATTLE_FACILITY_TIER);
 		if (IsCamomonsTier(tier))
 			gBattleTypeFlags |= BATTLE_TYPE_CAMOMONS;
-		else if (tier == BATTLE_FACILITY_BENJAMIN_GLNTBEETLE)
-			gBattleTypeFlags |= BATTLE_TYPE_BENJAMIN_GLNTBEETLE;
+		else if (tier == BATTLE_FACILITY_BENJAMIN_GLINTBEETLE)
+			gBattleTypeFlags |= BATTLE_TYPE_BENJAMIN_GLINTBEETLE;
 		else if (tier == BATTLE_FACILITY_MEGA_BRAWL)
 			gBattleTypeFlags |= BATTLE_TYPE_MEGA_BRAWL;
 
@@ -1100,9 +1100,9 @@ void BattleSetup_StartTrainerBattle(void)
 			gBattleTypeFlags |= BATTLE_TYPE_CAMOMONS;
 		#endif
 
-		#ifdef FLAG_BENJAMIN_GLNTBEETLE_BATTLE
-		if (FlagGet(FLAG_BENJAMIN_GLNTBEETLE_BATTLE))
-			gBattleTypeFlags |= BATTLE_TYPE_BENJAMIN_GLNTBEETLE;
+		#ifdef FLAG_BENJAMIN_GLINTBEETLE_BATTLE
+		if (FlagGet(FLAG_BENJAMIN_GLINTBEETLE_BATTLE))
+			gBattleTypeFlags |= BATTLE_TYPE_BENJAMIN_GLINTBEETLE;
 		#endif
 
 		#ifdef FLAG_RING_CHALLENGE_BATTLE

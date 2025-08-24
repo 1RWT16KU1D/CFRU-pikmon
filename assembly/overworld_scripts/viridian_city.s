@@ -45,7 +45,7 @@ EventScript_ViridianCity_Youngster:
     setvar 0x800B 16
     givepokemon SPECIES_TOGETIC 26 ITEM_SHINY_STONE 0 1 10
 
-    @ Set-Up Gyarados
+    @ Set-Up MasterOnion
     setvar 0x8000 MOVE_WATERFALL
     setvar 0x8001 MOVE_ICEFANG
     setvar 0x8002 MOVE_DRAGONDANCE
@@ -58,7 +58,7 @@ EventScript_ViridianCity_Youngster:
     setvar 0x8009 16
     setvar 0x800A 16
     setvar 0x800B 16
-    givepokemon SPECIES_GYARADOS 40 ITEM_WATERIUM_Z 0 1 5
+    givepokemon SPECIES_MASTERONION 40 ITEM_WATERIUM_Z 0 1 5
 
     setflag 0x82F
     @ Mega Blaziken

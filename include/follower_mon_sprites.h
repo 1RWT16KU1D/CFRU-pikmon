@@ -113,14 +113,14 @@ extern const union AnimCmd *const gFollowerMonAnimTable[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 
 // Tiles
-extern const u8 gFollowingMonPic_0001_BulbLarvaTiles[];
+extern const u8 gFollowingMonPic_0001_BulborbLarvaTiles[];
 extern const u8 gFollowingMonPic_0002_BulborbTiles[];
-extern const u8 gFollowingMonPic_0003_JumboBorbTiles[];
-extern const u8 gFollowingMonPic_0004_BlowletTiles[];
-extern const u8 gFollowingMonPic_0005_BlowhogTiles[];
-extern const u8 gFollowingMonPic_0006_TitanBHogTiles[];
+extern const u8 gFollowingMonPic_0003_JumboBulborbTiles[];
+extern const u8 gFollowingMonPic_0004_FieryBlowletTiles[];
+extern const u8 gFollowingMonPic_0005_FieryBlowhogTiles[];
+extern const u8 gFollowingMonPic_0006_TitanBlowhogTiles[];
 extern const u8 gFollowingMonPic_0007_WolpoleTiles[];
-extern const u8 gFollowingMonPic_0008_YWollyhopTiles[];
+extern const u8 gFollowingMonPic_0008_YellowWollyhopTiles[];
 extern const u8 gFollowingMonPic_0009_MasterhopTiles[];
 
 #endif // FOLLOWER_MON_SPRITES_H

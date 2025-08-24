@@ -76,7 +76,7 @@ enum BattleBeginStates
 const struct TrainerCustomAbility gCustomTrainerAbilityTable[MAX_TRAINER_COUNT][PARTY_SIZE] = {
 	[TRAINER_RIVAL_ROUTE22_EARLY_WOLPOLE] = {
 		{SPECIES_GOOMY, ABILITY_MOLDBREAKER},
-		{SPECIES_GROWLITHE, ABILITY_INTREPIDSWORD},
+		{SPECIES_BULBMIN, ABILITY_INTREPIDSWORD},
 		CUSTOM_ABILITYTABLE_TERMIN
 	},
 };
@@ -169,8 +169,8 @@ void HandleNewBattleRamClearBeforeBattle(void)
 		#endif
 	}
 
-	#ifdef FLAG_BENJAMIN_GLNTBEETLE_BATTLE
-	if (FlagGet(FLAG_BENJAMIN_GLNTBEETLE_BATTLE))
+	#ifdef FLAG_BENJAMIN_GLINTBEETLE_BATTLE
+	if (FlagGet(FLAG_BENJAMIN_GLINTBEETLE_BATTLE))
 		SavePlayerParty(); //Backup party to be restored after the battle
 	#endif
 
@@ -1589,7 +1589,7 @@ void HandleAction_UseMove(void)
 			u16 zmove = GetSpecialZMove(gCurrentMove, SPECIES(gBankAttacker), ITEM(gBankAttacker));
 			if (zmove != MOVE_NONE && zmove != 0xFFFF) //There's a special Z-Move
 				gCurrentMove = zmove;
-			else if (zmove != 0xFFFF) //This check is needed b/c in Benjamin GlntBeetle you can select a special Z-Move but then lose it before it activates
+			else if (zmove != 0xFFFF) //This check is needed b/c in Benjamin GlintBeetle you can select a special Z-Move but then lose it before it activates
 				gCurrentMove = GetTypeBasedZMove(gBattleMons[gBankAttacker].moves[gCurrMovePos], gBankAttacker);
 			else
 			{
@@ -1599,7 +1599,7 @@ void HandleAction_UseMove(void)
 		}
 		else
 		{
-			//This check is needed b/c in Benjamin GlntBeetle you can select a special Z-Move but then lose it before it activates
+			//This check is needed b/c in Benjamin GlintBeetle you can select a special Z-Move but then lose it before it activates
 			if (GetSpecialZMove(gCurrentMove, SPECIES(gBankAttacker), ITEM(gBankAttacker)) == 0xFFFF)
 			{
 				gNewBS->zMoveData.active = FALSE;
@@ -2451,7 +2451,7 @@ static u32 BoostSpeedByItemEffect(u8 itemEffect, u8 itemQuality, u16 species, u3
 			speed /= 2;
 			break;
 		case ITEM_EFFECT_QUICK_POWDER:
-			if (species == SPECIES_DITTO)
+			if (species == SPECIES_QUAGGLEDMIRECLOPS)
 				speed *= 2;
 	}
 

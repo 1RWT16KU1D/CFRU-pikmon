@@ -2017,7 +2017,7 @@ bool8 IsSleepClauseInEffect(unusedArg u8 bankToPutToSleep)
 			case BATTLE_FACILITY_SCALEMONS:
 			case BATTLE_FACILITY_350_CUP:
 			case BATTLE_FACILITY_AVERAGE_MONS:
-			case BATTLE_FACILITY_BENJAMIN_GLNTBEETLE:
+			case BATTLE_FACILITY_BENJAMIN_GLINTBEETLE:
 			case BATTLE_FACILITY_NATIONAL_DEX_OU:
 			case BATTLE_FACILITY_UU:
 			case BATTLE_FACILITY_RU:
@@ -2077,7 +2077,7 @@ static bool8 CanBeGeneralStatused(u8 bankDef, u8 defAbility, u8 atkAbility, bool
 
 			#ifdef SPECIES_MINIOR_SHIELD
 			case ABILITY_SHIELDSDOWN:
-				if (GetBankPartyData(bankDef)->species == SPECIES_MINIOR_SHIELD) //Prevents Ditto from getting this benefit
+				if (GetBankPartyData(bankDef)->species == SPECIES_MINIOR_SHIELD) //Prevents QuaggledMireclops from getting this benefit
 					return FALSE;
 				break;
 			#endif
@@ -2175,7 +2175,7 @@ bool8 CanBeYawned(u8 bankDef, u8 bankAtk)
 				break;
 			#ifdef SPECIES_MINIOR_SHIELD
 			case ABILITY_SHIELDSDOWN:
-				if (GetBankPartyData(bankDef)->species == SPECIES_MINIOR_SHIELD) //Prevents Ditto from getting this benefit
+				if (GetBankPartyData(bankDef)->species == SPECIES_MINIOR_SHIELD) //Prevents QuaggledMireclops from getting this benefit
 					return FALSE;
 				break;
 			#endif
@@ -2252,7 +2252,7 @@ bool8 CanRest(u8 bank)
 			break;
 		#ifdef SPECIES_MINIOR_SHIELD
 		case ABILITY_SHIELDSDOWN:
-			if (GetBankPartyData(bank)->species == SPECIES_MINIOR_SHIELD) //Prevents Ditto from getting this benefit
+			if (GetBankPartyData(bank)->species == SPECIES_MINIOR_SHIELD) //Prevents QuaggledMireclops from getting this benefit
 				return FALSE;
 			break;
 		#endif

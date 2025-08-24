@@ -52,7 +52,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Catherine_Rank12[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_YWOLLYHOP,
+		.species = SPECIES_YELLOWWOLLYHOP,
 		.nature = NATURE_BRAVE,
 		.hpIv = 20,
 		.atkIv = 31,
@@ -262,7 +262,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Ginger_Rank12[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFAIRY,
+		.species = SPECIES_SHEARWIG,
 		.nature = NATURE_SASSY,
 		.hpIv = 31,
 		.atkIv = 25,
@@ -336,7 +336,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Ginger_Rank3[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFAIRY,
+		.species = SPECIES_SHEARWIG,
 		.nature = NATURE_SASSY,
 		.hpIv = 31,
 		.atkIv = 25,
@@ -414,7 +414,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Ginger_Rank456[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFABLE,
+		.species = SPECIES_QUEENSHEARWIG,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -516,7 +516,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank2[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLOWHOG,
+		.species = SPECIES_FIERYBLOWHOG,
 		.nature = NATURE_QUIET,
 		.hpIv = 20,
 		.atkIv = 0,
@@ -591,7 +591,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank3[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 20,
 		.atkIv = 0,
@@ -671,7 +671,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank4[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -683,7 +683,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank4[] =
 		.spAtkEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_Y,
+		.item = ITEM_TITANBLOWHOGITE_Y,
 		.moves =
 		{
 			MOVE_FLAMETHROWER,
@@ -753,7 +753,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank56[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -765,7 +765,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank56[] =
 		.spAtkEv = 252,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_Y,
+		.item = ITEM_TITANBLOWHOGITE_Y,
 		.moves =
 		{
 			MOVE_FLAMETHROWER,
@@ -783,7 +783,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Abimbola_Rank56[] =
 static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 {
 	{
-		.species = SPECIES_GYARADOS,
+		.species = SPECIES_MASTERONION,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -836,7 +836,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_JUMBOBORB,
+		.species = SPECIES_JUMBOBULBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -848,7 +848,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 		.defEv = 252,
 		.spAtkEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_JUMBOBORBITE,
+		.item = ITEM_JUMBOBULBORBITE,
 		.moves =
 		{
 			MOVE_GRASSPLEDGE,
@@ -866,7 +866,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank4[] =
 static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank56[] =
 {
 	{
-		.species = SPECIES_GYARADOS,
+		.species = SPECIES_MASTERONION,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -919,7 +919,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank56[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_JUMBOBORB,
+		.species = SPECIES_JUMBOBULBORB,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -931,7 +931,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Mahina_Rank56[] =
 		.defEv = 252,
 		.spAtkEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_CHLOROPHYLL
-		.item = ITEM_JUMBOBORBITE,
+		.item = ITEM_JUMBOBULBORBITE,
 		.moves =
 		{
 			MOVE_GRASSPLEDGE,
@@ -1517,7 +1517,7 @@ const struct BattleTowerSpread sRaidPartnerSpread_Alice_Rank56[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_DODRIO,
+		.species = SPECIES_LESSERSPOTTEDJELLYFLOAT,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -1654,7 +1654,7 @@ const struct BattleTowerSpread sRaidPartnerSpread_Mel_Rank56[] =
 const struct BattleTowerSpread sRaidPartnerSpread_Galavan_Rank56[] =
 {
 	{
-		.species = SPECIES_GOLEM_A,
+		.species = SPECIES_SPUTTLEFISH_A,
 		.nature = NATURE_IMPISH,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -1980,7 +1980,7 @@ static const struct BattleTowerSpread sRaidPartnerSpread_Jax_Rank6[] =
 static const struct BattleTowerSpread sRaidPartnerSpread_Red_Rank6[] =
 {
 	{
-		.species = SPECIES_PIKACHU_CAP_ORIGINAL,
+		.species = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,

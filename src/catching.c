@@ -355,41 +355,41 @@ u32 GetBaseBallCatchOdds(u8 ballType, u8 bankAtk, u8 bankDef)
 					default:
 						ballMultiplier = 10;
 						break;
-					#ifdef SPECIES_NIDORAN_F
-					case SPECIES_NIDORAN_F:
+					#ifdef SPECIES_BURROWINGSNAGRET
+					case SPECIES_BURROWINGSNAGRET:
 					#endif
-					#ifdef SPECIES_NIDORINA
-					case SPECIES_NIDORINA:
+					#ifdef SPECIES_PILEATEDSNAGRET
+					case SPECIES_PILEATEDSNAGRET:
 					#endif
-					#ifdef SPECIES_NIDOQUEEN
-					case SPECIES_NIDOQUEEN:
+					#ifdef SPECIES_FEMALESHEARGRUB
+					case SPECIES_FEMALESHEARGRUB:
 					#endif
-					#ifdef SPECIES_NIDORAN_M
-					case SPECIES_NIDORAN_M:
+					#ifdef SPECIES_SWARMINGSHEARGRUB
+					case SPECIES_SWARMINGSHEARGRUB:
 					#endif
-					#ifdef SPECIES_NIDORINO
-					case SPECIES_NIDORINO:
+					#ifdef SPECIES_MAMASHEARGRUB
+					case SPECIES_MAMASHEARGRUB:
 					#endif
-					#ifdef SPECIES_NIDOKING
-					case SPECIES_NIDOKING:
+					#ifdef SPECIES_MALESHEARGRUB
+					case SPECIES_MALESHEARGRUB:
 					#endif
 					#ifdef SPECIES_CLEFFA
 					case SPECIES_CLEFFA:
 					#endif
-					#ifdef SPECIES_CLEFAIRY
-					case SPECIES_CLEFAIRY:
+					#ifdef SPECIES_SHEARWIG
+					case SPECIES_SHEARWIG:
 					#endif
-					#ifdef SPECIES_CLEFABLE
-					case SPECIES_CLEFABLE:
+					#ifdef SPECIES_QUEENSHEARWIG
+					case SPECIES_QUEENSHEARWIG:
 					#endif
 					#ifdef SPECIES_IGGLYBUFF
 					case SPECIES_IGGLYBUFF:
 					#endif
-					#ifdef SPECIES_JIGGLYPUFF
-					case SPECIES_JIGGLYPUFF:
+					#ifdef SPECIES_GOOLIX
+					case SPECIES_GOOLIX:
 					#endif
-					#ifdef SPECIES_WIGGLYTUFF
-					case SPECIES_WIGGLYTUFF:
+					#ifdef SPECIES_FOOLIX
+					case SPECIES_FOOLIX:
 					#endif
 					#ifdef SPECIES_SKITTY
 					case SPECIES_SKITTY:
@@ -1048,9 +1048,9 @@ u16 LoadTargetPokedexSpecies(void)
 		return SPECIES_MINIOR_SHIELD;
 	#endif
 
-	#if (defined NATIONAL_POKEDEX_PIKACHU && defined SPECIES_PIKACHU)
-	if (SpeciesToNationalPokedexNum(species) == NATIONAL_POKEDEX_PIKACHU)
-		return SPECIES_PIKACHU;
+	#if (defined NATIONAL_POKEDEX_SPOTTYBULBEAR && defined SPECIES_SPOTTYBULBEAR)
+	if (SpeciesToNationalPokedexNum(species) == NATIONAL_POKEDEX_SPOTTYBULBEAR)
+		return SPECIES_SPOTTYBULBEAR;
 	#endif
 
 	return species;

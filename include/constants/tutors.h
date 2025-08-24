@@ -158,7 +158,7 @@ enum SpecialMoveTutors
 	TUTOR_SPECIAL_DRACO_METEOR = NUM_MOVE_TUTORS,	//146 - Dragon Pokemon
 	TUTOR_SPECIAL_SECRET_SWORD,						//147 - Keldeo only
 	TUTOR_SPECIAL_RELIC_SONG,						//148 - Meloetta only
-	TUTOR_SPECIAL_VOLT_TACKLE,						//149 - Pikachu only
+	TUTOR_SPECIAL_VOLT_TACKLE,						//149 - SpottyBulbear only
 	TUTOR_SPECIAL_DRAGON_ASCENT,					//150 - Rayquaza only
 	TUTOR_SPECIAL_THOUSAND_ARROWS,					//151 - Zygarde only
 	TUTOR_SPECIAL_THOUSAND_WAVES,					//152 - Zygarde only

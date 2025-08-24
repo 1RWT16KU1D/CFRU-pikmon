@@ -365,25 +365,25 @@ static NPCPtr sOverworldTable2[] =
 	};
 
 	const struct SpritePalette gObjectEventSpritePalettes12[] = {
-		{gFollowingMonPic_0001_BulbLarvaPal, OBJ_EVENT_PAL_TAG_BULBLARVA},
+		{gFollowingMonPic_0001_BulborbLarvaPal, OBJ_EVENT_PAL_TAG_BULBORBLARVA},
         {gFollowingMonPic_0002_BulborbPal, OBJ_EVENT_PAL_TAG_BULBORB},
-        {gFollowingMonPic_0003_JumboBorbPal, OBJ_EVENT_PAL_TAG_JUMBOBORB},
-        {gFollowingMonPic_0004_BlowletPal, OBJ_EVENT_PAL_TAG_BLOWLET},
-        {gFollowingMonPic_0005_BlowhogPal, OBJ_EVENT_PAL_TAG_BLOWHOG},
-        {gFollowingMonPic_0006_TitanBHogPal, OBJ_EVENT_PAL_TAG_TITANBHOG},
+        {gFollowingMonPic_0003_JumboBulborbPal, OBJ_EVENT_PAL_TAG_JUMBOBULBORB},
+        {gFollowingMonPic_0004_FieryBlowletPal, OBJ_EVENT_PAL_TAG_FIERYBLOWLET},
+        {gFollowingMonPic_0005_FieryBlowhogPal, OBJ_EVENT_PAL_TAG_FIERYBLOWHOG},
+        {gFollowingMonPic_0006_TitanBlowhogPal, OBJ_EVENT_PAL_TAG_TITANBLOWHOG},
         {gFollowingMonPic_0007_WolpolePal, OBJ_EVENT_PAL_TAG_WOLPOLE},
-        {gFollowingMonPic_0008_YWollyhopPal, OBJ_EVENT_PAL_TAG_YWOLLYHOP},
+        {gFollowingMonPic_0008_YellowWollyhopPal, OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP},
         {gFollowingMonPic_0009_MasterhopPal, OBJ_EVENT_PAL_TAG_MASTERHOP},
 
         // Shiny Palettes
-		{gShinyFollowingMonPic_0001_BulbLarvaPal, OBJ_EVENT_PAL_TAG_BULBLARVA_SHINY},
+		{gShinyFollowingMonPic_0001_BulborbLarvaPal, OBJ_EVENT_PAL_TAG_BULBORBLARVA_SHINY},
         {gShinyFollowingMonPic_0002_BulborbPal, OBJ_EVENT_PAL_TAG_BULBORB_SHINY},
-        {gFollowingMonPic_0003_JumboBorbPal, OBJ_EVENT_PAL_TAG_JUMBOBORB_SHINY},
-        {gFollowingMonPic_0004_BlowletPal, OBJ_EVENT_PAL_TAG_BLOWLET},
-        {gFollowingMonPic_0005_BlowhogPal, OBJ_EVENT_PAL_TAG_BLOWHOG},
-        {gFollowingMonPic_0006_TitanBHogPal, OBJ_EVENT_PAL_TAG_TITANBHOG},
+        {gFollowingMonPic_0003_JumboBulborbPal, OBJ_EVENT_PAL_TAG_JUMBOBULBORB_SHINY},
+        {gFollowingMonPic_0004_FieryBlowletPal, OBJ_EVENT_PAL_TAG_FIERYBLOWLET},
+        {gFollowingMonPic_0005_FieryBlowhogPal, OBJ_EVENT_PAL_TAG_FIERYBLOWHOG},
+        {gFollowingMonPic_0006_TitanBlowhogPal, OBJ_EVENT_PAL_TAG_TITANBLOWHOG},
         {gFollowingMonPic_0007_WolpolePal, OBJ_EVENT_PAL_TAG_WOLPOLE_SHINY},
-        {gFollowingMonPic_0008_YWollyhopPal, OBJ_EVENT_PAL_TAG_YWOLLYHOP_SHINY},
+        {gFollowingMonPic_0008_YellowWollyhopPal, OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP_SHINY},
         {gFollowingMonPic_0009_MasterhopPal, OBJ_EVENT_PAL_TAG_MASTERHOP_SHINY},
 };
 

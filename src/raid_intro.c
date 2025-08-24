@@ -286,7 +286,7 @@ static bool8 GetRaidBattleData(void)
 	sRaidBattleIntroPtr->partners[1].team[2] = SPECIES_SALAMENCE;
 
 	sRaidBattleIntroPtr->partners[2].graphicsId = EVENT_OBJ_GFX_RED;
-	sRaidBattleIntroPtr->partners[2].team[0] = SPECIES_PIKACHU_CAP_ORIGINAL;
+	sRaidBattleIntroPtr->partners[2].team[0] = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL;
 	sRaidBattleIntroPtr->partners[2].team[1] = SPECIES_SNORLAX;
 	sRaidBattleIntroPtr->partners[2].team[2] = SPECIES_MEWTWO;
 

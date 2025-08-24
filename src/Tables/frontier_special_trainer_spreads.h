@@ -2402,7 +2402,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Pat2[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GYARADOS,
+		.species = SPECIES_MASTERONION,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -2414,7 +2414,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Pat2[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_INTIMIDATE
-		.item = ITEM_GYARADOSITE,
+		.item = ITEM_MASTERONIONITE,
 		.moves =
 		{
 			MOVE_WATERFALL,
@@ -3821,7 +3821,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Pablo2Format2[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CLEFAIRY,
+		.species = SPECIES_SHEARWIG,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -3982,7 +3982,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Paula1[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_ALAKAZAM,
+		.species = SPECIES_VOLATILEDWEEVIL,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -4009,7 +4009,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Paula1[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_ALAKAZAM,
+		.species = SPECIES_VOLATILEDWEEVIL,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -5649,7 +5649,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Paula2[] =
 const struct BattleTowerSpread gLittleCupTowerSpread_Paula1[] =
 {
 	{
-		.species = SPECIES_SEEL,
+		.species = SPECIES_GREATERSPOTTEDJELLYFLOAT,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -7513,7 +7513,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Skeli[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BUMBLEBUG,
+		.species = SPECIES_BUMBLINGSNITCHBUG,
 		.nature = NATURE_RELAXED,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -9162,7 +9162,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Golche[] =
 const struct BattleTowerSpread gMiddleCupTowerSpread_Golche[] =
 {
 	{
-		.species = SPECIES_PIKACHU_SURFING,
+		.species = SPECIES_SPOTTYBULBEAR_SURFING,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -9189,7 +9189,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Golche[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_PIKACHU,
+		.species = SPECIES_SPOTTYBULBEAR,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -9874,7 +9874,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Golche[] =
 const struct BattleTowerSpread gSpecialTowerSpread_Gail[] =
 {
 	{
-		.species = SPECIES_ARCANINE,
+		.species = SPECIES_ADULTBULBMIN,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -9900,7 +9900,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Gail[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_ARCANINE,
+		.species = SPECIES_ADULTBULBMIN,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -10323,7 +10323,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Gail[] =
 		.shiny = TRUE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -10335,7 +10335,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Gail[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_Y,
+		.item = ITEM_TITANBLOWHOGITE_Y,
 		.moves =
 		{
 			MOVE_FIREBLAST,
@@ -10349,7 +10349,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Gail[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -10361,7 +10361,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Gail[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_Y,
+		.item = ITEM_TITANBLOWHOGITE_Y,
 		.moves =
 		{
 			MOVE_FLAMETHROWER,
@@ -10641,7 +10641,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Gail[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_YWOLLYHOP,
+		.species = SPECIES_YELLOWWOLLYHOP,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -10667,7 +10667,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Gail[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_YWOLLYHOP,
+		.species = SPECIES_YELLOWWOLLYHOP,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -10853,7 +10853,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Gail[] =
 const struct BattleTowerSpread gLittleCupTowerSpread_Gail[] =
 {
 	{
-		.species = SPECIES_GROWLITHE,
+		.species = SPECIES_BULBMIN,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -10879,7 +10879,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Gail[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_GROWLITHE,
+		.species = SPECIES_BULBMIN,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -11491,7 +11491,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Lixdel[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFABLE,
+		.species = SPECIES_QUEENSHEARWIG,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -11517,7 +11517,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Lixdel[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_CLEFABLE,
+		.species = SPECIES_QUEENSHEARWIG,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -11543,7 +11543,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Lixdel[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_CLEFABLE,
+		.species = SPECIES_QUEENSHEARWIG,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14382,7 +14382,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Cynthia[] =
 const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 {
 	{
-		.species = SPECIES_PIKACHU_CAP_ORIGINAL,
+		.species = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -14409,7 +14409,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_PIKACHU_CAP_ORIGINAL,
+		.species = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 30,
@@ -14435,7 +14435,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_PIKACHU_CAP_ORIGINAL,
+		.species = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -14462,7 +14462,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_JUMBOBORB,
+		.species = SPECIES_JUMBOBULBORB,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14488,7 +14488,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_JUMBOBORB,
+		.species = SPECIES_JUMBOBULBORB,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14515,7 +14515,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_JUMBOBORB,
+		.species = SPECIES_JUMBOBULBORB,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14542,7 +14542,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14568,7 +14568,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -14580,7 +14580,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_X,
+		.item = ITEM_TITANBLOWHOGITE_X,
 		.moves =
 		{
 			MOVE_FLAREBLITZ,
@@ -14594,7 +14594,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_TITANBHOG,
+		.species = SPECIES_TITANBLOWHOG,
 		.nature = NATURE_MILD,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -14606,7 +14606,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.atkEv = 4,
 		.spAtkEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BLAZE
-		.item = ITEM_TITANBHOGITE_Y,
+		.item = ITEM_TITANBLOWHOGITE_Y,
 		.moves =
 		{
 			MOVE_HEATWAVE,
@@ -14776,7 +14776,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_LAPRAS,
+		.species = SPECIES_OATCHI,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14803,7 +14803,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_LAPRAS,
+		.species = SPECIES_OATCHI,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -14830,7 +14830,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Red[] =
 		.gigantamax = TRUE,
 	},
 	{
-		.species = SPECIES_LAPRAS,
+		.species = SPECIES_OATCHI,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15360,7 +15360,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Red[] =
 const struct BattleTowerSpread gMiddleCupTowerSpread_Red[] =
 {
 	{
-		.species = SPECIES_PIKACHU_CAP_ORIGINAL,
+		.species = SPECIES_SPOTTYBULBEAR_CAP_ORIGINAL,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15413,7 +15413,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_BLOWHOG,
+		.species = SPECIES_FIERYBLOWHOG,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15439,7 +15439,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_YWOLLYHOP,
+		.species = SPECIES_YELLOWWOLLYHOP,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15576,7 +15576,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BULBLARVA,
+		.species = SPECIES_BULBORBLARVA,
 		.nature = NATURE_MODEST,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15602,7 +15602,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BULBLARVA,
+		.species = SPECIES_BULBORBLARVA,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -15627,7 +15627,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLOWLET,
+		.species = SPECIES_FIERYBLOWLET,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -15653,7 +15653,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Red[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_BLOWLET,
+		.species = SPECIES_FIERYBLOWLET,
 		.nature = NATURE_HASTY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -17217,7 +17217,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_BigMo[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MACHOP,
+		.species = SPECIES_MANATLEGS,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -17244,7 +17244,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_BigMo[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MACHOP,
+		.species = SPECIES_MANATLEGS,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -17515,7 +17515,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Galavan[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GOLEM_A,
+		.species = SPECIES_SPUTTLEFISH_A,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -17541,7 +17541,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Galavan[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_GOLEM_A,
+		.species = SPECIES_SPUTTLEFISH_A,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -17567,7 +17567,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Galavan[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GOLEM_A,
+		.species = SPECIES_SPUTTLEFISH_A,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -18384,7 +18384,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Galavan[] =
 const struct BattleTowerSpread gMiddleCupTowerSpread_Galavan[] =
 {
 	{
-		.species = SPECIES_GRAVELER_A,
+		.species = SPECIES_PUCKERINGBLINNOW_A,
 		.nature = NATURE_CAREFUL,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -18544,7 +18544,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Galavan[] =
 const struct BattleTowerSpread gLittleCupTowerSpread_Galavan[] =
 {
 	{
-		.species = SPECIES_GEODUDE_A,
+		.species = SPECIES_VEHEAMOTHPHOSBAT_A,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -18572,7 +18572,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Galavan[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GEODUDE_A,
+		.species = SPECIES_VEHEAMOTHPHOSBAT_A,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -18598,7 +18598,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Galavan[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MAGNEMITE,
+		.species = SPECIES_PUFFYFIERYBLOWHOG,
 		.nature = NATURE_QUIET,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -18624,7 +18624,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Galavan[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MAGNEMITE,
+		.species = SPECIES_PUFFYFIERYBLOWHOG,
 		.nature = NATURE_QUIET,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -19151,7 +19151,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Candice[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_JYNX,
+		.species = SPECIES_ARMOREDMAWDAD,
 		.nature = NATURE_CALM,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -19334,7 +19334,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Candice[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NINETALES_A,
+		.species = SPECIES_ARISTOCRAB_A,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -19727,7 +19727,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread_Candice[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NINETALES_A,
+		.species = SPECIES_ARISTOCRAB_A,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -20251,7 +20251,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Candice[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_VULPIX_A,
+		.species = SPECIES_ARISTOCRABOFFSPRING_A,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -20277,7 +20277,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Candice[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_VULPIX_A,
+		.species = SPECIES_ARISTOCRABOFFSPRING_A,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -20385,7 +20385,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GOLEM,
+		.species = SPECIES_SPUTTLEFISH,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20411,7 +20411,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GOLEM,
+		.species = SPECIES_SPUTTLEFISH,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20437,7 +20437,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_GOLEM,
+		.species = SPECIES_SPUTTLEFISH,
 		.nature = NATURE_BRAVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20541,7 +20541,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NIDOKING,
+		.species = SPECIES_MALESHEARGRUB,
 		.nature = NATURE_HASTY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20567,7 +20567,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_NIDOKING,
+		.species = SPECIES_MALESHEARGRUB,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -20593,7 +20593,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NIDOKING,
+		.species = SPECIES_MALESHEARGRUB,
 		.nature = NATURE_TIMID,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -20619,7 +20619,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MAROWAK,
+		.species = SPECIES_SCORCHCAKE,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20645,7 +20645,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_MAROWAK,
+		.species = SPECIES_SCORCHCAKE,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -20671,7 +20671,7 @@ const struct BattleTowerSpread gSpecialTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_MAROWAK,
+		.species = SPECIES_SCORCHCAKE,
 		.nature = NATURE_BRAVE,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21304,7 +21304,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_GRAVELER,
+		.species = SPECIES_PUCKERINGBLINNOW,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21330,7 +21330,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_NIDORINO,
+		.species = SPECIES_MAMASHEARGRUB,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21356,7 +21356,7 @@ const struct BattleTowerSpread gMiddleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = TRUE,
 	},
 	{
-		.species = SPECIES_NIDORINA,
+		.species = SPECIES_PILEATEDSNAGRET,
 		.nature = NATURE_BOLD,
 		.hpIv = 31,
 		.atkIv = 0,
@@ -21490,7 +21490,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_DIGLETT,
+		.species = SPECIES_HERMITCRAWMAD,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21516,7 +21516,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 {
-		.species = SPECIES_DIGLETT,
+		.species = SPECIES_HERMITCRAWMAD,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21542,7 +21542,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NIDORAN_M,
+		.species = SPECIES_SWARMINGSHEARGRUB,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21568,7 +21568,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_NIDORAN_M,
+		.species = SPECIES_SWARMINGSHEARGRUB,
 		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21594,7 +21594,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_SANDSHREW,
+		.species = SPECIES_DANDELFLY,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21646,7 +21646,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GEODUDE,
+		.species = SPECIES_VEHEAMOTHPHOSBAT,
 		.nature = NATURE_ADAMANT,
 		.hpIv = 31,
 		.atkIv = 31,
@@ -21672,7 +21672,7 @@ const struct BattleTowerSpread gLittleCupTowerSpread_Giovanni[] =
 		.modifyMovesDoubles = FALSE,
 	},
 	{
-		.species = SPECIES_GEODUDE,
+		.species = SPECIES_VEHEAMOTHPHOSBAT,
 		.nature = NATURE_BRAVE,
 		.hpIv = 31,
 		.atkIv = 31,

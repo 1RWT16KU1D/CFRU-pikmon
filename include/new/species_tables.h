@@ -22,7 +22,7 @@ struct SpecialSpeciesFlags
 	bool8 smogonAverageMonsBan : 1;
 	bool8 smogon350CupBan : 1;
 	bool8 smogonScalemonsBan : 1;
-	bool8 smogonBenjaminGlntBeetleBan : 1;
+	bool8 smogonBenjaminGlintBeetleBan : 1;
 	bool8 smogonUUBan : 1;
 	bool8 smogonRUBan : 1;
 	bool8 smogonNUBan : 1;

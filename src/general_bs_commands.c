@@ -745,7 +745,7 @@ void atk0C_datahpupdate(void)
 			}
 
 			gBattleScripting.bank = gActiveBattler;
-			hasFoolsGold ? DoFormChange(gActiveBattler, SPECIES_PERSIAN, TRUE, FALSE, FALSE) :DoFormChange(gActiveBattler, SPECIES_MIMIKYU_BUSTED, TRUE, FALSE, FALSE);
+			hasFoolsGold ? DoFormChange(gActiveBattler, SPECIES_DWARFORANGEBULBORB, TRUE, FALSE, FALSE) :DoFormChange(gActiveBattler, SPECIES_MIMIKYU_BUSTED, TRUE, FALSE, FALSE);
 			gBattlescriptCurrInstr += 2;
 			BattleScriptPushCursor();
 			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldTransform : BattleScript_DisguiseTransform;
@@ -1326,7 +1326,7 @@ void atk19_tryfaintmon(void)
 				BS_ptr = BattleScript_FaintTarget;
 		}
 
-		if (TryDoBenjaminGlntBeetle(7))
+		if (TryDoBenjaminGlintBeetle(7))
 			return;
 
 		if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler])
@@ -1392,9 +1392,9 @@ void atk19_tryfaintmon(void)
 	}
 }
 
-bool8 TryDoBenjaminGlntBeetle(u8 scriptOffset)
+bool8 TryDoBenjaminGlintBeetle(u8 scriptOffset)
 {
-	if (IsBenjaminGlntBeetleBattle() && !IS_TRANSFORMED(gActiveBattler) && !BATTLER_ALIVE(gActiveBattler))
+	if (IsBenjaminGlintBeetleBattle() && !IS_TRANSFORMED(gActiveBattler) && !BATTLER_ALIVE(gActiveBattler))
 	{
 		u16 devolutionSpecies = GetMonDevolution(GetBankPartyData(gActiveBattler));
 		if (devolutionSpecies != SPECIES_NONE)
@@ -1403,7 +1403,7 @@ bool8 TryDoBenjaminGlntBeetle(u8 scriptOffset)
 			DoFormChange(gActiveBattler, devolutionSpecies, TRUE, TRUE, TRUE);
 			gEffectBank = gActiveBattler;
 			BattleScriptPush(gBattlescriptCurrInstr + scriptOffset);
-			gBattlescriptCurrInstr = BattleScript_BenjaminGlntBeetleDevolution;
+			gBattlescriptCurrInstr = BattleScript_BenjaminGlintBeetleDevolution;
 			return TRUE;
 		}
 	}
@@ -3464,12 +3464,12 @@ static u32 CreatePersonalityRetainingVisualDataForOtId(u32 originalPersonality, 
 	{
 		if (isShiny) //Spinda is Shiny
 		{
-			if (IsShinyOtIdPersonality(newOtId, originalPersonality)) //The Ditto would become Shiny by transforming
+			if (IsShinyOtIdPersonality(newOtId, originalPersonality)) //The QuaggledMireclops would become Shiny by transforming
 				return originalPersonality; //Use the Spinda's actual personality
 		}
 		else //Spinda isn't Shiny
 		{
-			if (!IsShinyOtIdPersonality(newOtId, originalPersonality)) //The Ditto wouldn't become Shiny by transforming
+			if (!IsShinyOtIdPersonality(newOtId, originalPersonality)) //The QuaggledMireclops wouldn't become Shiny by transforming
 				return originalPersonality; //Use the Spinda's actual personality
 		}
 	}
