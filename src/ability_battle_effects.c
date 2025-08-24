@@ -1201,6 +1201,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_SCHOOLING:
+		#if defined SPECIES_WISHIWASHI && SPECIES_WISHIWASHI_S
 			if (!(gBattleMons[bank].status2 & STATUS2_TRANSFORMED))
 			{
 				if (SPECIES(bank) == SPECIES_WISHIWASHI && gBattleMons[bank].level >= 20
@@ -1219,9 +1220,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					++effect;
 				}
 			}
+		#endif
 			break;
 
 		case ABILITY_SHIELDSDOWN:
+		#if defined SPECIES_MINIOR_SHIELD && defined SPECIES_MINIOR_RED \
+		&& defined SPECIES_MINIOR_BLUE && defined SPECIES_MINIOR_ORANGE \
+		&& defined SPECIES_MINIOR_YELLOW && defined SPECIES_MINIOR_INDIGO \
+		&& defined SPECIES_MINIOR_GREEN && defined SPECIES_MINIOR_VIOLET
 			if (!(gBattleMons[bank].status2 & STATUS2_TRANSFORMED))
 			{
 				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD
@@ -1245,6 +1251,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					++effect;
 				}
 			}
+		#endif
 			break;
 
 		case ABILITY_FLOWERGIFT:
@@ -1935,6 +1942,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 
 			break;
 		case ABILITYEFFECT_CONTACT: //After being hit by a move. Not necessarilly contact.
+		#ifdef SPECIES_ANNIHILAPE
 			gBattleScripting.bank = bank;
 
 			if((SPECIES(bank) == SPECIES_SHAGGYLONGLEGS || SPECIES(bank) == SPECIES_ANNIHILAPE) &&
@@ -1953,7 +1961,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					effect++;
 				}
 				break;
-			}
+		#endif
 
 			switch (gLastUsedAbility)
 			{

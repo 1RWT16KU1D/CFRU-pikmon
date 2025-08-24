@@ -941,8 +941,10 @@ bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTower
 		case BATTLE_FACILITY_UBER:
 		case BATTLE_FACILITY_UBER_CAMOMONS:
 		//For Ubers ban Rayquaza with Dragon Ascent (handled in mega.c), Zacian, Moody, and some moves
+		#if defined SPECIES_ZACIAN && defined SPECIES_ZACIAN_CROWNED
 		if (species == SPECIES_ZACIAN || species == SPECIES_ZACIAN_CROWNED)
 			return TRUE;
+		#endif
 
 		STANDARD_UBER_CHECK:
 			switch (checkFromLocationType) {
@@ -1245,7 +1247,7 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			if (gSpecialSpeciesFlags[species].battleTowerStandardBan)
 				return TRUE;
 
-			return species == SPECIES_ASHGRENINJA && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE;
+			return tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE;
 
 		case BATTLE_FACILITY_OU:
 		case BATTLE_FACILITY_NATIONAL_DEX_OU:
@@ -1262,9 +1264,12 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 
 		case BATTLE_FACILITY_UBER:
 		case BATTLE_FACILITY_UBER_CAMOMONS:
+			#if defined SPECIES_RAYQUAZA_MEGA && defined SPECIES_ZACIAN \
+			&& defined SPECIES_ZACIAN_CROWNED
 			return species == SPECIES_RAYQUAZA_MEGA
 				|| species == SPECIES_ZACIAN
 				|| species == SPECIES_ZACIAN_CROWNED;
+			#endif
 
 		case BATTLE_FACILITY_LITTLE_CUP:
 		case BATTLE_FACILITY_LC_CAMOMONS:

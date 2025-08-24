@@ -312,6 +312,7 @@ void Remove_PokemonPic(void)
         DestroyTask(taskId);
     }
 }
+
 struct Pokemon* GetFirstValidPartyMon(void)
 {
     for (int i = 0; i < PARTY_SIZE; i++)

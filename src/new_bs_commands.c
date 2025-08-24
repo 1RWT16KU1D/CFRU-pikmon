@@ -1514,12 +1514,6 @@ void atkFF29_trysetsleep(void)
 			case ABILITY_COMATOSE:
 				gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
 				return;
-			case ABILITY_SHIELDSDOWN:
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD)
-				{
-					gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
-					return;
-				}
 		}
 
 		if (!fail && DoesSleepClausePrevent(bank))
@@ -1625,12 +1619,6 @@ void atkD7_setyawn(void)
 			case ABILITY_COMATOSE:
 				gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
 				return;
-			case ABILITY_SHIELDSDOWN:
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD)
-				{
-					gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
-					return;
-				}
 		}
 
 		if (!fail && gStatuses3[gBattlerTarget] & STATUS3_YAWN)
@@ -1737,12 +1725,6 @@ void atkFF2A_trysetparalysis(void)
 			case ABILITY_COMATOSE:
 				gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
 				return;
-			case ABILITY_SHIELDSDOWN:
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD)
-				{
-					gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
-					return;
-				}
 		}
 	}
 
@@ -1830,13 +1812,6 @@ void atkFF2B_trysetburn(void)
 			case ABILITY_COMATOSE:
 				gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
 				return;
-			case ABILITY_SHIELDSDOWN:
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD)
-				{
-					gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
-					return;
-				}
-				break;
 		}
 	}
 
@@ -1940,12 +1915,6 @@ void atkFF2C_trysetpoison(void)
 			case ABILITY_COMATOSE:
 				gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
 				return;
-			case ABILITY_SHIELDSDOWN:
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD)
-				{
-					gBattlescriptCurrInstr = BattleScript_ProtectedByAbility;
-					return;
-				}
 		}
 	}
 

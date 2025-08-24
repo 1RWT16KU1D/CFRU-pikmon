@@ -74,7 +74,7 @@ EventScript_ViridianCity_Youngster:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon SPECIES_BLAZIKEN 40 ITEM_BLAZIKENITE 0 9
+    givepokemon SPECIES_BLAZIKEN 40 ITEM_NONE 0 9
 
     additem ITEM_MASTER_BALL 1
     msgbox gText_ViridianCity_BattleOver MSG_NORMAL

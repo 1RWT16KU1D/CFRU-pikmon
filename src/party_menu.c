@@ -2025,26 +2025,40 @@ static bool8 FormFuseItemMatchesSpecies(u16 item, u16 species)
 {
         switch (species)
         {
+        #ifdef SPECIES_RESHIRAM
                 case SPECIES_RESHIRAM:
+        #endif
+        #ifdef SPECIES_ZEKROM
                 case SPECIES_ZEKROM:
+        #endif
+        #ifdef SPECIES_KYUREM
                 case SPECIES_KYUREM:
+        #endif
+        #ifdef SPECIES_KYUREM_BLACK
                 case SPECIES_KYUREM_BLACK:
+        #endif
+        #ifdef SPECIES_KYUREM_WHITE
                 case SPECIES_KYUREM_WHITE:
                         return item == ITEM_DNA_SPLICERS;
+        #endif
+        #ifdef SPECIES_NECROZMA
                 case SPECIES_NECROZMA:
                         return item == ITEM_N_SOLARIZER || item == ITEM_N_LUNARIZER;
+        #endif
+        #ifdef SPECIES_SOLGALEO
                 case SPECIES_SOLGALEO:
+        #endif
+        #ifdef SPECIES_NECROZMA_DUSK_MAN
                 case SPECIES_NECROZMA_DUSK_MANE:
                         return item == ITEM_N_SOLARIZER;
+        #endif
+        #ifdef SPECIES_LUNALA
                 case SPECIES_LUNALA:
+        #endif
+        #ifdef SPECIES_NECROZMA_DAWN_WINGS
                 case SPECIES_NECROZMA_DAWN_WINGS:
                         return item == ITEM_N_LUNARIZER;
-                case SPECIES_CALYREX:
-		case SPECIES_GLASTRIER:
-		case SPECIES_SPECTRIER:
-		case SPECIES_CALYREX_ICE_RIDER:
-		case SPECIES_CALYREX_SHADOW_RIDER:
-			return item == ITEM_REINS_OF_UNITY;
+        #endif
         }
 
         return FALSE;
@@ -2251,21 +2265,6 @@ static void ItemUseCB_FormChangeItem(u8 taskId, TaskFunc func)
 
 static struct Pokemon* GetBaseMonForFusedSpecies(u16 species)
 {
-        switch (species) {
-                case SPECIES_KYUREM_BLACK:
-                        return &gSaveBlock1->fusedZekrom;
-                case SPECIES_KYUREM_WHITE:
-                        return &gSaveBlock1->fusedReshiram;
-                case SPECIES_NECROZMA_DUSK_MANE:
-                        return &gSaveBlock1->fusedSolgaleo;
-                case SPECIES_NECROZMA_DAWN_WINGS:
-                        return &gSaveBlock1->fusedLunala;
-                case SPECIES_CALYREX_ICE_RIDER:
-			return &gSaveBlock2->fusedGlastrier;
-		case SPECIES_CALYREX_SHADOW_RIDER:
-			return &gSaveBlock2->fusedSpectrier;
-        }
-
         return NULL;
 }
 
@@ -2273,44 +2272,44 @@ static bool8 AlreadyFused(u16 baseSpecies, u16 fuseSpecies)
 {
         bool8 alreadyFused = FALSE;
 
-        switch (baseSpecies) {
-                case SPECIES_KYUREM:
-                        switch (fuseSpecies) {
-                                case SPECIES_RESHIRAM:
-                                        if (GetMonData(&gSaveBlock1->fusedReshiram, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-                                                alreadyFused = TRUE;
-                                        break;
-                                case SPECIES_ZEKROM:
-                                        if (GetMonData(&gSaveBlock1->fusedZekrom, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-                                                alreadyFused = TRUE;
-                                        break;
-                        }
-                        break;
-                case SPECIES_NECROZMA:
-                        switch (fuseSpecies) {
-                                case SPECIES_SOLGALEO:
-                                        if (GetMonData(&gSaveBlock1->fusedSolgaleo, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-                                                alreadyFused = TRUE;
-                                        break;
-                                case SPECIES_ZEKROM:
-                                        if (GetMonData(&gSaveBlock1->fusedLunala, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-                                                alreadyFused = TRUE;
-                                        break;
-                        }
-                        break;
-                case SPECIES_CALYREX:
-			switch (fuseSpecies) {
-				case SPECIES_SPECTRIER:
-					if (GetMonData(&gSaveBlock2->fusedSpectrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-						alreadyFused = TRUE;
-					break;
-				case SPECIES_GLASTRIER:
-					if (GetMonData(&gSaveBlock2->fusedGlastrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-						alreadyFused = TRUE;
-					break;
-			}
-			break;
-        }
+        // switch (baseSpecies) {
+        //         case SPECIES_KYUREM:
+        //                 switch (fuseSpecies) {
+        //                         case SPECIES_RESHIRAM:
+        //                                 if (GetMonData(&gSaveBlock1->fusedReshiram, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+        //                                         alreadyFused = TRUE;
+        //                                 break;
+        //                         case SPECIES_ZEKROM:
+        //                                 if (GetMonData(&gSaveBlock1->fusedZekrom, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+        //                                         alreadyFused = TRUE;
+        //                                 break;
+        //                 }
+        //                 break;
+        //         case SPECIES_NECROZMA:
+        //                 switch (fuseSpecies) {
+        //                         case SPECIES_SOLGALEO:
+        //                                 if (GetMonData(&gSaveBlock1->fusedSolgaleo, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+        //                                         alreadyFused = TRUE;
+        //                                 break;
+        //                         case SPECIES_ZEKROM:
+        //                                 if (GetMonData(&gSaveBlock1->fusedLunala, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+        //                                         alreadyFused = TRUE;
+        //                                 break;
+        //                 }
+        //                 break;
+        //         case SPECIES_CALYREX:
+	// 		switch (fuseSpecies) {
+	// 			case SPECIES_SPECTRIER:
+	// 				if (GetMonData(&gSaveBlock2->fusedSpectrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+	// 					alreadyFused = TRUE;
+	// 				break;
+	// 			case SPECIES_GLASTRIER:
+	// 				if (GetMonData(&gSaveBlock2->fusedGlastrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+	// 					alreadyFused = TRUE;
+	// 				break;
+	// 		}
+	// 		break;
+        // }
 
         if (alreadyFused)        
         {
@@ -2327,29 +2326,29 @@ static bool8 AlreadyFused(u16 baseSpecies, u16 fuseSpecies)
 
 static bool8 DoBaseAndFuseSpeciesMatch(u16 baseSpecies, u16 fuseSpecies)
 {
-        switch (baseSpecies) {
-                case SPECIES_KYUREM:
-                        switch (fuseSpecies) {
-                                case SPECIES_RESHIRAM:
-                                case SPECIES_ZEKROM:
-                                        return TRUE;
-                        }
-                        break;
-                case SPECIES_NECROZMA:
-                        switch (fuseSpecies) {
-                                case SPECIES_SOLGALEO:
-                                case SPECIES_LUNALA:
-                                        return TRUE;
-                        }
-                        break;
-                case SPECIES_CALYREX:
-			switch (fuseSpecies) {
-				case SPECIES_GLASTRIER:
-				case SPECIES_SPECTRIER:
-					return TRUE;
-			}
-			break;
-        }
+        // switch (baseSpecies) {
+        //         case SPECIES_KYUREM:
+        //                 switch (fuseSpecies) {
+        //                         case SPECIES_RESHIRAM:
+        //                         case SPECIES_ZEKROM:
+        //                                 return TRUE;
+        //                 }
+        //                 break;
+        //         case SPECIES_NECROZMA:
+        //                 switch (fuseSpecies) {
+        //                         case SPECIES_SOLGALEO:
+        //                         case SPECIES_LUNALA:
+        //                                 return TRUE;
+        //                 }
+        //                 break;
+        //         case SPECIES_CALYREX:
+	// 		switch (fuseSpecies) {
+	// 			case SPECIES_GLASTRIER:
+	// 			case SPECIES_SPECTRIER:
+	// 				return TRUE;
+	// 		}
+	// 		break;
+        // }
 
         return FALSE;
 }
@@ -2387,26 +2386,26 @@ static void ItemUseCB_DNASplicersStep(u8 taskId, TaskFunc func)
 
                                 //Get Proper Form
                                 struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
-                                switch (fuseSpecies) {
-                                        case SPECIES_RESHIRAM:
-                                                baseSpecies = SPECIES_KYUREM_WHITE;
-                                                break;
-                                        case SPECIES_ZEKROM:
-                                                baseSpecies = SPECIES_KYUREM_BLACK;
-                                                break;
-                                        case SPECIES_SOLGALEO:
-                                                baseSpecies = SPECIES_NECROZMA_DUSK_MANE;
-                                                break;
-                                        case SPECIES_LUNALA:
-                                                baseSpecies = SPECIES_NECROZMA_DAWN_WINGS;
-                                                break;
-                                        case SPECIES_GLASTRIER:
-						baseSpecies = SPECIES_CALYREX_ICE_RIDER;
-						break;
-					case SPECIES_SPECTRIER:
-						baseSpecies = SPECIES_CALYREX_SHADOW_RIDER;
-						break;
-                                }
+                                // switch (fuseSpecies) {
+                                //         case SPECIES_RESHIRAM:
+                                //                 baseSpecies = SPECIES_KYUREM_WHITE;
+                                //                 break;
+                                //         case SPECIES_ZEKROM:
+                                //                 baseSpecies = SPECIES_KYUREM_BLACK;
+                                //                 break;
+                                //         case SPECIES_SOLGALEO:
+                                //                 baseSpecies = SPECIES_NECROZMA_DUSK_MANE;
+                                //                 break;
+                                //         case SPECIES_LUNALA:
+                                //                 baseSpecies = SPECIES_NECROZMA_DAWN_WINGS;
+                                //                 break;
+                                //         case SPECIES_GLASTRIER:
+				// 		baseSpecies = SPECIES_CALYREX_ICE_RIDER;
+				// 		break;
+				// 	case SPECIES_SPECTRIER:
+				// 		baseSpecies = SPECIES_CALYREX_SHADOW_RIDER;
+				// 		break;
+                                // }
                                 DoItemFormChange(mon, baseSpecies);
 
                                 //Backup and Delete Fused Mon
@@ -2454,37 +2453,37 @@ static void Task_TryLearnPostFormeChangeMove(u8 taskId)
                 u16 replaceMove2 = MOVE_NONE;
 
                 gMoveToLearn = MOVE_NONE;
-                switch (species) {
-                        case SPECIES_KYUREM:
-                                gMoveToLearn = MOVE_GLACIATE;
-                                replaceMove = MOVE_FUSIONBOLT; //Either Fusion Bolt or Fusion Flare
-                                replaceMove2 = MOVE_FUSIONFLARE;
-                                break;
-                        case SPECIES_KYUREM_WHITE:
-                                gMoveToLearn = MOVE_FUSIONFLARE;
-                                replaceMove = MOVE_GLACIATE;
-                                break;
-                        case SPECIES_KYUREM_BLACK:
-                                gMoveToLearn = MOVE_FUSIONBOLT;
-                                replaceMove = MOVE_GLACIATE;
-                                break;
-                        case SPECIES_NECROZMA:
-                                replaceMove = MOVE_SUNSTEELSTRIKE;
-                                replaceMove2 = MOVE_MOONGEISTBEAM;
-                                break;
-                        case SPECIES_NECROZMA_DUSK_MANE:
-                                gMoveToLearn = MOVE_SUNSTEELSTRIKE;
-                                break;
-                        case SPECIES_NECROZMA_DAWN_WINGS:
-                                gMoveToLearn = MOVE_MOONGEISTBEAM;
-                                break;
-                        case SPECIES_CALYREX_ICE_RIDER:
-				gMoveToLearn = MOVE_GLACIALLANCE;
-				break;
-			case SPECIES_CALYREX_SHADOW_RIDER:
-				gMoveToLearn = MOVE_ASTRALBARRAGE;
-				break;
-                }
+                // switch (species) {
+                //         case SPECIES_KYUREM:
+                //                 gMoveToLearn = MOVE_GLACIATE;
+                //                 replaceMove = MOVE_FUSIONBOLT; //Either Fusion Bolt or Fusion Flare
+                //                 replaceMove2 = MOVE_FUSIONFLARE;
+                //                 break;
+                //         case SPECIES_KYUREM_WHITE:
+                //                 gMoveToLearn = MOVE_FUSIONFLARE;
+                //                 replaceMove = MOVE_GLACIATE;
+                //                 break;
+                //         case SPECIES_KYUREM_BLACK:
+                //                 gMoveToLearn = MOVE_FUSIONBOLT;
+                //                 replaceMove = MOVE_GLACIATE;
+                //                 break;
+                //         case SPECIES_NECROZMA:
+                //                 replaceMove = MOVE_SUNSTEELSTRIKE;
+                //                 replaceMove2 = MOVE_MOONGEISTBEAM;
+                //                 break;
+                //         case SPECIES_NECROZMA_DUSK_MANE:
+                //                 gMoveToLearn = MOVE_SUNSTEELSTRIKE;
+                //                 break;
+                //         case SPECIES_NECROZMA_DAWN_WINGS:
+                //                 gMoveToLearn = MOVE_MOONGEISTBEAM;
+                //                 break;
+                //         case SPECIES_CALYREX_ICE_RIDER:
+		// 		gMoveToLearn = MOVE_GLACIALLANCE;
+		// 		break;
+		// 	case SPECIES_CALYREX_SHADOW_RIDER:
+		// 		gMoveToLearn = MOVE_ASTRALBARRAGE;
+		// 		break;
+                // }
 
                 if (gMoveToLearn != MOVE_NONE)
                 {

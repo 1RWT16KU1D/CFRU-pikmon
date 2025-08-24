@@ -271,7 +271,9 @@ static void DexNavGetMon(u16 species, u8 potential, u8 level, u8 ability, u16* m
 }
 
 static u16 TryRandomizePumpkabooForm(u16 species)
-{
+{	
+	#if defined SPECIES_PUMPKABOO_M && defined SPECIES_PUMPKABOO_L && defined SPECIES_PUMPKABOO_XL \
+	&& defined SPECIES_GOURGEIST_M && defined SPECIES_GOURGEIST_L && defined SPECIES_GOURGEIST_XL
 	#ifdef FLAG_POKEMON_RANDOMIZER
 	if (!FlagGet(FLAG_POKEMON_RANDOMIZER))
 	#endif
@@ -314,7 +316,7 @@ static u16 TryRandomizePumpkabooForm(u16 species)
 		}
 		#endif
 	}
-
+	#endif
 	return species;
 }
 

@@ -134,7 +134,6 @@ DrainHPBSP2:
 	
 StrengthSapBS:
 	jumpifbehindsubstitute BANK_TARGET FAILED_PRE
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	jumpifstat BANK_TARGET EQUALS STAT_ATK STAT_MIN FAILED_PRE
 	attackstring
 	ppreduce
@@ -1266,7 +1265,6 @@ BS_056_RaiseUserEvsn2:
 BS_057_Transform:
 	attackcanceler
 	jumpifbehindsubstitute BANK_TARGET FAILED_PRE
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	jumpifsecondarystatus BANK_ATTACKER STATUS2_TRANSFORMED FAILED_PRE
 	jumpifspecialstatusflag BANK_TARGET STATUS3_ILLUSION 0x0 FAILED_PRE
 	attackstring
@@ -1816,7 +1814,6 @@ BS_083_Metronome:
 BS_084_LeechSeed:
 	attackcanceler
 	jumpifbehindsubstitute BANK_TARGET FAILED_PRE
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	attackstring
 	ppreduce
 	accuracycheck SetLeechSeedBS 0x0
@@ -2102,7 +2099,6 @@ BS_099_Flail:
 BS_100_Spite:
 	attackcanceler
 	jumpifmove MOVE_EERIESPELL EerieSpellBS
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	accuracycheck FAILED_PRE 0x0
 	attackstringnoprotean
 	ppreduce
@@ -2307,7 +2303,6 @@ BS_109_Curse:
 	goto 0x81D7756 @;PP Reduce
 
 BattleScript_GhostCurse:
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	jumpifbytenotequal USER_BANK, TARGET_BANK, BattleScript_DoGhostCurse
 	getmovetarget BANK_ATTACKER
 
@@ -3130,9 +3125,9 @@ BS_138_AttackerRaiseDef1Chance:
 .global BS_139_AttackerRaiseAtk1Chance
 BS_139_AttackerRaiseAtk1Chance:
 	jumpifmove MOVE_FELLSTINGER FellStingerBS
-	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI OrderUpAtk_BS
-	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI_RED OrderUpDef_BS
-	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI_YELLOW OrderUpSpd_BS
+@	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI OrderUpAtk_BS
+@	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI_RED OrderUpDef_BS
+@	jumpifspecies BANK_ATTACKER SPECIES_TATSUGIRI_YELLOW OrderUpSpd_BS
 	setmoveeffect MOVE_EFFECT_ATK_PLUS_1 | MOVE_EFFECT_AFFECTS_USER
 	goto BS_STANDARD_HIT
 
@@ -3721,7 +3716,6 @@ BS_168_Memento:
 MementoBS:
 	jumpifbyte EQUALS, BATTLE_COMMUNICATION + 6, 0x1, 0x81D8026
 	jumpifbehindsubstitute BANK_TARGET FAILED_PRE
-	jumpifspecies BANK_TARGET SPECIES_GHOLDENGO FAILED_PRE
 	attackstring
 	ppreduce
 	attackanimation
@@ -5633,22 +5627,22 @@ BS_223_RelicSong:
 	jumpifability BANK_ATTACKER ABILITY_SHEERFORCE BS_MOVE_END
 	jumpifnoviablemonsleft BANK_TARGET BS_MOVE_END
 	jumpifmove MOVE_WICKEDTORQUE BS_MOVE_END
-	jumpifspecies BANK_ATTACKER SPECIES_MELOETTA TransformToPirouetteBS
-	jumpifspecies BANK_ATTACKER SPECIES_MELOETTA_PIROUETTE TransformToAriaBS
+@	jumpifspecies BANK_ATTACKER SPECIES_MELOETTA TransformToPirouetteBS
+@	jumpifspecies BANK_ATTACKER SPECIES_MELOETTA_PIROUETTE TransformToAriaBS
 	goto BS_MOVE_END
 	
 TransformToPirouetteBS:
 	setbyte CMD49_STATE 0x0
 	cmd49 0x0 0x0
 	jumpiffainted BANK_ATTACKER RelicSongEndBS
-	formchange BANK_ATTACKER SPECIES_MELOETTA SPECIES_MELOETTA_PIROUETTE TRUE TRUE TRUE RelicSongEndBS
+@	formchange BANK_ATTACKER SPECIES_MELOETTA SPECIES_MELOETTA_PIROUETTE TRUE TRUE TRUE RelicSongEndBS
 	goto MeloettaTransformAnim
 
 TransformToAriaBS:
 	setbyte CMD49_STATE 0x0
 	cmd49 0x0 0x0
 	jumpiffainted BANK_ATTACKER RelicSongEndBS
-	formchange BANK_ATTACKER SPECIES_MELOETTA_PIROUETTE SPECIES_MELOETTA TRUE TRUE TRUE RelicSongEndBS
+@	formchange BANK_ATTACKER SPECIES_MELOETTA_PIROUETTE SPECIES_MELOETTA TRUE TRUE TRUE RelicSongEndBS
 	
 MeloettaTransformAnim:
 	playanimation BANK_ATTACKER ANIM_TRANSFORM 0x0

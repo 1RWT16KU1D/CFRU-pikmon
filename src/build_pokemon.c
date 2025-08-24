@@ -1983,8 +1983,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 							{
 								spread = &gFrontierSpreads[Random() % TOTAL_SPREADS];
 								if (!gSpecialSpeciesFlags[spread->species].goodForUbers //Not a Pokemon that would do well in Ubers
-								&& !CheckTableForItem(spread->item, gSmogonOU_ItemBanList) //Doesn't have an item like Ubers Mega Stones
-								&& spread->item != ITEM_MAWILITE) //Not banned in OU but still good in Ubers
+								&& !CheckTableForItem(spread->item, gSmogonOU_ItemBanList)) //Doesn't have an item like Ubers Mega Stones
 								{
 									continue;
 								}
@@ -3506,22 +3505,6 @@ static u16 TryAdjustAestheticSpecies(u16 species)
 	u16 nationalDexNum = SpeciesToNationalPokedexNum(species);
 
 	switch (nationalDexNum) {
-		#ifdef NATIONAL_DEX_SHELLOS
-		case NATIONAL_DEX_SHELLOS:
-			if ((Random() & 1) == 0)
-				species = SPECIES_SHELLOS;
-			else
-				species = SPECIES_SHELLOS_EAST;
-			break;
-		#endif
-		#ifdef NATIONAL_DEX_GASTRODON
-		case NATIONAL_DEX_GASTRODON:
-			if ((Random() & 1) == 0)
-				species = SPECIES_GASTRODON;
-			else
-				species = SPECIES_GASTRODON_EAST;
-			break;
-		#endif
 		#ifdef NATIONAL_DEX_DEERLING
 		case NATIONAL_DEX_DEERLING:
 			species = gDeerlingForms[Random() % gNumDeerlingForms];
@@ -4339,7 +4322,7 @@ void TryRandomizeSpecies(unusedArg u16* species)
 	#ifdef FLAG_TEMP_DISABLE_RANDOMIZER
 	&& !FlagGet(FLAG_TEMP_DISABLE_RANDOMIZER)
 	#endif
-	&& *species != SPECIES_NONE && *species != SPECIES_ZYGARDE_CELL && *species < NUM_SPECIES)
+	&& *species != SPECIES_NONE && *species < NUM_SPECIES)
 	{
 		u16 newSpecies;
 		u32 id = T1_READ_32(gSaveBlock2->playerTrainerId);

@@ -229,8 +229,6 @@ BattleScript_IntimidateActivatesRet:
 	setbyte TARGET_BANK 0x0
 
 BS_IntimidateActivatesLoop:
-	jumpifspecies BANK_ATTACKER SPECIES_DIPPLIN SSSyrupActivatesLowStats
-	jumpifspecies BANK_ATTACKER SPECIES_HYDRAPPLE SSSyrupActivatesLowStats
 	setstatchanger STAT_ATK | DECREASE_1
 	trygetintimidatetarget BattleScript_IntimidateActivatesReturn
 	jumpifbehindsubstitute BANK_TARGET IntimidateActivatesLoopIncrement

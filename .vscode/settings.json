@@ -3,6 +3,9 @@
         "defines.h": "c",
         "global.h": "c",
         "character_customization.h": "c",
-        "defines_battle.h": "c"
+        "defines_battle.h": "c",
+        "trainer_defines.h": "c",
+        "bg.h": "c",
+        "gpu_regs.h": "c"
     }
 }
