@@ -36,7 +36,7 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon 18 15 0 0 1 0
+    givepokemon SPECIES_WOLPOLE 15 0 0 1 0
 
     setvar 0x8000 MOVE_ARCTICBLAST
     setvar 0x8001 MOVE_ACIDREFLEX
@@ -50,11 +50,11 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
+    givepokemon SPECIES_YELLOWWOLLYHOP 15 0 0 1 0
 
-    givepokemon 16 15 0 0 0 0
-    givepokemon 17 15 0 0 0 0
-    givepokemon 18 15 0 0 0 0
-    givepokemon 16 15 0 0 1 0
+    givepokemon SPECIES_DOODLEBUG 15 0 0 0 0
+    givepokemon SPECIES_FLINTBEETLE 15 0 0 0 0
+    givepokemon SPECIES_GLINTBEETLE 15 0 0 0 0
 
     setflag 0x926
     setflag 0x828
@@ -73,7 +73,7 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon 17 15 0 0 1 0
+    givepokemon SPECIES_TITANBLOWHOG 15 0 0 1 0
 
     additem ITEM_MEGA_RING 1
     setvar 0x8001 0xFD

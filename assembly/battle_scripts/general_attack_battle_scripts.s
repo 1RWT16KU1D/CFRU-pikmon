@@ -3538,8 +3538,6 @@ BS_160_Stockpile:
 	waitanimation
 	printfromtable 0x83FE56A
 	waitmessage DELAY_1SECOND
-
-BigChompRaiseStockPileStats:
 	jumpifmovehadnoeffect BS_MOVE_END
 
 StockpileRaiseDef:
@@ -6276,7 +6274,7 @@ BS_248_StockpileHit:
 	stockpile
 	printfromtable 0x83FE56A
 	waitmessage DELAY_1SECOND
-	goto BigChompRaiseStockPileStats @ Falls through Sp. Def case too
+	goto BS_MOVE_END
 	
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -6285,7 +6283,7 @@ BS_249_Gloom:
 	attackcanceler
 	attackstring
 	ppreduce
-	setgloomyweather
+	setgloom
 	attackanimation
 	waitanimation
 	printstring 0x184

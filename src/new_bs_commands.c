@@ -2080,8 +2080,8 @@ bool8 SetGloomyWeather(void)
 	return TRUE;
 }
 
-//atkFF37_setgloomyweather setgloom
-void atkFF37_setgloomyweather(void)
+//atkFF37_setgloom setgloom
+void atkFF37_setgloom(void)
 {
 	if (!SetGloomyWeather())
 	{

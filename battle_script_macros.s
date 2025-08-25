@@ -1735,7 +1735,7 @@
 	.4byte \rom_address
 	.endm
 
-	.macro setgloomyweather
+	.macro setgloom
 	.byte 0xFF, 0x37
 	.endm
 
