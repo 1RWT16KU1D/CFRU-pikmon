@@ -10629,7 +10629,7 @@ struct TrainerMonItemCustomMoves sParty_EliteFourBruno2[] = {
     },
     {
         .lvl = 68,
-        .species = SPECIES_MACHAMP_GIGA,
+        .species = SPECIES_MACHAMP,
     },
 };
 
@@ -10724,7 +10724,7 @@ struct TrainerMonItemCustomMoves sParty_ChampionRematchWolpole[] = {
     },
     {
         .lvl = 73,
-        .species = SPECIES_ADULTBULBMIN_H,
+        .species = SPECIES_ADULTBULBMIN,
     },
     {
         .lvl = 73,
@@ -10732,7 +10732,7 @@ struct TrainerMonItemCustomMoves sParty_ChampionRematchWolpole[] = {
     },
     {
         .lvl = 75,
-        .species = SPECIES_MASTERHOP_GIGA,
+        .species = SPECIES_MASTERHOP,
     },
 };
 
@@ -10755,11 +10755,11 @@ struct TrainerMonItemCustomMoves sParty_ChampionRematchBulborbLarva[] = {
     },
     {
         .lvl = 73,
-        .species = SPECIES_ADULTBULBMIN_H,
+        .species = SPECIES_ADULTBULBMIN,
     },
     {
         .lvl = 75,
-        .species = SPECIES_JUMBOBULBORB_GIGA,
+        .species = SPECIES_JUMBOBULBORB,
     },
 };
 

@@ -36,7 +36,7 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon SPECIES_WOLPOLE 15 0 0 1 0
+    givepokemon SPECIES_BULBORBLARVA 15 0 0 0 0
 
     setvar 0x8000 MOVE_ARCTICBLAST
     setvar 0x8001 MOVE_ACIDREFLEX

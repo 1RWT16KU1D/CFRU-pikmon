@@ -116,9 +116,9 @@ extern u8 BattleScript_ButItFailed[];
 #define BattleScript_NotAffected (const u8*) 0x81D7E04
 
 typedef u8 TrainerClassNames_t[13];
-#define gTrainerClassNames ((TrainerClassNames_t*) *((u32*) 0x811B4B4)) //0x823E558
+//#define gTrainerClassNames ((TrainerClassNames_t*) *((u32*) 0x811B4B4)) //0x823E558
 #ifndef STEVEBELS_TRAINER_TABLE
-#define gTrainers ((struct Trainer*) *((u32*) 0x800FC00)) //0x823EAC8
+//#define gTrainers ((struct Trainer*) *((u32*) 0x800FC00)) //0x823EAC8
 #endif
 #define gTrainerFrontPicCoords ((struct TrainerPicCoords*) 0x823932C)
 #define gTrainerFrontPicTable ((struct CompressedSpriteSheet*) 0x823957C)
