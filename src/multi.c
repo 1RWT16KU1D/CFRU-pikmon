@@ -487,7 +487,7 @@ u32 MultiMoneyCalc(void)
 
 	return money;
 }
-
+#define gTrainerMoneyTable ((struct TrainerMoney*) *((u32*) 0x80259CC))
 #ifdef STEVEBELS_TRAINER_TABLE
 #define gTrainerMoneyTable ((struct TrainerMoney*) *((u32*) 0x80259CC))
 #endif
@@ -534,7 +534,7 @@ static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 	//Get the money rate
 	for (i = 0, rate = 0; i < NUM_TRAINER_CLASSES; ++i)
 	{
-		if (gTrainerMoneyTable[i].trainerClass == trainer.trainerClass)
+		if (gTrainerMoneyTable[i].trainerClass == trainer->trainerClass)
 		{
 			rate = gTrainerMoneyTable[i].money;
 			break;
