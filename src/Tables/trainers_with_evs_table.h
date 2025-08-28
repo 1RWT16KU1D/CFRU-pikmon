@@ -1334,6 +1334,7 @@ const struct TrainersWithEvs gTrainersWithEvsSpreads[] =
 	[121] =
 	{
 		.teraType = TYPE_DARK,
+		.shiny = TRUE,
 	},
 	[122] =
 	{

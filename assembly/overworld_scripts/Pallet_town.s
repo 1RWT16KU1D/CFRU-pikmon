@@ -50,7 +50,7 @@ EventScript_Pallet_FatGuy:
     setvar 0x8009 31
     setvar 0x800A 31
     setvar 0x800B 31
-    givepokemon SPECIES_YELLOWWOLLYHOP 15 0 0 1 0
+    givepokemon SPECIES_TITANBLOWHOG 15 0 0 1 0
 
     givepokemon SPECIES_DOODLEBUG 15 0 0 0 0
     givepokemon SPECIES_FLINTBEETLE 15 0 0 0 0
