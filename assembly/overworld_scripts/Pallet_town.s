@@ -1,5 +1,5 @@
-.align 2
 .thumb
+.align 2
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
@@ -74,6 +74,8 @@ EventScript_Pallet_FatGuy:
     setvar 0x800A 31
     setvar 0x800B 31
     givepokemon SPECIES_TITANBLOWHOG 15 0 0 1 0
+
+    setflag 0x829
 
     additem ITEM_MEGA_RING 1
     setvar 0x8001 0xFD
