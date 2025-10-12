@@ -11,6 +11,8 @@
 #include "../include/script.h"
 #include "../include/random.h"
 
+static void DebugMenu_CompletePokedex(void);
+
 void DebugMenu_ProcessSetFlag(void)
 {
 	u32 i;
@@ -24,8 +26,7 @@ void DebugMenu_ProcessSetFlag(void)
 			FlagSet(FLAG_SYS_GAME_CLEAR);
 			break;
 		case 2: //Pokedexes
-			FlagSet(FLAG_SYS_POKEDEX_GET);
-			FlagSet(FLAG_SYS_DEXNAV);
+			DebugMenu_CompletePokedex();
 			break;
 		case 3: //Fly Spots
 			for (i = 0x890; i <= 0x8CA; ++i)
@@ -176,6 +177,7 @@ void DebugMenu_ShinyTeam(void)
 			ForceMonShiny(&gPlayerParty[i]);
 	}
 }
+
 #include "../include/pokemon.h"
 #include "../include/constants/species.h"
 #include "../include/constants/pokemon.h"
@@ -247,4 +249,18 @@ void DebugMenu_SetterVar(void)
 	u16 var = VarGet(VAR_DEBUG_MENU_SET_CUSTOM_VAR);
 	u16 value = VarGet(VAR_DEBUG_MENU_SET_CUSTOM_VAR_VALUE);
 	VarSet(var, value);
+}
+
+void DebugMenu_CompletePokedex(void)
+{
+    for (u16 species = 1; species < NUM_SPECIES; species++)
+	{
+        u16 nationalNum = SpeciesToNationalPokedexNum(species);
+
+        if (nationalNum == 0)
+            continue; // Skip invalid entries
+
+        GetSetPokedexFlag(nationalNum, FLAG_SET_SEEN);
+        GetSetPokedexFlag(nationalNum, FLAG_SET_CAUGHT);
+    }
 }
