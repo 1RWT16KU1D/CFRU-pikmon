@@ -11,13 +11,16 @@
 #include "../include/script.h"
 #include "../include/random.h"
 
-static void DebugMenu_CompletePokedex(void);
 
+#define VAR_8000 0x8000
+
+/* ======================== FLAG SET ======================== */
 void DebugMenu_ProcessSetFlag(void)
 {
 	u32 i;
 
-	switch (gSpecialVar_LastResult) {
+	switch (gSpecialVar_LastResult)
+	{
 		case 0: //Badges
 			for (i = FLAG_BADGE01_GET; i <= FLAG_BADGE08_GET; ++i)
 				FlagSet(i);
@@ -25,8 +28,9 @@ void DebugMenu_ProcessSetFlag(void)
 		case 1: //Game Clear
 			FlagSet(FLAG_SYS_GAME_CLEAR);
 			break;
-		case 2: //Pokedexes
-			DebugMenu_CompletePokedex();
+		case 2: //Pokedex
+			FlagSet(FLAG_SYS_POKEDEX_GET);
+			FlagSet(FLAG_SYS_NATIONAL_DEX);
 			break;
 		case 3: //Fly Spots
 			for (i = 0x890; i <= 0x8CA; ++i)
@@ -34,44 +38,24 @@ void DebugMenu_ProcessSetFlag(void)
 			FlagSet(FLAG_SYS_SEVII_MAP_123);
 			FlagSet(FLAG_SYS_SEVII_MAP_4567);
 			break;
-		case 4: //Custom Flag and Var - Modify this number
-			//FlagSet(0x152D);
-			VarSet(0x500C, 0x28);
-			//FlagClear(0x15AC);
-			break;
 	}
 }
 
+void DebugMenu_CustomFlagSet(void)
+{
+	u16 flag = VarGet(VAR_8000);
+	FlagSet(flag);
+}
+
+
+/* ======================== GIVE ITEM ======================== */
 void DebugMenu_ProcessGiveItem(void)
 {
 	u32 i;
 
-	switch (gSpecialVar_LastResult) {
-		case 0: //Useful Key Items
-			AddBagItem(ITEM_BICYCLE, 1);
-			AddBagItem(ITEM_TOWN_MAP, 1);
-			AddBagItem(ITEM_OLD_ROD, 1);
-			AddBagItem(ITEM_GOOD_ROD, 1);
-			AddBagItem(ITEM_SUPER_ROD, 1);
-			AddBagItem(ITEM_VS_SEEKER, 1);
-			AddBagItem(ITEM_ITEMFINDER, 1);
-			AddBagItem(ITEM_MEGA_RING, 1);
-			break;
-		case 1: //General Useful Items
-			AddBagItem(ITEM_MAX_REPEL, 100);
-			AddBagItem(ITEM_ESCAPE_ROPE, 100);
-			AddBagItem(ITEM_HEART_SCALE, 100);
-			#if (defined ITEM_HM01_CUT && defined ITEM_HM08_ROCK_CLIMB)
-			for (i = ITEM_HM01_CUT; i <= ITEM_HM08_ROCK_CLIMB; ++i)
-				AddBagItem(i, 1);
-			#endif
-
-			AddBagItem(ITEM_RED_SHARD, 100);
-			AddBagItem(ITEM_BLUE_SHARD, 100);
-			AddBagItem(ITEM_YELLOW_SHARD, 100);
-			AddBagItem(ITEM_GREEN_SHARD, 100);
-			break;
-		case 2: //Poke Balls
+	switch (gSpecialVar_LastResult)
+	{
+		case 0: //Poke Balls
 			for (i = ITEM_MASTER_BALL; i <= ITEM_PREMIER_BALL; ++i)
 				AddBagItem(i, 100);
 
@@ -91,7 +75,7 @@ void DebugMenu_ProcessGiveItem(void)
 			AddBagItem(ITEM_BEAST_BALL, 100);
 			AddBagItem(ITEM_DREAM_BALL, 100);
 			break;
-		case 3: //Berries
+		case 1: //Berries
 			for (i = ITEM_CHERI_BERRY; i <= ITEM_STARF_BERRY; ++i)
 				AddBagItem(i, 100);
 			
@@ -121,22 +105,14 @@ void DebugMenu_ProcessGiveItem(void)
 			AddBagItem(ITEM_KEE_BERRY, 100);
 			AddBagItem(ITEM_MARANGA_BERRY, 100);
 			break;
-		case 4: //TMs & HMs
-			#ifdef UNBOUND //Remove if you want this, enums can't be #ifdefed
-			for (i = ITEM_TM01_FOCUS_PUNCH; i <= ITEM_TM50_OVERHEAT; ++i)
+		case 2: //TMs & HMs
+			for (i = ITEM_TM01; i <= ITEM_HM08_ROCK_CLIMB; ++i)
 				AddBagItem(i, 1);
 
-			for (i = ITEM_TM51_ROOST; i <= ITEM_TM58_ENDURE; ++i)
+			for (i = ITEM_TM51; i <= ITEM_TM120; ++i)
 				AddBagItem(i, 1);
-
-			for (i = ITEM_TM59_DRAGON_PULSE; i <= ITEM_TM120_NATURE_POWER; ++i)
-				AddBagItem(i, 1);
-
-			for (i = ITEM_HM01_CUT; i <= ITEM_HM08_ROCK_CLIMB; ++i)
-				AddBagItem(i, 1);
-			#endif
 			break;
-		case 5: //All items
+		case 4: //All items
 			for (i = 0; i < ITEMS_COUNT; ++i)
 			{
 				const u8* name = ItemId_GetName(i);
@@ -147,6 +123,17 @@ void DebugMenu_ProcessGiveItem(void)
 	}
 }
 
+void DebugMenu_GiveItemFromVar(void)
+{
+    u16 item = VarGet(VAR_8000);
+    if (item == 0 || item >= ITEMS_COUNT)
+        return;
+
+    AddBagItem(item, 1);
+}
+
+
+/* ======================== SET TEAM TO LV. 100 ======================== */
 void DebugMenu_SetTeamToLevel100(void)
 {
 	for (u32 i = 0; i < PARTY_SIZE; ++i)
@@ -162,12 +149,16 @@ void DebugMenu_SetTeamToLevel100(void)
 	}
 }
 
+
+/* ======================== SET COINS TO MAX ======================== */
 void DebugMenu_MaxMoneyAndCoins(void)
 {
 	AddMoney(&gSaveBlock1->money, 0xFFFFFFFF);
 	SetCoins(999999999);
 }
 
+
+/* ======================== MAKE TEAM SHINY ======================== */
 void DebugMenu_ShinyTeam(void)
 {
 	for (u32 i = 0; i < PARTY_SIZE; ++i)
@@ -178,12 +169,13 @@ void DebugMenu_ShinyTeam(void)
 	}
 }
 
+
+/* ======================== GET CUSTOM POKEMON ======================== */
 #include "../include/pokemon.h"
 #include "../include/constants/species.h"
 #include "../include/constants/pokemon.h"
 #include "../include/constants/vars.h"
 #include "../include/new/terastallization.h"
-#define VAR_8000 0x8000
 
 void DebugMenu_GivePokemonFromVar(void)
 {
@@ -199,27 +191,6 @@ void DebugMenu_GivePokemonFromVar(void)
 
 	CreateMon(&mon, species, 50, 32, TRUE, 0, OT_ID_PLAYER_ID, 0);
 	gPlayerParty[slot] = mon;
-}
-void DebugMenu_GiveItemFromVar(void)
-{
-    u16 item = VarGet(VAR_8000);
-    if (item == 0 || item >= ITEMS_COUNT)
-        return;
-
-    AddBagItem(item, 1);
-}
-#define LINKER_FUNC_ADDR ((void *) (0x08088E74 + 1))
-typedef void (*LinkerFunc)(u16 species, u16 param);
-
-void DebugMenu_Dex(void)
-{
-    LinkerFunc Linker = (LinkerFunc)LINKER_FUNC_ADDR;
-
-    for (u16 i = 1; i <= 0x401; i++)
-    {
-        Linker(i, 2);
-        Linker(i, 3);
-    }
 }
 
 #define FUNC_FLY_UNLOCK    ((void *) (0x0806E680 + 1))
@@ -239,11 +210,7 @@ void DebugMenu_Fly(void)
 
     FinalCall((void *)FINAL_ARG);
 }
-void DebugMenu_SetterFlag(void)
-{
-	u16 flag = VarGet(VAR_8000);
-	FlagSet(flag);
-}
+
 void DebugMenu_SetterVar(void)
 {
 	u16 var = VarGet(VAR_DEBUG_MENU_SET_CUSTOM_VAR);

@@ -228,29 +228,12 @@ bool8 StartLButtonFunc(void)
 			
 			return TRUE;
 		}
+		#endif
 		else
-		#endif
-		#ifdef FLAG_RUNNING_ENABLED
-		if (FlagGet(FLAG_RUNNING_ENABLED)) //Only toggle auto-run if can run in the first place
-		#endif
 		{
-			#ifdef FLAG_AUTO_RUN
 			ScriptContext2_Enable();
-			DismissMapNamePopup();
-
-			if (FlagGet(FLAG_AUTO_RUN))
-			{
-				FlagClear(FLAG_AUTO_RUN);
-				ScriptContext1_SetupScript(SystemScript_DisableAutoRun);
-			}
-			else
-			{
-				FlagSet(FLAG_AUTO_RUN);
-				ScriptContext1_SetupScript(SystemScript_EnableAutoRun);
-			}
-
+			ScriptContext1_SetupScript(SystemScript_DebugMenu);
 			return TRUE;
-			#endif
 		}
 	}
 	

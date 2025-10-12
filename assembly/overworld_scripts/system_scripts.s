@@ -8,7 +8,7 @@
 
 .equ SPECIAL_STOP_SOUNDS, 0x9A
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_SecondBagItemCanBeRegisteredToL
 EventScript_SecondBagItemCanBeRegisteredToL:
@@ -80,7 +80,7 @@ SystemScript_DisableSurfTurboBoost:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_PartyMenuFromField
 SystemScript_PartyMenuFromField:
@@ -128,7 +128,7 @@ SystemScript_MiningScan_SkipFieldEffect:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_PoisonSurvial
 SystemScript_PoisonSurvial:
@@ -139,7 +139,7 @@ SystemScript_PoisonSurvial:
 	releaseall
 	end
 	
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ VAR_REPEL_STEP_COUNT, 0x4020
 
@@ -198,7 +198,7 @@ EndScript:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_StartDexNavBattle
 SystemScript_StartDexNavBattle:
@@ -236,7 +236,7 @@ SystemScript_DexNavDetector:
 m_PlayerExclaim: .byte exclaim, end_m
 m_PlayerConfused: .byte say_question, end_m
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_WaitForFollower
 SystemScript_WaitForFollower:
@@ -245,7 +245,7 @@ SystemScript_WaitForFollower:
 	release
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ SPECIAL_SHOW_ITEM_SPRITE_ON_FIND_OBTAIN, 0xE4
 .equ SPECIAL_CLEAR_ITEM_SPRITE_AFTER_FIND_OBTAIN, 0xE5
@@ -300,7 +300,7 @@ SystemScript_FindMultipleNormalItems:
 	preparemsg gText_FoundMultipleItems
 	return
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 SystemScript_ObtainItem:
 	copyvar 0x8013 0x8012
@@ -349,7 +349,7 @@ ObtainedMultipleItemMsg:
 	preparemsg gText_ObtainedMultipleItems
 	return
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ GAME_STAT_FOUND_HIDDEN_ITEM, 20
 
@@ -370,7 +370,7 @@ SystemScript_PickedUpHiddenItem: @;Replaces 81A6885
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .macro showselectitems num
 EventScript_ShowSelectItems\num:
@@ -400,7 +400,7 @@ showselectitems 4
 showselectitems 5
 showselectitems 6
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ FLAG_AUTO_HMS, 0x902 @For Unbound
 .equ FLDEFF_USE_ROCK_CLIMB, 55
@@ -444,7 +444,7 @@ EventScript_RockClimb:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseADMRockClimb
 EventScript_UseADMRockClimb:
@@ -456,7 +456,7 @@ EventScript_UseADMRockClimb:
 	closeonkeypress
 	goto EventScript_RockClimb
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseSandboxRockClimb
 EventScript_UseSandboxRockClimb:
@@ -468,7 +468,7 @@ EventScript_UseSandboxRockClimb:
 	closeonkeypress
 	goto EventScript_RockClimb
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_Defog
 EventScript_Defog:
@@ -484,7 +484,7 @@ EventScript_Defog:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ SPECIAL_POKEMON_TYPE_IN_PARTY, 0xB2
 .equ SPECIAL_SPECIES_IN_PARTY, 0x17C
@@ -534,7 +534,7 @@ EventScript_LavaSurfEnd:
 	closeonkeypress
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseWaterfall
 EventScript_UseWaterfall:
@@ -574,7 +574,7 @@ EventScript_WallOfWater:
 	msgbox 0x81BE30A MSG_NORMAL
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseADMWaterfall
 EventScript_UseADMWaterfall:
@@ -592,7 +592,7 @@ EventScript_UseADMWaterfall_SkipAsk:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseSandboxWaterfall
 EventScript_UseSandboxWaterfall:
@@ -603,7 +603,7 @@ EventScript_UseSandboxWaterfall:
 	if equal _goto EventScript_WaterfallEnd
 	goto EventScript_UseADMWaterfall_SkipAsk
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseSurf
 EventScript_UseSurf:
@@ -655,7 +655,7 @@ EventScript_WaterMurkyBrown:
 	msgbox gText_WaterMurkyBrown MSG_NORMAL
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseADMSurf
 EventScript_UseADMSurf:
@@ -684,7 +684,7 @@ EventScript_UseADMSurf_AskMurkyWater:
 	msgbox gText_WaterMurkyBrownUseADMSurf MSG_YESNO	
 	goto EventScript_UseADMSurf_CheckAnswer
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseSandboxSurf
 EventScript_UseSandboxSurf:
@@ -707,7 +707,7 @@ EventScript_UseSandboxSurf_AskMurkyWater:
 	msgbox gText_WaterMurkyBrownUseSurf MSG_YESNO	
 	goto EventScript_UseSandboxSurf_CheckAnswer
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ FLDEFF_USE_DIVE, 44
 .global EventScript_UseDive
@@ -777,7 +777,7 @@ EventScript_EndSurface:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UseADMDive
 EventScript_UseADMDive:
@@ -818,7 +818,7 @@ EventScript_UseADMDiveUnderwater_SkipAsk:
 	waitstate
 	goto EventScript_EndSurface
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ FLAG_SYS_USE_FLASH, 0x806
 .global EventScript_UseFlash
@@ -835,7 +835,7 @@ EventScript_UseFlash:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ SPECIAL_BUFFER_SWARM_TEXT, 0x58
 
@@ -845,7 +845,7 @@ EventScript_TVSwarm:
 	msgbox gText_TVSwarm MSG_SIGN
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_LockedDoor
 EventScript_LockedDoor:
@@ -857,7 +857,7 @@ EventScript_PsychicBarrier:
 	msgbox gText_PsychicBarrier MSG_SIGN
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ SPECIAL_DISMOUNT_BICYCLE, 0xAF
 
@@ -916,7 +916,7 @@ EventScript_LadderFinish:
 m_LadderClimbUp: .byte walk_up_slow, end_m
 m_LadderClimbDown: .byte 0xAF, end_m
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_HiddenGrottoForest
 EventScript_HiddenGrottoForest:
@@ -940,7 +940,7 @@ EventScript_HiddenGrottoForest_Nowhere:
 	msgboxnormal
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .equ SE_HEADBUTT, 0x74
 .equ GAME_STAT_HEADBUTT_WILD_ENCOUNTERS, 37
@@ -986,7 +986,7 @@ EventScript_HeadbuttTree_NoUsableMons:
 	msgbox gText_TreeCanBeHeadbutted MSG_NORMAL
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global EventScript_UndergroundMining
 EventScript_UndergroundMining:
@@ -1094,7 +1094,7 @@ EventScript_UnderwaterMining_Door2:
 
 m_WalkUp1: .byte walk_up, end_m
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_StopZooming
 SystemScript_StopZooming:
@@ -1104,129 +1104,95 @@ SystemScript_StopZooming:
 	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_DebugMenu
 SystemScript_DebugMenu:
 	lockall
+
 	multichoiceoption gText_DebugMenu_SetFlag 0
-	multichoiceoption gText_DebugMenu_GiveItem 1
+	multichoiceoption gText_DebugMenu_GetItem 1
 	multichoiceoption gText_DebugMenu_Level100Team 2
-	multichoiceoption gText_DebugMenu_MaxCoinage 3
+	multichoiceoption gText_DebugMenu_MaxCoins 3
 	multichoiceoption gText_DebugMenu_ShinyTeam 4
-	multichoiceoption gText_DebugMenu_Give 5
-	multichoiceoption gText_DebugMenu_Debug 6
+	multichoiceoption gText_DebugMenu_GetPokemon 5
+	multichoiceoption gText_DebugMenu_More 6
+
 	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS 0x0
+
 	switch LASTRESULT
 	case 0, SystemScript_DebugMenu_SetFlag
 	case 1, SystemScript_DebugMenu_GiveItem
 	case 2, SystemScript_DebugMenu_Level100Team
-	case 3, SystemScript_DebugMenu_MaxCoinage
+	case 3, SystemScript_DebugMenu_MaxCoins
 	case 4, SystemScript_DebugMenu_ShinyTeam
-	case 5, SystemScript_DebugMenu_Custom
-	case 6, SystemScript_DebugMenu_Debug
+	case 5, SystemScript_DebugMenu_GetPokemon
+	case 6, SystemScript_DebugMenu_More
+
 SystemScript_DebugMenu_End:
 	releaseall
 	end
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 SystemScript_DebugMenu_SetFlag:
 	multichoiceoption gText_DebugMenu_AllBadges 0
 	multichoiceoption gText_DebugMenu_GameClear 1
-	multichoiceoption gText_DebugMenu_Pokedexes 2
+	multichoiceoption gText_DebugMenu_GetPokedex 2
 	multichoiceoption gText_DebugMenu_FlySpots 3
-	multichoiceoption gText_DebugMenu_CustomFlag 4
+	multichoiceoption gText_DebugMenu_CustomSetFlag 4
+
 	multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS 0x0
+
+	@ Quit Menu
 	compare LASTRESULT 0x5
-	if greaterorequal _goto SystemScript_DebugMenu_End
+	if greaterorequal _goto SystemScript_DebugMenu
+
+	@ Custom Flag
+	compare LASTRESULT 0x4
+	if equal _goto SystemScript_DebugMenu_CustomSetFlag
+
+	@ Repeat
 	callasm DebugMenu_ProcessSetFlag
+	msgbox gText_DebugMenu_FlagsSetSuccessfully MSG_NORMAL
 	goto SystemScript_DebugMenu_SetFlag
 
-SystemScript_DebugMenu_GiveItem:
-	multichoiceoption gText_DebugMenu_UsefulKeyItems 0
-	multichoiceoption gText_DebugMenu_GeneralUsefulItems 1
-	multichoiceoption gText_DebugMenu_PokeBalls 2
-	multichoiceoption gText_DebugMenu_Berries 3
-	multichoiceoption gText_DebugMenu_TMs 4
-	multichoiceoption gText_DebugMenu_AllItems 5
-	multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS 0x0
-	compare LASTRESULT 0x6
-	if greaterorequal _goto SystemScript_DebugMenu_End
-	callasm DebugMenu_ProcessGiveItem
-	goto SystemScript_DebugMenu_GiveItem
-
-SystemScript_DebugMenu_Level100Team:
-	callasm DebugMenu_SetTeamToLevel100
-	goto SystemScript_DebugMenu
-
-SystemScript_DebugMenu_MaxCoinage:
-	callasm DebugMenu_MaxMoneyAndCoins
-	goto SystemScript_DebugMenu
-
-SystemScript_DebugMenu_ShinyTeam:
-	callasm DebugMenu_ShinyTeam
-	goto SystemScript_DebugMenu
-
-.global SystemScript_DebugMenu_GiveCustom
-SystemScript_DebugMenu_Custom:
+SystemScript_DebugMenu_CustomSetFlag:
 	lockall
-	multichoiceoption gText_DebugMenu_GivePokemonById 0
-	multichoiceoption gText_DebugMenu_GiveItemById 1
-	multichoiceoption gText_DebugMenu_CustomSetFlag 2
-	multichoiceoption gText_DebugMenu_SetVar 3
-	multichoiceoption gText_DebugMenu_Trainerbattle 4
-	multichoice 0, 0, FIVE_MULTICHOICE_OPTIONS, 0
-	switch LASTRESULT
-		case 0, SystemScript_DebugMenu_GivePokemonPrompt
-		case 1, SystemScript_DebugMenu_GiveItemPrompt
-		case 2, SystemScript_DebugMenu_CustomSetFlag
-		case 3, SystemScript_DebugMenu_SetVar
-		case 4, SystemScript_DebugMenu_Trainerbattle
-	releaseall
-	end
-
-.global SystemScript_DebugMenu_Debug
-SystemScript_DebugMenu_Debug:
-	lockall
-	multichoiceoption gText_DebugMenu_Dex 0
-	multichoiceoption gText_DebugMenu_StartWildBattle 1
-	multichoice 0, 0, TWO_MULTICHOICE_OPTIONS, 0
-	switch LASTRESULT
-		case 0, SystemScript_DebugMenu_DebugPokedex
-		case 1, SystemScript_DebugMenu_StartWildBattleNow
-	releaseall
-	end
-
-SystemScript_DebugMenu_DebugPokedex:
-	lock
-	callasm DebugMenu_Dex
-	setflag 0x829
-	special 0x16F
-	msgbox gText_DebugMenu_SuccessfulDex MSG_NORMAL
-	release
-	end
-
-.global SystemScript_DebugMenu_GivePokemonPrompt
-SystemScript_DebugMenu_GivePokemonPrompt:
-	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
+	msgbox gText_DebugMenu_EnterFlagID MSG_NORMAL
 	special 0xB3
 	waitstate
 	copyvar 0x8000, LASTRESULT
-	callasm DebugMenu_GivePokemonFromVar
-	bufferpokemon 0x0 0x8000
-	if equal _goto SuccessFul
-	msgbox gText_Failed MSG_NORMAL
-	end
-SuccessFul:
-	lock
-	msgbox gText_ReceivedPokemon MSG_NORMAL
-	setflag 0x828
-	release
+	callasm DebugMenu_CustomFlagSet
+	msgbox gText_DebugMenu_FlagsSetSuccessfully MSG_NORMAL
+	releaseall
 	end
 
-.global SystemScript_DebugMenu_GiveItemPrompt
-SystemScript_DebugMenu_GiveItemPrompt:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_GiveItem:
+	multichoiceoption gText_DebugMenu_PokeBalls 0
+	multichoiceoption gText_DebugMenu_Berries 1
+	multichoiceoption gText_DebugMenu_TMs 2
+	multichoiceoption gText_DebugMenu_CustomItem 3
+	multichoiceoption gText_DebugMenu_AllItems 4
+
+	multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS 0x0
+
+	@ Quit Menu
+	compare LASTRESULT 0x6
+	if greaterorequal _goto SystemScript_DebugMenu
+
+	@ Custom Item
+	compare LASTRESULT 0x3
+	if equal _goto SystemScript_DebugMenu_CustomGiveItem
+
+	@ Repeat
+	callasm DebugMenu_ProcessGiveItem
+	msgbox gText_DebugMenu_ReceivedItems MSG_NORMAL
+	goto SystemScript_DebugMenu_GiveItem
+
+SystemScript_DebugMenu_CustomGiveItem:
 	lockall
-	msgbox Text_EnterItem MSG_NORMAL
+	msgbox gText_DebugMenu_EnterItemID MSG_NORMAL
 	special 0xB3
 	waitstate
 	copyvar 0x8000, LASTRESULT
@@ -1236,22 +1202,67 @@ SystemScript_DebugMenu_GiveItemPrompt:
 	releaseall
 	end
 
-.global SystemScript_DebugMenu_CustomSetFlag
-SystemScript_DebugMenu_CustomSetFlag:
-	lockall
-	msgbox Text_CustomSetFlag MSG_NORMAL
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_Level100Team:
+	callasm DebugMenu_SetTeamToLevel100
+	msgbox gText_DebugMenu_TeamLevelMaxed MSG_NORMAL
+	goto SystemScript_DebugMenu
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_MaxCoins:
+	callasm DebugMenu_MaxMoneyAndCoins
+	msgbox gText_DebugMenu_CoinsMaxed MSG_NORMAL
+	goto SystemScript_DebugMenu
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_ShinyTeam:
+	callasm DebugMenu_ShinyTeam
+	msgbox gText_DebugMenu_SetTeamShiny MSG_NORMAL
+	goto SystemScript_DebugMenu
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_GetPokemon:
+	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
 	special 0xB3
 	waitstate
 	copyvar 0x8000, LASTRESULT
-	callasm DebugMenu_SetterFlag
-	msgbox Text_FlagSet MSG_NORMAL
+	callasm DebugMenu_GivePokemonFromVar
+	bufferpokemon 0x0 0x8000
+	if equal _goto SuccessFul
+	msgbox gText_Failed MSG_NORMAL
+	goto SystemScript_DebugMenu
+
+SuccessFul:
+	msgbox gText_ReceivedPokemon MSG_NORMAL
+	setflag 0x828
+	goto SystemScript_DebugMenu
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SystemScript_DebugMenu_More:
+	multichoiceoption gText_DebugMenu_SetCustomVar 0
+	multichoiceoption gText_DebugMenu_CustomWildBattle 1
+	multichoiceoption gText_DebugMenu_CustomTrainerBattle 2
+	multichoiceoption gText_DebugMenu_CompletePokedex 3
+	multichoiceoption gText_DebugMenu_GoBack 4
+
+	multichoice 0, 0, FIVE_MULTICHOICE_OPTIONS, 0
+
+	@ Quit Menu
+	compare LASTRESULT, 0x5
+	if greaterorequal _goto SystemScript_DebugMenu_End
+
+	switch LASTRESULT
+		case 0, SystemScript_DebugMenu_SetCustomVar
+		case 1, SystemScript_DebugMenu_CustomWildBattle
+		case 2, SystemScript_DebugMenu_CustomTrainerBattle
+		case 3, SystemScript_DebugMenu_CompletePokedex
+		case 4, SystemScript_DebugMenu
+
 	releaseall
 	end
 
-.global SystemScript_DebugMenu_SetVar
-SystemScript_DebugMenu_SetVar:
-	lockall
-	msgbox Text_CustomSetVar MSG_NORMAL
+SystemScript_DebugMenu_SetCustomVar:
+	msgbox gText_DebugMenu_EnterVarID MSG_NORMAL
 	special 0xB3
 	waitstate
 	copyvar 0x5158, LASTRESULT
@@ -1264,10 +1275,18 @@ SystemScript_DebugMenu_SetVar:
 	releaseall
 	end
 
-.global SystemScript_DebugMenu_Trainerbattle
-SystemScript_DebugMenu_Trainerbattle:
+SystemScript_DebugMenu_CustomWildBattle:
+	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
+	special 0xB3
+	waitstate
+	copyvar 0x8000, LASTRESULT
+	setwildbattle 0x8000 0x20 0x0
+	dowildbattle
+	end
+
+SystemScript_DebugMenu_CustomTrainerBattle:
 	lockall
-	msgbox gText_TrainerCustomBattle MSG_NORMAL
+	msgbox gText_DebugMenu_EnterTrainerID MSG_NORMAL
 	special 0xB3
 	waitstate
 	setvar 0x8000 0xFEFE
@@ -1277,16 +1296,16 @@ SystemScript_DebugMenu_Trainerbattle:
 	releaseall
 	end
 
-SystemScript_DebugMenu_StartWildBattleNow:
-	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
-	special 0xB3
-	waitstate
-	copyvar 0x8000, LASTRESULT
-	setwildbattle 0x8000 0x20 0x0
-	dowildbattle
+SystemScript_DebugMenu_CompletePokedex:
+	lockall
+	setflag 0x829
+	setflag 0x840
+	callasm DebugMenu_CompletePokedex
+	msgbox gText_CompletedPokedex MSG_NORMAL
+	releaseall
 	end
 
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global SystemScript_PokemonEncounter
 SystemScript_PokemonEncounter:

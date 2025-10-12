@@ -1,113 +1,121 @@
+// MAIN MENU
 #org @gText_DebugMenu_SetFlag
 Set Flag
 
-#org @gText_DebugMenu_GiveItem
-Give Item
+#org @gText_DebugMenu_GetItem
+Get Item
 
 #org @gText_DebugMenu_Level100Team
-Level 100 Team
+Set Team to Lv.100
 
-#org @gText_DebugMenu_MaxCoinage
-Max Coinage
+#org @gText_DebugMenu_MaxCoins
+Max Coins
 
 #org @gText_DebugMenu_ShinyTeam
-Shiny Team
+Make Team Shiny
 
+#org @gText_DebugMenu_GetPokemon
+Get Pokemon
+
+#org @gText_DebugMenu_More
+Next[RIGHT_ARROW_2]
+
+// SET FLAGS
 #org @gText_DebugMenu_AllBadges
 All Badges
 
 #org @gText_DebugMenu_GameClear
 Game Clear
 
-#org @gText_DebugMenu_CustomFlag
-Custom Flag
-
-#org @gText_DebugMenu_Pokedexes
-Pokedexes
+#org @gText_DebugMenu_GetPokedex
+Get Pokedex
 
 #org @gText_DebugMenu_FlySpots
 Fly Spots
 
-#org @gText_DebugMenu_UsefulKeyItems
-Useful Key Items
+#org @gText_DebugMenu_CustomSetFlag
+Set Custom Flag
 
-#org @gText_DebugMenu_GeneralUsefulItems
-General Useful Items
+#org @gText_DebugMenu_EnterFlagID
+Enter the Flag ID (in Decimal)[.]
 
+#org @gText_DebugMenu_FlagsSetSuccessfully
+Flag(s) successfully set!
+
+// GET ITEMS
 #org @gText_DebugMenu_PokeBalls
-Pok\e Balls
+All Pok\e Balls
 
 #org @gText_DebugMenu_Berries
-Berries
+All Berries
 
 #org @gText_DebugMenu_TMs
-TMs and HMs
+All TMs and HMs
+
+#org @gText_DebugMenu_CustomItem
+Get Custom Item
 
 #org @gText_DebugMenu_AllItems
 All Items
 
-#org @gText_DebugMenu_Give
-Give custom
+#org @gText_DebugMenu_ReceivedItems
+Received items!
 
-#org @gText_DebugMenu_GivePokemonById
-Pokémon
+#org @gText_DebugMenu_EnterItemID
+Enter the Item ID to receive[.]
 
+// SET TEAM TO LV. 100
+#org @gText_DebugMenu_TeamLevelMaxed
+Your team's level has\nbeen set to max!
+
+// MAX COINS
+#org @gText_DebugMenu_CoinsMaxed
+Your coins have been\nset to max!
+
+// MAKE TEAM SHINY
+#org @gText_DebugMenu_SetTeamShiny
+Your team has been\nset to shiny!
+
+// GET POKEMON
 #org @gText_DebugMenu_EnterSpecies
-Enter the Pokémon's National \nDex Number.
+Enter the Pok\emon's National \nDex Number[.]
 
 #org @gText_Failed
-Invalid species or party full.
+Invalid species or party full!
 
 #org @gText_ReceivedPokemon
 Received [BUFFER1]!
 
-#org @Text_EnterItem
-Enter the Item ID to receive.
-
-#org @gText_DebugMenu_GiveItemById
-Item
-
-#org @gText_DebugMenu_Debug
-Debug more...
-
-#org @gText_DebugMenu_SuccessfulDex
-Enabled all pokemon to \nseen/caught in Pokedex.
-
-#org @gText_DebugMenu_Dex
-Debug Pokedex
-
-#org @gText_DebugMenu_StartWildBattle
-Custom Wild battle
-
-#org @gText_DebugMenu_CustomSetFlag
-Set Custom Flag
-
-#org @Text_CustomSetFlag
-Enter the Flag id (in Decimal).
-
-#org @Text_InvalidNumber
-Invalid Flag.
-
-#org @Text_FlagSet
-Flag Set.
-
-#org @gText_DebugMenu_SetVar
+// MORE
+#org @gText_DebugMenu_SetCustomVar
 Set Custom Var
 
-#org @Text_CustomSetVar
-Enter a Var no. (In Decimal)
+#org @gText_DebugMenu_CustomWildBattle
+Custom Wild Battle
+
+#org @gText_DebugMenu_CustomTrainerBattle
+Custom Trainer Battle
+
+#org @gText_DebugMenu_CompletePokedex
+Complete Pok\edex
+
+#org @gText_DebugMenu_GoBack
+[LEFT_ARROW_2]Back
+
+#org @gText_DebugMenu_EnterVarID
+Enter var number (In Decimal)[.]
 
 #org @gText_VarValue
-Enter value to set.
+Enter value to set[.]
 
 #org @Text_VarSet
-Var set!
+Var set successfully!
 
-#org @gText_DebugMenu_Trainerbattle
-Custom Trainer battle
-
-#org @gText_TrainerCustomBattle
-Enter trainer id (in Decimal).
+#org @gText_DebugMenu_EnterTrainerID
+Enter trainer ID (in Decimal)[.]
 
 #org @DebugMenu_LossMessage
-FlintBeetle can't hack it.
+Bah! I lost again[.]
+
+#org @gText_CompletedPokedex
+Pok\edex successfully filled!
