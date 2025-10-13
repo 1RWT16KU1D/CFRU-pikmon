@@ -7,6 +7,17 @@
         "trainer_defines.h": "c",
         "bg.h": "c",
         "gpu_regs.h": "c",
-        "species.h": "c"
+        "species.h": "c",
+        "field_effect_helpers.h": "c",
+        "dns.h": "c",
+        "vanilla_functions.h": "c",
+        "script.h": "c",
+        "scanline_effect.h": "c",
+        "m4a.h": "c",
+        "new_menu_helpers.h": "c",
+        "graphics.h": "c",
+        "types.h": "c",
+        "decompress.h": "c",
+        "text_window.h": "c"
     }
 }

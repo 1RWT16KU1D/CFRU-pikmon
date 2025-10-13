@@ -88,27 +88,10 @@ EventScript_Pallet_FatGuy:
 .global EventScript_Pallet_Girl
 
 EventScript_Pallet_Girl:
-    faceplayer
     lock
-    msgbox gText_PalletGirl_Text1 MSG_YESNO
-    compare LASTRESULT 0x1
-    if YES _goto PalletGirl_ShowFollowerMon
-    setflag 0xa02
-    setflag 0xa03
-    hidefollowermon
-    setflag 0xA0B
-    clearflag 0x4BD
-    special 0xD2
-    setwildbattle SPECIES_SKARMORY 15 ITEM_LEFTOVERS
-    dowildbattle
-    release
-    end
-
-PalletGirl_ShowFollowerMon:
-    callasm ChangeFollowerPalette
-    showfollowermon
-    special 0xD1
-    setflag 0x4BD
+    faceplayer
+    setvar 0x8000 0
+    callasm ShowImage
     release
     end
 
