@@ -91,7 +91,7 @@ EventScript_Pallet_Girl:
     lock
     faceplayer
     setvar 0x8000 0
-    callasm ShowImage
+    callasm ShowImageFromVar
     release
     end
 

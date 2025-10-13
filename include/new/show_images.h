@@ -17,11 +17,12 @@ struct ImageData
     const u16 *pal;
 };
 
+extern u8 Image0Tiles[];
+extern u8 Image0Map[];
+extern u16 Image0Pal[];
+
 extern struct ImageData ImageDataTable[]; // Defined in image_viewer.c
 
 void ShowImageFromVar(void);     // For scripts (uses VAR_8000)
 void ShowImageDirect(u8 index);  // For code calls (pass index directly
 
-extern u8 PikminTiles[];
-extern u8 PikminMap[];
-extern u16 PikminPal[];

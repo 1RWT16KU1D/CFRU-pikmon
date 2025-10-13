@@ -18,6 +18,10 @@
         "graphics.h": "c",
         "types.h": "c",
         "decompress.h": "c",
-        "text_window.h": "c"
+        "text_window.h": "c",
+        "sound.h": "c",
+        "party_menu.h": "c",
+        "task.h": "c",
+        "songs.h": "c"
     }
 }
