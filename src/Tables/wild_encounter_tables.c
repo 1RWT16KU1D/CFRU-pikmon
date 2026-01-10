@@ -17,25 +17,25 @@ tables to edit:
 	gSwarmTable (Added an example entry, you can add more!)
 
 */
-
+/*
 const struct WildPokemon gRoute1_LandMonsMorning[] =
 {
-	{2, 3, SPECIES_ZIGZAGOON},
-	{2, 3, SPECIES_TAILLOW},
-	{2, 3, SPECIES_LOTAD},
-	{2, 3, SPECIES_SHROOMISH},
-	{2, 3, SPECIES_MAKUHITA},
-	{2, 3, SPECIES_WINGULL},
-	{2, 2, SPECIES_ARISTOCRABOFFSPRING},
-	{2, 3, SPECIES_ELECTRIKE},
+    {2, 3, SPECIES_FLINTBEETLE},
+    {2, 3, SPECIES_SWOOPINGSNITCHBUG},
+    {2, 3, SPECIES_CRUMBUG},
+    {2, 3, SPECIES_HONEYWISP},
+    {2, 3, SPECIES_FEMALESHEARGRUB},
 };
 
 const struct WildPokemonInfo gRoute1_LandMonsInfoMorning = {15, gRoute1_LandMonsMorning};
 
 const struct WildPokemon gRoute1_LandMonsDay[] =
 {
-    {2, 3, SPECIES_ZIGZAGOON},       // Classic early Normal-type
-    {2,  3, SPECIES_HOUNDOUR},        // Fire/Dark, adds good offensive typing
+    {2, 3, SPECIES_FLINTBEETLE},
+    {2, 3, SPECIES_SWOOPINGSNITCHBUG},
+    {2, 3, SPECIES_CRUMBUG},
+    {2, 3, SPECIES_HONEYWISP},
+    {2, 3, SPECIES_FEMALESHEARGRUB},
 };
 
 const struct WildPokemonInfo gRoute1_LandMonsInfoDay = {15, gRoute1_LandMonsDay};
@@ -68,10 +68,11 @@ const struct WildPokemon gRoute1_LandMonsNight[] =
 };
 
 const struct WildPokemonInfo gRoute1_LandMonsInfoNight = {15, gRoute1_LandMonsNight};
-
+*/
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
+/*
 	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
@@ -88,10 +89,12 @@ const struct WildPokemonHeader gWildMonMorningHeaders[] =
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
 	}
+*/
 };
 
 const struct WildPokemonHeader gWildMonDayHeaders[] =
 {
+/*
 	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
@@ -108,10 +111,12 @@ const struct WildPokemonHeader gWildMonDayHeaders[] =
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
 	}
+*/
 };
 
 const struct WildPokemonHeader gWildMonEveningHeaders[] =
 {
+/*
 	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
@@ -128,10 +133,12 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
 	}
+*/
 };
 
 const struct WildPokemonHeader gWildMonNightHeaders[] =
 {
+/*
 	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
@@ -148,15 +155,18 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
 	}
+*/
 };
 
 
 const struct SwarmData gSwarmTable[] =
 {
+/*
 	{
 		.mapName = MAPSEC_ROUTE_1,
 		.species = SPECIES_HOUNDOUR,
 	},
+*/
 };
 
 #ifdef SWARM_CHANGE_HOURLY
@@ -197,3 +207,4 @@ const u8 gSwarmOrders[31][24] =
 #endif
 
 const u16 gSwarmTableLength = NELEMS(gSwarmTable);
+
