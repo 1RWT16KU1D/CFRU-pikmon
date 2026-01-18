@@ -3249,128 +3249,128 @@ struct OakSpeechResources
 
 #define gMonFrontPicTable ((const struct CompressedSpriteSheet*) *((u32*) 0x8000128))
 #define tBurrowingSnagretSpriteId           data[4]
-    lockall
-    fadescreen FADE_TO_BLACK
+//     lockall
+//     fadescreen FADE_TO_BLACK
 
-    # --- Black screen narration ---
-    message Intro_Text_Olimar1
-    waitmessage
+//     # --- Black screen narration ---
+//     message Intro_Text_Olimar1
+//     waitmessage
 
-    # --- Flashback 1: Red Onion impact site ---
-    loadbg 0, gIntroFlashback_ImpactTiles, gIntroFlashback_ImpactMap, gIntroFlashback_ImpactPal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar2
-    waitmessage
+//     # --- Flashback 1: Red Onion impact site ---
+//     loadbg 0, gIntroFlashback_ImpactTiles, gIntroFlashback_ImpactMap, gIntroFlashback_ImpactPal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar2
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Flashback 2: Pikmin 2 reunion ---
-    loadbg 0, gIntroFlashback_Pikmin2Tiles, gIntroFlashback_Pikmin2Map, gIntroFlashback_Pikmin2Pal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar3
-    waitmessage
+//     # --- Flashback 2: Pikmin 2 reunion ---
+//     loadbg 0, gIntroFlashback_Pikmin2Tiles, gIntroFlashback_Pikmin2Map, gIntroFlashback_Pikmin2Pal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar3
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Flashback 3: Koppaites rescue ---
-    loadbg 0, gIntroFlashback_KoppaitesTiles, gIntroFlashback_KoppaitesMap, gIntroFlashback_KoppaitesPal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar4
-    waitmessage
+//     # --- Flashback 3: Koppaites rescue ---
+//     loadbg 0, gIntroFlashback_KoppaitesTiles, gIntroFlashback_KoppaitesMap, gIntroFlashback_KoppaitesPal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar4
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Flashback 4: Pikmin 4 ending ---
-    loadbg 0, gIntroFlashback_P4EndingTiles, gIntroFlashback_P4EndingMap, gIntroFlashback_P4EndingPal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar5
-    waitmessage
+//     # --- Flashback 4: Pikmin 4 ending ---
+//     loadbg 0, gIntroFlashback_P4EndingTiles, gIntroFlashback_P4EndingMap, gIntroFlashback_P4EndingPal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar5
+//     waitmessage
 
-    message Intro_Text_Olimar6
-    waitmessage
+//     message Intro_Text_Olimar6
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Blooming Onion ---
-    loadbg 0, gIntroFlashback_BloomingOnionTiles, gIntroFlashback_BloomingOnionMap, gIntroFlashback_BloomingOnionPal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar7
-    waitmessage
+//     # --- Blooming Onion ---
+//     loadbg 0, gIntroFlashback_BloomingOnionTiles, gIntroFlashback_BloomingOnionMap, gIntroFlashback_BloomingOnionPal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar7
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Colonization effort ---
-    loadbg 0, gIntroFlashback_ImpactBaseTiles, gIntroFlashback_ImpactBaseMap, gIntroFlashback_ImpactBasePal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar8
-    waitmessage
+//     # --- Colonization effort ---
+//     loadbg 0, gIntroFlashback_ImpactBaseTiles, gIntroFlashback_ImpactBaseMap, gIntroFlashback_ImpactBasePal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar8
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Colony life ---
-    loadbg 0, gIntroFlashback_HutsTiles, gIntroFlashback_HutsMap, gIntroFlashback_HutsPal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar9
-    waitmessage
+//     # --- Colony life ---
+//     loadbg 0, gIntroFlashback_HutsTiles, gIntroFlashback_HutsMap, gIntroFlashback_HutsPal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar9
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Battle scene ---
-    loadbg 0, gIntroFlashback_BattleTiles, gIntroFlashback_BattleMap, gIntroFlashback_BattlePal
-    fadescreen FADE_FROM_BLACK
-    message Intro_Text_Olimar10
-    waitmessage
+//     # --- Battle scene ---
+//     loadbg 0, gIntroFlashback_BattleTiles, gIntroFlashback_BattleMap, gIntroFlashback_BattlePal
+//     fadescreen FADE_FROM_BLACK
+//     message Intro_Text_Olimar10
+//     waitmessage
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    # --- Logo ---
-    loadbg 0, gIntroLogoTiles, gIntroLogoMap, gIntroLogoPal
-    fadescreen FADE_FROM_BLACK
-    waitstate 120  # Let logo sit for ~2 seconds
+//     # --- Logo ---
+//     loadbg 0, gIntroLogoTiles, gIntroLogoMap, gIntroLogoPal
+//     fadescreen FADE_FROM_BLACK
+//     waitstate 120  # Let logo sit for ~2 seconds
 
-    fadescreen FADE_TO_BLACK
-    clearbg 0
+//     fadescreen FADE_TO_BLACK
+//     clearbg 0
 
-    releaseall
-    goto ChoosePlayerName
+//     releaseall
+//     goto ChoosePlayerName
 
-Intro_Text_Olimar1:
-    .string "My name is Captain Olimar.{PAUSE 16} A few years ago, while travelling through space, my ship was struck by a meteor.{PAUSE 16} I think you know the rest by now.{END}"
+// Intro_Text_Olimar1:
+//     .string "My name is Captain Olimar.{PAUSE 16} A few years ago, while travelling through space, my ship was struck by a meteor.{PAUSE 16} I think you know the rest by now.{END}"
 
-Intro_Text_Olimar2:
-    .string "A strange thing had appeared before me.{PAUSE 16} I had barely begun my search when it reared up as if it were waiting for me.{PAUSE 16} It then dropped a single seed.{PAUSE 16} When I plucked the seed, it turned out to be a living creature.{PAUSE 16} A creature I decided to call a Pikmin.{END}"
+// Intro_Text_Olimar2:
+//     .string "A strange thing had appeared before me.{PAUSE 16} I had barely begun my search when it reared up as if it were waiting for me.{PAUSE 16} It then dropped a single seed.{PAUSE 16} When I plucked the seed, it turned out to be a living creature.{PAUSE 16} A creature I decided to call a Pikmin.{END}"
 
-Intro_Text_Olimar3:
-    .string "The Pikmin and I…{PAUSE 16} well, we've been through a lot together.{PAUSE 16} They've helped me out more times than I can count.{PAUSE 16} From fixing my beloved Dolphin,{PAUSE 16} to saving my company from financial ruin.{END}"
+// Intro_Text_Olimar3:
+//     .string "The Pikmin and I…{PAUSE 16} well, we've been through a lot together.{PAUSE 16} They've helped me out more times than I can count.{PAUSE 16} From fixing my beloved Dolphin,{PAUSE 16} to saving my company from financial ruin.{END}"
 
-Intro_Text_Olimar4:
-    .string "My adventures on this planet have been treacherous.{PAUSE 16} In fact, and I'm slightly ashamed to admit this,{PAUSE 16} I needed to be rescued by a few kind explorers a while back.{END}"
+// Intro_Text_Olimar4:
+//     .string "My adventures on this planet have been treacherous.{PAUSE 16} In fact, and I'm slightly ashamed to admit this,{PAUSE 16} I needed to be rescued by a few kind explorers a while back.{END}"
 
-Intro_Text_Olimar5:
-    .string "And then I had to be rescued…{PAUSE 24} again…{END}"
+// Intro_Text_Olimar5:
+//     .string "And then I had to be rescued…{PAUSE 24} again…{END}"
 
-Intro_Text_Olimar6:
-    .string "But despite it all, this planet has remained so special to me.{PAUSE 16} So I began to think,{PAUSE 16} what if we could remove the danger?{PAUSE 16} Tame the treachery?{END}"
+// Intro_Text_Olimar6:
+//     .string "But despite it all, this planet has remained so special to me.{PAUSE 16} So I began to think,{PAUSE 16} what if we could remove the danger?{PAUSE 16} Tame the treachery?{END}"
 
-Intro_Text_Olimar7:
-    .string "These are Blooming Onions.{PAUSE 16} Special devices made to encase and tame the creatures of this planet,{PAUSE 16} using the technology of the onions Pikmin normally reside in.{PAUSE 16} Anything can now be tamed, studied, and cared for.{END}"
+// Intro_Text_Olimar7:
+//     .string "These are Blooming Onions.{PAUSE 16} Special devices made to encase and tame the creatures of this planet,{PAUSE 16} using the technology of the onions Pikmin normally reside in.{PAUSE 16} Anything can now be tamed, studied, and cared for.{END}"
 
-Intro_Text_Olimar8:
-    .string "I called upon my company, Hocotate Freight,{PAUSE 16} to start a new business venture.{PAUSE 16} A colonization effort.{PAUSE 16} Where dozens of people from across the galaxy can establish a home here on PNF-404.{PAUSE 16} And more importantly,{PAUSE 16} we can finally study the creatures of this planet.{END}"
+// Intro_Text_Olimar8:
+//     .string "I called upon my company, Hocotate Freight,{PAUSE 16} to start a new business venture.{PAUSE 16} A colonization effort.{PAUSE 16} Where dozens of people from across the galaxy can establish a home here on PNF-404.{PAUSE 16} And more importantly,{PAUSE 16} we can finally study the creatures of this planet.{END}"
 
-Intro_Text_Olimar9:
-    .string "The effort has been an astounding success.{PAUSE 16} But more interestingly, we've already established our own culture of sorts.{PAUSE 16} We've discovered that tamed creatures in the Blooming Onions are incredible fighters!{PAUSE 16} The strategies and advancements we've made have been monumental.{END}"
+// Intro_Text_Olimar9:
+//     .string "The effort has been an astounding success.{PAUSE 16} But more interestingly, we've already established our own culture of sorts.{PAUSE 16} We've discovered that tamed creatures in the Blooming Onions are incredible fighters!{PAUSE 16} The strategies and advancements we've made have been monumental.{END}"
 
-Intro_Text_Olimar10:
-    .string "We've established a hobby of sorts,{PAUSE 16} putting our creatures against each other to see who comes out on top.{PAUSE 16} With Pikmin and monsters side by side.{PAUSE 16} This is no longer just the world of Pikmin.{PAUSE 24} This is the world of…{END}"
+// Intro_Text_Olimar10:
+//     .string "We've established a hobby of sorts,{PAUSE 16} putting our creatures against each other to see who comes out on top.{PAUSE 16} With Pikmin and monsters side by side.{PAUSE 16} This is no longer just the world of Pikmin.{PAUSE 24} This is the world of…{END}"
 
 void CreateOakIntroPokemonSprite(u8 taskId)
 {
