@@ -236,5 +236,11 @@
 .equ IntroSceneStart, 0x0
 .equ IntroScenePikmin, 0x1
 .equ PikminHelped, 0x2
-.equ WarpToRoom, 0x3
-.equ WarpedToRoom, 0x4
+.equ GotRescued, 0x3
+.equ PlaceIsSpecial, 0x4
+.equ BloomingOnion, 0x5
+.equ ImpactSite, 0x6
+.equ PikminBattles, 0x7
+.equ WorldOfPikmin, 0x8
+.equ WarpToRoom, 0x9
+.equ WarpedToRoom, 0xA
