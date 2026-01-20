@@ -39,11 +39,6 @@ const struct ImageData ImageDataTable[] =
         .tiles = Image_01Tiles,
         .tilemap = Image_01Map,
         .pal = Image_01Pal
-    },
-    {
-        .tiles = Image_02Tiles,
-        .tilemap = Image_02Map,
-        .pal = Image_02Pal
     }
 };
 
@@ -172,7 +167,7 @@ static void Task_ImageFadeOut(u8 taskId)
         tilemapbuffer = NULL;
 
         gMain.state = 0;
-        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
         DestroyTask(taskId);
     }
 }

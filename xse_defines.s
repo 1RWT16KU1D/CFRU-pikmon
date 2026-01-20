@@ -221,3 +221,20 @@
 .equ MAP_SCRIPT_ON_DIVE_WARP, 6
 .equ MAP_SCRIPT_ON_RETURN_TO_FIELD, 7
 .equ LEVEL_SCRIPT_TERMIN, 0
+
+@@ ShowImage function
+.equ ShowImageVar, 0x8000
+
+@@ Text Colors
+.equ TEXTCOLOR_BLUE, 0x0
+.equ TEXTCOLOR_RED, 0x1
+.equ TEXTCOLOR_BLACK, 0x2
+
+@@ Story Trackers
+.equ StoryEventVar, 0x4057
+
+.equ IntroSceneStart, 0x0
+.equ IntroScenePikmin, 0x1
+.equ PikminHelped, 0x2
+.equ WarpToRoom, 0x3
+.equ WarpedToRoom, 0x4
