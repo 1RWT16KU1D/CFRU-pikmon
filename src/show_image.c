@@ -26,7 +26,7 @@
 #define BG_MAP_BYTES 0x800
 #define BG_BACKGROUND 0
 
-struct ImageData 
+struct ImageData
 {
     u8 *tiles;
     u8 *tilemap; 
@@ -166,6 +166,7 @@ static void Task_ImageFadeOut(u8 taskId)
         Free(tilemapbuffer);
         tilemapbuffer = NULL;
 
+        ScriptContext2_Disable();
         gMain.state = 0;
         SetMainCallback2(CB2_ReturnToFieldContinueScript);
         DestroyTask(taskId);

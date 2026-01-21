@@ -40,6 +40,7 @@ LevelScript_IntroScene_Greet:
     setvar StoryEventVar IntroScenePikmin
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_Pikmin:
@@ -52,6 +53,7 @@ LevelScript_IntroScene_Pikmin:
     setvar StoryEventVar PikminHelped
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_PikminHelped:
@@ -64,6 +66,7 @@ LevelScript_IntroScene_PikminHelped:
     setvar StoryEventVar GotRescued
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_GotRescued:
@@ -76,6 +79,7 @@ LevelScript_IntroScene_GotRescued:
     setvar StoryEventVar PlaceIsSpecial
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_PlaceIsSpecial:
@@ -88,6 +92,7 @@ LevelScript_IntroScene_PlaceIsSpecial:
     setvar StoryEventVar BloomingOnion
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_BloomingOnion:
@@ -100,6 +105,7 @@ LevelScript_IntroScene_BloomingOnion:
     setvar StoryEventVar ImpactSite
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_ImpactSite:
@@ -112,6 +118,7 @@ LevelScript_IntroScene_ImpactSite:
     setvar StoryEventVar PikminBattles
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_PikminBattles:
@@ -124,6 +131,7 @@ LevelScript_IntroScene_PikminBattles:
     setvar StoryEventVar WorldOfPikmin
     setvar ShowImageVar 0x0
     callasm ShowImage
+    waitstate
     end
 
 LevelScript_IntroScene_WorldOfPikmin:
