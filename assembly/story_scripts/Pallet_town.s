@@ -11,11 +11,11 @@ EventScript_Pallet_FatGuy:
     faceplayer
 
     lock
-    msgbox gText_ThisIsBeforeImage MSG_NORMAL
+    msgboxtransparent gText_ThisIsBeforeImage MSG_NORMAL
     setvar 0x8000 0
     callasm ShowImage
     waitstate
-    msgbox gText_ThisIsAfterImage MSG_NORMAL
+    msgboxtransparent gText_ThisIsAfterImage MSG_NORMAL
     release
     end
 

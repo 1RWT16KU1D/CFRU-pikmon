@@ -34,8 +34,7 @@ LevelScript_IntroScene_Greet:
     compare StoryEventVar1 IntroSceneWarpToRoom
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_Greet MSG_NORMAL
+    msgboxtransparent gText_IntroScene_Greet MSG_NORMAL
     
     setvar StoryEventVar1 IntroScenePikmin
     setvar ShowImageVar VAR_IMAGE_1
@@ -47,8 +46,7 @@ LevelScript_IntroScene_Pikmin:
     compare StoryEventVar1 IntroScenePikminHelped
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_Pikmin MSG_NORMAL
+    msgboxtransparent gText_IntroScene_Pikmin MSG_NORMAL
 
     setvar StoryEventVar1 IntroScenePikminHelped
     setvar ShowImageVar VAR_IMAGE_2
@@ -60,8 +58,7 @@ LevelScript_IntroScene_PikminHelped:
     compare StoryEventVar1 IntroSceneGotRescued
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_PikminHelped MSG_NORMAL
+    msgboxtransparent gText_IntroScene_PikminHelped MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneGotRescued
     setvar ShowImageVar VAR_IMAGE_3
@@ -73,8 +70,7 @@ LevelScript_IntroScene_GotRescued:
     compare StoryEventVar1 IntroScenePlaceIsSpecial
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_GotRescued MSG_NORMAL
+    msgboxtransparent gText_IntroScene_GotRescued MSG_NORMAL
 
     setvar StoryEventVar1 IntroScenePlaceIsSpecial
     setvar ShowImageVar VAR_IMAGE_4
@@ -86,8 +82,7 @@ LevelScript_IntroScene_PlaceIsSpecial:
     compare StoryEventVar1 IntroSceneBloomingOnion
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_PlaceIsSpecial MSG_NORMAL
+    msgboxtransparent gText_IntroScene_PlaceIsSpecial MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneBloomingOnion
     setvar ShowImageVar VAR_IMAGE_5
@@ -99,8 +94,7 @@ LevelScript_IntroScene_BloomingOnion:
     compare StoryEventVar1 IntroSceneImpactSite
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_BloomingOnion MSG_NORMAL
+    msgboxtransparent gText_IntroScene_BloomingOnion MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneImpactSite
     setvar ShowImageVar VAR_IMAGE_1
@@ -112,8 +106,7 @@ LevelScript_IntroScene_ImpactSite:
     compare StoryEventVar1 IntroScenePikminBattles
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_ImpactSite MSG_NORMAL
+    msgboxtransparent gText_IntroScene_ImpactSite MSG_NORMAL
 
     setvar StoryEventVar1 IntroScenePikminBattles
     setvar ShowImageVar VAR_IMAGE_1
@@ -125,8 +118,7 @@ LevelScript_IntroScene_PikminBattles:
     compare StoryEventVar1 IntroSceneWorldOfPikmin
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_PikminBattles MSG_NORMAL
+    msgboxtransparent gText_IntroScene_PikminBattles MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneWorldOfPikmin
     setvar ShowImageVar VAR_IMAGE_1
@@ -138,8 +130,7 @@ LevelScript_IntroScene_WorldOfPikmin:
     compare StoryEventVar1 IntroSceneWarpToRoom
     if equal _goto End
 
-    textcolor TEXTCOLOR_BLUE
-    msgbox gText_IntroScene_WorldOfPikmin MSG_NORMAL
+    msgboxtransparent gText_IntroScene_WorldOfPikmin MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneWarpToRoom
     end
