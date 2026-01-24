@@ -76,5 +76,8 @@ The Tera Type of [BUFFER1]\nis now Stellar!
 #org @gText_TestScript2
 Tera Flag is now set!
 
-#org @gText_ThisIsAfterImage
+#org @gText_ThisIsBeforeImage
 I'm going to show you an image!
+
+#org @gText_ThisIsAfterImage
+This is after the image!

@@ -36,9 +36,29 @@ struct ImageData
 const struct ImageData ImageDataTable[] =
 {
     {
-        .tiles = Image_01Tiles,
-        .tilemap = Image_01Map,
-        .pal = Image_01Pal
+        .tiles = Image_1Tiles,
+        .tilemap = Image_1Map,
+        .pal = Image_1Pal
+    },
+    {
+        .tiles = Image_2Tiles,
+        .tilemap = Image_2Map,
+        .pal = Image_2Pal
+    },
+    {
+        .tiles = Image_3Tiles,
+        .tilemap = Image_3Map,
+        .pal = Image_3Pal
+    },
+    {
+        .tiles = Image_4Tiles,
+        .tilemap = Image_4Map,
+        .pal = Image_4Pal
+    },
+    {
+        .tiles = Image_5Tiles,
+        .tilemap = Image_5Map,
+        .pal = Image_5Pal
     }
 };
 
