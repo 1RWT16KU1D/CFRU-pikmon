@@ -1158,13 +1158,6 @@ ExpBarNormalChangeAmount:
 	bx r2
 
 .pool
-@0x81E381C with r0
-ActivateMGBAPrint:
-	add sp, #0x10
-	bl MgbaOpen
-	pop {r4, r7, pc}
-
-.pool
 @0x80C48AC with r0
 CreateRoamerIconTownMapHook:
 	bl CreateTownMapRoamerSprites

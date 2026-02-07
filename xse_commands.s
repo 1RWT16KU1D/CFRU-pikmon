@@ -2012,3 +2012,9 @@ callasm ResetPokeVialUses
 	checkflag \flag
 	if equal _call \destination
 .endm
+
+.macro msgboxtransparent text:req type:req
+	callasm 0x8750021
+	msgbox \text \type
+	callasm 0x8750139
+.endm

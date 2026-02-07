@@ -46,15 +46,9 @@ else:  # Linux, OSX, etc.
     AS = PREFIX + 'as'
     CC = PREFIX + 'gcc'
     LD = PREFIX + 'ld'
-    if on_wsl:
-        WAV2AGB = 'deps/wav2agb.exe'
-        MID2AGB = 'deps/mid2agb.exe'
-        GR = "deps/grit.exe"
-    else:
-        WAV2AGB = 'deps/wav2agb.exe'
-        MID2AGB = 'deps/mid2agb.exe'
-        GR = "deps/grit.exe"
-
+    GR = "grit"
+    WAV2AGB = 'wav2agb'
+    MID2AGB = 'mid2agb'
     OBJCOPY = PREFIX + 'objcopy'
 
 SRC = './src'
@@ -67,7 +61,7 @@ IMAGES = './Images'
 ASFLAGS = ['-mthumb', '-I', ASSEMBLY]
 LDFLAGS = ['BPRE.ld', '-T', 'linker.ld']
 CFLAGS = ['-mthumb', '-mno-thumb-interwork', '-mcpu=arm7tdmi', '-mtune=arm7tdmi',
-          '-mno-long-calls', '-march=armv4t', '-Wall', '-Wextra', '-Os', '-fira-loop-pressure', '-fipa-pta']
+          '-mno-long-calls', '-march=armv4t', '-Os', '-fira-loop-pressure', '-fipa-pta']
 
 
 class Master:

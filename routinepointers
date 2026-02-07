@@ -297,3 +297,6 @@ PlayerTryEvolution 8013D44
 #endif
 
 ##Berry Tree Function
+
+## Text to Default Name
+gText_PlayerName_Default 08054A70

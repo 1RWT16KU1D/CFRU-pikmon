@@ -221,3 +221,35 @@
 .equ MAP_SCRIPT_ON_DIVE_WARP, 6
 .equ MAP_SCRIPT_ON_RETURN_TO_FIELD, 7
 .equ LEVEL_SCRIPT_TERMIN, 0
+
+@@ ShowImage function
+.equ ShowImageVar, 0x8000
+
+.equ VAR_IMAGE_1, 0x0
+.equ VAR_IMAGE_2, 0x1
+.equ VAR_IMAGE_3, 0x2
+.equ VAR_IMAGE_4, 0x3
+.equ VAR_IMAGE_5, 0x4
+.equ VAR_IMAGE_6, 0x5
+.equ VAR_IMAGE_7, 0x6
+.equ VAR_IMAGE_8, 0x7
+
+@@ Text Colors
+.equ TEXTCOLOR_BLUE, 0x0
+.equ TEXTCOLOR_RED, 0x1
+.equ TEXTCOLOR_BLACK, 0x2
+
+@@ Story Trackers
+.equ StoryEventVar1, 0x4057
+
+.equ IntroSceneStart, 0x0
+.equ IntroScenePikmin, 0x1
+.equ IntroScenePikminHelped, 0x2
+.equ IntroSceneGotRescued, 0x3
+.equ IntroScenePlaceIsSpecial, 0x4
+.equ IntroSceneBloomingOnion, 0x5
+.equ IntroSceneImpactSite, 0x6
+.equ IntroScenePikminBattles, 0x7
+.equ IntroSceneWorldOfPikmin, 0x8
+.equ IntroSceneWarpToRoom, 0x9
+.equ IntroSceneWarpedToRoom, 0xA
