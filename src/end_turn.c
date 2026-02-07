@@ -1738,21 +1738,19 @@ u8 TurnBasedEffects(u16 move, u8 bank, struct Pokemon* monAtk)
 						#endif
 							break;
 
-						#if (defined SPECIES_MORPEKO && defined SPECIES_MORPEKO_HANGRY)
 						case ABILITY_HUNGERSWITCH:
-							if (species == SPECIES_MORPEKO)
+							if (species == SPECIES_BEARDEDAMPRAT)
 							{
-								newSpecies = SPECIES_MORPEKO_HANGRY;
+								newSpecies = SPECIES_BEARDEDAMPRAT_STATIC;
 								changedForm = TRUE;
 								battleScript = BattleScript_FlowerGiftEnd2;
 							}
-							else if (species == SPECIES_MORPEKO_HANGRY)
+							else if (species == SPECIES_BEARDEDAMPRAT_STATIC)
 							{
-								newSpecies = SPECIES_MORPEKO;
+								newSpecies = SPECIES_BEARDEDAMPRAT;
 								changedForm = TRUE;
 								battleScript = BattleScript_FlowerGiftEnd2;
 							}
-						#endif
 							break;
 					}
 

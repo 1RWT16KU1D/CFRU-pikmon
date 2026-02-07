@@ -253,7 +253,7 @@ KOing a foe ups highest stat.
 May poison any type.
 
 #org @DESC_DISGUISE
-Takes one hit with no damage.
+Melts into gold after taking a hit.
 
 #org @DESC_EMERGENCYEXIT
 #org @DESC_WIMPOUT
@@ -544,7 +544,7 @@ All Abilities are nullified.
 Protects team from poison.
 
 #org @DESC_HUNGERSWITCH
-Changes form each turn.
+Boosts ELECTRIC moves every other turn.
 
 #org @DESC_UNSEENFIST
 Contact moves bypass Protect.

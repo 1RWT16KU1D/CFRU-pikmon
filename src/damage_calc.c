@@ -2807,6 +2807,14 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				spAttack = (spAttack * 15) / 10;
 			}
 			break;
+		case ABILITY_HUNGERSWITCH:
+		//1.5x Boost
+			if (data->moveType == TYPE_ELECTRIC && SPECIES(gBankAttacker) == SPECIES_BEARDEDAMPRAT_STATIC)
+			{
+				attack = (attack * 15) / 10;
+				spAttack = (spAttack * 15) / 10;
+			}
+			break;
 		case ABILITY_TORRENT:
 		//1.5x Boost
 			if (data->moveType == TYPE_WATER && data->atkHP <= data->atkMaxHP / 3)

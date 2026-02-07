@@ -3249,6 +3249,7 @@ struct OakSpeechResources
 
 #define gMonFrontPicTable ((const struct CompressedSpriteSheet*) *((u32*) 0x8000128))
 #define tBurrowingSnagretSpriteId           data[4]
+/*
     lockall
     fadescreen FADE_TO_BLACK
 
@@ -3371,7 +3372,7 @@ Intro_Text_Olimar9:
 
 Intro_Text_Olimar10:
     .string "We've established a hobby of sorts,{PAUSE 16} putting our creatures against each other to see who comes out on top.{PAUSE 16} With Pikmin and monsters side by side.{PAUSE 16} This is no longer just the world of Pikmin.{PAUSE 24} This is the world of…{END}"
-
+*/
 void CreateOakIntroPokemonSprite(u8 taskId)
 {
     u8 spriteId;

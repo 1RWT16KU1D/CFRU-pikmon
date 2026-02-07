@@ -615,35 +615,18 @@ void atk0B_healthbarupdate(void)
 			if (IsDoubleSpreadMove())
 				DoublesHPBarReduction();
 		}
-		#ifdef SPECIES_MIMIKYU
 		else if (ability == ABILITY_DISGUISE
 		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
-		&& (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold)
+		&& ((SPECIES(gActiveBattler) >= SPECIES_MYSTERIOUSLIFEFORM_BULBORB && SPECIES(gActiveBattler) <= SPECIES_MYSTERIOUSLIFEFORM_BLOWHOG)|| hasFoolsGold)
 		&& !IS_TRANSFORMED(gActiveBattler))
 		{
 			gBattleScripting.bank = gBankTarget;
 			BattleScriptPush(gBattlescriptCurrInstr + 2);
-			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldPlateShattered : BattleScript_DisguiseTookDamage;
+			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldPlateShattered : BattleScript_FoolsGoldMystery;
 			if (IsDoubleSpreadMove())
 				DoublesHPBarReduction();
 			return;
 		}
-		#endif
-		#ifdef SPECIES_EISCUE
-		else if (ability == ABILITY_ICEFACE
-		&& SPECIES(gActiveBattler) == SPECIES_EISCUE
-		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
-		&& SPLIT(gCurrentMove) == SPLIT_PHYSICAL //Only physical moves are stopped by the ice face
-		&& !IS_TRANSFORMED(gActiveBattler))
-		{
-			gBattleScripting.bank = gBankTarget;
-			BattleScriptPush(gBattlescriptCurrInstr + 2);
-			gBattlescriptCurrInstr = BattleScript_IceFaceTookDamage;
-			if (IsDoubleSpreadMove())
-				DoublesHPBarReduction();
-			return;
-		}
-		#endif
 		else
 		{
 			if (!IsDoubleSpreadMove())
@@ -715,9 +698,8 @@ void atk0C_datahpupdate(void)
 				return;
 			}
 		}
-		#ifdef SPECIES_MIMIKYU
 		else if (ABILITY(gActiveBattler) == ABILITY_DISGUISE //Disguise Protected
-        && (SPECIES(gActiveBattler) == SPECIES_MIMIKYU || hasFoolsGold) // Mimikyu or Fools Gold
+        && ((SPECIES(gActiveBattler) >= SPECIES_MYSTERIOUSLIFEFORM_BULBORB && SPECIES(gActiveBattler) <= SPECIES_MYSTERIOUSLIFEFORM_BLOWHOG) || hasFoolsGold) // ??? or Fools Gold
         && (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
         && !IS_TRANSFORMED(gActiveBattler))
         {
@@ -743,41 +725,14 @@ void atk0C_datahpupdate(void)
 				gProtectStructs[gActiveBattler].specialBank = gBankAttacker;
 				gSpecialStatuses[gActiveBattler].moveturnSpecialBank = gBankAttacker;
 			}
-
+			
 			gBattleScripting.bank = gActiveBattler;
-			hasFoolsGold ? DoFormChange(gActiveBattler, SPECIES_DWARFORANGEBULBORB, TRUE, FALSE, FALSE) :DoFormChange(gActiveBattler, SPECIES_MIMIKYU_BUSTED, TRUE, FALSE, FALSE);
+			DoFormChange(gActiveBattler, hasFoolsGold ? (SPECIES_GILDEMANDWEE_NOGOLD - SPECIES_GILDEMANDWEE + SPECIES(gActiveBattler)) : SPECIES_MYSTERIOUSLIFEFORM , TRUE, FALSE, FALSE);
 			gBattlescriptCurrInstr += 2;
 			BattleScriptPushCursor();
-			gBattlescriptCurrInstr = hasFoolsGold ? BattleScript_FoolsGoldTransform : BattleScript_DisguiseTransform;
+			gBattlescriptCurrInstr = BattleScript_FoolsGoldTransform;
 			return;
 		}
-		#endif
-		#ifdef SPECIES_EISCUE
-		else if (ABILITY(gActiveBattler) == ABILITY_ICEFACE //Disguise Protected
-		&& SPECIES(gActiveBattler) == SPECIES_EISCUE
-		&& SPLIT(gCurrentMove) == SPLIT_PHYSICAL //Only physical attacks break the ice
-		&& (!(gHitMarker & (HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG)) || gNewBS->breakDisguiseSpecialDmg)
-		&& !IS_TRANSFORMED(gActiveBattler))
-		{
-			if (gSpecialStatuses[gActiveBattler].moveturnLostHP == 0)
-				gSpecialStatuses[gActiveBattler].moveturnLostHP = 1;
-			gHpDealt = 1;
-			gNewBS->AttackerDidDamageAtLeastOnce = TRUE;
-			gMoveResultFlags = 0;
-
-			gProtectStructs[gActiveBattler].physicalDmg = gHpDealt;
-			gSpecialStatuses[gActiveBattler].moveturnLostHP_physical = gHpDealt;
-			gProtectStructs[gActiveBattler].physicalBank = gBankAttacker;
-			gSpecialStatuses[gActiveBattler].moveturnPhysicalBank = gBankAttacker;
-
-			gBattleScripting.bank = gActiveBattler;
-			DoFormChange(gActiveBattler, SPECIES_EISCUE_NOICE, TRUE, TRUE, FALSE);
-			gBattlescriptCurrInstr += 2;
-			BattleScriptPushCursor();
-			gBattlescriptCurrInstr = BattleScript_IceFaceTransform;
-			return;
-		}
-		#endif
 		else //No Substitute
 		{
 			if (gBattleMoveDamage < 0) //HP goes up
@@ -3458,7 +3413,7 @@ static u32 CreatePersonalityRetainingVisualDataForOtId(u32 originalPersonality, 
 	bool8 isMinior = IsMinior(species);
 	u16 miniorCore = GetMiniorCoreFromPersonality(originalPersonality);
 	bool8 isShiny = IsShinyOtIdPersonality(originalOtId, originalPersonality);
-
+/*
 	//Try to copy Spinda's spots if you can
 	if (species == SPECIES_SPINDA)
 	{
@@ -3473,7 +3428,7 @@ static u32 CreatePersonalityRetainingVisualDataForOtId(u32 originalPersonality, 
 				return originalPersonality; //Use the Spinda's actual personality
 		}
 	}
-
+*/
 	//Randomize a personality until a match is found
 	do
 	{
@@ -3488,7 +3443,6 @@ static u32 CreatePersonalityRetainingVisualDataForOtId(u32 originalPersonality, 
 	|| GetGenderFromSpeciesAndPersonality(species, personality) != gender
 	|| (isShiny && !IsShinyOtIdPersonality(newOtId, personality))
 	|| (!isShiny && IsShinyOtIdPersonality(newOtId, personality))
-	|| (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
 	|| (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
 
 	return personality;

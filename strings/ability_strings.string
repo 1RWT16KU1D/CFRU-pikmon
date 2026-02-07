@@ -170,6 +170,9 @@ Grass grew to cover the\nbattlefield!\p
 #org @gText_FoolsGoldDisguisedShattered
 [SCRIPTING_BANK]'s gold plating was\ndestroyed!
 
+#org @gText_FoolsGoldMystery
+[SCRIPTING_BANK] melted into goo!
+
 #org @gText_FoolsGoldTransformed
 [SCRIPTING_BANK] transformed!
 

@@ -153,14 +153,12 @@ void SwitchOutFormsRevert(u8 bank)
 			break;
 		#endif
 
-		#if (defined SPECIES_MORPEKO && defined SPECIES_MORPEKO_HANGRY)
-		case SPECIES_MORPEKO_HANGRY:
+		case SPECIES_BEARDEDAMPRAT:
 			if (backupSpecies != SPECIES_NONE)
 				DoFormChange(bank, backupSpecies, FALSE, TRUE, FALSE);
 			else
-				DoFormChange(bank, SPECIES_MORPEKO, FALSE, TRUE, FALSE);
+				DoFormChange(bank, SPECIES_BEARDEDAMPRAT_STATIC, FALSE, TRUE, FALSE);
 			break;
-		#endif
 
 		#if (defined SPECIES_CRAMORANT && defined SPECIES_CRAMORANT_GULPING && defined SPECIES_CRAMORANT_GORGING)
 		case SPECIES_CRAMORANT_GULPING:

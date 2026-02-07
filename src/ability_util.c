@@ -580,7 +580,7 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_FrostBody;
 			break;
 		case ABILITY_DISGUISE:
-			if (SpeciesHasFoolsGold(species))
+			if (species < SPECIES_MYSTERIOUSLIFEFORM)
 				return gText_AbilityName_FoolsGold;
 			break;
 		case ABILITY_SANDSTREAM:
@@ -769,7 +769,7 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_FrostBody;
 			break;
 		case ABILITY_DISGUISE:
-			if (SpeciesHasFoolsGold(species))
+			if (species < SPECIES_MYSTERIOUSLIFEFORM)
 				return gText_AbilityDescription_FoolsGold;
 			break;
 		case ABILITY_SANDSTREAM:
@@ -1099,16 +1099,10 @@ bool8 IsAffectedBySturdy(u8 defAbility, u8 bankDef)
 
 bool8 IsAffectedByDisguse(unusedArg u8 defAbility, unusedArg u16 defSpecies, unusedArg u8 moveSplit)
 {
-	#ifdef SPECIES_MIMIKYU
-	if (defAbility == ABILITY_DISGUISE && defSpecies == SPECIES_MIMIKYU)
+	if (defAbility == ABILITY_DISGUISE && defSpecies >= SPECIES_MYSTERIOUSLIFEFORM_BULBORB && defSpecies <= SPECIES_MYSTERIOUSLIFEFORM_BLOWHOG)
 		return TRUE;
-	#endif
-	#ifdef SPECIES_EISCUE
-	if (defAbility == ABILITY_ICEFACE && defSpecies == SPECIES_EISCUE && moveSplit == SPLIT_PHYSICAL)
-		return TRUE;
-	#endif
 
-	if (defAbility == ABILITY_FOOLSGOLD && SpeciesHasFoolsGold(defSpecies))
+	if (defAbility == ABILITY_DISGUISE && SpeciesHasFoolsGold(defSpecies))
 		return TRUE;
 
 	return FALSE;
@@ -1619,61 +1613,35 @@ bool8 SpeciesHasZerotoHero(unusedArg u16 species) //Custom Unbound Ability
 
 bool8 SpeciesHasSweetNectar(unusedArg u16 species)
 {
-	#if (defined SPECIES_BULBORB && defined SPECIES_JUMBOBULBORB)
-	return species == SPECIES_BULBORB || species == SPECIES_JUMBOBULBORB;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_UJADANI || species == SPECIES_HONEYWISP || species == SPECIES_DANDELFLY || SPECIES_SPECTRALID_YELLOW;
 }
 
 bool8 SpeciesHasSucker(unusedArg u16 species)
 {
-	#ifdef SPECIES_BULBORBLARVA
-	return species == SPECIES_BULBORBLARVA;
-	#endif
+	return species == SPECIES_SHEARFLEA || species == SPECIES_BOGSWALLOW || species == SPECIES_WADDLEQUAFF;
 }
 
 bool8 SpeciesHasBigMoney(unusedArg u16 species)
 {
-	#ifdef SPECIES_DWARFBULBORB
-	return species == SPECIES_DWARFBULBORB;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_STUFFEDBELLBLOOM;
 }
 
 bool8 SpeciesHasWindForce(unusedArg u16 species)
 {
-	#ifdef SPECIES_TORNADUS
-	return species == SPECIES_TORNADUS;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_WITHERINGBLOWHOG || SPECIES_PUFFYBLOWHOG || SPECIES_ICYBLOWHOG || SPECIES_SNOWFLAKEFLUTTERTAIL || SPECIES_WINGEDPIKMIN_MEGA;
 }
 
 bool8 SpeciesHasFrostBody(unusedArg u16 species)
 {
-	#ifdef SPECIES_CRYOGONAL
-	return species == SPECIES_CRYOGONAL;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_SNOWYBLOWHOG || SPECIES_BLIZZARDINGBLOWHOG || SPECIES_SNOWFLAKEFLUTTERTAIL;
 }
 
 bool8 SpeciesHasFoolsGold(unusedArg u16 species)
 {
-	#ifdef SPECIES_PERRSERKER
-	return species == SPECIES_PERRSERKER;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_GILDEMANDER || species == SPECIES_GILDEMANDWEE;
 }
 
 bool8 SpeciesHasGloomyAura(unusedArg u16 species)
 {
-	#ifdef SPECIES_ARMOREDCANNONLARVA
-	return species == SPECIES_ARMOREDCANNONLARVA;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_SMOKYPROGG  || SPECIES_SMOKYPROGG_MASTER;
 }
