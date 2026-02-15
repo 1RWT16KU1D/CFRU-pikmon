@@ -471,7 +471,7 @@ As One
 Zen Mode
 
 #org @NAME_BATTLE_BOND
-Battle Bond
+Inhale
 
 #org @NAME_BEAST_BOOST
 Beast Boost
@@ -1009,3 +1009,36 @@ Fool's Gold
 
 #org @gText_AbilityName_GloomyAura
 Gloomy Aura
+
+#org @gText_AbilityName_SuperSoaker
+Super Soaker
+
+#org @gText_AbilityName_Inflammate
+Inflammate
+
+#org @gText_AbilityName_Saturate
+Saturate
+
+#org @gText_AbilityName_Martialize
+Martialize
+
+#org @gText_AbilityName_Venomize
+Venomize
+
+#org @gText_AbilityName_Mineralate
+Mineralate
+
+#org @gText_AbilityName_BoilingPoint
+Boiling Point
+
+#org @gText_AbilityName_Composer
+Composer
+
+#org @gText_AbilityName_RagingSteps
+Raging Steps
+
+#org @gText_AbilityName_BigSteps
+Big Steps
+
+#org @gText_AbilityName_Sparkly
+Sparkly

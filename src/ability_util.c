@@ -143,6 +143,28 @@ extern const u8 gText_AbilityName_FoolsGold[];
 extern const u8 gText_AbilityDescription_FoolsGold[];
 extern const u8 gText_AbilityName_GloomyAura[];
 extern const u8 gText_AbilityDescription_GloomyAura[];
+extern const u8 gText_AbilityName_SuperSoaker[];
+extern const u8 gText_AbilityDescription_SuperSoaker[];
+extern const u8 gText_AbilityName_Inflammate[];
+extern const u8 gText_AbilityDescription_Inflammate[];
+extern const u8 gText_AbilityName_Saturate[];
+extern const u8 gText_AbilityDescription_Saturate[];
+extern const u8 gText_AbilityName_Martialize[];
+extern const u8 gText_AbilityDescription_Martialize[];
+extern const u8 gText_AbilityName_Venomize[];
+extern const u8 gText_AbilityDescription_Venomize[];
+extern const u8 gText_AbilityName_Mineralate[];
+extern const u8 gText_AbilityDescription_Mineralate[];
+extern const u8 gText_AbilityName_BoilingPoint[];
+extern const u8 gText_AbilityDescription_BoilingPoint[];
+extern const u8 gText_AbilityName_Composer[];
+extern const u8 gText_AbilityDescription_Composer[];
+extern const u8 gText_AbilityName_RagingSteps[];
+extern const u8 gText_AbilityDescription_RagingSteps[];
+extern const u8 gText_AbilityName_BigSteps[];
+extern const u8 gText_AbilityDescription_BigSteps[];
+extern const u8 gText_AbilityName_Sparkly[];
+extern const u8 gText_AbilityDescription_Sparkly[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -184,37 +206,17 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_SupremeOverlord;
 			break;
 		case ABILITY_ROUGHSKIN:
-			if (IsSpeciesOfType(species, TYPE_STEEL)) //Species original type is Steel - Assumes Ferroseed, Ferrothorn, and Togedemaru types haven't changed
-				return gText_AbilityName_IronBarbs; //Gives all Steel-types with Rough Skin in randomizers Iron Barbs instead
-			break;
-		case ABILITY_STURDY:
-			switch (dexNum)
-			{
-				#if (defined NATIONAL_DEX_DWARFBULBORB && defined NATIONAL_DEX_DWARFORANGEBULBORB)
-				case NATIONAL_DEX_DWARFBULBORB:
-				case NATIONAL_DEX_DWARFORANGEBULBORB:
-					return gText_AbilityName_NineLives;
-				#endif
-				#if (defined NATIONAL_DEX_MACHOKE && defined NATIONAL_DEX_MACHAMP)
-				case NATIONAL_DEX_MACHOKE:
-				case NATIONAL_DEX_MACHAMP:
-					return gText_AbilityName_FocusBelt;
-				#endif
-			}
+			switch (species){
+				case SPECIES_PRICKLEPUFF:
+				case SPECIES_NAMAPONGASHI:
+					return gText_AbilityName_IronBarbs;
+				}
 			break;
 		case ABILITY_FILTER:
-			switch (dexNum)
+			switch (species)
 			{
-				#if (defined NATIONAL_DEX_CAMERUPT && defined NATIONAL_DEX_RHYPERIOR && defined NATIONAL_DEX_TIRTOUGA && defined NATIONAL_DEX_CARRACOSTA)
-				case NATIONAL_DEX_CAMERUPT:
-				case NATIONAL_DEX_RHYPERIOR:
-				case NATIONAL_DEX_TIRTOUGA:
-				case NATIONAL_DEX_CARRACOSTA:
-				#ifdef NATIONAL_DEX_STONJOURNER
-				case NATIONAL_DEX_STONJOURNER:
-				#endif
+				case SPECIES_ROCKPIKMIN:
 					return gText_AbilityName_SolidRock;
-				#endif
 			}
 			break;
 		case ABILITY_MOLDBREAKER:
@@ -280,13 +282,11 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			}
 			break;
 		case ABILITY_GOOEY:
-			switch (dexNum)
+			switch (species)
 			{
-				#if (defined NATIONAL_DEX_HERMITCRAWMAD && defined NATIONAL_DEX_BUGEYEDCRAWMAD)
-				case NATIONAL_DEX_HERMITCRAWMAD:
-				case NATIONAL_DEX_BUGEYEDCRAWMAD:
+				case SPECIES_SHAGGYLONGLEGS:
+				case SPECIES_HAIRYBULBORB:
 					return gText_AbilityName_TanglingHair;
-				#endif
 				#if (defined NATIONAL_DEX_MAREEP && defined NATIONAL_DEX_FLAAFFY && defined NATIONAL_DEX_AMPHAROS)
 				case NATIONAL_DEX_MAREEP:
 				case NATIONAL_DEX_FLAAFFY:
@@ -313,41 +313,28 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_SlipperyTail;
 			break;
 		case ABILITY_EMERGENCYEXIT:
-			switch (dexNum)
+			switch (species)
 			{
-				#ifdef NATIONAL_DEX_WIMPOD
-				case NATIONAL_DEX_WIMPOD:
+				case SPECIES_SKITTERLEAF:
 					return gText_AbilityName_WimpOut;
-				#endif
 			}
 			break;
 		case ABILITY_DAZZLING:
-			switch (dexNum)
+			switch (species)
 			{
 				default:
 					break;
-				#ifdef NATIONAL_DEX_TSAREENA
-				case NATIONAL_DEX_TSAREENA:
-				#endif
-				#ifdef NATIONAL_DEX_FEMALESHEARGRUB
-				case NATIONAL_DEX_FEMALESHEARGRUB:
-				#endif
-				#ifdef NATIONAL_DEX_VESPIQUEN
-				case NATIONAL_DEX_VESPIQUEN:
-				#endif
+				case SPECIES_EMPRESSBULBLAX:
 					return gText_AbilityName_QueenlyMajesty;
 				if (SpeciesHasArmorTail(species))
 				return gText_AbilityName_ArmorTail;
 			}
 			break;
 		case ABILITY_RECEIVER:
-			switch (dexNum)
+			switch (species)
 			{
-				#if (defined NATIONAL_DEX_GRIMER && defined NATIONAL_DEX_SNOWYBLOWHOG)
-				case NATIONAL_DEX_GRIMER:
-				case NATIONAL_DEX_SNOWYBLOWHOG:
+				case SPECIES_WHITEPIKMIN_MEGA:
 					return gText_AbilityName_PowerOfAlchemy;
-				#endif
 			}
 			break;
 		case ABILITY_MERCILESS:
@@ -375,23 +362,13 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			}
 			break;
 		case ABILITY_PUNKROCK:
-			switch (dexNum)
+			switch (species)
 			{
 				#if (defined NATIONAL_DEX_WHISMUR && defined NATIONAL_DEX_LOUDRED && defined NATIONAL_DEX_EXPLOUD)
 				case NATIONAL_DEX_WHISMUR:
 				case NATIONAL_DEX_LOUDRED:
 				case NATIONAL_DEX_EXPLOUD:
 					return gText_AbilityName_Bellow;
-				#endif
-				#if (defined NATIONAL_DEX_VIBRAVA && defined NATIONAL_DEX_FLYGON)
-				case NATIONAL_DEX_VIBRAVA:
-				case NATIONAL_DEX_FLYGON:
-					return gText_AbilityName_SoundWaves;
-				#endif
-				#if (defined NATIONAL_DEX_NOIBAT && defined NATIONAL_DEX_NOIVERN)
-				case NATIONAL_DEX_NOIBAT:
-				case NATIONAL_DEX_NOIVERN:
-					return gText_AbilityName_SoundWaves;
 				#endif
 			}
 			break;
@@ -502,6 +479,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_Protosynthesis;
 			break;
 		case ABILITY_IMMUNITY:
+			if (SpeciesHasSparkly(species))
+					return gText_AbilityName_Sparkly;
 			if (SpeciesHasPurifyingSalt(species))
 				return gText_AbilityName_PureSalt;
 			break;
@@ -538,6 +517,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_WellBakedBody;
 			break;
 		case ABILITY_POISONTOUCH:
+			if(SpeciesHasBoilingPoint(species))
+				return gText_AbilityName_BoilingPoint;
 			if(SpeciesHasToxicChain(species))
 				return gText_AbilityName_ToxicChain;
 			break;
@@ -556,10 +537,14 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_ANGERPOINT:
 			if(SpeciesHasWindRider(species))
 				return gText_AbilityName_WindRider;
+			if(SpeciesHasRagingSteps(species))
+				return gText_AbilityName_RagingSteps;
 			break;
 		case ABILITY_TORRENT:
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityName_ZerotoHero;
+			if (SpeciesHasSuperSoaker(species))
+				return gText_AbilityName_SuperSoaker;
 			break;
 
 		// New PikMin Abilities
@@ -586,6 +571,24 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_SANDSTREAM:
 			if (SpeciesHasGloomyAura(species))
 				return gText_AbilityName_GloomyAura;
+			break;
+		case ABILITY_IRONFIST:
+			if (SpeciesHasBigSteps(species))
+				return gText_AbilityName_BigSteps;
+			break;
+		case ABILITY_PRANKSTER:
+			if (SpeciesHasComposer(species))
+					return gText_AbilityName_Composer;
+			break;
+		case ABILITY_AERILATE:
+				switch(SpeciesHasAerilateType(species)){
+					case TYPE_FIRE :	return gText_AbilityName_Inflammate;
+					case TYPE_WATER :	return gText_AbilityName_Saturate;
+					case TYPE_FIGHTING :	return gText_AbilityName_Martialize;
+					case TYPE_POISON :	return gText_AbilityName_Venomize;
+					case TYPE_ROCK :	return gText_AbilityName_Mineralate;
+					break;
+				}
 			break;
 	}
 	return NULL;
@@ -687,7 +690,9 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_Protosynthesis;
 			break;
 		case ABILITY_IMMUNITY:
-		if (SpeciesHasPurifyingSalt(species))
+			if (SpeciesHasSparkly(species))
+					return gText_AbilityDescription_Sparkly;
+			if (SpeciesHasPurifyingSalt(species))
 				return gText_AbilityDescription_PurifyingSalt;
 			break;
 		case ABILITY_STEELWORKER:
@@ -727,6 +732,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_WellBakedBody;
 			break;
 		case ABILITY_POISONTOUCH:
+			if(SpeciesHasBoilingPoint(species))
+				return gText_AbilityDescription_BoilingPoint;
 			if(SpeciesHasToxicChain(species))
 				return gText_AbilityDescription_ToxicChain;
 			break;
@@ -745,10 +752,14 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_ANGERPOINT:
 			if(SpeciesHasWindRider(species))
 				return gText_AbilityDescription_WindRider;
+			if(SpeciesHasRagingSteps(species))
+				return gText_AbilityDescription_RagingSteps;
 			break;
 		case ABILITY_TORRENT:
 			if (SpeciesHasZerotoHero(species))
 				return gText_AbilityDescription_ZerotoHero;
+			if (SpeciesHasSuperSoaker(species))
+				return gText_AbilityDescription_SuperSoaker;
 			break;
 	
 		// New PikMin Abilities
@@ -775,6 +786,24 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_SANDSTREAM:
 			if (SpeciesHasGloomyAura(species))
 				return gText_AbilityDescription_GloomyAura;
+			break;
+		case ABILITY_IRONFIST:
+			if (SpeciesHasBigSteps(species))
+				return gText_AbilityDescription_BigSteps;
+			break;
+		case ABILITY_AERILATE:
+				switch(SpeciesHasAerilateType(species)){
+					case TYPE_FIRE :	return gText_AbilityDescription_Inflammate;
+					case TYPE_WATER :	return gText_AbilityDescription_Saturate;
+					case TYPE_FIGHTING :	return gText_AbilityDescription_Martialize;
+					case TYPE_POISON :	return gText_AbilityDescription_Venomize;
+					case TYPE_ROCK :	return gText_AbilityDescription_Mineralate;
+					break;
+				}
+			break;
+		case ABILITY_PRANKSTER:
+			if (SpeciesHasComposer(species))
+					return gText_AbilityDescription_Composer;
 			break;
 	}
 
@@ -1234,11 +1263,7 @@ bool8 IsVitalSpiritAbility(u8 ability, u16 species)
 
 bool8 SpeciesHasAngerShell(unusedArg u16 species)
 {
-	#ifdef SPECIES_KLAWF
-	return species == SPECIES_KLAWF;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_QUEENSHEARWIG || species == SPECIES_CRAMMEDWRAITH;
 }
 
 bool8 SpeciesHasArmorTail(unusedArg u16 species)
@@ -1279,29 +1304,17 @@ bool8 SpeciesHasTabletsofRuin(unusedArg u16 species)
 
 bool8 SpeciesHasVesselofRuin(unusedArg u16 species)
 {
-	#ifdef SPECIES_TING_LU
-	return species == SPECIES_TING_LU;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_PLACEHOLDERLARVA;
 }
 
 bool8 SpeciesHasCostar(unusedArg u16 species)
 {
-	#ifdef SPECIES_FLAMIGO
-	return species == SPECIES_FLAMIGO;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_SCORNETMAESTRO;
 }
 
 bool8 SpeciesHasEarthEater(unusedArg u16 species)
 {
-	#ifdef SPECIES_ORTHWORM
-	return species == SPECIES_ORTHWORM;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_BOGSWALLOW || species == SPECIES_MUCKERSKATE || species == SPECIES_SANDBELCHINGMEERSLUG;
 }
 
 bool8 SpeciesHasElectromorphosis(unusedArg u16 species)
@@ -1315,29 +1328,18 @@ bool8 SpeciesHasElectromorphosis(unusedArg u16 species)
 
 bool8 SpeciesHasCudChew(unusedArg u16 species)
 {
-	#if (defined SPECIES_TAUROS_P && SPECIES_TAUROS_AQUA_P && SPECIES_TAUROS_BLAZE_P && SPECIES_FARIGIRAF)
-	return species == SPECIES_TAUROS_P || species == SPECIES_TAUROS_AQUA_P || species == SPECIES_TAUROS_BLAZE_P || species == SPECIES_FARIGIRAF;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_WADDLEQUAFF;
 }
 
 bool8 SpeciesHasGoodAsGold(unusedArg u16 species)
 {
-	#ifdef SPECIES_GHOLDENGO
-	return species == SPECIES_GHOLDENGO;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_GLINTBEETLE;
 }
 
 bool8 SpeciesHasGuardDog(unusedArg u16 species)
 {
-	#if(defined SPECIES_MABOSSTIFF && SPECIES_OKIDOGI)
-	return species == SPECIES_MABOSSTIFF || species == SPECIES_OKIDOGI;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_OATCHI || species == SPECIES_MOSS || species == SPECIES_ANCIENTSIREHOUND
+		|| species == SPECIES_ANCIENTSIREHOUND_ICE || species == SPECIES_ANCIENTSIREHOUND_ELECTRIC || species == SPECIES_ANCIENTSIREHOUND_FIRE || species == SPECIES_ANCIENTSIREHOUND_GLOOM;
 }
 
 bool8 GuardDogPreventsLoweringStat(u8 ability, u8 statId, u8 bank)
@@ -1357,11 +1359,7 @@ bool8 GuardDogPreventsLoweringStat(u8 ability, u8 statId, u8 bank)
 
 bool8 SpeciesHasHadronEngine(unusedArg u16 species)
 {
-	#ifdef SPECIES_MIRAIDON
-	return species == SPECIES_MIRAIDON;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_LARGEMOUTHWOLLYHOP;
 }
 
 bool8 SpeciesHasMindsEye(unusedArg u16 species)
@@ -1386,63 +1384,35 @@ bool8 MindsEyePreventsLoweringStat(u8 ability, u8 statId)
 
 bool8 SpeciesHasMyceliumMight(unusedArg u16 species)
 {
-	#if (defined SPECIES_TOEDSCOOL && SPECIES_TOEDSCRUEL)
-	return species == SPECIES_TOEDSCOOL || species == SPECIES_TOEDSCRUEL;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_PUFFSTALK || species == SPECIES_PUFFSTOOL;
 }
 
 bool8 SpeciesHasOportunist(unusedArg u16 species)
 {
-	#ifdef SPECIES_ESPATHRA
-	return species == SPECIES_ESPATHRA;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_PEARLYCLAMCLAMP;
 }
 
 bool8 SpeciesHasOrichalcumPulse(unusedArg u16 species)
 {
-	#ifdef SPECIES_KORAIDON
-	return species == SPECIES_KORAIDON;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_PYROCLASTICSLOOCH_MEGA;
 }
 
 bool8 IsFullMetalBodyAbility(u8 ability, u16 species)
 {
 	if (!IsClearBodyAbility(ability))
 		return FALSE;
-
-	switch (SpeciesToNationalPokedexNum(species))
-	{
-		#ifdef NATIONAL_DEX_SOLGALEO
-		case NATIONAL_DEX_SOLGALEO:
-			return TRUE;
-		#endif
-	}
-
-	return FALSE;
+	
+	return species == SPECIES_GATTLINGGROINK_MEGA;
 }
 
 bool8 SpeciesHasProtosynthesis(unusedArg u16 species) //Custom Unbound Ability
 {
-	#if (defined SPECIES_GOUGING_FIRE && SPECIES_RAGING_BOLT && SPECIES_GREAT_TUSK && SPECIES_SCREAM_TAIL && SPECIES_BRUTE_BONNET && SPECIES_FLUTTER_MANE && SPECIES_SLITHER_WING && SPECIES_SANDY_SHOCKS && SPECIES_ROARING_MOON && SPECIES_WALKING_WAKE)
-	return species == SPECIES_GOUGING_FIRE || species == SPECIES_RAGING_BOLT || species == SPECIES_GREAT_TUSK || species == SPECIES_SCREAM_TAIL || species == SPECIES_BRUTE_BONNET || species == SPECIES_FLUTTER_MANE || species == SPECIES_SLITHER_WING || species == SPECIES_SANDY_SHOCKS || species == SPECIES_ROARING_MOON || species == SPECIES_WALKING_WAKE;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_PELLETPOSY || species == SPECIES_MASTERONION;
 }
 
 bool8 SpeciesHasPurifyingSalt(unusedArg u16 species)
 {
-	#if (defined SPECIES_NACLI && SPECIES_NACLSTACK && SPECIES_GARGANACL)
-	return species == SPECIES_NACLI || species == SPECIES_NACLSTACK || species == SPECIES_GARGANACL;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_SKUTTERCHUCK || species == SPECIES_CALCIFIEDCRUSHBLAT || species == SPECIES_ARMOREDMAWDAD || species == SPECIES_ROCKPIKMIN_MEGA;
 }
 
 bool8 CheckStatusAny(u8 bank)
@@ -1452,11 +1422,8 @@ bool8 CheckStatusAny(u8 bank)
 
 bool8 SpeciesHasRockyPayload(unusedArg u16 species)
 {
-	#ifdef SPECIES_BOMBIRDIER
-	return species == SPECIES_BOMBIRDIER;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_SKUTTERCHUCK || species == SPECIES_MASTERHOP_MEGA || species == SPECIES_SWOOPINGSNITCHBUG
+	|| species == SPECIES_BUMBLINGSNITCHBUG || species == SPECIES_DIRIGIBUG;
 }
 
 bool8 SpeciesHasSeedSower(unusedArg u16 species)
@@ -1470,20 +1437,12 @@ bool8 SpeciesHasSeedSower(unusedArg u16 species)
 
 bool8 SpeciesHasSharpness(unusedArg u16 species)
 {
-	#if (defined SPECIES_GALLADE && SPECIES_SAMUROTT_H && SPECIES_KLEAVOR && SPECIES_VELUZA)
-	return species == SPECIES_ARBOLIVA || species == SPECIES_SAMUROTT_H || species == SPECIES_KLEAVOR || species == SPECIES_VELUZA;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_BLADEDBEEB;
 }
 
 bool8 SpeciesHasSupremeOverlord(unusedArg u16 species)
 {
-	#ifdef SPECIES_KINGAMBIT
-	return species == SPECIES_KINGAMBIT;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_EMPERORBULBLAX || species == SPECIES_SOVREIGNBULBLAX || species == SPECIES_PLACEHOLDERLARVA;
 }
 
 bool8 IsFaintedPokemonInParty(void)
@@ -1503,11 +1462,7 @@ bool8 IsFaintedPokemonInParty(void)
 
 bool8 SpeciesHasSuperSweetSyrup(unusedArg u16 species)
 {
-	#if (defined SPECIES_DIPPLIN && SPECIES_HYDRAPPLE)
-	return species == SPECIES_DIPPLIN || species == SPECIES_HYDRAPPLE;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_GIANTBREADBUG_MEGA;
 }
 
 bool8 SpeciesHasTeraShift(unusedArg u16 species)
@@ -1548,29 +1503,17 @@ bool8 SpeciesHasToxicChain(unusedArg u16 species)
 
 bool8 SpeciesHasPoisonPuppeteer(unusedArg u16 species)
 {
-	#ifdef SPECIES_PECHARUNT
-	return species == SPECIES_PECHARUNT;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_TOXSTOOL;
 }
 
 bool8 SpeciesHasToxicDebris(unusedArg u16 species)
 {
-	#ifdef SPECIES_GLIMMORA
-	return species == SPECIES_GLIMMORA;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_TOXSTOOL || species == SPECIES_MOLDYDWARFBULBORB || species == SPECIES_MOLDYSLOOCH;
 }
 
 bool8 SpeciesHasWellBakedBody(unusedArg u16 species)
 {
-	#ifdef SPECIES_DACHSBUN
-	return species == SPECIES_DACHSBUN;
-	#else
-	return FALSE;
-	#endif
+	return species == SPECIES_CRUMBUG || species == SPECIES_BREADBUG || species == SPECIES_GIANTBREADBUG;
 }
 
 bool8 AngerShellStatsCheck(u8 bank)
@@ -1644,4 +1587,75 @@ bool8 SpeciesHasFoolsGold(unusedArg u16 species)
 bool8 SpeciesHasGloomyAura(unusedArg u16 species)
 {
 	return species == SPECIES_SMOKYPROGG  || SPECIES_SMOKYPROGG_MASTER;
+}
+
+bool8 SpeciesHasSuperSoaker(unusedArg u16 species)
+{
+	return species == SPECIES_MUCKERSKATE_MEGA || species == SPECIES_TELESCOPINGPUMPHOG;
+}
+
+bool8 SpeciesHasBoilingPoint(unusedArg u16 species)
+{
+	return species == SPECIES_WATERYBLOWHOG_MEGA;
+}
+
+bool8 SpeciesHasComposer(unusedArg u16 species)
+{
+	return species == SPECIES_SCORNETMAESTRO;
+}
+
+bool8 SpeciesHasRagingSteps(unusedArg u16 species)
+{
+	return species == SPECIES_RAGINGLONGLEGS;
+}
+
+bool8 SpeciesHasSparkly(unusedArg u16 species)
+{
+	return species == SPECIES_GLINTBEETLE_MEGA;
+}
+
+bool8 SpeciesHasBigSteps(unusedArg u16 species)
+{
+	return species == SPECIES_BALDYLONGLEGS || species == SPECIES_SHAGGYLONGLEGS || species == SPECIES_ELONGATEDCRUSHBLAT;
+}
+
+bool8 IsKirby(unusedArg u16 species)
+{
+	return species == SPECIES_KIRBY || (species >= SPECIES_KIRBY_FLYING && species <= SPECIES_KIRBY_FAIRY);
+}
+
+u8 SpeciesHasAerilateType(unusedArg u16 species)
+{
+	switch (species){
+		case SPECIES_OATCHI_MEGA :
+		case SPECIES_FIREFLAPBULBORB :
+		case SPECIES_SOUL_RED :
+			return TYPE_FIRE; //inflammate
+
+		case SPECIES_WATERYBLOWHOG :
+		case SPECIES_SOUL_BLUE :
+			return TYPE_WATER; //saturate
+
+		case SPECIES_SOUL_PURPLE :
+			return TYPE_FIGHTING; //martialize
+
+		case SPECIES_SOUL_WHITE :
+			return TYPE_POISON; //venomize
+
+		case SPECIES_SOUL_ROCK :
+			return TYPE_ROCK; //mineralate
+
+		default:
+			return TYPE_FLYING; //aerilate
+	}
+}
+
+bool8 IsStompingMove(unusedArg u16 move)
+{
+	return move == MOVE_STOMPOUT 	|| move == MOVE_AXEKICK 	|| move == MOVE_THUNDEROUSKICK
+	|| move == MOVE_TRIPLEAXEL 	|| move == MOVE_BLAZEKICK 	|| move == MOVE_DOUBLEKICK
+	|| move == MOVE_HIGHHORSEPOWER	|| move == MOVE_HIGHJUMPKICK	|| move == MOVE_JUMPKICK
+	|| move == MOVE_LOWKICK		|| move == MOVE_LOWSWEEP	|| move == MOVE_MEGAKICK
+	|| move == MOVE_ROLLINGKICK	|| move == MOVE_STOMP		|| move == MOVE_STOMPINGTANTRUM
+	|| move == MOVE_TRIPLEKICK	|| move == MOVE_TROPKICK;
 }

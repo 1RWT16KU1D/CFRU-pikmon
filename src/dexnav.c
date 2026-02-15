@@ -71,8 +71,6 @@ dexnav.c
 #define AREA_LAND 0
 #define AREA_WATER 1
 
-#define IS_NEWER_UNOWN_LETTER(species) (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QUESTION)
-
 extern const struct SwarmData gSwarmTable[];
 
 //External functions
@@ -1789,7 +1787,7 @@ static void DexNavDrawPotential(u8 potential, u8* spriteIdAddr)
 void DexNavHudDrawSpeciesIcon(u16 species, u8* spriteIdAddr)
 {
 	u32 pid = 0xFFFFFFFF;
-	if (species == SPECIES_UNOWN)
+	if (species < SPECIES_NONE)
 		pid = GenerateUnownPersonalityByLetter(sDexNavHudPtr->unownLetter - 1);
 
 	//Load which palette the species icon uses
@@ -1860,14 +1858,6 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 		gLastDexNavSpecies = species;
 		gDexNavCooldown = FALSE; //Don't need to walk another step if searching for a different Pokemon
 	}
-
-	if (IS_NEWER_UNOWN_LETTER(species))
-	{
-		sDexNavHudPtr->unownLetter = species - SPECIES_UNOWN_B + 2; //Because B is 1
-		sDexNavHudPtr->species = species = SPECIES_UNOWN;
-	}
-	else //UNOWN A
-		sDexNavHudPtr->unownLetter = 1;
 
 	sDexNavHudPtr->environment = environment;
 	u16 dexNum = SpeciesToNationalPokedexNum(species);
@@ -2304,25 +2294,6 @@ static void DexNavPopulateEncounterList(void)
 			}
 		}
 	}
-
-	#ifdef NATIONAL_DEX_UNOWN
-	if (InTanobyRuins() && !GetSetPokedexFlag(NATIONAL_DEX_UNOWN, FLAG_GET_SEEN))
-	{ //This is so the right amount of ? appear for Unown in the different chambers
-		u16 unowns[MAX_TOTAL_LAND_MONS + 1];
-		unowns[0] = HIDDEN_SPEECIES_TERMIN;
-
-		sDexNavGUIPtr->numHiddenLandMons = 0;
-		for (int i = 0; i < MAX_TOTAL_LAND_MONS; ++i)
-		{
-			u8 letter = PickUnownLetter(SPECIES_UNOWN, i);
-			if (!CheckTableForSpecies(letter, unowns)) //Table with Unown letters treated like a species table
-			{
-				unowns[sDexNavGUIPtr->numHiddenLandMons++] = letter;
-				unowns[sDexNavGUIPtr->numHiddenLandMons] = HIDDEN_SPEECIES_TERMIN; //Shift end down 1
-			}
-		}
-	}
-	#endif
 
 	sDexNavGUIPtr->numLandMons = grassIndex;
 	sDexNavGUIPtr->numWaterMons = waterIndex;
@@ -2916,13 +2887,6 @@ static u16 TryAdjustUnownSpeciesAtCursorPos(u16 species)
 	u16 randomizedSpecies = species;
 	TryRandomizeSpecies(&randomizedSpecies);
 
-	if (randomizedSpecies == SPECIES_UNOWN)
-	{
-		u8 letter = sDexNavGUIPtr->unownFormsByDNavIndices[GetLandSlotSelected()] - 1;
-		if (letter > 0)
-			species = SPECIES_UNOWN_B + letter - 1;
-	}
-
 	return species;
 }
 
@@ -3497,9 +3461,6 @@ static void DexNavLoadMonIcons(void)
 		{
 			UpdateSpritePosition(&gSprites[spriteId], AREA_LAND, i);
 
-			if (letter > 1) //This slot is an Unown greater than A
-				species = SPECIES_UNOWN_B + letter - 2;
-
 			if (species != SPECIES_NONE)
 			{
 				if (registeredArea == AREA_LAND && registeredSpecies == species && registeredSpecies != SPECIES_NONE)
@@ -3554,8 +3515,6 @@ static void DexNavLoadMonIcons(void)
 
 			if (species != SPECIES_NONE)
 			{
-				if (letter > 1) //This slot is an Unown greater than A
-					species = SPECIES_UNOWN_B + letter - 2;
 
 				if (registeredArea == AREA_WATER && registeredSpecies == species && registeredSpecies != SPECIES_NONE)
 				{

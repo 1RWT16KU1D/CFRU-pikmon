@@ -384,7 +384,7 @@ bool8 IsSpeciesOfType(u16 species, u8 type)
 
 bool8 IsSpeciesAffectedByScalemons(u16 species)
 {
-	if (species == SPECIES_SHEDINJA) //Shedinja would get OP stats because of its low HP and BST
+	if (species == SPECIES_REDBUBBLIMP) //Shedinja would get OP stats because of its low HP and BST
 		return FALSE;
 
 	if (IsOnlyScalemonsGame() && CanSpeciesEvolve(species))

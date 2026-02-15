@@ -126,6 +126,7 @@ ability_battle_scripts.s
 .global BattleScript_FoolsGoldPlateShattered
 .global BattleScript_FoolsGoldMystery
 .global BattleScript_FoolsGoldTransform
+.global BattleScript_RagingSteps
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1665,6 +1666,19 @@ BattleScript_FoolsGoldTransform:
 //	setword BATTLE_STRING_LOADER gText_FoolsGoldTransformed
 //	printstring 0x184
 //	waitmessage DELAY_1SECOND
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_RagingSteps:
+	call BattleScript_AbilityPopUp
+	setstatchanger STAT_SPD | INCREASE_1
+	setgraphicalstatchangevalues
+	playanimation BANK_TARGET ANIM_STAT_BUFF ANIM_ARG_1
+	setword BATTLE_STRING_LOADER gText_RagingSteps
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	call BattleScript_AbilityPopUpRevert
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

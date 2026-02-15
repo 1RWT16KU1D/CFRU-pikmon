@@ -302,7 +302,7 @@ void BuildTrainerPartySetup(void)
 		{
 			SetWildMonHeldItem();
 
-			if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) != SPECIES_SHEDINJA)
+			if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) != SPECIES_REDBUBBLIMP)
 			{
 				gEnemyParty[0].maxHP *= GetRaidBattleHPBoost();
 				gEnemyParty[0].hp *= GetRaidBattleHPBoost();
@@ -2602,7 +2602,7 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 	} while (GetNatureFromPersonality(personality) != nature
 	|| (keepGender && GetGenderFromSpeciesAndPersonality(species, personality) != gender)
 	|| (!forceShiny && IsShinyOtIdPersonality(otId, personality)) //Prevent NPCs from accidentally getting shinies
-	|| (keepLetterCore && species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter) //Make sure the Unown letter doesn't change
+	|| (keepLetterCore && species < SPECIES_NONE && GetUnownLetterFromPersonality(personality) != letter) //Make sure the Unown letter doesn't change
 	|| (keepLetterCore && isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore)); //Make sure the Minior core doesn't change
 
 	mon->personality = personality;
@@ -4301,7 +4301,7 @@ void ForceMonShiny(struct Pokemon* mon)
 		}
 
 	} while (GetNatureFromPersonality(personality) != nature || GetGenderFromSpeciesAndPersonality(species, personality) != gender
-	|| (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
+	|| (species < SPECIES_NONE && GetUnownLetterFromPersonality(personality) != letter)
 	|| (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
 
 	SetMonData(mon, MON_DATA_PERSONALITY, &personality);
@@ -4600,13 +4600,11 @@ void CalculateMonStatsNew(struct Pokemon *mon)
 
 	SetMonData(mon, MON_DATA_LEVEL, &level);
 
-	#ifdef SPECIES_SHEDINJA
-	if (species == SPECIES_SHEDINJA)
+	if (species == SPECIES_REDBUBBLIMP)
 	{
 		newMaxHP = 1;
 	}
 	else
-	#endif
 	{
 		u32 n = 2 * baseHP + ivs[STAT_HP];
 		newMaxHP = MathMin((((n + evs[STAT_HP] / 4) * level) / 100) + level + 10, 0xFFFF);
@@ -4652,9 +4650,7 @@ void CalculateMonStatsNew(struct Pokemon *mon)
 			CALC_STAT(base, ivs[i], evs[i], i, MON_DATA_ATK + (i - 1));
 		}
 	}
-
-	#ifdef SPECIES_SHEDINJA
-	if (species == SPECIES_SHEDINJA)
+	if (species == SPECIES_REDBUBBLIMP)
 	{
 		if (currentHP != 0 || oldMaxHP == 0)
 			currentHP = 1;
@@ -4662,7 +4658,6 @@ void CalculateMonStatsNew(struct Pokemon *mon)
 			return;
 	}
 	else
-	#endif
 	{
 		if (currentHP == 0 && oldMaxHP == 0)
 			currentHP = newMaxHP;

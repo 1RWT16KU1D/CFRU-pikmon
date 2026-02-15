@@ -108,13 +108,13 @@ static void CreateInitialRoamerMon(u16 species, u8 level, bool8 allowedOnLand, b
 	{
 		switch(GetStarterChoice()) { //0x80CBDB0
 			case SPECIES_BULBORBLARVA:
-				species = SPECIES_ENTEI;
+				species = SPECIES_REDPIKMIN;
 				break;
 			case SPECIES_FIERYBLOWLET:
-				species = SPECIES_SUICUNE;
+				species = SPECIES_BLUEPIKMIN;
 				break;
 			default:
-				species = SPECIES_RAIKOU;
+				species = SPECIES_YELLOWPIKMIN;
 		}
 	}
 
@@ -303,7 +303,7 @@ bool8 TryStartRoamerEncounter(u8 environment)
 {
 	for (int i = 0; i < MAX_NUM_ROAMERS; ++i)
 	{
-		if (IsRoamerAt(gSaveBlock1->location.mapGroup, gSaveBlock1->location.mapNum, i) && (Random() % 4) == 0)
+		if (IsRoamerAt(gSaveBlock1->location.mapGroup, gSaveBlock1->location.mapNum, i) && (Random() % 100) == 0)
 		{
 			switch (environment) {
 				case ENCOUNTER_TYPE_LAND:

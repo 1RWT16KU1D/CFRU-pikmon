@@ -176,5 +176,8 @@ Grass grew to cover the\nbattlefield!\p
 #org @gText_FoolsGoldTransformed
 [SCRIPTING_BANK] transformed!
 
+#org @gText_RagingSteps
+[SCRIPTING_BANK]'s [BUFFER][00] rose.
+
 #org @gText_GloomyWeatherContinues
 Deadly gases surround the\nbattlefield[.]

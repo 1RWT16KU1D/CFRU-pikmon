@@ -2273,6 +2273,7 @@ bool8 CanBePoisoned(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil)
 	{
 		switch (defAbility) {
 			case ABILITY_IMMUNITY:
+				return !SpeciesHasSparkly(SPECIES(bankDef));
 			case ABILITY_PASTELVEIL:
 				return FALSE;
 		}

@@ -1665,6 +1665,18 @@ void HandleAction_UseMove(void)
 		  && !(moveTarget & (MOVE_TARGET_ALL | MOVE_TARGET_BOTH))
 		  && NO_MOLD_BREAKERS(ABILITY(gBankAttacker), gCurrentMove))
 	{ //Try Ability Redirection
+		if(ABILITY(selectedTarget) != ABILITY_IMMUNITY || !SpeciesHasSparkly(SPECIES(selectedTarget))){
+			if (ABILITY(SIDE(gBankAttacker) ^ BIT_SIDE) == ABILITY_IMMUNITY && SpeciesHasSparkly(SPECIES(SIDE(gBankAttacker) ^ BIT_SIDE)))
+			{
+				gBankTarget = SIDE(gBankAttacker) ^ BIT_SIDE;
+				gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
+			}
+			else if (ABILITY(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) == ABILITY_IMMUNITY && SpeciesHasSparkly(SPECIES(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE))))
+			{
+				gBankTarget = PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE);
+				gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
+			}
+		}
 		switch (moveType) {
 			case TYPE_WATER:
 				if (ABILITY(selectedTarget) != ABILITY_STORMDRAIN)
@@ -2253,7 +2265,7 @@ s8 PriorityCalc(u8 bank, u8 action, u16 move)
 			switch (ABILITY(bank))
 			{
 				case ABILITY_PRANKSTER:
-					if (SPLIT(move) == SPLIT_STATUS)
+					if (SpeciesHasComposer(bank) ? CheckSoundMove(move) : SPLIT(move) == SPLIT_STATUS)
 						++priority;
 					break;
 

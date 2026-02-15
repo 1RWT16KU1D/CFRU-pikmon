@@ -6665,7 +6665,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
         DmaCopy32(3, src, dst, GetMonPicSpriteSize(targetSpecies, SIDE(bankAtk) == B_SIDE_PLAYER));
 		paletteOffset = 0x100 + bankAtk * 16;
 
-		if (targetSpecies == SPECIES_CASTFORM)
+		if (targetSpecies < SPECIES_NONE)
 		{
 			LoadPalette(gBattleStruct->castformPalette[gBattleSpritesDataPtr->animationData->animArg], paletteOffset, 32);
 		}
@@ -6720,7 +6720,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
 		LZDecompressWram(lzPaletteData, gDecompressionBuffer);
 		LoadPalette(gDecompressionBuffer, paletteOffset, 32);
 
-		if (targetSpecies == SPECIES_CASTFORM)
+		if (targetSpecies < SPECIES_NONE)
 		{
 			LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
 			LoadPalette(gBattleStruct->castformPalette[0] + gBattleMonForms[bankDef] * 16, paletteOffset, 32);

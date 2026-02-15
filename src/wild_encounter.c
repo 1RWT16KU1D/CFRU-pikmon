@@ -474,28 +474,6 @@ static const u8 sUnboundUnownLetterSlots[][12] =
 
 u8 PickUnownLetter(unusedArg u16 species, unusedArg u8 headerIndex)
 {
-	#ifdef TANOBY_RUINS_ENABLED
-		if (species == SPECIES_UNOWN)
-		{
-			u8 room = gSaveBlock1->location.mapNum - 0x1B;
-
-			if (room >= NUM_TANOBY_CHAMBERS)
-				return 0;
-			else
-				return sUnownLetterSlots[room][headerIndex] + 1;
-		}
-	#elif (defined UNBOUND)
-		if (species == SPECIES_UNOWN)
-		{
-			u8 room = gSaveBlock1->location.mapNum - MAP_NUM(TOMB_OF_BORRIUS_1F);
-
-			if (room >= NELEMS(sUnboundUnownLetterSlots))
-				return 0;
-			else
-				return sUnboundUnownLetterSlots[room][headerIndex] + 1;
-		}
-	#endif
-
 	return 0;
 }
 

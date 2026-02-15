@@ -1224,34 +1224,24 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 
 		case ABILITY_SHIELDSDOWN:
-		#if defined SPECIES_MINIOR_SHIELD && defined SPECIES_MINIOR_RED \
-		&& defined SPECIES_MINIOR_BLUE && defined SPECIES_MINIOR_ORANGE \
-		&& defined SPECIES_MINIOR_YELLOW && defined SPECIES_MINIOR_INDIGO \
-		&& defined SPECIES_MINIOR_GREEN && defined SPECIES_MINIOR_VIOLET
 			if (!(gBattleMons[bank].status2 & STATUS2_TRANSFORMED))
 			{
-				if (SPECIES(bank) == SPECIES_MINIOR_SHIELD
+				if (SPECIES(bank) == SPECIES_WATERWRAITH
 				&& gBattleMons[bank].hp <= (gBattleMons[bank].maxHP / 2))
 				{
-					DoFormChange(bank, umodsi(GetBankPartyData(bank)->personality, 7), FALSE, TRUE, FALSE); //Get Minior Colour
+					DoFormChange(bank, SPECIES_WATERWRAITH_BLACK, FALSE, TRUE, FALSE); //Get Minior Colour
 					BattleScriptPushCursorAndCallback(BattleScript_ShieldsDownToCoreEnd3);
 					++effect;
 				}
-				else if ((SPECIES(bank) == SPECIES_MINIOR_RED ||
-						  SPECIES(bank) == SPECIES_MINIOR_BLUE ||
-						  SPECIES(bank) == SPECIES_MINIOR_ORANGE ||
-						  SPECIES(bank) == SPECIES_MINIOR_YELLOW ||
-						  SPECIES(bank) == SPECIES_MINIOR_INDIGO ||
-						  SPECIES(bank) == SPECIES_MINIOR_GREEN ||
-						  SPECIES(bank) == SPECIES_MINIOR_VIOLET)
+				else if ((SPECIES(bank) == SPECIES_WATERWRAITH_BLACK)
 				&& gBattleMons[bank].hp > (gBattleMons[bank].maxHP / 2))
 				{
-					DoFormChange(bank, SPECIES_MINIOR_SHIELD, FALSE, TRUE, FALSE);
+					DoFormChange(bank, SPECIES_WATERWRAITH, FALSE, TRUE, FALSE);
 					BattleScriptPushCursorAndCallback(BattleScript_ShieldsDownToMeteorEnd3);
 					++effect;
 				}
 			}
-		#endif
+			
 			break;
 
 		case ABILITY_FLOWERGIFT:
@@ -2313,7 +2303,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				break;
 
 			case ABILITY_ANGERPOINT:
-				if (SpeciesHasWindRider(SPECIES(bank))
+				if (SpeciesHasRagingSteps(SPECIES(bank))
+				&& MOVE_HAD_EFFECT
+				&& TOOK_DAMAGE(bank)
+				&& BATTLER_ALIVE(bank)
+				&& gBattleMons[bank].statStages[STAT_SPD - 1] < 12)
+				{
+					gBattleMons[bank].statStages[STAT_SPD - 1] ++;
+					PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPD);
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_RagingSteps;
+					effect++;
+				}
+				else if (SpeciesHasWindRider(SPECIES(bank))
 				&& gSpecialMoveFlags[move].gWindMoves
 				&& BATTLER_ALIVE(bank)
 				&& STAT_STAGE(bank, STAT_ATK) < 12)

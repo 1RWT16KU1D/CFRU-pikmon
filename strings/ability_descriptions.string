@@ -244,7 +244,7 @@ Moves ignore Abilities.
 Transforms below half HP.
 
 #org @DESC_BATTLEBOND
-Transforms after a KO.
+Changes type after a KO.
 
 #org @DESC_BEASTBOOST
 KOing a foe ups highest stat.
@@ -706,3 +706,37 @@ Gold plating protects it from one hit.
 
 #org @gText_AbilityDescription_GloomyAura
 Activates Gloomy weather on switch-in.
+
+#org @gText_AbilityDescription_SuperSoaker
+Boost power and acc of Water type moves.
+
+#org @gText_AbilityDescription_Inflammate
+Normal moves become Fire.
+
+#org @gText_AbilityDescription_Saturate
+Normal moves become Water.
+
+#org @gText_AbilityDescription_Martialize
+Normal moves become Fighting.
+
+#org @gText_AbilityDescription_Venomize
+Normal moves become Poison.
+
+#org @gText_AbilityDescription_Mineralate
+Normal moves become Rock.
+
+#org @gText_AbilityDescription_BoilingPoint
+Wind moves become Fire. Water may burn.
+
+#org @gText_AbilityDescription_Composer
+Sound moves hit first.
+
+#org @gText_AbilityDescription_RagingSteps
+Hits raise Speed.
+
+#org @gText_AbilityDescription_BigSteps
+Boosts stomping and kicking moves.
+
+#org @gText_AbilityDescription_Sparkly
+
+Draws attention from foes.

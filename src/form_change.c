@@ -144,14 +144,12 @@ void SwitchOutFormsRevert(u8 bank)
 			break;
 		#endif
 
-		#ifdef SPECIES_MINIOR_SHIELD
-		case SPECIES_MINIOR_SHIELD:
+		case SPECIES_WATERWRAITH:
 			if (backupSpecies != SPECIES_NONE)
 				DoFormChange(bank, backupSpecies, FALSE, TRUE, FALSE);
 			else
-				DoFormChange(bank, GetMiniorCoreSpecies(mon), FALSE, TRUE, FALSE);
+				DoFormChange(bank, SPECIES_WATERWRAITH_BLACK, FALSE, TRUE, FALSE);
 			break;
-		#endif
 
 		case SPECIES_BEARDEDAMPRAT:
 			if (backupSpecies != SPECIES_NONE)
@@ -198,7 +196,7 @@ bool8 TryFormRevert(struct Pokemon* mon)
 
 	if (IsMinior(species))
 	{
-		mon->species = GetMiniorCoreSpecies(mon); //Get Minior Colour
+		mon->species = SPECIES_WATERWRAITH_BLACK; //Get Minior Colour
 		CalculateMonStats(mon);
 		return TRUE;
 	}
@@ -419,11 +417,7 @@ bool8 IsMiniorCore(u16 species)
 
 bool8 IsMinior(u16 species)
 {
-	return
-		#ifdef SPECIES_MINIOR_SHIELD
-		species == SPECIES_MINIOR_SHIELD ||
-		#endif
-		IsMiniorCore(species);
+	return species == SPECIES_WATERWRAITH || species == SPECIES_WATERWRAITH_BLACK;
 }
 
 void HandleFormChange(void)
@@ -540,27 +534,27 @@ void TrySetCorrectToxtricityForm(struct BoxPokemon* mon)
 
 static const u16 sTypeToArceusForm[NUMBER_OF_MON_TYPES] =
 {
-	[TYPE_NORMAL] =		0,
-	[TYPE_FIGHTING] =	0,
-	[TYPE_FLYING] = 	0,
-	[TYPE_POISON] = 	0,
-	[TYPE_GROUND] = 	0,
-	[TYPE_ROCK] =		0,
-	[TYPE_BUG] =		0,
-	[TYPE_GHOST] =		0,
-	[TYPE_STEEL] =		0,
+	[TYPE_NORMAL] =		SPECIES_KIRBY,
+	[TYPE_FIGHTING] =	SPECIES_KIRBY_FIGHTING,
+	[TYPE_FLYING] = 	SPECIES_KIRBY_FLYING,
+	[TYPE_POISON] = 	SPECIES_KIRBY_POISON,
+	[TYPE_GROUND] = 	SPECIES_KIRBY_GROUND,
+	[TYPE_ROCK] =		SPECIES_KIRBY_ROCK,
+	[TYPE_BUG] =		SPECIES_KIRBY_BUG,
+	[TYPE_GHOST] =		SPECIES_KIRBY_GHOST,
+	[TYPE_STEEL] =		SPECIES_KIRBY_STEEL,
 	[TYPE_MYSTERY] =	0,
-	[TYPE_FIRE] =		0,
-	[TYPE_WATER] =		0,
-	[TYPE_GRASS] =		0,
-	[TYPE_ELECTRIC] =	0,
-	[TYPE_PSYCHIC] =	0,
-	[TYPE_ICE] =		0,
-	[TYPE_DRAGON] = 	0,
-	[TYPE_DARK] =		0,
+	[TYPE_FIRE] =		SPECIES_KIRBY_FIRE,
+	[TYPE_WATER] =		SPECIES_KIRBY_WATER,
+	[TYPE_GRASS] =		SPECIES_KIRBY_GRASS,
+	[TYPE_ELECTRIC] =	SPECIES_KIRBY_ELECTRIC,
+	[TYPE_PSYCHIC] =	SPECIES_KIRBY_PSYCHIC,
+	[TYPE_ICE] =		SPECIES_KIRBY_ICE,
+	[TYPE_DRAGON] = 	SPECIES_KIRBY_DRAGON,
+	[TYPE_DARK] =		SPECIES_KIRBY_DARK,
 	[TYPE_ROOSTLESS] =	0, //This Arceus should stay in the proper form
 
-	[TYPE_FAIRY] =		0,
+	[TYPE_FAIRY] =		SPECIES_KIRBY_FAIRY,
 	[TYPE_STELLAR] =    0
 };
 
@@ -642,54 +636,51 @@ void HoldItemFormChange(struct Pokemon* mon, u16 item)
 		#endif
 		#endif
 
-		#ifdef SPECIES_GENESECT
-		case SPECIES_GENESECT:
-		case SPECIES_GENESECT_BURN:
-		case SPECIES_GENESECT_CHILL:
-		case SPECIES_GENESECT_DOUSE:
-		case SPECIES_GENESECT_SHOCK:
+		case SPECIES_TITANDWEEVIL:
+		case SPECIES_TITANDWEEVIL_ELECTRIC:
+		case SPECIES_TITANDWEEVIL_FIRE:
+		case SPECIES_TITANDWEEVIL_POISON:
+		case SPECIES_TITANDWEEVIL_WATER:
 			if (itemEffect == ITEM_EFFECT_DRIVE)
 			{
 				switch (type) {
-					case TYPE_WATER:
-						targetSpecies = SPECIES_GENESECT_DOUSE;
+					case TYPE_ELECTRIC:
+						targetSpecies = SPECIES_TITANDWEEVIL_ELECTRIC;
 						break;
 					case TYPE_FIRE:
-						targetSpecies = SPECIES_GENESECT_BURN;
+						targetSpecies = SPECIES_TITANDWEEVIL_FIRE;
 						break;
-					case TYPE_ICE:
-						targetSpecies = SPECIES_GENESECT_CHILL;
+					case TYPE_POISON:
+						targetSpecies = SPECIES_TITANDWEEVIL_POISON;
 						break;
-					case TYPE_ELECTRIC:
-						targetSpecies = SPECIES_GENESECT_SHOCK;
+					case TYPE_WATER:
+						targetSpecies = SPECIES_TITANDWEEVIL_WATER;
 						break;
 				}
 			}
 
 			if (targetSpecies == SPECIES_NONE)
-				targetSpecies = SPECIES_GENESECT;
+				targetSpecies = SPECIES_TITANDWEEVIL;
 			break;
-		#endif
 
-		#ifdef SPECIES_ARCEUS
-		case SPECIES_ARCEUS:
-		case SPECIES_ARCEUS_FIGHT:
-		case SPECIES_ARCEUS_FLYING:
-		case SPECIES_ARCEUS_POISON:
-		case SPECIES_ARCEUS_GROUND:
-		case SPECIES_ARCEUS_ROCK:
-		case SPECIES_ARCEUS_BUG:
-		case SPECIES_ARCEUS_GHOST:
-		case SPECIES_ARCEUS_STEEL:
-		case SPECIES_ARCEUS_FIRE:
-		case SPECIES_ARCEUS_WATER:
-		case SPECIES_ARCEUS_GRASS:
-		case SPECIES_ARCEUS_ELECTRIC:
-		case SPECIES_ARCEUS_PSYCHIC:
-		case SPECIES_ARCEUS_ICE:
-		case SPECIES_ARCEUS_DRAGON:
-		case SPECIES_ARCEUS_DARK:
-		case SPECIES_ARCEUS_FAIRY:
+		case SPECIES_KIRBY:
+		case SPECIES_KIRBY_FIGHTING:
+		case SPECIES_KIRBY_FLYING:
+		case SPECIES_KIRBY_POISON:
+		case SPECIES_KIRBY_GROUND:
+		case SPECIES_KIRBY_ROCK:
+		case SPECIES_KIRBY_BUG:
+		case SPECIES_KIRBY_GHOST:
+		case SPECIES_KIRBY_STEEL:
+		case SPECIES_KIRBY_FIRE:
+		case SPECIES_KIRBY_WATER:
+		case SPECIES_KIRBY_GRASS:
+		case SPECIES_KIRBY_ELECTRIC:
+		case SPECIES_KIRBY_PSYCHIC:
+		case SPECIES_KIRBY_ICE:
+		case SPECIES_KIRBY_DRAGON:
+		case SPECIES_KIRBY_DARK:
+		case SPECIES_KIRBY_FAIRY:
 			if (ability == ABILITY_MULTITYPE) //Only transform if set with proper ability
 			{
 				if (itemEffect == ITEM_EFFECT_PLATE
@@ -697,10 +688,9 @@ void HoldItemFormChange(struct Pokemon* mon, u16 item)
 					targetSpecies = sTypeToArceusForm[type];
 
 				if (targetSpecies == SPECIES_NONE)
-					targetSpecies = SPECIES_ARCEUS;
+					targetSpecies = SPECIES_KIRBY;
 			}
 			break;
-		#endif
 
 		#ifdef SPECIES_SILVALLY
 		case SPECIES_SILVALLY:

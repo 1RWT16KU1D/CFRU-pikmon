@@ -590,7 +590,7 @@ static u8 GetMaxMoveType(u16 move, u8 bank, struct Pokemon* mon)
 
 		//Try to modify Max Move's type using ability
 		u16 maxMove = GetTypeBasedMaxMove(gBattleMoves[move].type, moveSplit);
-		moveType = GetMoveTypeSpecialPostAbility(maxMove, ability, FALSE);
+		moveType = GetMoveTypeSpecialPostAbility(maxMove, ability, FALSE, mon->species);
 	}
 
 	return moveType;
@@ -738,7 +738,7 @@ bool8 PlayerHasNoMonsLeftThatCanDynamax(void)
 
 u8 GetDynamaxHPBoost(u8 bank)
 {
-	if (SPECIES(bank) == SPECIES_SHEDINJA)
+	if (SPECIES(bank) == SPECIES_REDBUBBLIMP)
 		return 1;
 	else if (IsRaidBattle() && bank == BANK_RAID_BOSS)
 		return GetRaidBattleHPBoost();
@@ -748,7 +748,7 @@ u8 GetDynamaxHPBoost(u8 bank)
 
 u8 GetMonDynamaxHPBoost(unusedArg struct Pokemon* mon)
 {
-	if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_SHEDINJA)
+	if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_REDBUBBLIMP)
 		return 1;
 	
 	return 2;
@@ -882,13 +882,11 @@ void UpdateHPForDynamax(void)
 	u32 newCurrentHp;
 	gActiveBattler = gBattleScripting.bank;
 
-	#ifdef SPECIES_SHEDINJA
-	if (SPECIES(gActiveBattler) == SPECIES_SHEDINJA) //Shedinja doesn't get a Dynamax HP boost
+	if (SPECIES(gActiveBattler) == SPECIES_REDBUBBLIMP) //Shedinja doesn't get a Dynamax HP boost
 	{
 		gBattleMoveDamage = 0;
 		return;
 	}
-	#endif
 
 	u8 hpBoost = GetDynamaxHPBoost(gActiveBattler);
 
@@ -930,10 +928,8 @@ void TryBoostDynamaxHPAfterLevelUp(u8 bank) //Should only be called once all bat
 	struct Pokemon* mon;
 	gActiveBattler = bank;
 
-	#ifdef SPECIES_SHEDINJA
-	if (SPECIES(gActiveBattler) == SPECIES_SHEDINJA) //Shedinja doesn't get a Dynamax HP boost
+	if (SPECIES(gActiveBattler) == SPECIES_REDBUBBLIMP) //Shedinja doesn't get a Dynamax HP boost
 		return;
-	#endif
 
 	if (IsDynamaxed(gActiveBattler))
 	{
@@ -1636,10 +1632,8 @@ bool8 ShouldStartWithRaidShieldsUp(void)
 		return TRUE;
 	#endif
 
-	#ifdef SPECIES_SHEDINJA
-	if (IsRaidBattle() && SPECIES(BANK_RAID_BOSS) == SPECIES_SHEDINJA)
+	if (IsRaidBattle() && SPECIES(BANK_RAID_BOSS) == SPECIES_REDBUBBLIMP)
 		return TRUE; //Starts with shields otherwise it can't survive a hit
-	#endif
 
 	#ifdef FLAG_START_WITH_RAID_SHIELDS
 	if (FlagGet(FLAG_START_WITH_RAID_SHIELDS))
@@ -1735,11 +1729,10 @@ void CreateRaidShieldSprites(void)
 	u8 bank = BANK_RAID_BOSS;
 	u16 baseStatTotal = GetBaseStatsTotal(SPECIES(bank));
 
-	#ifdef SPECIES_SHEDINJA
-	if (SPECIES(bank) == SPECIES_SHEDINJA)
+	if (SPECIES(bank) == SPECIES_REDBUBBLIMP)
 		numShields = MAX_NUM_RAID_SHIELDS; //Always gets max shields
 	else
-	#endif
+
 	#ifdef FLAG_RAID_BATTLE_NO_FORCE_END
 	if (!FlagGet(FLAG_RAID_BATTLE_NO_FORCE_END)) //Less shields for battle that ends in 10 turns
 	#endif

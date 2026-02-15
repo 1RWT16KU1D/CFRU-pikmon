@@ -1434,7 +1434,6 @@ static void SandboxChangeGender(void)
 	} while (GetNatureFromPersonality(personality) != nature
 	|| GetGenderFromSpeciesAndPersonality(species, personality) == gender
 	|| (!isShiny && IsShinyOtIdPersonality(otId, personality)) //No free shinies
-	|| (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
 	|| (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
 
 	SetMonData(mon, MON_DATA_PERSONALITY, &personality);

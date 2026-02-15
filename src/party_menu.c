@@ -2694,7 +2694,6 @@ static void Task_ChangeAbility(u8 taskId)
                 } while (GetNatureFromPersonality(personality) != nature
                 || GetGenderFromSpeciesAndPersonality(species, personality) != gender
                 || (!isShiny && IsShinyOtIdPersonality(otId, personality)) //No free shinies
-                || (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
                 || (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
 
                 mon->hiddenAbility = FALSE;

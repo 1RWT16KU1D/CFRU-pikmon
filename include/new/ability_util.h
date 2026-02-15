@@ -92,6 +92,15 @@ bool8 SpeciesHasWindRider(u16 species);
 bool8 SpeciesHasZerotoHero(u16 species);
 
 // New PikMon Abilities
+bool8 SpeciesHasSuperSoaker(u16 species); //increase accuracy and damage of water type moves
+bool8 SpeciesHasBoilingPoint(u16 species); //water moves might burn and wind moves are fire type
+bool8 SpeciesHasRagingSteps(u16 species); //Getting hit raises speed
+bool8 SpeciesHasBigSteps(u16 species); //Boosts Kick moves
+bool8 IsStompingMove(u16 move);
+bool8 IsKirby(u16 species);
+bool8 SpeciesHasSparkly(u16 species); //Permanent follow me
+bool8 SpeciesHasComposer(u16 species); //Sound moves get increased priority
+u8 SpeciesHasAerilateType(u16 species); //makes normal type moves the defined type
 bool8 SpeciesHasSweetNectar(u16 species); // Heal partner by 50% on fainting
 bool8 SpeciesHasSucker(u16 species); // Big Root but as an ability
 bool8 SpeciesHasBigMoney(u16 species); // Doubles the money earned from battles

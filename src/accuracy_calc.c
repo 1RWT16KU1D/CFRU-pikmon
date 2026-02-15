@@ -475,6 +475,11 @@ static u32 AccuracyCalcPassDefAbilityItemEffect(u16 move, u8 bankAtk, u8 bankDef
 	calc = udivsi(calc, gAccuracyStageRatios[buff].divisor);
 
 	switch (atkAbility) {
+		case ABILITY_TORRENT:
+			if(SpeciesHasSuperSoaker(SPECIES(bankAtk)) && gBattleMoves[move].type == TYPE_WATER){
+				calc = udivsi((calc * 110), 100); // 1.1 Super Soaker boost
+			}
+			break;
 		case ABILITY_COMPOUNDEYES:
 			calc = udivsi((calc * 130), 100); // 1.3 Compound Eyes boost
 			break;

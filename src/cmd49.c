@@ -186,30 +186,44 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 						break;
 
 					case ABILITY_POISONTOUCH: ;
-						u8 chance = 30;
-						if (BankHasRainbow(gBankAttacker))
-							chance *= 2;
-
-						if (ABILITY(gBankTarget) != ABILITY_SHIELDDUST
-						&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
-						&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
-						&& umodsi(Random(), 100) < chance
-						&& SpeciesHasToxicChain(SPECIES(gBankAttacker)))
-						{
-							BattleScriptPushCursor();
-							gBattlescriptCurrInstr = BattleScript_ToxicChain;
-							effect = TRUE;
-						}
-						else if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
-						&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
-						&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
-						&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
-						&& umodsi(Random(), 100) < chance)
-						{
-							BattleScriptPushCursor();
-							gBattlescriptCurrInstr = BattleScript_PoisonTouch;
-							effect = TRUE;
-						}
+							bool8 boil = SpeciesHasBoilingPoint(SPECIES(gBankAttacker));
+							u8 chance = boil ? 20 : 30;
+							if (BankHasRainbow(gBankAttacker))
+								chance *= 2;
+							if (boil){
+								if(
+								gBattleMoves[gCurrentMove].type == TYPE_WATER
+								&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
+								&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
+								&& CanBeBurned(gBankTarget, gBankAttacker, TRUE)
+								&& umodsi(Random(), 100) < chance){
+									gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
+									BattleScriptPushCursor();
+									gBattlescriptCurrInstr = BattleScript_AbilityApplySecondaryEffect;
+									gHitMarker |= HITMARKER_IGNORE_SAFEGUARD; //Safeguard checked earlier
+									effect++;
+								}
+							}
+							else if (ABILITY(gBankTarget) != ABILITY_SHIELDDUST
+							&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
+							&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
+							&& umodsi(Random(), 100) < chance
+							&& SpeciesHasToxicChain(SPECIES(gBankAttacker)))
+							{
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_ToxicChain;
+								effect = TRUE;
+							}
+							else if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
+							&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
+							&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
+							&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
+							&& umodsi(Random(), 100) < chance)
+							{
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_PoisonTouch;
+								effect = TRUE;
+							}
 				}
 			}
 			gBattleScripting.atk49_state++;
@@ -938,7 +952,7 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 					&& TOOK_DAMAGE(bankDef)
 					&& MOVE_HAD_EFFECT
 					&& ViableMonCountFromBank(FOE(gBankAttacker)) > 0) //Use FOE so as to not get boost when KOing partner last after enemy has no mons left
-					{
+					{	
 						u16 maxStatId;
 						u16 stats[STAT_STAGE_SPDEF + 1]; //Create new array to avoid modifying original stats
 
@@ -977,25 +991,64 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 						}
 					}
 					break;
-
-				#if (defined SPECIES_GRENINJA && defined SPECIES_ASHGRENINJA)
+/*
 				case ABILITY_BATTLEBOND:
 					if ((arg1 != ARG_IN_FUTURE_ATTACK || gWishFutureKnock.futureSightPartyIndex[bankDef] == gBattlerPartyIndexes[gBankAttacker])
-					&& SPECIES(gBankAttacker) == SPECIES_GRENINJA
+					&& IsKirby(SPECIES(gBankAttacker))
 					&& gBattleMons[bankDef].hp == 0
 					&& BATTLER_ALIVE(gBankAttacker)
 					&& TOOK_DAMAGE(bankDef)
-					&& MOVE_HAD_EFFECT
-					&& ViableMonCountFromBank(FOE(gBankAttacker)) > 0 //Use FOE so as to not get boost when KOing partner last after enemy has no mons left
-					&& !IS_TRANSFORMED(gBankAttacker))
+					&& MOVE_HAD_EFFECT)
 					{
-						DoFormChange(gBankAttacker, SPECIES_ASHGRENINJA, TRUE, TRUE, FALSE);
+						u16 sTypeToArceusForm[NUMBER_OF_MON_TYPES] =
+							{
+								[TYPE_NORMAL] =		SPECIES_KIRBY,
+								[TYPE_FIGHTING] =	SPECIES_KIRBY_FIGHTING,
+								[TYPE_FLYING] = 	SPECIES_KIRBY_FLYING,
+								[TYPE_POISON] = 	SPECIES_KIRBY_POISON,
+								[TYPE_GROUND] = 	SPECIES_KIRBY_GROUND,
+								[TYPE_ROCK] =		SPECIES_KIRBY_ROCK,
+								[TYPE_BUG] =		SPECIES_KIRBY_BUG,
+								[TYPE_GHOST] =		SPECIES_KIRBY_GHOST,
+								[TYPE_STEEL] =		SPECIES_KIRBY_STEEL,
+								[TYPE_MYSTERY] =	0,
+								[TYPE_FIRE] =		SPECIES_KIRBY_FIRE,
+								[TYPE_WATER] =		SPECIES_KIRBY_WATER,
+								[TYPE_GRASS] =		SPECIES_KIRBY_GRASS,
+								[TYPE_ELECTRIC] =	SPECIES_KIRBY_ELECTRIC,
+								[TYPE_PSYCHIC] =	SPECIES_KIRBY_PSYCHIC,
+								[TYPE_ICE] =		SPECIES_KIRBY_ICE,
+								[TYPE_DRAGON] = 	SPECIES_KIRBY_DRAGON,
+								[TYPE_DARK] =		SPECIES_KIRBY_DARK,
+								[TYPE_ROOSTLESS] =	0, //This Arceus should stay in the proper form
 
-						BattleScriptPushCursor();
-						gBattlescriptCurrInstr = BattleScript_AbilityTransformed;
-						effect = 1;
-					}
-				#endif
+								[TYPE_FAIRY] =		SPECIES_KIRBY_FAIRY,
+								[TYPE_STELLAR] =    0
+							};
+						u16 uType1 = sTypeToArceusForm[gBattleMons[bankDef].type1];
+						u16 uType2 = sTypeToArceusForm[gBattleMons[bankDef].type2];
+						if(uType1 > 0){
+							if(uType2 > 0){
+								DoFormChange(gBankAttacker, sTypeToArceusForm[ (Random() % 2 == 0) ? uType1 : uType2], TRUE, TRUE, FALSE);
+		
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_AbilityTransformed;
+								effect = 1;
+							} else {
+								DoFormChange(gBankAttacker, sTypeToArceusForm[uType1], TRUE, TRUE, FALSE);
+		
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_AbilityTransformed;
+								effect = 1;
+							}
+						} else if (uType2 > 0) {
+							DoFormChange(gBankAttacker, sTypeToArceusForm[uType2], TRUE, TRUE, FALSE);
+	
+							BattleScriptPushCursor();
+							gBattlescriptCurrInstr = BattleScript_AbilityTransformed;
+							effect = 1;
+						}
+					}*/
 			}
 			*gSeedHelper = 0; //For Soul-Heart Loop
 			gBattleScripting.atk49_state++;

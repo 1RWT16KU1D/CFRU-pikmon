@@ -55,12 +55,12 @@ tables to edit:
 
 const struct AlternateSize gAlternateSpeciesSizeTable[] =
 {
-	ALTERNATE_SIZE(SPECIES_FROSTYBULBORB, 2.2, 50.5),
 	ALTERNATE_SIZE(SPECIES_TABLES_TERMIN, 0, 0),
 };
 
 const species_t gSkyBattleBannedSpeciesList[] =
 {
+/*
 #ifndef UNBOUND
 	SPECIES_GIANTBREADBUG,
 	SPECIES_FARFETCHD,
@@ -73,6 +73,7 @@ const species_t gSkyBattleBannedSpeciesList[] =
 	SPECIES_GENGAR,
 	SPECIES_PYROCLASTICSLOOCH,
 	SPECIES_LESSERSPOTTEDJELLYFLOAT,
+*/
 	SPECIES_TABLES_TERMIN
 };
 

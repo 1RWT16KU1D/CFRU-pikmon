@@ -1653,7 +1653,7 @@ u8 GetMoveTypeSpecial(u8 bankAtk, u16 move)
 	if (moveType != 0xFF)
 		return moveType;
 
-	return GetMoveTypeSpecialPostAbility(move, atkAbility, gNewBS->zMoveData.active || gNewBS->zMoveData.viewing);
+	return GetMoveTypeSpecialPostAbility(move, atkAbility, gNewBS->zMoveData.active || gNewBS->zMoveData.viewing, SPECIES(bankAtk));
 }
 
 u8 GetMoveTypeSpecialPreAbility(u16 move, u8 bankAtk, struct Pokemon* monAtk)
@@ -1678,13 +1678,18 @@ u8 GetMoveTypeSpecialPreAbility(u16 move, u8 bankAtk, struct Pokemon* monAtk)
 	return 0xFF;
 }
 
-u8 GetMoveTypeSpecialPostAbility(u16 move, u8 atkAbility, bool8 zMoveActive)
+u8 GetMoveTypeSpecialPostAbility(u16 move, u8 atkAbility, bool8 zMoveActive, u16 species)
 {
 	u8 moveType = gBattleMoves[move].type;
 	bool8 moveTypeCanBeChanged = !zMoveActive || SPLIT(move) == SPLIT_STATUS;
 
 	if (moveTypeCanBeChanged)
-	{
+	{	
+		//Change Wind Moves
+		if(gSpecialMoveFlags[move].gWindMoves
+			&& atkAbility == ABILITY_POISONTOUCH && SpeciesHasBoilingPoint(species)){
+				return TYPE_FIRE;
+		}
 		//Change Normal-type Moves
 		if (moveType == TYPE_NORMAL)
 		{
@@ -1694,7 +1699,7 @@ u8 GetMoveTypeSpecialPostAbility(u16 move, u8 atkAbility, bool8 zMoveActive)
 				case ABILITY_PIXILATE:
 					return TYPE_FAIRY;
 				case ABILITY_AERILATE:
-					return TYPE_FLYING;
+					return SpeciesHasAerilateType(species);
 				case ABILITY_GALVANIZE:
 					return TYPE_ELECTRIC;
 			}
@@ -1721,7 +1726,7 @@ u8 GetMonMoveTypeSpecial(struct Pokemon* mon, u16 move)
 	if (moveType != 0xFF)
 		return moveType;
 
-	return GetMoveTypeSpecialPostAbility(move, atkAbility, FALSE);
+	return GetMoveTypeSpecialPostAbility(move, atkAbility, FALSE, mon->species);
 }
 
 static bool8 AbilityCanChangeTypeAndBoost(u16 move, u8 atkAbility, u8 electrifyTimer, bool8 zMoveActive)
@@ -2817,7 +2822,12 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			break;
 		case ABILITY_TORRENT:
 		//1.5x Boost
-			if (data->moveType == TYPE_WATER && data->atkHP <= data->atkMaxHP / 3)
+			if (data->moveType == TYPE_WATER && SpeciesHasSuperSoaker(SPECIES(bankAtk)))
+			{
+				attack = (attack * 12) / 10;
+				spAttack = (spAttack * 12) / 10;
+			}
+			else if (data->moveType == TYPE_WATER && data->atkHP <= data->atkMaxHP / 3)
 			{
 				attack = (attack * 15) / 10;
 				spAttack = (spAttack * 15) / 10;
@@ -4139,7 +4149,7 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 
 		case ABILITY_IRONFIST:
 		//1.2x Boost
-			if (gSpecialMoveFlags[move].gPunchingMoves)
+			if (SpeciesHasBigSteps(SPECIES(bankAtk)) ? IsStompingMove(move) : gSpecialMoveFlags[move].gPunchingMoves)
 				power = (power * 12) / 10;
 			break;
 
