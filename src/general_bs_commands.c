@@ -5310,6 +5310,9 @@ void atkE5_pickupitemcalculation(void)
 			case ABILITY_PICKUP:
 				chance = SpeciesHasBigMoney(species) ? 0 : 10; // ~10% chance of pickup to activate
 				item = ChoosePickupItem(level);
+				if(item == ITEM_PELLET_RANDOM){
+					item = ITEM_PELLET_NORMAL + Random()%18;
+				}
 				break;
 			case ABILITY_HONEYGATHER:
 				chance = 5 + 5 * ((level - 1) / 10);

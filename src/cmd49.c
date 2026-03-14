@@ -517,6 +517,15 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 
 		extern const u16 gBannedBattleEatBerries[];
 		case ATK49_PLUCK:
+			if(MOVE_HAD_EFFECT
+			&& TOOK_DAMAGE(gBankTarget)
+			&& gBattleMoves[gCurrentMove].effect == EFFECT_EAT_BERRY
+			&& MegaBerry(ITEM(gBankTarget))<2
+			&& SPECIES(gBankAttacker) == SPECIES_WHISKERPILLAR){
+				DoFormChange(gBankAttacker, SPECIES_WHISKERPILLAR_MEGAB + MegaBerry(ITEM(gBankTarget)), TRUE, TRUE, FALSE);
+				BattleScriptPushCursor();
+				gBattlescriptCurrInstr = BattleScript_Whisker;
+			}
 			if (MOVE_HAD_EFFECT
 			&& TOOK_DAMAGE(gBankTarget)
 			&& gBattleMoves[gCurrentMove].effect == EFFECT_EAT_BERRY
@@ -879,9 +888,14 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 					&& !(gNewBS->corrodedItems[SIDE(gBankAttacker)] & gBitTable[gBattlerPartyIndexes[gBankAttacker]])
 					&& (ABILITY(bankDef) != ABILITY_STICKYHOLD || !BATTLER_ALIVE(bankDef)))
 					{
-						gBattleScripting.bank = gBankAttacker;
-						BattleScriptPushCursor();
-						gBattlescriptCurrInstr = BattleScript_Magician;
+						if(ITEM_EFFECT(bankDef)==ITEM_EFFECT_TRACKINATOR){
+							TrackinatorFunc(bankDef,gBankAttacker);
+						}
+						else{
+							gBattleScripting.bank = gBankAttacker;
+							BattleScriptPushCursor();
+							gBattlescriptCurrInstr = BattleScript_Magician;
+						}
 						effect = 1;
 					}
 					break;
@@ -1457,11 +1471,16 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 				&&  ITEM(bank) == ITEM_NONE
 				&& (ABILITY(gBankAttacker) != ABILITY_STICKYHOLD || !BATTLER_ALIVE(gBankAttacker)))
 				{
-					gNewBS->NoSymbiosisByte = TRUE;
-					gLastUsedItem = ITEM(gBankAttacker);
-					gBankTarget = gActiveBattler = gBattleScripting.bank = bank;
-					BattleScriptPushCursor();
-					gBattlescriptCurrInstr = BattleScript_Pickpocket;
+					if(ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_TRACKINATOR){
+						TrackinatorFunc(gBankAttacker,bank);
+					}
+					else{
+						gNewBS->NoSymbiosisByte = TRUE;
+						gLastUsedItem = ITEM(gBankAttacker);
+						gBankTarget = gActiveBattler = gBattleScripting.bank = bank;
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_Pickpocket;
+					}
 					effect = 1;
 					break; //Only fastest Pickpocket activates so exit loop.
 				}

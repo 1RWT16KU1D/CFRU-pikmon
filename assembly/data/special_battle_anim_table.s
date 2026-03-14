@@ -104,6 +104,7 @@ gBattleAnims_General:
 .word ANIM_TERASTAL
 .word ANIM_GLOOMY_WEATHER
 .word ANIM_GLOOMY_WEATHER_HURT
+.word ANIM_TATTEREDWEB
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
@@ -1293,6 +1294,23 @@ ANIM_GLOOMY_WEATHER_HURT:
 	call POISON_BUBBLES
 	waitanimation
 	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+.align 2
+ANIM_TATTEREDWEB:
+	loadparticle ANIM_TAG_SPIDER_WEB
+	pokespritetoBG side_target
+	playsound2 0x7b SOUND_PAN_TARGET
+	launchtemplate CENTRED_WEB TEMPLATE_TARGET | 2, 0x2 10 10
+	launchtemplate CENTRED_WEB TEMPLATE_TARGET | 2, 0x2 0xFFFF 0xFFF5
+	launchtemplate CENTRED_WEB TEMPLATE_TARGET | 2, 0x2 0xFFF5 10
+	waitanimation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	waitanimation
+	pokespritefromBG side_target
+	endanimation
+CENTRED_WEB: objtemplate ANIM_TAG_SPIDER_WEB ANIM_TAG_SPIDER_WEB OAM_DOUBLE_BLEND_64x64 gDummySpriteAnimTable 0x0 0x83E72D8 SpriteCB_CentredSpiderWeb
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

@@ -738,5 +738,7 @@ Hits raise Speed.
 Boosts stomping and kicking moves.
 
 #org @gText_AbilityDescription_Sparkly
-
 Draws attention from foes.
+
+#org @gText_AbilityDescription_TatteredWeb
+Set Sticky Web if physical hit.

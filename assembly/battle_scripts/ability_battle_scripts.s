@@ -127,6 +127,9 @@ ability_battle_scripts.s
 .global BattleScript_FoolsGoldMystery
 .global BattleScript_FoolsGoldTransform
 .global BattleScript_RagingSteps
+.global BattleScript_TatteredWeb
+.global BattleScript_Whisker
+.global BattleScript_Trackinator
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1647,6 +1650,7 @@ BattleScript_FoolsGoldPlateShattered:
 	waitmessage DELAY_1SECOND
 	call BattleScript_AbilityPopUpRevert
 	return
+
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 BattleScript_FoolsGoldMystery:
 	call BattleScript_AbilityPopUp
@@ -1682,6 +1686,49 @@ BattleScript_RagingSteps:
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_TatteredWeb:
+	call BattleScript_AbilityPopUp
+	playanimation BANK_ATTACKER ANIM_TATTEREDWEB 0x0
+	waitmessage DELAY_1SECOND
+	setword BATTLE_STRING_LOADER gText_TatteredWeb
+	printstring 0x184
+	call BattleScript_AbilityPopUpRevert
+	return
+
+BattleScript_TatteredWebFailure:
+	call BattleScript_AbilityPopUp
+	setword BATTLE_STRING_LOADER gText_ToxicDebrisFailed
+	printstring 0x184
+	call BattleScript_AbilityPopUpRevert
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_Whisker:
+	waitmessage DELAY_HALFSECOND
+	playanimation BANK_SCRIPTING ANIM_MEGA_EVOLUTION 0x0
+	reloadhealthbar BANK_SCRIPTING
+	setword BATTLE_STRING_LOADER gText_WhiskerMega
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	callasm TryRemovePrimalWeatherAfterTransformation
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_Trackinator:
+	setword BATTLE_STRING_LOADER gText_TrackinatorActivate
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	orword HIT_MARKER, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_NON_ATTACK_DMG
+	healthbarupdate BANK_ATTACKER
+	datahpupdate BANK_ATTACKER
+	waitmessage DELAY_1SECOND
+	faintpokemon BANK_ATTACKER 0x0 0x0
+	return
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global HarvestString
 AdrenalineOrbString: .byte 0xFD, 0x10, 0xB4, 0xE7, 0x00, 0xBB, 0xD8, 0xE6, 0xD9, 0xE2, 0xD5, 0xE0, 0xDD, 0xE2, 0xD9, 0x00, 0xC9, 0xE6, 0xD6, 0xFE, 0xE6, 0xD5, 0xDD, 0xE7, 0xD9, 0xD8, 0x00, 0xDD, 0xE8, 0xE7, 0x00, 0xCD, 0xE4, 0xD9, 0xD9, 0xD8, 0xAB, 0xFF

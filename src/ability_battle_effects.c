@@ -1673,22 +1673,24 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					break;
 
 				case ABILITY_PICKUP: ;
-					u8 itemBank = GetTopOfPickupStackNotIncludingBank(bank);
+					if(!SpeciesHasBigMoney(bank)){
+						u8 itemBank = GetTopOfPickupStackNotIncludingBank(bank);
 
-					if (itemBank != 0xFF)
-					{
-						RemoveBankFromPickupStack(itemBank);
-						if (CONSUMED_ITEMS(itemBank)) //This shouldn't be empty but just in case
+						if (itemBank != 0xFF)
 						{
-							gBattleMons[bank].item = CONSUMED_ITEMS(itemBank);
-							EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[bank].item);
-							MarkBufferBankForExecution(bank);
-							gLastUsedItem = CONSUMED_ITEMS(itemBank);
-							CONSUMED_ITEMS(itemBank) = 0;
-							RecordItemEffectBattle(bank, ITEM_EFFECT(bank));
-							BattleScriptPushCursorAndCallback(BattleScript_Pickup);
-							++effect;
-							break;
+							RemoveBankFromPickupStack(itemBank);
+							if (CONSUMED_ITEMS(itemBank)) //This shouldn't be empty but just in case
+							{
+								gBattleMons[bank].item = CONSUMED_ITEMS(itemBank);
+								EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[bank].item);
+								MarkBufferBankForExecution(bank);
+								gLastUsedItem = CONSUMED_ITEMS(itemBank);
+								CONSUMED_ITEMS(itemBank) = 0;
+								RecordItemEffectBattle(bank, ITEM_EFFECT(bank));
+								BattleScriptPushCursorAndCallback(BattleScript_Pickup);
+								++effect;
+								break;
+							}
 						}
 					}
 					break;
@@ -2067,8 +2069,27 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				&& BATTLER_ALIVE(gBankAttacker)
 				&& gBankAttacker != bank)
 				{
+					// Check Tattered Web
+					if (SpeciesHasTatteredWeb(SPECIES(bank)) && SPLIT(move) == SPLIT_PHYSICAL)
+					{
+						if (gSideTimers[gBankAttacker].stickyWeb > 0)
+						{
+							// Failure message (Sticky Web already present)
+							BattleScriptPushCursor();
+							gBattlescriptCurrInstr = BattleScript_ToxicDebrisFailure;
+						}
+						else
+						{
+							// Add Sticky Web
+							gSideStatuses[gBankAttacker] |= SIDE_STATUS_SPIKES;
+							gSideTimers[gBankAttacker].stickyWeb = 1;
+							BattleScriptPushCursor();
+							gBattlescriptCurrInstr = BattleScript_TatteredWeb;
+						}
+						effect++;
+					}
 					// Check Toxic Debris
-					if (SpeciesHasToxicDebris(SPECIES(bank)) && SPLIT(move) == SPLIT_PHYSICAL)
+					else if (SpeciesHasToxicDebris(SPECIES(bank)) && SPLIT(move) == SPLIT_PHYSICAL)
 					{
 						if (gSideTimers[gBankAttacker].tspikesAmount >= 2)
 						{

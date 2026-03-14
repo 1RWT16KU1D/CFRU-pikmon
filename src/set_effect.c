@@ -971,25 +971,30 @@ bool8 SetMoveEffect2(void)
 			}
 			else
 			{
-				gLastUsedItem = gBattleMons[gEffectBank].item;
-				gBattleMons[gEffectBank].item = 0;
-				gBattleMons[gBankAttacker].item = gLastUsedItem;
-				HandleUnburdenBoost(gEffectBank); //Give target Unburden boost
-				HandleUnburdenBoost(gBankAttacker); //Remove attacker's Unburden boost
+				if(ITEM_EFFECT(gEffectBank) == ITEM_EFFECT_TRACKINATOR){
+					TrackinatorFunc(gBankAttacker,gEffectBank);
+				}
+				else{
+					gLastUsedItem = gBattleMons[gEffectBank].item;
+					gBattleMons[gEffectBank].item = 0;
+					gBattleMons[gBankAttacker].item = gLastUsedItem;
+					HandleUnburdenBoost(gEffectBank); //Give target Unburden boost
+					HandleUnburdenBoost(gBankAttacker); //Remove attacker's Unburden boost
 
-				gActiveBattler = gBankAttacker;
-				EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedItem);
-				MarkBufferBankForExecution(gActiveBattler);
+					gActiveBattler = gBankAttacker;
+					EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedItem);
+					MarkBufferBankForExecution(gActiveBattler);
 
-				gActiveBattler = gEffectBank;
-				EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
-				MarkBufferBankForExecution(gActiveBattler);
+					gActiveBattler = gEffectBank;
+					EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+					MarkBufferBankForExecution(gActiveBattler);
 
-				BattleScriptPushCursor();
-				gBattlescriptCurrInstr = BattleScript_ItemSteal;
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_ItemSteal;
 
-				gBattleStruct->choicedMove[gEffectBank] = 0;
-				effect = TRUE;
+					gBattleStruct->choicedMove[gEffectBank] = 0;
+				}
+					effect = TRUE;
 			}
 			break;
 

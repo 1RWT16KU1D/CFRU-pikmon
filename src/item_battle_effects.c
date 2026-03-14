@@ -226,6 +226,7 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 		if (BATTLER_ALIVE(bank))
 		{
 			switch (bankHoldEffect) {
+			case ITEM_EFFECT_PELLET:
 			case ITEM_EFFECT_RESTORE_HP:
 			
 				if (!IsHealBlocked(bank)
@@ -235,6 +236,9 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 						gBattleMoveDamage = GetBaseMaxHP(bank) / 4;
 					else
 						gBattleMoveDamage = bankQuality;
+					if (bankHoldEffect==ITEM_EFFECT_PELLET){
+						gBattleMoveDamage = (IsOfType(bank, bankQuality))? 25 : 10 ;
+					}
 
 					if (ABILITY(bank) == ABILITY_RIPEN && IsBerry(gLastUsedItem))
 						gBattleMoveDamage *= 2;
@@ -257,6 +261,38 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 							BattleScriptExecute(BattleScript_BerryHealHP_RemoveBerryEnd2);
 						else
 							BattleScriptExecute(BattleScript_ItemHealHP_RemoveItemEnd2);
+					}
+					if (bankHoldEffect==ITEM_EFFECT_PELLET && IsOfType(bank, bankQuality)){
+						u8 stat = GetHighestStat(bank);
+						u8 buff = 1;
+						u8 animId = STAT_ANIM_PLUS1;
+						if (ABILITY(bank) == ABILITY_RIPEN){
+							u8 buff = 2;
+							u8 animId = STAT_ANIM_PLUS2;
+						}
+						u8 backupUser = gBankAttacker;
+						gBankAttacker = bank;
+						  
+						if(STAT_CAN_RISE(bank, stat) && BATTLER_ALIVE(bank)
+						&& !ChangeStatBuffs(SET_STAT_BUFF_VALUE(buff), stat, MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, 0)){
+
+							PREPARE_STAT_BUFFER(gBattleTextBuff1, stat);
+							PREPARE_STRING_BUFFER(gBattleTextBuff2, STRINGID_STATROSE);
+
+							gEffectBank = bank;
+							gBattleScripting.statChanger = INCREASE_1 | stat;
+							gBattleScripting.animArg1 = animId + stat - 1;
+							gBattleScripting.animArg2 = 0;
+							if (moveTurn || doPluck)
+							{
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_BerryStatRaiseRet;
+							}
+							else
+								BattleScriptExecute(BattleScript_BerryStatRaiseEnd2);
+
+						}
+						gBankAttacker = backupUser;
 					}
 					effect = ITEM_HP_CHANGE;
 				}

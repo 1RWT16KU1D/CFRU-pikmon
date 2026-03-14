@@ -231,3 +231,7 @@ enum ItemBattleEffectCases
 #define MOVE_LIMITATION_IMPRISION   (1 << 5)
 #define MOVE_LIMITATION_CHOICE		(1 << 6)
 #define MOVE_LIMITATION_ENCORE		(1 << 7)
+
+void TrackinatorFunc(u8 atk, u8 def);
+
+extern const u8 BattleScript_Trackinator[];

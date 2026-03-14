@@ -241,11 +241,8 @@ void atk23_getexp(void)
 			tradeBonus = 15;
 
 		//Base Experience - b
-		#ifdef GEN_7_BASE_EXP_YIELD
-			baseExp = gBaseExpBySpecies[gBattleMons[gBankFainted].species];
-		#else
-			baseExp = gBaseStats[gBattleMons[gBankFainted].species].expYield;
-		#endif
+
+		baseExp = gBaseStats[gBattleMons[gBankFainted].species].expYield;
 
 		//Lucky Egg Boost - e
 		eggBoost = 10;
@@ -540,7 +537,7 @@ static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f
 
 	#else //Scaled Formula Gens 5, 7
 		u32 calculatedExpTop, calculatedExpBottom;
-
+/*
 		calculatedExp = udivsi(a * b * L, 10 * 5 * s);
 
 		calculatedExpTop = (2 * L + 10) * (2 * L + 10); //* Sqrt(2 * L + 10); //(2 * L + 10)**2.5
@@ -553,6 +550,8 @@ static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f
 		calculatedExp += 1;
 
 		calculatedExp = (udivsi(calculatedExp * t * e * v, 10 * 10 * 10) * p * f) / 10;
+*/
+		calculatedExp = ((b*L/5)*(a/10)*(1/s)*abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*(t*e*v*f/10000);
 	#endif
 
 	if (IsRaidBattle())

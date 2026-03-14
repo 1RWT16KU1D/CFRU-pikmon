@@ -181,4 +181,7 @@ extern const u8 gText_GloomyWeatherContinues[];
 extern const u8 gText_GloomyWeatherEnd[];
 extern const u8 gText_GloomyWeatherSet[];
 extern const u8 BattleScript_RagingSteps[];
+extern const u8 BattleScript_TatteredWeb[];
 extern const u8 gText_ButItFailed[];
+extern const u8 BattleScript_Whisker[];
+extern const u8 gText_WhiskerMega[];

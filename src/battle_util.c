@@ -2722,3 +2722,19 @@ u16 TryFixDynamaxTransformSpecies(u8 bank, u16 species)
 bool8 IsSunWeatherActive(u8 bank) {
     return gBattleWeather & WEATHER_SUN_ANY && WEATHER_HAS_EFFECT && AffectedBySun(bank);
 }
+
+void TrackinatorFunc(u8 atk, u8 def){
+
+	gBattleMons[def].item = 0;
+	HandleUnburdenBoost(def); //Give target Unburden boost
+
+	gActiveBattler = def;
+	EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+	MarkBufferBankForExecution(gActiveBattler);
+
+	gEffectBank = atk;
+	gBattleScripting.bank = def;
+	gBattleMoveDamage = 100;
+	BattleScriptPushCursor();
+	gBattlescriptCurrInstr = BattleScript_Trackinator;
+}

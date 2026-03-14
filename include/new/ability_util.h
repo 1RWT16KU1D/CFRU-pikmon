@@ -96,6 +96,7 @@ bool8 SpeciesHasSuperSoaker(u16 species); //increase accuracy and damage of wate
 bool8 SpeciesHasBoilingPoint(u16 species); //water moves might burn and wind moves are fire type
 bool8 SpeciesHasRagingSteps(u16 species); //Getting hit raises speed
 bool8 SpeciesHasBigSteps(u16 species); //Boosts Kick moves
+bool8 SpeciesHasTatteredWeb(u16 species); //Leaves Sticky Web on hit
 bool8 IsStompingMove(u16 move);
 bool8 IsKirby(u16 species);
 bool8 SpeciesHasSparkly(u16 species); //Permanent follow me

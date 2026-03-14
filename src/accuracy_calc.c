@@ -390,7 +390,8 @@ static bool8 AccuracyCalcHelper(u16 move, u8 bankDef)
 	||  ((gStatuses3[bankDef] & STATUS3_TELEKINESIS) && gBattleMoves[move].effect != EFFECT_0HKO)
 	||	 gBattleMoves[move].accuracy == 0
 	||  (gStatuses3[bankDef] & STATUS3_GLAIVERUSH)
-	||  (move == MOVE_TACHYONCUTTER))
+	||  (move == MOVE_TACHYONCUTTER)
+	||  (move == MOVE_FLING && ITEM(gBankAttacker) == ITEM_EFFECT_TRACKINATOR))
 	{
 		//JumpIfMoveFailed(7, move);
 		doneStatus = TRUE;

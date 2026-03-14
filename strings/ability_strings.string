@@ -131,16 +131,16 @@ But [SCRIPTING_BANK] evaporates\nrain!
 [CURRENT_MOVE] can't be used twice\nin a row!\p
 
 #org @gText_BeadsofRuin
-[SCRIPTING_BANK]'s Beads of Ruin weakened\nthe Sp.Def of around all Pokémon.
+[SCRIPTING_BANK]'s Beads of Ruin weakened\nthe Sp.Def of all surrounding Pokémon.
 
 #org @gText_TabletsofRuin
-[SCRIPTING_BANK]'s Tablets of Ruin weakened\nthe Attack of around all Pokémon.
+[SCRIPTING_BANK]'s Tablets of Ruin weakened\nthe Attack of all surrounding Pokémon.
 
 #org @gText_SwordofRuin
-[SCRIPTING_BANK]'s Sword of Ruin weakened\nthe Defense of around all Pokémon.
+[SCRIPTING_BANK]'s Sword of Ruin weakened\nthe Defense of all surrounding Pokémon.
 
 #org @gText_VesselofRuin
-[SCRIPTING_BANK]'s Vessel of Ruin weakened\nthe Sp.Attack of around all Pokémon.
+[SCRIPTING_BANK]'s Vessel of Ruin weakened\nthe Sp.Attack of all surrounding Pokémon.
 
 #org @gText_CostarActivate
 [SCRIPTING_BANK] copied [TARGET]\nstat changes!
@@ -181,3 +181,12 @@ Grass grew to cover the\nbattlefield!\p
 
 #org @gText_GloomyWeatherContinues
 Deadly gases surround the\nbattlefield[.]
+
+#org @gText_TatteredWeb
+Sticky webs were scattered!
+
+#org @gText_WhiskerMega
+The juices in [TARGET]'s\nberry made [SCRIPTING_BANK] mega evolve!
+
+#org @gText_TrackinatorActivate
+[TARGET]'s trackinator\nwas triggered!

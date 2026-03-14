@@ -2561,7 +2561,9 @@ void SetWildMonHeldItem(void)
 
 			u16 species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, NULL);
 			u16 item = GenerateWildMonHeldItem(species, 0);
-			
+			if (species == SPECIES_PELLETPOSY){
+				item = ITEM_PELLET_NORMAL + (Random()%18);
+			}
 			if (item != ITEM_NONE)
 				SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &item);
 		}

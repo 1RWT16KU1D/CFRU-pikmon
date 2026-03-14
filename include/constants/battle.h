@@ -317,6 +317,7 @@
 #define MOVE_EFFECT_BREAK_SCREENS       0x3F
 #define MOVE_EFFECT_AFFECTS_USER        0x40
 #define MOVE_EFFECT_CERTAIN             0x80
+#define MOVE_EFFECT_ALWAYS_HIT          0x41
 
 #define ABILITY_NAME_LENGTH 16 //Was 12 in vanilla
 

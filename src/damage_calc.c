@@ -110,6 +110,7 @@ void atk04_critcalc(void)
 
 		if (defAbility == ABILITY_BATTLEARMOR
 		||  defAbility == ABILITY_SHELLARMOR
+		|| ITEM_EFFECT(bankDef) == ITEM_EFFECT_AIR_ARMOR
 		||  CantScoreACrit(gBankAttacker, NULL)
 		||  gBattleTypeFlags & (BATTLE_TYPE_OLD_MAN | BATTLE_TYPE_OAK_TUTORIAL | BATTLE_TYPE_POKE_DUDE)
 		||  gNewBS->LuckyChantTimers[SIDE(bankDef)])
@@ -1799,6 +1800,13 @@ u8 GetExceptionMoveType(u8 bankAtk, u16 move)
 				moveType = quality;
 			else
 				moveType = TYPE_NORMAL;
+			break;
+
+		case MOVE_FLING:
+			if (effect == ITEM_EFFECT_PELLET || effect == ITEM_EFFECT_DRIVE)
+				moveType = quality;
+			else
+				moveType = TYPE_DARK;
 			break;
 
 		case MOVE_MULTIATTACK:

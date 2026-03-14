@@ -6,30 +6,30 @@
 
 #define gBag_InterrogationTiles ((u32*)0x08E87028)
 #define gBag_InterrogationPal ((u32*)0x08E870A0)
-#define gBag_MasterBallTiles ((u32*)0x08E87154)
-#define gBag_MasterBallPal ((u32*)0x08E87224)
-#define gBag_UltraBallTiles ((u32*)0x08E8724C)
-#define gBag_UltraBallPal ((u32*)0x08E8730C)
-#define gBag_GreatBallTiles ((u32*)0x08E87334)
-#define gBag_GreatBallPal ((u32*)0x08E87404)
-#define gBag_PokeBallTiles ((u32*)0x08E8742C)
-#define gBag_PokeBallPal ((u32*)0x08E874DC)
-#define gBag_SafariBallTiles ((u32*)0x08E87500)
-#define gBag_SafariBallPal ((u32*)0x08E875D0)
-#define gBag_NetBallTiles ((u32*)0x08E875F8)
-#define gBag_NetBallPal ((u32*)0x08E876CC)
-#define gBag_DiveBallTiles ((u32*)0x08E876F0)
-#define gBag_DiveBallPal ((u32*)0x08E877B8)
-#define gBag_NestBallTiles ((u32*)0x08E877DC)
-#define gBag_NestBallPal ((u32*)0x08E878A0)
-#define gBag_RepeatBallTiles ((u32*)0x08E878C8)
-#define gBag_RepeatBallPal ((u32*)0x08E8798C)
-#define gBag_TimerBallTiles ((u32*)0x08E879B4)
-#define gBag_TimerBallTPal ((u32*)0x08E8798C)
-#define gBag_LuxuryBallTiles ((u32*)0x08E87A7C)
-#define gBag_LuxuryBallPal ((u32*)0x08E87B38)
-#define gBag_PremierBallTiles ((u32*)0x08E87B60)
-#define gBag_PremierBallPal ((u32*)0x08E87B38)
+extern const u32 gBag_MasterBallTiles[];
+extern const u32 gBag_MasterBallPal[];
+extern const u32 gBag_UltraBallTiles[];
+extern const u32 gBag_UltraBallPal[];
+extern const u32 gBag_GreatBallTiles[];
+extern const u32 gBag_GreatBallPal[];
+extern const u32 gBag_PokeBallTiles[];
+extern const u32 gBag_PokeBallPal[];
+extern const u32 gBag_SafariBallTiles[];
+extern const u32 gBag_SafariBallPal[];
+extern const u32 gBag_NetBallTiles[];
+extern const u32 gBag_NetBallPal[];
+extern const u32 gBag_DiveBallTiles[];
+extern const u32 gBag_DiveBallPal[];
+extern const u32 gBag_NestBallTiles[];
+extern const u32 gBag_NestBallPal[];
+extern const u32 gBag_RepeatBallTiles[];
+extern const u32 gBag_RepeatBallPal[];
+extern const u32 gBag_TimerBallTiles[];
+extern const u32 gBag_TimerBallPal[];
+extern const u32 gBag_LuxuryBallTiles[];
+extern const u32 gBag_LuxuryBallPal[];
+extern const u32 gBag_PremierBallTiles[];
+extern const u32 gBag_PremierBallPal[];
 #define gBag_PotionTiles ((u32*)0x08E87C04)
 #define gBag_PotionPal ((u32*)0x08E87CCC)
 #define gBag_AntidoteTiles ((u32*)0x08E87CF0)
@@ -361,7 +361,7 @@ extern const u32 gBag_RazorFangPal[];
 #define gBag_SalacBerryTiles ((u32*)0x08E8D618)
 #define gBag_SalacBerryPal ((u32*)0x08E8D700)
 #define gBag_PetayaBerryTiles ((u32*)0x08E8D720)
-#define gBag_PetayaBerrypal ((u32*)0x08E8D818)
+#define gBag_PetayaBerryPal ((u32*)0x08E8D818)
 #define gBag_ApicotBerryTiles ((u32*)0x08E8D83C)
 #define gBag_ApicotBerryPal ((u32*)0x08E8D8F4)
 #define gBag_LansatBerryTiles ((u32*)0x08E8D91C)
@@ -605,22 +605,23 @@ extern const u32 gBag_BlueOrbPal[];
 #define gBag_DevonScopeTiles ((u32*)0x08E91BE4)
 #define gBag_DevonScopePal ((u32*)0x08E91CA0)
 #define gBag_TMTiles ((u32*)0x08E91CC8)
-#define gBag_TMNormalPal ((u32*)0x08E91E64)
-#define gBag_TMFightingPal ((u32*)0x08E91DC4)
-#define gBag_TMFlyingPal ((u32*)0x08E9201C)
-#define gBag_TMPoisonPal ((u32*)0x08E91E8C)
-#define gBag_TMGroundPal ((u32*)0x08E91FA4)
-#define gBag_TMRockPal ((u32*)0x08E91FF4)
-#define gBag_TMGhostPal ((u32*)0x08E91FCC)
-#define gBag_TMSteelPal ((u32*)0x08E91F54)
-#define gBag_TMFirePal ((u32*)0x08E91F04)
-#define gBag_TMWaterPal ((u32*)0x08E91E14)
-#define gBag_TMGrassPal ((u32*)0x08E91EDC)
-#define gBag_TMElectricPal ((u32*)0x08E91F7C)
-#define gBag_TMPsychicPal ((u32*)0x08E91E3C)
-#define gBag_TMIcePal ((u32*)0x08E91EB4)
-#define gBag_TMDragonPal ((u32*)0x08E91DEC)
-#define gBag_TMDarkPal ((u32*)0x08E91F2C)
+extern const u32 gBag_TMNormalPal[];
+extern const u32 gBag_TMFightingPal[];
+extern const u32 gBag_TMFlyingPal[];
+extern const u32 gBag_TMPoisonPal[];
+extern const u32 gBag_TMGroundPal[];
+extern const u32 gBag_TMRockPal[];
+extern const u32 gBag_TMGhostPal[];
+extern const u32 gBag_TMSteelPal[];
+extern const u32 gBag_TMFirePal[];
+extern const u32 gBag_TMWaterPal[];
+extern const u32 gBag_TMGrassPal[];
+extern const u32 gBag_TMElectricPal[];
+extern const u32 gBag_TMPsychicPal[];
+extern const u32 gBag_TMIcePal[];
+extern const u32 gBag_TMDragonPal[];
+extern const u32 gBag_TMDarkPal[];
+extern const u32 gBag_TMUnknownPal[];
 extern const u32 gBag_TMNormalTiles[];
 extern const u32 gBag_TMFightingTiles[];
 extern const u32 gBag_TMFlyingTiles[];
@@ -641,6 +642,7 @@ extern const u32 gBag_TMFairyPal[];
 extern const u32 gBag_TMBugPal[];
 extern const u32 gBag_TMFairyTiles[];
 extern const u32 gBag_TMBugTiles[];
+extern const u32 gBag_TMUnknownTiles[];
 extern const u32 gBag_DynamaxBandTiles[];
 extern const u32 gBag_DynamaxBandPal[];
 
@@ -678,8 +680,8 @@ extern const u32 gBag_MegaRingPal[];
 #define gBag_VSSeekerPal ((u32*)0x08E92D40)
 #define gBag_FameCheckerTiles ((u32*)0x08E92D60)
 #define gBag_FameCheckerPal ((u32*)0x08E92E18)
-#define gBag_TMCaseTiles ((u32*)0x08E92E3C)
-#define gBag_TMCasePal ((u32*)0x08E92F00)
+extern const u32 gBag_TMCaseTiles[];
+extern const u32  gBag_TMCasePal[];
 #define gBag_BerryPouchTiles ((u32*)0x08E92F28)
 #define gBag_BerryPouchPal ((u32*)0x08E93028)
 #define gBag_TeachyTVTiles ((u32*)0x08E93050)
@@ -1383,6 +1385,175 @@ extern const u32 unremarkable_teacupTiles[];
 extern const u32 unremarkable_teacupPal[];
 extern const u32 Portable_PCTiles[];
 extern const u32 Portable_PCPal[];
+
+extern const u32 gBagItem_Pellet_NormalTiles[];
+extern const u32 gBagItem_Pellet_GrassTiles[];
+extern const u32 gBagItem_Pellet_FireTiles[];
+extern const u32 gBagItem_Pellet_WaterTiles[];
+extern const u32 gBagItem_Pellet_ElectricTiles[];
+extern const u32 gBagItem_Pellet_RockTiles[];
+extern const u32 gBagItem_Pellet_GroundTiles[];
+extern const u32 gBagItem_Pellet_IceTiles[];
+extern const u32 gBagItem_Pellet_FlyingTiles[];
+extern const u32 gBagItem_Pellet_FightingTiles[];
+extern const u32 gBagItem_Pellet_GhostTiles[];
+extern const u32 gBagItem_Pellet_BugTiles[];
+extern const u32 gBagItem_Pellet_PoisonTiles[];
+extern const u32 gBagItem_Pellet_PsychicTiles[];
+extern const u32 gBagItem_Pellet_SteelTiles[];
+extern const u32 gBagItem_Pellet_DarkTiles[];
+extern const u32 gBagItem_Pellet_DragonTiles[];
+extern const u32 gBagItem_Pellet_FairyTiles[];
+extern const u32 gBagItem_Pellet_RandomTiles[];
+extern const u32 gBagItem_Pellet_NormalPal[];
+extern const u32 gBagItem_Pellet_GrassPal[];
+extern const u32 gBagItem_Pellet_FirePal[];
+extern const u32 gBagItem_Pellet_WaterPal[];
+extern const u32 gBagItem_Pellet_ElectricPal[];
+extern const u32 gBagItem_Pellet_RockPal[];
+extern const u32 gBagItem_Pellet_GroundPal[];
+extern const u32 gBagItem_Pellet_IcePal[];
+extern const u32 gBagItem_Pellet_FlyingPal[];
+extern const u32 gBagItem_Pellet_FightingPal[];
+extern const u32 gBagItem_Pellet_GhostPal[];
+extern const u32 gBagItem_Pellet_BugPal[];
+extern const u32 gBagItem_Pellet_PoisonPal[];
+extern const u32 gBagItem_Pellet_PsychicPal[];
+extern const u32 gBagItem_Pellet_SteelPal[];
+extern const u32 gBagItem_Pellet_DarkPal[];
+extern const u32 gBagItem_Pellet_DragonPal[];
+extern const u32 gBagItem_Pellet_FairyPal[];
+extern const u32 gBagItem_Pellet_RandomPal[];
+
+extern const u32 gBagItem_TrackinatorTiles[];
+extern const u32 gBagItem_TrackinatorPal[];
+extern const u32 gBagItem_AirArmorTiles[];
+extern const u32 gBagItem_AirArmorPal[];
+
+/*
+extern const u32 gBagItem_rush_bootsTiles[];
+extern const u32 gBagItem_rush_bootsPal[];
+extern const u32 gBagItem_brace_bootsTiles[];
+extern const u32 gBagItem_brace_bootsPal[];
+extern const u32 gBagItem_treasure_gaugeTiles[];
+extern const u32 gBagItem_treasure_gaugePal[];
+extern const u32 gBagItem_mellon_berryTiles[];
+extern const u32 gBagItem_mellon_berryPal[];
+extern const u32 gBagItem_softenerTiles[];
+extern const u32 gBagItem_softenerPal[];
+extern const u32 gBagItem_napsackTiles[];
+extern const u32 gBagItem_napsackPal[];
+extern const u32 gBagItem_gloomy_rockTiles[];
+extern const u32 gBagItem_gloomy_rockPal[];
+*/
+extern const u32 gBagItem_Flare_CannonTiles[];
+extern const u32 gBagItem_Flare_CannonPal[];
+extern const u32 gBagItem_Shock_TherapistTiles[];
+extern const u32 gBagItem_Shock_TherapistPal[];
+extern const u32 gBagItem_Monster_PumpTiles[];
+extern const u32 gBagItem_Monster_PumpPal[];
+extern const u32 gBagItem_Comedy_BombTiles[];
+extern const u32 gBagItem_Comedy_BombPal[];
+
+/*
+extern const u32 gBagItem_bitter_jumbo_berryTiles[];
+extern const u32 gBagItem_bitter_jumbo_berryPal[];
+extern const u32 gBagItem_bitter_titan_berryTiles[];
+extern const u32 gBagItem_bitter_titan_berryPal[];
+extern const u32 gBagItem_bitter_master_berryTiles[];
+extern const u32 gBagItem_bitter_master_berryPal[];
+extern const u32 gBagItem_bitter_glint_berryTiles[];
+extern const u32 gBagItem_bitter_glint_berryPal[];
+extern const u32 gBagItem_bitter_dirigi_berryTiles[];
+extern const u32 gBagItem_bitter_dirigi_berryPal[];
+extern const u32 gBagItem_bitter_bread_berryTiles[];
+extern const u32 gBagItem_bitter_bread_berryPal[];
+extern const u32 gBagItem_bitter_sovreign_berryTiles[];
+extern const u32 gBagItem_bitter_sovreign_berryPal[];
+extern const u32 gBagItem_bitter_dandel_berryTiles[];
+extern const u32 gBagItem_bitter_dandel_berryPal[];
+extern const u32 gBagItem_bitter_pileated_berryTiles[];
+extern const u32 gBagItem_bitter_pileated_berryPal[];
+extern const u32 gBagItem_bitter_desiccated_berryTiles[];
+extern const u32 gBagItem_bitter_desiccated_berryPal[];
+extern const u32 gBagItem_spicy_adult_berryTiles[];
+extern const u32 gBagItem_spicy_adult_berryPal[];
+extern const u32 gBagItem_bitter_adult_berryTiles[];
+extern const u32 gBagItem_bitter_adult_berryPal[];
+extern const u32 gBagItem_bitter_man_at_berryTiles[];
+extern const u32 gBagItem_bitter_man_at_berryPal[];
+extern const u32 gBagItem_bitter_veheamoth_berryTiles[];
+extern const u32 gBagItem_bitter_veheamoth_berryPal[];
+extern const u32 gBagItem_bitter_pyroclastic_berryTiles[];
+extern const u32 gBagItem_bitter_pyroclastic_berryPal[];
+extern const u32 gBagItem_bitter_greater_berryTiles[];
+extern const u32 gBagItem_bitter_greater_berryPal[];
+extern const u32 gBagItem_bitter_flutter_berryTiles[];
+extern const u32 gBagItem_bitter_flutter_berryPal[];
+extern const u32 gBagItem_bitter_bog_berryTiles[];
+extern const u32 gBagItem_bitter_bog_berryPal[];
+extern const u32 gBagItem_spicy_puff_berryTiles[];
+extern const u32 gBagItem_spicy_puff_berryPal[];
+extern const u32 gBagItem_bitter_scorch_berryTiles[];
+extern const u32 gBagItem_bitter_scorch_berryPal[];
+extern const u32 gBagItem_bitter_puff_berryTiles[];
+extern const u32 gBagItem_bitter_puff_berryPal[];
+extern const u32 gBagItem_bitter_empress_berryTiles[];
+extern const u32 gBagItem_bitter_empress_berryPal[];
+extern const u32 gBagItem_bitter_muck_berryTiles[];
+extern const u32 gBagItem_bitter_muck_berryPal[];
+extern const u32 gBagItem_bitter_groovy_berryTiles[];
+extern const u32 gBagItem_bitter_groovy_berryPal[];
+extern const u32 gBagItem_bitter_crusted_berryTiles[];
+extern const u32 gBagItem_bitter_crusted_berryPal[];
+extern const u32 gBagItem_bitter_gattling_berryTiles[];
+extern const u32 gBagItem_bitter_gattling_berryPal[];
+extern const u32 gBagItem_bitter_armored_berryTiles[];
+extern const u32 gBagItem_bitter_armored_berryPal[];
+extern const u32 gBagItem_spicy_oat_berryTiles[];
+extern const u32 gBagItem_spicy_oat_berryPal[];
+extern const u32 gBagItem_bitter_oat_berryTiles[];
+extern const u32 gBagItem_bitter_oat_berryPal[];
+extern const u32 gBagItem_bitter_mire_berryTiles[];
+extern const u32 gBagItem_bitter_mire_berryPal[];
+extern const u32 gBagItem_spicy_white_berryTiles[];
+extern const u32 gBagItem_spicy_white_berryPal[];
+extern const u32 gBagItem_spicy_blue_berryTiles[];
+extern const u32 gBagItem_spicy_blue_berryPal[];
+extern const u32 gBagItem_spicy_rock_berryTiles[];
+extern const u32 gBagItem_spicy_rock_berryPal[];
+extern const u32 gBagItem_spicy_yellow_berryTiles[];
+extern const u32 gBagItem_spicy_yellow_berryPal[];
+extern const u32 gBagItem_spicy_winged_berryTiles[];
+extern const u32 gBagItem_spicy_winged_berryPal[];
+extern const u32 gBagItem_spicy_red_berryTiles[];
+extern const u32 gBagItem_spicy_red_berryPal[];
+extern const u32 gBagItem_spicy_purple_berryTiles[];
+extern const u32 gBagItem_spicy_purple_berryPal[];
+extern const u32 gBagItem_spicy_ice_berryTiles[];
+extern const u32 gBagItem_spicy_ice_berryPal[];
+extern const u32 gBagItem_spicy_glow_berryTiles[];
+extern const u32 gBagItem_spicy_glow_berryPal[];
+extern const u32 gBagItem_bitter_prog_berryTiles[];
+extern const u32 gBagItem_bitter_prog_berryPal[];
+extern const u32 gBagItem_spicy_moss_berryTiles[];
+extern const u32 gBagItem_spicy_moss_berryPal[];
+extern const u32 gBagItem_bitter_moss_berryTiles[];
+extern const u32 gBagItem_bitter_moss_berryPal[];
+extern const u32 gBagItem_bitter_watery_berryTiles[];
+extern const u32 gBagItem_bitter_watery_berryPal[];
+
+extern const u32 gBagItem_boiled_eggTiles[];
+extern const u32 gBagItem_boiled_eggPal[];
+extern const u32 gBagItem_guard_satelliteTiles[];
+extern const u32 gBagItem_guard_satellitePal[];
+extern const u32 gBagItem_spike_ballTiles[];
+extern const u32 gBagItem_spike_ballPal[];
+extern const u32 gBagItem_sharp_bladeTiles[];
+extern const u32 gBagItem_sharp_bladePal[];
+extern const u32 gBagItem_lost_mediaTiles[];
+extern const u32 gBagItem_lost_mediaPal[];
+*/
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -2191,4 +2362,87 @@ extern const u8 DESC_HISUI_ROCK[];
 extern const u8 DESC_MASTERPIECE_TEACUP[];
 extern const u8 DESC_UNREMARKABLE_TEACUP[];
 extern const u8 DESC_PORTABLE_PC[];
+
+extern const u8 DESC_PELLET_NORMAL[];
+extern const u8 DESC_PELLET_GRASS[];
+extern const u8 DESC_PELLET_FIRE[];
+extern const u8 DESC_PELLET_WATER[];
+extern const u8 DESC_PELLET_ELECTRIC[];
+extern const u8 DESC_PELLET_ROCK[];
+extern const u8 DESC_PELLET_GROUND[];
+extern const u8 DESC_PELLET_ICE[];
+extern const u8 DESC_PELLET_FLYING[];
+extern const u8 DESC_PELLET_FIGHTING[];
+extern const u8 DESC_PELLET_GHOST[];
+extern const u8 DESC_PELLET_BUG[];
+extern const u8 DESC_PELLET_POISON[];
+extern const u8 DESC_PELLET_PSYCHIC[];
+extern const u8 DESC_PELLET_STEEL[];
+extern const u8 DESC_PELLET_DARK[];
+extern const u8 DESC_PELLET_DRAGON[];
+extern const u8 DESC_PELLET_FAIRY[];
+extern const u8 DESC_PELLET_RANDOM[];
+
+extern const u8 DESC_TRACKINATOR[];
+extern const u8 DESC_AIR_ARMOR[];
+extern const u8 DESC_RUSH_BOOTS[];
+extern const u8 DESC_BRACE_BOOTS[];
+extern const u8 DESC_TREASURE_GAUGE[];
+extern const u8 DESC_MELLON_BERRY[];
+extern const u8 DESC_SOFTENER[];
+extern const u8 DESC_NAPSACK[];
+extern const u8 DESC_GLOOMY_ROCK[];
+extern const u8 DESC_FLARE_CANNON[];
+extern const u8 DESC_SHOCK_THERAPIST[];
+extern const u8 DESC_MONSTER_PUMP[];
+extern const u8 DESC_COMEDY_BOMB[];
+
+extern const u8 DESC_BITTER_JUMBO_BERRY[];
+extern const u8 DESC_BITTER_TITAN_BERRY[];
+extern const u8 DESC_BITTER_MASTER_BERRY[];
+extern const u8 DESC_BITTER_GLINT_BERRY[];
+extern const u8 DESC_BITTER_DIRIGI_BERRY[];
+extern const u8 DESC_BITTER_SOVREIGN_BERRY[];
+extern const u8 DESC_BITTER_DANDEL_BERRY[];
+extern const u8 DESC_BITTER_PILEATED_BERRY[];
+extern const u8 DESC_BITTER_DESICCATED_BERRY[];
+extern const u8 DESC_SPICY_ADULT_BERRY[];
+extern const u8 DESC_BITTER_ADULT_BERRY[];
+extern const u8 DESC_BITTER_MAN_AT_BERRY[];
+extern const u8 DESC_BITTER_VEHEAMOTH_BERRY[];
+extern const u8 DESC_BITTER_PYROCLASTIC_BERRY[];
+extern const u8 DESC_BITTER_GREATER_BERRY[];
+extern const u8 DESC_BITTER_FLUTTER_BERRY[];
+extern const u8 DESC_BITTER_BOG_BERRY[];
+extern const u8 DESC_SPICY_PUFF_BERRY[];
+extern const u8 DESC_BITTER_SCORCH_BERRY[];
+extern const u8 DESC_BITTER_PUFF_BERRY[];
+extern const u8 DESC_BITTER_EMPRESS_BERRY[];
+extern const u8 DESC_BITTER_MUCK_BERRY[];
+extern const u8 DESC_BITTER_GROOVY_BERRY[];
+extern const u8 DESC_BITTER_CRUSTED_BERRY[];
+extern const u8 DESC_BITTER_GATTLING_BERRY[];
+extern const u8 DESC_BITTER_ARMORED_BERRY[];
+extern const u8 DESC_SPICY_OAT_BERRY[];
+extern const u8 DESC_BITTER_OAT_BERRY[];
+extern const u8 DESC_BITTER_MIRE_BERRY[];
+extern const u8 DESC_SPICY_WHITE_BERRY[];
+extern const u8 DESC_SPICY_BLUE_BERRY[];
+extern const u8 DESC_SPICY_ROCK_BERRY[];
+extern const u8 DESC_SPICY_YELLOW_BERRY[];
+extern const u8 DESC_SPICY_WINGED_BERRY[];
+extern const u8 DESC_SPICY_RED_BERRY[];
+extern const u8 DESC_SPICY_PURPLE_BERRY[];
+extern const u8 DESC_SPICY_ICE_BERRY[];
+extern const u8 DESC_SPICY_GLOW_BERRY[];
+extern const u8 DESC_BITTER_PROG_BERRY[];
+extern const u8 DESC_SPICY_MOSS_BERRY[];
+extern const u8 DESC_BITTER_MOSS_BERRY[];
+extern const u8 DESC_BITTER_WATERY_BERRY[];
+
+extern const u8 DESC_BOILED_EGG[];
+extern const u8 DESC_GUARD_SATELLITE[];
+extern const u8 DESC_SPIKE_BALL[];
+extern const u8 DESC_SHARP_BLADE[];
+extern const u8 DESC_LOST_MEDIA[];
 #endif

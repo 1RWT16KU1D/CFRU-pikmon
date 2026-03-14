@@ -149,7 +149,11 @@
 #define ITEM_EFFECT_COVERT_CLOAK 145
 #define ITEM_EFFECT_NATURE_MINT 146
 
-#define ITEM_EFFECT_COUNT (ITEM_EFFECT_NATURE_MINT + 1)
+#define ITEM_EFFECT_PELLET 147 //Quality = Move Type
+#define ITEM_EFFECT_TRACKINATOR 148
+#define ITEM_EFFECT_AIR_ARMOR 149
+
+#define ITEM_EFFECT_COUNT (ITEM_EFFECT_AIR_ARMOR + 1)
 
 //Focus Sash: Item Effect = ITEM_EFFECT_FOCUS_BAND, Item Quality = 100, Item Mystery 2 = 1
 //Power Items: Item Effect = ITEM_EFFECT_MACHO_BRACE Item Quality = See Below

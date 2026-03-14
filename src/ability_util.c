@@ -165,6 +165,8 @@ extern const u8 gText_AbilityName_BigSteps[];
 extern const u8 gText_AbilityDescription_BigSteps[];
 extern const u8 gText_AbilityName_Sparkly[];
 extern const u8 gText_AbilityDescription_Sparkly[];
+extern const u8 gText_AbilityName_TatteredWeb[];
+extern const u8 gText_AbilityDescription_TatteredWeb[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -529,6 +531,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_POISONPOINT:
 			if(SpeciesHasToxicDebris(species))
 				return gText_AbilityName_ToxicDebris;
+			if(SpeciesHasTatteredWeb(species))
+				return gText_AbilityName_TatteredWeb;
 			break;
 		case ABILITY_BERSERK:
 			if(SpeciesHasWindPower(species))
@@ -744,6 +748,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_POISONPOINT:
 			if(SpeciesHasToxicDebris(species))
 				return gText_AbilityDescription_ToxicDebris;
+			if(SpeciesHasTatteredWeb(species))
+				return gText_AbilityDescription_TatteredWeb;
 			break;
 		case ABILITY_BERSERK:
 			if(SpeciesHasWindPower(species))
@@ -1617,6 +1623,11 @@ bool8 SpeciesHasSparkly(unusedArg u16 species)
 bool8 SpeciesHasBigSteps(unusedArg u16 species)
 {
 	return species == SPECIES_BALDYLONGLEGS || species == SPECIES_SHAGGYLONGLEGS || species == SPECIES_ELONGATEDCRUSHBLAT;
+}
+
+bool8 SpeciesHasTatteredWeb(unusedArg u16 species)
+{
+	return species == SPECIES_ARACHNODE;
 }
 
 bool8 IsKirby(unusedArg u16 species)
