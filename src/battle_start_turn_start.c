@@ -2262,6 +2262,9 @@ s8 PriorityCalc(u8 bank, u8 action, u16 move)
 		if (!FlagGet(FLAG_WEIGHT_SPEED_BATTLE))
 		#endif
 		{
+			if(ITEM_EFFECT(bank)==ITEM_EFFECT_RUSH_BOOTS && gDisableStructs[bank].isFirstTurn){
+				++priority;
+			}
 			switch (ABILITY(bank))
 			{
 				case ABILITY_PRANKSTER:

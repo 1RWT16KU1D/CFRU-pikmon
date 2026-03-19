@@ -456,7 +456,7 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if(SpeciesHasElectromorphosis(species))
 				return gText_AbilityName_Electromorphosis;
 			break;
-		case ABILITY_INNERFOCUS:
+		case ABILITY_SUCTIONCUPS:
 			if(SpeciesHasGuardDog(species))
 				return gText_AbilityName_GuardDog;
 			break;
@@ -665,7 +665,7 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_GoodAsGold;
 			
 			break;
-		case ABILITY_INNERFOCUS:
+		case ABILITY_SUCTIONCUPS:
 			if(SpeciesHasGuardDog(species))
 				return gText_AbilityDescription_GuardDog;
 			break;
@@ -1352,7 +1352,7 @@ bool8 GuardDogPreventsLoweringStat(u8 ability, u8 statId, u8 bank)
 {
 	switch (ability)
 	{
-		case ABILITY_INNERFOCUS:
+		case ABILITY_SUCTIONCUPS:
 			if(SpeciesHasGuardDog(SPECIES(bank))){
 				return statId == STAT_STAGE_ATK;
 			}

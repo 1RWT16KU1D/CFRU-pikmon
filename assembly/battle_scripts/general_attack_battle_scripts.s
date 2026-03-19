@@ -615,6 +615,7 @@ BS_028_Roar:
 RoarBS:
 	attackstring @;Still activates Protean even if move fails
 	ppreduce
+	jumpifhelditemeffect BANK_TARGET 0x97 BattleScript_BraceBoots
 	jumpifability BANK_TARGET ABILITY_SUCTIONCUPS BattleScript_AbilityPreventsPhasingOut
 	jumpifspecialstatusflag BANK_TARGET STATUS3_ROOTED 0x0 0x81D8F27 @;BattleScript_PrintMonIsRooted
 	accuracycheck FAILED 0x0
@@ -628,6 +629,7 @@ DragonTailBS:
 	jumpiffainted BANK_TARGET BS_MOVE_FAINT
 	jumpifmovehadnoeffect BS_MOVE_FAINT
 	jumpifdynamaxed BANK_TARGET BattleScript_DragonTailBlockedByDynamax
+	jumpifhelditemeffect BANK_TARGET 0x97 BattleScript_BraceBootsSkipFail
 	jumpifspecialstatusflag BANK_TARGET STATUS3_ROOTED 0x0 0x81D8F27 @;BattleScript_PrintMonIsRooted
 	jumpifability BANK_TARGET ABILITY_SUCTIONCUPS BattleScript_AbilityPreventsPhasingOutSkipFail
 	setbyte CMD49_STATE 0x0
@@ -645,6 +647,17 @@ BattleScript_DragonTailBlockedByDynamax:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_FAINT
+
+BattleScript_BraceBoots:
+	orbyte OUTCOME OUTCOME_NOT_AFFECTED
+
+BattleScript_BraceBootsSkipFail:
+	pause 0x10
+	copyarray BATTLE_SCRIPTING_BANK TARGET_BANK 0x1
+	setword BATTLE_STRING_LOADER gText_BraceBoots
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
 
 BattleScript_AbilityPreventsPhasingOut:
 	orbyte OUTCOME OUTCOME_NOT_AFFECTED

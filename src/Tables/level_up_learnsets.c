@@ -1193,12 +1193,7 @@ static const struct LevelUpMove sBulbminLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sAdultBulbminLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 1, MOVE_THUNDERFANG),
-	LEVEL_UP_MOVE( 1, MOVE_BITE),
 	LEVEL_UP_MOVE( 1, MOVE_ROAR),
-	LEVEL_UP_MOVE( 1, MOVE_ODORSLEUTH),
-	LEVEL_UP_MOVE( 1, MOVE_FIREFANG),
-	LEVEL_UP_MOVE(34, MOVE_EXTREMESPEED),
 	LEVEL_UP_END
 };
 

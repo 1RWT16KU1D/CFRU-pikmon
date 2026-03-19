@@ -101,6 +101,24 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 	switch (caseID) {
 	case ItemEffects_SwitchIn:
 		switch (bankHoldEffect) {
+			case ITEM_EFFECT_TREASURE_GAUGE:
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_TreasureGauge;
+				if(IsDoubleBattle){
+					if(ITEM(PARTNER(SIDE(bank) ^ BIT_SIDE)) > 0 || ABILITY(PARTNER(SIDE(bank) ^ BIT_SIDE)) == ABILITY_DISGUISE ||
+					ITEM((SIDE(bank) ^ BIT_SIDE)) > 0 || ABILITY((SIDE(bank) ^ BIT_SIDE)) == ABILITY_DISGUISE)
+					{
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_TreasureGauge;
+					}
+				}
+				else if(ITEM((SIDE(bank) ^ BIT_SIDE)) > 0 || ABILITY((SIDE(bank) ^ BIT_SIDE)) == ABILITY_DISGUISE)
+				{
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_TreasureGauge;
+				}
+				effect = ITEM_EFFECT_OTHER;
+				break;
 			case ITEM_EFFECT_DOUBLE_PRIZE:
 				if (!gNewBS->usedAmuletCoin && SIDE(bank) == B_SIDE_PLAYER)
 				{

@@ -1711,9 +1711,9 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 
 	{gBagItem_TrackinatorTiles, gBagItem_TrackinatorPal},
 	{gBagItem_AirArmorTiles, gBagItem_AirArmorPal},
-	{gBag_InterrogationTiles, gBag_InterrogationPal},
-	{gBag_InterrogationTiles, gBag_InterrogationPal},
-	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBagItem_RushBootsTiles, gBagItem_RushBootsPal},
+	{gBagItem_BraceBootsTiles, gBagItem_BraceBootsPal},
+	{gBagItem_TreasureGaugeTiles, gBagItem_TreasureGaugePal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -13821,6 +13821,57 @@ const struct Item gItemData[] =
 		.holdEffect = ITEM_EFFECT_AIR_ARMOR,
         .holdEffectParam = 0,
 		.description = DESC_AIR_ARMOR,
+		.importance = 0,
+        .unk19 = 1,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_RUSH_BOOTS]
+	{
+		.name = {_R, _u, _s, _h, _SPACE, _B, _o, _o, _t, _s, _END},//max 12 letters
+		.itemId = ITEM_RUSH_BOOTS,
+		.price = 150,
+		.holdEffect = ITEM_EFFECT_RUSH_BOOTS,
+        .holdEffectParam = 0,
+		.description = DESC_RUSH_BOOTS,
+		.importance = 0,
+        .unk19 = 1,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_BRACE_BOOTS]
+	{
+		.name = {_B, _r, _a, _c, _e, _SPACE, _B, _o, _o, _t, _s, _END},//max 12 letters
+		.itemId = ITEM_BRACE_BOOTS,
+		.price = 150,
+		.holdEffect = ITEM_EFFECT_BRACE_BOOTS,
+        .holdEffectParam = 0,
+		.description = DESC_RUSH_BOOTS,
+		.importance = 0,
+        .unk19 = 1,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_TREASURE_GAUGE]
+	{
+		.name = {_T, _r, _e, _a, _s, _r, _SPACE, _G, _a, _u, _g, _e, _END},//max 12 letters
+		.itemId = ITEM_TREASURE_GAUGE,
+		.price = 150,
+		.holdEffect = ITEM_EFFECT_TREASURE_GAUGE,
+        .holdEffectParam = 0,
+		.description = DESC_TREASURE_GAUGE,
 		.importance = 0,
         .unk19 = 1,
 		.pocket = POCKET_ITEMS,

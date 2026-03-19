@@ -1429,14 +1429,13 @@ extern const u32 gBagItem_TrackinatorTiles[];
 extern const u32 gBagItem_TrackinatorPal[];
 extern const u32 gBagItem_AirArmorTiles[];
 extern const u32 gBagItem_AirArmorPal[];
-
+extern const u32 gBagItem_RushBootsTiles[];
+extern const u32 gBagItem_RushBootsPal[];
+extern const u32 gBagItem_BraceBootsTiles[];
+extern const u32 gBagItem_BraceBootsPal[];
+extern const u32 gBagItem_TreasureGaugeTiles[];
+extern const u32 gBagItem_TreasureGaugePal[];
 /*
-extern const u32 gBagItem_rush_bootsTiles[];
-extern const u32 gBagItem_rush_bootsPal[];
-extern const u32 gBagItem_brace_bootsTiles[];
-extern const u32 gBagItem_brace_bootsPal[];
-extern const u32 gBagItem_treasure_gaugeTiles[];
-extern const u32 gBagItem_treasure_gaugePal[];
 extern const u32 gBagItem_mellon_berryTiles[];
 extern const u32 gBagItem_mellon_berryPal[];
 extern const u32 gBagItem_softenerTiles[];

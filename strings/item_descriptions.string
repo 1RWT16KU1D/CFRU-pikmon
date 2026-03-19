@@ -2338,13 +2338,13 @@ A device that explodes when stolen.
 Protects from critical hits.\nPrevents using STATUS moves.
 
 #org @DESC_RUSH_BOOTS
-NA.
+A pair of boots that allow the\nwearer to move first when entering battle.
 
 #org @DESC_BRACE_BOOTS
-NA.
+A pair of boots that prevent\nforced switching out.
 
 #org @DESC_TREASURE_GAUGE
-NA.
+Reacts to held items.
 
 #org @DESC_MELLON_BERRY
 NA.

@@ -1288,7 +1288,8 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 					&&  !MoveBlockedBySubstitute(gCurrentMove, gBankAttacker, banks[i])
 					&&  ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(i) == B_SIDE_PLAYER) //Wild's can't activate
 					&&  HasMonToSwitchTo(banks[i])
-					&&	!(SpeciesHasGuardDog(SPECIES(banks[i])) && ABILITY(banks[i]) == ABILITY_GUARDDOG))
+					&&	!(SpeciesHasGuardDog(SPECIES(banks[i])) && ABILITY(banks[i]) == ABILITY_GUARDDOG)
+					&&  !(ITEM_EFFECT(banks[i]) == ITEM_EFFECT_BRACE_BOOTS))
 					{
 						if (gBattleMoves[gCurrentMove].effect == EFFECT_BATON_PASS)
 							gBattlescriptCurrInstr = BattleScript_Atk49; //Cancel switchout for U-Turn & Volt Switch

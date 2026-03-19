@@ -189,4 +189,10 @@ Sticky webs were scattered!
 The juices in [TARGET]'s\nberry made [SCRIPTING_BANK] mega evolve!
 
 #org @gText_TrackinatorActivate
-[TARGET]'s trackinator\nwas triggered!
+[TARGET]'s Trackinator\nwas triggered!
+
+#org @gText_BraceBoots
+[TARGET] braced themself\n for the attack!
+
+#org @gText_TreasureGauge
+[TARGET]'s Treasure Gauge\n reacted!

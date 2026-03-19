@@ -383,8 +383,8 @@ u8 ChangeStatBuffs(s8 statValue, u8 statId, u8 flags, const u8* BS_ptr)
 
 		else if (!certain
 		&& (AbilityPreventsLoweringStat(ability, statId) || (MindsEyePreventsLoweringStat(ability, statId)
-		&& SpeciesHasMindsEye(gBankTarget)) || (IsIntimidateActive() && AbilityBlocksIntimidate(ability)
-		&& !SpeciesHasMindsEye(SPECIES(bank)))) && !SpeciesHasGuardDog(SPECIES(bank)))
+		&& SpeciesHasMindsEye(gBankTarget)) || (IsIntimidateActive() && (AbilityBlocksIntimidate(ability))
+		&& !SpeciesHasMindsEye(SPECIES(bank)))))
 		{
 			if (flags == STAT_CHANGE_BS_PTR)
 			{
@@ -414,7 +414,7 @@ u8 ChangeStatBuffs(s8 statValue, u8 statId, u8 flags, const u8* BS_ptr)
 			}
 			return STAT_CHANGE_DIDNT_WORK;
 		}
-		else if (!certain && GuardDogPreventsLoweringStat(ability, statId, bank))
+		else if (!certain && GuardDogPreventsLoweringStat(ability, statId, bank) && IsIntimidateActive())
 		{
 			if (flags == STAT_CHANGE_BS_PTR)
 			{
