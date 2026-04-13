@@ -7,6 +7,7 @@
 
 .global EventScript_Pallet_FatGuy
 
+.equ FLAG_WILD_CUSTOM_MOVES, 0x90B
 EventScript_Pallet_FatGuy:
     faceplayer
 
@@ -16,6 +17,11 @@ EventScript_Pallet_FatGuy:
     callasm ShowImage
     waitstate
     msgboxtransparent gText_ThisIsAfterImage MSG_NORMAL
+    additem 0x31F 1
+    additem ITEM_MASTER_BALL 1
+
+    setwildbattle 0x4 5 ITEM_CHARCOAL
+    dowildbattle
     release
     end
 

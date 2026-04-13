@@ -11,6 +11,7 @@ battle_start_turn_start_battle_scripts.s
 
 .global BattleScript_AirBalloonFloat
 .global BattleScript_AirBalloonSub
+.global BattleScript_TreasureGaugeActivate
 .global BattleScript_Totem
 .global BattleScript_TotemRet
 .global BattleScript_TotemOmniboost
@@ -55,6 +56,13 @@ BattleScript_AirBalloonSub:
 	waitmessage DELAY_1SECOND
 AirBalloonFloatEnd:
 	return
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+BattleScript_TreasureGaugeActivate:
+	setword BATTLE_STRING_LOADER gText_TreasureGauge
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	end3
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

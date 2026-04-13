@@ -235,4 +235,4 @@ enum ItemBattleEffectCases
 void TrackinatorFunc(u8 atk, u8 def);
 
 extern const u8 BattleScript_Trackinator[];
-extern const u8 BattleScript_TreasureGauge[];
+extern const u8 BattleScript_TreasureGaugeActivate[];

@@ -195,4 +195,4 @@ The juices in [TARGET]'s\nberry made [SCRIPTING_BANK] mega evolve!
 [TARGET] braced themself\n for the attack!
 
 #org @gText_TreasureGauge
-[TARGET]'s Treasure Gauge\n reacted!
+[SCRIPTING_BANK]'s Treasure Gauge\nreacted!

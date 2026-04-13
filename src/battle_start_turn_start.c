@@ -67,6 +67,7 @@ enum BattleBeginStates
 	BTSTART_NEUTRALIZING_GAS,
 	BTSTART_SWITCH_IN_ABILITIES,
 	BTSTART_SWITCH_IN_ITEMS,
+	BTSTART_TREASURE_GAUGE,
 	BTSTART_AIR_BALLOON,
 	BTSTART_TOTEM_POKEMON,
 	BTSTART_END,
@@ -88,6 +89,20 @@ enum SpeedWarResults
 	SecondMon,
 	SpeedTie,
 };
+
+static bool8 ShouldTriggerTreasureGauge(u8 bank)
+{
+	u8 opposingBank = SIDE(bank) ^ BIT_SIDE;
+	bool8 shouldReact = ITEM(opposingBank) != ITEM_NONE || ABILITY(opposingBank) == ABILITY_DISGUISE;
+
+	if (IS_DOUBLE_BATTLE)
+	{
+		u8 opposingPartner = PARTNER(opposingBank);
+		shouldReact |= ITEM(opposingPartner) != ITEM_NONE || ABILITY(opposingPartner) == ABILITY_DISGUISE;
+	}
+
+	return shouldReact;
+}
 
 // For Terastallization
 extern u8* DoTerastallize(u8 bank);
@@ -606,6 +621,26 @@ void BattleBeginFirstTurn(void)
 				{
 					if (ItemBattleEffects(ItemEffects_SwitchIn, gBanksByTurnOrder[*bank], FALSE, FALSE))
 					{
+						++*bank;
+						return;
+					}
+				}
+
+				*bank = 0; //Reset Bank for next loop
+				++*state;
+				break;
+
+			case BTSTART_TREASURE_GAUGE:
+				for (; *bank < gBattlersCount; ++*bank)
+				{
+					u8 battler = gBanksByTurnOrder[*bank];
+
+					if (ITEM_EFFECT(battler) == ITEM_EFFECT_TREASURE_GAUGE
+					&& ShouldTriggerTreasureGauge(battler))
+					{
+						gBankAttacker = gActiveBattler = gStringBank = battler;
+						gBattleScripting.bank = battler;
+						BattleScriptPushCursorAndCallback(BattleScript_TreasureGaugeActivate);
 						++*bank;
 						return;
 					}
