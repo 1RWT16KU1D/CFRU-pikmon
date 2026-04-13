@@ -53,6 +53,7 @@ enum SwitchInStates
 	SwitchIn_Truant,
 	SwitchIn_Abilities,
 	SwitchIn_Items,
+	SwitchIn_TreasureGauge,
 	SwitchIn_AirBalloon,
 	SwitchIn_TotemPokemon,
 	SwitchIn_MagnetRiseBattle,
@@ -64,6 +65,20 @@ enum SwitchInStates
 	SwitchIn_ReactivateTera,
 	SwitchIn_End,
 };
+
+static bool8 ShouldTriggerTreasureGauge(u8 bank)
+{
+	u8 opposingBank = SIDE(bank) ^ BIT_SIDE;
+	bool8 shouldReact = ITEM(opposingBank) != ITEM_NONE || ABILITY(opposingBank) == ABILITY_DISGUISE;
+
+	if (IS_DOUBLE_BATTLE)
+	{
+		u8 opposingPartner = PARTNER(opposingBank);
+		shouldReact |= ITEM(opposingPartner) != ITEM_NONE || ABILITY(opposingPartner) == ABILITY_DISGUISE;
+	}
+
+	return shouldReact;
+}
 
 //This file's functions:
 static bool8 TryRemovePrimalWeather(u8 bank, u8 ability);
@@ -911,6 +926,22 @@ void atk52_switchineffects(void)
 
 			if (ItemBattleEffects(ItemEffects_EndTurn, gActiveBattler, TRUE, FALSE))
 				return;
+			++gNewBS->switchInEffectsState;
+		__attribute__ ((fallthrough));
+
+		case SwitchIn_TreasureGauge:
+			if (gActiveBattler < gBattlersCount
+			&& ITEM_EFFECT(gActiveBattler) == ITEM_EFFECT_TREASURE_GAUGE
+			&& ShouldTriggerTreasureGauge(gActiveBattler))
+			{
+				BattleScriptPushCursor();
+				gBattlescriptCurrInstr = BattleScript_TreasureGaugeActivate;
+				gBattleScripting.bank = gActiveBattler;
+				gBankAttacker = gActiveBattler;
+				gStringBank = gActiveBattler;
+				++gNewBS->switchInEffectsState;
+				return;
+			}
 			++gNewBS->switchInEffectsState;
 		__attribute__ ((fallthrough));
 

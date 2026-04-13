@@ -130,7 +130,7 @@ ability_battle_scripts.s
 .global BattleScript_TatteredWeb
 .global BattleScript_Whisker
 .global BattleScript_Trackinator
-.global BattleScript_TreasureGauge
+.global BattleScript_TreasureGaugeActivate
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1727,14 +1727,6 @@ BattleScript_Trackinator:
 	datahpupdate BANK_ATTACKER
 	waitmessage DELAY_1SECOND
 	faintpokemon BANK_ATTACKER 0x0 0x0
-	return
-
-@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-BattleScript_TreasureGauge:
-	setword BATTLE_STRING_LOADER gText_TreasureGauge
-	printstring 0x184
-	waitmessage DELAY_1SECOND
 	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
