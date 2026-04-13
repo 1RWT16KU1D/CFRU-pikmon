@@ -935,7 +935,7 @@ void atk52_switchineffects(void)
 			&& ShouldTriggerTreasureGauge(gActiveBattler))
 			{
 				BattleScriptPushCursor();
-				gBattlescriptCurrInstr = BattleScript_TreasureGaugeActivate;
+				gBattlescriptCurrInstr = BattleScript_TreasureGaugeActivateSub;
 				gBattleScripting.bank = gActiveBattler;
 				gBankAttacker = gActiveBattler;
 				gStringBank = gActiveBattler;
