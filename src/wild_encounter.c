@@ -800,7 +800,7 @@ bool8 DoesFishBite(void)
 		if (!GetMonData(&gPlayerParty[0], MON_DATA_IS_EGG, NULL))
 		{
 			u8 ability = GetMonAbility(&gPlayerParty[0]);
-			if ((ability == ABILITY_SUCTIONCUPS && !SpeciesHasGuardDog(&gPlayerParty[0].species)) || ability  == ABILITY_STICKYHOLD)
+			if ((ability == ABILITY_SUCTIONCUPS && !SpeciesHasGuardDog(gPlayerParty[0].species)) || ability  == ABILITY_STICKYHOLD)
 				chance = 85; //85% chance with abilities
 		}
 

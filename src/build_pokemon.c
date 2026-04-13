@@ -2524,7 +2524,7 @@ u16 GenerateWildMonHeldItem(u16 species, u8 bonus)
 		return gBaseStats[species].item1; //100% chance
 
 	if (!GetMonData(&gPlayerParty[0], MON_DATA_IS_EGG, NULL)
-	&& (AbilityIncreasesWildItemChance(GetMonAbility(&gPlayerParty[0])) || ITEM_EFFECT(&gPlayerParty[0]) == ITEM_EFFECT_TREASURE_GAUGE)) //Increased chance of finding an item
+	&& (AbilityIncreasesWildItemChance(GetMonAbility(&gPlayerParty[0])) || ITEM_EFFECT(GetBankFromPartyData(&gPlayerParty[0])) == ITEM_EFFECT_TREASURE_GAUGE)) //Increased chance of finding an item
 	{
 		var1 = 20;
 		var2 = 80;
