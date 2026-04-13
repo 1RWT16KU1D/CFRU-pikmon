@@ -2509,7 +2509,7 @@ static void TryFixMiniorForm(struct Pokemon* mon)
 	if (species != SPECIES_NONE && species != SPECIES_EGG)
 	{
 		u16 dexNum = SpeciesToNationalPokedexNum(species);
-		if (dexNum == NATIONAL_DEX_MINIOR)
+		if (dexNum == NATIONAL_DEX_WATERWRAITH)
 			TryFormRevert(mon); //To fix form
 	}
 }
