@@ -93,7 +93,7 @@ gBattleScriptsForMoveEffects:
 .word BS_075_SkyAttack
 .word BS_076_SetConfusionChance
 .word BS_077_LowerTargetSpDef2Chance
-.word BS_078_Blank
+.word BS_078_SetPetrifyChance
 .word BS_079_Substitute
 .word BS_080_Recharge
 .word BS_081_Rage

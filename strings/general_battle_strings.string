@@ -221,10 +221,10 @@ frostbite
 petrified
 
 #org @gText_TargetWasPetrified
-[FD][10] was petrified!
+[FD][10] was\npetrified!
 
 #org @gText_AttackerIsPetrified
-[FD][0F] is petrified solid!
+[FD][0F] is\npetrified solid!
 
 #org @gText_AttackerBrokeFreeOfPetrify
 [FD][0F] broke free\nof petrification!

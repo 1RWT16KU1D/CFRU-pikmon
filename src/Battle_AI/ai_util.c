@@ -960,6 +960,10 @@ void UpdateBestDoubleKillingMoveScore(u8 bankAtk, u8 bankDef, u8 bankAtkPartner,
 									if (CALC && !BadIdeaToFreeze(currTarget, bankAtk))
 										break;
 									goto DEFAULT_CHECK;
+								case EFFECT_PETRIFY_HIT:
+									if (CALC && !BadIdeaToPetrify(currTarget, bankAtk))
+										break;
+									goto DEFAULT_CHECK;
 								case EFFECT_POISON_HIT:
 								case EFFECT_BAD_POISON_HIT:
 									if (CALC && !BadIdeaToPoison(currTarget, bankAtk))
@@ -2771,6 +2775,9 @@ u16 CalcSecondaryEffectChance(u8 bank, u16 move, u8 ability)
 		chance *= 2;
 	#endif
 
+	if (gBattleWeather & WEATHER_SANDSTORM_ANY && gBattleMoves[move].effect == EFFECT_PETRIFY_HIT && WEATHER_HAS_EFFECT)
+		chance = (chance * 12) / 10;
+
 	return chance;
 }
 
@@ -3031,6 +3038,16 @@ bool8 BadIdeaToFreeze(u8 bankDef, u8 bankAtk)
 		|| (defAbility == ABILITY_SYNCHRONIZE && CanBeFrozen(bankAtk, bankDef, TRUE))
 		|| (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef)) //Don't waste a one-time freeze
 		|| UnfreezingMoveInMoveset(bankDef);
+}
+
+bool8 BadIdeaToPetrify(u8 bankDef, u8 bankAtk)
+{
+	u8 defAbility = ABILITY(bankDef);
+	u8 defItemEffect = ITEM_EFFECT(bankDef);
+
+	return !CanBePetrified(bankDef, bankAtk, TRUE)
+		|| defItemEffect == ITEM_EFFECT_CURE_STATUS
+		|| (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef));
 }
 
 bool8 BadIdeaToMakeContactWith(u8 bankAtk, u8 bankDef)

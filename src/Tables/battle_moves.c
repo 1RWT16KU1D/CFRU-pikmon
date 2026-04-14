@@ -6328,7 +6328,7 @@ const struct BattleMove gBattleMoves[] =
 
 	[MOVE_POWERGEM] =
 	{
-		.effect = EFFECT_FREEZE_HIT,
+		.effect = EFFECT_PETRIFY_HIT,
 		.power = 80,
 		.type = TYPE_ROCK,
 		.accuracy = 100,

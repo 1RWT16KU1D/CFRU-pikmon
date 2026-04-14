@@ -213,6 +213,13 @@ BS_006_SetParalyzeChance:
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+.global BS_078_SetPetrifyChance
+BS_078_SetPetrifyChance:
+	setmoveeffect MOVE_EFFECT_FREEZE
+	goto BS_STANDARD_HIT
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 .global BS_007_Explode
 BS_007_Explode:
 	attackcanceler

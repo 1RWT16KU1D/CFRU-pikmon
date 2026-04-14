@@ -132,7 +132,7 @@ void atk15_seteffectwithchance(void)
 	#endif
 
 	if (gBattleWeather & WEATHER_SANDSTORM_ANY
-	&& gCurrentMove == MOVE_POWERGEM
+	&& gBattleMoves[gCurrentMove].effect == EFFECT_PETRIFY_HIT
 	&& gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE
 	&& WEATHER_HAS_EFFECT)
 		percentChance = (percentChance * 12) / 10;
@@ -260,7 +260,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
 				break;
 
 			case STATUS1_FREEZE:
-				if (gCurrentMove == MOVE_POWERGEM
+				if (gBattleMoves[gCurrentMove].effect == EFFECT_PETRIFY_HIT
 				? CanBePetrified(gEffectBank, gBankAttacker, FALSE)
 				: CanBeFrozen(gEffectBank, gBankAttacker, FALSE)) //Flower Veil & Safeguard checked earlier
 				{
@@ -284,12 +284,12 @@ void SetMoveEffect(bool8 primary, u8 certain)
 
 			if (gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_SLEEP)
 				gBattleMons[gEffectBank].status1 |= ((Random() % 3) + 2);
-			else if (gCurrentMove == MOVE_POWERGEM && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
+			else if (gBattleMoves[gCurrentMove].effect == EFFECT_PETRIFY_HIT && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
 				gBattleMons[gEffectBank].status1 |= STATUS1_PETRIFY_TURN((Random() % 3) + 2);
 			else
 				gBattleMons[gEffectBank].status1 |= sStatusFlagsForMoveEffects[gBattleCommunication[MOVE_EFFECT_BYTE]];
 
-			if (gCurrentMove == MOVE_POWERGEM && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
+			if (gBattleMoves[gCurrentMove].effect == EFFECT_PETRIFY_HIT && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
 				gBattlescriptCurrInstr = BattleScript_MoveEffectPetrify;
 			else
 				gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];

@@ -114,6 +114,11 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				goto AI_FREEZE_CHECKS;
 			break;
 
+		case EFFECT_PETRIFY_HIT:
+			if (CalcSecondaryEffectChance(bankAtk, move, atkAbility) >= 75 && !MoveBlockedBySubstitute(move, bankAtk, bankDef))
+				goto AI_FREEZE_CHECKS;
+			break;
+
 		case EFFECT_EXPLOSION:
 			if (predictedMove != MOVE_NONE //If foe isn't going to attack, don't kill yourself now
 			&&  gBattleMoves[predictedMove].effect != EFFECT_PROTECT)
@@ -2884,6 +2889,7 @@ u8 AIScript_SemiSmart(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			case EFFECT_POISON_HIT:
 			case EFFECT_BURN_HIT:
 			case EFFECT_FREEZE_HIT:
+			case EFFECT_PETRIFY_HIT:
 			case EFFECT_PARALYZE_HIT:
 			case EFFECT_BAD_POISON_HIT:
 			case EFFECT_EXPLOSION:

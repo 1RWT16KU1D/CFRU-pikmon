@@ -3333,6 +3333,7 @@ static bool8 PartnerMoveEffectIsStatusSameTarget(struct AIScript* data, u16 move
 			case EFFECT_POISON_HIT:
 			case EFFECT_BAD_POISON_HIT:
 			case EFFECT_FREEZE_HIT:
+			case EFFECT_PETRIFY_HIT:
 				if (CalcSecondaryEffectChance(bankAtkPartner, partnerMove, data->atkPartnerAbility) >= 75 && !MoveBlockedBySubstitute(move, bankAtkPartner, bankDef))
 					return TRUE;
 		}

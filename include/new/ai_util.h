@@ -95,6 +95,7 @@ bool8 BadIdeaToBurn(u8 bankDef, u8 bankAtk);
 bool8 GoodIdeaToBurnSelf(u8 bankAtk);
 bool8 GoodIdeaToFrostbiteSelf(u8 bankAtk);
 bool8 BadIdeaToFreeze(u8 bankDef, u8 bankAtk);
+bool8 BadIdeaToPetrify(u8 bankDef, u8 bankAtk);
 bool8 BadIdeaToMakeContactWith(u8 bankAtk, u8 bankDef);
 
 bool8 BadIdeaToRaiseStatAgainst(u8 bankAtk, u8 bankDef, bool8 checkDefAbility);
