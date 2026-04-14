@@ -22,6 +22,8 @@ attackcanceler_battle_scripts.s
 .global BattleScript_MoveUsedFailedPrimalWeather
 .global BattleScript_MoveUsedPsychicTerrainPrevents
 .global BattleScript_MoveUsedPowderPrevents
+.global BattleScript_MoveUsedIsPetrified
+.global BattleScript_MoveUsedBrokeFreeOfPetrify
 .global BattleScript_StanceChangeToBlade
 .global BattleScript_StanceChangeToShield
 .global BattleScript_ZMoveActivateStatus
@@ -193,6 +195,20 @@ SkipPowderDamage:
 	faintpokemon BANK_ATTACKER 0x0 0x0
 	orbyte OUTCOME 0x1
 	goto BS_MOVE_END
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_MoveUsedIsPetrified:
+	setword BATTLE_STRING_LOADER gText_AttackerIsPetrified
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
+BattleScript_MoveUsedBrokeFreeOfPetrify:
+	setword BATTLE_STRING_LOADER gText_AttackerBrokeFreeOfPetrify
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

@@ -155,6 +155,7 @@ bool8 CanBePoisoned(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
 bool8 CanBeParalyzed(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
 bool8 CanBeBurned(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
 bool8 CanBeFrozen(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
+bool8 CanBePetrified(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
 bool8 CanBeConfused(u8 bankDef, u8 bankAtk, u8 checkSafeguard);
 bool8 CanBeTormented(u8 bank);
 bool8 CanBeInfatuated(u8 bankDef, u8 bankAtk);
@@ -237,4 +238,3 @@ void TrackinatorFunc(u8 atk, u8 def);
 extern const u8 BattleScript_Trackinator[];
 extern const u8 BattleScript_TreasureGaugeActivate[];
 extern const u8 BattleScript_TreasureGaugeActivateSub[];
-

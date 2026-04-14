@@ -23,6 +23,9 @@
 #include "../include/new/set_effect.h"
 #include "../include/new/util.h"
 
+extern const u8 BattleScript_PrintCustomString[];
+extern const u8 gText_TargetBrokeFreeOfPetrify[];
+
 /*
 cmd49.c
 	handles a ton of battle logic at the end of each turn
@@ -782,6 +785,7 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 					if (BATTLER_ALIVE(gBankAttacker)
 					&& BATTLER_ALIVE(gBankTarget)
 					&& (gChosenMove == MOVE_SLEEPTALK || !(gBattleMons[gBankAttacker].status1 & STATUS1_SLEEP))
+					&& !(gBattleMons[gBankAttacker].status1 & STATUS1_PETRIFY)
 					#ifndef FROSTBITE
 					&& !(gBattleMons[gBankAttacker].status1 & STATUS1_FREEZE)
 					#endif
@@ -857,6 +861,22 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 				MarkBufferBankForExecution(gActiveBattler);
 				BattleScriptPushCursor();
 				gBattlescriptCurrInstr = BattleScript_DefrostedViaFireMove;
+				effect = TRUE;
+			}
+			else if (gBattleMons[bankDef].status1 & STATUS1_PETRIFY
+			&&  gBattleMons[bankDef].hp
+			&&  gBankAttacker != bankDef
+			&&  MOVE_HAD_EFFECT
+			&&  TOOK_DAMAGE(bankDef)
+			&&  moveType == TYPE_FIGHTING)
+			{
+				gBattleMons[bankDef].status1 &= ~(STATUS1_PETRIFY);
+				gActiveBattler = bankDef;
+				EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[bankDef].status1);
+				MarkBufferBankForExecution(gActiveBattler);
+				BattleScriptPushCursor();
+				gBattleStringLoader = gText_TargetBrokeFreeOfPetrify;
+				gBattlescriptCurrInstr = BattleScript_PrintCustomString;
 				effect = TRUE;
 			}
 			gBattleScripting.atk49_state++;

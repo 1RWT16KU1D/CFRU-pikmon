@@ -9,6 +9,7 @@
  */
 
 extern const u8 BattleScript_MagicBounce[];
+extern const u8 BattleScript_PrintCustomString[];
 extern const u8 BattleScript_MoveUsedFlinched[]; //0x81D90B1
 extern const u8 BattleScript_MoveUsedDevolvedForgot[];
 extern const u8 BattleScript_MoveUsedIsConfused[]; //0x81D90D3
@@ -19,6 +20,8 @@ extern const u8 BattleScript_MoveUsedThroatChopPrevents[];
 extern const u8 BattleScript_MoveUsedFailedPrimalWeather[];
 extern const u8 BattleScript_MoveUsedPsychicTerrainPrevents[];
 extern const u8 BattleScript_MoveUsedPowderPrevents[];
+extern const u8 BattleScript_MoveUsedIsPetrified[];
+extern const u8 BattleScript_MoveUsedBrokeFreeOfPetrify[];
 extern const u8 BattleScript_StanceChangeToBlade[];
 extern const u8 BattleScript_StanceChangeToShield[];
 extern const u8 BattleScript_ZMoveActivateStatus[];

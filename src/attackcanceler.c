@@ -287,6 +287,40 @@ static u8 AtkCanceller_UnableToUseMove(void)
 			gBattleStruct->atkCancellerTracker++;
 			break;
 
+		case CANCELLER_PETRIFIED:
+			if (gBattleMons[gBankAttacker].status1 & STATUS1_PETRIFY)
+			{
+				if (gBattleStruct->dynamicMoveType == TYPE_FIGHTING && !(gMoveResultFlags & MOVE_RESULT_FAILED))
+				{
+					gBattleMons[gBankAttacker].status1 &= ~(STATUS1_PETRIFY);
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MoveUsedBrokeFreeOfPetrify;
+					effect = 2;
+				}
+				else
+				{
+					if ((gBattleMons[gBankAttacker].status1 & STATUS1_PETRIFY) <= STATUS1_PETRIFY_TURN(1))
+						gBattleMons[gBankAttacker].status1 &= ~(STATUS1_PETRIFY);
+					else
+						gBattleMons[gBankAttacker].status1 -= STATUS1_PETRIFY_TURN(1);
+
+					if (gBattleMons[gBankAttacker].status1 & STATUS1_PETRIFY)
+					{
+						gBattlescriptCurrInstr = BattleScript_MoveUsedIsPetrified;
+						gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+					}
+					else
+					{
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_MoveUsedBrokeFreeOfPetrify;
+					}
+
+					effect = 2;
+				}
+			}
+			gBattleStruct->atkCancellerTracker++;
+			break;
+
 		case CANCELLER_TRUANT: // truant
 			if (ABILITY(gBankAttacker) == ABILITY_TRUANT && gDisableStructs[gBankAttacker].truantCounter)
 			{

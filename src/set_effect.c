@@ -14,6 +14,8 @@
 #include "../include/new/stat_buffs.h"
 #include "../include/new/util.h"
 
+extern const u8 BattleScript_MoveEffectPetrify[];
+
 /*
 set_effect.c
 	handles move effects
@@ -128,6 +130,12 @@ void atk15_seteffectwithchance(void)
 	if (gBattleWeather & WEATHER_HAIL_ANY && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE && WEATHER_HAS_EFFECT)
 		percentChance *= 2;
 	#endif
+
+	if (gBattleWeather & WEATHER_SANDSTORM_ANY
+	&& gCurrentMove == MOVE_POWERGEM
+	&& gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE
+	&& WEATHER_HAS_EFFECT)
+		percentChance = (percentChance * 12) / 10;
 
 	if (!SheerForceCheck() || (gBattleCommunication[MOVE_EFFECT_BYTE] & 0x3F) == MOVE_EFFECT_RAPIDSPIN)
 	{
@@ -252,7 +260,9 @@ void SetMoveEffect(bool8 primary, u8 certain)
 				break;
 
 			case STATUS1_FREEZE:
-				if (CanBeFrozen(gEffectBank, gBankAttacker, FALSE)) //Flower Veil & Safeguard checked earlier
+				if (gCurrentMove == MOVE_POWERGEM
+				? CanBePetrified(gEffectBank, gBankAttacker, FALSE)
+				: CanBeFrozen(gEffectBank, gBankAttacker, FALSE)) //Flower Veil & Safeguard checked earlier
 				{
 					CancelMultiTurnMoves(gEffectBank);
 					statusChanged = TRUE;
@@ -274,10 +284,15 @@ void SetMoveEffect(bool8 primary, u8 certain)
 
 			if (gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_SLEEP)
 				gBattleMons[gEffectBank].status1 |= ((Random() % 3) + 2);
+			else if (gCurrentMove == MOVE_POWERGEM && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
+				gBattleMons[gEffectBank].status1 |= STATUS1_PETRIFY_TURN((Random() % 3) + 2);
 			else
 				gBattleMons[gEffectBank].status1 |= sStatusFlagsForMoveEffects[gBattleCommunication[MOVE_EFFECT_BYTE]];
 
-			gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
+			if (gCurrentMove == MOVE_POWERGEM && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_FREEZE)
+				gBattlescriptCurrInstr = BattleScript_MoveEffectPetrify;
+			else
+				gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleCommunication[MOVE_EFFECT_BYTE]];
 
 			gActiveBattler = gEffectBank;
 			EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gEffectBank].status1);

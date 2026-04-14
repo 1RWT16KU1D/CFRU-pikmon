@@ -156,6 +156,7 @@ void atkEF_handleballthrow(void)
 		#ifndef FROSTBITE
 		                                      | STATUS_FREEZE
 		#endif
+		                                      | STATUS_PETRIFY
 		                                       ))
 			odds = (odds * 25) / 10;
 		if (gBattleMons[gBankTarget].status1 & (STATUS_PSN_ANY | STATUS_BURN | STATUS_PARALYSIS

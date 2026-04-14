@@ -2925,6 +2925,9 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			break;
 	}
 
+	if (data->defStatus1 & STATUS_PETRIFY)
+		defense = (defense * 15) / 10;
+
 //Attacker Item Checks
 	switch (data->atkItemEffect) {
 		case ITEM_EFFECT_CHOICE_BAND:

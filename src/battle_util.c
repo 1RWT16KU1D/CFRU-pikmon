@@ -1991,6 +1991,8 @@ void ClearBankStatus(u8 bank)
 		StringCopy(gBattleTextBuff1, gStatusConditionString_Paralysis);
 	else if (gBattleMons[bank].status1 & STATUS_BURN)
 		StringCopy(gBattleTextBuff1, gStatusConditionString_Burn);
+	else if (gBattleMons[bank].status1 & STATUS_PETRIFY)
+		StringCopy(gBattleTextBuff1, gStatusConditionString_Petrify);
 	else if (gBattleMons[bank].status1 & STATUS_FREEZE)
 		StringCopy(gBattleTextBuff1, gStatusConditionString_Ice);
 
@@ -2367,6 +2369,22 @@ bool8 CanBeFrozen(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil)
 	}
 
 	if (gBattleWeather & WEATHER_SUN_ANY && WEATHER_HAS_EFFECT && AffectedBySun(bankDef))
+		return FALSE;
+
+	return TRUE;
+}
+
+bool8 CanBePetrified(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil)
+{
+	u8 atkAbility = ABILITY(bankAtk);
+	u8 defAbility = ABILITY(bankDef);
+
+	if (!CanBeGeneralStatused(bankDef, defAbility, atkAbility, checkFlowerVeil))
+		return FALSE;
+
+	if (IsOfType(bankDef, TYPE_ROCK)
+	|| IsOfType(bankDef, TYPE_GROUND)
+	|| IsOfType(bankDef, TYPE_STEEL))
 		return FALSE;
 
 	return TRUE;

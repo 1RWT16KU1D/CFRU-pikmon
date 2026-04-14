@@ -11,6 +11,7 @@ set_effect_battle_scripts.s
 
 .global BattleScript_TargetSleepHeal
 .global BattleScript_TargetBurnHeal
+.global BattleScript_MoveEffectPetrify
 .global BattleScript_StickyHoldActivatesRet
 .global BattleScript_WasFrozen
 .global BattleScript_KnockedOff
@@ -62,6 +63,14 @@ BattleScript_TargetBurnHeal:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	refreshhpbar BANK_TARGET
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_MoveEffectPetrify:
+	setword BATTLE_STRING_LOADER gText_TargetWasPetrified
+	printstring 0x184
+	waitmessage DELAY_1SECOND
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -217,6 +217,21 @@ The rest of your team gained Exp.\nPoints thanks to the Exp. Share!
 #org @gStatusConditionString_Frostbite
 frostbite
 
+#org @gStatusConditionString_Petrify
+petrified
+
+#org @gText_TargetWasPetrified
+[FD][10] was petrified!
+
+#org @gText_AttackerIsPetrified
+[FD][0F] is petrified solid!
+
+#org @gText_AttackerBrokeFreeOfPetrify
+[FD][0F] broke free\nof petrification!
+
+#org @gText_TargetBrokeFreeOfPetrify
+[FD][10] broke free\nof petrification!
+
 #org @gText_CantAimAtTwoTargets
 It's no good! It's impossible to aim\nwhen there are two Pok\emon![FC][09]
 

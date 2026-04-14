@@ -609,6 +609,11 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 						i++;
 					}
 
+					if (gBattleMons[bank].status1 & STATUS_PETRIFY) {
+						StringCopy(gBattleTextBuff1, gStatusConditionString_Petrify);
+						i++;
+					}
+
 					if (gBattleMons[bank].status1 & STATUS_FREEZE) {
 						StringCopy(gBattleTextBuff1, gStatusConditionString_Ice);
 						i++;

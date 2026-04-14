@@ -6328,12 +6328,12 @@ const struct BattleMove gBattleMoves[] =
 
 	[MOVE_POWERGEM] =
 	{
-		.effect = EFFECT_HIT,
+		.effect = EFFECT_FREEZE_HIT,
 		.power = 80,
 		.type = TYPE_ROCK,
 		.accuracy = 100,
 		.pp = 20,
-		.secondaryEffectChance = 0,
+		.secondaryEffectChance = 100,
 		.target = MOVE_TARGET_SELECTED,
 		.priority = 0,
 		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
