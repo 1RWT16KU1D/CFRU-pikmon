@@ -59,3 +59,6 @@ extern const u8 BattleScript_EjectPackRet[];
 extern const u8 BattleScript_EjectPackCMD49[];
 
 extern const u8 gText_NotAffectedBecauseOfItem[];
+
+extern const u8 BattleScript_BerryCurePtrRet[];
+extern const u8 BattleScript_BerryCurePtrEnd2[];

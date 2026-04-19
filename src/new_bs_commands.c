@@ -2089,7 +2089,11 @@ bool8 SetGloomyWeather(void)
 	gBattleWeather = WEATHER_GLOOM;
 	gBattleStringLoader = gText_GloomyWeatherSet;
 
-	gWishFutureKnock.weatherDuration = 5;
+	if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_GLOOMY_ROCK)
+		gWishFutureKnock.weatherDuration = 8;
+	else
+		gWishFutureKnock.weatherDuration = 5;
+
 	gBattleScripting.animArg1 = B_ANIM_GLOOM_CONTINUES;
 	return TRUE;
 }

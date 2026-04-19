@@ -301,7 +301,30 @@
 #define ABILITY_SWEETNECTAR ABILITY_AFTERMATH // Heal partner by 50% on fainting
 #define ABILITY_SUCKER ABILITY_FRIENDGUARD // Big Root but as an ability
 #define ABILITY_BIGMONEY ABILITY_PICKUP // Doubles the money earned from battles
-#define ABILITY_WINDFORCE ABILITY_STRONGJAW // Boosts the power of Wind-based moves by 50%
+#define ABILITY_WINDFORCE ABILITY_STRONGJAW // Boosts the power of Wind-type moves by 50%
 #define ABILITY_FROSTBODY ABILITY_FLAMEBODY // May cause frostbite on contact
-#define ABILITY_FOOLSGOLD ABILITY_DISGUISE // Disguise clone, with custom bust text
-#define ABILITY_GLOOMYAURA ABILITY_SANDSTREAM // Sets new Gloom Weather
+#define ABILITY_FOOLSGOLD ABILITY_DISGUISE // Disguise clone, with custom bust text. Mysterious Lifeform will have a second set of custom bust text
+#define ABILITY_GLOOMYAURA ABILITY_SANDSTREAM // Summons Gloom Weather
+#define ABILITY_COMPOSER ABILITY_PRANKSTER //Sound has raised priority. Apparently not the same as Punk ROck. Oops.
+#define ABILITY_RAGINGSTEPS ABILITY_ANGERPOINT //+1 SPEED when you take a hit
+#define ABILITY_SUPERSOAKER ABILITY_TORRENT //Boosts accuracy and power of water type moves
+#define ABILITY_STATICUP ABILITY_HUNGERSWITCH //swaps between BEARDEDAMPRAT and BEAREDEDAMPRAT_STATIC. While in STATIC mode, boosts electric type moves.
+#define ABILITY_BOILINGPOINT ABILITY_POISONTOUCH //Wind moves are now fire type. 10% chance for water type moves to burn.
+#define ABILITY_TATTEREDWEB ABILITY_POISONPOINT
+
+#define ABILITY_INFLAMMATE ABILITY_AERILATE	//Fire, Water, Fighting, Poison, and Rock versions of Aerilate
+#define ABILITY_SATURATE ABILITY_AERILATE
+#define ABILITY_MARTIALIZE ABILITY_AERILATE
+#define ABILITY_VENOMIZE ABILITY_AERILATE
+#define ABILITY_MINERALATE ABILITY_AERILATE
+
+#define ABILITY_TANGLINGHAIR ABILITY_GOOEY
+#define ABILITY_WIMPOUT ABILITY_EMERGENCYEXIT
+#define ABILITY_IRONBARBS ABILITY_ROUGHSKIN
+#define ABILITY_QUEENLYMAJESTY ABILITY_DAZZLING
+#define ABILITY_SOLIDROCK ABILITY_FILTER
+#define ABILITY_FULLMETALBODY ABILITY_CLEARBODY
+#define ABILITY_POWEROFALCHEMY ABILITY_RECEIVER
+
+#define ABILITY_SPARKLY ABILITY_IMMUNITY // Always has Rage Powder
+#define ABILITY_BIGSTEPS ABILITY_IRONFIST // Increases damage of stomping moves

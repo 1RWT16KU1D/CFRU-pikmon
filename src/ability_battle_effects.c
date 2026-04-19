@@ -678,7 +678,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			else
 			{
 				gBattleWeather |= (WEATHER_GLOOM);
-				gWishFutureKnock.weatherDuration = 5;
+					if (ITEM_EFFECT(bank) == ITEM_EFFECT_GLOOMY_ROCK)
+						gWishFutureKnock.weatherDuration = 8;
+					else
+						gWishFutureKnock.weatherDuration = 5;
 				gBattleScripting.animArg1 = B_ANIM_GLOOM_CONTINUES;
 				gBattleStringLoader = gText_GloomyWeatherContinues;
 				gBattleCommunication[MULTISTRING_CHOOSER] = 4;
@@ -1782,9 +1785,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 						break;
 
 					case ABILITY_DAZZLING: //Cannot use
-					#ifdef ABILITY_QUEENLYMAJESTY
-					case ABILITY_QUEENLYMAJESTY: //Cannot use
-					#endif
 						if (PriorityCalc(gBankAttacker, ACTION_USE_MOVE, move) > 0
 						&& !gSpecialMoveFlags[move].gSpecialWholeFieldMoves
 						&& !(gBattleMoves[move].target & MOVE_TARGET_OPPONENTS_FIELD) //Spikes are never affected
@@ -1818,9 +1818,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			{
 				switch (gLastUsedAbility) {
 					case ABILITY_DAZZLING:
-					#ifdef ABILITY_QUEENLYMAJESTY
-					case ABILITY_QUEENLYMAJESTY:
-					#endif
 						if (PriorityCalc(gBankAttacker, ACTION_USE_MOVE, move) > 0)
 							effect = 1;
 						break;
@@ -2003,9 +2000,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					}
 				break;
 
-			#ifdef ABILITY_IRONBARBS
-			case ABILITY_IRONBARBS:
-			#endif
+
 			case ABILITY_ROUGHSKIN:
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)
@@ -2431,9 +2426,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				}
 				break;
 
-			#ifdef ABILITY_TANGLINGHAIR
-			case ABILITY_TANGLINGHAIR:
-			#endif
+
 			case ABILITY_GOOEY:
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)

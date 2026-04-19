@@ -2965,7 +2965,15 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_SPOTTYBULBEAR
+		case ITEM_EFFECT_FAIRY_FEATHER:
+		//2x Boost
+			if (data->moveType == TYPE_FAIRY)
+			{
+				attack = (attack * 12)/10;
+				spAttack = (spAttack * 12)/10;
+			}
+			break;
+
 		case ITEM_EFFECT_LIGHT_BALL:
 		//2x Boost
 			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_SPOTTYBULBEAR)
@@ -2974,7 +2982,21 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				spAttack *= 2;
 			}
 			break;
-		#endif
+		case ITEM_EFFECT_BOILED_EGG:
+		//2x Boost
+			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_HONEYWISP)
+			{
+				spAttack *= 2;
+			}
+			break;
+		case ITEM_EFFECT_LOST_MEDIA:
+		//2x Boost
+			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_DEMO77)
+			{
+				attack *= 2;
+				spAttack *= 2;
+			}
+			break;
 
 		#ifdef SPECIES_CLAMPERL
 		case ITEM_EFFECT_DEEP_SEA_TOOTH:
@@ -3002,6 +3024,16 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				spDefense = (spDefense * 3) / 2; //1.5
 			break;
 		#endif
+
+		
+		case ITEM_EFFECT_GUARD_SATELLITE:
+		//2x Boost
+			if (data->defSpecies == SPECIES_BEADYLONGLEGS || data->defSpecies == SPECIES_BALDYLONGLEGS)
+			{
+				defense *= 2;
+				spDefense *= 2;
+			}
+			break;
 
 		#ifdef SPECIES_QUAGGLEDMIRECLOPS
 		case ITEM_EFFECT_METAL_POWDER:
@@ -3329,9 +3361,6 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				damage = (damage * 125) / 100;
 			break;
 
-		#ifdef ABILITY_SOLIDROCK
-		case ABILITY_SOLIDROCK:
-		#endif
 		case ABILITY_FILTER:
 		case ABILITY_PRISMARMOR:
 		//0.75x Decrement
