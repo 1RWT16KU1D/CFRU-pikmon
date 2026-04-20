@@ -1792,7 +1792,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Shock_TherapistTiles, gBagItem_Shock_TherapistPal},
 	{gBagItem_Monster_PumpTiles, gBagItem_Monster_PumpPal},
 	{gBagItem_Comedy_BombTiles, gBagItem_Comedy_BombPal},
-	
+	/*
 	{gBagItem_bitter_jumboTiles, gBagItem_bitter_jumboPal},
 	{gBagItem_bitter_titanTiles, gBagItem_bitter_titanPal},
 	{gBagItem_bitter_masterTiles, gBagItem_bitter_masterPal},
@@ -1836,7 +1836,52 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_spicy_mossTiles, gBagItem_spicy_mossPal},
 	{gBagItem_bitter_mossTiles, gBagItem_bitter_mossPal},
 	{gBagItem_bitter_wateryTiles, gBagItem_bitter_wateryPal},
-	
+	*/
+
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
+
 	{gBagItem_BoiledEggTiles, gBagItem_BoiledEggPal},
 	{gBagItem_GuardSatelliteTiles, gBagItem_GuardSatellitePal},
 	{gBagItem_SpikeBallTiles, gBagItem_SpikeBallPal},
@@ -14190,7 +14235,7 @@ const struct Item gItemData[] =
         .battleUseFunc = NULL,
         .secondaryId = 0
 	},
-
+/*
 	[ITEM_BITTER_JUMBO_BERRY]
 	{
 		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
@@ -14922,7 +14967,7 @@ const struct Item gItemData[] =
 		.battleUseFunc = NULL,
 		.secondaryId = 0
 	},
-
+*/
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,

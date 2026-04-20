@@ -1451,7 +1451,7 @@ extern const u32 gBagItem_Monster_PumpPal[];
 extern const u32 gBagItem_Comedy_BombTiles[];
 extern const u32 gBagItem_Comedy_BombPal[];
 
-
+/*
 extern const u32 gBagItem_bitter_jumboTiles[];
 extern const u32 gBagItem_bitter_jumboPal[];
 extern const u32 gBagItem_bitter_titanTiles[];
@@ -1538,6 +1538,7 @@ extern const u32 gBagItem_bitter_mossTiles[];
 extern const u32 gBagItem_bitter_mossPal[];
 extern const u32 gBagItem_bitter_wateryTiles[];
 extern const u32 gBagItem_bitter_wateryPal[];
+*/
 
 extern const u32 gBagItem_BoiledEggTiles[];
 extern const u32 gBagItem_BoiledEggPal[];
