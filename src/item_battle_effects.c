@@ -585,6 +585,20 @@ u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 doPluck)
 				}
 				break;
 
+			case ITEM_EFFECT_CURE_PTR:
+				if (gBattleMons[bank].status1 & STATUS_PETRIFY)
+				{
+					gBattleMons[bank].status1 &= ~(STATUS_PETRIFY);
+					if (moveTurn || doPluck) {
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_BerryCurePtrRet;
+					}
+					else
+						BattleScriptExecute(BattleScript_BerryCurePtrEnd2);
+					effect = ITEM_STATUS_CHANGE;
+				}
+				break;
+
 			case ITEM_EFFECT_CURE_STATUS:
 				if (gBattleMons[bank].status1 & STATUS_ANY || gBattleMons[bank].status2 & STATUS2_CONFUSION) {
 					i = 0;

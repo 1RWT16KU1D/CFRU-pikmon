@@ -2503,6 +2503,9 @@ static u32 BoostSpeedByItemEffect(u8 itemEffect, u8 itemQuality, u16 species, u3
 		case ITEM_EFFECT_QUICK_POWDER:
 			if (species == SPECIES_QUAGGLEDMIRECLOPS)
 				speed *= 2;
+		case ITEM_EFFECT_BOILED_EGG:
+			if (species == SPECIES_HONEYWISP)
+				speed *= 2;
 	}
 
 	return speed;

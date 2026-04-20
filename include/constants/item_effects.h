@@ -23,8 +23,9 @@
 #define ITEM3_SLEEP             0x20
 #define ITEM3_LEVEL_UP          0x40
 #define ITEM3_MIST              0x80 // For Guard Specs, works the same way as move Mist.
+#define ITEM3_PETRIFY           0x88
 
-#define ITEM3_STATUS_ALL        (ITEM3_CONFUSION | ITEM3_PARALYSIS | ITEM3_FREEZE | ITEM3_BURN | ITEM3_POISON | ITEM3_SLEEP)
+#define ITEM3_STATUS_ALL        (ITEM3_CONFUSION | ITEM3_PARALYSIS | ITEM3_FREEZE | ITEM3_BURN | ITEM3_POISON | ITEM3_SLEEP | ITEM3_PETRIFY)
 
 // field 4 masks
 #define ITEM4_EV_HP             0x1
@@ -74,3 +75,4 @@
 #define ITEM_EFFECT_PP_MAX 20
 #define ITEM_EFFECT_HEAL_PP 21
 #define ITEM_EFFECT_NONE 22
+#define ITEM_EFFECT_CURE_PETRIFY 23

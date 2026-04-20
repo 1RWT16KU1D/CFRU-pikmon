@@ -346,9 +346,6 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				break;
 
 			case ABILITY_DAZZLING:
-			#ifdef ABILITY_QUEENLYMAJESTY
-			case ABILITY_QUEENLYMAJESTY:
-			#endif
 				if (PriorityCalc(bankAtk, ACTION_USE_MOVE, move) > 0) //Check if right num
 				{
 					DECREASE_VIABILITY(10);
@@ -410,9 +407,6 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				break;
 
 			case ABILITY_CLEARBODY:
-			#ifdef ABILITY_FULLMETALBODY
-			case ABILITY_FULLMETALBODY:
-			#endif
 			#ifdef ABILITY_WHITESMOKE
 			case ABILITY_WHITESMOKE:
 			#endif
@@ -571,9 +565,6 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 					break;
 
 				case ABILITY_DAZZLING:
-				#ifdef ABILITY_QUEENLYMAJESTY
-				case ABILITY_QUEENLYMAJESTY:
-				#endif
 					if (PriorityCalc(bankAtk, ACTION_USE_MOVE, move) > 0) //Check if right num
 					{
 						DECREASE_VIABILITY(10);

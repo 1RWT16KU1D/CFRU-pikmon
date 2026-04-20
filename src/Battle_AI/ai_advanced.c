@@ -1094,6 +1094,11 @@ static bool8 BankHoldingUsefulItemToProtectFor(u8 bank)
 	 || MoveInMoveset(MOVE_FACADE, bank)))
 		return TRUE;
 
+	if (itemEffect == ITEM_EFFECT_NAPSACK
+	&& CanBePutToSleep(bank, bank, FALSE)
+	&& (MoveInMoveset(MOVE_SNORE, bank)||MoveInMoveset(MOVE_SLEEPTALK, bank)))
+		return TRUE;
+
 	return FALSE;
 }
 

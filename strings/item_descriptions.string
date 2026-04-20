@@ -2347,166 +2347,172 @@ A pair of boots that prevent\nforced switching out.
 Reacts to held items.
 
 #org @DESC_MELLON_BERRY
-NA.
+When held by a PIKMON, it will be\nused in battle to heal petrification.
 
 #org @DESC_SOFTENER
-NA.
+A spray-type medicine.\nIt heals one PIKMON from petrification.
 
 #org @DESC_NAPSACK
-NA.
+A sleeping bag that puts the holder to sleep\nwhen it is held.
 
 #org @DESC_GLOOMY_ROCK
-NA.
+A rock that extends the duration of\nGloom when held by the user.
 
 #org @DESC_FLARE_CANNON
-NA.
+A treasure to be held by Titan Dweevil.\nIt changes form and becomes a Fire type.
 
 #org @DESC_SHOCK_THERAPIST
-NA.
+A treasure to be held by Titan Dweevil.\nIt changes form and becomes an Electric type.
 
 #org @DESC_MONSTER_PUMP
-NA.
+A treasure to be held by Titan Dweevil.\nIt changes form and becomes a Water type.
 
 #org @DESC_COMEDY_BOMB
-NA.
+A treasure to be held by Titan Dweevil.\nIt changes form and becomes a Poison type.
 
 #org @DESC_BITTER_JUMBO_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_TITAN_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_MASTER_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_GLINT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_DIRIGI_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
+
+#org @DESC_BITTER_BREAD_BERRY
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_SOVREIGN_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_DANDEL_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_PILEATED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve..
 
 #org @DESC_BITTER_DESICCATED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_ADULT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_ADULT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_MAN_AT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_VEHEAMOTH_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_PYROCLASTIC_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_GREATER_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_FLUTTER_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_BOG_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_PUFF_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_SCORCH_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_PUFF_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_EMPRESS_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_MUCK_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_GROOVY_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_CRUSTED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_GATTLING_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_ARMORED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_OAT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_OAT_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_MIRE_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_WHITE_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_BLUE_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_ROCK_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_YELLOW_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_WINGED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_RED_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_PURPLE_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_ICE_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_GLOW_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_PROG_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_SPICY_MOSS_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A SPICY spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_MOSS_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BITTER_WATERY_BERRY
-Have PIKMON hold this, and this\nberry will enable it to Mega Evolve\nduring battle.
+A BITTER spray that allows\na PIKMON to Mega Evolve.
 
 #org @DESC_BOILED_EGG
-NA.
+An item to be held by Honeywisp\nRaises Speed and SpAtk.
 
 #org @DESC_GUARD_SATELLITE
-NA.
+An item to be held by Beady or Baldy\nRaises Def and SpDef.
 
 #org @DESC_SPIKE_BALL
-NA.
+A large spiky ball.\n It is loved by a certain PIKMON.
 
 #org @DESC_SHARP_BLADE
-NA.
+A lond sharp blade.\n It is loved by a certain PIKMON.
 
 #org @DESC_LOST_MEDIA
-NA.
+An item to be held by demo77\nRaises Atk and SpAtk.
+
+#org @DESC_FAIRY_FEATHER
+An item to be held by a PIKMON.\nBoosts the power of FAIRY-type moves.
