@@ -2,8 +2,6 @@
 
 #include "../global.h"
 
-#ifdef EXPANDED_NEW_ITEMS
-
 #define gBag_InterrogationTiles ((u32*)0x08E87028)
 #define gBag_InterrogationPal ((u32*)0x08E870A0)
 extern const u32 gBag_MasterBallTiles[];
@@ -2447,4 +2445,3 @@ extern const u8 DESC_SPIKE_BALL[];
 extern const u8 DESC_SHARP_BLADE[];
 extern const u8 DESC_LOST_MEDIA[];
 extern const u8 DESC_FAIRY_FEATHER[];
-#endif
