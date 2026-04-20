@@ -1783,18 +1783,10 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_RushBootsTiles, gBagItem_RushBootsPal},
 	{gBagItem_BraceBootsTiles, gBagItem_BraceBootsPal},
 	{gBagItem_TreasureGaugeTiles, gBagItem_TreasureGaugePal},
-	/*
 	{gBagItem_mellonBerryTiles, gBagItem_mellonBerryPal},
 	{gBagItem_softenerTiles, gBagItem_softenerPal},
 	{gBagItem_napsackTiles, gBagItem_napsackPal},
 	{gBagItem_gloomyRockTiles, gBagItem_gloomyRockPal},
-	*/
-	// PLACEHOLDER
-	{gBag_MasterBallTiles, gBag_MasterBallPal},
-	{gBag_MasterBallTiles, gBag_MasterBallPal},
-	{gBag_MasterBallTiles, gBag_MasterBallPal},
-	{gBag_MasterBallTiles, gBag_MasterBallPal},
-
 	{gBagItem_Flare_CannonTiles, gBagItem_Flare_CannonPal},
 	{gBagItem_Shock_TherapistTiles, gBagItem_Shock_TherapistPal},
 	{gBagItem_Monster_PumpTiles, gBagItem_Monster_PumpPal},
