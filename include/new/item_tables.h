@@ -1530,8 +1530,6 @@ extern const u32 gBagItem_spicy_iceTiles[];
 extern const u32 gBagItem_spicy_icePal[];
 extern const u32 gBagItem_spicy_glowTiles[];
 extern const u32 gBagItem_spicy_glowPal[];
-extern const u32 gBagItem_bitter_progTiles[];
-extern const u32 gBagItem_bitter_progPal[];
 extern const u32 gBagItem_spicy_mossTiles[];
 extern const u32 gBagItem_spicy_mossPal[];
 extern const u32 gBagItem_bitter_mossTiles[];
