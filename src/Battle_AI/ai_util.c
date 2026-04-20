@@ -2268,6 +2268,9 @@ bool8 IsDamagingMoveUnusable(u16 move, u8 bankAtk, u8 bankDef)
 				break;
 
 			case ABILITY_DAZZLING:
+			#ifdef ABILITY_QUEENLYMAJESTY
+			case ABILITY_QUEENLYMAJESTY:
+			#endif
 				if (PriorityCalc(bankAtk, ACTION_USE_MOVE, move) > 0) //Check if right num
 					return TRUE;
 				break;
@@ -2387,6 +2390,9 @@ bool8 IsDamagingMoveUnusableByMon(u16 move, struct Pokemon* monAtk, u8 bankDef)
 				break;
 
 			case ABILITY_DAZZLING:
+			#ifdef ABILITY_QUEENLYMAJESTY
+			case ABILITY_QUEENLYMAJESTY:
+			#endif
 				if (PriorityCalcMon(monAtk, move) > 0) //Check if right num
 					return TRUE;
 				break;
@@ -3040,8 +3046,7 @@ bool8 BadIdeaToPetrify(u8 bankDef, u8 bankAtk)
 	u8 defItemEffect = ITEM_EFFECT(bankDef);
 
 	return !CanBePetrified(bankDef, bankAtk, TRUE)
-		|| (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && defItemEffect == ITEM_EFFECT_CURE_BRN)
-		|| (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && defItemEffect == ITEM_EFFECT_CURE_STATUS) //Don't use this logic in general battles
+		|| defItemEffect == ITEM_EFFECT_CURE_STATUS
 		|| (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef));
 }
 
@@ -3070,9 +3075,15 @@ bool8 BadIdeaToMakeContactWith(u8 bankAtk, u8 bankDef)
 		case ABILITY_AFTERMATH:
 			badIdea = !ABILITY_ON_FIELD(ABILITY_DAMP) && atkAbility != ABILITY_MAGICGUARD;
 			break;
+		#ifdef ABILITY_TANGLINGHAIR
+		case ABILITY_TANGLINGHAIR:
+		#endif
 		case ABILITY_GOOEY:
 			badIdea = STAT_CAN_FALL(gBankAttacker, STAT_SPD) && atkAbility != ABILITY_MIRRORARMOR;
 			break;
+		#ifdef ABILITY_IRONBARBS
+		case ABILITY_IRONBARBS:
+		#endif
 		case ABILITY_ROUGHSKIN:
 			badIdea = atkAbility != ABILITY_MAGICGUARD;
 			break;

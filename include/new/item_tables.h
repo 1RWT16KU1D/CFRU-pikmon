@@ -1435,15 +1435,16 @@ extern const u32 gBagItem_BraceBootsTiles[];
 extern const u32 gBagItem_BraceBootsPal[];
 extern const u32 gBagItem_TreasureGaugeTiles[];
 extern const u32 gBagItem_TreasureGaugePal[];
-extern const u32 gBagItem_mellonBerryTiles[];
-extern const u32 gBagItem_mellonBerryPal[];
+/*
+extern const u32 gBagItem_mellon_berryTiles[];
+extern const u32 gBagItem_mellon_berryPal[];
 extern const u32 gBagItem_softenerTiles[];
 extern const u32 gBagItem_softenerPal[];
 extern const u32 gBagItem_napsackTiles[];
 extern const u32 gBagItem_napsackPal[];
-extern const u32 gBagItem_gloomyRockTiles[];
-extern const u32 gBagItem_gloomyRockPal[];
-
+extern const u32 gBagItem_gloomy_rockTiles[];
+extern const u32 gBagItem_gloomy_rockPal[];
+*/
 extern const u32 gBagItem_Flare_CannonTiles[];
 extern const u32 gBagItem_Flare_CannonPal[];
 extern const u32 gBagItem_Shock_TherapistTiles[];
@@ -1453,7 +1454,7 @@ extern const u32 gBagItem_Monster_PumpPal[];
 extern const u32 gBagItem_Comedy_BombTiles[];
 extern const u32 gBagItem_Comedy_BombPal[];
 
-
+/*
 extern const u32 gBagItem_bitter_jumbo_berryTiles[];
 extern const u32 gBagItem_bitter_jumbo_berryPal[];
 extern const u32 gBagItem_bitter_titan_berryTiles[];
@@ -1541,19 +1542,17 @@ extern const u32 gBagItem_bitter_moss_berryPal[];
 extern const u32 gBagItem_bitter_watery_berryTiles[];
 extern const u32 gBagItem_bitter_watery_berryPal[];
 
-extern const u32 gBagItem_BoiledEggTiles[];
-extern const u32 gBagItem_BoiledEggPal[];
-extern const u32 gBagItem_GuardSatelliteTiles[];
-extern const u32 gBagItem_GuardSatellitePal[];
-extern const u32 gBagItem_SpikeBallTiles[];
-extern const u32 gBagItem_SpikeBallPal[];
-extern const u32 gBagItem_SharpBladeTiles[];
-extern const u32 gBagItem_SharpBladePal[];
-extern const u32 gBagItem_LostMediaTiles[];
-extern const u32 gBagItem_LostMediaPal[];
-extern const u32 gBagItem_FairyFeatherTiles[];
-extern const u32 gBagItem_FairyFeatherPal[];
-
+extern const u32 gBagItem_boiled_eggTiles[];
+extern const u32 gBagItem_boiled_eggPal[];
+extern const u32 gBagItem_guard_satelliteTiles[];
+extern const u32 gBagItem_guard_satellitePal[];
+extern const u32 gBagItem_spike_ballTiles[];
+extern const u32 gBagItem_spike_ballPal[];
+extern const u32 gBagItem_sharp_bladeTiles[];
+extern const u32 gBagItem_sharp_bladePal[];
+extern const u32 gBagItem_lost_mediaTiles[];
+extern const u32 gBagItem_lost_mediaPal[];
+*/
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -2402,7 +2401,6 @@ extern const u8 DESC_BITTER_TITAN_BERRY[];
 extern const u8 DESC_BITTER_MASTER_BERRY[];
 extern const u8 DESC_BITTER_GLINT_BERRY[];
 extern const u8 DESC_BITTER_DIRIGI_BERRY[];
-extern const u8 DESC_BITTER_BREAD_BERRY[];
 extern const u8 DESC_BITTER_SOVREIGN_BERRY[];
 extern const u8 DESC_BITTER_DANDEL_BERRY[];
 extern const u8 DESC_BITTER_PILEATED_BERRY[];
@@ -2446,5 +2444,4 @@ extern const u8 DESC_GUARD_SATELLITE[];
 extern const u8 DESC_SPIKE_BALL[];
 extern const u8 DESC_SHARP_BLADE[];
 extern const u8 DESC_LOST_MEDIA[];
-extern const u8 DESC_FAIRY_FEATHER[];
 #endif

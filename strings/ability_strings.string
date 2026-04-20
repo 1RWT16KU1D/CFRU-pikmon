@@ -196,9 +196,3 @@ The juices in [TARGET]'s\nberry made [SCRIPTING_BANK] mega evolve!
 
 #org @gText_TreasureGauge
 [SCRIPTING_BANK]'s Treasure Gauge\nreacted!
-
-#org @gScriptMellonEaten
-[SCRIPTING_BANK]'s Mellon Berry\ncured petrification!
-
-#org @gTextNapsack
-[SCRIPTING_BANK] is sleeping soundly!

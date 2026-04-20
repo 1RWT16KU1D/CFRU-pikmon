@@ -220,8 +220,5 @@ gNaturalGiftTable:
 .hword ITEM_MARANGA_BERRY
 .byte TYPE_DARK, 100
 
-.hword ITEM_MELLON_BERRY
-.byte TYPE_FAIRY, 80
-
 .hword ITEM_TABLES_TERMIN
 .hword ITEM_TABLES_TERMIN

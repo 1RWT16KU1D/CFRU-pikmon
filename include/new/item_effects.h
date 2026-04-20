@@ -9,10 +9,6 @@ static const u8 sItemEffect_Potion[8] = {
     [7] = 0xFF,
 };
 
-static const u8 sItemEffect_Softener[6] = {
-    [3] = ITEM3_PETRIFY,
-};
-
 static const u8 sItemEffect_Antidote[6] = {
     [3] = ITEM3_POISON,
 };

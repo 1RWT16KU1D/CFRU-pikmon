@@ -66,10 +66,6 @@ item_battle_scripts.s
 
 .global BattleScript_CheekPouch
 
-
-.global BattleScript_BerryCurePtrRet
-.global BattleScript_BerryCurePtrEnd2
-
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 BattleScript_BerryConfuseHealRet:
@@ -632,21 +628,6 @@ BattleScript_AIUseGuardSpec:
 	waitmessage DELAY_1SECOND
 	finishaction
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-BattleScript_BerryCurePtrRet:
-	playanimation BANK_SCRIPTING ANIM_BERRY_EAT 0x0
-	refreshhpbar BANK_SCRIPTING
-	setword BATTLE_STRING_LOADER gScriptMellonEaten
-	printstring 0x184
-	waitmessage DELAY_1SECOND
-	call BattleScript_CheekPouch
-	return
-
-BattleScript_BerryCurePtrEnd2:
-	call BattleScript_BerryCurePtrRet
-	end2
-	
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .align 2
