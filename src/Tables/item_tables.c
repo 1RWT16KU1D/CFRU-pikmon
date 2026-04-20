@@ -1832,7 +1832,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_spicy_purpleTiles, gBagItem_spicy_purplePal},
 	{gBagItem_spicy_iceTiles, gBagItem_spicy_icePal},
 	{gBagItem_spicy_glowTiles, gBagItem_spicy_glowPal},
-	{gBagItem_bitter_progTiles, gBagItem_bitter_progPal},
+	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBagItem_spicy_mossTiles, gBagItem_spicy_mossPal},
 	{gBagItem_bitter_mossTiles, gBagItem_bitter_mossPal},
 	{gBagItem_bitter_wateryTiles, gBagItem_bitter_wateryPal},
@@ -14922,7 +14922,7 @@ const struct Item gItemData[] =
 		.battleUseFunc = NULL,
 		.secondaryId = 0
 	},
-
+	[ITEM_FREE_SPACE1]
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,
@@ -14939,6 +14939,7 @@ const struct Item gItemData[] =
         .battleUseFunc = NULL,
         .secondaryId = 0
     },
+	[ITEM_FREE_SPACE2]
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _2, _END},
         .itemId = ITEM_FREE_SPACE2,
@@ -14955,6 +14956,7 @@ const struct Item gItemData[] =
         .battleUseFunc = NULL,
         .secondaryId = 0
     },
+	[ITEM_FREE_SPACE3]
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _3, _END},
         .itemId = ITEM_FREE_SPACE3,
