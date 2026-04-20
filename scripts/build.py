@@ -132,7 +132,7 @@ def MakeOutputImageFile(assemblyFile: str) -> [str, bool]:
     """Return 'IMG_' + hash of filename to use as object filename."""
     m = hashlib.md5()
     m.update(assemblyFile.encode())
-    objectFile = os.path.join(BUILD, 'IMG_' + m.hexdigest()[:8] + '.o')
+    objectFile = os.path.join(BUILD, 'I_' + m.hexdigest()[:8] + '.o')
 
     return CreateOutputFile(assemblyFile, objectFile)
 

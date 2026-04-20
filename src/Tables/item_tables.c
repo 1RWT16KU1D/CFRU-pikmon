@@ -14193,7 +14193,7 @@ const struct Item gItemData[] =
 
 	[ITEM_BITTER_JUMBO_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_J, _u, _m, _b, _o, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_JUMBO_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14210,7 +14210,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_TITAN_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_T, _i, _t, _a, _n, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_TITAN_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14227,7 +14227,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_MASTER_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _a, _s, _t, _e, _r, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_MASTER_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14244,7 +14244,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_GLINT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_G, _l, _i, _n, _t, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_GLINT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14261,7 +14261,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_DIRIGI_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_D, _i, _r, _i, _g, _i, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_DIRIGI_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14278,7 +14278,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_BITTER_BREAD_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_B, _r, _e, _a, _d, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_BREAD_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14295,7 +14295,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_SOVREIGN_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_S, _o, _v, _r, _e, _i, _n, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_SOVREIGN_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14312,7 +14312,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_DANDEL_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_D, _a, _n, _d, _e, _l, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_DANDEL_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14329,7 +14329,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_PILEATED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_P, _i, _l, _e, _a, _t, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_PILEATED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14346,7 +14346,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_DESICCATED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_D, _e, _s, _i, _c, _a, _t, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_DESICCATED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14363,7 +14363,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_SPICY_ADULT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_A, _d, _u, _l, _t, _b, _e, _r, _r, _y, _SPACE, _S, _END},
 		.itemId = ITEM_SPICY_ADULT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14380,7 +14380,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_ADULT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_A, _d, _u, _l, _t, _b, _e, _r, _r, _y, _SPACE, _B, _END},
 		.itemId = ITEM_BITTER_ADULT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14397,7 +14397,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_MAN_AT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _a, _n, _a, _t, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_MAN_AT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14414,7 +14414,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_VEHEAMOTH_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_V, _e, _h, _e, _m, _t, _h, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_VEHEAMOTH_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14431,7 +14431,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_PYROCLASTIC_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_P, _y, _r, _o, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_PYROCLASTIC_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14448,7 +14448,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_BITTER_GREATER_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_G, _r, _e, _a, _t, _e, _r, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_GREATER_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14465,7 +14465,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_FLUTTER_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_F, _l, _u, _t, _t, _e, _r, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_FLUTTER_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14482,7 +14482,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_BOG_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_B, _o, _g, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_BOG_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14499,7 +14499,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_PUFF_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_P, _u, _f, _f, _b, _e, _r, _r, _y, _SPACE, _S, _END},
 		.itemId = ITEM_SPICY_PUFF_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14516,7 +14516,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_SCORCH_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_S, _c, _o, _r, _c, _h, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_SCORCH_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14533,7 +14533,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_BITTER_PUFF_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_P, _u, _f, _f, _b, _e, _r, _r, _y, _SPACE, _B, _END},
 		.itemId = ITEM_BITTER_PUFF_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14550,7 +14550,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_EMPRESS_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_E, _m, _p, _r, _e, _s, _s, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_EMPRESS_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14567,7 +14567,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_MUCK_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _u, _c, _k, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_MUCK_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14584,7 +14584,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_GROOVY_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_G, _r, _o, _o, _v, _y, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_GROOVY_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14601,7 +14601,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_CRUSTED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_C, _r, _u, _s, _t, _e, _d, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_CRUSTED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14618,7 +14618,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_BITTER_GATTLING_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_G, _a, _t, _l, _i, _n, _g, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_GATTLING_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14635,7 +14635,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_ARMORED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_A, _r, _m, _o, _r, _e, _d, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_ARMORED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14652,7 +14652,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_OAT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_O, _a, _t, _b, _e, _r, _r, _y, _SPACE, _S, _END},
 		.itemId = ITEM_SPICY_OAT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14669,7 +14669,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_OAT_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_O, _a, _t, _b, _e, _r, _r, _y, _SPACE, _B, _END},
 		.itemId = ITEM_BITTER_OAT_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14686,7 +14686,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_MIRE_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _i, _r, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_MIRE_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14703,7 +14703,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_SPICY_WHITE_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_W, _h, _i, _t, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_WHITE_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14720,7 +14720,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_BLUE_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_B, _l, _u, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_BLUE_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14737,7 +14737,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_ROCK_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_R, _o, _c, _k, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_ROCK_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14754,7 +14754,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_YELLOW_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_Y, _e, _l, _l, _o, _w, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_YELLOW_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14771,7 +14771,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_WINGED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_W, _i, _n, _g, _e, _d, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_WINGED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14788,7 +14788,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_SPICY_RED_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_R, _e, _d, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_RED_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14805,7 +14805,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_PURPLE_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_P, _u, _r, _p, _l, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_PURPLE_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14822,7 +14822,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_ICE_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_I, _c, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_ICE_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14839,7 +14839,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_SPICY_GLOW_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_G, _l, _o, _w, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_SPICY_GLOW_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14856,7 +14856,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_PROG_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_S, _m, _o, _k, _y, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_PROG_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14873,7 +14873,7 @@ const struct Item gItemData[] =
 	},
 		[ITEM_SPICY_MOSS_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _o, _s, _s, _b, _e, _r, _r, _y, _SPACE, _S, _END},
 		.itemId = ITEM_SPICY_MOSS_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14890,7 +14890,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_MOSS_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_M, _o, _s, _s, _b, _e, _r, _r, _y, _SPACE, _B, _END},
 		.itemId = ITEM_BITTER_MOSS_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
@@ -14907,7 +14907,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_WATERY_BERRY]
 	{
-		.name = {_V, _e, _n, _u, _s, _a, _u, _r, _i, _t, _e, _END},
+		.name = {_W, _a, _t, _e, _r, _y, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_WATERY_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,
