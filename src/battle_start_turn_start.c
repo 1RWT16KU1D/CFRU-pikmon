@@ -1736,19 +1736,39 @@ void HandleAction_UseMove(void)
 				break;
 
 			case TYPE_ELECTRIC:
-				if (ABILITY(selectedTarget) != ABILITY_LIGHTNINGROD)
+				if (ABILITY(selectedTarget) != ABILITY_LIGHTNINGROD || (SpeciesHasEarthEater(selectedTarget) || SpeciesHasAntacid(selectedTarget) || SpeciesHasMithridate(selectedTarget)))
 				{
-					if (ABILITY(SIDE(gBankAttacker) ^ BIT_SIDE) == ABILITY_LIGHTNINGROD)
+					if (ABILITY(SIDE(gBankAttacker) ^ BIT_SIDE) == ABILITY_LIGHTNINGROD && !(SpeciesHasEarthEater(SIDE(gBankAttacker) ^ BIT_SIDE) || SpeciesHasAntacid(SIDE(gBankAttacker) ^ BIT_SIDE) || SpeciesHasMithridate(SIDE(gBankAttacker) ^ BIT_SIDE)))
 					{
 						gBankTarget = SIDE(gBankAttacker) ^ BIT_SIDE;
 						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
 					}
-					else if (ABILITY(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) == ABILITY_LIGHTNINGROD)
+					else if (ABILITY(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) == ABILITY_LIGHTNINGROD && !(SpeciesHasEarthEater(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) || SpeciesHasAntacid(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) || SpeciesHasMithridate(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE))))
 					{
 						gBankTarget = PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE);
 						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
 					}
-					else if (ABILITY(PARTNER(gBankAttacker)) == ABILITY_LIGHTNINGROD)
+					else if (ABILITY(PARTNER(gBankAttacker)) == ABILITY_LIGHTNINGROD && !(SpeciesHasEarthEater(PARTNER(gBankAttacker)) || SpeciesHasAntacid(PARTNER(gBankAttacker)) || SpeciesHasMithridate(PARTNER(gBankAttacker))))
+					{
+						gBankTarget = PARTNER(gBankAttacker);
+						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
+					}
+				}
+				break;
+			case TYPE_POISON:
+				if (ABILITY(selectedTarget) != ABILITY_LIGHTNINGROD || !(SpeciesHasAntacid(selectedTarget) || SpeciesHasMithridate(selectedTarget)))
+				{
+					if (ABILITY(SIDE(gBankAttacker) ^ BIT_SIDE) == ABILITY_LIGHTNINGROD && (SpeciesHasAntacid(SIDE(gBankAttacker) ^ BIT_SIDE) || SpeciesHasMithridate(SIDE(gBankAttacker) ^ BIT_SIDE)))
+					{
+						gBankTarget = SIDE(gBankAttacker) ^ BIT_SIDE;
+						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
+					}
+					else if (ABILITY(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) == ABILITY_LIGHTNINGROD && (SpeciesHasAntacid(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE)) || SpeciesHasMithridate(PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE))))
+					{
+						gBankTarget = PARTNER(SIDE(gBankAttacker) ^ BIT_SIDE);
+						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;
+					}
+					else if (ABILITY(PARTNER(gBankAttacker)) == ABILITY_LIGHTNINGROD && (SpeciesHasAntacid(PARTNER(gBankAttacker)) || SpeciesHasMithridate(PARTNER(gBankAttacker))))
 					{
 						gBankTarget = PARTNER(gBankAttacker);
 						gSpecialStatuses[gBankTarget].lightningRodRedirected = 1;

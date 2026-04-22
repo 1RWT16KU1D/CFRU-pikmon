@@ -649,6 +649,8 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo* wildMonInfo, u8 ar
 			goto SKIP_INDEX_SEARCH;
 		if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORMDRAIN, &wildMonIndex, monsCount))
 			goto SKIP_INDEX_SEARCH;
+		if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_POISON, ABILITY_LIGHTNINGROD, &wildMonIndex, monsCount))
+			goto SKIP_INDEX_SEARCH;
 	}
 
 	switch (area) {
