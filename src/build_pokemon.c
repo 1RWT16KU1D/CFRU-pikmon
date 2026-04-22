@@ -3257,7 +3257,7 @@ static void UpdateBuilderAfterSpread(struct TeamBuilder* builder, const struct B
 			case ABILITY_LIGHTNINGROD:
 				if (SpeciesHasEarthEater(SPECIES(gBankTarget)))
 					builder->partyIndex[GROUND_IMMUNITY] = partyId;
-				else if (SpeciesHasMithridate(SPECIES(gBankTarget)) || SpeciesHasAntacid(SPECIES(gBankTarget)))
+				else if (SpeciesHasMithridate(SPECIES(gBankTarget)))
 					builder->partyIndex[POISON_IMMUNITY] = partyId;
 				else
 					builder->partyIndex[ELECTRIC_IMMUNITY] = partyId;
@@ -3356,9 +3356,9 @@ static bool8 IsSpreadWeakToType(u8 moveType, u8 defType1, u8 defType2, u8 abilit
 		case ABILITY_VOLTABSORB:
 		case ABILITY_MOTORDRIVE:
 		case ABILITY_LIGHTNINGROD:
-			if ((moveType == TYPE_ELECTRIC && !SpeciesHasEarthEater(SPECIES(gBankTarget)))
+			if ((moveType == TYPE_ELECTRIC && !(SpeciesHasEarthEater(SPECIES(gBankTarget)) || SpeciesHasMithridate(SPECIES(gBankTarget))))
 			|| (moveType == TYPE_GROUND && SpeciesHasEarthEater(SPECIES(gBankTarget)))
-			|| (moveType == TYPE_POISON && (SpeciesHasMithridate(SPECIES(gBankTarget)) || SpeciesHasAntacid(SPECIES(gBankTarget)))))
+			|| (moveType == TYPE_POISON && SpeciesHasMithridate(SPECIES(gBankTarget))))
 				typeDmg = 0;
 			break;
 		case ABILITY_WATERABSORB:

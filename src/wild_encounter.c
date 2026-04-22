@@ -1251,12 +1251,10 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon* wildM
 	else if (GetMonAbility(&gPlayerParty[0]) != ability)
 		return FALSE;
 	else if (ability == ABILITY_LIGHTNINGROD 
-			&& (SpeciesHasAntacid(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))
-				||SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_ELECTRIC)
+			&& (SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_ELECTRIC)
 		return FALSE;
 	else if (ability == ABILITY_LIGHTNINGROD 
-			&& (!SpeciesHasAntacid(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))
-				&&!SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_POISON)
+			&& (!SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_POISON)
 		return FALSE;
 	else if (umodsi(Random(), 2) != 0)
 		return FALSE;

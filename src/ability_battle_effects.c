@@ -1862,8 +1862,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					break;
 
 				case ABILITY_LIGHTNINGROD:
-					if (moveType == TYPE_ELECTRIC)
+					if (moveType == TYPE_ELECTRIC && !SpeciesHasMithridate(SPECIES(bank)))
 						effect = 2, statId = STAT_SPATK;
+					if (moveType == TYPE_POISON && SpeciesHasMithridate(SPECIES(bank)))
+						effect = 2, statId = STAT_SPDEF;
 					break;
 
 				case ABILITY_STORMDRAIN:
