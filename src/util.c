@@ -518,6 +518,7 @@ bool8 CanPartyMonBeBurned(struct Pokemon* mon)
 	switch (GetMonAbility(mon)) {
 		case ABILITY_WATERVEIL:
 		case ABILITY_WATERBUBBLE:
+			if(!SpeciesHasSnowAngel(GetMonData(mon, MON_DATA_SPECIES, NULL)))
 			return FALSE;
 	}
 

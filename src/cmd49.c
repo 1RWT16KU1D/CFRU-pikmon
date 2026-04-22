@@ -193,20 +193,21 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 							u8 chance = boil ? 20 : 30;
 							if (BankHasRainbow(gBankAttacker))
 								chance *= 2;
-							if (boil){
-								if(
-								gBattleMoves[gCurrentMove].type == TYPE_WATER
-								&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
-								&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
-								&& CanBeBurned(gBankTarget, gBankAttacker, TRUE)
-								&& umodsi(Random(), 100) < chance){
-									gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
-									BattleScriptPushCursor();
-									gBattlescriptCurrInstr = BattleScript_AbilityApplySecondaryEffect;
-									gHitMarker |= HITMARKER_IGNORE_SAFEGUARD; //Safeguard checked earlier
-									effect++;
+							
+								if(boil || (SpeciesHasSpicyEssence(SPECIES(gBankAttacker)))){
+									if(ABILITY(gBankTarget) != ABILITY_SHIELDDUST
+										&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
+										&& CanBeBurned(gBankTarget, gBankAttacker, TRUE)
+										&& umodsi(Random(), 100) < chance
+										&& (!boil || (boil && gBattleMoves[gCurrentMove].type == TYPE_WATER))){
+									
+										gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_BURN;
+										BattleScriptPushCursor();
+										gBattlescriptCurrInstr = BattleScript_AbilityApplySecondaryEffect;
+										gHitMarker |= HITMARKER_IGNORE_SAFEGUARD; //Safeguard checked earlier
+										effect++;
+									}
 								}
-							}
 							else if (ABILITY(gBankTarget) != ABILITY_SHIELDDUST
 							&& ITEM_EFFECT(gBankTarget) != ITEM_EFFECT_COVERT_CLOAK
 							&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)

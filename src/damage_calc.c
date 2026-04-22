@@ -3371,8 +3371,13 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		case ABILITY_HEATPROOF:
 		case ABILITY_WATERBUBBLE:
 		//0.5x Decrement
-			if (data->moveType == TYPE_FIRE)
-				damage /= 2;
+			if(!SpeciesHasSnowAngel(data->defSpecies)){
+				if (data->moveType == TYPE_FIRE)
+					damage /= 2;
+			}
+			else if (WEATHER_HAS_EFFECT && (gBattleWeather & WEATHER_HAIL_ANY)) {
+					damage /= 4;
+			}
 			break;
 
 		case ABILITY_MULTISCALE:
@@ -4282,7 +4287,7 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 
 		case ABILITY_WATERBUBBLE:
 		//2x Boost
-			if (data->moveType == TYPE_WATER)
+			if (data->moveType == TYPE_WATER && !SpeciesHasSnowAngel(bankAtk))
 				power *= 2; //2x Boost
 			break;
 

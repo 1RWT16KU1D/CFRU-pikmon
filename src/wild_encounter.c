@@ -720,6 +720,8 @@ SKIP_INDEX_SEARCH:
 				goto SKIP_INDEX_SEARCH_2;
 			if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORMDRAIN, &wildMonIndex, monsCount))
 				goto SKIP_INDEX_SEARCH_2;
+			if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_POISON, ABILITY_LIGHTNINGROD, &wildMonIndex, monsCount))
+				goto SKIP_INDEX_SEARCH_2;
 		}
 
 		switch (area) {
@@ -1245,6 +1247,14 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon* wildM
 	if (GetMonData(&gPlayerParty[0], MON_DATA_IS_EGG, NULL))
 		return FALSE;
 	else if (GetMonAbility(&gPlayerParty[0]) != ability)
+		return FALSE;
+	else if (ability == ABILITY_LIGHTNINGROD 
+			&& (SpeciesHasAntacid(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))
+				||SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_ELECTRIC)
+		return FALSE;
+	else if (ability == ABILITY_LIGHTNINGROD 
+			&& (!SpeciesHasAntacid(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))
+				&&!SpeciesHasMithridate(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL))) && type == TYPE_POISON)
 		return FALSE;
 	else if (umodsi(Random(), 2) != 0)
 		return FALSE;

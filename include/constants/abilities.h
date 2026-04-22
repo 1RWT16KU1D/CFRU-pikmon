@@ -328,3 +328,10 @@
 
 #define ABILITY_SPARKLY ABILITY_IMMUNITY // Always has Rage Powder
 #define ABILITY_BIGSTEPS ABILITY_IRONFIST // Increases damage of stomping moves
+
+#define ABILITY_MITHRIDATE ABILITY_LIGHTNINGROD //Draws in Poison, raises SpDef
+#define ABILITY_ANTACID ABILITY_LIGHTNINGROD //Draws in Poison, raises SpAtk
+#define ABILITY_SPICYESSENCE ABILITY_POISONTOUCH //may burn when you contact
+#define ABILITY_BITTERESSENCE ABILITY_POISONPOINT //may petrify when opponent contacts
+#define ABILITY_ASONE_PROGG ABILITY_NEUROFORCE //Neuroforce + Gloomy Aura
+#define ABILITY_SNOWANGEL ABILITY_WATERBUBBLE //Imune to fire and burns while in snow

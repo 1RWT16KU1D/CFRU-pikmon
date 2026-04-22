@@ -167,6 +167,18 @@ extern const u8 gText_AbilityName_Sparkly[];
 extern const u8 gText_AbilityDescription_Sparkly[];
 extern const u8 gText_AbilityName_TatteredWeb[];
 extern const u8 gText_AbilityDescription_TatteredWeb[];
+extern const u8 gText_AbilityName_Mithridate[];
+extern const u8 gText_AbilityDescription_Mithridate[];
+extern const u8 gText_AbilityName_Antacid[];
+extern const u8 gText_AbilityDescription_Antacid[];
+extern const u8 gText_AbilityName_SpicyEssence[];
+extern const u8 gText_AbilityDescription_SpicyEssence[];
+extern const u8 gText_AbilityName_BitterEssence[];
+extern const u8 gText_AbilityDescription_BitterEssence[];
+extern const u8 gText_AbilityName_AsOneProgg[];
+extern const u8 gText_AbilityDescription_AsOneProgg[];
+extern const u8 gText_AbilityName_SnowAngel[];
+extern const u8 gText_AbilityDescription_SnowAngel[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -523,6 +535,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_BoilingPoint;
 			if(SpeciesHasToxicChain(species))
 				return gText_AbilityName_ToxicChain;
+			if(SpeciesHasSpicyEssence(species))
+				return gText_AbilityName_SpicyEssence;
 			break;
 		case ABILITY_PLUS:
 			if (SpeciesHasPoisonPuppeteer(species))
@@ -533,6 +547,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_ToxicDebris;
 			if(SpeciesHasTatteredWeb(species))
 				return gText_AbilityName_TatteredWeb;
+			if(SpeciesHasBitterEssence(species))
+				return gText_AbilityName_BitterEssence;
 			break;
 		case ABILITY_BERSERK:
 			if(SpeciesHasWindPower(species))
@@ -593,6 +609,20 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 					case TYPE_ROCK :	return gText_AbilityName_Mineralate;
 					break;
 				}
+			break;
+		case ABILITY_LIGHTNINGROD:
+			if(SpeciesHasMithridate(species))
+				return gText_AbilityName_Mithridate;
+			if(SpeciesHasAntacid(species))
+				return gText_AbilityName_Antacid;
+			break;
+		case ABILITY_NEUROFORCE:
+			if (SpeciesHasAsOneProgg(species))
+				return gText_AbilityName_AsOneProgg;
+			break;
+		case ABILITY_WATERBUBBLE:
+			if (SpeciesHasSnowAngel(species))
+				return gText_AbilityName_SnowAngel;
 			break;
 	}
 	return NULL;
@@ -740,6 +770,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_BoilingPoint;
 			if(SpeciesHasToxicChain(species))
 				return gText_AbilityDescription_ToxicChain;
+			if(SpeciesHasSpicyEssence(species))
+				return gText_AbilityDescription_SpicyEssence;
 			break;
 		case ABILITY_PLUS:
 			if (SpeciesHasPoisonPuppeteer(species))
@@ -750,6 +782,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_ToxicDebris;
 			if(SpeciesHasTatteredWeb(species))
 				return gText_AbilityDescription_TatteredWeb;
+			if(SpeciesHasBitterEssence(species))
+				return gText_AbilityDescription_BitterEssence;
 			break;
 		case ABILITY_BERSERK:
 			if(SpeciesHasWindPower(species))
@@ -810,6 +844,20 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_PRANKSTER:
 			if (SpeciesHasComposer(species))
 					return gText_AbilityDescription_Composer;
+			break;
+		case ABILITY_LIGHTNINGROD:
+			if(SpeciesHasMithridate(species))
+				return gText_AbilityDescription_Mithridate;
+			if(SpeciesHasAntacid(species))
+				return gText_AbilityDescription_Antacid;
+			break;
+		case ABILITY_NEUROFORCE:
+			if (SpeciesHasAsOneProgg(species))
+				return gText_AbilityDescription_AsOneProgg;
+			break;
+		case ABILITY_WATERBUBBLE:
+			if (SpeciesHasSnowAngel(species))
+				return gText_AbilityDescription_SnowAngel;
 			break;
 	}
 
@@ -1666,4 +1714,28 @@ bool8 IsStompingMove(unusedArg u16 move)
 	|| move == MOVE_LOWKICK		|| move == MOVE_LOWSWEEP	|| move == MOVE_MEGAKICK
 	|| move == MOVE_ROLLINGKICK	|| move == MOVE_STOMP		|| move == MOVE_STOMPINGTANTRUM
 	|| move == MOVE_TRIPLEKICK	|| move == MOVE_TROPKICK;
+}
+
+bool8 SpeciesHasMithridate(unusedArg u16 species){
+	return (species==SPECIES_TITANDWEEVIL_POISON);
+}
+
+bool8 SpeciesHasAntacid(unusedArg u16 species){
+	return (species==SPECIES_WHITEPIKMIN);
+}
+
+bool8 SpeciesHasSpicyEssence(unusedArg u16 species){
+	return (species==SPECIES_TITANDWEEVIL_POISON);
+}
+
+bool8 SpeciesHasBitterEssence(unusedArg u16 species){
+	return (species==SPECIES_BULBORBLARVA);
+}
+
+bool8 SpeciesHasAsOneProgg(unusedArg u16 species){
+	return (species==SPECIES_SMOKYPROGG_MASTER);
+}
+
+bool8 SpeciesHasSnowAngel(unusedArg u16 species){
+	return (species==SPECIES_SNOWFLAKEFLUTTERTAIL_MEGA);
 }

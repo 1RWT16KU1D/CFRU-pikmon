@@ -660,9 +660,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				effect++;
 			}
 			break;
-
+		case ABILITY_NEUROFORCE:
 		case ABILITY_SANDSTREAM:
-			if (!SpeciesHasGloomyAura(SPECIES(bank))) // Early conditional for Gloomy Aura
+			if (!SpeciesHasAsOneProgg(SPECIES(bank)) && ABILITY(bank)==ABILITY_NEUROFORCE){
+				break;
+			}
+			if (!SpeciesHasGloomyAura(SPECIES(bank)) && !SpeciesHasAsOneProgg(SPECIES(bank))) // Early conditional for Gloomy Aura
 			{
 				if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY)))
 				{
@@ -1123,8 +1126,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 
 		case ABILITY_WATERVEIL:
 		case ABILITY_WATERBUBBLE:
-			effect = ImmunityAbilityCheck(bank, STATUS1_BURN, gStatusConditionString_Burn);
-			break;
+			if(!SpeciesHasSnowAngel(bank) || WEATHER_HAS_EFFECT && (gBattleWeather & WEATHER_HAIL_ANY)){
+				effect = ImmunityAbilityCheck(bank, STATUS1_BURN, gStatusConditionString_Burn);
+				break;
+			}
 
 		case ABILITY_STEAMENGINE:
 			if (SpeciesHasThermalExchange(SPECIES(bank)))
@@ -2065,23 +2070,25 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				&& gBankAttacker != bank)
 				{
 					// Check Tattered Web
-					if (SpeciesHasTatteredWeb(SPECIES(bank)) && SPLIT(move) == SPLIT_PHYSICAL)
+					if (SpeciesHasTatteredWeb(SPECIES(bank)))
 					{
-						if (gSideTimers[gBankAttacker].stickyWeb > 0)
-						{
-							// Failure message (Sticky Web already present)
-							BattleScriptPushCursor();
-							gBattlescriptCurrInstr = BattleScript_ToxicDebrisFailure;
+						if(SPLIT(move) == SPLIT_PHYSICAL){
+							if (gSideTimers[gBankAttacker].stickyWeb > 0)
+							{
+								// Failure message (Sticky Web already present)
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_ToxicDebrisFailure;
+							}
+							else
+							{
+								// Add Sticky Web
+								gSideStatuses[gBankAttacker] |= SIDE_STATUS_SPIKES;
+								gSideTimers[gBankAttacker].stickyWeb = 1;
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_TatteredWeb;
+							}
+							effect++;
 						}
-						else
-						{
-							// Add Sticky Web
-							gSideStatuses[gBankAttacker] |= SIDE_STATUS_SPIKES;
-							gSideTimers[gBankAttacker].stickyWeb = 1;
-							BattleScriptPushCursor();
-							gBattlescriptCurrInstr = BattleScript_TatteredWeb;
-						}
-						effect++;
 					}
 					// Check Toxic Debris
 					else if (SpeciesHasToxicDebris(SPECIES(bank)) && SPLIT(move) == SPLIT_PHYSICAL)
@@ -2101,6 +2108,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 							gBattlescriptCurrInstr = BattleScript_ToxicDebrisActivates;
 						}
 						effect++;
+					}
+					else if (SpeciesHasBitterEssence(SPECIES(bank))){
+						if(CheckContact(move, gBankAttacker, bank)
+							&& CanBePetrified(gBankAttacker, bank, TRUE)
+							&& umodsi(Random(), 3) == 0)
+						{
+							gBattleMons[gEffectBank].status1 |= STATUS1_PETRIFY_TURN((Random() % 3) + 2);
+							gBattleCommunication[MOVE_EFFECT_BYTE] = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_FREEZE;
+							BattleScriptPushCursor();
+							gBattlescriptCurrInstr = BattleScript_AbilityApplySecondaryEffect;
+							gHitMarker |= HITMARKER_IGNORE_SAFEGUARD; // Safeguard checked earlier
+							effect++;
+						}
 					}
 					// Check Poison Point
 					else if (CheckContact(move, gBankAttacker, bank)

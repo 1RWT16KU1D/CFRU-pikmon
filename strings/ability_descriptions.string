@@ -742,3 +742,21 @@ Draws attention from foes.
 
 #org @gText_AbilityDescription_TatteredWeb
 Set Sticky Web if physical hit.
+
+#org @gText_AbilityDescription_Mithridate
+Mithridate
+
+#org @gText_AbilityDescription_Antacid
+Antacid
+
+#org @gText_AbilityDescription_SpicyEssence
+Spicy Essence
+
+#org @gText_AbilityDescription_BitterEssence
+Bitter Essence
+
+#org @gText_AbilityDescription_AsOneProgg
+As One
+
+#org @gText_AbilityDescription_SnowAngel
+Snow Angel

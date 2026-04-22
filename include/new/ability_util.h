@@ -111,3 +111,9 @@ bool8 SpeciesHasFoolsGold(u16 species); // Disguise clone with custom bust text
 bool8 SpeciesHasGloomyAura(u16 species); // Set Gloom weather - All non-poison mons are damaged by 1/16
                                          // max HP at the end of turn but poison-types heal; steel-types
                                          // are neutral to poison and can now be poisoned
+bool8 SpeciesHasMithridate(u16 species);
+bool8 SpeciesHasAntacid(u16 species);
+bool8 SpeciesHasSpicyEssence(u16 species);
+bool8 SpeciesHasBitterEssence(u16 species);
+bool8 SpeciesHasAsOneProgg(u16 species);
+bool8 SpeciesHasSnowAngel(u16 species);
