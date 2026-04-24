@@ -496,65 +496,52 @@ static void AlterSpeciesWithIncenseItems(u16* species, u16 motherItem, u16 fathe
 				*species = SPECIES_WOBBUFFET;
 			break;
 		#endif
-
-		#if (defined SPECIES_AZURILL && defined SPECIES_MARILL && defined ITEM_SEA_INCENSE)
-		case SPECIES_AZURILL:
-			if (motherItem != ITEM_SEA_INCENSE && fatherItem != ITEM_SEA_INCENSE)
-				*species = SPECIES_MARILL;
-			break;
-		#endif
-
-		#if (defined SPECIES_MUNCHLAX && defined SPECIES_SNORLAX && defined ITEM_FULL_INCENSE)
-		case SPECIES_MUNCHLAX:
-			if (motherItem != ITEM_FULL_INCENSE && fatherItem != ITEM_FULL_INCENSE)
-				*species = SPECIES_SNORLAX;
-			break;
-		#endif
-
-		#if (defined SPECIES_MIME_JR && defined SPECIES_MR_MIME && defined ITEM_ODD_INCENSE)
-		case SPECIES_MIME_JR:
-			if (motherItem != ITEM_ODD_INCENSE && fatherItem != ITEM_ODD_INCENSE)
-				*species = SPECIES_MR_MIME;
-			break;
-		#endif
-
-		#if (defined SPECIES_CHINGLING && defined SPECIES_CHIMECHO && defined ITEM_PURE_INCENSE)
-		case SPECIES_CHINGLING:
-			if (motherItem != ITEM_PURE_INCENSE && fatherItem != ITEM_PURE_INCENSE)
-				*species = SPECIES_CHIMECHO;
-			break;
-		#endif
-
-		#if (defined SPECIES_BONSLY && defined SPECIES_SUDOWOODO && defined ITEM_ROCK_INCENSE)
-		case SPECIES_BONSLY:
-			if (motherItem != ITEM_ROCK_INCENSE && fatherItem != ITEM_ROCK_INCENSE)
-				*species = SPECIES_SUDOWOODO;
-			break;
-		#endif
-
-		#if (defined SPECIES_BUDEW && defined SPECIES_ROSELIA && defined ITEM_ROSE_INCENSE)
-		case SPECIES_BUDEW:
-			if (motherItem != ITEM_ROSE_INCENSE && fatherItem != ITEM_ROSE_INCENSE)
-				*species = SPECIES_ROSELIA;
-			break;
-		#endif
-
-		#if (defined SPECIES_MANTYKE && defined SPECIES_MANTINE && defined ITEM_WAVE_INCENSE)
-		case SPECIES_MANTYKE:
-			if (motherItem != ITEM_WAVE_INCENSE && fatherItem != ITEM_WAVE_INCENSE)
-				*species = SPECIES_MANTINE;
-			break;
-		#endif
-
-		#if (defined SPECIES_HAPPINY && defined SPECIES_CHANSEY && defined ITEM_LUCK_INCENSE)
-		case SPECIES_HAPPINY:
-			if (motherItem != ITEM_LUCK_INCENSE && fatherItem != ITEM_LUCK_INCENSE)
-				*species = SPECIES_CHANSEY;
-			break;
-		#endif
-
+		case SPECIES_REDPIKMIN:
+			if (motherItem == ITEM_METAL_COAT || fatherItem == ITEM_METAL_COAT){
+				*species = SPECIES_TOYPIKMIN_RED;	
+				break;
+			}
+		case SPECIES_YELLOWPIKMIN:
+			if (motherItem == ITEM_METAL_COAT || fatherItem == ITEM_METAL_COAT){
+				*species = SPECIES_TOYPIKMIN_YELLOW;
+				break;
+			}
+		case SPECIES_BLUEPIKMIN:
+			if (motherItem == ITEM_METAL_COAT || fatherItem == ITEM_METAL_COAT){
+				*species = SPECIES_TOYPIKMIN_BLUE;
+				break;
+			}
+		case SPECIES_PURPLEPIKMIN:
+		case SPECIES_WHITEPIKMIN:
+		case SPECIES_ROCKPIKMIN:
+		case SPECIES_WINGEDPIKMIN:
+		case SPECIES_ICEPIKMIN:
+		case SPECIES_GLOWPIKMIN:
+		case SPECIES_TOYPIKMIN_RED:
+		case SPECIES_TOYPIKMIN_YELLOW:
+		case SPECIES_TOYPIKMIN_BLUE:
+		case SPECIES_DEMO77:
+		case SPECIES_DEMOF:
+		case SPECIES_DEMOG:
+		case SPECIES_DEMOI:
+		case SPECIES_DEMOW:
+		case SPECIES_USUALSUSPECT:
+			if (motherItem == ITEM_LOST_MEDIA || fatherItem == ITEM_LOST_MEDIA)
+				*species = SPECIES_PIKI_MALE;
 		default:
 			break;
+			if(*species == SPECIES_DEMO77){
+				if (motherItem == ITEM_HEAT_ROCK || fatherItem == ITEM_HEAT_ROCK)
+					*species = SPECIES_DEMOF;
+				if (motherItem == ITEM_SMOOTH_ROCK || fatherItem == ITEM_SMOOTH_ROCK)
+					*species = SPECIES_DEMOG;
+				if (motherItem == ITEM_ICY_ROCK || fatherItem == ITEM_ICY_ROCK)
+					*species = SPECIES_DEMOI;
+				if (motherItem == ITEM_DAMP_ROCK || fatherItem == ITEM_DAMP_ROCK)
+					*species = SPECIES_DEMOW;
+				if (motherItem == ITEM_GLOOMY_ROCK || fatherItem == ITEM_GLOOMY_ROCK)
+					*species = SPECIES_USUALSUSPECT;
+			}
 	}
 }
 
@@ -743,6 +730,8 @@ void GiveEggFromDaycare(struct DayCare* daycare)
 	u32 personality = DetermineEggPersonality(daycare, &daycare->mons[parentSlots[0]].mon);
 	species = DetermineEggSpeciesAndParentSlots(daycare, parentSlots, personality);
 	AlterEggSpeciesWithIncenseItem(&species, daycare);
+	if (!(personality & 0x8000) && species == SPECIES_PIKI_MALE)
+		species = SPECIES_PIKI_FEMALE;
 	SetInitialEggData(&egg, species, personality);	// sets base data (ball, met level, lang, etc)
 	TryDoMasudaMethod(&egg, &daycare->mons[parentSlots[0]].mon, &daycare->mons[parentSlots[1]].mon);
 	InheritIVs(&egg, daycare);	// destiny knot check

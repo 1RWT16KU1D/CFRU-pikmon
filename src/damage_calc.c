@@ -3050,7 +3050,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		#endif
 
 		case ITEM_EFFECT_EVIOLITE:
-			if (CanSpeciesEvolve(data->defSpecies))
+			if (CanSpeciesEvolve(data->defSpecies) || data->defSpecies == SPECIES_ICEBLOWNDWEEVIL_E)
 			{
 				defense = (defense * 15) / 10;
 				spDefense = (spDefense * 15) / 10;

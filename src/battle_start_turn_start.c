@@ -93,12 +93,12 @@ enum SpeedWarResults
 static bool8 ShouldTriggerTreasureGauge(u8 bank)
 {
 	u8 opposingBank = SIDE(bank) ^ BIT_SIDE;
-	bool8 shouldReact = ITEM(opposingBank) != ITEM_NONE || ABILITY(opposingBank) == ABILITY_DISGUISE;
+	bool8 shouldReact = ITEM(opposingBank) != ITEM_NONE || ABILITY(opposingBank) == ABILITY_DISGUISE || SPECIES(opposingBank) == SPECIES_ANTENNABEETLE;
 
 	if (IS_DOUBLE_BATTLE)
 	{
 		u8 opposingPartner = PARTNER(opposingBank);
-		shouldReact |= ITEM(opposingPartner) != ITEM_NONE || ABILITY(opposingPartner) == ABILITY_DISGUISE;
+		shouldReact |= ITEM(opposingPartner) != ITEM_NONE || ABILITY(opposingPartner) == ABILITY_DISGUISE || SPECIES(opposingPartner) == SPECIES_ANTENNABEETLE;
 	}
 
 	return shouldReact;
