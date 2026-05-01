@@ -55,8 +55,10 @@ extern const u8 TeamPreviewTriggerTiles[];
 extern const u16 TeamPreviewTriggerPal[];
 extern const u8 CamomonsTypeIconsTiles[];
 extern const u8 CamomonsTypeIcons2Tiles[];
+extern const u8 CamomonsTypeIcons3Tiles[];
 extern const u16 CamomonsTypeIconsPal[];
 extern const u16 CamomonsTypeIcons2Pal[];
+extern const u16 CamomonsTypeIcons3Pal[];
 extern const u8 TeamPreviewInBattleBgTiles[];
 extern const u8 TeamPreviewInBattleBgMap[];
 extern const u8 TeamPreviewFaintedMonIconTiles[];
@@ -253,6 +255,7 @@ static const struct CompressedSpriteSheet sTeamPreviewStatusIconsSpriteSheet = {
 
 static const struct SpritePalette sTypeIconPalTemplate = {CamomonsTypeIconsPal, TYPE_ICON_TAG};
 static const struct SpritePalette sTypeIconPalTemplate2 = {CamomonsTypeIcons2Pal, TYPE_ICON_TAG_2};
+static const struct SpritePalette sTypeIconPalTemplate3 = {CamomonsTypeIcons3Pal, TYPE_ICON_TAG_3};
 
 // For Terastallization
 static const struct CompressedSpriteSheet sTeraTriggerSpriteSheet = {Tera_TriggerTiles, (32 * 32) / 2, GFX_TAG_TERA_TRIGGER};
@@ -572,29 +575,29 @@ static const struct SpriteTemplate * const sTeraIndicatorSpriteTemplates[NUMBER_
 #define type_icon_frame(ptr, frame) {.data = (u8 *)ptr + (1 * 2 * frame * 32), .size = 1 * 2 * 32}
 static const struct SpriteFrameImage sTypeIconPicTable[] =
 {
-	[TYPE_NORMAL] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_NORMAL),
+	[TYPE_NORMAL] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_NORMAL),
 	[TYPE_FIGHTING] =	type_icon_frame(CamomonsTypeIconsTiles, TYPE_FIGHTING),
-	[TYPE_FLYING] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_FLYING),
+	[TYPE_FLYING] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FLYING),
 	[TYPE_POISON] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_POISON),
-	[TYPE_GROUND] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_GROUND),
+	[TYPE_GROUND] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_GROUND),
 	[TYPE_ROCK] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_ROCK),
-	[TYPE_BUG] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_BUG),
-	[TYPE_GHOST] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_GHOST),
+	[TYPE_BUG] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_BUG),
+	[TYPE_GHOST] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_GHOST),
 	[TYPE_STEEL] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_STEEL),
-	[TYPE_MYSTERY] =	type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
-	[TYPE_FIRE] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FIRE),
-	[TYPE_WATER] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_WATER),
-	[TYPE_GRASS] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_GRASS),
-	[TYPE_ELECTRIC] =	type_icon_frame(CamomonsTypeIconsTiles, TYPE_ELECTRIC),
-	[TYPE_PSYCHIC] =	type_icon_frame(CamomonsTypeIconsTiles, TYPE_PSYCHIC),
+	[TYPE_MYSTERY] =	type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[TYPE_FIRE] =		type_icon_frame(CamomonsTypeIcons3Tiles, TYPE_FIRE),
+	[TYPE_WATER] =		type_icon_frame(CamomonsTypeIcons3Tiles, TYPE_WATER),
+	[TYPE_GRASS] =		type_icon_frame(CamomonsTypeIcons3Tiles, TYPE_GRASS),
+	[TYPE_ELECTRIC] =	type_icon_frame(CamomonsTypeIcons3Tiles, TYPE_ELECTRIC),
+	[TYPE_PSYCHIC] =	type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_PSYCHIC),
 	[TYPE_ICE] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_ICE),
 	[TYPE_DRAGON] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_DRAGON),
 	[TYPE_DARK] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_DARK),
-	[TYPE_ROOSTLESS] = 	type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
-	[TYPE_BLANK] = 		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
-	[0x15] = 			type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
-	[0x16] = 			type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
-	[TYPE_FAIRY] = 		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FAIRY),
+	[TYPE_ROOSTLESS] = 	type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[TYPE_BLANK] = 		type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[0x15] = 			type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[0x16] = 			type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[TYPE_FAIRY] = 		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_FAIRY),
 	[TYPE_STELLAR] =	type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_MYSTERY),
 };
 
@@ -786,6 +789,17 @@ static struct SpriteTemplate sTypeIconSpriteTemplate2 =
 {
 	.tileTag = 0xFFFF,
 	.paletteTag = TYPE_ICON_TAG_2,
+	.oam = &sTypeIconOAM,
+	.anims = gDummySpriteAnimTable,
+	.images = sTypeIconPicTable,
+	.affineAnims = gDummySpriteAffineAnimTable,
+	.callback = SpriteCB_CamomonsTypeIcon,
+};
+
+static struct SpriteTemplate sTypeIconSpriteTemplate3 =
+{
+	.tileTag = 0xFFFF,
+	.paletteTag = TYPE_ICON_TAG_3,
 	.oam = &sTypeIconOAM,
 	.anims = gDummySpriteAnimTable,
 	.images = sTypeIconPicTable,
@@ -2138,6 +2152,7 @@ void TryLoadTypeIcons(void)
 		{
 			LoadSpritePalette(&sTypeIconPalTemplate);
 			LoadSpritePalette(&sTypeIconPalTemplate2);
+			LoadSpritePalette(&sTypeIconPalTemplate3);
 		}
 
 		for (u8 position = 0; position < gBattlersCount; ++position)
@@ -2168,16 +2183,28 @@ void TryLoadTypeIcons(void)
 
 				u8 type = (typeNum == 0) ? type1 : type2;
 
+				if(type1==type2){
+					y +=6;
+					if (typeNum == 1){
+						type = (type+1)%3;
+					}
+				}
+
 				switch (type) { //Certain types have a different palette
-					case TYPE_NORMAL:
-					case TYPE_FLYING:
+					case TYPE_FIGHTING:
 					case TYPE_POISON:
-					case TYPE_GROUND:
+					case TYPE_BUG:
+					case TYPE_GHOST:
+					case TYPE_PSYCHIC:
 					case TYPE_DRAGON:
-					case TYPE_MYSTERY:
-					case TYPE_ROOSTLESS:
-					case TYPE_BLANK:
+					case TYPE_FAIRY:
 						spriteId = CreateSpriteAtEnd(&sTypeIconSpriteTemplate2, x, y, 0xFF);
+						break;
+					case TYPE_FIRE:
+					case TYPE_WATER:
+					case TYPE_GRASS:
+					case TYPE_ELECTRIC:
+						spriteId = CreateSpriteAtEnd(&sTypeIconSpriteTemplate3, x, y, 0xFF);
 						break;
 					default:
 						spriteId = CreateSpriteAtEnd(&sTypeIconSpriteTemplate, x, y, 0xFF);

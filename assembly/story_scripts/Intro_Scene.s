@@ -97,7 +97,7 @@ LevelScript_IntroScene_BloomingOnion:
     msgboxtransparent gText_IntroScene_BloomingOnion MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneImpactSite
-    setvar ShowImageVar VAR_IMAGE_1
+    setvar ShowImageVar VAR_IMAGE_6
     callasm ShowImage
     waitstate
     end
@@ -109,7 +109,7 @@ LevelScript_IntroScene_ImpactSite:
     msgboxtransparent gText_IntroScene_ImpactSite MSG_NORMAL
 
     setvar StoryEventVar1 IntroScenePikminBattles
-    setvar ShowImageVar VAR_IMAGE_1
+    setvar ShowImageVar VAR_IMAGE_7
     callasm ShowImage
     waitstate
     end
@@ -121,7 +121,7 @@ LevelScript_IntroScene_PikminBattles:
     msgboxtransparent gText_IntroScene_PikminBattles MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneWorldOfPikmin
-    setvar ShowImageVar VAR_IMAGE_1
+    setvar ShowImageVar VAR_IMAGE_8
     callasm ShowImage
     waitstate
     end

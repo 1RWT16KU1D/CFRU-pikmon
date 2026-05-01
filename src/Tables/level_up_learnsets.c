@@ -4606,5 +4606,6 @@ const struct LevelUpMove* const gLevelUpLearnsets[NUM_SPECIES] =
 	[SPECIES_CHERRY] = sCherryLevelUpLearnset,
 	[SPECIES_ANTENNABEETLE] = sAntennaBeetleLevelUpLearnset,
 	[SPECIES_FIERYYOUNGYELLOWWOLLYHOP] = sFieryYoungYellowWollyhopLevelUpLearnset,
-	[SPECIES_HOTELTRANSYLVANIA] = sHotelTransylvaniaLevelUpLearnset
+	[SPECIES_HOTELTRANSYLVANIA] = sHotelTransylvaniaLevelUpLearnset,
+	[SPECIES_HONEYWISP_MEGA] = sHoneywispLevelUpLearnset
 };

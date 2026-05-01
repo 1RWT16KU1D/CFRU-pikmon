@@ -23,4 +23,16 @@ extern u8 Image_5Tiles[];
 extern u8 Image_5Map[];
 extern u16 Image_5Pal[];
 
+extern u8 Image_6Tiles[]; 
+extern u8 Image_6Map[];
+extern u16 Image_6Pal[];
+
+extern u8 Image_7Tiles[]; 
+extern u8 Image_7Map[];
+extern u16 Image_7Pal[];
+
+extern u8 Image_8Tiles[]; 
+extern u8 Image_8Map[];
+extern u16 Image_8Pal[];
+
 #endif // GUARD_START_MENU_H

@@ -185,3 +185,5 @@ extern const u8 BattleScript_TatteredWeb[];
 extern const u8 gText_ButItFailed[];
 extern const u8 BattleScript_Whisker[];
 extern const u8 gText_WhiskerMega[];
+extern const u8 BattleScript_QuixoticSurge[];
+extern const u8 gText_QuixoticSurge[];

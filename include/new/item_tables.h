@@ -1549,6 +1549,10 @@ extern const u32 gBagItem_LostMediaTiles[];
 extern const u32 gBagItem_LostMediaPal[];
 extern const u32 gBagItem_FairyFeatherTiles[];
 extern const u32 gBagItem_FairyFeatherPal[];
+extern const u32 gBagItem_GiftOfFriendshipTiles[];
+extern const u32 gBagItem_GiftOfFriendshipPal[];
+extern const u32 gBagItem_ShineSpriteTiles[];
+extern const u32 gBagItem_ShineSpritePal[];
 
 
 //Funcs
@@ -2443,3 +2447,6 @@ extern const u8 DESC_SPIKE_BALL[];
 extern const u8 DESC_SHARP_BLADE[];
 extern const u8 DESC_LOST_MEDIA[];
 extern const u8 DESC_FAIRY_FEATHER[];
+
+extern const u8 DESC_GIFT_OF_FRIENDSHIP[];
+extern const u8 DESC_SHINE_SPRITE[];

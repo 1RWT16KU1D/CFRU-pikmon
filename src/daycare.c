@@ -293,35 +293,9 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare* daycare, u8* parent
                                  eggSpecies = SPECIES_FEMALESHEARGRUB;
                         break;
 
-		#if (defined NATIONAL_DEX_ILLUMISE && defined SPECIES_VOLBEAT)
-		case NATIONAL_DEX_ILLUMISE:
-			if (personality & 0x8000)
-				eggSpecies = SPECIES_VOLBEAT;
+		case NATIONAL_DEX_MYSTERIOUSLIFEFORM:
+			eggSpecies = SPECIES_MYSTERIOUSLIFEFORM_BULBORB + (personality%5);
 			break;
-
-		case NATIONAL_DEX_VOLBEAT:
-			if (!(personality & 0x8000))
-				eggSpecies = SPECIES_ILLUMISE;
-			break;
-		#endif
-
-		#if (defined NATIONAL_DEX_MANAPHY && defined SPECIES_PHIONE)
-		case NATIONAL_DEX_MANAPHY:
-			eggSpecies = SPECIES_PHIONE;
-			break;
-		#endif
-
-		#ifdef NATIONAL_DEX_MINIOR
-		case NATIONAL_DEX_MINIOR:
-			eggSpecies = GetMiniorCoreFromPersonality(personality);
-			break;
-		#endif
-
-		#if (defined NATIONAL_DEX_INDEEDEE && defined SPECIES_INDEEDEE && defined SPECIES_INDEEDEE_FEMALE)
-		case NATIONAL_DEX_INDEEDEE:
-			eggSpecies = (personality & 0x8000) ? SPECIES_INDEEDEE : SPECIES_INDEEDEE_FEMALE;
-			break;
-		#endif
 	}
 
 	// Make Pebble Pitcher the "mother" slot if the other daycare mon is male/genderless).
@@ -490,12 +464,6 @@ static void AlterSpeciesWithIncenseItems(u16* species, u16 motherItem, u16 fathe
 	// if neither parent holding incense, force 2nd evo species
 	switch (*species)
 	{
-		#if (defined SPECIES_WYNAUT && defined SPECIES_WOBBUFFET && defined ITEM_LAX_INCENSE)
-		case SPECIES_WYNAUT:
-			if (motherItem != ITEM_LAX_INCENSE && fatherItem != ITEM_LAX_INCENSE)
-				*species = SPECIES_WOBBUFFET;
-			break;
-		#endif
 		case SPECIES_REDPIKMIN:
 			if (motherItem == ITEM_METAL_COAT || fatherItem == ITEM_METAL_COAT){
 				*species = SPECIES_TOYPIKMIN_RED;	
@@ -620,7 +588,8 @@ static void TryDoMasudaMethod(struct Pokemon* mon, struct BoxPokemon* parent1, s
 	//Since regional mons are basically non-existant in ROM Hacks,
 	//activate Masuda method for mons with differing OTIds
 	if (!IsMonShiny(mon)
-	&& GetBoxMonData(parent1, MON_DATA_OT_ID, NULL) != GetBoxMonData(parent2, MON_DATA_OT_ID, NULL)) //Parents from differing Trainers
+		&& (GetBoxMonData(parent1, MON_DATA_OT_ID, NULL) != GetBoxMonData(parent2, MON_DATA_OT_ID, NULL))
+		|| (GetBoxMonData(parent2,MON_DATA_HELD_ITEM,NULL) == ITEM_SHINE_SPRITE || GetBoxMonData(parent2,MON_DATA_HELD_ITEM,NULL) == ITEM_SHINE_SPRITE)) //Parents from differing Trainers
 	{
 		u32 i;
 		bool8 forceShiny = FALSE;

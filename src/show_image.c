@@ -59,6 +59,21 @@ const struct ImageData ImageDataTable[] =
         .tiles = Image_5Tiles,
         .tilemap = Image_5Map,
         .pal = Image_5Pal
+    },
+    {
+        .tiles = Image_6Tiles,
+        .tilemap = Image_6Map,
+        .pal = Image_6Pal
+    },
+    {
+        .tiles = Image_7Tiles,
+        .tilemap = Image_7Map,
+        .pal = Image_7Pal
+    },
+    {
+        .tiles = Image_8Tiles,
+        .tilemap = Image_8Map,
+        .pal = Image_8Pal
     }
 };
 

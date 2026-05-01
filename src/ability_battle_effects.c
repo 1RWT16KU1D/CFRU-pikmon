@@ -1315,7 +1315,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			break;
 	
 		case ABILITY_ELECTRICSURGE:
-			effect = TryActivateTerrainAbility(ELECTRIC_TERRAIN, B_ANIM_ELECTRIC_SURGE, bank);
+			if(SpeciesHasQuixoticSurge(SPECIES(bank))){
+				gNewBS->RainbowTimers[SIDE(bank)] = 5;
+				gNewBS->RainbowTimers[SIDE(FOE(bank))] = 5;
+				gBattleScripting.bank = bank;
+				BattleScriptPushCursor();
+				gBattlescriptCurrInstr = BattleScript_QuixoticSurge;
+				effect++;
+			}
+			else effect = TryActivateTerrainAbility(ELECTRIC_TERRAIN, B_ANIM_ELECTRIC_SURGE, bank);
 			break;
 
 		case ABILITY_GRASSYSURGE:

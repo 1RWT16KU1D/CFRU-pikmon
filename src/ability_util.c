@@ -179,6 +179,8 @@ extern const u8 gText_AbilityName_AsOneProgg[];
 extern const u8 gText_AbilityDescription_AsOneProgg[];
 extern const u8 gText_AbilityName_SnowAngel[];
 extern const u8 gText_AbilityDescription_SnowAngel[];
+extern const u8 gText_AbilityName_QuixoticSurge[];
+extern const u8 gText_AbilityDescription_QuixoticSurge[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -475,6 +477,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 		case ABILITY_ELECTRICSURGE:
 			if(SpeciesHasHadronEngine(species))
 				return gText_AbilityName_HadronEngine;
+			if(SpeciesHasQuixoticSurge(species))
+				return gText_AbilityName_QuixoticSurge;
 			break;
 		case ABILITY_SCRAPPY:
 			if(SpeciesHasMindsEye(species))
@@ -702,6 +706,8 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_ELECTRICSURGE:
 			if(SpeciesHasHadronEngine(species))
 				return gText_AbilityDescription_HadronEngine;
+			if(SpeciesHasQuixoticSurge(species))
+				return gText_AbilityDescription_QuixoticSurge;
 			break;
 		case ABILITY_SCRAPPY:
 			if(SpeciesHasMindsEye(species))
@@ -1738,4 +1744,8 @@ bool8 SpeciesHasAsOneProgg(unusedArg u16 species){
 
 bool8 SpeciesHasSnowAngel(unusedArg u16 species){
 	return (species==SPECIES_SNOWFLAKEFLUTTERTAIL_MEGA);
+}
+
+bool8 SpeciesHasQuixoticSurge(unusedArg u16 species){
+	return (species==SPECIES_TITANDWEEVIL);
 }

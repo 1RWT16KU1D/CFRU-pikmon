@@ -29,3 +29,4 @@ void HandleInputChooseAction(void);
 //Exported Constants
 #define TYPE_ICON_TAG 0x2720
 #define TYPE_ICON_TAG_2 0x2721
+#define TYPE_ICON_TAG_3 0x2722

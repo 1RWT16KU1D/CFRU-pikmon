@@ -131,6 +131,7 @@ ability_battle_scripts.s
 .global BattleScript_Whisker
 .global BattleScript_Trackinator
 .global BattleScript_TreasureGaugeActivate
+.global BattleScript_QuixoticSurge
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1727,6 +1728,15 @@ BattleScript_Trackinator:
 	datahpupdate BANK_ATTACKER
 	waitmessage DELAY_1SECOND
 	faintpokemon BANK_ATTACKER 0x0 0x0
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_QuixoticSurge:
+	call BattleScript_AbilityPopUp
+	setword BATTLE_STRING_LOADER gText_QuixoticSurge
+	printstring 0x184
+	call BattleScript_AbilityPopUpRevert
 	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

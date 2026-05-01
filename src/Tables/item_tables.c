@@ -42,8 +42,8 @@ const item_t sPickupCommonItems[PU_NUM_COMMON_ITEMS] =
 	ITEM_ULTRA_BALL,
 	ITEM_REVIVE,
 	ITEM_RARE_CANDY,
-	ITEM_SUN_STONE,
-	ITEM_MOON_STONE,
+	ITEM_FIRE_STONE,
+	ITEM_ICE_STONE,
 	ITEM_FULL_RESTORE,
 	ITEM_MAX_REVIVE,
 	ITEM_PP_UP,
@@ -1756,8 +1756,8 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_InterrogationTiles, gBag_InterrogationPal},//771
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
-	{gBag_InterrogationTiles, gBag_InterrogationPal},
-	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	{gBagItem_ShineSpriteTiles, gBagItem_ShineSpritePal},
+	{gBagItem_GiftOfFriendshipTiles, gBagItem_GiftOfFriendshipPal},
 	{gBagItem_Pellet_NormalTiles, gBagItem_Pellet_NormalPal},
 	{gBagItem_Pellet_GrassTiles, gBagItem_Pellet_GrassPal},
 	{gBagItem_Pellet_FireTiles, gBagItem_Pellet_FirePal},
@@ -14923,6 +14923,23 @@ const struct Item gItemData[] =
 		.battleUseFunc = NULL,
 		.secondaryId = 0
 	},
+	[ITEM_SHINE_SPRITE]
+	{
+        .name = {_S, _h, _i, _n, _e, _SPACE, _S, _p, _r, _i, _t, _e, _END},
+        .itemId = ITEM_SHINE_SPRITE,
+        .price = 1000,
+        .holdEffect = 0,
+        .holdEffectParam = 0,
+        .description = DESC_SHINE_SPRITE,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = FieldUseFunc_OakStopsYou,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0
+    },
 	[ITEM_FREE_SPACE1]
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
@@ -14965,6 +14982,23 @@ const struct Item gItemData[] =
         .holdEffect = 0,
         .holdEffectParam = 0,
         .description = gText_ItemNone,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = FieldUseFunc_OakStopsYou,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0
+    },	
+	[ITEM_GIFT_OF_FRIENDSHIP]
+	{
+        .name = {_F, _r, _i, _e, _n, _d, _SPACE, _G, _i, _f, _t, _END},
+        .itemId = ITEM_GIFT_OF_FRIENDSHIP,
+        .price = 0,
+        .holdEffect = 0,
+        .holdEffectParam = 0,
+        .description = DESC_GIFT_OF_FRIENDSHIP,
         .importance = 0,
         .unk19 = 0,
         .pocket = POCKET_ITEMS,

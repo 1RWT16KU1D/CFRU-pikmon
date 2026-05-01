@@ -2516,3 +2516,9 @@ An item to be held by demo77\nRaises Atk and SpAtk.
 
 #org @DESC_FAIRY_FEATHER
 An item to be held by a PIKMON.\nBoosts the power of FAIRY-type moves.
+
+#org @DESC_SHINE_SPRITE
+Something from another reality.\nGives a foreig vibe to its holder.
+
+#org @DESC_GIFT_OF_FRIENDSHIP
+Proof of the bond between man and dog.\nUse to change the Sirehound's form.

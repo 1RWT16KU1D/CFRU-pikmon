@@ -4329,8 +4329,9 @@ void TryRandomizeSpecies(unusedArg u16* species)
 	#endif
 	&& *species != SPECIES_NONE && *species < NUM_SPECIES)
 	{
+		u16 locationHash = (gSaveBlock1->location.mapGroup | gSaveBlock1->location.mapNum);// makes same species encounters not consistent from one route to the next
 		u16 newSpecies;
-		u32 id = T1_READ_32(gSaveBlock2->playerTrainerId);
+		u32 id = (T1_READ_32(gSaveBlock2->playerTrainerId) >> (locationHash | locationHash));
 		u16 startAt = (id & 0xFFFF) % (u32) speciesCount;
 		u16 xorVal = (id >> 16) % (u32) 0x400; //Only set the bits likely to be in the species
 		u32 numAttempts = 0;
@@ -4353,7 +4354,7 @@ void TryRandomizeSpecies(unusedArg u16* species)
 		}
 
 		if (numAttempts >= 100)
-			newSpecies = SPECIES_QUAGGLEDMIRECLOPS;
+			newSpecies = SPECIES_PLACEHOLDERLARVA;
 
 		*species = newSpecies;
 	}

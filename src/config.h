@@ -134,8 +134,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define TIME_NIGHT_START 20			//8:00 PM / 20:00
 
 /*===== General Number Options =====*/
-#define KANTO_DEX_COUNT 151
-#define NATIONAL_DEX_COUNT 1025
+#define KANTO_DEX_COUNT 190
+#define NATIONAL_DEX_COUNT 190
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root
 #define NUM_TRAINER_CLASSES 107 //Vanilla FR has 107
@@ -198,7 +198,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_POKEMON_RANDOMIZER 0x940 //Setting randomizes Pokemon species that are created.
 #define FLAG_POKEMON_LEARNSET_RANDOMIZER 0x941 //Setting randomizes Pokemon learnsets.
 #define FLAG_ABILITY_RANDOMIZER 0x942 //Setting randomizes Pokemon abilities.
-#define NUM_SPECIES_RANDOMIZER NUM_SPECIES //The final number of Pokemon (+ 1) of species that can appear in the randomizer. Change to NUM_SPECIES for Gen 8
+#define NUM_SPECIES_RANDOMIZER LAST_RANDOM //The final number of Pokemon (+ 1) of species that can appear in the randomizer. Change to NUM_SPECIES for Gen 8
 
 /*===== Pre-existing Offsets =====*/
 //#define EXISTING_FOSSIL_IMAGE_TABLE_ADDRESS 0x81a4600 //Uncomment this if you've already inserted a fossil image table

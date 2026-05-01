@@ -744,19 +744,22 @@ Draws attention from foes.
 Set Sticky Web if physical hit.
 
 #org @gText_AbilityDescription_Mithridate
-Mithridate
+Absorbs Poison moves raising SpDef.
 
 #org @gText_AbilityDescription_Antacid
 Antacid
 
 #org @gText_AbilityDescription_SpicyEssence
-Spicy Essence
+Can burn foe when making contact.
 
 #org @gText_AbilityDescription_BitterEssence
-Bitter Essence
+Can petrify foe who makes contact.
 
 #org @gText_AbilityDescription_AsOneProgg
-As One
+Spreads Gloom and increases power of super effective moves.
 
 #org @gText_AbilityDescription_SnowAngel
-Snow Angel
+Immune to Fire and Burns in Snow.
+
+#org @gText_AbilityDescription_QuixoticSurge
+Fills the area with Rainbows.
