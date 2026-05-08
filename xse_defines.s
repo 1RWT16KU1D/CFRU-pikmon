@@ -1,5 +1,22 @@
 .thumb
 
+.equ VarTemp0, 0x4000
+.equ VarTemp1, 0x4001
+.equ VarTemp2, 0x4002
+.equ VarTemp3, 0x4003
+.equ VarTemp4, 0x4004
+.equ VarTemp5, 0x4005
+.equ VarTemp6, 0x4006
+.equ VarTemp7, 0x4007
+.equ VarTemp8, 0x4008
+.equ VarTemp9, 0x4009
+.equ VarTempA, 0x400A
+.equ VarTempB, 0x400B
+.equ VarTempC, 0x400C
+.equ VarTempD, 0x400D
+.equ VarTempE, 0x400E
+.equ VarTempF, 0x400F
+
 .equ ShowTrainerIntroSpeech, 0x34
 .equ ShowTrainerCantBattleSpeech, 0x35
 .equ GetTrainerFlag, 0x36

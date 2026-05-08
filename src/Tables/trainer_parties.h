@@ -44,6 +44,7 @@ struct TrainerMonNoItemDefaultMoves sParty_BobEntry1[] =  {
         .species = SPECIES_FEMALESHEARGRUB,
     },
 };
+
 struct TrainerMonItemDefaultMoves sParty_BobEntry2[] = {
     {
         .iv = 0,
