@@ -118,3 +118,4 @@ bool8 SpeciesHasBitterEssence(u16 species);
 bool8 SpeciesHasAsOneProgg(u16 species);
 bool8 SpeciesHasSnowAngel(u16 species);
 bool8 SpeciesHasQuixoticSurge(u16 species);
+bool8 SpeciesHasWhistle(u16 species);

@@ -181,6 +181,8 @@ extern const u8 gText_AbilityName_SnowAngel[];
 extern const u8 gText_AbilityDescription_SnowAngel[];
 extern const u8 gText_AbilityName_QuixoticSurge[];
 extern const u8 gText_AbilityDescription_QuixoticSurge[];
+extern const u8 gText_AbilityName_EmperorsWhistle[];
+extern const u8 gText_AbilityDescription_EmperorsWhistle[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -377,17 +379,11 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				#endif
 			}
 			break;
-		case ABILITY_PUNKROCK:
-			switch (species)
-			{
-				#if (defined NATIONAL_DEX_WHISMUR && defined NATIONAL_DEX_LOUDRED && defined NATIONAL_DEX_EXPLOUD)
-				case NATIONAL_DEX_WHISMUR:
-				case NATIONAL_DEX_LOUDRED:
-				case NATIONAL_DEX_EXPLOUD:
-					return gText_AbilityName_Bellow;
-				#endif
-			}
-			break;
+//		case ABILITY_PUNKROCK:
+//			if(SpeciesHasWhistle(species)){
+//					return gText_AbilityName_EmperorsWhistle;
+//			}
+//			break;
 		case ABILITY_ICESCALES:
 			switch (dexNum)
 			{
@@ -742,6 +738,11 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 		case ABILITY_GRASSYSURGE:
 			if (SpeciesHasSeedSower(species))
 				return gText_AbilityDescription_SeedSower;
+			break;
+		case ABILITY_PUNKROCK:
+			if(SpeciesHasWhistle(species)){
+					return gText_AbilityDescription_EmperorsWhistle;
+			}
 			break;
 		case ABILITY_STRONGJAW:
 			if (SpeciesHasSharpness(species))
@@ -1731,11 +1732,11 @@ bool8 SpeciesHasAntacid(unusedArg u16 species){
 }
 
 bool8 SpeciesHasSpicyEssence(unusedArg u16 species){
-	return (species==SPECIES_TITANDWEEVIL_POISON);
+	return (species==SPECIES_WHISKERPILLAR_MEGAS);
 }
 
 bool8 SpeciesHasBitterEssence(unusedArg u16 species){
-	return (species==SPECIES_BULBORBLARVA);
+	return (species==SPECIES_WHISKERPILLAR_MEGAB);
 }
 
 bool8 SpeciesHasAsOneProgg(unusedArg u16 species){
@@ -1748,4 +1749,8 @@ bool8 SpeciesHasSnowAngel(unusedArg u16 species){
 
 bool8 SpeciesHasQuixoticSurge(unusedArg u16 species){
 	return (species==SPECIES_TITANDWEEVIL);
+}
+
+bool8 SpeciesHasWhistle(unusedArg u16 species){
+	return (species==SPECIES_ANTENNABEETLE);
 }

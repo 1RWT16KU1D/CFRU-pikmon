@@ -83,7 +83,7 @@ void atkEF_handleballthrow(void)
 	if (gNewBS->isTrainerBattle) //Doesn't use BATTLE_TYPE_TRAINER because that's removed by the Catch Trainers Pokemon cheat
 	{
 		#ifdef FLAG_CATCH_TRAINERS_POKEMON
-			if (FlagGet(FLAG_CATCH_TRAINERS_POKEMON))
+			if (FlagGet(FLAG_CATCH_TRAINERS_POKEMON) || ABILITY(gActiveBattler)==ABILITY_EMPERORSWHISTLE && SpeciesHasWhistle(SPECIES(gActiveBattler)))
 			{
 				EmitBallThrowAnim(0, 4);
 				MarkBufferBankForExecution(gActiveBattler);

@@ -2699,13 +2699,13 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		//2x Boost
 			if(SpeciesHasSupremeOverlord(data->atkSpecies))
 			{
-				int boost = 10;
+				int boost = 0;
 				for(int i = 0; i < gPlayerPartyCount; i++)
 				{
 					struct Pokemon mon = gPlayerParty[i];
 					if(mon.hp == 0)
 					{
-						boost++;
+						boost+=10;
 					}
 				}
 				attack *= (1 + (boost / 100));

@@ -778,7 +778,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 	#else
 	struct Trainer* trainer;
 	#endif
-	u32 otid = 0;
+	u32 otid = (trainer->trainerName[0]|trainer->trainerName[3]||trainer->trainerName[2]|trainer->trainerName[1])
+				& (trainer->trainerName[5]|trainer->trainerName[4]||trainer->trainerName[6]|trainer->trainerName[7])
+				% (trainer->trainerName[11]|trainer->trainerName[10]||trainer->trainerName[9]|trainer->trainerName[8]);
 	u8 otIdType = OT_ID_RANDOM_NO_SHINY;
 
 	if (trainerId == TRAINER_SECRET_BASE)
@@ -934,10 +936,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		//Create each Pokemon
 		for (i = 0, trainerNameLengthOddness = StringLength(trainer->trainerName) & 1, nameHash = 0; i < monsCount; ++i)
 		{
+			
 			u32 personalityValue;
 			u8 genderOffset = 0x80;
 			struct Pokemon* mon = &party[i];
-
+			SetMonData(mon, MON_DATA_OT_ID, &otid);
 			if (setMonGender == 1)
 			{
 				genderOffset = 0x78; //Female
@@ -3933,7 +3936,7 @@ static void PostProcessTeam(struct Pokemon* party, struct TeamBuilder* builder)
 				SwapMons(party, index++, hazardsIndex);
 		}
 	}
-
+ 
 	//Try change last mon
 	if (builder->monsCount >= 3 && GetMonAbility(&party[builder->monsCount - 1]) == ABILITY_ILLUSION)
 	{

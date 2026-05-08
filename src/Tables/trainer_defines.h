@@ -1,12 +1,12 @@
 #define TRAINER_NONE                               0
 
 // Dummy trainers for all the RS trainer classes
-#define TRAINER_AQUA_LEADER                        1
-#define TRAINER_AQUA_GRUNT_M                       2
-#define TRAINER_AQUA_GRUNT_F                       3
-#define TRAINER_RS_AROMA_LADY                      4
-#define TRAINER_RS_RUIN_MANIAC                     5
-#define TRAINER_INTERVIEWER                        6
+#define TRAINER_BOB_ENTRY                          1
+#define TRAINER_BOB_ENTRY_REMATCH                  2
+#define TRAINER_BOB_ENTRY_SPICY                    3
+#define TRAINER_BOB_EXIT                           4
+#define TRAINER_BOB_EXIT_REMATCH                   5
+#define TRAINER_BOB_EXIT_SPICY                     6
 #define TRAINER_RS_TUBER_F                         7
 #define TRAINER_RS_TUBER_M                         8
 #define TRAINER_RS_COOLTRAINER_M                   9
