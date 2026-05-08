@@ -23,3 +23,6 @@ gItemEffectTable2 0812504C
 sMovementActionFuncs 08064540
 sMovementTypeCallbacks 0805E95C
 gInitialMovementTypeFacingDirections2 0805E230
+
+## Status Ailment Icons
+PokeSummary_StatusAilmentIcons_FrostbiteTiles 0813A314

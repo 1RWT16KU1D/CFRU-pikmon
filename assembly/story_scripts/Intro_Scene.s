@@ -140,7 +140,7 @@ LevelScript_IntroScene_RoomWarp:
     if equal _goto End
 
     setvar StoryEventVar1 IntroSceneWarpedToRoom
-    warp 4 1 0xFF 6 6
+    warp 4 1 0xFF 6 6 @ Player's Room
     end
 
 End:

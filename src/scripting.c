@@ -3489,3 +3489,14 @@ void SetCustomMonIVs(void)
 		SetMonData(mon, MON_DATA_HP_IV + i, &ivValue);
     }
 }
+
+// Name the player
+void DoNamePlayer(void)
+{
+	DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2->playerName, gSaveBlock2->playerGender, 0, 0, (void *)CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void DoNameRival(void)
+{
+	DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock1->rivalName, 0, 0, 0, (void *)CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
