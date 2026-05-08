@@ -120,8 +120,6 @@ gText_UsedVar2WildWeaker 080A1AEC
 
 gText_PokemonAreNeeded 0845A32C
 
-#ifdef FROSTBITE
-PokeSummary_StatusAilmentIcons_FrostbiteTiles 0813A314
 StatusGfx_Icons_FrostbiteTiles 0845A574
 ANIM_FROSTBITE 081C6E9C
 gText_GotFrostbite 083FDFD0
@@ -129,7 +127,6 @@ gText_RemovedTargetFrostbite 083FDFDC
 gText_RemovedAttackerFrostbite 083FDFE0
 gText_MoveUsedFrostbiteRemoved 083FDFE4
 gText_ItemRemovedFrostbite 083FE3A4
-#endif
 
 ##Gen 4 Player OW Running Fix
 gEventObjectImageAnim_RunSouth 083A3460

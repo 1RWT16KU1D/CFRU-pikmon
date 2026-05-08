@@ -19,7 +19,7 @@ EventScript_Pallet_FatGuy:
     msgboxtransparent gText_ThisIsAfterImage MSG_NORMAL
     setvar 0x8000 MOVE_POWERGEM
     setvar 0x8001 MOVE_TOXIC
-    setvar 0x8002 0xFFFF
+    setvar 0x8002 MOVE_ICEBEAM
     setvar 0x8003 0xFFFF
     setvar 0x8004 5
     setvar 0x8005 1
