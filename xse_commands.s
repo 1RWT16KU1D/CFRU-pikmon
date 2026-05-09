@@ -1969,12 +1969,12 @@ map \map
 .word \script
 .endm
 
-.macro msgminibox text:req pointer:req type:req
+.macro minimsgbox text:req pointer:req type:req
 	loadpointer 0x0 \text
-    callasm MiniBoxOpen
+    callasm InitMiniTextBox
 	loadpointer 0x0 \pointer
 	callstd \type
-	callasm ClearMiniBox
+	callasm DestroyMiniTextBox
 .endm
 
 .macro followerfaceplayer

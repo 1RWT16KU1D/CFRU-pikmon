@@ -54,16 +54,6 @@ MegaLevelStringHook:
     cmp r0, #0
     bne LoadSpecialMegaSymbol
 
-    ldr r2, objects
-    lsl r1, r5, #4
-    add r1, r5
-    lsl r1, r1, #2
-    add r1, r2
-    ldrh r0, [r1, #0x3A]
-    bl IsTerastallized
-    cmp r0, #0
-    bne LoadSpecialMegaSymbol
-
 	ldr r1, level_string
 	mov r0, sp
 	mov r2, #0x10

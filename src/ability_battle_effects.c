@@ -1980,7 +1980,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				&& !SheerForceCheck()
 				&& !SpeciesHasElectromorphosis(SPECIES(bank))
 				&& gMultiHitCounter <= 1
-				&& !IsTerastallized(bank))
+				#ifdef TERASTAL_FEATURE
+				&& !IsTerastallized(bank)
+				#endif
+				)
 				{
 					SET_BATTLER_TYPE(bank, moveType);
 					PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);

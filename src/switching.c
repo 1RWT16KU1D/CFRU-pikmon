@@ -1096,6 +1096,7 @@ void atk52_switchineffects(void)
 		__attribute__ ((fallthrough));
 
 		case SwitchIn_ReactivateTera:
+			#ifdef TERASTAL_FEATURE
 			// Special Case - If Tera is chosen, and mon is switched, turn off Tera
 			if (gNewBS->teraData.chosen[gActiveBattler])
 				gNewBS->teraData.chosen[gActiveBattler] = FALSE;
@@ -1106,6 +1107,7 @@ void atk52_switchineffects(void)
 				if (GetTeraType(gActiveBattler) != TYPE_STELLAR)
 					SET_BATTLER_TYPE(gActiveBattler, GetTeraType(gActiveBattler));
 			}
+			#endif
 		__attribute__ ((fallthrough));
 
 		case SwitchIn_End:

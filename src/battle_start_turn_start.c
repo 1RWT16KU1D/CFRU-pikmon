@@ -1299,6 +1299,7 @@ void RunTurnActionsFunctions(void)
 	}
 
 	*megaBank = 0;
+	#ifdef TERASTAL_FEATURE
 // For Terastallization
 	switch (gNewBS->teraData.state) 
 	{
@@ -1371,6 +1372,7 @@ void RunTurnActionsFunctions(void)
 	}
 
 	*teraBank = 0;
+	#endif
 
 
 	if (gCurrentActionFuncId == ACTION_USE_MOVE)

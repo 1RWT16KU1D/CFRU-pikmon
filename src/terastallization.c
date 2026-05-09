@@ -34,6 +34,7 @@
 #include "../include/random.h"
 #include "../include/string_util.h"
 
+#ifdef TERASTAL_FEATURE
 // Exported Functions
 extern u16 VarGet(u16 var);
 extern bool8 VarSet(u16 var, u16 value);
@@ -762,4 +763,5 @@ void TeraIconSummaryScreen(void)
 	else
 		ballSprite->data[1] = MAX_SPRITES; //No icon
 };
+#endif
 #endif

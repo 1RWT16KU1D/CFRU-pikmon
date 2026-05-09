@@ -1060,18 +1060,18 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				u8 type2 = gBaseStats[species].type2;
 				u8 randomValue = Random() % 100;
 
+				#ifdef TERASTAL_FEATURE
 				// 2% chance to get a random teraType
 				if (randomValue < 2)
 					mon->teraType = GetRandomTeraType();
-
-				// Otherwise, get a random one from the original typing
-				else
+				else // Otherwise, get a random one from the original typing
 				{
 					if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
 						mon->teraType = type1;
 					else
 						mon->teraType = (Random() & 1) ? type1 : type2;				
 				}
+				#endif
 			}
 
 			//Assign Trainer information to mon
@@ -1201,10 +1201,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				#endif
 
 				// Try assigning teraType
+				#ifdef TERASTAL_FEATURE
 				if (spread->teraType == TERA_TYPE_RANDOM_ALL)
 					mon->teraType = GetRandomTeraType();
 				else if (spread->teraType != TERA_TYPE_RANDOM) // We skip 0xFF because it has already been assigned prior
 					mon->teraType = spread->teraType; // Set teraType to designated value
+				#endif
 			}
 			#endif
 

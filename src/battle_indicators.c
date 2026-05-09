@@ -1010,6 +1010,7 @@ static void SpriteCB_MegaTrigger(struct Sprite* self)
 	}
 }
 
+#ifdef TERASTAL_FEATURE
 static void SpriteCB_TeraTrigger(struct Sprite* self)
 {
 	if (TAG == GFX_TAG_TERA_TRIGGER)
@@ -1102,6 +1103,7 @@ static void SpriteCB_TeraTrigger(struct Sprite* self)
 		self->data[2] = PALETTE_STATE;
 	}
 }
+#endif
 
 #define INDICATOR_BANK self->data[0]
 
@@ -1156,6 +1158,7 @@ static void SpriteCB_MegaIndicator(struct Sprite* self)
 			}
 			break;
 
+		#ifdef TERASTAL_FEATURE
 		// Add case for Terastallization
 		case GFX_TAG_TERA_INDICATOR_NORMAL ... GFX_TAG_TERA_INDICATOR_STELLAR:
 			if (!IsTerastallized(INDICATOR_BANK))
@@ -1164,6 +1167,7 @@ static void SpriteCB_MegaIndicator(struct Sprite* self)
 				return;
 			}
 			break;
+		#endif
 
 		default: //GFX_TAG_MEGA_INDICATOR
 			if (gNewBS == NULL)
@@ -1592,6 +1596,7 @@ void LoadMegaGraphics(u8 state)
 		unusedArg bool8 loadedDynamaxGfx = IndexOfSpriteTileTag(GFX_TAG_DYNAMAX_INDICATOR) != 0xFF;
 
 		// Tera Trackers for each type
+		#ifdef TERASTAL_FEATURE
 		unusedArg bool8 loadedTeraNormalGfx   = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_NORMAL)   != 0xFF;
 		unusedArg bool8 loadedTeraFightingGfx = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_FIGHTING) != 0xFF;
 		unusedArg bool8 loadedTeraFlyingGfx   = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_FLYING)   != 0xFF;
@@ -1611,11 +1616,9 @@ void LoadMegaGraphics(u8 state)
 		unusedArg bool8 loadedTeraDarkGfx     = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_DARK)     != 0xFF;
 		unusedArg bool8 loadedTeraFairyGfx    = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_FAIRY)    != 0xFF;
 		unusedArg bool8 loadedTeraStellarGfx  = IndexOfSpriteTileTag(GFX_TAG_TERA_INDICATOR_STELLAR)  != 0xFF;
+		#endif
 
 		#if (defined MEGA_EVOLUTION_FEATURE || defined DYNAMAX_FEATURE)
-		if (IsTerastallized(gActiveBattler))
-			LoadSpritePalette(&sTeraNormalIndicatorPalette);
-		else
 			LoadSpritePalette(&sMegaIndicatorPalette);
 		#endif
 
@@ -1674,6 +1677,7 @@ void LoadMegaGraphics(u8 state)
 				gSprites[spriteId].data[0] = bank;
 				gNewBS->megaIndicatorObjIds[bank] = spriteId + 1;
 			}
+			#ifdef TERASTAL_FEATURE
 			else if (IsTerastallized(bank))
 			{
 				u8 teraType = GetTeraType(bank);
@@ -1841,6 +1845,7 @@ void LoadMegaGraphics(u8 state)
 				gSprites[spriteId].data[0] = bank;
 				gNewBS->teraIndicatorObjIds[bank] = spriteId + 1;
 			}
+			#endif
 			else
 			#endif
 				if (HasDynamaxSymbol(bank))
@@ -1945,6 +1950,7 @@ void TryLoadMegaTriggers(void)
 // For Terastallization
 void TryLoadTeraTrigger(void)
 {
+	#ifdef TERASTAL_FEATURE
         u8 spriteId, i;
 
         if (gBattleTypeFlags & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_POKE_DUDE | BATTLE_TYPE_OLD_MAN))
@@ -1971,6 +1977,7 @@ void TryLoadTeraTrigger(void)
 	gSprites[spriteId].data[3] = 32;
 	gSprites[spriteId].pos1.y = -32;
 	gSprites[spriteId].data[4] = gActiveBattler;
+	#endif
 }
 
 static void DestroyMegaTriggers(struct Sprite* sprite)
@@ -1997,6 +2004,7 @@ static void DestroyMegaTriggers(struct Sprite* sprite)
 // For Terastallization
 static void DestroyTeraTrigger(struct Sprite* sprite)
 {
+	#ifdef TERASTAL_FEATURE
 	u32 i;
 	DestroySprite(sprite);
 
@@ -2008,6 +2016,7 @@ static void DestroyTeraTrigger(struct Sprite* sprite)
 
 	FreeSpritePaletteByTag(GFX_TAG_TERA_TRIGGER);
 	FreeSpriteTilesByTag(GFX_TAG_TERA_TRIGGER);
+	#endif
 }
 
 void TryLoadZTrigger(void)

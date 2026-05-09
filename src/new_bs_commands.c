@@ -1358,7 +1358,10 @@ void atkFF27_tryactivateprotean(void)
 	&& gCurrentMove != MOVE_STRUGGLE
 	&& !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
 	&& !gSpecialMoveFlags[gCurrentMove].gMovesThatCallOtherMoves
-	&& !IsTerastallized(gBankAttacker))
+	#ifdef TERASTAL_FEATURE
+	&& !IsTerastallized(gBankAttacker)
+	#endif
+	)
 	{
 		if (gBattleMons[gBankAttacker].type1 != moveType
 		||  gBattleMons[gBankAttacker].type2 != moveType

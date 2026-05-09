@@ -1631,6 +1631,7 @@ u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 		APPLY_QUICK_STAT_MOD(spAttack, STAT_STAGE(bankAtk, STAT_STAGE_SPATK));
 
 		// Added Tera Blast check
+		#ifdef TERASTAL_FEATURE
 		if (move == MOVE_TERABLAST) 
 		{
 			if (IsTerastallized(bankAtk))
@@ -1638,6 +1639,7 @@ u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 			else
 				return SPLIT_SPECIAL; // Ensures it defaults to special when not terastallized
 		}
+		#endif
 
 		if (spAttack >= attack)
 			return SPLIT_SPECIAL;

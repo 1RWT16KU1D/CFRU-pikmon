@@ -3139,9 +3139,12 @@ static const u8 sMiniBoxTextColors[] = {
     TEXT_COLOR_LIGHT_GREY     // Sombra
 };
 
-void MiniBoxOpen(void)
+// Mini-textbox for names
+void DestroyMiniTextBox(void);
+
+void InitMiniTextBox(void)
 {
-	ClearMiniBox();
+	DestroyMiniTextBox();
     sSafariZoneStatsWindowId = AddWindow(&template);
 
     if (sSafariZoneStatsWindowId == 0xFF)
@@ -3159,7 +3162,7 @@ void MiniBoxOpen(void)
     CopyWindowToVram(sSafariZoneStatsWindowId, 2);
 }
 #else
-void MiniBoxOpen(void)
+void InitMiniTextBox(void)
 {
     sSafariZoneStatsWindowId = AddWindow(&template);
 
@@ -3177,7 +3180,8 @@ void MiniBoxOpen(void)
     CopyWindowToVram(sSafariZoneStatsWindowId, 2);
 }
 #endif
-void ClearMiniBox(void)
+
+void DestroyMiniTextBox(void)
 {
 	sSafariZoneStatsWindowId = AddWindow(&template);
 
@@ -3185,6 +3189,7 @@ void ClearMiniBox(void)
     RemoveWindow(sSafariZoneStatsWindowId);
 	CopyWindowToVram(sSafariZoneStatsWindowId, 2);
 }
+
 void StoreFollowerMonInVar4004(void)
 {
     u16 species = SPECIES_NONE;

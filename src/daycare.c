@@ -631,6 +631,7 @@ static void SetInitialEggData(struct Pokemon* mon, u16 species, u32 personality)
 	mon->hiddenAbility = hiddenAbility;
 
 	// Set Tera Type of egg
+	#ifdef TERASTAL_FEATURE
 	u8 type1 = gBaseStats[species].type1;
 	u8 type2 = gBaseStats[species].type2;
 	u8 randomValue = Random() % 100;
@@ -638,15 +639,14 @@ static void SetInitialEggData(struct Pokemon* mon, u16 species, u32 personality)
 	// 2% chance to get a random teraType
 	if (randomValue < 2)
 		mon->teraType = GetRandomTeraType();
-
-	// Otherwise, get a random one from the original typing
-	else
+	else // Otherwise, get a random one from the original typing
 	{
 		if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
 			mon->teraType = type1;
 		else
 			mon->teraType = (Random() & 1) ? type1 : type2;				
 	}
+	#endif
 }
 
 void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the giveegg scripting command
@@ -667,6 +667,7 @@ void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the give
 	SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
 
 	// Set Tera Type of egg
+	#ifdef TERASTA_FEATURE
 	u8 type1 = gBaseStats[species].type1;
 	u8 type2 = gBaseStats[species].type2;
 	u8 randomValue = Random() % 100;
@@ -674,7 +675,6 @@ void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the give
 	// 2% chance to get a random teraType
 	if (randomValue < 2)
 		mon->teraType = GetRandomTeraType();
-
 	// Otherwise, get a random one from the original typing
 	else
 	{
@@ -683,6 +683,8 @@ void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the give
 		else
 			mon->teraType = (Random() & 1) ? type1 : type2;				
 	}
+	#endif
+
 	HealMon(mon);
 }
 
@@ -805,6 +807,7 @@ void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 	CalculateMonStats(egg);
 
 	// Set Tera Type of egg
+	#ifdef TERASTAL_FEATURE
 	u8 type1 = gBaseStats[species].type1;
 	u8 type2 = gBaseStats[species].type2;
 	u8 randomValue = Random() % 100;
@@ -812,15 +815,14 @@ void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 	// 2% chance to get a random teraType
 	if (randomValue < 2)
 		egg->teraType = GetRandomTeraType();
-
-	// Otherwise, get a random one from the original typing
-	else
+	else // Otherwise, get a random one from the original typing
 	{
 		if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
 			egg->teraType = type1;
 		else
 			egg->teraType = (Random() & 1) ? type1 : type2;				
 	}
+	#endif
 	HealMon(egg); //Fixes a bug where new Pokemon could hatch with more HP
 }
 

@@ -491,10 +491,12 @@ bool8 DynamaxEnabled(u8 bank)
                                 return FALSE;
                 }
 
+				#ifdef TERASTAL_FEATURE
                 if (IsTerastallized(bank)
                 || gNewBS->teraData.chosen[bank]
                 || gNewBS->teraData.done[SIDE(bank)][gBattlerPartyIndexes[bank]])
                         return FALSE;
+				#endif
 
                 if (FindBankDynamaxBand(bank) == ITEM_NONE)
                 {
@@ -781,12 +783,14 @@ bool8 IsGMaxMove(u16 move)
 
 void TryFadeBankPaletteForDynamax(u8 bank, u16 paletteOffset)
 {
+	#ifdef TERASTAL_FEATURE
 	// Add Tera check here
     if (IsTerastallized(bank))
     {
         FadeBankPaletteForTera(bank, paletteOffset);
         return;
     }
+	#endif
 
     if (IsDynamaxed(bank)
     || (IsRaidBattle() && bank == BANK_RAID_BOSS && !IsBannedDynamaxBaseSpecies(SPECIES(BANK_RAID_BOSS)))) //So it stays lit up when you try to catch it
