@@ -4,47 +4,47 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
-.global EventScript_StartingTown_OlimarTilescript
-EventScript_StartingTown_OlimarTilescript:
+.global EventScript_TheImpactSite_OlimarTilescript
+EventScript_TheImpactSite_OlimarTilescript:
     lockall
     checkflag 0x00C7
-    if SET _goto EventScript_StartingTown_OlimarTilescript_6
+    if SET _goto EventScript_TheImpactSite_OlimarTilescript_6
 
     setvar VarTemp1 1
-    goto EventScript_StartingTown_OlimarTilescript_1
+    goto EventScript_TheImpactSite_OlimarTilescript_1
     end
 
-EventScript_StartingTown_OlimarTilescript_1:
+EventScript_TheImpactSite_OlimarTilescript_1:
     pause 30
     showsprite 0x3
     comparevartovalue VarTemp1 0x0
-    if equal _call EventScript_StartingTown_OlimarTilescript_2
+    if equal _call EventScript_TheImpactSite_OlimarTilescript_2
     comparevartovalue VarTemp1 0x1
-    if equal _call EventScript_StartingTown_OlimarTilescript_3
+    if equal _call EventScript_TheImpactSite_OlimarTilescript_3
     pause 30
     textcolor TEXTCOLOR_BLUE
-    minimsgbox gText_Name_Ship gText_StartingTown_OlimarTilescript_1 MSG_KEEPOPEN
+    minimsgbox gText_Name_Ship gText_TheImpactSite_OlimarTilescript_1 MSG_KEEPOPEN
     closeonkeypress
     pause 10
     
-    applymovement 0x3 gMovement_StartingTown_OlimarTilescript_1
+    applymovement 0x3 gMovement_TheImpactSite_OlimarTilescript_1
     waitmovement 3
     pause 10
 
-    minimsgbox gText_Name_Ship gText_StartingTown_OlimarTilescript_2 MSG_KEEPOPEN
+    minimsgbox gText_Name_Ship gText_TheImpactSite_OlimarTilescript_2 MSG_KEEPOPEN
     closeonkeypress
     pause 30
 
     comparevartovalue VarTemp1 0x0
-    if equal _call EventScript_StartingTown_OlimarTilescript_4
+    if equal _call EventScript_TheImpactSite_OlimarTilescript_4
     comparevartovalue VarTemp1 0x1
-    if equal _call EventScript_StartingTown_OlimarTilescript_5
+    if equal _call EventScript_TheImpactSite_OlimarTilescript_5
 
     setdooropen 16 13
     waitdooranim
-    applymovement 3 gMovement_StartingTown_OlimarTilescript_2
+    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_2
     waitmovement 3
-    applymovement PLAYER gMovement_StartingTown_OlimarTilescript_2
+    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_2
     waitmovement PLAYER
     setdoorclosed 16 13
     waitdooranim
@@ -60,45 +60,45 @@ EventScript_StartingTown_OlimarTilescript_1:
     releaseall
     end
 
-EventScript_StartingTown_OlimarTilescript_2:
-    applymovement 3 gMovement_StartingTown_OlimarTilescript_3
+EventScript_TheImpactSite_OlimarTilescript_2:
+    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_3
     waitmovement 3
     return
 
-EventScript_StartingTown_OlimarTilescript_3:
-    applymovement 3 gMovement_StartingTown_OlimarTilescript_3
+EventScript_TheImpactSite_OlimarTilescript_3:
+    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_3
     waitmovement 3
     return
 
-EventScript_StartingTown_OlimarTilescript_4:
-    applymovement 3 gMovement_StartingTown_OlimarTilescript_4
+EventScript_TheImpactSite_OlimarTilescript_4:
+    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_4
     waitmovement 3
-    applymovement PLAYER gMovement_StartingTown_OlimarTilescript_5
+    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_5
     waitmovement PLAYER
     return
 
-EventScript_StartingTown_OlimarTilescript_5:
-    applymovement 3 gMovement_StartingTown_OlimarTilescript_6
-    applymovement PLAYER gMovement_StartingTown_OlimarTilescript_7
+EventScript_TheImpactSite_OlimarTilescript_5:
+    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_6
+    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_7
     waitmovement PLAYER
     return
 
-EventScript_StartingTown_OlimarTilescript_6:
+EventScript_TheImpactSite_OlimarTilescript_6:
     releaseall
     end
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .align 1
-gMovement_StartingTown_OlimarTilescript_1:
+gMovement_TheImpactSite_OlimarTilescript_1:
     .byte exclaim
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_2:
+gMovement_TheImpactSite_OlimarTilescript_2:
     .byte walk_up
     .byte set_invisible
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_3:
+gMovement_TheImpactSite_OlimarTilescript_3:
     .byte walk_up
     .byte walk_up
     .byte walk_up
@@ -114,7 +114,7 @@ gMovement_StartingTown_OlimarTilescript_3:
     .byte walk_right
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_4:
+gMovement_TheImpactSite_OlimarTilescript_4:
     .byte walk_down
     .byte walk_left
     .byte walk_down
@@ -136,7 +136,7 @@ gMovement_StartingTown_OlimarTilescript_4:
     .byte walk_up_onspot_fastest
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_5:
+gMovement_TheImpactSite_OlimarTilescript_5:
     .byte walk_down
     .byte walk_down
     .byte walk_left
@@ -157,7 +157,7 @@ gMovement_StartingTown_OlimarTilescript_5:
     .byte walk_right
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_6:
+gMovement_TheImpactSite_OlimarTilescript_6:
     .byte walk_left
     .byte walk_left
     .byte walk_left
@@ -177,7 +177,7 @@ gMovement_StartingTown_OlimarTilescript_6:
     .byte walk_up_onspot_fastest
     .byte end_m
 
-gMovement_StartingTown_OlimarTilescript_7:
+gMovement_TheImpactSite_OlimarTilescript_7:
     .byte walk_left
     .byte walk_left
     .byte walk_left

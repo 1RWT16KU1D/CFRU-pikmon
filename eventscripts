@@ -2,6 +2,6 @@
 map 5 5 MapScript_IntroScene
 
 ##
-npc 3 0 6 EventScript_StartingTown_LittleGirl
-tile 3 0 0 EventScript_StartingTown_OlimarTilescript
+npc 3 0 6 EventScript_TheImpactSite_LittleGirl
+tile 3 0 0 EventScript_TheImpactSite_OlimarTilescript
 

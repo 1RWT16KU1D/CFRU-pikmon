@@ -1,8 +1,8 @@
 #org @gText_Name_Ship
 [BLUE]Ship
 
-#org @gText_StartingTown_OlimarTilescript_1
+#org @gText_TheImpactSite_OlimarTilescript_1
 Welcome to PNF-404,\ntraveller number 10,262,001!\pMay I please see your ID?
 
-#org @gText_StartingTown_OlimarTilescript_2
+#org @gText_TheImpactSite_OlimarTilescript_2
 Oh! Its you [PLAYER]!\nOlimar told me about you!\p[.]Infact, follow me.

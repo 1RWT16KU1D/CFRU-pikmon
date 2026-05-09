@@ -5,10 +5,10 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-.global EventScript_StartingTown_LittleGirl
+.global EventScript_TheImpactSite_LittleGirl
 
 .equ FLAG_WILD_CUSTOM_MOVES, 0x90B
-EventScript_StartingTown_LittleGirl:
+EventScript_TheImpactSite_LittleGirl:
     faceplayer
 
     lock
