@@ -250,6 +250,7 @@
 .equ VAR_IMAGE_6, 0x5
 .equ VAR_IMAGE_7, 0x6
 .equ VAR_IMAGE_8, 0x7
+.equ VAR_IMAGE_9, 0x8
 
 @@ Text Colors
 .equ TEXTCOLOR_BLUE, 0x0

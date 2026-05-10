@@ -7,6 +7,10 @@
 .global MapScript_IntroScene
 .global End
 
+@@ Defines for this file
+.equ OLIMAR, 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 MapScript_IntroScene:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_IntroScene
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_IntroScene
@@ -31,6 +35,12 @@ LevelScripts_IntroScene:
 
 LevelScript_IntroScene_Greet:
     lockall
+    movecamera gMovement_IntroScene_OlimarMoveCamera
+    msgboxtransparent gText_IntroScene_3Dots MSG_NORMAL
+    pause 10
+    applymovement OLIMAR gMovement_IntroScene_OlimarMoveLeft10StepsLookDown
+    waitmovement OLIMAR
+    pause 10
     compare StoryEventVar1 IntroSceneWarpToRoom
     if equal _goto End
 
@@ -46,7 +56,13 @@ LevelScript_IntroScene_Pikmin:
     compare StoryEventVar1 IntroScenePikminHelped
     if equal _goto End
 
+    applymovement OLIMAR gMovement_IntroScene_OlimarMoveLeft
+    waitmovement OLIMAR
     msgboxtransparent gText_IntroScene_Pikmin MSG_NORMAL
+
+    applymovement OLIMAR gMovement_IntroScene_OlimarLookDown
+    waitmovement OLIMAR
+    msgboxtransparent gText_IntroScene_Pikmin2 MSG_NORMAL
 
     setvar StoryEventVar1 IntroScenePikminHelped
     setvar ShowImageVar VAR_IMAGE_2
@@ -58,6 +74,8 @@ LevelScript_IntroScene_PikminHelped:
     compare StoryEventVar1 IntroSceneGotRescued
     if equal _goto End
 
+    applymovement OLIMAR gMovement_IntroScene_OlimarMoveRight3StepsLookDown
+    waitmovement OLIMAR
     msgboxtransparent gText_IntroScene_PikminHelped MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneGotRescued
@@ -82,7 +100,13 @@ LevelScript_IntroScene_PlaceIsSpecial:
     compare StoryEventVar1 IntroSceneBloomingOnion
     if equal _goto End
 
+    applymovement OLIMAR gMovement_IntroScene_OlimarMoveLeft
+    waitmovement OLIMAR
     msgboxtransparent gText_IntroScene_PlaceIsSpecial MSG_NORMAL
+
+    applymovement OLIMAR gMovement_IntroScene_OlimarMoveLeftLookDown
+    waitmovement OLIMAR
+    msgboxtransparent gText_IntroScene_PlaceIsSpecial2 MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneBloomingOnion
     setvar ShowImageVar VAR_IMAGE_5
@@ -118,6 +142,8 @@ LevelScript_IntroScene_PikminBattles:
     compare StoryEventVar1 IntroSceneWorldOfPikmin
     if equal _goto End
 
+    applymovement OLIMAR gMovement_IntroScene_OlimarWalkDown
+    waitmovement OLIMAR
     msgboxtransparent gText_IntroScene_PikminBattles MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneWorldOfPikmin
@@ -130,7 +156,13 @@ LevelScript_IntroScene_WorldOfPikmin:
     compare StoryEventVar1 IntroSceneWarpToRoom
     if equal _goto End
 
+    applymovement OLIMAR gMovement_IntroScene_OlimarWalkUp
+    waitmovement OLIMAR
     msgboxtransparent gText_IntroScene_WorldOfPikmin MSG_NORMAL
+
+    applymovement OLIMAR gMovement_IntroScene_OlimarLookDown
+    waitmovement OLIMAR
+    msgboxtransparent gText_IntroScene_WorldOfPikmin2 MSG_NORMAL
 
     setvar StoryEventVar1 IntroSceneWarpToRoom
     end
@@ -139,9 +171,70 @@ LevelScript_IntroScene_RoomWarp:
     compare StoryEventVar1 IntroSceneWarpedToRoom
     if equal _goto End
 
+    playbgm 278 @Titlescreen
+    setvar ShowImageVar VAR_IMAGE_9
+    callasm ShowImage
+    hidesprite OLIMAR
+    waitstate
+
+    callasm DoNamePlayer
+    waitstate
+
     setvar StoryEventVar1 IntroSceneWarpedToRoom
     warp 4 1 0xFF 6 6 @ Player's Room
     end
 
 End:
     end
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.align 1
+
+gMovement_IntroScene_OlimarMoveCamera:
+    .byte walk_up
+    .byte walk_up
+    .byte walk_up
+    .byte walk_up
+    .byte end_m
+
+gMovement_IntroScene_OlimarMoveLeft10StepsLookDown:
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte walk_left
+    .byte look_down
+    .byte end_m
+
+gMovement_IntroScene_OlimarMoveLeft:
+    .byte walk_left
+    .byte end_m
+
+gMovement_IntroScene_OlimarLookDown:
+    .byte look_down
+    .byte end_m
+
+gMovement_IntroScene_OlimarMoveRight3StepsLookDown:
+    .byte walk_right
+    .byte walk_right
+    .byte walk_right
+    .byte look_down
+    .byte end_m
+
+gMovement_IntroScene_OlimarMoveLeftLookDown:
+    .byte walk_left
+    .byte look_down
+    .byte end_m
+
+gMovement_IntroScene_OlimarWalkDown:
+    .byte walk_down
+    .byte end_m
+
+gMovement_IntroScene_OlimarWalkUp:
+    .byte walk_up
+    .byte end_m

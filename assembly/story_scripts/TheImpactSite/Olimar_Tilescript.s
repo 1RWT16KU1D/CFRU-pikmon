@@ -4,6 +4,10 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
+@@ Defines for this script
+.equ SHIP, 3
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .global EventScript_TheImpactSite_OlimarTilescript
 EventScript_TheImpactSite_OlimarTilescript:
     lockall
@@ -16,7 +20,7 @@ EventScript_TheImpactSite_OlimarTilescript:
 
 EventScript_TheImpactSite_OlimarTilescript_1:
     pause 30
-    showsprite 0x3
+    showsprite SHIP
     comparevartovalue VarTemp1 0x0
     if equal _call EventScript_TheImpactSite_OlimarTilescript_2
     comparevartovalue VarTemp1 0x1
@@ -27,8 +31,8 @@ EventScript_TheImpactSite_OlimarTilescript_1:
     closeonkeypress
     pause 10
     
-    applymovement 0x3 gMovement_TheImpactSite_OlimarTilescript_1
-    waitmovement 3
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_1
+    waitmovement SHIP
     pause 10
 
     minimsgbox gText_Name_Ship gText_TheImpactSite_OlimarTilescript_2 MSG_KEEPOPEN
@@ -42,8 +46,8 @@ EventScript_TheImpactSite_OlimarTilescript_1:
 
     setdooropen 16 13
     waitdooranim
-    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_2
-    waitmovement 3
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_2
+    waitmovement SHIP
     applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_2
     waitmovement PLAYER
     setdoorclosed 16 13
@@ -61,24 +65,24 @@ EventScript_TheImpactSite_OlimarTilescript_1:
     end
 
 EventScript_TheImpactSite_OlimarTilescript_2:
-    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_3
-    waitmovement 3
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_3
+    waitmovement SHIP
     return
 
 EventScript_TheImpactSite_OlimarTilescript_3:
-    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_3
-    waitmovement 3
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_3
+    waitmovement SHIP
     return
 
 EventScript_TheImpactSite_OlimarTilescript_4:
-    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_4
-    waitmovement 3
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_4
+    waitmovement SHIP
     applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_5
     waitmovement PLAYER
     return
 
 EventScript_TheImpactSite_OlimarTilescript_5:
-    applymovement 3 gMovement_TheImpactSite_OlimarTilescript_6
+    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_6
     applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_7
     waitmovement PLAYER
     return

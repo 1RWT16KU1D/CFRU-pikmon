@@ -74,6 +74,11 @@ const struct ImageData ImageDataTable[] =
         .tiles = Image_8Tiles,
         .tilemap = Image_8Map,
         .pal = Image_8Pal
+    },
+    {
+        .tiles = Image_9Tiles,
+        .tilemap = Image_9Map,
+        .pal = Image_9Pal
     }
 };
 

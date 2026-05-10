@@ -2018,3 +2018,10 @@ callasm ResetPokeVialUses
 	msgbox \text \type
 	callasm 0x8750139
 .endm
+
+.macro movecamera movements:req
+	special CAMERA_START
+	applymovement CAMERA \movements
+	waitmovement CAMERA
+	special CAMERA_END
+.endm
