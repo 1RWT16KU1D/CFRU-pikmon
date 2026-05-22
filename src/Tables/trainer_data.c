@@ -13,7 +13,6 @@
 
 #include "new_text.h"
 
-#ifdef EXPAND_TRAINERS
 
 #define GENDER_MALE 0
 #define GENDER_FEMALE 1
@@ -34,8 +33,8 @@ const struct Trainer gTrainers[] = {
         .items = { NO_ITEMS },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = NELEMS(sParty_BobEntry1),
-        .party = { .NoItemDefaultMoves = sParty_BobEntry1 },
+        .partySize = NELEMS(sParty_BobEntry),
+        .party = { .NoItemDefaultMoves = sParty_BobEntry },
     },
         [TRAINER_BOB_ENTRY_REMATCH] = {
         .partyFlags = 0,
@@ -46,11 +45,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _N,_a,_m,_e, _END },
         .items = { NO_ITEMS },
         .doubleBattle = TRUE,
-        .partySize = NELEMS(sParty_BobEntry2),
+        .partySize = NELEMS(sParty_BobEntryR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .ItemDefaultMoves = sParty_BobEntry2 },
+        .party =  { .ItemDefaultMoves = sParty_BobEntryR },
     },
-        [TRAINER_BOB_ENTRY_SPICY] = {
+        [TRAINER_BOB_EXIT] = {
         .partyFlags = 0,
         .trainerClass = CLASS_TEAM_AQUA,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -59,11 +58,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _N,_a,_m,_e, _END },
         .items = { NO_ITEMS },
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_BobEntry3),
+        .partySize = NELEMS(sParty_BobExit),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_BobEntry3 },
+        .party =  { .NoItemDefaultMoves = sParty_BobExit },
     },
-        [TRAINER_BOB_EXIT] = {
+        [TRAINER_BOB_EXIT_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_AROMA_LADY_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -71,12 +70,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_AROMA_LADY_RS,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_BobExit1),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_BobExitR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_BobExit1 },
+        .party =  { .NoItemDefaultMoves = sParty_BobExitR },
     },
-        [TRAINER_BOB_EXIT_REMATCH] = {
+        [TRAINER_R2_FLOWERS1] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RUIN_MANIAC_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -84,12 +83,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RUIN_MANIAC_RS,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = TRUE,
-        .partySize = NELEMS(sParty_BobExit2),
+        .doubleBattle = FALSE,
+        .partySize = NELEMS(sParty_R2Flowers1),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_BobExit2},
+        .party =  { .NoItemDefaultMoves = sParty_R2Flowers1},
     },
-        [TRAINER_BOB_EXIT_SPICY] = {
+        [TRAINER_R2_FLOWERS1_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_INTERVIEWER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
@@ -98,11 +97,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = TRUE,
-        .partySize = NELEMS(sParty_BobExit3),
+        .partySize = NELEMS(sParty_R2Flowers1R),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_BobExit3},
+        .party =  { .ItemDefaultMoves = sParty_R2Flowers1R},
     },
-        [TRAINER_RS_TUBER_F] = {
+        [TRAINER_R2_HALLLEFT] = {
         .partyFlags = 0,
         .trainerClass = CLASS_TUBER_RS_2,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -111,11 +110,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSTuberF),
+        .partySize = NELEMS(sParty_R2HallLeft),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSTuberF },
+        .party =  { .NoItemDefaultMoves = sParty_R2HallLeft },
     },
-        [TRAINER_RS_TUBER_M] = {
+        [TRAINER_R2_HALLLEFT_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_TUBER_RS_1,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -123,12 +122,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_TUBER_M,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSTuberM),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_R2HallLeftR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSTuberM },
+        .party =  { .ItemDefaultMoves = sParty_R2HallLeftR },
     },
-        [TRAINER_RS_COOLTRAINER_M] = {
+        [TRAINER_R2_HALLRIGHT] = {
         .partyFlags = 0,
         .trainerClass = CLASS_COOLTRAINER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -137,11 +136,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSCooltrainerM),
+        .partySize = NELEMS(sParty_R2HallRight),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .party =  { .NoItemDefaultMoves = sParty_RSCooltrainerM },
+        .party =  { .NoItemDefaultMoves = sParty_R2HallRight },
     },
-        [TRAINER_RS_COOLTRAINER_F] = {
+        [TRAINER_R2_HALLRIGHT_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_COOLTRAINER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -149,12 +148,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_COOLTRAINER_F,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSCooltrainerF),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_R2HallRightR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .party =  { .NoItemDefaultMoves = sParty_RSCooltrainerF },
+        .party =  { .ItemDefaultMoves = sParty_R2HallRightR },
     },
-        [TRAINER_HEX_MANIAC] = {
+        [TRAINER_R2_NORTHWEST] = {
         .partyFlags = 0,
         .trainerClass = CLASS_HEX_MANIAC,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -163,11 +162,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_HexManiac),
+        .partySize = NELEMS(sParty_R2NorthWest),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_HexManiac },
+        .party =  { .NoItemDefaultMoves = sParty_R2NorthWest },
     },
-        [TRAINER_RS_LADY] = {
+        [TRAINER_R2_NORTHWEST_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_LADY_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -175,12 +174,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_LADY,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSLady),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_R2NorthWestR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSLady },
+        .party =  { .NoItemDefaultMoves = sParty_R2NorthWestR },
     },
-        [TRAINER_RS_BEAUTY] = {
+        [TRAINER_R2_FLOWERS2] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BEAUTY_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -189,11 +188,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSBeauty),
+        .partySize = NELEMS(sParty_R2Flowers2),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSBeauty },
+        .party =  { .NoItemDefaultMoves = sParty_R2Flowers2 },
     },
-        [TRAINER_RICH_BOY] = {
+        [TRAINER_R2_FLOWERS2_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RICH_BOY,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -201,12 +200,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RICH_BOY,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RichBoy),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_R2Flowers2R),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RichBoy },
+        .party =  { .ItemDefaultMoves = sParty_R2Flowers2R },
     },
-        [TRAINER_RS_POKEMANIAC] = {
+        [TRAINER_R2_EXIT] = {
         .partyFlags = 0,
         .trainerClass = CLASS_POKEMANIAC_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -215,11 +214,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSPokemaniac),
+        .partySize = NELEMS(sParty_R2Exit),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSPokemaniac },
+        .party =  { .NoItemDefaultMoves = sParty_R2Exit },
     },
-        [TRAINER_RS_SWIMMER_M] = {
+        [TRAINER_R2_EXIT_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_PKMN_TRAINER_RSE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -227,12 +226,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_SWIMMER_M,
         .trainerName = { _END },
         .items = { NO_ITEMS },
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSSwimmerM),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_R2ExitR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSSwimmerM },
+        .party =  { .NoItemDefaultMoves = sParty_R2ExitR },
     },
-        [TRAINER_RS_BLACK_BELT] = {
+        [TRAINER_DG_RING] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BLACK_BELT_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -241,11 +240,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSBlackBelt),
+        .partySize = NELEMS(sParty_DGRing),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSBlackBelt },
+        .party =  { .NoItemDefaultMoves = sParty_DGRing },
     },
-        [TRAINER_GUITARIST] = {
+        [TRAINER_DG_RING_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_GUITARIST_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -253,12 +252,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_GUITARIST,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_Guitarist),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_DGRingR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_Guitarist },
+        .party =  { .NoItemDefaultMoves = sParty_DGRingR },
     },
-        [TRAINER_KINDLER] = {
+        [TRAINER_DG_CROSS] = {
         .partyFlags = 0,
         .trainerClass = CLASS_KINDLER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -267,11 +266,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_Kindler),
+        .partySize = NELEMS(sParty_DGCross),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_Kindler },
+        .party =  { .NoItemDefaultMoves = sParty_DGCross },
     },
-        [TRAINER_RS_CAMPER] = {
+        [TRAINER_DG_CROSS_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_CAMPER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -279,12 +278,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_CAMPER,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSCamper),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_DGCrossR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSCamper },
+        .party =  { .ItemDefaultMoves = sParty_DGCrossR },
     },
-        [TRAINER_BUG_MANIAC] = {
+        [TRAINER_DG_FLOOR2] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BUG_MANIAC,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -293,11 +292,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_BugManiac),
+        .partySize = NELEMS(sParty_DGFloor2),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_BugManiac },
+        .party =  { .NoItemDefaultMoves = sParty_DGFloor2 },
     },
-        [TRAINER_RS_PSYCHIC_M] = {
+        [TRAINER_DG_FLOOR2_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_PSYCHIC_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -305,12 +304,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_PSYCHIC_M,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSPsychicM),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_DGFloor2R),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSPsychicM },
+        .party =  { .ItemDefaultMoves = sParty_DGFloor2R },
     },
-        [TRAINER_RS_PSYCHIC_F] = {
+        [TRAINER_GYM1_REDSTATUE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_PSYCHIC_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -319,11 +318,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSPsychicF),
+        .partySize = NELEMS(sParty_Gym1RedStatue),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSPsychicF },
+        .party =  { .NoItemDefaultMoves = sParty_Gym1RedStatue },
     },
-        [TRAINER_RS_GENTLEMAN] = {
+        [TRAINER_GYM1_REDSTATUE_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_GENTLEMAN_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -331,12 +330,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_RS_GENTLEMAN,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_RSGentleman),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_Gym1RedStatueR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_RSGentleman },
+        .party =  { .NoItemDefaultMoves = sParty_Gym1RedStatueR },
     },
-        [TRAINER_ELITE_FOUR_SIDNEY] = {
+        [TRAINER_GYM1_WHITESTATUE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_ELITE_FOUR_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -345,11 +344,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _S, _i, _d, _n, _e, _y, _END },
         .items = { NO_ITEMS },
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_EliteFourSidney),
+        .partySize = NELEMS(sParty_Gym1WhiteStatue),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_EliteFourSidney },
+        .party =  { .NoItemDefaultMoves = sParty_Gym1WhiteStatue },
     },
-        [TRAINER_ELITE_FOUR_PHOEBE] = {
+        [TRAINER_GYM1_WHITESTATUE_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_ELITE_FOUR_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -357,12 +356,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_PHOEBE,
         .trainerName = { _P, _h, _o, _e, _b, _e, _END },
         .items = { NO_ITEMS },
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_EliteFourPhoebe),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_Gym1WhiteStatueR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_EliteFourPhoebe },
+        .party =  { .ItemDefaultMoves = sParty_Gym1WhiteStatueR },
     },
-        [TRAINER_LEADER_ROXANNE] = {
+        [TRAINER_GYM1_ROCKSTATUE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_LEADER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -371,11 +370,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = { _R, _o, _x, _a, _n, _n, _e, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_LeaderRoxanne),
+        .partySize = NELEMS(sParty_Gym1RockStatue),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_LeaderRoxanne },
+        .party =  { .NoItemDefaultMoves = sParty_Gym1RockStatue },
     },
-        [TRAINER_LEADER_BRAWLY] = {
+        [TRAINER_GYM1_ROCKSTATUE_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_LEADER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -383,12 +382,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_BRAWLY,
         .trainerName = { _B, _r, _a, _w, _l, _y, _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_LeaderBrawly),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_Gym1RockStatueR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_LeaderBrawly },
+        .party =  { .ItemDefaultMoves = sParty_Gym1RockStatueR },
     },
-        [TRAINER_LEADER_TATE_LIZA] = {
+        [TRAINER_GYM1_DINGO] = {
         .partyFlags = 0,
         .trainerClass = CLASS_LEADER_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -396,12 +395,12 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_LIZA_AND_TATE,
         .trainerName = { _T, _a, _t, _e, _AMPERSAND, _L, _i, _z, _a, _END },
         .items = {NO_ITEMS},
-        .doubleBattle = TRUE,
-        .partySize = NELEMS(sParty_LeaderTateLiza),
+        .doubleBattle = FALSE,
+        .partySize = NELEMS(sParty_Gym1Dingo),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_LeaderTateLiza },
+        .party =  { .ItemCustomMoves = sParty_Gym1Dingo },
     },
-        [TRAINER_SCHOOL_KID_M] = {
+        [TRAINER_GYM1_DINGO_REMATCH] = {
         .partyFlags = 0,
         .trainerClass = CLASS_SCHOOL_KID,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -409,10 +408,10 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_SCHOOL_BOY,
         .trainerName = { _END },
         .items = {NO_ITEMS},
-        .doubleBattle = FALSE,
-        .partySize = NELEMS(sParty_SchoolKidM),
+        .doubleBattle = TRUE,
+        .partySize = NELEMS(sParty_Gym1DingoR),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party =  { .NoItemDefaultMoves = sParty_SchoolKidM },
+        .party =  { .ItemCustomMoves = sParty_Gym1DingoR },
     },
         [TRAINER_SCHOOL_KID_F] = {
         .partyFlags = 0,
@@ -4249,13 +4248,17 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .party = { .ItemDefaultMoves = sParty_BlackBeltDaisuke },
     },
+
+
+
+
         [TRAINER_RIVAL_OAKS_LAB_WOLPOLE] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabWolpole),
@@ -4264,11 +4267,11 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_OAKS_LAB_BULBORBLARVA] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabBulborbLarva),
@@ -4277,24 +4280,28 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_OAKS_LAB_FIERYBLOWLET] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabFieryBlowlet),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabFieryBlowlet },
     },
+
+
+
+
         [TRAINER_RIVAL_ROUTE22_EARLY_WOLPOLE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = { NO_ITEMS },
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalRoute22EarlyWolpole),
@@ -4303,11 +4310,11 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_BULBORBLARVA] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalRoute22EarlyBulborbLarva),
@@ -4315,12 +4322,11 @@ const struct Trainer gTrainers[] = {
         .party = { .NoItemCustomMoves = sParty_RivalRoute22EarlyBulborbLarva },
     },
         [TRAINER_RIVAL_ROUTE22_EARLY_FIERYBLOWLET] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalRoute22EarlyFieryBlowlet),
@@ -4329,11 +4335,11 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_CERULEAN_WOLPOLE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalCeruleanWolpole),
@@ -4342,11 +4348,11 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_CERULEAN_BULBORBLARVA] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalCeruleanBulborbLarva),
@@ -4355,17 +4361,21 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_RIVAL_CERULEAN_FIERYBLOWLET] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_RIVAL,
+        .trainerClass = CLASS_CAPTAIN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_BLUE,
-        .trainerName = { _T, _e, _r, _r, _y, _END },
+        .trainerName = { _O, _l, _i, _m, _a, _r, _END },
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalCeruleanFieryBlowlet),
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party = { .NoItemCustomMoves = sParty_RivalCeruleanFieryBlowlet },
     },
+
+
+
+
         [TRAINER_SCIENTIST_TED] = {
         .partyFlags = 0,
         .trainerClass = CLASS_SCIENTIST,
@@ -5549,6 +5559,10 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .party =  { .NoItemDefaultMoves = sParty_GentlemanWalter },
     },
+
+
+
+
         [TRAINER_RIVAL_SS_ANNE_WOLPOLE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL_2,
@@ -5744,6 +5758,10 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party = { .ItemCustomMoves = sParty_ChampionFirstFieryBlowlet },
     },
+
+
+
+
         [TRAINER_CHANNELER_PATRICIA] = {
         .partyFlags = 0,
         .trainerClass = CLASS_CHANNELER,
@@ -8168,11 +8186,7 @@ const struct Trainer gTrainers[] = {
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        #ifdef DECAP_TRAINER_NAMES
         .trainerName = { _J, _e, _f, _f, _END },
-                #else
-        .trainerName = { _J, _e, _f, _f, _END },
-                #endif
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_CamperJeff2),
@@ -9759,7 +9773,6 @@ const u8 gTrainerClassNames[][13] = {
     [CLASS_TAMER] = { _T, _a, _m, _e, _r, _END },
     [CLASS_BIRD_KEEPER] = { _B, _i, _r, _d, _SPACE, _K, _e, _e, _p, _e, _r, _END },
     [CLASS_BLACK_BELT] = { _B, _l, _a, _c, _k, _SPACE, _B, _e, _l, _t, _END },
-    [CLASS_RIVAL] = { _R, _i, _v, _a, _l, _END },
     [CLASS_SCIENTIST] = { _S, _c, _i, _e, _n, _t, _i, _s, _t, _END },
     [CLASS_BOSS] = { _B, _o, _s, _s, _END },
     [CLASS_LEADER] = { _L, _e, _a, _d, _e, _r, _END },
@@ -9785,6 +9798,8 @@ const u8 gTrainerClassNames[][13] = {
     [CLASS_RUIN_MANIAC] = { _R, _u, _i, _n, _SPACE, _M, _a, _n, _i, _a, _c, _END },
     [CLASS_LADY] = { _L, _a, _d, _y, _END },
     [CLASS_PAINTER] = { _P, _a, _i, _n, _t, _e, _r, _END },
+    //Pikmon classes
+    [CLASS_CAPTAIN] = { _C, _a, _p, _t, _a, _i, _n, _END },
 };
 
 const struct TrainerMoney gTrainerMoneyTable[] =
@@ -9792,7 +9807,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {CLASS_LEADER, 25, 0},
     {CLASS_ELITE_FOUR, 25, 0},
     {CLASS_PKMN_PROF, 25, 0},
-    {CLASS_RIVAL, 4, 0},
+    {CLASS_CAPTAIN, 4, 0},          //PIKMON
     {CLASS_RIVAL_2, 9, 0},
     {CLASS_CHAMPION, 25, 0},
     {CLASS_YOUNGSTER, 4, 0},
@@ -9895,4 +9910,3 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {CLASS_BOSS, 25, 0},
     { 0xFF, 5, 0},
 };
-#endif

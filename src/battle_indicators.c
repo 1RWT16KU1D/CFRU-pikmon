@@ -95,7 +95,7 @@ static void DestroyTeamPreviewTrigger(struct Sprite* sprite);
 static void DestroyTypeIcon(struct Sprite* sprite);
 
 // For Terastallization - Custom functions in this file
-static void SpriteCB_TeraTrigger(struct Sprite* self);
+//static void SpriteCB_TeraTrigger(struct Sprite* self);
 static void DestroyTeraTrigger(struct Sprite* sprite);
 
 // Exported functions
@@ -251,7 +251,7 @@ static const struct CompressedSpriteSheet sTeamPreviewTriggerSpriteSheet = {Team
 
 static const struct CompressedSpriteSheet sTeamPreviewFaintedMonIconSpriteSheet = {TeamPreviewFaintedMonIconTiles, (32 * 32) / 2, GFX_TAG_FAINTED_TEAM_PREVIEW_ICON};
 
-static const struct CompressedSpriteSheet sTeamPreviewStatusIconsSpriteSheet = {TeamPreviewStatusIconsTiles, (8 * 8 * 6) / 2, GFX_TAG_TEAM_PREVIEW_STATUS_ICON};
+static const struct CompressedSpriteSheet sTeamPreviewStatusIconsSpriteSheet = {TeamPreviewStatusIconsTiles, (8 * 8 * 7) / 2, GFX_TAG_TEAM_PREVIEW_STATUS_ICON};
 
 static const struct SpritePalette sTypeIconPalTemplate = {CamomonsTypeIconsPal, TYPE_ICON_TAG};
 static const struct SpritePalette sTypeIconPalTemplate2 = {CamomonsTypeIcons2Pal, TYPE_ICON_TAG_2};
@@ -593,7 +593,7 @@ static const struct SpriteFrameImage sTypeIconPicTable[] =
 	[TYPE_ICE] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_ICE),
 	[TYPE_DRAGON] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_DRAGON),
 	[TYPE_DARK] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_DARK),
-	[TYPE_ROOSTLESS] = 	type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
+	[TYPE_ROOSTLESS] = 	type_icon_frame(CamomonsTypeIconsTiles, TYPE_ROOSTLESS),
 	[TYPE_BLANK] = 		type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
 	[0x15] = 			type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
 	[0x16] = 			type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTERY),
@@ -816,7 +816,7 @@ static const struct SpriteTemplate sTeraTriggerSpriteTemplate =
 	.anims = gDummySpriteAnimTable,
 	.images = NULL,
 	.affineAnims = gDummySpriteAffineAnimTable,
-	.callback = SpriteCB_TeraTrigger,
+	//.callback = SpriteCB_TeraTrigger,
 };
 
 //Declare the colours the trigger button doesn't light up
@@ -2194,9 +2194,7 @@ void TryLoadTypeIcons(void)
 
 				if(type1==type2){
 					y +=6;
-					if (typeNum == 1){
-						type = (type+1)%3;
-					}
+					typeNum++;
 				}
 
 				switch (type) { //Certain types have a different palette
@@ -2577,6 +2575,8 @@ static void Task_DisplayInBattleTeamPreview(u8 taskId)
 									tileNum = 4;
 								else if (status & STATUS1_TOXIC_POISON)
 									tileNum = 5;
+								else if (status & STATUS1_PETRIFY)
+									tileNum = 6;
 
 								gSprites[spriteId].oam.tileNum += (8 / 8) * (8 / 8) * tileNum; //Get the right status image
 							}

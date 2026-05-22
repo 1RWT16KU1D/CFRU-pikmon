@@ -4,11 +4,11 @@
 #define ITEM_MASTER_BALL 1                      //
 #define ITEM_ULTRA_BALL 2                       //AVAILABLE
 #define ITEM_GREAT_BALL 3                       //AVAILABLE
-#define ITEM_POKE_BALL 4                        //AVAILABLE - LIMITED
+#define ITEM_POKE_BALL 4                        //AVAILABLE
 #define ITEM_SAFARI_BALL 5                      //
-#define ITEM_NET_BALL 6                         //
+#define ITEM_NET_BALL 6                         //AVAILABLE - LIMITED
 #define ITEM_DIVE_BALL 7                        //
-#define ITEM_NEST_BALL 8                        //
+#define ITEM_NEST_BALL 8                        //AVAILABLE - LIMITED
 #define ITEM_REPEAT_BALL 9                      //
 #define ITEM_TIMER_BALL 10                      //
 #define ITEM_LUXURY_BALL 11                     //
@@ -100,7 +100,7 @@
 #define ITEM_WATER_STONE 97                     //UNUSED
 #define ITEM_LEAF_STONE 98                      //UNUSED
 #define ITEM_SHINY_STONE 99                     //UNUSED
-#define ITEM_DUSK_STONE 100                     //
+#define ITEM_DUSK_STONE 100                     //AVAILABLE - LIMITED
 #define ITEM_DAWN_STONE 101                     //UNUSED
 #define ITEM_ICE_STONE 102                      //AVAILABLE
 #define ITEM_TINY_MUSHROOM 103                  //
@@ -108,14 +108,14 @@
 #define ITEM_BALM_MUSHROOM 105                  //
 #define ITEM_PEARL 106                          //
 #define ITEM_BIG_PEARL 107                      //
-#define ITEM_STARDUST 108                       //
+#define ITEM_STARDUST 108                       //AVAILABLE - LIMITED
 #define ITEM_STAR_PIECE 109                     //
 #define ITEM_NUGGET 110                         //AVAILABLE
 #define ITEM_HEART_SCALE 111                    //
 #define ITEM_RARE_BONE 112                      //
 #define ITEM_PEARL_STRING 113                   //
 #define ITEM_COMET_SHARD 114                    //
-#define ITEM_BIG_NUGGET 115                     //
+#define ITEM_BIG_NUGGET 115                     //AVAILABLE - LIMITED
 #define ITEM_HONEY 116                          //AVAILABLE
 #define ITEM_PRETTY_WING 117                    //
 #define ITEM_OVAL_STONE 118                     //
@@ -209,7 +209,7 @@
 #define ITEM_MIRACLE_SEED 205                   //AVAILABLE
 #define ITEM_BLACK_GLASSES 206                  //
 #define ITEM_BLACK_BELT 207                     //
-#define ITEM_MAGNET 208                         //
+#define ITEM_MAGNET 208                         //AVAILABLE
 #define ITEM_MYSTIC_WATER 209                   //
 #define ITEM_SHARP_BEAK 210                     //AVAILABLE
 #define ITEM_POISON_BARB 211                    //
@@ -506,23 +506,23 @@
 #define ITEM_GRISEOUS_ORB 0x1E9                 //UNUSED
 
 //Arceus Plates
-#define ITEM_FIST_PLATE 0x1EA                   //
-#define ITEM_SKY_PLATE 0x1EB                    //
-#define ITEM_TOXIC_PLATE 0x1EC                  //
-#define ITEM_EARTH_PLATE 0x1ED                  //
-#define ITEM_STONE_PLATE 0x1EE                  //
-#define ITEM_INSECT_PLATE 0x1EF                 //
-#define ITEM_SPOOKY_PLATE 0x1F0                 //
-#define ITEM_IRON_PLATE 0x1F1                   //
-#define ITEM_FLAME_PLATE 0x1F2                  //
-#define ITEM_SPLASH_PLATE 0x1F3                 //
-#define ITEM_MEADOW_PLATE 0x1F4                 //
-#define ITEM_ZAP_PLATE 0x1F5                    //
-#define ITEM_MIND_PLATE 0x1F6                   //
-#define ITEM_ICICLE_PLATE 0x1F7                 //
-#define ITEM_DRACO_PLATE 0x1F8                  //
-#define ITEM_DREAD_PLATE 0x1F9                  //
-#define ITEM_PIXIE_PLATE 0x1FA                  //
+#define ITEM_FIST_PLATE 0x1EA                   // HoH
+#define ITEM_SKY_PLATE 0x1EB                    //AVAILABLE - LIMITED DG
+#define ITEM_TOXIC_PLATE 0x1EC                  // CfaK
+#define ITEM_EARTH_PLATE 0x1ED                  // Mudpit
+#define ITEM_STONE_PLATE 0x1EE                  // CoC
+#define ITEM_INSECT_PLATE 0x1EF                 // CoS
+#define ITEM_SPOOKY_PLATE 0x1F0                 // Submerged
+#define ITEM_IRON_PLATE 0x1F1                   // Complex
+#define ITEM_FLAME_PLATE 0x1F2                  // SH
+#define ITEM_SPLASH_PLATE 0x1F3                 // Seafloor
+#define ITEM_MEADOW_PLATE 0x1F4                 // WFG
+#define ITEM_ZAP_PLATE 0x1F5                    // Disco
+#define ITEM_MIND_PLATE 0x1F6                   // Courtyard
+#define ITEM_ICICLE_PLATE 0x1F7                 // SubZero
+#define ITEM_DRACO_PLATE 0x1F8                  // BK
+#define ITEM_DREAD_PLATE 0x1F9                  // FC
+#define ITEM_PIXIE_PLATE 0x1FA                  // GK
 
 //Silvally Memories
 #define ITEM_FIGHTING_MEMORY 0x1FB              //UNUSED
@@ -680,7 +680,7 @@ enum NewBattleHoldItems
     ITEM_MUSCLE_BAND,                           //
     ITEM_WISE_GLASSES,                          //
     ITEM_EXPERT_BELT,                           //
-    ITEM_LIGHT_CLAY,                            //
+    ITEM_LIGHT_CLAY,                            //AVAILABLE - LIMITED
     ITEM_LIFE_ORB,                              //
     ITEM_POWER_HERB,                            //
     ITEM_TOXIC_ORB,                             //
@@ -702,7 +702,7 @@ enum NewBattleHoldItems
     ITEM_CHOICE_SPECS,                          //
     ITEM_STICKY_BARB,                           //
     ITEM_SHED_SHELL,                            //
-    ITEM_BIG_ROOT,                              //
+    ITEM_BIG_ROOT,                              //AVAILABLE - LIMITED
     ITEM_EVIOLITE,                              //
     ITEM_FLOAT_STONE,                           //
     ITEM_ROCKY_HELMET,                          //
@@ -710,7 +710,7 @@ enum NewBattleHoldItems
     ITEM_RED_CARD,                              //
     ITEM_RING_TARGET,                           //
     ITEM_BINDING_BAND,                          //
-    ITEM_ABSORB_BULB,                           //
+    ITEM_ABSORB_BULB,                           //AVAILABLE - LIMITED
     ITEM_CELL_BATTERY,                          //
     ITEM_EJECT_BUTTON,                          //
     ITEM_WEAKNESS_POLICY,                       //
@@ -722,7 +722,7 @@ enum NewBattleHoldItems
     ITEM_TERRAIN_EXTENDER,                      //
     ITEM_PROTECTIVE_PADS,                       //
     ITEM_ELECTRIC_SEED,                         //
-    ITEM_GRASSY_SEED,                           //
+    ITEM_GRASSY_SEED,                           //AVAILABLE
     ITEM_MISTY_SEED,                            //
     ITEM_PSYCHIC_SEED,                          //
     ITEM_EJECT_PACK,                            //
@@ -793,19 +793,19 @@ enum NewBattleHoldItems
 #define ITEM_PELLET_WATER 	0x30B               //AVAILABLE
 #define ITEM_PELLET_ELECTRIC 	0x30C           //
 #define ITEM_PELLET_ROCK 	0x30D               //
-#define ITEM_PELLET_GROUND 	0x30E               //
+#define ITEM_PELLET_GROUND 	0x30E               //AVAILABLE - LIMITED
 #define ITEM_PELLET_ICE 	0x30F               //AVAILABLE
 #define ITEM_PELLET_FLYING 	0x310               //AVAILABLE
-#define ITEM_PELLET_FIGHTING 	0x311           //
+#define ITEM_PELLET_FIGHTING 	0x311           //AVAILABLE - LIMITED
 #define ITEM_PELLET_GHOST 	0x312               //
 #define ITEM_PELLET_BUG 	0x313               //AVAILABLE
 #define ITEM_PELLET_POISON 	0x314               //
 #define ITEM_PELLET_PSYCHIC 	0x315           //
-#define ITEM_PELLET_STEEL 	0x316               //
-#define ITEM_PELLET_DARK 	0x317               //
+#define ITEM_PELLET_STEEL 	0x316               //AVAILABLE - LIMITED
+#define ITEM_PELLET_DARK 	0x317               //AVAILABLE - LIMITED
 #define ITEM_PELLET_DRAGON 	0x318               //
-#define ITEM_PELLET_FAIRY 	0x319               //
-#define ITEM_PELLET_RANDOM 	0x31A               //
+#define ITEM_PELLET_FAIRY 	0x319               //AVAILABLE - LIMITED
+#define ITEM_PELLET_RANDOM 	0x31A               //AVAILABLE - ALL PELLETS UNLIMITED
 
 #define ITEM_TRACKINATOR 	0x31B               //AVAILABLE
 #define ITEM_AIR_ARMOR 		0x31C               //
@@ -821,49 +821,49 @@ enum NewBattleHoldItems
 #define ITEM_MONSTER_PUMP 	0x326               //
 #define ITEM_COMEDY_BOMB 	0x327               //
 
-#define ITEM_BITTER_JUMBO_BERRY 0x328           //
-#define ITEM_BITTER_TITAN_BERRY 0x329           //
-#define ITEM_BITTER_MASTER_BERRY 0x32A          //
-#define ITEM_BITTER_GLINT_BERRY 0x32B           //
-#define ITEM_BITTER_DIRIGI_BERRY 0x32C          //
-#define ITEM_BITTER_BREAD_BERRY 0x32D           //
-#define ITEM_BITTER_SOVREIGN_BERRY 0x32E        //
-#define ITEM_BITTER_DANDEL_BERRY 0x32F          //
-#define ITEM_BITTER_PILEATED_BERRY 0x330        //
-#define ITEM_BITTER_DESICCATED_BERRY 0x331      //
-#define ITEM_SPICY_ADULT_BERRY 0x332            //
-#define ITEM_BITTER_ADULT_BERRY 0x333           //
-#define ITEM_BITTER_MAN_AT_BERRY 0x334          //
-#define ITEM_BITTER_VEHEAMOTH_BERRY 0x335       //
-#define ITEM_BITTER_PYROCLASTIC_BERRY 0x336     //
-#define ITEM_BITTER_GREATER_BERRY 0x337         //
-#define ITEM_BITTER_FLUTTER_BERRY 0x338         //
-#define ITEM_BITTER_BOG_BERRY 0x339             //
-#define ITEM_SPICY_PUFF_BERRY 0x33A             //
-#define ITEM_BITTER_SCORCH_BERRY 0x33B          //
-#define ITEM_BITTER_PUFF_BERRY 0x33C            //
-#define ITEM_BITTER_EMPRESS_BERRY 0x33D         //
-#define ITEM_BITTER_MUCK_BERRY 0x33E            //
-#define ITEM_BITTER_GROOVY_BERRY 0x33F          //
-#define ITEM_BITTER_CRUSTED_BERRY 0x340         //
-#define ITEM_BITTER_GATTLING_BERRY 0x341        //
-#define ITEM_BITTER_ARMORED_BERRY 0x342         //
-#define ITEM_SPICY_OAT_BERRY 0x343              //
-#define ITEM_BITTER_OAT_BERRY 0x344             //
-#define ITEM_BITTER_MIRE_BERRY 0x345            //
-#define ITEM_SPICY_WHITE_BERRY 0x346            //
-#define ITEM_SPICY_BLUE_BERRY 0x347             //
-#define ITEM_SPICY_ROCK_BERRY 0x348             //
-#define ITEM_SPICY_YELLOW_BERRY 0x349           //
-#define ITEM_SPICY_WINGED_BERRY 0x34A           //
-#define ITEM_SPICY_RED_BERRY 0x34B              //
-#define ITEM_SPICY_PURPLE_BERRY 0x34C           //
-#define ITEM_SPICY_ICE_BERRY 0x34D              //
-#define ITEM_SPICY_GLOW_BERRY 0x34E             //
-#define ITEM_BITTER_PROG_BERRY 0x34F            //
-#define ITEM_SPICY_MOSS_BERRY 0x350             //
-#define ITEM_BITTER_MOSS_BERRY 0x351            //
-#define ITEM_BITTER_WATERY_BERRY 0x352          //
+#define ITEM_BITTER_JUMBO_BERRY 0x328           //EVENT
+#define ITEM_BITTER_TITAN_BERRY 0x329           //EVENT
+#define ITEM_BITTER_MASTER_BERRY 0x32A          //EVENT
+#define ITEM_BITTER_GLINT_BERRY 0x32B           //Court
+#define ITEM_BITTER_DIRIGI_BERRY 0x32C          //DG
+#define ITEM_BITTER_BREAD_BERRY 0x32D           //GK
+#define ITEM_BITTER_SOVREIGN_BERRY 0x32E        //BK
+#define ITEM_BITTER_DANDEL_BERRY 0x32F          //R12
+#define ITEM_BITTER_PILEATED_BERRY 0x330        //SH
+#define ITEM_BITTER_DESICCATED_BERRY 0x331      //R9
+#define ITEM_SPICY_ADULT_BERRY 0x332            //WW
+#define ITEM_BITTER_ADULT_BERRY 0x333           //R4
+#define ITEM_BITTER_MAN_AT_BERRY 0x334          //Complex
+#define ITEM_BITTER_VEHEAMOTH_BERRY 0x335       //EC
+#define ITEM_BITTER_PYROCLASTIC_BERRY 0x336     //R5
+#define ITEM_BITTER_GREATER_BERRY 0x337         //HoH
+#define ITEM_BITTER_FLUTTER_BERRY 0x338         //Subzero
+#define ITEM_BITTER_BOG_BERRY 0x339             //MudPit
+#define ITEM_SPICY_PUFF_BERRY 0x33A             //PT
+#define ITEM_BITTER_SCORCH_BERRY 0x33B          //R8
+#define ITEM_BITTER_PUFF_BERRY 0x33C            //R13
+#define ITEM_BITTER_EMPRESS_BERRY 0x33D         //FC
+#define ITEM_BITTER_MUCK_BERRY 0x33E            //R11
+#define ITEM_BITTER_GROOVY_BERRY 0x33F          //Disco
+#define ITEM_BITTER_CRUSTED_BERRY 0x340         //Seafloor
+#define ITEM_BITTER_GATTLING_BERRY 0x341        //CoC
+#define ITEM_BITTER_ARMORED_BERRY 0x342         //HeyCave
+#define ITEM_SPICY_OAT_BERRY 0x343              //EVENT
+#define ITEM_BITTER_OAT_BERRY 0x344             //AVAILABLE - BoB
+#define ITEM_BITTER_MIRE_BERRY 0x345            //PikminPark
+#define ITEM_SPICY_WHITE_BERRY 0x346            //FN
+#define ITEM_SPICY_BLUE_BERRY 0x347             //SS
+#define ITEM_SPICY_ROCK_BERRY 0x348             //GoH
+#define ITEM_SPICY_YELLOW_BERRY 0x349           //FoH
+#define ITEM_SPICY_WINGED_BERRY 0x34A           //TR
+#define ITEM_SPICY_RED_BERRY 0x34B              //VoR
+#define ITEM_SPICY_PURPLE_BERRY 0x34C           //PP
+#define ITEM_SPICY_ICE_BERRY 0x34D              //BA
+#define ITEM_SPICY_GLOW_BERRY 0x34E             //AVAILABLE - IS
+#define ITEM_BITTER_PROG_BERRY 0x34F            //UNUSED
+#define ITEM_SPICY_MOSS_BERRY 0x350             //WFG
+#define ITEM_BITTER_MOSS_BERRY 0x351            //AdventureCave
+#define ITEM_BITTER_WATERY_BERRY 0x352          //CoS
 
 #define ITEM_BOILED_EGG 0x353                   //
 #define ITEM_GUARD_SATELLITE 0x354              //

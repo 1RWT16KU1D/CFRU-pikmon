@@ -1905,8 +1905,8 @@ u8 GetExceptionMoveType(u8 bankAtk, u16 move)
 			moveType = TYPE_NORMAL;
 			if (IsTerastallized(bankAtk))
 				moveType = GetTeraType(bankAtk);
-			break;
 			#endif
+			break;
 	}
 
 	if (moveType == TYPE_NORMAL && IsIonDelugeActive())

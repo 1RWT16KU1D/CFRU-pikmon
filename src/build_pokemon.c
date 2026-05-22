@@ -1289,7 +1289,7 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 		case CLASS_LEADER:
 		case CLASS_ELITE_FOUR:
 		case CLASS_CHAMPION:
-		case CLASS_RIVAL:
+		case CLASS_CAPTAIN:
 		case CLASS_RIVAL_2:
 		case CLASS_BOSS:
 		#ifdef UNBOUND
@@ -1320,7 +1320,7 @@ bool8 ShouldGiveTrainerMonBestStatsMaxEVs(u8 trainerClass)
         case CLASS_LEADER:
         case CLASS_ELITE_FOUR:
         case CLASS_CHAMPION:
-        case CLASS_RIVAL:
+        case CLASS_CAPTAIN:
         case CLASS_RIVAL_2:
         case CLASS_BOSS:
         #ifdef UNBOUND
@@ -1350,7 +1350,7 @@ bool8 ShouldGiveTrainerMonMaxFriendship(u8 trainerClass)
     switch (trainerClass)
     {
         case CLASS_CHAMPION:
-        case CLASS_RIVAL:
+        case CLASS_CAPTAIN:
         case CLASS_RIVAL_2:
         case CLASS_LEADER:
         case CLASS_ELITE_FOUR:
