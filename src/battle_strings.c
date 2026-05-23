@@ -696,7 +696,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					#endif
 					class += 0; //So no unusued variable is displayed
 					#ifdef OPEN_WORLD_TRAINERS
-						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
+						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_CAPTAIN && class != CLASS_RIVAL_2)
 						{
 							#ifdef STEVEBELS_TRAINER_TABLE
 							toCpy = GetTrainer(gTrainerBattleOpponent_A).trainerName;
@@ -870,7 +870,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					#endif
 					class += 0;
 					#ifdef OPEN_WORLD_TRAINERS
-						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
+						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_CAPTAIN && class != CLASS_RIVAL_2)
 						{
 							#ifdef STEVEBELS_TRAINER_TABLE
 							toCpy = GetOpenWorldTrainerName(GetTrainer(VarGet(VAR_SECOND_OPPONENT)).gender);
