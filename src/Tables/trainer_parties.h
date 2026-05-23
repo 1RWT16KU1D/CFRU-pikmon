@@ -492,9 +492,10 @@ struct TrainerMonItemCustomMoves sParty_Gym1Dingo[] =  {
         .species = SPECIES_BREADBUG,
         .ability = 1,
         .moves = {MOVE_COVET, MOVE_DEFENSECURL, MOVE_TACKLE, MOVE_MUDSLAP}
-    },
+    }
 };
-struct TrainerMonItemCustomMoves sParty_Gym1DingoR[] =  {
+
+struct TrainerMonNoItemDefaultMoves sParty_Gym1DingoR[] =  {
     {
         .iv = 0,
         .lvl = 11,
@@ -504,7 +505,7 @@ struct TrainerMonItemCustomMoves sParty_Gym1DingoR[] =  {
         .iv = 0,
         .lvl = 11,
         .species = SPECIES_GATTLINGGROINK,
-    },
+    }
 };
 
 struct TrainerMonNoItemDefaultMoves sParty_SchoolKidF[] = {DUMMY_TRAINER_MON};

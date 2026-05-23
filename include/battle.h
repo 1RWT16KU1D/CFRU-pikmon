@@ -285,7 +285,6 @@ struct TrainerMonItemCustomMoves
 		u8 	evSpread[6];
     u16 heldItem;
     u16 moves[4];
-	u16 teraType;
 };
 
 union TrainerMonPtr
