@@ -31,7 +31,7 @@ EventScript_TheImpactSite_LittleGirl:
     setvar 0x800B 31
     givepokemon 0x3 32 ITEM_HARD_STONE 0 1 0
     
-    trainerbattle0 0 29 0 gText_ThisIsBeforeImage gText_ThisIsAfterImage
-    msgbox gText_Name_LittleGirl MSG_NORMAL
+    trainerbattle0 0 29 0 gText_LetsBattle gText_OhNoILost
+    msgboxtransparent gText_GreatBattle MSG_NORMAL
     release
     end

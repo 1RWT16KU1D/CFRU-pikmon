@@ -739,15 +739,26 @@ def main():
                     except:
                         print("There was an error inserting the song on line {}: {}".format(i, line.strip()))
 
-        width = max(map(len, table.keys())) + 1
+        insertMetadata = [
+            ("__INSERTION_START", OFFSET_TO_PUT + 0x08000000),
+            ("__INSERTION_END", endInsertOffset + 0x08000000),
+            ("__INSERTION_SIZE", endInsertOffset - OFFSET_TO_PUT),
+        ]
+
+        insertMetadataKeys = [key for key, _ in insertMetadata]
+        width = max(map(len, list(table.keys()) + insertMetadataKeys)) + 1
         if os.path.isfile('offsets.ini'):
             offsetIni = open('offsets.ini', 'r+')
         else:
             offsetIni = open('offsets.ini', 'w')
 
         offsetIni.truncate()
+        fstr = ('{:' + str(width) + '} {:08X}')
+        offsetIni.write("# __INSERTION_END is the first byte after the inserted data.\n")
+        for key, value in insertMetadata:
+            offsetIni.write(fstr.format(key + ':', value) + '\n')
+        offsetIni.write('\n')
         for key in sorted(table.keys()):
-            fstr = ('{:' + str(width) + '} {:08X}')
             offsetIni.write(fstr.format(key + ':', table[key] + 0x08000000) + '\n')
         offsetIni.close()
 
