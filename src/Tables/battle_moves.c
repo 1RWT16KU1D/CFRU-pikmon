@@ -16296,6 +16296,54 @@ const struct BattleMove gBattleMoves[] =
 		.split = SPLIT_PHYSICAL,
 		.z_move_effect = 0
 	},
+
+	[MOVE_TONGUELASH] =
+	{
+		.effect = EFFECT_EAT_BERRY,
+		.power = 70,
+		.type = TYPE_NORMAL,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAKES_CONTACT,
+		.z_move_power = 140,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MEDUSALBEAM] =
+	{
+		.effect = EFFECT_FREEZE_HIT,
+		.power = 90,
+		.type = TYPE_ROCK,
+		.accuracy = 100,
+		.pp = 10,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 175,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_DUSTSTORM] =
+	{
+		.effect = EFFECT_FREEZE_HIT,
+		.power = 110,
+		.type = TYPE_ROCK,
+		.accuracy = 70,
+		.pp = 5,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_BOTH,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 175,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	}
 #endif
 };
 
@@ -16898,5 +16946,8 @@ const u8 gDynamaxMovePowers[MOVES_COUNT] =
     [MOVE_STOMPOUT] = 110,
     [MOVE_GOLDENGUN] = 130,
     [MOVE_MACHINEGUN] = 130,
+	[MOVE_TONGUELASH] = 120,
+	[MOVE_MEDUSALBEAM] = 130,
+	[MOVE_DUSTSTORM] = 140,
 };
 #endif

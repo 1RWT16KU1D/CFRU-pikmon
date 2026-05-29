@@ -1545,10 +1545,58 @@ Raises Speed of\nall Pok\emon on\nthe field.
 Sets the Gloom\nweather.
 
 #org @DESC_GOLDEN_GUN
-A one-hit KO\nmove that has\nhigh accuracy.
+A one-hit KO\nmove that restores PP\non hit.
 
 #org @DESC_MACHINE_GUN
 This move hits\n2-5 times in\na row.
+
+#org @DESC_TONGUE_LASH
+Strikes the foe\nwith a tongue.\nPlucks its Berry.
+
+#org @DESC_ROLLER_RUSH
+A rolling attack\nthat destroys the\nterrain.
+
+#org @DESC_PELLET_POWER
+Its type depends\non the held pellet.\nMay change category.
+
+#org @DESC_MEDUSAL_BEAM
+Fires a beam that\nmay petrify\nthe target.
+
+#org @DESC_DUST_STORM
+Whips up dust and\nmay petrify\nthe target.
+
+#org @DESC_STONE_FANG
+Bites with rocky\nfangs. May cause\nflinching or petrify.
+
+#org @DESC_STONE_PUNCH
+A stone-hard punch\nthat may petrify\nthe target.
+
+#org @DESC_BITTER_SPRAY
+Sprays bitter fluid\nthat may petrify\nthe target.
+
+#org @DESC_SPICY_SPRAY
+Sprays hot fluid\nthat may burn\nthe target.
+
+#org @DESC_STONE_ARMOR
+Raises the user's\nDefense and Sp.\nDefense stats.
+
+#org @DESC_ROCKY_ROCK
+Hurls a huge rock\nat the foe with\ngreat force.
+
+#org @DESC_TREASURE_BURST
+Attacks with stored\ntreasure. Held\npellets boost effects.
+
+#org @DESC_MUSH_MASH
+A mash of fungi\nthat may inflict\nvarious ailments.
+
+#org @DESC_SHROOM_FUME
+Releases toxic\nspores that may\npoison the foe.
+
+#org @DESC_SPORE_PUFF
+Blows a cloud of\nspores that may\nconfuse the foe.
+
+#org @DESC_PRQUILONOSIS
+Transforms the foe\ninto Porquillion.
 
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.

@@ -895,6 +895,11 @@ gMoveAnimations:
 .word ANIM_GLOOM
 .word ANIM_GOLDEN_GUN
 .word ANIM_MACHINE_GUN
+.word ANIM_TONGUE_LASH
+.word ANIM_ROLLER_RUSH
+.word ANIM_PELLET_POWER
+.word ANIM_MEDUSAL_BEAM
+.word ANIM_DUST_STORM
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -31166,9 +31171,64 @@ ANIM_GOLDEN_GUN:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_MACHINE_GUN:
-	goto 0x81d2f3a
+	goto 0x81d2f3a @MOVE_BULLETSEED
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_TONGUE_LASH:
+	goto 0x81d12e0 @MOVE_LICK
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ROLLER_RUSH:
+	goto ANIM_STEEL_ROLLER
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PELLET_POWER:
+	goto ANIM_AURASPHERE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MEDUSAL_BEAM:
+	loadparticle ANIM_TAG_ROCKS
+
+	pokespritetoBG bank_target
+	playsoundpanchange 0xc2 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
+	launchtask AnimTask_move_bank 0x2 0x5 bank_attacker 0x0 0x4 0x57 0x1
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	launchtask AnimTask_move_bank_2 0x2 0x5 0x1 0x0 0x4 0x51 0x1
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	waitanimation
+	pokespritefromBG bank_target
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DUST_STORM:
+	goto ANIM_DIAMONDSTORM
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 .pool
 .align 2
 SKILLSWAP_CHOOSER:

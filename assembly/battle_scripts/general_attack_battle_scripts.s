@@ -1030,7 +1030,10 @@ BS_038_OHK0:
 	typecalc2
 	tryko OHKOMoveFail
 	attackstring
+	jumpifmove MOVE_GOLDENGUN OHKO_DontReducePP
 	ppreduce
+
+OHKO_DontReducePP:
 	callasm FailMoveIfAura
 	jumpifmovehadnoeffect BS_HIT_FROM_ATTACKANIMATION
 	trysetdestinybondtohappen
@@ -6174,6 +6177,7 @@ GigatonHammerBS:
 BS_243_DamageSetTerrain:
 	attackcanceler
 	jumpifmove MOVE_ICESPINNER IceSpinner_BS
+	jumpifmove MOVE_ROLLERRUSH IceSpinner_BS
 	callasm TryFailSteelRoller
 	accuracycheck BS_MOVE_MISSED 0x0
 	call STANDARD_DAMAGE

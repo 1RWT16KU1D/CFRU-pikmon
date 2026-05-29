@@ -858,6 +858,7 @@
 #define MOVE_GLOOM         0x34D
 #define MOVE_GOLDENGUN     0x34E
 #define MOVE_MACHINEGUN    0x34F
+
 //no implementation yet
 #define MOVE_TONGUELASH    0x350
 #define MOVE_ROLLERRUSH    0x351
