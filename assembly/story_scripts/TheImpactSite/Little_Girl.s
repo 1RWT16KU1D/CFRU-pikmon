@@ -16,11 +16,12 @@ EventScript_TheImpactSite_LittleGirl:
     setvar 0x8000 0
     callasm ShowImage
     waitstate
+    additem 0x323 1 @ITEM_GLOOMY_ROCK
     msgbox gText_ThisIsAfterImage MSG_NORMAL
-    setvar 0x8000 MOVE_TONGUELASH
-    setvar 0x8001 MOVE_MEDUSALBEAM
-    setvar 0x8002 MOVE_DUSTSTORM
-    setvar 0x8003 MOVE_ROLLERRUSH
+    setvar 0x8000 MOVE_STONEFANG
+    setvar 0x8001 MOVE_STONEPUNCH
+    setvar 0x8002 MOVE_RAVEPARTY
+    setvar 0x8003 MOVE_GLOOM
     setvar 0x8004 5
     setvar 0x8005 1
     setvar 0x8006 31

@@ -900,6 +900,8 @@ gMoveAnimations:
 .word ANIM_PELLET_POWER
 .word ANIM_MEDUSAL_BEAM
 .word ANIM_DUST_STORM
+.word ANIM_STONE_FANG
+.word ANIM_STONE_PUNCH
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -31226,6 +31228,16 @@ ANIM_MEDUSAL_BEAM:
 .pool
 ANIM_DUST_STORM:
 	goto ANIM_DIAMONDSTORM
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STONE_FANG:
+	goto ANIM_ICEFANG
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STONE_PUNCH:
+	goto 0x81cd2e0 @MOVE_ICEPUNCH
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
