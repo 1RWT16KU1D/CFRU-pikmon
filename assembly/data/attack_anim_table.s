@@ -903,6 +903,17 @@ gMoveAnimations:
 .word ANIM_STONE_FANG
 .word ANIM_STONE_PUNCH
 
+@Placeholders for alignment
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
 .word ANIM_BREAKNECK_BLITZ
@@ -31090,7 +31101,31 @@ PSYCHIC_NOISE_WAVE:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_ARCTIC_BLAST:
-	goto ANIM_FREEZEDRY
+	loadparticle ANIM_TAG_AURA_SPHERE
+	loadparticle ANIM_TAG_UNUSED_IMPACT_2
+	loadparticle ANIM_TAG_ICE_CRYSTALS
+
+	loadBG1 BG_ICE
+	waitbgfadeout
+	launchtask AnimTask_scroll_background 0x5 0x4, -0x300, 0x0, 0x1 0xFFFF
+	waitbgfadein
+
+	playsound2 0x85 SOUND_PAN_ATTACKER
+	launchtask 0x80A84B5 0x2 0x0
+	launchtemplate AURA_SPHERE_BALL 0x2 0x5 bank_attacker 0x0 0x10 0x35 0x0
+	pause 0x30
+	playsoundpanchange 0xBA SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
+	launchtemplate SNIPE_SHOT_BALL TEMPLATE_TARGET | 2, 0x3, 0x0 0x0 0x10
+	waitanimation
+	launchtask AnimTask_move_bank_2 0x2 0x5 0x1 0x4 0x0 0x8 0x1
+
+	call FREEZE_CHANCE_ANIM @ice
+	pause 0x4
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x2 0x9 0x0 0x7f4c
+	launchtask AnimTask_move_bank 0x5 0x5 bank_target 0x0 0x4 0x7 0x1
+
+	waitanimation
+	call UNSET_SCROLLING_BG_FADE_IN_BANKS
 	waitanimation
 	endanimation
 
@@ -31129,16 +31164,111 @@ ANIM_ACID_REFLEX:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_BOMB_ROCK:
-	goto ANIM_SEEDBOMB
+	loadparticle ANIM_TAG_SEED
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_EXPLOSION
+	pokespritetoBG bank_target
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate SEEDBOMB_SEED 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0x3
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate SEEDBOMB_SEED 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0x3
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate SEEDBOMB_SEED 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0x3
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate SEEDBOMB_SEED 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0x3
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate SEEDBOMB_SEED 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0x5
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x10 0x1
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0x0 0x0 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0x18 0xffe8 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0xfff0 0x10 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0xffe8 0xfff4 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0x10 0x10 0x1 0x1
 	waitanimation
+	pokespritefromBG bank_target
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_CURSED_FLAMES:
-	goto ANIM_INFERNAL_PARADE
+	loadparticle ANIM_TAG_SMALL_EMBER
+	loadparticle ANIM_TAG_PURPLE_FLAME
+	loadparticle ANIM_TAG_WISP_FIRE
+	leftopponentbankBG_over_partnerBG bank_target
+	loadBG1 BG_DARK
+	pokespritetoBG bank_target
+	soundcomplex 0x89 SOUND_PAN_ATTACKER 0x20 0x6
+	launchtask AnimTask_TranslateMonEllipticalRespectSide 0x2 0x5 bank_attacker 0xc 0x6 0x6 0x3
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+
+	playsound2 0xb6 0xc0 
+	waitbgfadein
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30,  10,  20 @;Bottom left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30, -30, -20 @;Top right
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30,  10,  20 @;Bottom right
+	pause 0x3
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x32 0x1
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	playsound2 0x8a SOUND_PAN_TARGET
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x0
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x2a
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x54
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x7e
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0xa8
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0xd2
+	waitanimation
+	pause 0x8
+	loaddefaultbg
+	waitbgfadein
+	pokespritefrombg bank_target
 	waitanimation
 	endanimation
+
+CURSED_FLAMES_SWIRL:
+	launchtemplate CURSED_FLAMES_CHARGE 0x2 0x4 0x0 0xffe8 0x8 0x8c
+	return
+
+CREATE_CURSED_FLAMES:
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30, -30, -20 @;Top left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30,  10,  20 @;Bottom left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30, -30, -20 @;Top right
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30,  10,  20 @;Bottom right
+	pause 0x3
+	return
+
+.align 2
+CURSED_FLAMES_CHARGE: objtemplate ANIM_TAG_SMALL_EMBER ANIM_TAG_WISP_FIRE OAM_OFF_32x32 0x83E59CC 0x0 gDummySpriteAffineAnimTable 0x80A2921
+
+.align 2
+CURSED_FLAMES_FIRE: objtemplate ANIM_TAG_PURPLE_FLAME ANIM_TAG_WISP_FIRE OAM_DOUBLE_BLEND_16x32 0x83E76DC 0x0 gSpriteAffineAnimTable_Flutterby SpriteCB_MaxFlutterby
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
