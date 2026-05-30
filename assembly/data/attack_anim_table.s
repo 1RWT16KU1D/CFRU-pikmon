@@ -31097,8 +31097,33 @@ ANIM_ARCTIC_BLAST:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_ACID_REFLEX:
-	goto ANIM_SUCKERPUNCH
+	loadparticle ANIM_TAG_POISON_BUBBLE
+	loadparticle ANIM_TAG_POISON_JAB
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_SPARKLE_4
+
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x9 0x0
 	waitanimation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x0 0x9 0x7fff
+	pause 0x12
+	playsound2 0xCA SOUND_PAN_ATTACKER
+	launchtemplate 0x83BF480 0xd 0x2 0x14 0xffec
+	waitanimation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x9 0x0 0x7fff
+
+	launchtemplate Template_SlideMonToOffset 0x2 0x5 bank_attacker 0x14 0x0 0x0 0x4
+	launchtemplate SUCKER_PUNCH TEMPLATE_TARGET | 2, 0x6 0xffe8 0x5 0x28 0x8 0xa0 0x0
+	pause 0x4
+	launchtemplate Template_Hit TEMPLATE_TARGET | 2, 0x4, 0x0 0x0 0x1 0x2
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x9 0x1
+	playsound2 0x84 SOUND_PAN_TARGET
+	waitanimation
+	launchtemplate Template_SlideMonToOriginalPos 0x2 0x3 bank_attacker 0x1 0x4
+	pokespritetoBG side_target
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_DEF 0x0 0x4 0x0 0xc 0x681a
+	pokespritefromBG side_target
+	call POISON_BUBBLES
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
