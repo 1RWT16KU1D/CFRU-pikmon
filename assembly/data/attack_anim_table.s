@@ -31338,26 +31338,43 @@ ANIM_BORB_BASH:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_CRUSHING_BLOW:
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_ROCKS @ Impact
 	loadparticle ANIM_TAG_ROUND_SHADOW @fly
 	loadparticle ANIM_TAG_REALLY_BIG_ROCK
 
 	@ User flies up
+	setarg 0x7 0x0
+	waitanimation
+	loadBG1 BG_SEISMICTOSS_SKUUPPERCUT
+	waitbgfadeout
+	launchtask AnimTask_MoveSeismicTossBg 0x3 0x0
+
 	launchtemplate Template_VerticalDip 0x2 0x3 0x6 0x1 bank_attacker
 	pause 0x7
 	playsound2 0x7a SOUND_PAN_ATTACKER
 	launchtemplate Template_FlyBallUp 0x2 0x4 0x0 0x0 0xd 0x150  @;Fly up
 	waitanimation
-	pause 0x2F
 
-	@ Big Rock squishes target
+	@ Scroll down BG and drop big rock
+	playsound2 0x25 SOUND_PAN_TARGET @;Falling sound
+	
+	launchtask AnimTask_SeismicTossBgAccelerateDownAtEnd 0x3 0x0
 	launchtemplate CRUSHING_BLOW_ROCK, TEMPLATE_TARGET | 3, 0x4, 0, 0x3c, 3, bank_target
 	pause 0x5
 	playsound2 0xab SOUND_PAN_TARGET
 	launchtask AnimTask_SquishTarget 0x2 0x0
-	pause 0x3C
+	pause 0x10
+	call SEISMIC_TOSS_ROCK_SCATTER_1
+	pause 0x10
+	call SEISMIC_TOSS_ROCK_SCATTER_2
+	pause 0x1C
 
+	loaddefaultBG
+	waitbgfadeout
+	setarg 0x7 0xFFF
+	waitbgfadein
 	makebankvisible bank_attacker
-	waitanimation
 	endanimation
 
 .align 2

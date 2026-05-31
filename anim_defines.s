@@ -505,6 +505,7 @@
 .equ AnimTask_StartSinAnimTimer, 0x80ab101
 .equ AnimTask_TransparentCloneGrowAndShrink, 0x80b3c79
 .equ AnimTask_ExtrasensoryDistortion, 0x80b3a59
+.equ AnimTask_MoveSeismicTossBg, 0x80B5189
 .equ AnimTask_SeismicTossBgAccelerateDownAtEnd, 0x80b51ed
 .equ SoundTask_PlaySE2WithPanning, 0x80DD411
 .equ SoundTask_LoopSEAdjustPanning, 0x80dcf39 @;Song Id, Source, Target Pan, Pan Increment, Num Times, Pan Increment Ofteness, Length of One
