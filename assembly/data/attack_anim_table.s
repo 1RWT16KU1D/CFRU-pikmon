@@ -31344,6 +31344,7 @@ ANIM_CRUSHING_BLOW:
 	@ User flies up
 	launchtemplate Template_VerticalDip 0x2 0x3 0x6 0x1 bank_attacker
 	pause 0x7
+	playsound2 0x7a SOUND_PAN_ATTACKER
 	launchtemplate Template_FlyBallUp 0x2 0x4 0x0 0x0 0xd 0x150  @;Fly up
 	waitanimation
 	pause 0x2F
@@ -31394,6 +31395,7 @@ ANIM_GLOOM:
 	pause 0x7C
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x8 0x0 0x301F @ Reset palettes
 	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xB 0x0 0x301F @ Reset palettes
+	pause 0x4C
 	waitanimation
 	endanimation
 

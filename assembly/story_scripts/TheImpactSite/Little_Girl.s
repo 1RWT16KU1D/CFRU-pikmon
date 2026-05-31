@@ -24,8 +24,8 @@ EventScript_TheImpactSite_LittleGirl:
 
     setvar 0x8000 MOVE_BORBBASH
     setvar 0x8001 MOVE_CRUSHINGBLOW
-    setvar 0x8002 MOVE_BOMBROCK
-    setvar 0x8003 MOVE_CURSEDFLAMES
+    setvar 0x8002 MOVE_GLOOM
+    setvar 0x8003 MOVE_RAINDANCE
     setvar 0x8004 5
     setvar 0x8005 1
     setvar 0x8006 31
