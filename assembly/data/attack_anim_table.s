@@ -31289,12 +31289,13 @@ ANIM_BORB_BASH:
 	waitanimation
 	playsound2 0x91 SOUND_PAN_ATTACKER
 
-	@ User flies up
+	@ User dashes towards target
 	launchtemplate Template_VerticalDip 0x2 0x3 0x6 0x1 bank_attacker
 	pause 0x7
-	launchtemplate Template_FlyBallUp 0x2 0x4 0x0 0x0 0xd 0x150  @;Fly up
+	makebankinvisible bank_attacker
+	playsound2 0x7a SOUND_PAN_ATTACKER
+	launchtemplate SKYDROP_FLY_BALL TEMPLATE_TARGET | 2, 0x6 0x0 0x0 0x0 0x0 0x1e 0x0
 	waitanimation
-	pause 0x1C
 
 	@ Bites and stomps
 	launchtemplate Template_FistFootRandomPosSprite bank_target 3 1 10 1
