@@ -623,6 +623,8 @@
 .equ Template_FastFlyingMusicNotes, 0x83E38C8
 .equ Template_DragonDanceOrb, 0x83e7848
 .equ Template_PsywaveRing, 0x83e59e8
+.equ Template_FistFootRandomPosSprite, 0x83E6728
+
 .equ SpriteCB_AnimSpriteOnMonPos, 0x8075D9D
 .equ Callback_TranslateAnimSpriteToTargetMonLocation, 0x8075DF5
 .equ AnimTask_BendSprite, 0x8099981
@@ -1124,6 +1126,7 @@ waitbgfadein
 .equ ANIM_TAG_ALPHA_SYMBOL, 0x2882
 .equ ANIM_TAG_TERA_SYMBOL, 0x2883
 .equ ANIM_TAG_TERA_CRYSTAL, 0x2884
+.equ ANIM_TAG_BOMB_ROCK_ROCK, 0x2885
 
 //New Anim
 .equ Template_ElectricStatic, 0x83E6204
@@ -1138,3 +1141,6 @@ waitbgfadein
 .equ AnimTask_GetWeather, 0x80E44EB
 .equ Template_GraySmoke, 0x83E36A8
 .equ CoinSound, 0xA7
+
+.equ AnimTask_ThrashMoveMonHorizontal, 0x80A8638
+.equ AnimTask_ThrashMoveMonVertical, 0x80A86A4

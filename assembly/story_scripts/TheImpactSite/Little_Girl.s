@@ -22,8 +22,8 @@ EventScript_TheImpactSite_LittleGirl:
     setvar 0x8004 0xF
     special 0x62 @Erase Party
 
-    setvar 0x8000 MOVE_ACIDREFLEX
-    setvar 0x8001 MOVE_ARCTICBLAST
+    setvar 0x8000 MOVE_BORBBASH
+    setvar 0x8001 MOVE_WOODHAMMER
     setvar 0x8002 MOVE_BOMBROCK
     setvar 0x8003 MOVE_CURSEDFLAMES
     setvar 0x8004 5
