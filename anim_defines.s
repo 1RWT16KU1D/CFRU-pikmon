@@ -417,6 +417,7 @@
 .equ AnimTask_move_bank, 0x80989F9
 .equ AnimTask_move_bank_2, 0x8098B1D
 .equ AnimTask_ShakeMonInPlace, 0x8098CD1
+.equ AnimTask_ShakeMon2, 0x8098B1D
 .equ AnimTask_SwayMon, 0x8099705
 .equ AnimTask_sprite_transform, 0x80DF9BD
 .equ AnimTask_play_growling_cry, 0x80DD149
