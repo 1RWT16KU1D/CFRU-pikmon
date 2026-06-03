@@ -28,7 +28,7 @@
 #include "../include/new/dynamax.h"
 #include "../include/new/overworld.h"
 #include "../include/new/roamer.h"
-#include "../include/new/util.h"
+#include "../include/new/util.h" 
 #include "../include/new/wild_encounter.h"
 /*
 wild_encounter.c

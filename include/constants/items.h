@@ -858,7 +858,7 @@ enum NewBattleHoldItems
 #define ITEM_SPICY_WINGED_BERRY 0x34A           //TR
 #define ITEM_SPICY_RED_BERRY 0x34B              //VoR
 #define ITEM_SPICY_PURPLE_BERRY 0x34C           //PP
-#define ITEM_SPICY_ICE_BERRY 0x34D              //BA
+#define ITEM_SPICY_ICE_BERRY 0x34D              //AVAILABLE - BA
 #define ITEM_SPICY_GLOW_BERRY 0x34E             //AVAILABLE - IS
 #define ITEM_BITTER_PROG_BERRY 0x34F            //UNUSED
 #define ITEM_SPICY_MOSS_BERRY 0x350             //WFG
