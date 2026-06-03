@@ -35,6 +35,12 @@ LevelScripts_IntroScene:
 
 LevelScript_IntroScene_Greet:
     lockall
+
+    msgbox gText_IntroScene_SkipIntro MSG_YESNO
+    compare LASTRESULT YES
+    if true _goto LevelScript_IntroScene_NameAndWarpPlayerToRoom
+    closeonkeypress
+
     movecamera gMovement_IntroScene_OlimarMoveCamera
     msgboxtransparent gText_IntroScene_3Dots MSG_NORMAL
     pause 10
@@ -177,6 +183,7 @@ LevelScript_IntroScene_RoomWarp:
     hidesprite OLIMAR
     waitstate
 
+LevelScript_IntroScene_NameAndWarpPlayerToRoom:
     callasm DoNamePlayer
     waitstate
 

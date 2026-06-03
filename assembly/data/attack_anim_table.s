@@ -895,6 +895,24 @@ gMoveAnimations:
 .word ANIM_GLOOM
 .word ANIM_GOLDEN_GUN
 .word ANIM_MACHINE_GUN
+.word ANIM_TONGUE_LASH
+.word ANIM_ROLLER_RUSH
+.word ANIM_PELLET_POWER
+.word ANIM_MEDUSAL_BEAM
+.word ANIM_DUST_STORM
+.word ANIM_STONE_FANG
+.word ANIM_STONE_PUNCH
+
+@Placeholders for alignment
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
+.word ANIM_STONE_PUNCH
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -31083,44 +31101,284 @@ PSYCHIC_NOISE_WAVE:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_ARCTIC_BLAST:
-	goto ANIM_FREEZEDRY
+	loadparticle ANIM_TAG_AURA_SPHERE
+	loadparticle ANIM_TAG_UNUSED_IMPACT_2
+	loadparticle ANIM_TAG_ICE_CRYSTALS
+
+	@ Load Ice Background
+	loadBG1 BG_ICE
+	waitbgfadeout
+	launchtask AnimTask_scroll_background 0x5 0x4, -0x300, 0x0, 0x1 0xFFFF
+	waitbgfadein
+
+	@ Shoot Aura Sphere Particle
+	playsound2 0x85 SOUND_PAN_ATTACKER
+	launchtask 0x80A84B5 0x2 0x0
+	launchtemplate AURA_SPHERE_BALL 0x2 0x5 bank_attacker 0x0 0x10 0x35 0x0
+	pause 0x30
+	playsoundpanchange 0xBA SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
+	launchtemplate SNIPE_SHOT_BALL TEMPLATE_TARGET | 2, 0x3, 0x0 0x0 0x10
+	waitanimation
+	launchtask AnimTask_move_bank_2 0x2 0x5 0x1 0x4 0x0 0x8 0x1
+
+	@ Fade Opponent Bank to Blue and call Freeze Animation`
+	call FREEZE_CHANCE_ANIM @ice
+	pause 0x4
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x2 0x9 0x0 0x7f4c
+	launchtask AnimTask_move_bank 0x5 0x5 bank_target 0x0 0x4 0x7 0x1
+
+	@ Reset Background
+	waitanimation
+	call UNSET_SCROLLING_BG_FADE_IN_BANKS
 	waitanimation
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_ACID_REFLEX:
-	goto ANIM_SUCKERPUNCH
+	loadparticle ANIM_TAG_POISON_BUBBLE
+	loadparticle ANIM_TAG_POISON_JAB
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_SPARKLE_4
+
+	@ Detect Animation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x9 0x0
 	waitanimation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x0 0x9 0x7fff
+	pause 0x12
+	playsound2 0xCA SOUND_PAN_ATTACKER
+	launchtemplate 0x83BF480 0xd 0x2 0x14 0xffec
+	waitanimation
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x9 0x0 0x0
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x2 0x9 0x0 0x7fff
+
+	@ Sucker Punch throw
+	launchtemplate Template_SlideMonToOffset 0x2 0x5 bank_attacker 0x14 0x0 0x0 0x4
+	launchtemplate SUCKER_PUNCH TEMPLATE_TARGET | 2, 0x6 0xffe8 0x5 0x28 0x8 0xa0 0x0
+	pause 0x4
+	launchtemplate Template_Hit TEMPLATE_TARGET | 2, 0x4, 0x0 0x0 0x1 0x2
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x9 0x1
+	playsound2 0x84 SOUND_PAN_TARGET
+	waitanimation
+	launchtemplate Template_SlideMonToOriginalPos 0x2 0x3 bank_attacker 0x1 0x4
+
+	@ Poison Effect
+	pokespritetoBG side_target
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_DEF 0x0 0x4 0x0 0xc 0x681a
+	pokespritefromBG side_target
+	call POISON_BUBBLES
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_BOMB_ROCK:
-	goto ANIM_SEEDBOMB
-	waitanimation
+	loadparticle ANIM_TAG_BOMB_ROCK_ROCK
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_EXPLOSION
+
+	@ Launch Bomb Rock
+	pokespritetoBG bank_target
+	playsound2 0xA0 SOUND_PAN_ATTACKER
+	launchtemplate BOMB_ROCK_PARTICLE 0x2 0x6 0x14 0xfff8 0xfff8 0xfff8 0x14 0xffe0
+	pause 0xA
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x10 0x1
+
+	@ Explosions
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0x0 0x0 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0x18 0xffe8 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0xfff0 0x10 0x1 0x1
+	pause 0x3
+	playsound2 0xAA SOUND_PAN_TARGET
+	launchtemplate Template_Explosion 0x3 0x4 0xfff0 0x10 0x1 0x1
+	pokespritefromBG bank_target
 	endanimation
+
+.align 2
+BOMB_ROCK_PARTICLE: objtemplate ANIM_TAG_BOMB_ROCK_ROCK ANIM_TAG_BOMB_ROCK_ROCK OAM_NORMAL_16x16 gDummySpriteAnimTable 0x0 0x83E3D90 0x80B4495
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_CURSED_FLAMES:
-	goto ANIM_INFERNAL_PARADE
+	loadparticle ANIM_TAG_SMALL_EMBER
+	loadparticle ANIM_TAG_PURPLE_FLAME
+	loadparticle ANIM_TAG_WISP_FIRE
+
+	@ Swirl Purple Flames around user
+	leftopponentbankBG_over_partnerBG bank_target
+	loadBG1 BG_DARK
+	pokespritetoBG bank_target
+	soundcomplex 0x89 SOUND_PAN_ATTACKER 0x20 0x6
+	launchtask AnimTask_TranslateMonEllipticalRespectSide 0x2 0x5 bank_attacker 0xc 0x6 0x6 0x3
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+	pause 0x9
+	call CURSED_FLAMES_SWIRL
+
+	@ Throw purple flames at target
+	playsound2 0xb6 0xc0 
+	waitbgfadein
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30,  10,  20 @;Bottom left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30, -30, -20 @;Top right
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30,  10,  20 @;Bottom right
+	pause 0x3
+	launchtask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x3 0x32 0x1
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	call CREATE_CURSED_FLAMES
+	playsound2 0x8a SOUND_PAN_TARGET
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x0
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x2a
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x54
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0x7e
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0xa8
+	launchtemplate Template_WillOWispFire TEMPLATE_TARGET | 2, 0x1 0xd2
+	waitanimation
+	pause 0x8
+	loaddefaultbg
+	waitbgfadein
+	pokespritefrombg bank_target
 	waitanimation
 	endanimation
+
+CURSED_FLAMES_SWIRL:
+	launchtemplate CURSED_FLAMES_CHARGE 0x2 0x4 0x0 0xffe8 0x8 0x8c
+	return
+
+CREATE_CURSED_FLAMES:
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30, -30, -20 @;Top left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3, -30,  10,  20 @;Bottom left
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30, -30, -20 @;Top right
+	pause 0x3
+	launchtemplate CURSED_FLAMES_FIRE TEMPLATE_TARGET | 2, 0x3,  30,  10,  20 @;Bottom right
+	pause 0x3
+	return
+
+.align 2
+CURSED_FLAMES_CHARGE: objtemplate ANIM_TAG_SMALL_EMBER ANIM_TAG_WISP_FIRE OAM_OFF_32x32 0x83E59CC 0x0 gDummySpriteAffineAnimTable 0x80A2921
+
+.align 2
+CURSED_FLAMES_FIRE: objtemplate ANIM_TAG_PURPLE_FLAME ANIM_TAG_WISP_FIRE OAM_DOUBLE_BLEND_16x32 0x83E76DC 0x0 gSpriteAffineAnimTable_Flutterby SpriteCB_MaxFlutterby
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_BORB_BASH:
-	goto ANIM_HEADSMASH
+	loadparticle ANIM_TAG_ROUND_SHADOW @fly
+	loadparticle ANIM_TAG_HANDS_AND_FEET
+	loadparticle ANIM_TAG_SHARP_TEETH
+	loadparticle ANIM_TAG_IMPACT
+
+	@ User gets green
+	pokespritetoBG bank_target
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	waitanimation
+	launchtask AnimTask_move_bank_2 0x2 0x5 bank_attacker 0x4 0x0 0x8 0x1
+	launchtask AnimTask_pal_fade_complex 0x2 0x6 PAL_ATK 0x1 0x2 0x0 0xb 0x1FE1
+	waitanimation
+	playsound2 0x91 SOUND_PAN_ATTACKER
+
+	@ User dashes towards target
+	launchtemplate Template_VerticalDip 0x2 0x3 0x6 0x1 bank_attacker
+	pause 0x7
+	makebankinvisible bank_attacker
+	playsound2 0x7a SOUND_PAN_ATTACKER
+	launchtemplate SKYDROP_FLY_BALL TEMPLATE_TARGET | 2, 0x6 0x0 0x0 0x0 0x0 0x1e 0x0
+	waitanimation
+
+	@ Bites and stomps
+	launchtemplate Template_FistFootRandomPosSprite bank_target 3 1 10 1
+	launchtask AnimTask_ShakeMonInPlace 0x2 0x5 bank_target 0x3 0x0 0xc 0x4
+	playsound2 116 SOUND_PAN_TARGET
+	pause 0x1C
+
+	playsound2 154 SOUND_PAN_TARGET
+	launchtemplate Template_Teeth 0x2 0x6 0x0 0xffe0 0x0 0x0 0x333 0xa
+	launchtemplate Template_Teeth 0x2 0x6 0x0 0x20 0x4 0x0 0xfccd 0xa
+	pause 0xA
+	launchtemplate Template_Hit 0x3 0x4 0x0 0x0 0x1 0x2
+	waitanimation
+
+	launchtemplate Template_FistFootRandomPosSprite bank_target 3 1 10 1
+	launchtask AnimTask_ShakeMonInPlace 0x2 0x5 bank_target 0x3 0x0 0xc 0x4
+	playsound2 116 SOUND_PAN_TARGET
+	pause 0x1C
+
+	playsound2 154 SOUND_PAN_TARGET
+	launchtemplate Template_Teeth 0x2 0x6 0x0 0xffe0 0x0 0x0 0x333 0xa
+	launchtemplate Template_Teeth 0x2 0x6 0x0 0x20 0x4 0x0 0xfccd 0xa
+	pause 0xA
+	launchtemplate Template_Hit 0x3 0x4 0x0 0x0 0x1 0x2
+	waitanimation
+
+	launchtemplate Template_FistFootRandomPosSprite bank_target 3 1 10 1
+	launchtask AnimTask_ShakeMonInPlace 0x2 0x5 bank_target 0x3 0x0 0xc 0x4
+	playsound2 116 SOUND_PAN_TARGET
+	pause 0x1C
+
+	@ End
+	launchtask AnimTask_move_bank 0x5 0x5 0x1 0x0 0x5 0xb 0x1
+	makebankvisible bank_attacker
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0
+	pokespritefromBG bank_target
 	waitanimation
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_CRUSHING_BLOW:
-	goto ANIM_RETALIATE
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_ROCKS @ Impact
+	loadparticle ANIM_TAG_ROUND_SHADOW @fly
+	loadparticle ANIM_TAG_REALLY_BIG_ROCK
+
+	@ User flies up
+	setarg 0x7 0x0
 	waitanimation
+	loadBG1 BG_SEISMICTOSS_SKUUPPERCUT
+	waitbgfadeout
+	launchtask AnimTask_MoveSeismicTossBg 0x3 0x0
+
+	launchtemplate Template_VerticalDip 0x2 0x3 0x6 0x1 bank_attacker
+	pause 0x7
+	playsound2 0x7a SOUND_PAN_ATTACKER
+	launchtemplate Template_FlyBallUp 0x2 0x4 0x0 0x0 0xd 0x150  @;Fly up
+	waitanimation
+
+	@ Scroll down BG and drop big rock
+	playsound2 0x25 SOUND_PAN_TARGET @;Falling sound
+	
+	launchtask AnimTask_SeismicTossBgAccelerateDownAtEnd 0x3 0x0
+	launchtemplate CRUSHING_BLOW_ROCK, TEMPLATE_TARGET | 3, 0x4, 0, 0x3c, 3, bank_target
+	pause 0x5
+	playsound2 0xab SOUND_PAN_TARGET
+	launchtask AnimTask_SquishTarget 0x2 0x0
+	pause 0x10
+	call SEISMIC_TOSS_ROCK_SCATTER_1
+	pause 0x10
+	call SEISMIC_TOSS_ROCK_SCATTER_2
+	pause 0x1C
+
+	loaddefaultBG
+	waitbgfadeout
+	setarg 0x7 0xFFF
+	waitbgfadein
+	makebankvisible bank_attacker
 	endanimation
+
+.align 2
+CRUSHING_BLOW_ROCK: objtemplate ANIM_TAG_REALLY_BIG_ROCK ANIM_TAG_REALLY_BIG_ROCK OAM_DOUBLE_64x64 gDummySpriteAnimTable 0x0 gAnimCmdTable_IceRockMulti SpriteCB_FallingObject
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
@@ -31147,14 +31405,14 @@ ANIM_RAVE_PARTY:
 .pool
 ANIM_GLOOM:
 	playsound2 0xEF 0x0
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x0 0x8 0x301F
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xB 0x301F
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x0 0x8 0x301F @ Reddish Hue
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0x0 0xB 0x301F @ Reddish Hue
 	@launchtask AnimTask_LoadSandstormBackground 0x5 0x1 0x1
 	launchtask 0x80AFD81 0x3 0x0
-	pause 0x44
-	pause 0x38
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x8 0x0 0x301F
-	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xB 0x0 0x301F
+	pause 0x7C
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ALL_BANKS 0x2 0x8 0x0 0x301F @ Reset palettes
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x2 0xB 0x0 0x301F @ Reset palettes
+	pause 0x4C
 	waitanimation
 	endanimation
 
@@ -31166,9 +31424,74 @@ ANIM_GOLDEN_GUN:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_MACHINE_GUN:
-	goto 0x81d2f3a
+	goto 0x81d2f3a @MOVE_BULLETSEED
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_TONGUE_LASH:
+	goto 0x81d12e0 @MOVE_LICK
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ROLLER_RUSH:
+	goto ANIM_STEEL_ROLLER
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PELLET_POWER:
+	goto ANIM_AURASPHERE
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MEDUSAL_BEAM:
+	loadparticle ANIM_TAG_ROCKS
+
+	pokespritetoBG bank_target
+	playsoundpanchange 0xc2 SOUND_PAN_ATTACKER SOUND_PAN_TARGET 0x2 0x0
+	launchtask AnimTask_move_bank 0x2 0x5 bank_attacker 0x0 0x4 0x57 0x1
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	launchtask AnimTask_move_bank_2 0x2 0x5 0x1 0x0 0x4 0x51 0x1
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	call METEOR_BEAM_ROCK_LAUNCH
+	waitanimation
+	pokespritefromBG bank_target
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DUST_STORM:
+	goto ANIM_DIAMONDSTORM
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STONE_FANG:
+	goto ANIM_ICEFANG
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STONE_PUNCH:
+	goto 0x81cd2e0 @MOVE_ICEPUNCH
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 .pool
 .align 2
 SKILLSWAP_CHOOSER:

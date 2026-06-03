@@ -2014,9 +2014,9 @@ callasm ResetPokeVialUses
 .endm
 
 .macro msgboxtransparent text:req type:req
-	callasm 0x8750021
+	callasm 0x9300021
 	msgbox \text \type
-	callasm 0x8750139
+	callasm 0x9300139
 .endm
 
 .macro movecamera movements:req

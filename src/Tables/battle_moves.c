@@ -7018,6 +7018,7 @@ const struct BattleMove gBattleMoves[] =
 		.priority = 0,
 		.flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
 		.z_move_power = 120,
+
 		.split = SPLIT_PHYSICAL,
 		.z_move_effect = 0
 	},
@@ -16237,7 +16238,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_RAVE_PARTY,
 		.power = 0,
-		.type = TYPE_NORMAL,
+		.type = TYPE_PSYCHIC,
 		.accuracy = 0,
 		.pp = 15,
 		.secondaryEffectChance = 0,
@@ -16296,6 +16297,86 @@ const struct BattleMove gBattleMoves[] =
 		.split = SPLIT_PHYSICAL,
 		.z_move_effect = 0
 	},
+
+	[MOVE_TONGUELASHING] =
+	{
+		.effect = EFFECT_EAT_BERRY,
+		.power = 70,
+		.type = TYPE_NORMAL,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAKES_CONTACT,
+		.z_move_power = 140,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MEDUSALBEAM] =
+	{
+		.effect = EFFECT_FREEZE_HIT,
+		.power = 90,
+		.type = TYPE_ROCK,
+		.accuracy = 100,
+		.pp = 10,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 175,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_DUSTSTORM] =
+	{
+		.effect = EFFECT_FREEZE_HIT,
+		.power = 110,
+		.type = TYPE_ROCK,
+		.accuracy = 70,
+		.pp = 5,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_BOTH,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 175,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_STONEFANG] =
+	{
+		.effect = EFFECT_FLINCH_HIT,
+		.power = 65,
+		.type = TYPE_ROCK,
+		.accuracy = 95,
+		.pp = 15,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAKES_CONTACT,
+		.z_move_power = 120,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_STONEPUNCH] =
+	{
+		.effect = EFFECT_FREEZE_HIT,
+		.power = 75,
+		.type = TYPE_ROCK,
+		.accuracy = 100,
+		.pp = 15,
+		.secondaryEffectChance = 10,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAKES_CONTACT,
+		.z_move_power = 140,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	}
 #endif
 };
 
@@ -16898,5 +16979,10 @@ const u8 gDynamaxMovePowers[MOVES_COUNT] =
     [MOVE_STOMPOUT] = 110,
     [MOVE_GOLDENGUN] = 130,
     [MOVE_MACHINEGUN] = 130,
+	[MOVE_TONGUELASHING] = 120,
+	[MOVE_MEDUSALBEAM] = 130,
+	[MOVE_DUSTSTORM] = 140,
+	[MOVE_STONEFANG] = 130,
+	[MOVE_STONEPUNCH] = 130
 };
 #endif

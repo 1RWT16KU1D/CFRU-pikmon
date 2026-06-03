@@ -417,6 +417,7 @@
 .equ AnimTask_move_bank, 0x80989F9
 .equ AnimTask_move_bank_2, 0x8098B1D
 .equ AnimTask_ShakeMonInPlace, 0x8098CD1
+.equ AnimTask_ShakeMon2, 0x8098B1D
 .equ AnimTask_SwayMon, 0x8099705
 .equ AnimTask_sprite_transform, 0x80DF9BD
 .equ AnimTask_play_growling_cry, 0x80DD149
@@ -504,6 +505,7 @@
 .equ AnimTask_StartSinAnimTimer, 0x80ab101
 .equ AnimTask_TransparentCloneGrowAndShrink, 0x80b3c79
 .equ AnimTask_ExtrasensoryDistortion, 0x80b3a59
+.equ AnimTask_MoveSeismicTossBg, 0x80B5189
 .equ AnimTask_SeismicTossBgAccelerateDownAtEnd, 0x80b51ed
 .equ SoundTask_PlaySE2WithPanning, 0x80DD411
 .equ SoundTask_LoopSEAdjustPanning, 0x80dcf39 @;Song Id, Source, Target Pan, Pan Increment, Num Times, Pan Increment Ofteness, Length of One
@@ -623,6 +625,8 @@
 .equ Template_FastFlyingMusicNotes, 0x83E38C8
 .equ Template_DragonDanceOrb, 0x83e7848
 .equ Template_PsywaveRing, 0x83e59e8
+.equ Template_FistFootRandomPosSprite, 0x83E6728
+
 .equ SpriteCB_AnimSpriteOnMonPos, 0x8075D9D
 .equ Callback_TranslateAnimSpriteToTargetMonLocation, 0x8075DF5
 .equ AnimTask_BendSprite, 0x8099981
@@ -1124,6 +1128,7 @@ waitbgfadein
 .equ ANIM_TAG_ALPHA_SYMBOL, 0x2882
 .equ ANIM_TAG_TERA_SYMBOL, 0x2883
 .equ ANIM_TAG_TERA_CRYSTAL, 0x2884
+.equ ANIM_TAG_BOMB_ROCK_ROCK, 0x2885
 
 //New Anim
 .equ Template_ElectricStatic, 0x83E6204
@@ -1138,3 +1143,6 @@ waitbgfadein
 .equ AnimTask_GetWeather, 0x80E44EB
 .equ Template_GraySmoke, 0x83E36A8
 .equ CoinSound, 0xA7
+
+.equ AnimTask_ThrashMoveMonHorizontal, 0x80A8638
+.equ AnimTask_ThrashMoveMonVertical, 0x80A86A4
