@@ -861,6 +861,21 @@ static void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 				evIncrease = gBaseStats[defeatedSpecies].evYield_SpDefense;
 				break;
 		}
+		switch (defeatedSpecies)//OVERRIDES
+		{
+			case SPECIES_SPECTRALID:
+			case SPECIES_SPECTRALID_YELLOW:
+			case SPECIES_SPECTRALID_UNMARKED:
+			case SPECIES_SPECTRALID_RED:
+			case SPECIES_SPECTRALID_UNMARKEDRED:
+			case SPECIES_SPECTRALID_ELECTRIC:
+			case SPECIES_SPECTRALID_UNMARKEDPURPLE:
+			case SPECIES_SPECTRALID_HEY1:
+				evIncrease = 4;
+				break;
+			case SPECIES_NAMAPONGASHI:
+				evIncrease *= 100;
+		}
 
 		//Pokerus
 		evIncrease *= pkrsMultiplier;
@@ -897,22 +912,30 @@ bool8 AddEVs(struct Pokemon* mon, u8 statId, u16 numToAdd)
 {
 	u8 currentEv = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
 	u16 totalEvs = GetMonEVCount(mon);
-
-	if (totalEvs < MAX_TOTAL_EVS
-	&&  currentEv < EV_CAP) //The EV can be added
-	{
-		if (totalEvs + numToAdd > MAX_TOTAL_EVS)
-			numToAdd = MAX_TOTAL_EVS - totalEvs; //Lower amount
-
-		if (currentEv + numToAdd > EV_CAP)
-			numToAdd = EV_CAP - currentEv; //Lower amount
-
-		currentEv += numToAdd;
+	if (numToAdd >= 100){
+		numToAdd = numToAdd/100;
+		if (numToAdd > currentEv){numToAdd = currentEv;}
+		currentEv -= numToAdd;
 		SetMonData(mon, MON_DATA_HP_EV + statId, &currentEv);
-
 		if (numToAdd > 0)
-			return TRUE; //Evs successfully added
+		return TRUE; //Evs successfully removed
 	}
+	else {
+		if (totalEvs < MAX_TOTAL_EVS
+		&&  currentEv < EV_CAP) //The EV can be added
+		{
+			if (totalEvs + numToAdd > MAX_TOTAL_EVS)
+				numToAdd = MAX_TOTAL_EVS - totalEvs; //Lower amount
 
+			if (currentEv + numToAdd > EV_CAP)
+				numToAdd = EV_CAP - currentEv; //Lower amount
+
+			currentEv += numToAdd;
+			SetMonData(mon, MON_DATA_HP_EV + statId, &currentEv);
+
+			if (numToAdd > 0)
+				return TRUE; //Evs successfully added
+		}
+	}
 	return FALSE; //No EVs were added
 }

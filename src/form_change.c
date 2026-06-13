@@ -148,7 +148,7 @@ void SwitchOutFormsRevert(u8 bank)
 			if (backupSpecies != SPECIES_NONE)
 				DoFormChange(bank, backupSpecies, FALSE, TRUE, FALSE);
 			else
-				DoFormChange(bank, SPECIES_WATERWRAITH_BLACK, FALSE, TRUE, FALSE);
+				DoFormChange(bank, SPECIES_WATERWRAITH_NOTIRES, FALSE, TRUE, FALSE);
 			break;
 
 		case SPECIES_BEARDEDAMPRAT:
@@ -196,7 +196,7 @@ bool8 TryFormRevert(struct Pokemon* mon)
 
 	if (IsMinior(species))
 	{
-		mon->species = SPECIES_WATERWRAITH_BLACK; //Get Minior Colour
+		mon->species = SPECIES_WATERWRAITH_NOTIRES; //Get Minior Colour
 		CalculateMonStats(mon);
 		return TRUE;
 	}
@@ -417,7 +417,7 @@ bool8 IsMiniorCore(u16 species)
 
 bool8 IsMinior(u16 species)
 {
-	return species == SPECIES_WATERWRAITH || species == SPECIES_WATERWRAITH_BLACK;
+	return species == SPECIES_WATERWRAITH || species == SPECIES_WATERWRAITH_NOTIRES;
 }
 
 void HandleFormChange(void)
