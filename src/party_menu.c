@@ -955,14 +955,14 @@ const u16 gFieldMoves[FIELD_MOVE_COUNT] =
 
 const u8 gFieldMoveBadgeRequirements[FIELD_MOVE_COUNT] =
 {
+        [FIELD_MOVE_ROCK_SMASH] = 2,//1 in final release
         [FIELD_MOVE_FLASH] = 0,
-        [FIELD_MOVE_CUT] = 0,
-        [FIELD_MOVE_FLY] = 0,
-        [FIELD_MOVE_STRENGTH] = 0,
-        [FIELD_MOVE_SURF] = 0,
-        [FIELD_MOVE_ROCK_SMASH] = 0,
-        [FIELD_MOVE_WATERFALL] = 0,
-        [FIELD_MOVE_ROCK_CLIMB] = 0,
+        [FIELD_MOVE_CUT] = 3,//PLUCK
+        [FIELD_MOVE_FLY] = 4,
+        [FIELD_MOVE_STRENGTH] = 5,
+        [FIELD_MOVE_SURF] = 6,
+        [FIELD_MOVE_ROCK_CLIMB] = 7,
+        [FIELD_MOVE_WATERFALL] = 8,
         [FIELD_MOVE_DEFOG] = 0,
         [FIELD_MOVE_DIVE] = 0,
 };
