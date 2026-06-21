@@ -333,3 +333,7 @@ Item_StoragePal 0810d7fc
 ##Replace new egg hatch animation
 egg_hatchingTiles 0826011C
 egg_hatchingPal 0826012C
+
+## Trainer Sprites
+##RivalTiles 082398CC
+##RivalPal 08239D6C

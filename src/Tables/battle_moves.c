@@ -16170,7 +16170,7 @@ const struct BattleMove gBattleMoves[] =
 		.z_move_effect = 0
 	},
 
-	[MOVE_BORBBASH] =
+	[MOVE_BULBORBBASH] =
 	{
 		.effect = EFFECT_HIT,
 		.power = 70,
@@ -16271,7 +16271,7 @@ const struct BattleMove gBattleMoves[] =
 		.effect = EFFECT_0HKO,
 		.power = 1,
 		.type = TYPE_STEEL,
-		.accuracy = 50,
+		.accuracy = 100,
 		.pp = 1,
 		.secondaryEffectChance = 0,
 		.target = MOVE_TARGET_SELECTED,
@@ -16973,7 +16973,7 @@ const u8 gDynamaxMovePowers[MOVES_COUNT] =
     [MOVE_ACIDREFLEX] = 130,
     [MOVE_BOMBROCK] = 120,
     [MOVE_CURSEDFLAMES] = 130,
-    [MOVE_BORBBASH] = 120,
+    [MOVE_BULBORBBASH] = 120,
     [MOVE_CRUSHINGBLOW] = 120,
     [MOVE_BIGCHOMP] = 120,
     [MOVE_STOMPOUT] = 110,

@@ -1526,7 +1526,7 @@ This move has a\nhigh critical hit\nratio.
 #org @DESC_CURSED_FLAMES
 This move has a\nhigh chance to\nburn the foe.
 
-#org @DESC_BORB_BASH
+#org @DESC_BULBORB_BASH
 This move always\nstrikes first.
 
 #org @DESC_CRUSHING_BLOW

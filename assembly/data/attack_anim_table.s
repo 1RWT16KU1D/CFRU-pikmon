@@ -887,7 +887,7 @@ gMoveAnimations:
 .word ANIM_ACID_REFLEX
 .word ANIM_BOMB_ROCK
 .word ANIM_CURSED_FLAMES
-.word ANIM_BORB_BASH
+.word ANIM_BULBORB_BASH
 .word ANIM_CRUSHING_BLOW
 .word ANIM_BIG_CHOMP
 .word ANIM_STOMP_OUT
@@ -31274,7 +31274,7 @@ CURSED_FLAMES_FIRE: objtemplate ANIM_TAG_PURPLE_FLAME ANIM_TAG_WISP_FIRE OAM_DOU
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
-ANIM_BORB_BASH:
+ANIM_BULBORB_BASH:
 	loadparticle ANIM_TAG_ROUND_SHADOW @fly
 	loadparticle ANIM_TAG_HANDS_AND_FEET
 	loadparticle ANIM_TAG_SHARP_TEETH
@@ -31419,7 +31419,18 @@ ANIM_GLOOM:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
 ANIM_GOLDEN_GUN:
-	goto ANIM_AURASPHERE
+
+	@ User gets golden and BG gets dark
+	pokespritetoBG bank_target
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_ATK 0x1 0x0 0xD 0x035F
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0xD 0x0
+	waitanimation
+	waitanimation
+
+	@ End
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0xD 0x0 0x0 @ Reset BG fade to normal
+	pokespritefromBG bank_target
+	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
