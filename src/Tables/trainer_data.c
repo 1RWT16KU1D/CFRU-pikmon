@@ -662,7 +662,7 @@ const struct Trainer gTrainers[] = {
     },
         [TRAINER_ARMOREDCANNONBEETLEOL_LADY] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_ARMOREDCANNONBEETLEOL_LADY,
+        .trainerClass = CLASS_PARASOL_LADY,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .gender = GENDER_MALE,
         .trainerPic = TRAINER_PIC_ARMOREDCANNONBEETLEOL_LADY,
@@ -9729,7 +9729,7 @@ const u8 gTrainerClassNames[][13] = {
     [CLASS_BIRD_KEEPER_RS] = { _B, _i, _r, _d, _SPACE, _K, _e, _e, _p, _e, _r, _END },
     [CLASS_NINJA_BOY] = { _N, _i, _n, _j, _a, _SPACE, _B, _o, _y, _END },
     [CLASS_BATTLE_GIRL] = { _B, _a, _t, _t, _l, _e, _SPACE, _G, _i, _r, _l, _END },
-    [CLASS_ARMOREDCANNONBEETLEOL_LADY] = { _P, _a, _r, _a, _s, _o, _l, _SPACE, _L, _a, _d, _y, _END },
+    [CLASS_PARASOL_LADY] = { _P, _a, _r, _a, _s, _o, _l, _SPACE, _L, _a, _d, _y, _END },
     [CLASS_SWIMMER_F_RS] = { _S, _w, _i, _m, _m, _e, _r, _END },
     [CLASS_PICNICKER_RS] = { _P, _i, _c, _n, _i, _c, _k, _e, _r, _END },
     [CLASS_TWINS_RS] = { _T, _w, _i, _n, _s, _END },
@@ -9796,11 +9796,18 @@ const u8 gTrainerClassNames[][13] = {
     [CLASS_RUIN_MANIAC] = { _R, _u, _i, _n, _SPACE, _M, _a, _n, _i, _a, _c, _END },
     [CLASS_LADY] = { _L, _a, _d, _y, _END },
     [CLASS_PAINTER] = { _P, _a, _i, _n, _t, _e, _r, _END },
+
+    // Dummy Classes
+    [CLASS_DUMMY] = { _D, _u, _m, _m, _y, _END },
+    [CLASS_DUMMY_2] = { _D, _u, _m, _m, _y, _2, _END },
+    [CLASS_DUMMY_3] = { _D, _u, _m, _m, _y, _3, _END },
+
     //Pikmon classes
     [CLASS_CAPTAIN] = { _C, _a, _p, _t, _a, _i, _n, _END },
     [CLASS_BUG_CATCHER] = { _B, _u, _g, _SPACE, _C, _a, _t, _c, _h, _e, _r, _END },
     [CLASS_PKMN_BREEDER] = { _P, _k, _m, _n, _SPACE, _B, _r, _e, _e, _d, _e, _r, _END },
     [CLASS_TOURIST] = { _T, _o, _u, _r, _i, _s, _t, _END },
+
 };
 
 const struct TrainerMoney gTrainerMoneyTable[] =
@@ -9890,7 +9897,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {CLASS_DRAGON_TAMER, 12, 0},
     {CLASS_BIRD_KEEPER, 8, 0},
     {CLASS_NINJA_BOY, 3, 0},
-    {CLASS_ARMOREDCANNONBEETLEOL_LADY, 10, 0},
+    {CLASS_PARASOL_LADY, 10, 0},
     {CLASS_BUG_MANIAC, 15, 0},
     {CLASS_SAILOR_RS, 8, 0},
     {CLASS_COLLECTOR, 15, 0},
@@ -9911,4 +9918,9 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {CLASS_BOSS, 25, 0},
     {CLASS_TOURIST, 7, 0},      //PIKMON
     { 0xFF, 5, 0},
+
+    // Dummy Classes
+    {CLASS_DUMMY, 0, 0},
+    {CLASS_DUMMY_2, 0, 0},
+    {CLASS_DUMMY_3, 0, 0}
 };

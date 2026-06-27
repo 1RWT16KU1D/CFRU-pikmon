@@ -138,7 +138,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define NATIONAL_DEX_COUNT 196
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root
-#define NUM_TRAINER_CLASSES 107 //Vanilla FR has 107
+#define NUM_TRAINER_CLASSES 110 //Vanilla FR has 107
 #define EVOS_PER_MON 16 //The number of maximum evolutions per Pokemon. Vanilla FR has 5. DPE has 16!!!
 #define EV_CAP 252 //Also change this in the file "asm_defines.s" found in the root
 #define POWER_ITEM_EV_YIELD 8 //Set to 4 for older mechanic
@@ -219,7 +219,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define BRIDGE_FIX //If this remains uncommented, the water battle background will only be loaded if the player's surfing sprite is shown
 #define MEGA_EVOLUTION_FEATURE //Comment this line to remove Mega Evolutions
 #define DYNAMAX_FEATURE //Comment this line to remove Dynamax and Raid Battles
-#define TUTORIAL_BATTLES //Comment this line to remove Oak's Tutorial
+//#define TUTORIAL_BATTLES //Comment this line to remove Oak's Tutorial
 #define TANOBY_RUINS_ENABLED //The Tanoby Ruins will be the only location Unown can be encountered
 #define ALTERING_CAVE_ENABLED //The Altering Cave from FR will work as intended provided the proper var is set
 #define SWEET_SCENT_ONLY_IN_CLEAR_WEATHER //Sweet Scent won't attract any wild Pokemon if the weather is not clear
