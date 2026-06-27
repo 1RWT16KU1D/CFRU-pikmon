@@ -31,9 +31,9 @@
 #define TRAINER_GYM1_ROCKSTATUE_REMATCH           28
 #define TRAINER_GYM1_DINGO                        29
 #define TRAINER_GYM1_DINGO_REMATCH                30
-#define TRAINER_SCHOOL_KID_F                      31
-#define TRAINER_SR_AND_JR                         32
-#define TRAINER_POKEFAN_M                         33
+#define TRAINER_LAB_OLIMAR_WOLPOLE                31
+#define TRAINER_LAB_OLIMAR_LARVA                  32
+#define TRAINER_LAB_OLIMAR_BLOWLET                33
 #define TRAINER_POKEFAN_F                         34
 #define TRAINER_EXPERT_M                          35
 #define TRAINER_EXPERT_F                          36
