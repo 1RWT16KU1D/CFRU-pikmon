@@ -397,7 +397,7 @@ const struct Trainer gTrainers[] = {
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_Gym1Dingo),
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
         .party =  { .ItemCustomMoves = sParty_Gym1Dingo },
     },
         [TRAINER_GYM1_DINGO_REMATCH] = {
@@ -4262,7 +4262,7 @@ const struct Trainer gTrainers[] = {
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabWolpole),
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_FIRST_BATTLE,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabWolpole },
     },
         [TRAINER_RIVAL_OAKS_LAB_BULBORBLARVA] = {
@@ -4275,7 +4275,7 @@ const struct Trainer gTrainers[] = {
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabBulborbLarva),
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_FIRST_BATTLE,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabBulborbLarva },
     },
         [TRAINER_RIVAL_OAKS_LAB_FIERYBLOWLET] = {
@@ -4288,7 +4288,7 @@ const struct Trainer gTrainers[] = {
         .items = {NO_ITEMS},
         .doubleBattle = FALSE,
         .partySize = NELEMS(sParty_RivalOaksLabFieryBlowlet),
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_FIRST_BATTLE,
         .party =  { .NoItemDefaultMoves = sParty_RivalOaksLabFieryBlowlet },
     },
 

@@ -1316,17 +1316,17 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM45_ATTRACT - Normal
 	{gBag_TMDarkTiles, gBag_TMDarkPal},      // ITEM_TM46_THIEF - Sombrio
 	{gBag_TMFlyingTiles, gBag_TMFlyingPal},    // ITEM_TM47_STEEL_WING - Voador/Aço
-	{gBag_TMPsychicTiles, gBag_TMPsychicPal},   // ITEM_TM48_SKILL_SWAP - Psíquico
+	{gBag_TMPoisonTiles, gBag_TMPoisonPal},   // ITEM_TM48_GLOOM - Psíquico
 	{gBag_TMDarkTiles, gBag_TMDarkPal},      // ITEM_TM49_SNATCH - Sombrio
 	{gBag_TMFireTiles, gBag_TMFirePal},      // ITEM_TM50_OVERHEAT - Fogo
-	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_HM01_CUT - Normal
-	{gBag_TMFlyingTiles, gBag_TMFlyingPal},    // ITEM_HM02_FLY - Voador
-	{gBag_TMWaterTiles, gBag_TMWaterPal},     // ITEM_HM03_SURF - Água
-	{gBag_TMNormalTiles, gBag_TMNormalPal}, 	 // ITEM_HM04_STRENGTH - Normal
-	{gBag_TMWaterTiles, gBag_TMWaterPal},     // ITEM_HM05_DIVE - Água
-	{gBag_TMFightingTiles, gBag_TMFightingPal},  // ITEM_HM06_ROCK_SMASH - Lutador
-	{gBag_TMWaterTiles, gBag_TMWaterPal},     // ITEM_HM07_WATERFALL - Água
-	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_HM08_ROCK_CLIMB - Normal
+	{gBag_TMFightingTiles, gBag_TMFightingPal},    // ITEM_HM01_ROCKSMASH - Normal
+	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_HM02_FLASH - Voador
+	{gBag_TMFlyingTiles, gBag_TMFlyingPal},     // ITEM_HM03_PLUCK - Água
+	{gBag_TMFlyingTiles, gBag_TMFlyingPal}, 	 // ITEM_HM04_FLY - Normal
+	{gBag_TMNormalTiles, gBag_TMNormalPal},     // ITEM_HM05_STRENGTH - Água
+	{gBag_TMWaterTiles, gBag_TMWaterPal},  // ITEM_HM06_SURF - Lutador
+	{gBag_TMNormalTiles, gBag_TMNormalPal},     // ITEM_HM07_ROCKCLIMB - Água
+	{gBag_TMWaterTiles, gBag_TMWaterPal},    // ITEM_HM08_WATERFALL - Normal
 	{gBag_DynamaxBandTiles, gBag_DynamaxBandPal},
 	{gBag_GoldTeethTiles, gBag_GoldTeethPal},
 	{gBag_OaksParcelTiles, gBag_OaksParcelPal},
@@ -1375,7 +1375,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM67_RECYCLE - Normal
 	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM68_GIGA_IMPACT - Normal
 	{gBag_TMRockTiles, gBag_TMRockPal},     // ITEM_TM69_ROCK_POLISH - Pedra
-	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM70_FLASH - Normal
+	{gBag_TMWaterTiles, gBag_TMWaterPal},    // ITEM_TM70_DIVE - Fly
 	{gBag_TMRockTiles, gBag_TMRockPal},     // ITEM_TM71_STONE_EDGE - Pedra
 	{gBag_TMIceTiles, gBag_TMIcePal},       // ITEM_TM72_AVALANCHE - Gelo
 	{gBag_TMElectricTiles, gBag_TMElectricPal},  // ITEM_TM73_THUNDER_WAVE - Elétrico
@@ -1393,7 +1393,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_TMPsychicTiles, gBag_TMPsychicPal},   // ITEM_TM85_DREAM_EATER - Psíquico
 	{gBag_TMGrassTiles, gBag_TMGrassPal},     // ITEM_TM86_GRASS_KNOT - Grama
 	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM87_SWAGGER - Normal
-	{gBag_TMFlyingTiles, gBag_TMFlyingPal},    // ITEM_TM88_PLUCK - Voador
+	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM88_CUT - Voador
 	{gBag_TMBugTiles, gBag_TMBugPal},       // ITEM_TM89_U_TURN - Inseto
 	{gBag_TMNormalTiles, gBag_TMNormalPal},    // ITEM_TM90_SUBSTITUTE - Normal
 	{gBag_TMSteelTiles, gBag_TMSteelPal},     // ITEM_TM91_FLASH_CANNON - Aço
@@ -1877,7 +1877,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_M, _a, _s, _t, _e, _r, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_M, _a, _s, _t, _e, _r, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_MASTER_BALL,
 		.price = 0,
 		.holdEffect = 0,
@@ -1893,7 +1893,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_U, _l, _t, _r, _a, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_Y, _e, _l, _l, _o, _w,  _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_ULTRA_BALL,
 		.price = 800,
 		.holdEffect = 0,
@@ -1909,7 +1909,7 @@ const struct Item gItemData[] =
         .secondaryId = 1
 	},
 	{
-		.name = {_G, _r, _e, _a, _t, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_B, _l, _u, _e,  _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_GREAT_BALL,
 		.price = 600,
 		.holdEffect = 0,
@@ -1925,7 +1925,7 @@ const struct Item gItemData[] =
         .secondaryId = 2
 	},
 	{
-		.name = {_P, _o, _k, _eACUTE, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_R, _e, _d, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_POKE_BALL,
 		.price = 200,
 		.holdEffect = 0,
@@ -1941,7 +1941,7 @@ const struct Item gItemData[] =
         .secondaryId = 3
 	},
 	{
-		.name = {_S, _a, _f, _a, _r, _i, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_P, _a, _r, _k, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_SAFARI_BALL,
 		.price = 0,
 		.holdEffect = 0,
@@ -1957,7 +1957,7 @@ const struct Item gItemData[] =
         .secondaryId = 4
 	},
 	{
-		.name = {_N, _e, _t, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_M, _o, _s, _s, _y, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_NET_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -1973,7 +1973,7 @@ const struct Item gItemData[] =
         .secondaryId = 5
 	},
 	{
-		.name = {_D, _i, _v, _e, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_I, _c, _e, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_DIVE_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -1989,7 +1989,7 @@ const struct Item gItemData[] =
         .secondaryId = 6
 	},
 	{
-		.name = {_N, _e, _s, _t, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_H, _o, _n, _e, _y, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_NEST_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -2005,7 +2005,7 @@ const struct Item gItemData[] =
         .secondaryId = 7
 	},
 	{
-		.name = {_R, _e, _p, _e, _a, _t, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_S, _w, _a, _r, _m, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_REPEAT_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -2021,7 +2021,7 @@ const struct Item gItemData[] =
         .secondaryId = 8
 	},
 	{
-		.name = {_T, _i, _m, _e, _r, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_P, _u, _r, _p, _l, _e, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_TIMER_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -2037,7 +2037,7 @@ const struct Item gItemData[] =
         .secondaryId = 9
 	},
 	{
-		.name = {_L, _u, _x, _u, _r, _y, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_R, _o, _c, _k, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_LUXURY_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -2053,7 +2053,7 @@ const struct Item gItemData[] =
         .secondaryId = 10
 	},
 	{
-		.name = {_P, _r, _e, _m, _i, _e, _r, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_F, _l, _a, _r, _l, _i, _c, _END},
 		.itemId = ITEM_PREMIER_BALL,
 		.price = 200,
 		.holdEffect = 0,
@@ -5701,7 +5701,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_D, _u, _s, _k, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_L, _u, _m, _i, _k, _n, _o, _l, _l, _END},
 		.itemId = ITEM_DUSK_BALL,
 		.price = 1000,
 		.holdEffect = 0,
@@ -5717,7 +5717,7 @@ const struct Item gItemData[] =
         .secondaryId = 0
 	},
 	{
-		.name = {_H, _e, _a, _l, _SPACE, _B, _a, _l, _l, _END},
+		.name = {_W, _i, _n, _g, _e, _d, _SPACE, _O, _n, _i, _o, _n, _END},
 		.itemId = ITEM_HEAL_BALL,
 		.price = 300,
 		.holdEffect = 0,
@@ -7286,7 +7286,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _1, _END},
-		.itemId = ITEM_HM01_CUT,
+		.itemId = ITEM_HM01_ROCKSMASH,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7302,7 +7302,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _2, _END},
-		.itemId = ITEM_HM02_FLY,
+		.itemId = ITEM_HM02_FLASH,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7318,7 +7318,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _3, _END},
-		.itemId = ITEM_HM03_SURF,
+		.itemId = ITEM_HM03_PLUCK,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7334,7 +7334,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _4, _END},
-		.itemId = ITEM_HM04_STRENGTH,
+		.itemId = ITEM_HM04_FLY,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7350,7 +7350,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _5, _END},
-		.itemId = ITEM_HM05_DIVE,
+		.itemId = ITEM_HM05_STRENGTH,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7366,7 +7366,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _6, _END},
-		.itemId = ITEM_HM06_ROCK_SMASH,
+		.itemId = ITEM_HM06_SURF,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7382,7 +7382,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _7, _END},
-		.itemId = ITEM_HM07_WATERFALL,
+		.itemId = ITEM_HM07_ROCKCLIMB,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -7398,7 +7398,7 @@ const struct Item gItemData[] =
 	},
 	{
 		.name = {_H, _M, _0, _8, _END},
-		.itemId = ITEM_HM08_ROCK_CLIMB,
+		.itemId = ITEM_HM08_WATERFALL,
 		.price = 0,
 		.holdEffect = 0,
 		.holdEffectParam = 0,
@@ -14523,7 +14523,7 @@ const struct Item gItemData[] =
 	},
 	[ITEM_BITTER_SCORCH_BERRY]
 	{
-		.name = {_S, _c, _o, _r, _c, _h, _b, _e, _r, _r, _y, _END},
+		.name = {_C, _a, _k, _e, _b, _e, _r, _r, _y, _END},
 		.itemId = ITEM_BITTER_SCORCH_BERRY,
 		.price = 0,
 		.holdEffect = ITEM_EFFECT_MEGA_STONE,

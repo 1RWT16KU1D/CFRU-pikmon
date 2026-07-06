@@ -138,7 +138,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define NATIONAL_DEX_COUNT 196
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root
-#define NUM_TRAINER_CLASSES 110 //Vanilla FR has 107
+#define NUM_TRAINER_CLASSES 111 //Vanilla FR has 107
 #define EVOS_PER_MON 16 //The number of maximum evolutions per Pokemon. Vanilla FR has 5. DPE has 16!!!
 #define EV_CAP 252 //Also change this in the file "asm_defines.s" found in the root
 #define POWER_ITEM_EV_YIELD 8 //Set to 4 for older mechanic
@@ -404,3 +404,6 @@ enum //These vars need to be one after the other (hence the enum)
 /* Trainer Data */
 #define EXPAND_TRAINERS // Makes trainers editable, well useless if OPEN_WORLD_TRAINERS is being used.
 //#define STEVEBELS_TRAINER_TABLE //You can edit any existing trainer just by entering their ID. Do not use if EXPAND_TRAINERS is uncommented.
+
+/* Day Night Toggle*/
+#define FLAG_NIGHT 0x247

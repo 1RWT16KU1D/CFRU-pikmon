@@ -935,7 +935,7 @@ const u8* const gFieldMoveDescriptions[] =
 const u16 gFieldMoves[FIELD_MOVE_COUNT] =
 {
         [FIELD_MOVE_FLASH] = MOVE_FLASH,
-        [FIELD_MOVE_CUT] = MOVE_CUT,
+        [FIELD_MOVE_CUT] = MOVE_PLUCK,
         [FIELD_MOVE_FLY] = MOVE_FLY,
         [FIELD_MOVE_STRENGTH] = MOVE_STRENGTH,
         [FIELD_MOVE_SURF] = MOVE_SURF,
@@ -955,13 +955,13 @@ const u16 gFieldMoves[FIELD_MOVE_COUNT] =
 
 const u8 gFieldMoveBadgeRequirements[FIELD_MOVE_COUNT] =
 {
-        [FIELD_MOVE_ROCK_SMASH] = 2,//1 in final release
+        [FIELD_MOVE_ROCK_SMASH] = 1,
         [FIELD_MOVE_FLASH] = 0,
         [FIELD_MOVE_CUT] = 3,//PLUCK
-        [FIELD_MOVE_FLY] = 4,
+        [FIELD_MOVE_FLY] = 7,
         [FIELD_MOVE_STRENGTH] = 5,
-        [FIELD_MOVE_SURF] = 6,
-        [FIELD_MOVE_ROCK_CLIMB] = 7,
+        [FIELD_MOVE_SURF] = 4,
+        [FIELD_MOVE_ROCK_CLIMB] = 6,
         [FIELD_MOVE_WATERFALL] = 8,
         [FIELD_MOVE_DEFOG] = 0,
         [FIELD_MOVE_DIVE] = 0,
@@ -1014,7 +1014,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                         {
                                 #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
                                 if (gFieldMoves[j] == MOVE_ROCKCLIMB
-                                && !CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1))
+                                && !CheckBagHasItem(ITEM_HM08_WATERFALL, 1))
                                         continue; //Don't allow Rock Climbing until the item is obtained
                                 #endif
 
@@ -1040,24 +1040,6 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES2, NULL);
         if (species != SPECIES_NONE && species != SPECIES_EGG)
         {
-                #ifdef UNBOUND
-                if (k < MAX_MON_MOVES && !knowsCut) //Doesn't know 4 field moves
-                {
-                        if (GetCurrentRegionMapSectionId() == MAPSEC_GRIM_WOODS
-                        && VarGet(VAR_SQ_WEED_WHACKER) > 0 && VarGet(VAR_SQ_WEED_WHACKER) < 2 //Weed Whacker in progress
-                        #ifndef DEBUG_HMS
-                        && HasBadgeToUseFieldMove(FIELD_MOVE_CUT)
-                        && (FlagGet(FLAG_BOUGHT_ADM) || FlagGet(FLAG_SANDBOX_MODE) ||
-                         (CheckBagHasItem(ITEM_HM01_CUT, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_HM01_CUT, 0) == CAN_LEARN_MOVE))
-                        #endif
-                        )
-                        {
-                                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_CUT);
-                                ++k;
-                        }
-                }
-                #endif
-
                 if (k < MAX_MON_MOVES && !knowsFly) //Doesn't know 4 field moves
                 {
                         if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) //Only add if usable
@@ -1070,7 +1052,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                          #ifdef FLAG_SANDBOX_MODE
                          FlagGet(FLAG_SANDBOX_MODE) ||
                          #endif
-                         (CheckBagHasItem(ITEM_HM02_FLY, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_HM02_FLY, 0) == CAN_LEARN_MOVE))
+                         (CheckBagHasItem(ITEM_HM04_FLY, 1) > 0))
                         #endif
                         )
                         {
@@ -1149,7 +1131,7 @@ static bool8 SetUpFieldMove_Surf(void)
 
         u16 item = ITEM_NONE;
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-        item = ITEM_HM03_SURF;
+        item = ITEM_HM06_SURF;
         #endif
 
         if (PartyHasMonWithFieldMovePotential(MOVE_SURF, item, SHOULDNT_BE_SURFING) < PARTY_SIZE
@@ -1382,7 +1364,7 @@ void sp10A_CanUseCutOnTree(void)
         u16 item = ITEM_NONE;
 
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-        item = ITEM_HM01_CUT;
+        item = ITEM_HM03_PLUCK;
         #endif
 
         Var8004 = PARTY_SIZE;
@@ -1407,7 +1389,7 @@ void sp10B_CanUseRockSmashOnRock(void)
         u16 item = ITEM_NONE;
 
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-        item = ITEM_HM06_ROCK_SMASH;
+        item = ITEM_HM01_ROCKSMASH;
         #endif
 
         Var8004 = PARTY_SIZE;
@@ -1432,7 +1414,7 @@ void sp10C_CanUseStrengthOnBoulder(void)
         u16 item = ITEM_NONE;
 
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-        item = ITEM_HM04_STRENGTH;
+        item = ITEM_HM05_STRENGTH;
         #endif
 
         Var8004 = PARTY_SIZE;

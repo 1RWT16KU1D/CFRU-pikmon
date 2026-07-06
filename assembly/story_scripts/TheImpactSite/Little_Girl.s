@@ -5,6 +5,8 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+/*
+
 .global EventScript_TheImpactSite_LittleGirl
 
 .equ FLAG_WILD_CUSTOM_MOVES, 0x90B
@@ -37,3 +39,5 @@ EventScript_TheImpactSite_LittleGirl:
     msgboxtransparent gText_GreatBattle MSG_NORMAL
     release
     end
+    
+*/

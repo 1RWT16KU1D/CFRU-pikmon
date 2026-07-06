@@ -576,7 +576,7 @@ static const struct SpriteTemplate * const sTeraIndicatorSpriteTemplates[NUMBER_
 static const struct SpriteFrameImage sTypeIconPicTable[] =
 {
 	[TYPE_NORMAL] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_NORMAL),
-	[TYPE_FIGHTING] =	type_icon_frame(CamomonsTypeIconsTiles, TYPE_FIGHTING),
+	[TYPE_FIGHTING] =	type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_FIGHTING),
 	[TYPE_FLYING] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FLYING),
 	[TYPE_POISON] =		type_icon_frame(CamomonsTypeIcons2Tiles, TYPE_POISON),
 	[TYPE_GROUND] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_GROUND),

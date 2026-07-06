@@ -47,7 +47,7 @@ extern u8 String_TeamExpGain[];
 static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f, u32 v, u32 s);
 static bool8 WasWholeTeamSentIn(u8 bank, u8 sentIn);
 static bool8 SomeoneOnTeamGetsExpFromExpShare(u8 bank, u8 sentIn);
-static bool8 MonGetsAffectionBoost(struct Pokemon* mon);
+static int MonGetsAffectionBoost(struct Pokemon* mon);
 static bool8 IsAffectedByHardLevelCap(struct Pokemon* mon);
 static void EmitExpBarUpdate(u8 a, u8 b, u32 c);
 static void EmitExpTransferBack(u8 bufferId, u8 b, u8 *c);
@@ -263,8 +263,186 @@ void atk23_getexp(void)
 		//Level of Victorious Mon - Lp
 		pokeLevel = gPlayerParty[gBattleStruct->expGetterMonId].level;
 
-		//Pass Power Bonus - Not implemented
-		passPower = 1;
+		//Color Matching
+
+		//Define colors of both mons
+		u16 faint= gBattleMons[gBankFainted].species;
+		u16 fight= GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPECIES, NULL);
+
+		u8 faintC = gBaseStats[faint].bodyColor;
+		u8 fightC = gBaseStats[fight].bodyColor;
+
+		//Change color if Shiny
+		if(IsShinyOtIdPersonality(gBattleMons[gBankFainted].otId, gBattleMons[gBankFainted].personality)){
+			faintC = gBaseStats[faint].shinyColor;
+		}
+		if(IsShinyOtIdPersonality(GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_OT_ID, NULL),GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_PERSONALITY, NULL))){
+			faintC = gBaseStats[fight].shinyColor;
+		}
+		
+		// Change color based on type if you are under the effects of a Camo Battle, Camoflauge, Color Change or if you are a Pellet Posy holding a Pellet
+		u8 ColorChange = 100;
+		if(gStatuses3[gBankFainted] & STATUS3_COLORCHANGE){
+			ColorChange = gBattleMons[gBankFainted].type1;
+		}
+		if(faint == SPECIES_PELLETPOSY && ItemId_GetHoldEffect(gBattleMons[gBankFainted].item) == ITEM_EFFECT_PELLET){
+			ColorChange = ItemId_GetHoldEffectParam(gBattleMons[gBankFainted].item);
+		}
+			switch(ColorChange){
+				case TYPE_FIRE:
+				case TYPE_FIGHTING:
+					faintC=BODY_COLOR_RED;
+					break;
+				case TYPE_ROCK:
+				case TYPE_GROUND:
+					faintC=BODY_COLOR_BROWN;
+					break;
+				case TYPE_ELECTRIC:
+				case TYPE_BUG:
+				case TYPE_DRAGON:
+					faintC=BODY_COLOR_YELLOW;
+					break;
+				case TYPE_WATER:
+					faintC=BODY_COLOR_BLUE;
+					break;
+				case TYPE_GHOST:
+				case TYPE_POISON:
+					faintC=BODY_COLOR_PURPLE;
+					break;
+				case TYPE_PSYCHIC:
+				case TYPE_FAIRY:
+					faintC=BODY_COLOR_PINK;
+					break;
+				case TYPE_DARK:
+				case TYPE_MYSTERY:
+					faintC=BODY_COLOR_BLACK;
+					break;
+				case TYPE_FLYING:
+				case TYPE_ICE:
+					faintC=BODY_COLOR_CYAN;
+					break;
+				case TYPE_NORMAL:
+				case TYPE_STEEL:
+					faintC=BODY_COLOR_WHITE;
+					break;
+				case TYPE_GRASS:
+					faintC=BODY_COLOR_GREEN; 
+					break;
+			}
+		
+		ColorChange = 100;
+		if(gStatuses3[gBankFainted] & STATUS3_COLORCHANGE){
+			ColorChange = gBattleMons[gBankFainted].type1;
+		}
+		if(fight == SPECIES_PELLETPOSY && ItemId_GetHoldEffect(gPlayerParty[gBattleStruct->expGetterMonId].item) == ITEM_EFFECT_PELLET){
+			ColorChange = ItemId_GetHoldEffectParam(gPlayerParty[gBattleStruct->expGetterMonId].item);
+		}
+			switch(ColorChange){
+				case TYPE_FIRE:
+				case TYPE_FIGHTING:
+					fightC=BODY_COLOR_RED;
+					break;
+				case TYPE_ROCK:
+				case TYPE_GROUND:
+					fightC=BODY_COLOR_BROWN;
+					break;
+				case TYPE_ELECTRIC:
+				case TYPE_BUG:
+				case TYPE_DRAGON:
+					fightC=BODY_COLOR_YELLOW;
+					break;
+				case TYPE_WATER:
+					fightC=BODY_COLOR_BLUE;
+					break;
+				case TYPE_GHOST:
+				case TYPE_POISON:
+					fightC=BODY_COLOR_PURPLE;
+					break;
+				case TYPE_PSYCHIC:
+				case TYPE_FAIRY:
+					fightC=BODY_COLOR_PINK;
+					break;
+				case TYPE_DARK:
+				case TYPE_MYSTERY:
+					fightC=BODY_COLOR_BLACK;
+					break;
+				case TYPE_FLYING:
+				case TYPE_ICE:
+					fightC=BODY_COLOR_CYAN;
+					break;
+				case TYPE_NORMAL:
+				case TYPE_STEEL:
+					fightC=BODY_COLOR_WHITE;
+					break;
+				case TYPE_GRASS:
+					fightC=BODY_COLOR_GREEN;
+					break;
+			}
+
+		// Megacake is the color of all 3 -cake enemies. Must check both mons, and check for shiny
+		if(faintC == BODY_COLOR_TRIPLE){
+			switch (fightC){
+				case BODY_COLOR_BROWN:
+					faintC = BODY_COLOR_BROWN;
+					break;
+				case BODY_COLOR_YELLOW:
+					faintC = BODY_COLOR_YELLOW;
+					break;
+				case BODY_COLOR_CYAN:
+				case BODY_COLOR_THREAT:
+					faintC = BODY_COLOR_CYAN;
+					break;
+			}
+		}
+		if(faintC == BODY_COLOR_THREAT){
+			switch (fightC){
+				case BODY_COLOR_BLACK:
+					faintC = BODY_COLOR_BLACK;
+					break;
+				case BODY_COLOR_PINK:
+					faintC = BODY_COLOR_PINK;
+					break;
+				case BODY_COLOR_CYAN:
+				case BODY_COLOR_TRIPLE:
+					faintC = BODY_COLOR_CYAN;
+					break;
+			}
+		}
+		if(fightC == BODY_COLOR_TRIPLE){
+			switch (faintC){
+				case BODY_COLOR_BROWN:
+					fightC = BODY_COLOR_BROWN;
+					break;
+				case BODY_COLOR_YELLOW:
+					fightC = BODY_COLOR_YELLOW;
+					break;
+				case BODY_COLOR_CYAN:
+				case BODY_COLOR_THREAT:
+					fightC = BODY_COLOR_CYAN;
+					break;
+			}
+		}
+		if(fightC == BODY_COLOR_THREAT){
+			switch (faintC){
+				case BODY_COLOR_BLACK:
+					fightC = BODY_COLOR_BLACK;
+					break;
+				case BODY_COLOR_PINK:
+					fightC = BODY_COLOR_PINK;
+					break;
+				case BODY_COLOR_CYAN:
+				case BODY_COLOR_TRIPLE:
+					fightC = BODY_COLOR_CYAN;
+					break;
+			}
+		}
+		
+		//set passPower if color matching is successful, or if either mon uses the ONION color.
+
+		passPower = 10;
+		if(faintC == fightC || faintC == BODY_COLOR_ONION || fightC == BODY_COLOR_ONION){
+			passPower= 12;
+		}
 
 		//Affection Boost - f
 		affection = 10;
@@ -345,7 +523,7 @@ void atk23_getexp(void)
 			if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId])
 			||  CouldHaveEvolvedViaLevelUp(&gPlayerParty[gBattleStruct->expGetterMonId])
 			||  holdEffect == ITEM_EFFECT_LUCKY_EGG
-		    ||  MonGetsAffectionBoost(&gPlayerParty[gBattleStruct->expGetterMonId]))
+		    ||  MonGetsAffectionBoost(&gPlayerParty[gBattleStruct->expGetterMonId]) > 10)
 			{
 				// check if the pokemon doesn't belong to the player
 				if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gBattleStruct->expGetterMonId >= 3)
@@ -525,7 +703,7 @@ void atk23_getexp(void)
 		break;
 	}
 }
-
+//a = trainerBonus || t = tradeBonus || b = baseExp || e = eggBoost || L = defLevel || Lp = pokeLevel || p = color match || f = affection || v = evolutionBoost || s = divisor);
 static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f, u32 v, u32 s) {
 	u32 calculatedExp;
 
@@ -550,8 +728,26 @@ static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f
 		calculatedExp += 1;
 
 		calculatedExp = (udivsi(calculatedExp * t * e * v, 10 * 10 * 10) * p * f) / 10;
+
+
+
+				calculatedExp = (((b*L/5)*(a/10))/s);
+		calculatedExp = b*L*a;
+		calculatedExp2 = 50*s;
+		calculatedExp /= calculatedExp2;
+		calculatedExp1 = (2*L+10);
+		calculatedExp2 = abs(calculatedExp1 * calculatedExp1 * Sqrt(calculatedExp1));
+		calculatedExp *= calculatedExp2;
+		calculatedExp1 = (L+Lp+10);
+		calculatedExp2 = abs(calculatedExp1 * calculatedExp1 * Sqrt(calculatedExp1));
+		calculatedExp2++;
+		calculatedExp /= calculatedExp2;
+		calculatedExp1 = t*e*v*f*p;
+		calculatedExp *= calculatedExp1;
+		calculatedExp /= 100000;
 */
-		calculatedExp = ((b*L/5)*(a/10)*(1/s)*abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*(t*e*v*f/10000);
+		//calculatedExp = (((((b*L/5)*(a/10))/s)*abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*t*e*v*f*p)/100000;
+		calculatedExp=p;
 	#endif
 
 	if (IsRaidBattle())
@@ -603,19 +799,16 @@ static bool8 SomeoneOnTeamGetsExpFromExpShare(u8 bank, u8 sentIn)
 	return FALSE;
 }
 
-static bool8 MonGetsAffectionBoost(struct Pokemon* mon)
+static int MonGetsAffectionBoost(struct Pokemon* mon)
 {
-	if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 220)
-	{
-		#ifdef EXP_AFFECTION_BOOST
-			#ifdef UNBOUND
-			if (FlagGet(FLAG_SYS_GAME_CLEAR)) //Too OP before game end
-			#endif
-				return TRUE;
-		#endif
-	}
-
-	return FALSE;
+	if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100) 
+		{
+			if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 200) {
+				return 12;
+			}
+			return 11;
+		}
+	return 10;
 }
 
 static bool8 IsAffectedByHardLevelCap(unusedArg struct Pokemon* mon)

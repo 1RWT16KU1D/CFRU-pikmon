@@ -554,7 +554,7 @@ u8 GetBattleFacilityLevel(u8 tier)
 void UpdateTypesForCamomons(u8 bank)
 {
 	gBattleMons[bank].type1 = gBattleMoves[gBattleMons[bank].moves[0]].type;
-
+	gStatuses3[bank] &= ~(STATUS3_COLORCHANGE);
 	if (gBattleMons[bank].moves[1] != MOVE_NONE)
 		gBattleMons[bank].type2 = gBattleMoves[gBattleMons[bank].moves[1]].type;
 	else

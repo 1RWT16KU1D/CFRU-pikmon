@@ -5560,6 +5560,7 @@ void RecycleItem(u8 bank)
 
 void atkEB_settypetoterrain(void) {
 	u8 type = GetCamouflageType();
+	gStatuses3[gBankAttacker] &= ~(STATUS3_COLORCHANGE);
 
 	if (!IsOfType(gBankAttacker, type))
 	{

@@ -541,6 +541,7 @@ struct BaseStats
  /* 0x19 */ u8 bodyColor : 7;
             u8 noFlip : 1;
  /* 0x1A */	u8 hiddenAbility;
+            u8 shinyColor;
 };
 
 struct SpindaSpot
@@ -569,16 +570,19 @@ enum
 
 enum
 {
-    BODY_COLOR_RED,
+    BODY_COLOR_RED, 
     BODY_COLOR_BLUE,
     BODY_COLOR_YELLOW,
     BODY_COLOR_GREEN,
     BODY_COLOR_BLACK,
     BODY_COLOR_BROWN,
     BODY_COLOR_PURPLE,
-    BODY_COLOR_GRAY,
+    BODY_COLOR_CYAN,
     BODY_COLOR_WHITE,
-    BODY_COLOR_PINK
+    BODY_COLOR_PINK,
+    BODY_COLOR_TRIPLE,
+    BODY_COLOR_THREAT,
+    BODY_COLOR_ONION,
 };
 
 enum EvolutionMethods
