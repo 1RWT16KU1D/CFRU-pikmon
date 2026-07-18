@@ -5,15 +5,15 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-/*
-
 .global EventScript_TheImpactSite_LittleGirl
 
 .equ FLAG_WILD_CUSTOM_MOVES, 0x90B
 EventScript_TheImpactSite_LittleGirl:
+    lock
     faceplayer
 
-    lock
+    additem ITEM_BICYCLE 1
+/*
     additem ITEM_ROCKIUM_Z 1
     additem 0x323 1 @ITEM_GLOOMY_ROCK
     
@@ -36,8 +36,6 @@ EventScript_TheImpactSite_LittleGirl:
     setwildbattle 0x3 10 ITEM_NONE
     dowildbattle
 
-    msgboxtransparent gText_GreatBattle MSG_NORMAL
+    msgboxtransparent gText_GreatBattle MSG_NORMAL*/
     release
     end
-    
-*/
