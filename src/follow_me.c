@@ -34,6 +34,7 @@
 static u8 GetFollowerMapObjId(void);
 static u16 GetFollowerSprite(void);
 static void TryUpdateFollowerSpriteUnderwater(void);
+static void ResetFollowerIdleFrame(struct EventObject* follower);
 static void Task_ReallowPlayerMovement(u8 taskId);
 static u8 DetermineFollowerDirection(struct EventObject* player, struct EventObject* follower);
 static void PlayerLogCoordinates(struct EventObject* player);
@@ -269,6 +270,14 @@ static void TryUpdateFollowerSpriteUnderwater(void)
 	}
 }
 
+static void ResetFollowerIdleFrame(struct EventObject* follower)
+{
+	if (follower == NULL || follower->invisible)
+		return;
+
+	EventObjectTurn(follower, follower->facingDirection);
+}
+
 //Actual Follow Me
 void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 {
@@ -380,7 +389,9 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 	}
 
 RESET:
-	EventObjectClearHeldMovementIfFinished(follower);
+	if (EventObjectClearHeldMovementIfFinished(follower)
+	&& walkrun_is_standing_still())
+		ResetFollowerIdleFrame(follower);
 }
 
 static void Task_ReallowPlayerMovement(u8 taskId)
@@ -400,6 +411,9 @@ static void Task_ReallowPlayerMovement(u8 taskId)
 			SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
 		return;
 	}
+
+	if (walkrun_is_standing_still())
+		ResetFollowerIdleFrame(&gEventObjects[GetFollowerMapObjId()]);
 
 	gPlayerAvatar->preventStep = FALSE;
 	DestroyTask(taskId);

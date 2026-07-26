@@ -12,7 +12,6 @@ EventScript_TheImpactSite_LittleGirl:
     lock
     faceplayer
 
-    additem ITEM_BICYCLE 1
 /*
     additem ITEM_ROCKIUM_Z 1
     additem 0x323 1 @ITEM_GLOOMY_ROCK
@@ -37,5 +36,15 @@ EventScript_TheImpactSite_LittleGirl:
     dowildbattle
 
     msgboxtransparent gText_GreatBattle MSG_NORMAL*/
+
+    additem ITEM_BICYCLE 1
+
+    setvar 0x8004 0xF
+    special 0x62 @ Erase Party
+    givepokemon SPECIES_JUMBOBULBORB 40 ITEM_NONE 0 0 0
+    givepokemon SPECIES_TITANBLOWHOG 40 ITEM_NONE 0 0 0
+    givepokemon SPECIES_MASTERHOP 40 ITEM_NONE 0 0 0
+
+    msgbox gText_TheImpactSite_LittleGirl MSG_NORMAL
     release
     end

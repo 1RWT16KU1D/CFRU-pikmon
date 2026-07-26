@@ -98,4 +98,4 @@ for i, match in enumerate(pattern.finditer(species_defines)):
     raw_name = match.group(1)
     name = format_name(raw_name)
     hex_id = start_id_hex + i
-    print(f"    MON_OW_OBJECT_GRAPHICS({hex_id:X}, {name})")
+    print(f"    MON_OW_OBJECT_GRAPHICS_32({hex_id:X}, {name})")
