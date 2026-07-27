@@ -489,41 +489,6 @@ def main():
 
                     Hook(rom, code, offset, int(register))
 
-        # Read repoints from a file
-        if os.path.isfile(REPOINTS):
-            with open(REPOINTS, 'r') as repointList:
-                definesDict = {}
-                conditionals = []
-                for line in repointList:
-                    if TryProcessFileInclusion(line, definesDict):
-                        continue
-                    if TryProcessConditionalCompilation(line, definesDict, conditionals):
-                        continue
-                    if line.strip().startswith('#') or line.strip() == '':
-                        continue
-
-                    if len(line.split()) == 2:
-                        symbol, address = line.split()
-                        offset = int(address, 16) - 0x08000000
-                        try:
-                            code = table[symbol]
-                        except KeyError:
-                            print('Symbol missing:', symbol)
-                            continue
-
-                        Repoint(rom, code, offset)
-
-                    if len(line.split()) == 3:
-                        symbol, address, slide = line.split()
-                        offset = int(address, 16) - 0x08000000
-                        try:
-                            code = table[symbol]
-                        except KeyError:
-                            print('Symbol missing:', symbol)
-                            continue
-
-                        Repoint(rom, code, offset, int(slide))
-
         # Read routine repoints from a file
         if os.path.isfile(ROUTINE_POINTERS):
             with open(ROUTINE_POINTERS, 'r') as pointerlist:
@@ -569,6 +534,41 @@ def main():
                         continue
 
                     FunctionWrap(rom, code, offset, int(numParams), int(isReturning))
+
+        # Read repoints from a file
+        if os.path.isfile(REPOINTS):
+            with open(REPOINTS, 'r') as repointList:
+                definesDict = {}
+                conditionals = []
+                for line in repointList:
+                    if TryProcessFileInclusion(line, definesDict):
+                        continue
+                    if TryProcessConditionalCompilation(line, definesDict, conditionals):
+                        continue
+                    if line.strip().startswith('#') or line.strip() == '':
+                        continue
+
+                    if len(line.split()) == 2:
+                        symbol, address = line.split()
+                        offset = int(address, 16) - 0x08000000
+                        try:
+                            code = table[symbol]
+                        except KeyError:
+                            print('Symbol missing:', symbol)
+                            continue
+
+                        Repoint(rom, code, offset)
+
+                    if len(line.split()) == 3:
+                        symbol, address, slide = line.split()
+                        offset = int(address, 16) - 0x08000000
+                        try:
+                            code = table[symbol]
+                        except KeyError:
+                            print('Symbol missing:', symbol)
+                            continue
+
+                        Repoint(rom, code, offset, int(slide))
 
         # Insert Event Scripts
         if os.path.isfile(EVENT_SCRIPTS):
