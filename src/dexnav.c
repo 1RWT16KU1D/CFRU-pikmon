@@ -72,6 +72,7 @@ dexnav.c
 #define AREA_WATER 1
 
 extern const struct SwarmData gSwarmTable[];
+extern const u8 gLongMoveNames[][MOVE_NAME_LENGTH + 5];
 
 //External functions
 extern void sp09A_StopSounds(void);
@@ -1738,7 +1739,7 @@ static void DexNavDrawMove(u16 move, u8 searchLevel, u8* spriteIdAddr)
 	if (spriteId < MAX_SPRITES)
 	{
 		// Copy move string from table using state id, add '/' character to the end of it
-		u8* ptr = StringCopy(gStringVar4, gMoveNames[move]);
+		u8* ptr = StringCopy(gStringVar4, gLongMoveNames[move]);
 		u8 len = StringLength(gStringVar4);
 
 		if (searchLevel > 2)

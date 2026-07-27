@@ -48,6 +48,7 @@ tm_case.c
 */
 
 extern const u8 gMoveNames[][12 + 1];
+extern const u8 gLongMoveNames[][12 + 5];
 
 struct UnkStruct_203B10C
 {

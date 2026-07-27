@@ -810,7 +810,7 @@ u8 CanPokemonSelectedBeEnteredInBattleTower(void)
 
 //Field Moves///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-extern u8 gMoveNames[][MOVE_NAME_LENGTH + 1];
+extern u8 gLongMoveNames[][MOVE_NAME_LENGTH + 1];
 
 extern const u8 gMenuText_Move[];
 extern const u8 gText_FieldMoveDesc_RockClimb[];
@@ -873,21 +873,21 @@ struct
         [MENU_NICKNAME] = {gMenuText_NickName, CursorCb_Nickname},
 
         //Field Moves
-        [MENU_FIELD_MOVES + FIELD_MOVE_FLASH] =              {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_CUT] =                  {gMoveNames[MOVE_CUT], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_FLY] =                  {gMoveNames[MOVE_FLY], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_STRENGTH] =          {gMoveNames[MOVE_STRENGTH], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_SURF] =                  {gMoveNames[MOVE_SURF], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_SMASH] =  {gMoveNames[MOVE_ROCKSMASH], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_WATERFALL] =   {gMoveNames[MOVE_WATERFALL], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_TELEPORT] =          {gMoveNames[MOVE_TELEPORT], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_DIG] =                  {gMoveNames[MOVE_DIG], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK] =  {gMoveNames[MOVE_MILKDRINK], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED] = {gMoveNames[MOVE_SOFTBOILED], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gMoveNames[MOVE_SWEETSCENT], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_CLIMB] =  {gMoveNames[MOVE_ROCKCLIMB], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_DEFOG] =              {gMoveNames[MOVE_DEFOG], CursorCb_FieldMove},
-        [MENU_FIELD_MOVES + FIELD_MOVE_DIVE] =                   {gMoveNames[MOVE_DIVE], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_FLASH] =              {gLongMoveNames[MOVE_FLASH], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_CUT] =                  {gLongMoveNames[MOVE_CUT], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_FLY] =                  {gLongMoveNames[MOVE_FLY], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_STRENGTH] =          {gLongMoveNames[MOVE_STRENGTH], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_SURF] =                  {gLongMoveNames[MOVE_SURF], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_SMASH] =  {gLongMoveNames[MOVE_ROCKSMASH], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_WATERFALL] =   {gLongMoveNames[MOVE_WATERFALL], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_TELEPORT] =          {gLongMoveNames[MOVE_TELEPORT], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_DIG] =                  {gLongMoveNames[MOVE_DIG], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK] =  {gLongMoveNames[MOVE_MILKDRINK], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED] = {gLongMoveNames[MOVE_SOFTBOILED], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gLongMoveNames[MOVE_SWEETSCENT], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_CLIMB] =  {gLongMoveNames[MOVE_ROCKCLIMB], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_DEFOG] =              {gLongMoveNames[MOVE_DEFOG], CursorCb_FieldMove},
+        [MENU_FIELD_MOVES + FIELD_MOVE_DIVE] =                   {gLongMoveNames[MOVE_DIVE], CursorCb_FieldMove},
 };
 
 struct

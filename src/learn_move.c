@@ -19,7 +19,7 @@ learn_move.c
 	handles functions for pokemon trying to learn moves
 */
 
-extern const u8 gMoveNames[][MOVE_NAME_LENGTH + 1];
+extern const u8 gLongMoveNames[][MOVE_NAME_LENGTH + 1];
 extern const u8 PSSIconsTiles[];
 
 #ifdef EXPAND_MOVESETS
@@ -528,7 +528,7 @@ u8 GetRelearnableMoves(struct Pokemon* mon)
 	{
 		for (i = 0; i < numMoves; ++i)
 		{
-			StringCopy((void*) &gMoveRelearnerStruct->listMenuNames[i], gMoveNames[gMoveRelearnerStruct->moves[i]]);
+			StringCopy((void*) &gMoveRelearnerStruct->listMenuNames[i], gLongMoveNames[gMoveRelearnerStruct->moves[i]]);
 			gMoveRelearnerStruct->menuItems[i].name = (const u8*) &gMoveRelearnerStruct->listMenuNames[i];
 			gMoveRelearnerStruct->menuItems[i].id = i;
 		}

@@ -1397,11 +1397,11 @@ Play Rough
 #org @NAME_LONG_MOONBLAST
 Moonblast
 
-#org @NAME_LONG_DRAIN_KISS
-Drain Kiss
+#org @NAME_LONG_DRAINING_KISS
+Draining Kiss
 
 #org @NAME_LONG_DAZZLE_GLEAM
-Dazzle Gleam
+Dazzling Gleam
 
 #org @NAME_LONG_DISARM_CRY
 Disarm Cry
@@ -1716,7 +1716,7 @@ Hold Back
 Infestation
 
 #org @NAME_LONG_POWER_UP_PUNCH
-P-Up Punch
+Power Up Punch
 
 #org @NAME_LONG_THOUSAND_ARROWS
 Thousand Arrows
@@ -2004,7 +2004,7 @@ Embargo
 Fairy Lock
 
 #org @NAME_LONG_LIGHT_OF_RUIN
-Light of Rn
+Light of Ruin
 
 #org @NAME_LONG_TRUMP_CARD
 Trump Card
@@ -2022,7 +2022,7 @@ Quash
 Happy Hour
 
 #org @NAME_LONG_DOUBLE_IRON_BASH
-Db-Iron Bash
+Double Iron Bash
 
 #org @NAME_LONG_LAST_RESORT
 Last Resort
@@ -2037,7 +2037,7 @@ Celebrate
 Hold Hands
 
 #org @NAME_LONG_DYNAMAX_CANNON
-D-Max Cannon
+Dynamax Cannon
 
 #org @NAME_LONG_SNIPE_SHOT
 Snipe Shot
@@ -2070,7 +2070,7 @@ Octolock
 Bolt Beak
 
 #org @NAME_LONG_FISHIOUS_REND
-Fishious Rd
+Fishious Rend
 
 #org @NAME_LONG_COURT_CHANGE
 Court Change
@@ -2508,7 +2508,7 @@ Temper Flare
 Supercell Slam
 
 #org @NAME_LONG_PSYCHICNOISE
-Psychc Noise
+Psychic Noise
 
 // Custom Moves
 #org @NAME_LONG_ARCTIC_BLAST

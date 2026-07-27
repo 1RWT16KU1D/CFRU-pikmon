@@ -37,6 +37,7 @@ move_menu.c
 //Fix Heal Block + Pollen Puff on partner link battle
 
 extern const u8 gMoveNames[][MOVE_NAME_LENGTH + 1];
+extern const u8 gLongMoveNames[][MOVE_NAME_LENGTH + 5];
 extern const u8 gTypeNames[][TYPE_NAME_LENGTH + 1];
 extern const u8 gDynamaxMovePowers[MOVES_COUNT];
 extern const u8 sTargetIdentities[];
@@ -606,7 +607,7 @@ static void MoveNameToDisplayedStringBattle(u8 moveIndex)
 		StringCopy(gDisplayedStringBattle + 2, gMoveNames[moveInfo->possibleMaxMoves[moveIndex]]);
 	}
 	else
-		StringCopy(gDisplayedStringBattle, gMoveNames[moveInfo->moves[moveIndex]]);
+		StringCopy(gDisplayedStringBattle, gLongMoveNames[moveInfo->moves[moveIndex]]);
 }
 
 static void MoveSelectionDisplayMoveNames(void)

@@ -730,11 +730,7 @@ void LoadTMNameWithNo(u8* dst, u16 itemId)
 	StringAppend(gStringVar4, (void*) 0x846317C);
 	StringAppend(gStringVar4, (void*) 0x8416703);
 
-	if (StringLength(gMoveNames[ItemIdToBattleMoveId(itemId)]) == MOVE_NAME_LENGTH && tmNum > NUM_TMS)
-		StringAppendFullMoveName(gStringVar4, gLongMoveNames[ItemIdToBattleMoveId(itemId)]);
-	else
-		StringAppend(gStringVar4, gMoveNames[ItemIdToBattleMoveId(itemId)]);
-
+	StringAppendFullMoveName(gStringVar4, gLongMoveNames[ItemIdToBattleMoveId(itemId)]);
 	StringCopy(dst, gStringVar4);
 }
 

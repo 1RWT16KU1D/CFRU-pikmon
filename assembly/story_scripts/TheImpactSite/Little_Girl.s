@@ -36,6 +36,9 @@ EventScript_TheImpactSite_LittleGirl:
     dowildbattle
 
     additem ITEM_BICYCLE 1
+    additem ITEM_TM101 1
+    additem ITEM_TM102 1
+    additem ITEM_TM110 1
 /*
     setvar 0x8004 0xF
     special 0x62 @ Erase Party
