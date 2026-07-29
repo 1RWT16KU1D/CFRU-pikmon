@@ -1,3 +1,12 @@
+#org @gText_MenuPokemon
+Pikmon
+
+#org @gText_MenuPokedex
+Pok\edex
+
+#org @gText_MenuBag
+Bag
+
 #org @gText_MenuDexNav
 DexNav
 
@@ -11,7 +20,7 @@ Costume Box
 Pikmon List
 
 #org @gText_StartMenu_Cube
-Cube V3
+Bag
 
 #org @gText_StartMenu_Save
 Save Game

@@ -157,10 +157,10 @@ extern const u16 gFollowingMonPic_0009_MasterhopPal[255];
 //Shiny Pals
 extern const u16 gShinyFollowingMonPic_0001_BulborbLarvaPal[255];
 extern const u16 gShinyFollowingMonPic_0002_BulborbPal[255];
-extern const u16 gFollowingMonPic_0003_JumboBulborbPal[255];
-extern const u16 gFollowingMonPic_0004_FieryBlowletPal[255];
-extern const u16 gFollowingMonPic_0005_FieryBlowhogPal[255];
-extern const u16 gFollowingMonPic_0006_TitanBlowhogPal[255];
-extern const u16 gFollowingMonPic_0007_WolpolePal[255];
-extern const u16 gFollowingMonPic_0008_YellowWollyhopPal[255];
-extern const u16 gFollowingMonPic_0009_MasterhopPal[255];
+extern const u16 gShinyFollowingMonPic_0003_JumboBulborbPal[255];
+extern const u16 gShinyFollowingMonPic_0004_FieryBlowletPal[255];
+extern const u16 gShinyFollowingMonPic_0005_FieryBlowhogPal[255];
+extern const u16 gShinyFollowingMonPic_0006_TitanBlowhogPal[255];
+extern const u16 gShinyFollowingMonPic_0007_WolpolePal[255];
+extern const u16 gShinyFollowingMonPic_0008_YellowWollyhopPal[255];
+extern const u16 gShinyFollowingMonPic_0009_MasterhopPal[255];
