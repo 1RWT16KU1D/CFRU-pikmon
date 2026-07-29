@@ -5560,10 +5560,11 @@ void RecycleItem(u8 bank)
 
 void atkEB_settypetoterrain(void) {
 	u8 type = GetCamouflageType();
-	gStatuses3[gBankAttacker] &= ~(STATUS3_COLORCHANGE);
-
+	
 	if (!IsOfType(gBankAttacker, type))
 	{
+		gBattleMons[gBankAttacker].unknown=type+100;
+		//FadeBankPaletteForTera(gBankAttacker, type);
 		gBattleMons[gBankAttacker].type1 = type;
 		gBattleMons[gBankAttacker].type2 = type;
 		gBattleMons[gBankAttacker].type3 = TYPE_BLANK;

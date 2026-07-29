@@ -271,20 +271,21 @@ void atk23_getexp(void)
 
 		u8 faintC = gBaseStats[faint].bodyColor;
 		u8 fightC = gBaseStats[fight].bodyColor;
+		u8 ColorChange = 100;
 
 		//Change color if Shiny
 		if(IsShinyOtIdPersonality(gBattleMons[gBankFainted].otId, gBattleMons[gBankFainted].personality)){
 			faintC = gBaseStats[faint].shinyColor;
 		}
 		if(IsShinyOtIdPersonality(GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_OT_ID, NULL),GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_PERSONALITY, NULL))){
-			faintC = gBaseStats[fight].shinyColor;
+			fightC = gBaseStats[fight].shinyColor;
 		}
 		
 		// Change color based on type if you are under the effects of a Camo Battle, Camoflauge, Color Change or if you are a Pellet Posy holding a Pellet
-		u8 ColorChange = 100;
-		if(gStatuses3[gBankFainted] & STATUS3_COLORCHANGE){
-			ColorChange = gBattleMons[gBankFainted].type1;
+		if(gBattleMons[gBankFainted].unknown >= 100){
+			ColorChange = gBattleMons[gBankFainted].unknown -100;
 		}
+		
 		if(faint == SPECIES_PELLETPOSY && ItemId_GetHoldEffect(gBattleMons[gBankFainted].item) == ITEM_EFFECT_PELLET){
 			ColorChange = ItemId_GetHoldEffectParam(gBattleMons[gBankFainted].item);
 		}
@@ -329,11 +330,24 @@ void atk23_getexp(void)
 					faintC=BODY_COLOR_GREEN; 
 					break;
 			}
-		
 		ColorChange = 100;
-		if(gStatuses3[gBankFainted] & STATUS3_COLORCHANGE){
-			ColorChange = gBattleMons[gBankFainted].type1;
+		/*
+		//checks if on field, then finds mon's color change value if so
+		*/
+
+		if(gBattlerPartyIndexes[0]==gBattleStruct->expGetterMonId){
+			if(gBattleMons[0].unknown >= 100){
+				ColorChange = gBattleMons[0].unknown -100;
+			}
 		}
+		if(IsDoubleBattle){
+			if(gBattlerPartyIndexes[2]==gBattleStruct->expGetterMonId){
+				if(gBattleMons[2].unknown >= 100){
+					ColorChange = gBattleMons[2].unknown -100;
+				}
+			}
+		}
+
 		if(fight == SPECIES_PELLETPOSY && ItemId_GetHoldEffect(gPlayerParty[gBattleStruct->expGetterMonId].item) == ITEM_EFFECT_PELLET){
 			ColorChange = ItemId_GetHoldEffectParam(gPlayerParty[gBattleStruct->expGetterMonId].item);
 		}
@@ -441,13 +455,11 @@ void atk23_getexp(void)
 
 		passPower = 10;
 		if(faintC == fightC || faintC == BODY_COLOR_ONION || fightC == BODY_COLOR_ONION){
-			passPower= 12;
+			passPower = 12;
 		}
 
 		//Affection Boost - f
-		affection = 10;
-		if (MonGetsAffectionBoost(&gPlayerParty[gBattleStruct->expGetterMonId]))
-			affection = 12;
+		affection = MonGetsAffectionBoost(&gPlayerParty[gBattleStruct->expGetterMonId]);
 
 		//Evolution Boost - v
 		evolutionBoost = 10;
@@ -746,8 +758,8 @@ static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f
 		calculatedExp *= calculatedExp1;
 		calculatedExp /= 100000;
 */
-		//calculatedExp = (((((b*L/5)*(a/10))/s)*abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*t*e*v*f*p)/100000;
-		calculatedExp=p;
+//		calculatedExp = (((((b*L/5)*(a/10))/s)*abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*t*e*v*f*p)/100000;
+		calculatedExp = (((((b*L*a))/(s*50))  *abs(Sqrt(2*L+10)*(2*L+10)*(2*L+10))/abs(Sqrt(L+Lp+10)*(L+Lp+10)*(L+Lp+10))+1)*t*e*v*f*p)/100000;
 	#endif
 
 	if (IsRaidBattle())
@@ -801,9 +813,12 @@ static bool8 SomeoneOnTeamGetsExpFromExpShare(u8 bank, u8 sentIn)
 
 static int MonGetsAffectionBoost(struct Pokemon* mon)
 {
-	if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100) 
+	if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 1500) 
 		{
 			if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 200) {
+				if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 255) {
+					return 15;
+				}
 				return 12;
 			}
 			return 11;
@@ -1064,7 +1079,10 @@ static void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 			case SPECIES_SPECTRALID_ELECTRIC:
 			case SPECIES_SPECTRALID_UNMARKEDPURPLE:
 			case SPECIES_SPECTRALID_HEY1:
-				evIncrease = 4;
+				evIncrease *= 4;
+				break;
+			case SPECIES_SMOKYPROGG_MASTER:
+				evIncrease *= 6;
 				break;
 			case SPECIES_NAMAPONGASHI:
 				evIncrease *= 100;

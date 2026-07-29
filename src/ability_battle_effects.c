@@ -1985,7 +1985,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				#endif
 				)
 				{
-					gStatuses3[gBankAttacker] &= ~(STATUS3_COLORCHANGE);
+					gBattleMons[bank].unknown=moveType+100;
+					//FadeBankPaletteForTera(bank, moveType);
 					SET_BATTLER_TYPE(bank, moveType);
 					PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
 					BattleScriptPushCursor();

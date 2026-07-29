@@ -4365,6 +4365,100 @@ static const struct LevelUpMove sWideMouthedAnodeBeetleLevelUpLearnset[] = {
 	LEVEL_UP_END
 };
 
+static const struct LevelUpMove sSkeleminLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sMoyaiminLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sCockatriceLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sBupborbLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sDwarfKermitLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sBulblaxLarvaLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sCoalBeetleLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sHeavyCannonLarvaLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sCrewmateLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sImposterLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sApacheLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sMorshubugLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sSkitterjuanaLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sWahpoleLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sWaluigiwogLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sStephanLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sLinkgretLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sOlimanAtLegsLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sBulbeelLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sIwagenLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove s128MariosLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sFiddleheadLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sHorsetailLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sSpotcapLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sKingcapLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sBulbieLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sSlugcatLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sPinkElebitLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sPrimalAspidLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sChibiRoboLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+static const struct LevelUpMove sPikachuLevelUpLearnset[] = {
+	LEVEL_UP_END
+};
+
 const struct LevelUpMove* const gLevelUpLearnsets[NUM_SPECIES] =
 {
 	[SPECIES_NONE] = sEmptyMoveset,
@@ -4693,5 +4787,93 @@ const struct LevelUpMove* const gLevelUpLearnsets[NUM_SPECIES] =
 	[SPECIES_FREEZECAKE] = sFreezecakeLevelUpLearnset,
 	[SPECIES_SHOCKCAKE] = sShockcakeLevelUpLearnset,
 	[SPECIES_WIDEMOUTHEDANODEBEETLE] = sWideMouthedAnodeBeetleLevelUpLearnset,
-	[SPECIES_DECORATEDCANNONBEETLE] = sDecoratedCannonBeetleLevelUpLearnset
+	[SPECIES_DECORATEDCANNONBEETLE] = sDecoratedCannonBeetleLevelUpLearnset,
+	[SPECIES_REDPIKMIN_VETERAN_MEGA] = sRedPikminLevelUpLearnset,
+	
+	[SPECIES_SKELEMIN] =    sSkeleminLevelUpLearnset,
+	[SPECIES_SKELEMIN_MEGA] =    sSkeleminLevelUpLearnset,
+	[SPECIES_MOYAIMIN] =    sMoyaiminLevelUpLearnset,
+	[SPECIES_MOYAIMIN_MEGA] =    sMoyaiminLevelUpLearnset,
+	[SPECIES_COCKATRICE] =    sCockatriceLevelUpLearnset,
+	[SPECIES_BUPBORB] =    sBupborbLevelUpLearnset,
+	[SPECIES_DWARFKERMIT] =    sDwarfKermitLevelUpLearnset,
+	[SPECIES_BULBLAXLARVA] =    sBulblaxLarvaLevelUpLearnset,
+	[SPECIES_COALBEETLE] =    sCoalBeetleLevelUpLearnset,
+	[SPECIES_HEAVYCANNONLARVA] =    sHeavyCannonLarvaLevelUpLearnset,
+	[SPECIES_CREWMATE] =    sCrewmateLevelUpLearnset,
+	[SPECIES_IMPOSTER] =    sImposterLevelUpLearnset,
+	[SPECIES_APACHE] =    sApacheLevelUpLearnset,
+	[SPECIES_MORSHUBUG] =    sMorshubugLevelUpLearnset,
+	[SPECIES_SKITTERJUANA] =    sSkitterjuanaLevelUpLearnset,
+	[SPECIES_WAHPOLE] =    sWahpoleLevelUpLearnset,
+	[SPECIES_WALUIGIWOG] =    sWaluigiwogLevelUpLearnset,
+	[SPECIES_STEPHAN] =    sStephanLevelUpLearnset,
+	[SPECIES_LINKGRET] =    sLinkgretLevelUpLearnset,
+	[SPECIES_OLIMANATLEGS] =    sOlimanAtLegsLevelUpLearnset,
+	[SPECIES_BULBEEL] =    sBulbeelLevelUpLearnset,
+	[SPECIES_IWAGEN] =    sIwagenLevelUpLearnset,
+	[SPECIES_128MARIOS] =    s128MariosLevelUpLearnset,
+	[SPECIES_FIDDLEHEAD] =    sFiddleheadLevelUpLearnset,
+	[SPECIES_HORSETAIL] =    sHorsetailLevelUpLearnset,
+	[SPECIES_SPOTCAP] =    sSpotcapLevelUpLearnset,
+	[SPECIES_KINGCAP] =    sKingcapLevelUpLearnset,
+	[SPECIES_BULBIE] =    sBulbieLevelUpLearnset,
+	[SPECIES_SLUGCAT] =    sSlugcatLevelUpLearnset,
+	[SPECIES_PINKELEBIT] =    sPinkElebitLevelUpLearnset,
+	[SPECIES_PRIMALASPID] =    sPrimalAspidLevelUpLearnset,
+	[SPECIES_CHIBIROBO] =    sChibiRoboLevelUpLearnset,
+	[SPECIES_PIKACHU] =    sPikachuLevelUpLearnset,
+
+	[MURAL_WHISKERPILLAR_MEGAB] =   sEmptyMoveset,
+	[MURAL_WHISKERPILLAR_MEGAS] =   sEmptyMoveset,
+	[MURAL_PETEYPIRANNHA] =   sEmptyMoveset,
+	[MURAL_TOYPIKMIN_RED] =   sEmptyMoveset,
+	[MURAL_TOYPIKMIN_YELLOW] =   sEmptyMoveset,
+	[MURAL_TOYPIKMIN_BLUE] =   sEmptyMoveset,
+	[MURAL_PIKI_MALE] =   sEmptyMoveset,
+	[MURAL_PIKI_FEMALE] =   sEmptyMoveset,
+	[MURAL_DEMOF] =   sEmptyMoveset,
+	[MURAL_DEMOG] =   sEmptyMoveset,
+	[MURAL_DEMOI] =   sEmptyMoveset,
+	[MURAL_DEMOW] =   sEmptyMoveset,
+	[MURAL_USUALSUSPECT] =   sEmptyMoveset,
+	[MURAL_METEOR] =   sEmptyMoveset,
+	[MURAL_CHERRY] =   sEmptyMoveset,
+	[MURAL_FIERYYOUNGYELLOWWOLLYHOP] =   sEmptyMoveset,
+	[MURAL_HOTELTRANSYLVANIA] =   sEmptyMoveset,
+	[MURAL_HONEYWISP_MEGA] =   sEmptyMoveset,
+	[MURAL_CALYREX] =   sEmptyMoveset,
+	[MURAL_SKELEMIN] =   sEmptyMoveset,
+	[MURAL_SKELEMIN_MEGA] =   sEmptyMoveset,
+	[MURAL_MOYAIMIN] =   sEmptyMoveset,
+	[MURAL_MOYAIMIN_MEGA] =   sEmptyMoveset,
+	[MURAL_COCKATRICE] =   sEmptyMoveset,
+	[MURAL_BUPBORB] =   sEmptyMoveset,
+	[MURAL_DWARFKERMIT] =   sEmptyMoveset,
+	[MURAL_BULBLAXLARVA] =   sEmptyMoveset,
+	[MURAL_COALBEETLE] =   sEmptyMoveset,
+	[MURAL_HEAVYCANNONLARVA] =   sEmptyMoveset,
+	[MURAL_CREWMATE] =   sEmptyMoveset,
+	[MURAL_IMPOSTER] =   sEmptyMoveset,
+	[MURAL_APACHE] =   sEmptyMoveset,
+	[MURAL_MORSHUBUG] =   sEmptyMoveset,
+	[MURAL_SKITTERJUANA] =   sEmptyMoveset,
+	[MURAL_WAHPOLE] =   sEmptyMoveset,
+	[MURAL_WALUIGIWOG] =   sEmptyMoveset,
+	[MURAL_STEPHAN] =   sEmptyMoveset,
+	[MURAL_LINKGRET] =   sEmptyMoveset,
+	[MURAL_OLIMANATLEGS] =   sEmptyMoveset,
+	[MURAL_BULBEEL] =   sEmptyMoveset,
+	[MURAL_IWAGEN] =   sEmptyMoveset,
+	[MURAL_128MARIOS] =   sEmptyMoveset,
+	[MURAL_FIDDLEHEAD] =   sEmptyMoveset,
+	[MURAL_HORSETAIL] =   sEmptyMoveset,
+	[MURAL_SPOTCAP] =   sEmptyMoveset,
+	[MURAL_KINGCAP] =   sEmptyMoveset,
+	[MURAL_BULBIE] =   sEmptyMoveset,
+	[MURAL_SLUGCAT] =   sEmptyMoveset,
+	[MURAL_PINKELEBIT] =   sEmptyMoveset,
+	[MURAL_PRIMALASPID] =   sEmptyMoveset,
+	[MURAL_CHIBIROBO] =   sEmptyMoveset,
+	[MURAL_PIKACHU] =   sEmptyMoveset,
 };
