@@ -561,15 +561,6 @@ VeryTallGrassFix:
 	ldrh r0, [r3, #0x4]
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Triple Layer Blocks
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-.org 0x9B868, 0xFF
-	.byte 0x2
-	
-.org 0x9B86E, 0xFF
-	.byte 0x2f, 0xd0
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ More OW Sprites
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .org 0x9EF68, 0xFF
@@ -802,15 +793,6 @@ SummaryScreenExpDisplay2:
 
 .org 0x1d9895, 0xff		@don't load sand palette on healing
 	.byte 0x7, 0x9c, 0xbe, 0x3c, 0x8, 0x8d, 0x3b, 0x8, 0x8, 0x4
-	
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ Triple Layer Blocks
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-.org 0x352F0B, 0xFF
-	.byte 0x70
-	
-.org 0x352F16, 0xFF
-	.byte 0x1C
 	
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Multichoice Pointers

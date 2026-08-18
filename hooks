@@ -682,9 +682,6 @@ MoveReminderHook_FixDataLoading 080E54D0 1
 MoveReminderHook_FixWindowTemplates 080E46B4 0
 MoveReminderHook_AddSplitIcon 080E5434 0
 
-##Triple Layer Blocks
-DrawBlockHook 0805A9B8 1
-
 ##Expand Coins
 GetCoins 080D0554 0
 SetCoins 080D057C 1
