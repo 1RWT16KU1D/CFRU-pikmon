@@ -34,6 +34,7 @@
 #include "../include/random.h"
 #include "../include/string_util.h"
 
+#ifdef TERASTAL_FEATURE
 const u16 gTeraBlendColors[] =
 {
     [TYPE_NORMAL]   = RGB(25, 25, 25),  // Light Gray           White
@@ -67,7 +68,7 @@ void FadeBankPaletteForTera(u8 bank, u16 paletteOffset)
 	CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);
 }
 
-#ifdef TERASTAL_FEATURE
+
 // Exported Functions
 extern u16 VarGet(u16 var);
 extern bool8 VarSet(u16 var, u16 value);
