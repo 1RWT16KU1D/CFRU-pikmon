@@ -21,7 +21,9 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Grass:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if greaterorequal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    spriteface OLIMAR look_down
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    waitmovement WAIT_LATEST
+
     setvar VarTemp1 SPECIES_BULBORBLARVA
     setvar VarTemp2 BLOOMINGONION_FIRE
     setvar VarTemp3 SPECIES_FIERYBLOWLET
@@ -35,7 +37,9 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Fire:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    spriteface OLIMAR look_down
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    waitmovement WAIT_LATEST
+
     setvar VarTemp1 SPECIES_FIERYBLOWLET
     setvar VarTemp2 BLOOMINGONION_WATER
     setvar VarTemp3 SPECIES_WOLPOLE
@@ -49,16 +53,18 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Water:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    spriteface OLIMAR look_down
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    waitmovement WAIT_LATEST
+
     setvar VarTemp1 SPECIES_WOLPOLE
     setvar VarTemp2 BLOOMINGONION_GRASS
-    setvar VarTemp3 SPECIES_BULBORB
+    setvar VarTemp3 SPECIES_BULBORBLARVA
     showpokepic VarTemp1 10 3
     
     goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_ShowStarterAndContinue
 
 EventScript_TheImpactSite_ResearchLab_BloomingOnion_ShowStarterAndContinue:
-    comparevartovalue VarTemp1 SPECIES_BULBORB
+    comparevartovalue VarTemp1 SPECIES_BULBORBLARVA
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_ContinueWithBulborbLarva
     comparevartovalue VarTemp1 SPECIES_FIERYBLOWLET
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_ContinueWithFieryBlowlet
@@ -104,9 +110,16 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_GivePikmonAndNickname:
     msgbox gText_TheImpactSite_ResearchLab_BloomingOnion_NicknamePopup MSG_YESNO
     compare LASTRESULT YES
     if TRUE _call EventScript_TheImpactSite_ResearchLab_BloomingOnion_DoNickname
-    goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon
 
+@ Intentional Fallthrough
 EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon:
+    comparevartovalue VarTemp1 SPECIES_BULBORBLARVA
+    if TRUE _call EventScript_TheImpactSite_ResearchLab_OlimarFieryBlowletMovement
+    comparevartovalue VarTemp1 SPECIES_FIERYBLOWLET
+    if TRUE _call EventScript_TheImpactSite_ResearchLab_OlimarWolpoleMovement
+    comparevartovalue VarTemp1 SPECIES_WOLPOLE
+    if TRUE _call EventScript_TheImpactSite_ResearchLab_OlimarBulborbLarvaMovement
+
     textcolor TEXTCOLOR_BLUE
     msgbox gText_TheImpactSite_ResearchLab_BloomingOnion_ExcellentChoice MSG_KEEPOPEN
     hidesprite VarTemp2
@@ -115,17 +128,32 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon:
     textcolor TEXTCOLOR_BLACK
     preparemsg gText_TheImpactSite_ResearchLab_BloomingOnion_OlimarReceivedPikmon
     waitmsg
-    fanfare 0x13E
+    fanfare 0x13E @ Received Key Item Sound Effect
     waitfanfare
 
     setvar StoryEventVar1 ResearchLabChosenStarter
     release
     end
 
-EventScript_TheImpactSite_ResearchLab_BloomingOnion_DoNickname:
-    special 0x9E
-    waitstate
+EventScript_TheImpactSite_ResearchLab_OlimarFieryBlowletMovement:
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseFieryBlowlet
+    waitmovement WAIT_LATEST
     return
+
+EventScript_TheImpactSite_ResearchLab_OlimarWolpoleMovement:
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole
+    waitmovement WAIT_LATEST
+    return
+
+EventScript_TheImpactSite_ResearchLab_OlimarBulborbLarvaMovement:
+    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseBulborbLarva
+    waitmovement WAIT_LATEST
+    return
+
+EventScript_TheImpactSite_ResearchLab_BloomingOnion_DoNickname:
+    special 0x9E @ Nickname Screen
+    waitstate
+    goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon
 
 EventScript_TheImpactSite_ResearchLab_BloomingOnion_HidePokepicAndEnd:
     hidepokepic
@@ -136,3 +164,35 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon:
     msgbox gText_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon MSG_KEEPOPEN
     release
     end
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.align 1
+gMovement_TheImpactSite_ResearchLab_OlimarFaceRight:
+    .byte look_right
+    .byte end_m
+
+gMovement_TheImpactSite_ResearchLab_OlimarChooseFieryBlowlet:
+    .byte walk_down
+    .byte walk_down
+    .byte walk_right
+    .byte walk_right
+    .byte walk_right
+    .byte walk_up
+    .byte end_m
+
+gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole:
+    .byte walk_down
+    .byte walk_down
+    .byte walk_right
+    .byte walk_right
+    .byte walk_right
+    .byte walk_right
+    .byte walk_up
+    .byte end_m
+
+gMovement_TheImpactSite_ResearchLab_OlimarChooseBulborbLarva:
+    .byte walk_down
+    .byte walk_right
+    .byte walk_right
+    .byte look_up
+    .byte end_m
