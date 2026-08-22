@@ -35,6 +35,7 @@
 .equ LASTRESULT, 0x800D
 .equ CHOSEN_ITEM, 0x800E
 .equ LASTTALKED, 0x800F
+.equ WAIT_LATEST, 0x0
 
 .equ look_down, 0x0
 .equ look_up, 0x1
@@ -257,9 +258,10 @@
 .equ TEXTCOLOR_RED, 0x1
 .equ TEXTCOLOR_BLACK, 0x2
 
-@@ Story Trackers
+@@@@@@@@@@@@@@@@@@@@@@ Story Trackers @@@@@@@@@@@@@@@@@@@@@@
 .equ StoryEventVar1, 0x4057
 
+@ Intro Scene
 .equ IntroSceneStart, 0x0
 .equ IntroScenePikmin, 0x1
 .equ IntroScenePikminHelped, 0x2
@@ -271,3 +273,8 @@
 .equ IntroSceneWorldOfPikmin, 0x8
 .equ IntroSceneWarpToRoom, 0x9
 .equ IntroSceneWarpedToRoom, 0xA
+
+@ Inside Research Lab
+.equ ResearchLabEnteredFirstTime, 0xB
+.equ ResearchLabToChooseStarter, 0xC
+.equ ResearchLabChosenStarter, 0xD

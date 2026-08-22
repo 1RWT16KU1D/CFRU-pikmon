@@ -192,6 +192,7 @@ LevelScript_IntroScene_NameAndWarpPlayerToRoom:
     end
 
 End:
+    releaseall
     end
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1,0 +1,20 @@
+#org @gText_Name_Olimar
+[BLUE]Olimar
+
+#org @gText_TheImpactSite_ResearchLab_ShipDeliveredPlayerToOlimar
+[PLAYER] is finally here.\nCan I do something else now?
+
+#org @gText_TheImpactSite_ResearchLab_OlimarWantsToShowPlayerSomething
+Oh, [PLAYER]! I'm so glad you accepted\nmy invitation! Come, come. I need\lto show you something.
+
+#org @gText_TheImpactSite_ResearchLab_ShipWantsToLeave
+Ahem, may I go now[.]?
+
+#org @gText_TheImpactSite_ResearchLab_OlimarBloomingOnionInvention
+This is the invention I mentioned in\nmy message.\pMy proudest accomplishment[.]\pThe [RED]Blooming Onion[BLUE]!
+
+#org @gText_TheImpactSite_ResearchLab_OlimarAsksPlayerAboutBloomingOnionInside
+I'm sure you know what these\ncontain, right?
+
+#org @gText_TheImpactSite_ResearchLab_OlimarTakeSilenceAsYesGoAndPickStarter
+I'll take your silence as a yes!\nNow go ahead and pick one!\pI'd like to formally introduce these\n'Pikmon' to you.
