@@ -240,8 +240,6 @@ FieldEffectScript_Explosion 081D977C
 FieldEffectScript_Sparkle 081D9784
 FieldEffectScript_UseRockClimb 081D9788
 FieldEffectScript_RockClimbDust 081D978C
-Wav_grass_footstep_sample 0848EE14
-Wav_sand_footstep_sample 0848EE20
 
 #ifdef UNBOUND
 gFieldEffectObjectImageAnim_ShakingGrass 83A5A2C

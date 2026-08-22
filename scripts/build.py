@@ -48,7 +48,7 @@ else:  # Linux, OSX, etc.
     LD = PREFIX + 'ld'
     GR = "grit"
     WAV2AGB = 'deps/wav2agb'
-    MID2AGB = 'deps/mid2agb'
+    MID2AGB = ['wine', 'deps/mid2agb.exe']
     OBJCOPY = PREFIX + 'objcopy'
 
 SRC = './src'
@@ -96,7 +96,11 @@ class Master:
 def RunCommand(cmd: [str]):
     """Runs the command line command."""
     try:
-        subprocess.check_output(cmd)
+        env = None
+        if cmd[0] == 'wine':
+            env = os.environ.copy()
+            env['WINEDEBUG'] = '-all'
+        subprocess.check_output(cmd, env=env)
     except subprocess.CalledProcessError as e:
         try:
             print(e.output.decode(), file=sys.stderr)
@@ -375,7 +379,15 @@ def ProcessMusic(midiFile: str) -> str:
     except FileNotFoundError:
         pass
 
-    cmd = [MID2AGB, midiFile, assemblyFile] + flags
+    if sys.platform.startswith('win'):
+        musicCommand = [MID2AGB, midiFile, assemblyFile]
+    else:
+        musicCommand = MID2AGB + [
+            subprocess.check_output(['winepath', '-w', midiFile], text=True).strip(),
+            subprocess.check_output(['winepath', '-w', assemblyFile], text=True).strip()
+        ]
+
+    cmd = musicCommand + flags
 
     return DoMiddleManAssembly(midiFile, assemblyFile, flagFile, flags, cmd,
                                MakeOutputMusicFile, Master.printCompilingMusic, True)
