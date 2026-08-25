@@ -4,12 +4,9 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
+.include "story_scripts/TheImpactSite/Research_Lab/event_defines.s"
 
 .global MapScript_ResearchLab
-
-@ Defines for this file
-.equ SHIP, 4
-.equ OLIMAR, 8
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 MapScript_ResearchLab:
@@ -20,14 +17,21 @@ MapScript_ResearchLab:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 MapEntryScript_ResearchLab_OnTransition:
     comparevartovalue StoryEventVar1 ResearchLabEnteredFirstTime
-    if notequal _call MapEntryScript_ResearchLab_ReadyToChooseStarter
+    if lessthan _call MapEntryScript_ResearchLab_ReadyToChooseStarter
+
+    comparevartovalue StoryEventVar1 ResearchLabChosenStarter
+    if greaterorequal _call MapEntryScript_ResearchLab_HideShip
     end
 
 MapEntryScript_ResearchLab_ReadyToChooseStarter:
     setvar StoryEventVar1 ResearchLabEnteredFirstTime
-    setobjectxyperm SHIP 6 11
-    spritebehave SHIP look_up
+    setobjectxyperm LOCALID_SHIP 6 11
+    spritebehave LOCALID_SHIP look_up
     savebgm 302 @ MUS_OAK
+    return
+
+MapEntryScript_ResearchLab_HideShip:
+    setflag 0x2B @ FLAG_HIDE_SHIP
     return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -41,16 +45,16 @@ LevelScript_ResearchLab_ChooseStarterScene:
     textcolor TEXTCOLOR_BLUE
 
     compare StoryEventVar1 ResearchLabToChooseStarter
-    if equal _goto End
+    if greaterorequal _goto End
 
-    applymovement SHIP gMovement_TheImpactSite_ResearchLab_ShipWalkUp5StepsLookLeft
+    applymovement LOCALID_SHIP gMovement_TheImpactSite_ResearchLab_ShipWalkUp5StepsLookLeft
     waitmovement WAIT_LATEST
 
-    hidesprite SHIP
-    setobjectxyperm SHIP 5 6
+    hidesprite LOCALID_SHIP
+    setobjectxyperm LOCALID_SHIP 5 6
 
-    spritebehave SHIP 0x7
-    spritebehave OLIMAR 0x7
+    spritebehave LOCALID_SHIP 0x7
+    spritebehave LOCALID_OLIMAR 0x7
     clearflag 0x2B @ FLAG_HIDE_SHIP_IN_LAB
 
     applymovement PLAYER gMovement_TheImpactSite_ResearchLab_PlayerWalkUp6Steps
@@ -60,13 +64,13 @@ LevelScript_ResearchLab_ChooseStarterScene:
     playsong2 0x12E
     fadedefault
 
-    applymovement SHIP gMovement_TheImpactSite_ResearchLab_OlimarWalkUpOnSpotFast
+    applymovement LOCALID_SHIP gMovement_TheImpactSite_ResearchLab_OlimarWalkUpOnSpotFast
     waitmovement WAIT_LATEST
     minimsgbox gText_Name_Ship gText_TheImpactSite_ResearchLab_ShipDeliveredPlayerToOlimar MSG_KEEPOPEN
     closeonkeypress
 
     pause 60
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_ShipWalkDownOnSpotFast
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_ShipWalkDownOnSpotFast
     waitmovement WAIT_LATEST
 
     minimsgbox gText_Name_Olimar gText_TheImpactSite_ResearchLab_OlimarWantsToShowPlayerSomething MSG_KEEPOPEN
@@ -74,16 +78,16 @@ LevelScript_ResearchLab_ChooseStarterScene:
     pause 30
 
     minimsgbox gText_Name_Ship gText_TheImpactSite_ResearchLab_ShipWantsToLeave MSG_KEEPOPEN
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarWalkRightOnSpotFast
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarWalkRightOnSpotFast
     waitmovement WAIT_LATEST
 
     minimsgbox gText_Name_Olimar gText_TheImpactSite_ResearchLab_OlimarBloomingOnionInvention MSG_KEEPOPEN
     pause 60
 
-    applymovement SHIP gMovement_TheImpactSite_ResearchLab_ShipWalkDown8StepsAndHide
+    applymovement LOCALID_SHIP gMovement_TheImpactSite_ResearchLab_ShipWalkDown8StepsAndHide
     waitmovement WAIT_LATEST
 
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarWalkDownOnSpotFast
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarWalkDownOnSpotFast
     waitmovement WAIT_LATEST
 
     minimsgbox gText_Name_Olimar gText_TheImpactSite_ResearchLab_OlimarAsksPlayerAboutBloomingOnionInside MSG_KEEPOPEN

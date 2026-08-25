@@ -8,47 +8,47 @@
 .equ SHIP, 3
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-.global EventScript_TheImpactSite_OlimarTilescript
-EventScript_TheImpactSite_OlimarTilescript:
+.global EventScript_TheImpactSite_ShipTilescript
+EventScript_TheImpactSite_ShipTilescript:
     lockall
     checkflag 0x00C7
-    if SET _goto EventScript_TheImpactSite_OlimarTilescript_6
+    if SET _goto EventScript_TheImpactSite_ShipTilescript_6
 
     setvar VarTemp1 1
-    goto EventScript_TheImpactSite_OlimarTilescript_1
+    goto EventScript_TheImpactSite_ShipTilescript_1
     end
 
-EventScript_TheImpactSite_OlimarTilescript_1:
+EventScript_TheImpactSite_ShipTilescript_1:
     pause 30
     showsprite SHIP
     comparevartovalue VarTemp1 0x0
-    if equal _call EventScript_TheImpactSite_OlimarTilescript_2
+    if equal _call EventScript_TheImpactSite_ShipTilescript_2
     comparevartovalue VarTemp1 0x1
-    if equal _call EventScript_TheImpactSite_OlimarTilescript_3
+    if equal _call EventScript_TheImpactSite_ShipTilescript_3
     pause 30
     textcolor TEXTCOLOR_BLUE
-    minimsgbox gText_Name_Ship gText_TheImpactSite_OlimarTilescript_1 MSG_KEEPOPEN
+    minimsgbox gText_Name_Ship gText_TheImpactSite_ShipTilescript_1 MSG_KEEPOPEN
     closeonkeypress
     pause 10
     
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_1
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_1
     waitmovement SHIP
     pause 10
 
-    minimsgbox gText_Name_Ship gText_TheImpactSite_OlimarTilescript_2 MSG_KEEPOPEN
+    minimsgbox gText_Name_Ship gText_TheImpactSite_ShipTilescript_2 MSG_KEEPOPEN
     closeonkeypress
     pause 30
 
     comparevartovalue VarTemp1 0x0
-    if equal _call EventScript_TheImpactSite_OlimarTilescript_4
+    if equal _call EventScript_TheImpactSite_ShipTilescript_4
     comparevartovalue VarTemp1 0x1
-    if equal _call EventScript_TheImpactSite_OlimarTilescript_5
+    if equal _call EventScript_TheImpactSite_ShipTilescript_5
 
     setdooropen 16 13
     waitdooranim
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_2
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_2
     waitmovement SHIP
-    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_2
+    applymovement PLAYER gMovement_TheImpactSite_ShipTilescript_2
     waitmovement PLAYER
     setdoorclosed 16 13
     waitdooranim
@@ -64,45 +64,45 @@ EventScript_TheImpactSite_OlimarTilescript_1:
     releaseall
     end
 
-EventScript_TheImpactSite_OlimarTilescript_2:
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_3
+EventScript_TheImpactSite_ShipTilescript_2:
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_3
     waitmovement SHIP
     return
 
-EventScript_TheImpactSite_OlimarTilescript_3:
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_3
+EventScript_TheImpactSite_ShipTilescript_3:
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_3
     waitmovement SHIP
     return
 
-EventScript_TheImpactSite_OlimarTilescript_4:
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_4
+EventScript_TheImpactSite_ShipTilescript_4:
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_4
     waitmovement SHIP
-    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_5
+    applymovement PLAYER gMovement_TheImpactSite_ShipTilescript_5
     waitmovement PLAYER
     return
 
-EventScript_TheImpactSite_OlimarTilescript_5:
-    applymovement SHIP gMovement_TheImpactSite_OlimarTilescript_6
-    applymovement PLAYER gMovement_TheImpactSite_OlimarTilescript_7
+EventScript_TheImpactSite_ShipTilescript_5:
+    applymovement SHIP gMovement_TheImpactSite_ShipTilescript_6
+    applymovement PLAYER gMovement_TheImpactSite_ShipTilescript_7
     waitmovement PLAYER
     return
 
-EventScript_TheImpactSite_OlimarTilescript_6:
+EventScript_TheImpactSite_ShipTilescript_6:
     releaseall
     end
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .align 1
-gMovement_TheImpactSite_OlimarTilescript_1:
+gMovement_TheImpactSite_ShipTilescript_1:
     .byte exclaim
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_2:
+gMovement_TheImpactSite_ShipTilescript_2:
     .byte walk_up
     .byte set_invisible
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_3:
+gMovement_TheImpactSite_ShipTilescript_3:
     .byte walk_up
     .byte walk_up
     .byte walk_up
@@ -118,7 +118,7 @@ gMovement_TheImpactSite_OlimarTilescript_3:
     .byte walk_right
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_4:
+gMovement_TheImpactSite_ShipTilescript_4:
     .byte walk_down
     .byte walk_left
     .byte walk_down
@@ -140,7 +140,7 @@ gMovement_TheImpactSite_OlimarTilescript_4:
     .byte walk_up_onspot_fastest
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_5:
+gMovement_TheImpactSite_ShipTilescript_5:
     .byte walk_down
     .byte walk_down
     .byte walk_left
@@ -161,7 +161,7 @@ gMovement_TheImpactSite_OlimarTilescript_5:
     .byte walk_right
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_6:
+gMovement_TheImpactSite_ShipTilescript_6:
     .byte walk_left
     .byte walk_left
     .byte walk_left
@@ -181,7 +181,7 @@ gMovement_TheImpactSite_OlimarTilescript_6:
     .byte walk_up_onspot_fastest
     .byte end_m
 
-gMovement_TheImpactSite_OlimarTilescript_7:
+gMovement_TheImpactSite_ShipTilescript_7:
     .byte walk_left
     .byte walk_left
     .byte walk_left

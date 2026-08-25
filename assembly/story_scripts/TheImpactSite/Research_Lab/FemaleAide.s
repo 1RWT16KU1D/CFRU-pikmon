@@ -10,8 +10,7 @@ EventScript_TheImpactSite_ResearchLab_FemaleAide:
     lock
     faceplayer
 
-    msgbox gText_TheImpactSite_ResearchLab_FemaleAide MSG_KEEPOPEN
-    closeonkeypress
+    msgbox gText_TheImpactSite_ResearchLab_FemaleAide MSG_NORMAL
 
     release
     end

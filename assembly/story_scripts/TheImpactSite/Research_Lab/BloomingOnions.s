@@ -4,16 +4,13 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
+.include "story_scripts/TheImpactSite/Research_Lab/event_defines.s"
 
 .global EventScript_TheImpactSite_ResearchLab_BloomingOnion_Grass
 .global EventScript_TheImpactSite_ResearchLab_BloomingOnion_Fire
 .global EventScript_TheImpactSite_ResearchLab_BloomingOnion_Water
 
-@ Defines for this file
-.equ BLOOMINGONION_GRASS, 5
-.equ BLOOMINGONION_FIRE, 6
-.equ BLOOMINGONION_WATER, 7
-.equ OLIMAR, 8
+.global gMovement_TheImpactSite_ResearchLab_PlayerWalkUp
 
 EventScript_TheImpactSite_ResearchLab_BloomingOnion_Grass:
     lock
@@ -21,11 +18,11 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Grass:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if greaterorequal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
     waitmovement WAIT_LATEST
 
     setvar VarTemp1 SPECIES_BULBORBLARVA
-    setvar VarTemp2 BLOOMINGONION_FIRE
+    setvar VarTemp2 LOCALID_BLOOMINGONION_FIRE
     setvar VarTemp3 SPECIES_FIERYBLOWLET
     showpokepic VarTemp1 10 3
     
@@ -37,11 +34,11 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Fire:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
     waitmovement WAIT_LATEST
 
     setvar VarTemp1 SPECIES_FIERYBLOWLET
-    setvar VarTemp2 BLOOMINGONION_WATER
+    setvar VarTemp2 LOCALID_BLOOMINGONION_WATER
     setvar VarTemp3 SPECIES_WOLPOLE
     showpokepic VarTemp1 10 3
     
@@ -53,11 +50,11 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_Water:
     comparevartovalue StoryEventVar1 ResearchLabChosenStarter
     if equal _goto EventScript_TheImpactSite_ResearchLab_BloomingOnion_LastPikmon
 
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarFaceRight
     waitmovement WAIT_LATEST
 
     setvar VarTemp1 SPECIES_WOLPOLE
-    setvar VarTemp2 BLOOMINGONION_GRASS
+    setvar VarTemp2 LOCALID_BLOOMINGONION_GRASS
     setvar VarTemp3 SPECIES_BULBORBLARVA
     showpokepic VarTemp1 10 3
     
@@ -122,6 +119,9 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon:
 
     textcolor TEXTCOLOR_BLUE
     msgbox gText_TheImpactSite_ResearchLab_BloomingOnion_ExcellentChoice MSG_KEEPOPEN
+
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarWalkUp
+    waitmovement WAIT_LATEST
     hidesprite VarTemp2
 
     bufferpokemon 0 VarTemp3
@@ -136,17 +136,17 @@ EventScript_TheImpactSite_ResearchLab_BloomingOnion_OlimarChoosesPikmon:
     end
 
 EventScript_TheImpactSite_ResearchLab_OlimarFieryBlowletMovement:
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseFieryBlowlet
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseFieryBlowlet
     waitmovement WAIT_LATEST
     return
 
 EventScript_TheImpactSite_ResearchLab_OlimarWolpoleMovement:
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole
     waitmovement WAIT_LATEST
     return
 
 EventScript_TheImpactSite_ResearchLab_OlimarBulborbLarvaMovement:
-    applymovement OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseBulborbLarva
+    applymovement LOCALID_OLIMAR gMovement_TheImpactSite_ResearchLab_OlimarChooseBulborbLarva
     waitmovement WAIT_LATEST
     return
 
@@ -177,7 +177,7 @@ gMovement_TheImpactSite_ResearchLab_OlimarChooseFieryBlowlet:
     .byte walk_right
     .byte walk_right
     .byte walk_right
-    .byte walk_up
+    .byte look_up
     .byte end_m
 
 gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole:
@@ -187,12 +187,18 @@ gMovement_TheImpactSite_ResearchLab_OlimarChooseWolpole:
     .byte walk_right
     .byte walk_right
     .byte walk_right
-    .byte walk_up
+    .byte look_up
     .byte end_m
 
 gMovement_TheImpactSite_ResearchLab_OlimarChooseBulborbLarva:
     .byte walk_down
+    .byte walk_down
     .byte walk_right
     .byte walk_right
     .byte look_up
+    .byte end_m
+
+gMovement_TheImpactSite_ResearchLab_OlimarWalkUp:
+gMovement_TheImpactSite_ResearchLab_PlayerWalkUp:
+    .byte walk_up
     .byte end_m
