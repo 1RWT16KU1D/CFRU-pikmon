@@ -86,7 +86,7 @@ Obtained a [BUFFER][03]!\nIt contains [BUFFER][02].
 Use which item?
 
 #org @gText_ScurriedToNearestHealer
-[PLAYER] scurried to the nearest healer,\nprotecting the exhausted and fainted\nPok\emon from further harm[.]\p
+[PLAYER] scurried to the nearest healer,\nprotecting the exhausted and fainted\nPikmon from further harm[.]\p
 
 #org @gText_WantToScaleCliff
 The wall is very rocky[.]\nWould you like to use [BUFFER2]?
@@ -269,7 +269,7 @@ FIFTH
 SIXTH
 
 #org @gText_PokemonAreNeeded
-[BUFFER][02] Pok\emon are needed.
+[BUFFER][02] Pikmon are needed.
 
 #org @gText_EnterNumber
 Enter a Number
@@ -316,13 +316,13 @@ Exp. Share turned off.
 What do you want to do?
 
 #org @gText_OpenPCBox
-Access Pokémon Box
+Access Pikmon Box
 
 #org @gText_HealPokemon
-Heal your Pokémon
+Heal your Pikmon
 
 #org @gText_HealedPCParty
-Your Pokémon's health has been\nfully restored.
+Your Pikmon's health has been\nfully restored.
 
 #org @gText_PCUnavailable
 You can't access the Portable PC\nright now.

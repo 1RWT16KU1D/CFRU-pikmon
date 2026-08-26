@@ -9,7 +9,7 @@ def Adjust(PalTag):
 
 for Mon in Input:
     Mon = Mon.replace('\n', '')
-    Output.write(f'MON_OW_OBJECT_GRAPHICS({Adjust(hex(PalTag))}, {Mon}),\n')
+    Output.write(f'MON_OW_OBJECT_GRAPHICS_32({Adjust(hex(PalTag))}, {Mon}),\n')
     PalTag += 1
 
 Input.close()

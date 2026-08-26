@@ -106,7 +106,7 @@ void DebugMenu_ProcessGiveItem(void)
 			AddBagItem(ITEM_MARANGA_BERRY, 100);
 			break;
 		case 2: //TMs & HMs
-			for (i = ITEM_TM01; i <= ITEM_HM08_ROCK_CLIMB; ++i)
+			for (i = ITEM_TM01; i <= ITEM_HM08_WATERFALL; ++i)
 				AddBagItem(i, 1);
 
 			for (i = ITEM_TM51; i <= ITEM_TM120; ++i)

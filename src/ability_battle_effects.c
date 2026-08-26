@@ -1237,11 +1237,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				if (SPECIES(bank) == SPECIES_WATERWRAITH
 				&& gBattleMons[bank].hp <= (gBattleMons[bank].maxHP / 2))
 				{
-					DoFormChange(bank, SPECIES_WATERWRAITH_BLACK, FALSE, TRUE, FALSE); //Get Minior Colour
+					DoFormChange(bank, SPECIES_WATERWRAITH_NOTIRES, FALSE, TRUE, FALSE); //Get Minior Colour
 					BattleScriptPushCursorAndCallback(BattleScript_ShieldsDownToCoreEnd3);
 					++effect;
 				}
-				else if ((SPECIES(bank) == SPECIES_WATERWRAITH_BLACK)
+				else if ((SPECIES(bank) == SPECIES_WATERWRAITH_NOTIRES)
 				&& gBattleMons[bank].hp > (gBattleMons[bank].maxHP / 2))
 				{
 					DoFormChange(bank, SPECIES_WATERWRAITH, FALSE, TRUE, FALSE);
@@ -1985,6 +1985,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				#endif
 				)
 				{
+					gBattleMons[bank].unknown=moveType+100;
+					//FadeBankPaletteForTera(bank, moveType);
 					SET_BATTLER_TYPE(bank, moveType);
 					PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
 					BattleScriptPushCursor();

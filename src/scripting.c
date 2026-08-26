@@ -1820,24 +1820,10 @@ enum
 //@Returns: 0 = Morning, 1 = Day, 2 = Evening, 3 = Night
 u8 sp0AD_GetTimeOfDay(void)
 {
-	switch (Var8000) {
-		case 1:
-			if (IsDayTime()) //Combined with morning and evening
-				return DAY;
-			else
-				return NIGHT;
-
-		default:
-			if (IsNightTime())
-				return NIGHT;
-			else if (IsEvening())
-				return EVENING;
-			else if (IsOnlyDayTime())
-				return DAY;
-			else
-				return MORNING;
-
-	}
+	if (IsDayTime()) //Combined with morning and evening
+		return DAY;
+	else
+		return NIGHT;
 }
 
 //@Details: Gets the current hour in the day.

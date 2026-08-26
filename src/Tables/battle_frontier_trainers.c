@@ -2387,7 +2387,7 @@ const struct MultiBattleTowerTrainer gFrontierMultiBattleTrainers[] =
 	},
 	{
 		.owNum = EVENT_OBJ_GFX_RIVAL,
-		.trainerClass = CLASS_RIVAL,
+		.trainerClass = CLASS_CAPTAIN,
 		.backSpriteId = TRAINER_BACK_PIC_RIVAL,
 		.gender = MALE,
 		.name = NULL, //Predefined ingame

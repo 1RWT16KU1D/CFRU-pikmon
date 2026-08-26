@@ -2416,8 +2416,7 @@ u8 PartyHasMonWithFieldMovePotential(u16 move, unusedArg u16 item, u8 surfingTyp
 			&& !GetMonData(mon, MON_DATA_IS_EGG, NULL))
 			{
 				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-				if (hasHM //Must have HM to prevent softlocks
-				&& (MonKnowsMove(mon, move) || CanMonLearnTMTutor(mon, item, 0) == CAN_LEARN_MOVE))
+				if (hasHM)
 					return i;
 				#else
 				if (MonKnowsMove(mon, move))
@@ -2518,16 +2517,10 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 		if (HasBadgeToUseSurf())
 		{
 			#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-			item = ITEM_HM03_SURF;
+			item = ITEM_HM06_SURF;
 			#endif
 
 			u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_SURF, item, SHOULDNT_BE_SURFING);
-
-			#ifdef FLAG_BOUGHT_ADM
-			if (FlagGet(FLAG_BOUGHT_ADM)
-			&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_SURF))
-				return EventScript_UseADMSurf;
-			#endif
 
 			#ifdef FLAG_SANDBOX_MODE
 			if (FlagGet(FLAG_SANDBOX_MODE)
@@ -2555,7 +2548,7 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 			if (IsPlayerSurfingNorthOrSouth())
 			{
 				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-				item = ITEM_HM07_WATERFALL;
+				item = ITEM_HM08_WATERFALL;
 				#endif
 
 				#ifdef FLAG_BOUGHT_ADM
@@ -2592,7 +2585,7 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 		&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_ROCK_CLIMB))
 		{
 			#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-			item = ITEM_HM08_ROCK_CLIMB;
+			item = ITEM_HM07_ROCKCLIMB;
 			#endif
 
 			#ifdef FLAG_BOUGHT_ADM
@@ -2701,15 +2694,7 @@ bool8 TrySetupDiveDownScript(void)
 	{
 		u16 item = ITEM_NONE;
 		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
-		#endif
-
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
-		{
-			ScriptContext1_SetupScript(EventScript_UseADMDive);
-			return TRUE;
-		}
+		item = ITEM_HM05_STRENGTH;
 		#endif
 
 		u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_DIVE, item, SHOULD_BE_SURFING);
@@ -2736,7 +2721,7 @@ bool8 TrySetupDiveEmergeScript(void)
 	{
 		u16 item = ITEM_NONE;
 		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
+		item = ITEM_HM05_STRENGTH;
 		#endif
 
 		#ifdef FLAG_BOUGHT_ADM
@@ -2862,6 +2847,8 @@ void FieldCheckIfPlayerPressedLButton(struct FieldInput* input, u16 newKeys)
 
 bool8 ProcessNewFieldPlayerInput(struct FieldInput* input)
 {
+	UpdateAutomaticFollowerMon();
+
 	if (IsDexNavHudActive())
 		return FALSE; //Can't force close this
 

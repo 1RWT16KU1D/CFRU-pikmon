@@ -15,6 +15,7 @@
 #include "../include/new/pokemon_storage_system.h"
 #include "../include/new/species_tables.h"
 #include "../include/new/util.h"
+#include "../include/new/terastallization.h"
 
 /*
 frontier.c
@@ -554,7 +555,8 @@ u8 GetBattleFacilityLevel(u8 tier)
 void UpdateTypesForCamomons(u8 bank)
 {
 	gBattleMons[bank].type1 = gBattleMoves[gBattleMons[bank].moves[0]].type;
-
+	gBattleMons[bank].unknown=gBattleMoves[gBattleMons[bank].moves[0]].type+100;
+	//FadeBankPaletteForTera(bank, gBattleMoves[gBattleMons[bank].moves[0]].type);
 	if (gBattleMons[bank].moves[1] != MOVE_NONE)
 		gBattleMons[bank].type2 = gBattleMoves[gBattleMons[bank].moves[1]].type;
 	else

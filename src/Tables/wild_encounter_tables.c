@@ -17,6 +17,129 @@ tables to edit:
 	gSwarmTable (Added an example entry, you can add more!)
 
 */
+
+const struct WildPokemon gImpactSite_Night[] =
+{
+	//20
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//10
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//1
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+};
+const struct WildPokemon gRoute1_Night[] =
+{
+	//20
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//10
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//1
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+};
+const struct WildPokemon gRoute2_Night[] =
+{
+	//20
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//10
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//1
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+};
+const struct WildPokemon gBlossomingArcadia_Night[] =
+{
+	//20
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//10
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//5
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+	//1
+    {2, 3, SPECIES_GLOWSEED},
+    {2, 3, SPECIES_GLOWSEED},
+};
+
+const struct WildPokemonInfo gImpactSite_InfoNight = {15, gImpactSite_Night};
+const struct WildPokemonInfo gRoute1_InfoNight = {15, gRoute1_Night};
+const struct WildPokemonInfo gRoute2_InfoNight = {15, gRoute2_Night};
+const struct WildPokemonInfo gBlossomingArcadia_InfoNight = {15, gBlossomingArcadia_Night};
+
+const struct WildPokemonHeader gWildMonNightHeaders[] =
+{
+	{
+		.mapGroup = MAP_GROUP(THE_IMPACT_SITE),
+		.mapNum = MAP_NUM(THE_IMPACT_SITE),
+		.landMonsInfo = &gImpactSite_InfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_1),
+		.mapNum = MAP_NUM(ROUTE_1),
+		.landMonsInfo = &gRoute1_InfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_2),
+		.mapNum = MAP_NUM(ROUTE_2),
+		.landMonsInfo = &gRoute2_InfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(BLOSSOMING_ARCADIA),
+		.mapNum = MAP_NUM(BLOSSOMING_ARCADIA),
+		.landMonsInfo = &gBlossomingArcadia_InfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+};
+
 /*
 const struct WildPokemon gRoute1_LandMonsMorning[] =
 {
@@ -70,94 +193,17 @@ const struct WildPokemon gRoute1_LandMonsNight[] =
 const struct WildPokemonInfo gRoute1_LandMonsInfoNight = {15, gRoute1_LandMonsNight};
 */
 
-const struct WildPokemonHeader gWildMonMorningHeaders[] =
-{
-/*
-	{
-		.mapGroup = MAP_GROUP(ROUTE_1),
-		.mapNum = MAP_NUM(ROUTE_1),
-		.landMonsInfo = &gRoute1_LandMonsInfoMorning,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	},
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-*/
-};
-
 const struct WildPokemonHeader gWildMonDayHeaders[] =
 {
-/*
-	{
-		.mapGroup = MAP_GROUP(ROUTE_1),
-		.mapNum = MAP_NUM(ROUTE_1),
-		.landMonsInfo = &gRoute1_LandMonsInfoDay,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	},
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-*/
+};
+
+const struct WildPokemonHeader gWildMonMorningHeaders[] =
+{
 };
 
 const struct WildPokemonHeader gWildMonEveningHeaders[] =
 {
-/*
-	{
-		.mapGroup = MAP_GROUP(ROUTE_1),
-		.mapNum = MAP_NUM(ROUTE_1),
-		.landMonsInfo = &gRoute1_LandMonsInfoEvening,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	},
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-*/
 };
-
-const struct WildPokemonHeader gWildMonNightHeaders[] =
-{
-/*
-	{
-		.mapGroup = MAP_GROUP(ROUTE_1),
-		.mapNum = MAP_NUM(ROUTE_1),
-		.landMonsInfo = &gRoute1_LandMonsInfoNight,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	},
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-*/
-};
-
 
 const struct SwarmData gSwarmTable[] =
 {

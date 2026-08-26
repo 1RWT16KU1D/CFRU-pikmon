@@ -174,14 +174,15 @@ extern const u32 gBag_MaxCandyPal[];
 extern const u32 gBag_BigMalasadaTiles[];
 extern const u32 gBag_BigMalasadaPal[];
 
-#define gBag_SuperRepelTiles ((u32*)0x08E898EC)
-#define gBag_SuperRepelPal ((u32*)0x08E8998C)
-#define gBag_MaxRepelTiles ((u32*)0x08E898EC)
-#define gBag_MaxRepelPal ((u32*)0x08E899B4)
+
+extern const u32 gBag_SuperRepelTiles[];
+extern const u32 gBag_SuperRepelPal[];
+extern const u32 gBag_MaxRepelTiles[];
+extern const u32 gBag_MaxRepelPal[];
 #define gBag_EscapeRopeTiles ((u32*)0x08E899DC)
 #define gBag_EscapeRopePal ((u32*)0x08E89A90)
-#define gBag_RepelTiles ((u32*)0x08E898EC)
-#define gBag_RepelPal ((u32*)0x08E89AB4)
+extern const u32 gBag_RepelTiles[];
+extern const u32 gBag_RepelPal[];
 
 extern const u32 gBag_LinkCableTiles[];
 extern const u32 gBag_LinkCablePal[];

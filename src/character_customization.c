@@ -378,13 +378,13 @@ static NPCPtr sOverworldTable2[] =
         // Shiny Palettes
 		{gShinyFollowingMonPic_0001_BulborbLarvaPal, OBJ_EVENT_PAL_TAG_BULBORBLARVA_SHINY},
         {gShinyFollowingMonPic_0002_BulborbPal, OBJ_EVENT_PAL_TAG_BULBORB_SHINY},
-        {gFollowingMonPic_0003_JumboBulborbPal, OBJ_EVENT_PAL_TAG_JUMBOBULBORB_SHINY},
-        {gFollowingMonPic_0004_FieryBlowletPal, OBJ_EVENT_PAL_TAG_FIERYBLOWLET},
-        {gFollowingMonPic_0005_FieryBlowhogPal, OBJ_EVENT_PAL_TAG_FIERYBLOWHOG},
-        {gFollowingMonPic_0006_TitanBlowhogPal, OBJ_EVENT_PAL_TAG_TITANBLOWHOG},
-        {gFollowingMonPic_0007_WolpolePal, OBJ_EVENT_PAL_TAG_WOLPOLE_SHINY},
-        {gFollowingMonPic_0008_YellowWollyhopPal, OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP_SHINY},
-        {gFollowingMonPic_0009_MasterhopPal, OBJ_EVENT_PAL_TAG_MASTERHOP_SHINY},
+        {gShinyFollowingMonPic_0003_JumboBulborbPal, OBJ_EVENT_PAL_TAG_JUMBOBULBORB_SHINY},
+        {gShinyFollowingMonPic_0004_FieryBlowletPal, OBJ_EVENT_PAL_TAG_FIERYBLOWLET},
+        {gShinyFollowingMonPic_0005_FieryBlowhogPal, OBJ_EVENT_PAL_TAG_FIERYBLOWHOG},
+        {gShinyFollowingMonPic_0006_TitanBlowhogPal, OBJ_EVENT_PAL_TAG_TITANBLOWHOG},
+        {gShinyFollowingMonPic_0007_WolpolePal, OBJ_EVENT_PAL_TAG_WOLPOLE_SHINY},
+        {gShinyFollowingMonPic_0008_YellowWollyhopPal, OBJ_EVENT_PAL_TAG_YELLOWWOLLYHOP_SHINY},
+        {gShinyFollowingMonPic_0009_MasterhopPal, OBJ_EVENT_PAL_TAG_MASTERHOP_SHINY},
 };
 
 #ifdef PALETTE_SWAPPER

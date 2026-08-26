@@ -134,11 +134,11 @@ enum //These vars need to be one after the other (hence the enum)
 #define TIME_NIGHT_START 20			//8:00 PM / 20:00
 
 /*===== General Number Options =====*/
-#define KANTO_DEX_COUNT 190
-#define NATIONAL_DEX_COUNT 190
+#define KANTO_DEX_COUNT 195
+#define NATIONAL_DEX_COUNT 196
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root
-#define NUM_TRAINER_CLASSES 107 //Vanilla FR has 107
+#define NUM_TRAINER_CLASSES 111 //Vanilla FR has 107
 #define EVOS_PER_MON 16 //The number of maximum evolutions per Pokemon. Vanilla FR has 5. DPE has 16!!!
 #define EV_CAP 252 //Also change this in the file "asm_defines.s" found in the root
 #define POWER_ITEM_EV_YIELD 8 //Set to 4 for older mechanic
@@ -146,7 +146,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define DUSK_BALL_MULTIPLIER 30 //Change this line to 35 to make the catch rate for the Dusk Ball 3.5x like before Gen 7
 #define STANDARD_IV 10 //Change this to be the number of IVs Pokemon owned by random trainers should have (all stats will have this number)
 #define SWARM_CHANCE 50 //Change this to the percentage that swarming Pokemon will appear if they can be found on the current route.
-#define WILD_DOUBLE_RANDOM_CHANCE 50 //Change this to the percentage that a wild double battle will be initiated if the player is in special grass.
+#define WILD_DOUBLE_RANDOM_CHANCE 75 //Change this to the percentage that a wild double battle will be initiated if the player is in special grass.
 #define CREATE_WITH_X_PERFECT_IVS 3 //Change this to the number of set 31 IVs you'd like Pokemon defined in gSetPerfectXIvList to have.
 #define CREATE_ROAMER_WITH_X_PERFECT_IVS 3 //Change this to the number of set 31 IVs you'd like roaming pokemon to have.
 #define EGG_HATCH_LEVEL 1 //The level eggs hatch at
@@ -198,7 +198,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_POKEMON_RANDOMIZER 0x940 //Setting randomizes Pokemon species that are created.
 #define FLAG_POKEMON_LEARNSET_RANDOMIZER 0x941 //Setting randomizes Pokemon learnsets.
 #define FLAG_ABILITY_RANDOMIZER 0x942 //Setting randomizes Pokemon abilities.
-#define NUM_SPECIES_RANDOMIZER LAST_RANDOM //The final number of Pokemon (+ 1) of species that can appear in the randomizer. Change to NUM_SPECIES for Gen 8
+#define NUM_SPECIES_RANDOMIZER NUM_SPECIES //The final number of Pokemon (+ 1) of species that can appear in the randomizer. Change to NUM_SPECIES for Gen 8
 
 /*===== Pre-existing Offsets =====*/
 //#define EXISTING_FOSSIL_IMAGE_TABLE_ADDRESS 0x81a4600 //Uncomment this if you've already inserted a fossil image table
@@ -219,7 +219,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define BRIDGE_FIX //If this remains uncommented, the water battle background will only be loaded if the player's surfing sprite is shown
 #define MEGA_EVOLUTION_FEATURE //Comment this line to remove Mega Evolutions
 #define DYNAMAX_FEATURE //Comment this line to remove Dynamax and Raid Battles
-#define TUTORIAL_BATTLES //Comment this line to remove Oak's Tutorial
+//#define TUTORIAL_BATTLES //Comment this line to remove Oak's Tutorial
 #define TANOBY_RUINS_ENABLED //The Tanoby Ruins will be the only location Unown can be encountered
 #define ALTERING_CAVE_ENABLED //The Altering Cave from FR will work as intended provided the proper var is set
 #define SWEET_SCENT_ONLY_IN_CLEAR_WEATHER //Sweet Scent won't attract any wild Pokemon if the weather is not clear
@@ -370,7 +370,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_EXPLAINED_MINING_RULES 0xA09 //If set, the player will not be shown the mining rules second time when using the mining feature
 //#define BW_SUMMARY_SCREEN // Implements the BW summary screen
 //#define NATURE_COLORS_ON_SUMMARY_SCREEN //will implement nature coloured stats and IV ranking in summary (Don't uncomment if you're using BW Summary Screen)
-#define MID_BATTLE_EVO //Comment this line to remove Mid-Battle Evolution.
+//#define MID_BATTLE_EVO //Comment this line to remove Mid-Battle Evolution.
 //#define SKIP_INTRO_CONTROLS_GUIDE //Uncomment this line to remove the intro constrols guide.
 #define FLAG_SPAWN_INVISIBLE 0xA0A //This feature allows us to spawn the player object as invisible after a warp, which can be useful for cutscenes, etc. Note that the camera will still be centered on the player.
 #define FLAG_PORTABLE_PC 0xA0B //Flag to Enable/Disable Pocket PC.
@@ -404,3 +404,6 @@ enum //These vars need to be one after the other (hence the enum)
 /* Trainer Data */
 #define EXPAND_TRAINERS // Makes trainers editable, well useless if OPEN_WORLD_TRAINERS is being used.
 //#define STEVEBELS_TRAINER_TABLE //You can edit any existing trainer just by entering their ID. Do not use if EXPAND_TRAINERS is uncommented.
+
+/* Day Night Toggle*/
+#define FLAG_NIGHT 0x247

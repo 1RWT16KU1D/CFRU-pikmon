@@ -609,15 +609,6 @@ const u8* GetTrainerName(u8 bank)
 
 u8* TryGetRivalNameByTrainerClass(unusedArg u8 class)
 {
-	#ifdef UNBOUND
-		if (class == CLASS_RIVAL|| class == CLASS_RIVAL_2)
-			return GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
-		else
-	#elif defined OVERWRITE_RIVAL
-		if (class == CLASS_RIVAL || class == CLASS_RIVAL_2 || class == CLASS_CHAMPION)
-			return GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
-		else
-	#endif
 			return NULL;
 }
 

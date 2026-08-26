@@ -56,7 +56,7 @@ static const struct SpriteFrameImage sMonPicTable_##name[] =          \
     overworld_frame(gFollowingMonPic_##Id##_##name##Tiles, 4, 4, 8),  \
 };
 
-#define MON_OW_OBJECT_GRAPHICS(PalId, name)                 \
+#define MON_OW_OBJECT_GRAPHICS_32(PalId, name)                 \
 {                                                           \
     .tileTag = 0xFFFF,                                      \
     .paletteTag1 = PalId,                                   \

@@ -80,6 +80,12 @@ void DoFormChange(u8 bank, u16 species, bool8 ReloadType, bool8 ReloadStats, boo
 	gStatuses3[bank] &= ~(STATUS3_SWITCH_IN_ABILITY_DONE | STATUS3_ILLUSION); //A Pokemon undergoing form change can't be hidden under Illusion
 
 	SetMonData(mon, MON_DATA_SPECIES, &backup); //Backup species is written to by the form change handler
+	//Set mon as seen and caught in pokedex
+	u32 personality = gBattleMons[bank].personality;
+	HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_SEEN, personality);
+	if(bank % 2 == 0){
+		HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
+	}
 }
 
 void SwitchOutFormsRevert(u8 bank)
@@ -148,7 +154,7 @@ void SwitchOutFormsRevert(u8 bank)
 			if (backupSpecies != SPECIES_NONE)
 				DoFormChange(bank, backupSpecies, FALSE, TRUE, FALSE);
 			else
-				DoFormChange(bank, SPECIES_WATERWRAITH_BLACK, FALSE, TRUE, FALSE);
+				DoFormChange(bank, SPECIES_WATERWRAITH_NOTIRES, FALSE, TRUE, FALSE);
 			break;
 
 		case SPECIES_BEARDEDAMPRAT:
@@ -196,7 +202,7 @@ bool8 TryFormRevert(struct Pokemon* mon)
 
 	if (IsMinior(species))
 	{
-		mon->species = SPECIES_WATERWRAITH_BLACK; //Get Minior Colour
+		mon->species = SPECIES_WATERWRAITH_NOTIRES; //Get Minior Colour
 		CalculateMonStats(mon);
 		return TRUE;
 	}
@@ -417,7 +423,7 @@ bool8 IsMiniorCore(u16 species)
 
 bool8 IsMinior(u16 species)
 {
-	return species == SPECIES_WATERWRAITH || species == SPECIES_WATERWRAITH_BLACK;
+	return species == SPECIES_WATERWRAITH || species == SPECIES_WATERWRAITH_NOTIRES;
 }
 
 void HandleFormChange(void)

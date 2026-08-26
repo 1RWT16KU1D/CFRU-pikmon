@@ -101,6 +101,7 @@ definitions for animation particles
 .equ OMEGA_SYMBOL_IMG, Omega_SymbolTiles
 .equ TERA_SYMBOL_IMG, Terastal_SymbolTiles
 .equ TERA_CRYSTAL_IMG, Terastal_CrystalTiles
+.equ BOMB_ROCK_ROCK_IMG, BombRock_RockTiles
 
 @;Palettes
 .equ SWORD_PAL, SwordPal
@@ -204,3 +205,4 @@ definitions for animation particles
 .equ OMEGA_SYMBOL_PAL, Omega_SymbolPal
 .equ TERA_SYMBOL_PAL, Terastal_SymbolPal
 .equ TERA_CRYSTAL_PAL, Terastal_CrystalPal
+.equ BOMB_ROCK_ROCK_PAL, BombRock_RockPal

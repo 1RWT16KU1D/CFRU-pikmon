@@ -35,6 +35,40 @@
 #include "../include/string_util.h"
 
 #ifdef TERASTAL_FEATURE
+const u16 gTeraBlendColors[] =
+{
+    [TYPE_NORMAL]   = RGB(25, 25, 25),  // Light Gray           White
+    [TYPE_FIGHTING] = RGB(31, 0, 12),    // Crimson Red         Red
+    [TYPE_FLYING]   = RGB(18, 22, 31),  // Sky Blue             Cyan
+    [TYPE_POISON]   = RGB(22, 2, 28),   // Deep Violet          Purple
+    [TYPE_GROUND]   = RGB(16, 7, 1),    // Deep Brown           Brown
+    [TYPE_ROCK]     = RGB(15, 13, 6),   // Dusty Beige          Brown
+    [TYPE_BUG]      = RGB(18, 25, 6),   // Leafy Green          Yellow
+    [TYPE_GHOST]    = RGB(10, 6, 16),   // Haunting Indigo      Purple
+    [TYPE_STEEL]    = RGB(19, 19, 23),  // Bluish Steel Gray    White
+    [TYPE_MYSTERY]  = RGB(6, 7, 8),     // White                Black
+    [TYPE_FIRE]     = RGB(30, 12, 4),   // Fiery Orange         Red
+    [TYPE_GRASS]    = RGB(6, 26, 8),    // Forest Green         Green
+    [TYPE_WATER]    = RGB(8, 17, 31),   // Watery Blue?         Blue
+    [TYPE_ELECTRIC] = RGB(31, 28, 5),   // Vivid Yellow         Yellow
+    [TYPE_PSYCHIC]  = RGB(31, 6, 18),   // Magenta              Pink
+    [TYPE_ICE]      = RGB(20, 28, 31),  // Ice Blue             Cyan
+    [TYPE_DRAGON]   = RGB(18, 15, 2),   // Indigo               Yellow
+    [TYPE_DARK]     = RGB(5, 5, 5),     // Black                Black
+    [TYPE_FAIRY]    = RGB(31, 18, 24),  // Rose Pink            Pink
+    [TYPE_BLANK]    = RGB(31, 31, 31),  // White
+    [TYPE_STELLAR]  = RGB(28, 28, 31),  // Still unsure - Gave it a Silvery Blue Tint
+};
+
+void FadeBankPaletteForTera(u8 bank, u16 paletteOffset)
+{
+    u8 teraType = gBattleMons[bank].unknown;
+
+	BlendPalette(paletteOffset, 16, 4, gTeraBlendColors[teraType]);
+	CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);
+}
+
+
 // Exported Functions
 extern u16 VarGet(u16 var);
 extern bool8 VarSet(u16 var, u16 value);

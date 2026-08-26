@@ -28,7 +28,7 @@
 #include "../include/new/dynamax.h"
 #include "../include/new/overworld.h"
 #include "../include/new/roamer.h"
-#include "../include/new/util.h"
+#include "../include/new/util.h" 
 #include "../include/new/wild_encounter.h"
 /*
 wild_encounter.c
@@ -221,14 +221,7 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 
 		const struct WildPokemonHeader* headerTable = NULL;
 
-		if (IsNightTime())
-			headerTable = gWildMonNightHeaders;
-		else if (IsMorning())
-			headerTable = gWildMonMorningHeaders;
-		else if (IsEvening())
-			headerTable = gWildMonEveningHeaders;
-		else if (IsDayTime())
-			headerTable = gWildMonDayHeaders; //Daytime
+		if (IsNightTime())	headerTable = gWildMonNightHeaders;
 
 		if (headerTable != NULL) //Not Daytime
 		{

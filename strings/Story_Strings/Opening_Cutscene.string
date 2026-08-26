@@ -1,6 +1,9 @@
 #org @gText_PlayerName_Default
  Pom
 
+#org @gText_IntroScene_SkipIntro
+Do you want to skip the intro?
+
 #org @gText_IntroScene_3Dots
 [.] [.] [.]
 

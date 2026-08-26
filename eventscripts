@@ -1,7 +1,21 @@
-## Intro Scene
+###### Intro Scene ######
 map 5 5 MapScript_IntroScene
 
-##
+###### The Impact Site ######
 npc 3 0 6 EventScript_TheImpactSite_LittleGirl
-tile 3 0 0 EventScript_TheImpactSite_OlimarTilescript
+tile 3 0 0 EventScript_TheImpactSite_ShipTilescript
 
+## Research Lab
+#map 4 3 MapScript_ResearchLab
+
+#tile 4 3 3 TileScript_TheImpactSite_ResearchLab_StarterNotChosen
+#tile 4 3 4 TileScript_TheImpactSite_ResearchLab_StarterNotChosen
+#tile 4 3 5 TileScript_TheImpactSite_ResearchLab_StarterNotChosen
+
+npc 4 3 0 EventScript_TheImpactSite_ResearchLab_MaleAide_1
+npc 4 3 1 EventScript_TheImpactSite_ResearchLab_FemaleAide
+npc 4 3 2 EventScript_TheImpactSite_ResearchLab_MaleAide_2
+#npc 4 3 4 EventScript_TheImpactSite_ResearchLab_BloomingOnion_Grass
+#npc 4 3 5 EventScript_TheImpactSite_ResearchLab_BloomingOnion_Fire
+#npc 4 3 6 EventScript_TheImpactSite_ResearchLab_BloomingOnion_Water
+#npc 4 3 7 EventScript_TheImpactSite_ResearchLab_Olimar

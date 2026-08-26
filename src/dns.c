@@ -411,27 +411,27 @@ void BlendPalettesOptimized(u32 selectedPalettes, u32 coeff, u32 blendColor)
 
 bool8 IsDayTime(void)
 {
-	return gClock.hour >= TIME_MORNING_START && gClock.hour < TIME_NIGHT_START;
+	return !FlagGet(FLAG_NIGHT);
 }
 
 bool8 IsOnlyDayTime(void)
 {
-	return gClock.hour >= TIME_DAY_START && gClock.hour < TIME_EVENING_START;
+	return TRUE;
 }
 
 bool8 IsNightTime(void)
 {
-	return gClock.hour >= TIME_NIGHT_START || gClock.hour < TIME_MORNING_START;
+	return FlagGet(FLAG_NIGHT);
 }
 
 bool8 IsMorning(void)
 {
-	return gClock.hour >= TIME_MORNING_START && gClock.hour < TIME_DAY_START;
+	return FALSE;
 }
 
 bool8 IsEvening(void)
 {
-	return gClock.hour >= TIME_EVENING_START && gClock.hour < TIME_NIGHT_START;
+	return FALSE;
 }
 
 static bool8 IsDate1BeforeDate2(u32 y1, u32 m1, u32 d1, u32 y2, u32 m2, u32 d2)

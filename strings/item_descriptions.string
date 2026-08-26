@@ -746,7 +746,7 @@ An attack that may\ntake the foe's held\nitem if the user\nisn't holding one.
 The foe is hit with\nwings of steel.\nIt may also raise\nthe user's DEFENSE.
 
 #org @DESC_TM48
-The user employs\nits psychic power\nto swap abilities\nwith the foe.
+Sets the Gloom\nweather.
 
 #org @DESC_TM49
 Steals the effects\nof the foe's\nhealing or status-\nchanging move.

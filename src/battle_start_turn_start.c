@@ -2022,7 +2022,7 @@ u16 GetMUS_ForBattle(void)
 				return VarGet(VAR_BATTLE_MUSIC) == 0 ? BGM_BATTLE_GYM_LEADER : MUS_RS_VS_E4;
 			if(trainerClass == CLASS_CHAMPION || trainerClass == CLASS_CHAMPION_RS)
 				return VarGet(VAR_BATTLE_MUSIC) == 0 ? BGM_BATTLE_CHAMPION : MUS_RS_VS_CHAMP;
-			if(trainerClass == CLASS_RIVAL || trainerClass == CLASS_RIVAL_2)
+			if(trainerClass == CLASS_CAPTAIN || trainerClass == CLASS_RIVAL_2)
 				return VarGet(VAR_BATTLE_MUSIC) == 0 ? BGM_BATTLE_TRAINER : MUS_RS_VS_RIVAL;
 
 			if (gClassBasedBattleBGM[trainerClass])

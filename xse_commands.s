@@ -966,7 +966,7 @@ map \map
 .2byte \trainer
 .endm
 
-@ Sets the specified (Object's saved position on the current map.
+@ Sets the specified Object's saved position on the current map.
 .macro movesprite2 localId:req, x:req, y:req
 .byte 0x63
 .2byte \localId
@@ -975,7 +975,7 @@ map \map
 .endm
 
 .macro setobjectxyperm localId:req, x:req, y:req
-	setobjectxyperm \localId, \x, \y
+	movesprite2 \localId, \x, \y
 .endm
 
 @ Sets the specified Object's position to somewhere off the screen
@@ -2014,9 +2014,9 @@ callasm ResetPokeVialUses
 .endm
 
 .macro msgboxtransparent text:req type:req
-	callasm 0x8750021
+	callasm 0x9300021
 	msgbox \text \type
-	callasm 0x8750139
+	callasm 0x9300139
 .endm
 
 .macro movecamera movements:req

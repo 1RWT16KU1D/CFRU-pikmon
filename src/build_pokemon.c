@@ -828,7 +828,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && side == B_SIDE_OPPONENT)
 		{	
 			#ifdef OPEN_WORLD_TRAINERS
-			if ((firstTrainer && gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
+			if ((firstTrainer && gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_CAPTAIN && class != CLASS_RIVAL_2)
 			||  (!firstTrainer && VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT))
 			{
 				u8 openWorldAmount = GetOpenWorldTrainerMonAmount();
@@ -857,7 +857,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		{
 			#ifdef OPEN_WORLD_TRAINERS
 			u8 class = trainer->trainerClass;
-			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
+			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_CAPTAIN && class != CLASS_RIVAL_2)
 			{
 				monsCount = GetOpenWorldTrainerMonAmount();
 
@@ -979,7 +979,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			u8 openWorldSpeciesIndex = GetOpenWorldSpeciesIndex(nameHash, i);
 			u8 openWorldLevel = GetOpenWorldSpeciesLevel(nameHash, i);
 
-			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_RIVAL && class != CLASS_RIVAL_2)
+			if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_CAPTAIN && class != CLASS_RIVAL_2)
 			{
 				u16 speciesToCreate = gGeneralTrainerSpreads[trainer->trainerClass][GetOpenWorldBadgeCount()][openWorldSpeciesIndex];
 
@@ -1048,9 +1048,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 							trainer->party.ItemCustomMoves[i].ivSpread[4],
 							trainer->party.ItemCustomMoves[i].ivSpread[5]
 						);
-						if (trainer->partyFlags & PARTY_FLAG_CUSTOM_MOVES) {
-    						mon->teraType = trainer->party.ItemCustomMoves[i].teraType;
-						}
 						break;
 				}
 
@@ -1115,7 +1112,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			#endif
 
 			#ifdef UNBOUND
-			if ((gTrainers[trainerId].trainerClass == CLASS_RIVAL && gameDifficulty >= OPTIONS_HARD_DIFFICULTY)
+			if ((gTrainers[trainerId].trainerClass == CLASS_CAPTAIN && gameDifficulty >= OPTIONS_HARD_DIFFICULTY)
 			 || (gTrainers[trainerId].trainerClass == CLASS_RIVAL_2 && gameDifficulty == OPTIONS_HARD_DIFFICULTY)) //Not for Insane
 				spreadNum = GetEVSpreadNumForUnboundRivalChallenge(mon, trainer->aiFlags, gTrainers[trainerId].trainerClass);
 			#endif
@@ -1289,7 +1286,7 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 		case CLASS_LEADER:
 		case CLASS_ELITE_FOUR:
 		case CLASS_CHAMPION:
-		case CLASS_RIVAL:
+		case CLASS_CAPTAIN:
 		case CLASS_RIVAL_2:
 		case CLASS_BOSS:
 		#ifdef UNBOUND
@@ -1320,7 +1317,7 @@ bool8 ShouldGiveTrainerMonBestStatsMaxEVs(u8 trainerClass)
         case CLASS_LEADER:
         case CLASS_ELITE_FOUR:
         case CLASS_CHAMPION:
-        case CLASS_RIVAL:
+        case CLASS_CAPTAIN:
         case CLASS_RIVAL_2:
         case CLASS_BOSS:
         #ifdef UNBOUND
@@ -1350,7 +1347,7 @@ bool8 ShouldGiveTrainerMonMaxFriendship(u8 trainerClass)
     switch (trainerClass)
     {
         case CLASS_CHAMPION:
-        case CLASS_RIVAL:
+        case CLASS_CAPTAIN:
         case CLASS_RIVAL_2:
         case CLASS_LEADER:
         case CLASS_ELITE_FOUR:
@@ -2335,7 +2332,7 @@ static void BuildFrontierMultiParty(u8 multiId)
 				if (multiPartner->regularSpreads != NULL && i < multiPartner->regSpreadSize)
 				{
 					#ifdef UNBOUND
-					if (multiPartner->trainerClass == CLASS_RIVAL && i >= 4)
+					if (multiPartner->trainerClass == CLASS_CAPTAIN && i >= 4)
 					{
 						#define VAR_RIVAL_CHOSEN_STARTER 0x5012
 						extern const struct BattleTowerSpread gMultiTowerSpread_RivalV2[];
@@ -2372,7 +2369,7 @@ const struct BattleTowerSpread* GetRaidMultiSpread(u8 multiId, u8 index, u8 numS
 	const struct MultiRaidTrainer* multiPartner = &gRaidPartners[multiId];
 
 	#ifdef UNBOUND
-	if (index == 0 && multiPartner->trainerClass == CLASS_RIVAL)
+	if (index == 0 && multiPartner->trainerClass == CLASS_CAPTAIN)
 	{
 		switch (VarGet(VAR_RIVAL_CHOSEN_STARTER)) {
 			case 2: //Chose Larvitar
@@ -5263,7 +5260,7 @@ const species_t gGeneralTrainerSpreads[NUM_TRAINER_CLASSES][NUM_BADGE_OPTIONS][N
         [8] = {SPECIES_KELDEO_RESOLUTE, SPECIES_ARCEUS_FIGHT, SPECIES_BURROWNIT, SPECIES_VIRIZION, SPECIES_MACHAMP, SPECIES_CHESNAUGHT, SPECIES_MEDICHAM, SPECIES_URSHIFU_RAPID_GIGA, SPECIES_INFERNAPE, SPECIES_DECIDUEYE_H},
         [9] = {SPECIES_PANGORO, SPECIES_HERACROSS, SPECIES_VIRIZION, SPECIES_BEWEAR, SPECIES_KELDEO_RESOLUTE, SPECIES_CONKELDURR, SPECIES_BRELOOM, SPECIES_BLAZIKEN_MEGA, SPECIES_CRABOMINABLE, SPECIES_MEDICHAM_MEGA},
     },
-    [CLASS_ARMOREDCANNONBEETLEOL_LADY] = {
+    [CLASS_PARASOL_LADY] = {
         [0] = {SPECIES_DONDOZO, SPECIES_MUDKIP, SPECIES_QUAQUAVAL, SPECIES_TOTODILE, SPECIES_FEZANDIPITI, SPECIES_TATSUGIRI_RED, SPECIES_TAUROS_AQUA_P, SPECIES_PIPLUP, SPECIES_TINKATON, SPECIES_QUAXLY},
         [1] = {SPECIES_FIDOUGH, SPECIES_SOBBLE, SPECIES_QUAQUAVAL, SPECIES_TINKATUFF, SPECIES_FLABEBE_WHITE, SPECIES_FROAKIE, SPECIES_QUAXLY, SPECIES_FINIZEN, SPECIES_PELLETPOSY, SPECIES_FEZANDIPITI},
         [2] = {SPECIES_TATSUGIRI_RED, SPECIES_FEEBAS, SPECIES_SWIRLIX, SPECIES_POPPLIO, SPECIES_FLABEBE_YELLOW, SPECIES_FLABEBE_BLUE, SPECIES_FEZANDIPITI, SPECIES_FLABEBE, SPECIES_PELLETPOSY, SPECIES_FINIZEN},
@@ -5791,7 +5788,7 @@ const species_t gGeneralTrainerSpreads[NUM_TRAINER_CLASSES][NUM_BADGE_OPTIONS][N
         [8] = {SPECIES_SCRAFTY, SPECIES_HERACROSS_MEGA, SPECIES_KOMMO_O, SPECIES_PASSIMIAN, SPECIES_URSHIFU_SINGLE_GIGA, SPECIES_MIENSHAO, SPECIES_LUCARIO_MEGA, SPECIES_HAWLUCHA, SPECIES_BEWEAR, SPECIES_SAWK},
         [9] = {SPECIES_SAMUROTT, SPECIES_MEWTWO_MEGA_X, SPECIES_BLAZIKEN_MEGA, SPECIES_VIRIZION, SPECIES_URSHIFU_RAPID, SPECIES_BUZZWOLE, SPECIES_GALLADE, SPECIES_CRABOMINABLE, SPECIES_GALLADE_MEGA, SPECIES_PASSIMIAN},
     },
-    [CLASS_RIVAL] = {
+    [CLASS_CAPTAIN] = {
         [0] = {SPECIES_ZORUA_H, SPECIES_IGGLYBUFF, SPECIES_DUDUNSPARCE, SPECIES_SQUAWKABILLY, SPECIES_DOLLIV, SPECIES_HELIOPTILE, SPECIES_MINCCINO, SPECIES_SQUAWKABILLY_BLUE, SPECIES_MAUSHOLD_FOUR, SPECIES_LILLIPUP},
         [1] = {SPECIES_DEERLING_AUTUMN, SPECIES_SQUAWKABILLY_YELLOW, SPECIES_SKWOVET, SPECIES_HELIOPTILE, SPECIES_BUNNELBY, SPECIES_STARLY, SPECIES_DEERLING_WINTER, SPECIES_SQUAWKABILLY_WHITE, SPECIES_TERAPAGOS, SPECIES_SENTRET},
         [2] = {SPECIES_DEERLING, SPECIES_TERAPAGOS_TERASTAL, SPECIES_QUAGGLEDMIRECLOPS, SPECIES_URSALUNA_BLOODMOON, SPECIES_TAILLOW, SPECIES_ARBOLIVA, SPECIES_SNOWBULBORB, SPECIES_IGGLYBUFF, SPECIES_MINCCINO, SPECIES_EGG},

@@ -296,6 +296,9 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare* daycare, u8* parent
 		case NATIONAL_DEX_MYSTERIOUSLIFEFORM:
 			eggSpecies = SPECIES_MYSTERIOUSLIFEFORM_BULBORB + (personality%5);
 			break;
+		case NATIONAL_DEX_REDPIKMIN_VETERAN:
+			eggSpecies = SPECIES_REDPIKMIN;
+			break;
 	}
 
 	// Make Pebble Pitcher the "mother" slot if the other daycare mon is male/genderless).
@@ -464,6 +467,7 @@ static void AlterSpeciesWithIncenseItems(u16* species, u16 motherItem, u16 fathe
 	// if neither parent holding incense, force 2nd evo species
 	switch (*species)
 	{
+		case SPECIES_REDPIKMIN_VETERAN:
 		case SPECIES_REDPIKMIN:
 			if (motherItem == ITEM_METAL_COAT || fatherItem == ITEM_METAL_COAT){
 				*species = SPECIES_TOYPIKMIN_RED;	

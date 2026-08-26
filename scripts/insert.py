@@ -489,41 +489,6 @@ def main():
 
                     Hook(rom, code, offset, int(register))
 
-        # Read repoints from a file
-        if os.path.isfile(REPOINTS):
-            with open(REPOINTS, 'r') as repointList:
-                definesDict = {}
-                conditionals = []
-                for line in repointList:
-                    if TryProcessFileInclusion(line, definesDict):
-                        continue
-                    if TryProcessConditionalCompilation(line, definesDict, conditionals):
-                        continue
-                    if line.strip().startswith('#') or line.strip() == '':
-                        continue
-
-                    if len(line.split()) == 2:
-                        symbol, address = line.split()
-                        offset = int(address, 16) - 0x08000000
-                        try:
-                            code = table[symbol]
-                        except KeyError:
-                            print('Symbol missing:', symbol)
-                            continue
-
-                        Repoint(rom, code, offset)
-
-                    if len(line.split()) == 3:
-                        symbol, address, slide = line.split()
-                        offset = int(address, 16) - 0x08000000
-                        try:
-                            code = table[symbol]
-                        except KeyError:
-                            print('Symbol missing:', symbol)
-                            continue
-
-                        Repoint(rom, code, offset, int(slide))
-
         # Read routine repoints from a file
         if os.path.isfile(ROUTINE_POINTERS):
             with open(ROUTINE_POINTERS, 'r') as pointerlist:
@@ -569,6 +534,41 @@ def main():
                         continue
 
                     FunctionWrap(rom, code, offset, int(numParams), int(isReturning))
+
+        # Read repoints from a file
+        if os.path.isfile(REPOINTS):
+            with open(REPOINTS, 'r') as repointList:
+                definesDict = {}
+                conditionals = []
+                for line in repointList:
+                    if TryProcessFileInclusion(line, definesDict):
+                        continue
+                    if TryProcessConditionalCompilation(line, definesDict, conditionals):
+                        continue
+                    if line.strip().startswith('#') or line.strip() == '':
+                        continue
+
+                    if len(line.split()) == 2:
+                        symbol, address = line.split()
+                        offset = int(address, 16) - 0x08000000
+                        try:
+                            code = table[symbol]
+                        except KeyError:
+                            print('Symbol missing:', symbol)
+                            continue
+
+                        Repoint(rom, code, offset)
+
+                    if len(line.split()) == 3:
+                        symbol, address, slide = line.split()
+                        offset = int(address, 16) - 0x08000000
+                        try:
+                            code = table[symbol]
+                        except KeyError:
+                            print('Symbol missing:', symbol)
+                            continue
+
+                        Repoint(rom, code, offset, int(slide))
 
         # Insert Event Scripts
         if os.path.isfile(EVENT_SCRIPTS):
@@ -739,15 +739,26 @@ def main():
                     except:
                         print("There was an error inserting the song on line {}: {}".format(i, line.strip()))
 
-        width = max(map(len, table.keys())) + 1
+        insertMetadata = [
+            ("__INSERTION_START", OFFSET_TO_PUT + 0x08000000),
+            ("__INSERTION_END", endInsertOffset + 0x08000000),
+            ("__INSERTION_SIZE", endInsertOffset - OFFSET_TO_PUT),
+        ]
+
+        insertMetadataKeys = [key for key, _ in insertMetadata]
+        width = max(map(len, list(table.keys()) + insertMetadataKeys)) + 1
         if os.path.isfile('offsets.ini'):
             offsetIni = open('offsets.ini', 'r+')
         else:
             offsetIni = open('offsets.ini', 'w')
 
         offsetIni.truncate()
+        fstr = ('{:' + str(width) + '} {:08X}')
+        offsetIni.write("# __INSERTION_END is the first byte after the inserted data.\n")
+        for key, value in insertMetadata:
+            offsetIni.write(fstr.format(key + ':', value) + '\n')
+        offsetIni.write('\n')
         for key in sorted(table.keys()):
-            fstr = ('{:' + str(width) + '} {:08X}')
             offsetIni.write(fstr.format(key + ':', table[key] + 0x08000000) + '\n')
         offsetIni.close()
 

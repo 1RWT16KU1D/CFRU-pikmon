@@ -2097,7 +2097,7 @@ void DetermineRaidPartners(bool8* checkedPartners, u8 maxPartners)
 			#ifdef UNBOUND
 			&& (FlagGet(FLAG_SYS_GAME_CLEAR)
 			 || (gRaidPartners[index].trainerClass != CLASS_SHADOW_ADMIN
-			  && gRaidPartners[index].trainerClass != CLASS_RIVAL
+			  && gRaidPartners[index].trainerClass != CLASS_CAPTAIN
 			  && gRaidPartners[index].trainerClass != CLASS_LEADER)) //These don't show up until the game is cleared
 			#endif
 			)

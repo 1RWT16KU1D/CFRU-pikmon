@@ -6,6 +6,8 @@ import shutil
 import hashlib
 import glob, os.path
 
+BPRE0_BAK = "BPRE0.bak"
+TEST_BAK = "test.bak"
 ROM_NAME = "test.gba"
 SRC = './src'
 GRAPHICS = './graphics'
@@ -35,6 +37,8 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 try:
 	os.remove(ROM_NAME)
+	os.remove(BPRE0_BAK)
+	os.remove(TEST_BAK)
 except:
 	pass
 

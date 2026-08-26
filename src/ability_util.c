@@ -234,6 +234,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			switch (species)
 			{
 				case SPECIES_ROCKPIKMIN:
+				case SPECIES_SCORCHCAKE:
+				case SPECIES_SHOCKCAKE:
+				case SPECIES_FREEZECAKE:
 					return gText_AbilityName_SolidRock;
 			}
 			break;
@@ -740,10 +743,12 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 				return gText_AbilityDescription_SeedSower;
 			break;
 		case ABILITY_PUNKROCK:
+		/*
 			if(SpeciesHasWhistle(species)){
 					return gText_AbilityDescription_EmperorsWhistle;
 			}
 			break;
+		*/
 		case ABILITY_STRONGJAW:
 			if (SpeciesHasSharpness(species))
 				return gText_AbilityDescription_Sharpness;
@@ -1634,7 +1639,7 @@ bool8 SpeciesHasWindForce(unusedArg u16 species)
 
 bool8 SpeciesHasFrostBody(unusedArg u16 species)
 {
-	return species == SPECIES_SNOWYBLOWHOG || SPECIES_BLIZZARDINGBLOWHOG || SPECIES_SNOWFLAKEFLUTTERTAIL;
+	return species == SPECIES_SNOWYBLOWHOG || SPECIES_BLIZZARDINGBLOWHOG || SPECIES_SNOWFLAKEFLUTTERTAIL || SPECIES_FREEZECAKE;
 }
 
 bool8 SpeciesHasFoolsGold(unusedArg u16 species)
