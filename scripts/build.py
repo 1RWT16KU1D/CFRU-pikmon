@@ -399,9 +399,10 @@ def LinkObjects(objects: itertools.chain) -> str:
     objectList = list(objects)
 
     if sys.platform.startswith('win'):
-        responseFile = os.path.join(BUILD, 'linker_objects.rsp')
-        with open(responseFile, 'w') as file:
-            file.write('\n'.join(objectList))
+        responseFile = 'linker_objects.rsp'
+        with open(responseFile, 'w', newline='\n') as file:
+            file.write('\n'.join((objectFile[2:] if objectFile.startswith('./') else objectFile)
+                                  .replace('\\', '/') for objectFile in objectList))
         try:
             cmd = [LD] + LDFLAGS + ['-o', linked, '@' + responseFile]
             RunCommand(cmd)
