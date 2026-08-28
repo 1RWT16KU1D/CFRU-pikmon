@@ -396,8 +396,21 @@ def ProcessMusic(midiFile: str) -> str:
 def LinkObjects(objects: itertools.chain) -> str:
     """Link objects into one binary."""
     linked = 'build/linked.o'
-    cmd = [LD] + LDFLAGS + ['-o', linked] + list(objects)
-    RunCommand(cmd)
+    objectList = list(objects)
+
+    if sys.platform.startswith('win'):
+        responseFile = os.path.join(BUILD, 'linker_objects.rsp')
+        with open(responseFile, 'w') as file:
+            file.write('\n'.join(objectList))
+        try:
+            cmd = [LD] + LDFLAGS + ['-o', linked, '@' + responseFile]
+            RunCommand(cmd)
+        finally:
+            os.remove(responseFile)
+    else:
+        cmd = [LD] + LDFLAGS + ['-o', linked] + objectList
+        RunCommand(cmd)
+
     return linked
 
 
