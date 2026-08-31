@@ -825,7 +825,7 @@ enum NewBattleHoldItems
 #define ITEM_BITTER_TITAN_BERRY 0x329           //EVENT
 #define ITEM_BITTER_MASTER_BERRY 0x32A          //EVENT
 #define ITEM_BITTER_GLINT_BERRY 0x32B           //Court
-#define ITEM_BITTER_DIRIGI_BERRY 0x32C          //DG
+#define ITEM_BITTER_DIRIGI_BERRY 0x32C          //AVAILABLE - DG
 #define ITEM_BITTER_BREAD_BERRY 0x32D           //GK
 #define ITEM_BITTER_SOVREIGN_BERRY 0x32E        //BK
 #define ITEM_BITTER_DANDEL_BERRY 0x32F          //R12
